@@ -1,0 +1,24 @@
+block,item,D_source,legacy,four_mech,delta_pp_or_max,min_or_narrow_pct,note
+alpha1_sensitivity_band,Compact,0.3,+4.17,+3.45,-0.72,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Compact,0.5,+5.00,+3.42,-1.59,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Compact,0.7,+7.86,+6.17,-1.70,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Balanced,0.3,+2.19,+2.70,+0.51,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Balanced,0.5,+7.74,+4.98,-2.76,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Balanced,0.7,+11.79,+9.37,-2.43,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,H2-dominant,0.3,+9.37,+5.95,-3.42,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,H2-dominant,0.5,+15.30,+10.78,-4.52,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,H2-dominant,0.7,+24.33,+16.43,-7.90,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,BAT-dominant,0.3,+6.31,+4.68,-1.63,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,BAT-dominant,0.5,+11.00,+8.63,-2.37,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,BAT-dominant,0.7,+14.05,+12.78,-1.27,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Critical,0.3,+5.96,+5.47,-0.49,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Critical,0.5,+11.15,+7.98,-3.16,,legacy = citable primary value; four-mech = sensitivity lower bound
+alpha1_sensitivity_band,Critical,0.7,+17.08,+11.76,-5.31,,legacy = citable primary value; four-mech = sensitivity lower bound
+branch_isolation_check,beta1 (BAT->EL),all,,,+0.0000,+0.0000,"max/min delta vs legacy, pp (should be ~0: branch only touches FC damage)"
+branch_isolation_check,beta2 (FC->EL),all,,,+0.0000,+0.0000,"max/min delta vs legacy, pp (should be ~0: branch only touches FC damage)"
+branch_isolation_check,gamma1 (FC->BAT),all,,,+0.0000,+0.0000,"max/min delta vs legacy, pp (should be ~0: branch only touches FC damage)"
+branch_isolation_check,gamma2 (EL->BAT),all,,,+0.0000,+0.0000,"max/min delta vs legacy, pp (should be ~0: branch only touches FC damage)"
+VS7_posterior_narrowing,AE_BAT,n/a,2.889560e-05,1.432590e-05,,50.42,"LHS 95% CI width, prior -> posterior; VS7 window, not Stage-3 budget"
+VS7_posterior_narrowing,AE_TOTAL,n/a,9.082674e-04,9.032289e-04,,0.55,"LHS 95% CI width, prior -> posterior; VS7 window, not Stage-3 budget"
+VS7_posterior_narrowing,AE_FC,n/a,8.205866e-04,8.205866e-04,,0.00,"LHS 95% CI width, prior -> posterior; VS7 window, not Stage-3 budget"
+VS7_posterior_narrowing,AE_EL,n/a,2.392475e-04,2.392475e-04,,0.00,"LHS 95% CI width, prior -> posterior; VS7 window, not Stage-3 budget"

@@ -1,0 +1,47 @@
+Check_ID,Description,Status,Detail
+A01,P1 BOL total damage = 3.859,FAIL,Actual: 0.8630
+A02,P1 FB total damage = 4.113,FAIL,Actual: 0.8766
+A03,P1 AE_total = FB - BOL,PASS,AE=0.013681, FB-BOL=0.013681
+A04,P1 TE = +6.59%,FAIL,Actual: 1.59%
+A05,P1 device TE: BAT~1.1%, FC~7.3%, EL~9.0%,FAIL,BAT=0.1%, FC=1.3%, EL=2.5%
+A06,P1 BOL LPSP ~ 44.4%,FAIL,Actual: 41.5%
+A07,P1 D_bat EOY = 0.916,FAIL,Actual: 0.1955
+B01,P3 baseline (eta=0.10) TE = P1 TE,PASS,P3=1.59%, P1=1.59%
+C01,P4 D_bat_annual (0.9162) = P1 D_bat EOY,FAIL,P4=0.9162, P1=0.1955
+C02,P4 Q deviation @1yr < 20%,PASS,Q_dev=11.8% (BLAST=0.9134, Py=0.8168)
+C03,P4 r deviation @1yr < 20%,PASS,r_dev=11.3% (BLAST=1.0235, Py=1.1533)
+C04,P4 direction: Q decline + r growth,PASS,Q decline=True, r growth=True
+DBAT1,P2 Strategy A amplification BAT = 1.012,FAIL,Actual: 0.216
+DFC1,P2 Strategy A amplification FC = 1.061,FAIL,Actual: 0.215
+DEL1,P2 Strategy A amplification EL = 1.076,FAIL,Actual: 0.260
+DBAT2,P2 Strategy B amplification BAT = 0.11 (corrected),PASS,Actual: 0.110
+DFC2,P2 Strategy B amplification FC = 0.077 (corrected),PASS,Actual: 0.077
+DEL2,P2 Strategy B amplification EL = 0.06 (corrected),PASS,Actual: 0.060
+D04,P2 BOL LPSP = P1 BOL LPSP,PASS,P2=41.5%, P1=41.5%
+E01,Strategy B D_bat final = 1.0 (EOL cap),PASS,Actual: 1.000000
+E02,Strategy B D_fc final = 1.0 (EOL cap),PASS,Actual: 1.000000
+E03,Strategy B D_el final = 1.0 (EOL cap),PASS,Actual: 1.000000
+E04,Strategy B sum(dD_bat) = 1.0 (no virtual damage),PASS,Actual sum: 1.000000
+E05,Strategy B sum(dD_fc) = 1.0 (no virtual damage),PASS,Actual sum: 1.000000
+E06,Strategy B sum(dD_el) = 1.0 (no virtual damage),PASS,Actual sum: 1.000000
+E07,Strategy B avg annual dD_bat ~ 0.100,PASS,Actual: 0.100000
+E08,Strategy B amplification BAT = avg_dD / BOL_annual,PASS,Calculated: 0.110
+F01,P5 alpha_r = 0.1673 (matches P4),PASS,P5 alpha_r = 0.1673
+F02,P5 r deviation denominator = R_py (matches P4 method),PASS,Denominator variable: R_py
+F03,P4 R_py_precise uses r0/r0_bol (not simplified formula),PASS,Code: r0 / r0_bol  # actual r ratio from hp_bat r0(D)/r0(0)
+Gannu,CSV exists: annual_damage_summary.csv,PASS,
+Gannu,CSV exists: annual_D_trajectory.csv,PASS,
+Glife,CSV exists: lifetime_trajectory.csv,PASS,
+Glife,CSV exists: lifetime_summary.csv,PASS,
+Gscen,CSV exists: scenario_sensitivity.csv,PASS,
+Gblas,CSV exists: blast_lfp_results.csv,PASS,
+Gpape,Figure exists: paper_figure1_methodology.png,PASS,
+Gpape,Figure exists: paper_figure2_annual_lifetime.png,PASS,
+Gpape,Figure exists: paper_figure3_sensitivity_crossval.png,PASS,
+H01,P2 Strategy A BAT replacements = 9 (unchanged),FAIL,Actual: 1
+H02,P2 Strategy A FC replacements = 13 (unchanged),FAIL,Actual: 2
+H03,P2 Strategy A EL replacements = 17 (unchanged),FAIL,Actual: 4
+I01,P2 Strategy A LPSP ~ 44.8%,FAIL,Actual: 42.1%
+I02,P2 Strategy B LPSP ~ 45.2%,FAIL,Actual: 42.4%
+I03,Strategy B LPSP > Strategy A LPSP (degradation effect),PASS,A=42.1%, B=42.4%
+I04,BOL LPSP < Strategy A LPSP (feedback effect),PASS,BOL=41.5%, A=42.1%

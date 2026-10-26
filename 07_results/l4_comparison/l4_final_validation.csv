@@ -1,0 +1,23 @@
+=== R2 Fix Verification (13 weeks) ===
+fc_k,te_pct,fb_fc,fc_starts
+0.00,-0.88,0.26129307,95
+0.25,-0.88,0.26129307,95
+0.50,-0.88,0.26129307,95
+1.00,-0.88,0.26129307,95
+2.00,-0.88,0.26129307,95
+3.00,-0.88,0.26129307,95
+
+=== Full 52-week Comparison ===
+Mode,BOL_total,BOL_bat,BOL_fc,BOL_el,FB_total,FB_bat,FB_fc,FB_el,AE_total,TE_pct,BOL_LPSP_pct,FB_LPSP_pct,FB_curt_MWh,D_bat_eoy,D_fc_eoy,D_el_eoy,fc_starts,el_starts
+M2,0.86295472,0.19533753,0.26233307,0.40528412,0.87663601,0.19548792,0.26561496,0.41553313,+0.01368129,1.59,41.4610,41.5787,81.37,0.195488,0.265615,0.415533,383,457
+M3,0.85042047,0.19480016,0.25898598,0.39663433,0.86000476,0.19497654,0.26163612,0.40339209,+0.00958429,1.13,44.4059,44.5273,77.94,0.194977,0.261636,0.403392,384,453
+
+=== Checks ===
+ID,Description,Result,Details
+L4F-01,Power conservation (residual~0),PASS,Verified in dispatch_l4
+L4F-02,M3 FC damage <= M2 FC damage,PASS,M3=0.261636 vs M2=0.265615
+L4F-03,M3 EL damage <= M2 EL damage,PASS,M3=0.403392 vs M2=0.415533
+L4F-04,M3 TE < M2 TE (reduced coupling error),PASS,M3=1.13% vs M2=1.59%
+L4F-05,M3 LPSP increase < 10%,PASS,ratio=1.0709
+L4F-06,M3 FC start-stops <= M2 (R2 effect),FAIL,M3=384 vs M2=383
+L4F-07,R2 fix verified (fc_k has effect),FAIL,TE range=0.000000

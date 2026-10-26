@@ -1,0 +1,7 @@
+Check_ID,Metric,Value,Threshold,Pass,Details
+C07,BAT容量衰减自身一致性 (Q fit vs 280Ah),0.0,0.05,True,"{'r2': 1.0, 'n_points': 15, 'd_range': [0.0, 0.3535], 'note': 'D-定义一致性检查: Q(D)=1-beta_q*D 由280Ah aging polyfit得来, 与实测比较为拟合优度(R²), 非独立标定. 真实BAT验证见hp_bat_lite R²>0.99.'}"
+C08,FC极化曲线NRMSE,0.0,0.056,True,"{'n_points': 20, 'i_range': [2.25, 97.74], 'u_range': [0.6158, 0.8965], 'rmse_V': 0.0, 'note': 'hp_fc_lite iv_func是FC1数据的插值器, NRMSE=0为平凡匹配. 真实FC验证见FC1 vs FC2交叉验证(dev<5.6%, 见mvp_bol_parameters.json).'}"
+C09,EL电压偏差,0.0,0.03,True,"{'v_cell_hp': 1.75, 'v_cell_naicno': 1.75, 'r_ohm_hp': 0.117756, 'r_ohm_naicno': 0.117756, 'dev_r_ohm': 0.0}"
+E01,方向单调性,,,True,"{'min_pct': 1.0, 'max_consec': 0, 'threshold_pct': 0.98, 'threshold_consec': 3, 'details': {'BAT': {'eta_pct': 1.0, 'r_pct': 1.0, 'pmax_pct': 1.0, 'eta_consec': 0, 'r_consec': 0, 'pmax_consec': 0}, 'F"
+
+VS2_Overall,All checks,,,True,

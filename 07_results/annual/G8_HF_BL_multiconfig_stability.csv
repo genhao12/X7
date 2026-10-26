@@ -1,0 +1,19 @@
+Config,Strategy,TE_total_pct,TE_bat_pct,TE_fc_pct,TE_el_pct,BOL_LPSP_pct,FB_LPSP_pct,D_bat_eoy,D_fc_eoy,D_el_eoy
+C1,hydrogen_first,4.82,1.17,4.89,6.19,43.9172,44.2693,0.865494,1.000000,1.000000
+C1,balanced,4.82,1.24,4.85,6.25,43.8721,44.2622,0.831428,1.000000,1.000000
+C2,hydrogen_first,4.98,1.28,4.91,6.39,42.9045,43.3780,0.847117,1.000000,1.000000
+C2,balanced,4.90,1.08,4.96,6.28,43.0514,43.4612,0.799823,1.000000,1.000000
+C3,hydrogen_first,4.86,0.95,5.24,6.17,43.9590,44.1906,0.887351,1.000000,1.000000
+C3,balanced,4.92,1.40,5.30,6.18,44.0181,44.3058,0.882622,1.000000,1.000000
+C4,hydrogen_first,4.62,0.81,4.36,6.30,46.5231,46.8491,0.917740,1.000000,1.000000
+C4,balanced,4.70,1.38,4.33,6.25,46.6000,46.9190,0.881980,1.000000,1.000000
+
+=== Verification Checks ===
+Check_ID,Description,Result,Details
+MC11,HF TE > 0 all configs,PASS,"HF TE = ['+4.82%', '+4.98%', '+4.86%', '+4.62%']"
+MC12,BL TE > 0 all configs,PASS,"BL TE = ['+4.82%', '+4.90%', '+4.92%', '+4.70%']"
+MC13,HF TE CV < 50%,PASS,CV = 2.7%
+MC14,BL TE CV < 50%,PASS,CV = 1.8%
+MC15,EL dominant TE all HF configs,PASS,
+MC16,EL dominant TE all BL configs,PASS,
+MC17,BF > HF > BL all configs,FAIL,"BF>HF: True, HF>BL: False"

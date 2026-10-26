@@ -1,0 +1,7 @@
+﻿path,source,target,mean_AE,ci_low,ci_high,direction_consistency,quarterly_effects,nc1_residual,nc3_residual,gate_finite,gate_absolute_effect,gate_bootstrap_ci_excludes_zero,gate_direction_consistency,gate_quarterly_reproduction,gate_nc1,gate_nc3,activated
+alpha1,BAT,FC,0.0027210059038461462,0.002227949456249993,0.003300314390384605,1.0,0.0037607968;0.0034850921;0.0017237179;0.0019144168,0.0,0.0,True,True,True,True,True,True,True,True
+alpha2,EL,FC,0.0,0.0,0.0,0.0,0;0;0;0,0.0,0.0,True,False,False,False,False,True,True,False
+beta1,BAT,EL,0.002598513207156469,0.0021417667927213172,0.0031143665191898165,0.9807692307692307,0.0034872076;0.003269847;0.0017893296;0.0018476686,0.0,0.0,True,True,True,True,True,True,True,True
+beta2,FC,EL,2.459919740309321e-05,1.1958154698999602e-05,3.9529950757391755e-05,0.21153846153846154,2.6177269e-05;7.221952e-05;0;0,0.0,0.0,True,False,True,False,False,True,True,False
+gamma1,FC,BAT,0.0,0.0,0.0,0.0,0;0;0;0,0.0,0.0,True,False,False,False,False,True,True,False
+gamma2,EL,BAT,0.0,0.0,0.0,0.0,0;0;0;0,0.0,0.0,True,False,False,False,False,True,True,False

@@ -1,0 +1,7 @@
+Gap,Status,Details
+G1,PASS,5 dimensions formalized; LOLE=LPSP*168h; D1 max=15.59%; D4 max=13.49%
+G5,PASS,All 12 interaction ratios <30% (low); max=10.95%; decomposable
+G10,PASS,"AE ratio [0.5,2.0]: True; Path class: True; Dominant: EL"
+G12,PARTIAL,"LHS mean in Bootstrap CI: FC=False, EL=False"
+G13,PASS,I01-I07 all covered from VS1-VS8 results
+G14,N/A,No modification needed; actual residual 1.55e-16 << 10^-6

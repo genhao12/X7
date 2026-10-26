@@ -1,0 +1,20 @@
+Target,Parameter,PRCC_rho,PRCC_p_value,PRCC_significant,Spearman_rho,Spearman_p_value,Spearman_significant,PRCC_rank,Spearman_rank,Rank_agreement
+AE_FC,beta_Q_scale,0.147855,0.465582,False,0.231146,0.219084,False,3,2,N
+AE_FC,k_cyc_mult,-0.212770,0.289815,False,-0.123915,0.514146,False,2,4,N
+AE_FC,k_run_fc_mult,0.624708,0.000331,True,0.422914,0.019889,True,1,1,Y
+AE_FC,k_run_el_mult,-0.129815,0.522451,False,-0.193771,0.304894,False,4,3,N
+AE_FC,eta_degrade,-0.092869,0.648192,False,-0.038932,0.838153,False,5,5,Y
+
+AE_EL,beta_Q_scale,0.890427,0.000000,True,0.471858,0.008476,True,2,2,Y
+AE_EL,k_cyc_mult,0.115561,0.569579,False,0.316129,0.088775,True,4,3,N
+AE_EL,k_run_fc_mult,-0.019855,0.922503,False,-0.260512,0.164409,False,5,4,N
+AE_EL,k_run_el_mult,0.971343,0.000000,True,0.815350,0.000000,True,1,1,Y
+AE_EL,eta_degrade,0.340660,0.082149,True,-0.144828,0.445114,False,3,5,N
+
+Target,Kendall_tau,Kendall_p_value,Value_Spearman,Value_p_value,Threshold,Pass
+AE_FC,0.600000,0.233333,0.900000,0.037386,0.8,False
+AE_EL,0.600000,0.233333,0.900000,0.037386,0.8,False
+
+Check,Metric,Value,Threshold,Pass
+R08,PRCC-Spearman排序一致性(Kendall tau),0.6000,>=0.8,False
+R07b,PRCC显著性,4 significant,|rho|>0.3,True

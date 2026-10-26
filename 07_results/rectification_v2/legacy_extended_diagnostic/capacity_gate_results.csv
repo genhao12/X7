@@ -1,0 +1,3 @@
+﻿candidate_id,domain,pv_kwp,bat_kwh,pemfc_kw,pemel_kw,h2_kg,necessary_energy_pass,admissible,three_year_lpsp,cycle_converged,cycle_repetitions,block_soc_delta,block_h2_delta_fraction,failure_reasons
+legacy_extended_diagnostic__C5_H2_1000,legacy_extended_diagnostic,300,800,100,100,1000,True,False,0.18116113396291536,True,2,0.0,0.0,yearly_lpsp|three_year_lpsp|yearly_critical_satisfaction|three_year_critical_satisfaction
+legacy_extended_diagnostic__C5_H2_500,legacy_extended_diagnostic,300,800,100,100,500,True,False,0.1809581210769093,True,2,0.0,0.0,yearly_lpsp|three_year_lpsp|yearly_critical_satisfaction|three_year_critical_satisfaction

@@ -1,0 +1,56 @@
+Check_ID,Description,Status,Detail
+J01,M3 file has M2 row (52-week data),PASS,TE=6.59%
+J02,M3 file has M3 row (52-week data),PASS,TE=6.42%
+J03,M2 TE = +6.59% (matches P1),PASS,Actual: 6.59%
+J04,M3 TE = +6.42% (reduced from M2),PASS,Actual: 6.42%
+J05,M3 TE < M2 TE (L4 reduces coupling error),PASS,M3=6.42% < M2=6.59%
+J06,M3 FC damage <= M2 FC damage,PASS,M3=1.385979 vs M2=1.388857
+J07,M3 EL damage <= M2 EL damage,PASS,M3=1.804430 vs M2=1.808387
+J08,M3 LPSP increase < 1% vs M2,PASS,M3=44.82%; M2=44.79%
+J09,M3 FC start-stops <= M2,PASS,M3=396 vs M2=397
+J10,M3 D_bat EOY = 0.916 (same as P1),PASS,Actual: 0.9164
+J11,M3 D_fc EOY = 1.0 (EOL reached),PASS,Actual: 1.0000
+J12,M3 D_el EOY = 1.0 (EOL reached),PASS,Actual: 1.0000
+J13,M3 L4 final checks: 7/7 PASS,PASS,Found 7 PASS checks
+K01,M2 FB_bat = P1 FB_dD_bat sum,PASS,L4=0.916222; P1=0.916222
+K02,M2 FB_fc = P1 FB_dD_fc sum,PASS,L4=1.388857; P1=1.388857
+K03,M2 FB_el = P1 FB_dD_el sum,PASS,L4=1.808387; P1=1.808387
+K04,M2 TE = P1 TE (+6.59%),PASS,L4=6.59%; P1=6.59%
+K05,M2 BOL_total = P1 BOL_total,PASS,L4=3.859229; P1=3.859229
+K06,M3 FB_bat ~ M2 FB_bat (within 0.1%),PASS,M3=0.916376; M2=0.916222
+K07,M3 FB_fc < M2 FB_fc (L4 reduces FC damage),PASS,M3=1.385979 < M2=1.388857
+K08,M3 FB_el < M2 FB_el (L4 reduces EL damage),PASS,M3=1.804430 < M2=1.808387
+K09,M2 FB_LPSP ~ P1 FB_LPSP (~44.8%),PASS,L4=44.79%; P1=44.79%
+K10,M3 FB_LPSP ~ M2 FB_LPSP (within 0.5%),PASS,M3=44.82%; M2=44.79%
+L01,M4 economic_comparison.csv exists,PASS,
+L02,M2 NPC > 0,PASS,NPC=22211793
+L03,M2 NPC in range 10-50 million CNY,PASS,NPC=22.21M
+L04,M2 LCOE in range 1-10 CNY/kWh,PASS,LCOE=3.9440
+L05,M2 CAPEX+OPEX+Repl = NPC,PASS,sum=22211793 vs NPC=22211793
+L06,Replacement cost > 50% of NPC,PASS,Replacement=81.2%
+L07,Discrete: M2 NPC = M3 NPC (same replacements),PASS,M2=22211793; M3=22211793
+L08,Continuous: M3 NPC < M2 NPC (damage reduction),PASS,M3=22718173 < M2=22750442
+L09,Continuous NPC difference is small (<1%),PASS,diff=-32270 (-0.1418%)
+M01,M4 BAT 20yr repl ~ 2x P2 10yr (9→18),PASS,M4=18; P2_10yr=9
+M02,M4 PEMFC 20yr repl ~ 2x P2 10yr (13→27),PASS,M4=27; P2_10yr=13
+M03,M4 PEMEL 20yr repl ~ 2x P2 10yr (17→36),PASS,M4=36; P2_10yr=17
+M04,M4 power_electronics = 1 (15yr design life),PASS,M4=1
+M05,M4 M2 BAT damage = P1 feedback BAT damage,PASS,M4=0.916222; P1=0.916222
+M06,M4 M2 PEMFC damage = P1 feedback FC damage,PASS,M4=1.388857; P1=1.388857
+M07,M4 M2 PEMEL damage = P1 feedback EL damage,PASS,M4=1.808387; P1=1.808387
+N01,CAPEX sensitivity: NPC increases with CAPEX,PASS,NPCs=['15.5'; '18.9'; '22.2'; '25.5'; '28.9']
+N02,CAPEX -30% gives ~30% NPC reduction,PASS,Reduction=30.0%
+N03,CAPEX +30% gives ~30% NPC increase,PASS,Increase=30.0%
+N04,Discount rate: NPC decreases with rate (high replacement ratio),PASS,NPCs=['25.9'; '23.9'; '22.2'; '19.4'; '17.1']
+OM3 ,Exists: M3 L4 final validation (l4_final_validation.csv),PASS,size=1262
+OM3 ,Exists: M3 L4 M2 vs M3 comparison (l4_m2_m3_comparison.csv),PASS,size=1072
+OM4 ,Exists: M4 economic comparison (economic_comparison.csv),PASS,size=2564
+OM4 ,Exists: M4 NPC figure (economic_npc_comparison.png),PASS,size=177017
+OM4 ,Exists: M4 sensitivity figure (economic_sensitivity.png),PASS,size=214769
+OM4 ,Exists: M4 cashflow figure (economic_cashflow.png),PASS,size=75454
+OM3 ,Exists: M3 L4 final figure (l4_final_validation.png),PASS,size=378021
+OM4 ,Exists: M4 economic config (economic_parameters_v1.0.json),PASS,size=5430
+OM4 ,Exists: M4 NPC module (npc_lite.py),PASS,size=24367
+OM3 ,Exists: M3 L4 EMS module (ems_l4_lite.py),PASS,size=19561
+O_M3,M4 M3 damage = M3 L4 final validation damage,PASS,M4={'BAT': 0.916376; 'PEMFC': 1.385979; 'PEMEL': 1.80443}; M3_expected={'BAT': 0.9163757; 'PEMFC': 1.38597855; 'PEMEL': 1.80443033}
+O_M3b,M3 L4 damage values match M4 input,PASS,L4_BAT=0.916376; M4_BAT=0.916376

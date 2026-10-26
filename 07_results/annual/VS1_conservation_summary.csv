@@ -1,0 +1,8 @@
+metric,value,threshold,pass
+C01_power_residual_max_kW,8.881784e-15,1.200000e-02,True
+C01_power_residual_ratio,7.401487e-17,1e-4,True
+C02_h2_residual_max_kg,6.510383e-05,2.500000e-03,True
+C02_h2_residual_ratio,2.604153e-06,1e-4,True
+SOC_bounds,"[0.1500, 0.9500]","[0.15, 0.95]",True
+H2_bounds,"[2.5000, 12.4999]","[2.5, 25.0]",True
+VS1_overall,PASS,-,True

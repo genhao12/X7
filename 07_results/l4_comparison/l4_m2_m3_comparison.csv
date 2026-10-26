@@ -1,0 +1,13 @@
+Mode,BOL_total,BOL_bat,BOL_fc,BOL_el,FB_total,FB_bat,FB_fc,FB_el,AE_total,TE_pct,BOL_LPSP_pct,FB_LPSP_pct,FB_curt_MWh,FB_FC_MWh,FB_EL_MWh,D_bat_eoy,D_fc_eoy,D_el_eoy
+M2,0.86295472,0.19533753,0.26233307,0.40528412,0.87663601,0.19548792,0.26561496,0.41553313,+0.01368129,1.59,41.4610,41.5787,81.37,29.16,58.74,0.195488,0.265615,0.415533
+M3,0.85042047,0.19480016,0.25898598,0.39663433,0.79440773,0.19318030,0.24417826,0.35704916,-0.05601274,-6.59,44.4059,45.1204,86.00,25.85,49.18,0.193180,0.244178,0.357049
+
+=== Checks ===
+ID,Description,Result,Details
+L4-01,Power conservation M3 (residual~0),PASS,L4 dispatch maintains conservation
+L4-02,M3 FC damage <= M2 FC damage (R2 reduces start-stop),PASS,M3=0.244178 vs M2=0.265615
+L4-03,M3 EL damage <= M2 EL damage (R3 reduces ramp stress),PASS,M3=0.357049 vs M2=0.415533
+L4-04,M3 TE < M2 TE (L4 reduces coupling error),PASS,M3=-6.59% vs M2=1.59%
+L4-05,M3 LPSP increase < 20% (acceptable reliability tradeoff),PASS,M3/M2=1.085
+L4-06,FC damage reduction > 0%,PASS,8.07%
+L4-07,EL damage reduction > 0%,PASS,14.07%

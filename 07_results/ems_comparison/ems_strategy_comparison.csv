@@ -1,0 +1,12 @@
+Strategy,BOL_total,BOL_bat,BOL_fc,BOL_el,FB_total,FB_bat,FB_fc,FB_el,AE_total,TE_pct,BOL_LPSP_pct,FB_LPSP_pct,D_bat_eoy,D_fc_eoy,D_el_eoy
+battery_first,0.85041186,0.19480016,0.25897958,0.39663212,0.86365536,0.19497654,0.26259059,0.40608823,+0.01324350,1.56,44.4035,44.4861,0.194977,0.262591,0.406088
+hydrogen_first,1.02237642,0.17651367,0.31675569,0.52910706,1.03799883,0.17690324,0.32034048,0.54075512,+0.01562241,1.53,43.9172,43.9875,0.176903,0.320340,0.540755
+balanced,0.96795945,0.18735558,0.29215410,0.48844977,0.98185803,0.18768000,0.29534074,0.49883729,+0.01389857,1.44,43.8721,43.9585,0.187680,0.295341,0.498837
+
+=== Checks ===
+ID,Description,Result,Details
+EM01,All TE > 0,PASS,"{'battery_first': '+1.56%', 'hydrogen_first': '+1.53%', 'balanced': '+1.44%'}"
+EM02,BF TE matches P1 (6.59%+-0.05),FAIL,BF TE=1.56%
+EM03,HF LPSP != BF LPSP (strategy matters),PASS,HF=43.917% vs BF=44.403%
+EM04,BL LPSP != BF LPSP (strategy matters),PASS,BL=43.872% vs BF=44.403%
+EM05,All strategies reach FC EOL (D_fc=1.0),FAIL,"{'battery_first': '0.263', 'hydrogen_first': '0.320', 'balanced': '0.295'}"

@@ -1,0 +1,15 @@
+Boundary,Check,Metric,Value,Threshold,Pass
+R10,R10,N_eff=0识别(D=0.10),TE_max=4.2%,TE<5% (no act),True
+R08,R08,M4异常物理判定(D=0.99),ratio = 7.65,≤ 10 & physical,True
+R12,R12,TE=NA分母保护,NA triggered,no crash,True
+BW05,BW05,极端气象不崩溃,2/2,all pass,True
+
+B2_Shapley,Mediator,Value
+,C,0.0006592661
+,E,0.0000000000
+,P,0.0000000000
+,I,0.0050405504
+
+B4_Weather,Scenario,PV_mean_kW,AE_FC,AE_EL,LOLE,No_crash
+,HighPV,41.33,0.0001167829,0.0004577400,0.5848,True
+,LowPV,8.51,-0.0000005519,0.0000000000,0.9152,True
