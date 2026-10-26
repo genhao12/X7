@@ -1,0 +1,17 @@
+metric,value
+rule_version,v1.1_dynamic_model_parameter_evidence_and_run_gate
+verified_interface_file,48_TradeStreet_local_civil_dynamic_model_input_interface_35d.csv
+verified_contract_file,49_TradeStreet_local_civil_dynamic_model_preparation_contract.csv
+interval_count,3360
+time_axis_primary,timestamp_local_civil; derived UTC is retained only for traceable external joins
+available_verified_items,3
+partial_verified_evidence_items,1
+missing_source_evidence_items,8
+missing_study_design_decisions,1
+observed_BESS_rating_screen_evidence,available: 200 kW for observed Trade Street BESS data screening only; not sufficient to define redesigned-dispatch limits
+observed_operation_reproduction_readiness,"conditional: data interface and observed 200 kW screen are ready, but SOC/efficiency/initial-state evidence must be resolved before state propagation"
+redesigned_PV_hydrogen_BESS_dispatch_readiness,"blocked: hydrogen asset parameters, BESS efficiency/design constraints and operating-mode design decision are not supplied"
+battery_degradation_readiness,"blocked: chemistry, usable capacity, SOC/temperature history and calibrated degradation law are not supplied"
+prohibited_action,Do not populate missing values from intuition or silently adopt UCSD context values as calibrated parameters
+next_permitted_action,collect traceable parameter evidence and freeze the study operating mode; then build the state-equation and dispatch formulation
+timezone_evidence_status,physical_consistency_supported_local_civil_interpretation_pending_source_confirmation

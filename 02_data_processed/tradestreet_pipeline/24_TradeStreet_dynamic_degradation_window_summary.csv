@@ -1,0 +1,24 @@
+metric,value
+rule_version,v1.0_dynamic_degradation_raw_continuous_window_catalog
+source_file,20_TradeStreet_15min_building_load_UTC_primary_local_calendar_layer.csv
+source_row_count,101674
+source_eligible_dynamic_rows,64297
+eligibility_status,eligible_for_building_load_dynamic_input
+timestamp_axis,timestamp_utc
+continuity_rule,Adjacent eligible rows must differ by exactly 15 minutes on timestamp_utc
+imputation_policy,No imputed record is included; all windows come from original raw-complete admitted rows
+window_count,359
+eligible_rows_reconstructed_from_windows,64297
+longest_window_id,dynamic_raw_window_0267
+longest_window_record_count_15min,3362
+longest_window_elapsed_hours_utc,840.25
+longest_window_utc_start,2018-01-12T09:00:00Z
+longest_window_utc_end,2018-02-16T09:15:00Z
+longest_window_local_start,2018-01-12 01:00:00
+longest_window_local_end,2018-02-16 01:15:00
+windows_under_24h,226
+windows_24h_to_under_7d,114
+windows_7d_to_under_30d,18
+windows_30d_or_more,1
+windows_crossing_dst_offset_change,4
+timezone_evidence_status,project_instruction_assumption_pending_source_confirmation

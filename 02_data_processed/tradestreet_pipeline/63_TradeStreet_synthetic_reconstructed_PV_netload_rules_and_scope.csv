@@ -1,0 +1,10 @@
+category,item,rule,status
+identity,data_class,synthetic reconstructed evaluation years; not complete actual observed years,frozen_user_choice
+scope,years,"2016, 2017, 2018 complete local-civil 15-minute grids",implemented
+PV_load,observed_retention,retain a value only when raw Total and PV both have one numeric record at same timestamp,implemented
+PV_load,synthetic_donor_primary,"for missing total/PV pair, donor pool=2017-2018 values with same month, weekday/weekend and clock; deterministic closest calendar date",implemented
+PV_load,synthetic_donor_fallback,"when primary pool empty, donor pool=2017-2018 same month, weekday/weekend and clock; all fallback points labeled",implemented
+PV,negative_values,raw negative PV is converted to 0 only in reconstructed model field; source raw data unchanged,implemented
+BESS,missing_BESS,do not fabricate BESS history; keep observed values only; missing BESS is future EMS control variable,frozen_user_choice
+building_load,closure,not emitted because BESS is intentionally not reconstructed; future optimization computes load balance using decision variables,frozen_user_choice
+formal_evaluation,prohibition,"not valid for actual-year statistics or formal 20-year NPC, LCOE, degradation or replacement claims",hard_gate

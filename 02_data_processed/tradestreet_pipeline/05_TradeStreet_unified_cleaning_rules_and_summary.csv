@@ -1,0 +1,25 @@
+metric,value
+rule_version,v1.0
+time_grid,15-minute local civil timestamp labels; no inferred UTC conversion
+timezone_policy,Timezone/DST metadata absent from source; timestamps retained without UTC conversion
+DST_policy,US DST calendar candidates are flagged for audit only; they are not automatically treated as gaps or excluded because source timezone/DST semantics are undocumented
+duplicate_policy,Any duplicate timestamp is retained in audit source but excluded from model-ready stream; no arbitrary averaging or row selection
+missing_policy,"NaN, blank, and absent 15-minute timestamps remain missing and are excluded; no interpolation, forward fill, smoothing, or zero fill"
+net_load_definition,TradeStreetTotal treated as P_net = P_load - P_PV based on dataset documentation
+load_reconstruction,"Candidate P_load = P_net + P_PV only when both inputs are unique, numeric, and share the same timestamp; DST candidates remain separately flagged pending source timezone confirmation"
+total_raw_records,99227
+total_unique_timestamps,99215
+total_duplicate_timestamp_count,12
+total_duplicate_extra_record_count,12
+total_missing_nan_or_nonnumeric_count,85
+pv_raw_records,138632
+pv_unique_timestamps,138616
+pv_duplicate_timestamp_count,16
+pv_duplicate_extra_record_count,16
+pv_missing_nan_or_nonnumeric_count,0
+common_grid_start,2016-08-31 09:30:00
+common_grid_end,2019-07-26 11:45:00
+common_grid_records,101674
+candidate_load_eligible_pending_timezone_resolution,99118
+candidate_load_not_eligible,2556
+power_closure_check,"For every eligible row, p_load_candidate - p_net_raw - p_pv_raw = 0 by construction"

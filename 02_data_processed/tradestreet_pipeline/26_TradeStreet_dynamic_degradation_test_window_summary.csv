@@ -1,0 +1,13 @@
+metric,value
+rule_version,v1.0_nested_duration_benchmark_window_freeze
+source_catalog_file,23_TradeStreet_dynamic_degradation_continuous_window_catalog.csv
+selected_source_window_id,dynamic_raw_window_0267
+selected_source_window_record_count_15min,3362
+selected_source_window_elapsed_hours_utc,840.25
+source_window_selection,Longest original-complete admitted UTC window with no DST offset change
+benchmark_design,"Nested 24h, 7d and 35d segments share one UTC start to isolate duration effects; not independent holdout samples"
+benchmark_count,3
+imputation_policy,No imputed values; all exported rows require eligible_for_building_load_dynamic_input
+dst_policy,No selected segment crosses a DST offset change
+timestamp_axis,timestamp_utc
+timezone_evidence_status,project_instruction_assumption_pending_source_confirmation

@@ -1,0 +1,9 @@
+category,item,rule,status
+identity,data_class,synthetic reconstructed PV-building-load evaluation years; not complete actual observed years,frozen_user_choice
+source,building_load_closure,"observed donor load=P_net_raw+max(PV_raw,0)-P_BESS_raw; only synchronous unique 2017-2018 Total/PV/BESS records with abs(BESS)<=200 kW",implemented
+source,building_load_primary_donor,"missing target load uses 2017-2018 closed-load donor with same month, weekday/weekend and clock; closest calendar date; donor timestamp retained",implemented
+source,building_load_fallback_donor,"when primary donor unavailable, use 2017-2018 closed-load donor with same month and clock; donor timestamp retained and fallback labeled",implemented
+PV,PV_source,PV available power is passed from 62 with its separate raw/synthetic donor provenance,implemented
+BESS,historical_BESS,not reconstructed or copied; future off-grid optimization treats BESS power as an EMS decision variable,frozen_user_choice
+scope,grid,2016 leap year=35136 and 2017/2018=35040 local-civil 15-minute records,implemented
+formal_evaluation,prohibition,"not valid for actual-year statistics or formal 20-year NPC, LCOE, degradation or replacement claims",hard_gate

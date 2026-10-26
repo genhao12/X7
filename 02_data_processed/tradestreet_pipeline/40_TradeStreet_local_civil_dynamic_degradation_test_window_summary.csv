@@ -1,0 +1,13 @@
+metric,value
+rule_version,v4.0_local_civil_primary_nested_duration_benchmark_window_freeze
+source_catalog_file,37_TradeStreet_local_civil_dynamic_degradation_continuous_window_catalog.csv
+selected_source_window_id,local_civil_raw_window_0267
+selected_source_window_record_count_15min,3362
+selected_source_window_elapsed_hours_local_civil,840.25
+source_window_selection,Longest >=35-day original-complete admitted local-civil window without ambiguous fall-back labels
+benchmark_design,"Nested 24h, 7d and 35d segments share one local-civil start to isolate duration effects; not independent holdout samples"
+benchmark_count,3
+imputation_policy,No imputed values; all exported rows require eligible_for_building_load_dynamic_input
+dst_policy,Selected benchmark has no ambiguous fall-back local labels; spring-forward nonexistent labels are never mapped or imputed
+timestamp_axis,timestamp_local_civil
+timezone_evidence_status,physical_consistency_supported_local_civil_interpretation_pending_source_confirmation

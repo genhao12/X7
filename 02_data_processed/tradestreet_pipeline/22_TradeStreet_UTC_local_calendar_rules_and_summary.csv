@@ -1,0 +1,19 @@
+metric,value
+rule_version,v3.0_UTC_primary_local_calendar_derivation
+source_files_preserved,17 and 18 are preserved; 20 and 21 are derived UTC-primary layers
+source_timestamp_interpretation,The previous timestamp_local_civil_unresolved text is frozen as UTC by explicit project instruction and retained verbatim in timestamp_utc; timestamp_utc_iso8601 is a separate equivalent representation
+utc_primary_policy,Use timestamp_utc as the dynamic-simulation master axis and for joining UTC external data
+local_calendar_policy,"Use timestamp_local only for local weekday/weekend, daily load profiles, local solar-hour analysis and local calendar reporting"
+iana_timezone,America/Los_Angeles
+dst_rule,ZoneInfo IANA rules: PDT UTC-07 while DST active; PST UTC-08 otherwise
+timezone_evidence_status,project_instruction_assumption_pending_source_confirmation
+utc_rows,101674
+utc_unique_rows,101674
+utc_first,2016-08-31T09:30:00Z
+utc_last,2019-07-26T11:45:00Z
+pdt_rows_UTC_minus_07,65374
+pst_rows_UTC_minus_08,36300
+local_duplicate_clock_label_extra_rows,12
+fall_back_handling,Repeated local civil labels remain distinguishable through unique timestamp_utc and utc_offset; no local timestamp deduplication is applied
+spring_forward_handling,"Local 02:00-02:45 structural absence on DST-start days is a timezone conversion property, not an imputable UTC-grid gap"
+conversion_reproducibility,Python zoneinfo with IANA America/Los_Angeles; timestamp_utc uses ISO 8601 Z suffix

@@ -1,0 +1,21 @@
+metric,value
+rule_version,v4.0_local_civil_primary_UTC_mapping
+source_files_preserved,17 and 18 remain immutable source admission/scope layers; 20-33 remain frozen audit artifacts of the rejected UTC-primary interpretation
+source_timestamp_interpretation,Original timestamp text is interpreted as America/Los_Angeles local civil time because PV daylight behavior is physically consistent under this interpretation; source metadata confirmation remains required
+iana_timezone,America/Los_Angeles
+timezone_evidence_status,physical_consistency_supported_local_civil_interpretation_pending_source_confirmation
+local_civil_primary_policy,"timestamp_local_civil is the primary recorded measurement label for local calendar, solar-time analysis and source ordering"
+utc_mapping_policy,"timestamp_utc is a derived, auditable unique mapping for UTC joins and elapsed-time simulation only when utc_mapping_admission_status starts with eligible_"
+fall_back_policy,"For a single source row at an ambiguous fall-back local label, map with PEP495 fold=0 (first PDT occurrence); do not fabricate the alternate fold=1 PST record; flag every such row"
+spring_forward_policy,"A source label that is nonexistent in America/Los_Angeles has no valid UTC mapping, is retained with blank UTC fields and excluded from UTC-continuous inputs; it is never imputed or silently shifted"
+source_rows,101674
+mapped_UTC_rows,101662
+unique_mapped_UTC_rows,101662
+unambiguous_local_time_rows,101650
+ambiguous_fall_back_local_time_rows,12
+nonexistent_spring_forward_local_time_rows,12
+PDT_rows_UTC_minus_07,65374
+PST_rows_UTC_minus_08,36288
+eligible_building_load_rows_after_UTC_mapping,64297
+derived_file_34,34_TradeStreet_15min_building_load_local_civil_primary_UTC_mapping_layer.csv
+derived_file_35,35_TradeStreet_dynamic_input_scope_local_civil_primary_UTC_mapping_layer.csv

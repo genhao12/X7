@@ -1,0 +1,14 @@
+metric,value
+rule_version,v1.1
+pv_raw_field,p_pv_raw_kW retained without alteration
+pv_model_field,"p_pv_model_kW_nonnegative = max(p_pv_raw_kW, 0) only for unique numeric source rows"
+pv_negative_adjustment_rule,All valid raw PV values below 0 kW are set to 0 kW only in p_pv_model_kW_nonnegative and marked pv_negative_offset_corrected_to_zero
+pv_negative_adjustment_count,3665
+bess_sign_convention,"Positive BESS power = charging load; negative BESS power = discharging generation, per UCSD paper"
+pre_bess_candidate_definition,P_net + P_PV_model; not a pure building load because BESS is behind the meter
+building_load_definition,P_building_candidate = P_net + P_PV_model - P_BESS
+building_load_eligible_rows,64305
+building_load_bess_unresolved_rows,34813
+building_load_not_eligible_rows,2556
+building_load_closure_max_residual_kW,4.04121180963557e-14
+modeling_constraint,Use p_building_load_candidate only where building_load_model_status=eligible_for_building_load_model; do not use pre-BESS candidate as pure building load

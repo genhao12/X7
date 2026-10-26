@@ -1,0 +1,35 @@
+metric,value
+rule_version,v4.0_local_civil_primary_right_endpoint_15min_average_dynamic_simulation_input
+source_interpretation,Original Trade Street timestamp text is primary America/Los_Angeles local civil measurement time; UTC is derived for traceable joins
+simulation_interval_convention,"For [t_(k-1), t_k] on local civil axis, use right-endpoint observed sample at t_k as preceding-15-minute average power"
+initial_anchor_policy,First row is an initial anchor only; it creates no simulated interval or energy contribution
+time_step_hours,0.25
+time_step_seconds,900
+power_unit,kW
+energy_unit,kWh
+building_load_boundary,P_building=P_net+P_pv_model-P_bess; BESS positive is charging load and negative is discharge output
+pv_model_policy,Use p_pv_model_kW_nonnegative; raw PV remains traceable
+imputation_policy,No imputed data; all intervals originate from eligible_for_building_load_dynamic_input rows
+timestamp_axis,timestamp_local_civil
+timezone_evidence_status,physical_consistency_supported_local_civil_interpretation_pending_source_confirmation
+benchmark_24h_source_file,41_TradeStreet_local_civil_dynamic_degradation_benchmark_24h.csv
+benchmark_24h_simulation_input_file,45_TradeStreet_local_civil_dynamic_simulation_input_24h.csv
+benchmark_24h_source_anchor_rows,97
+benchmark_24h_simulation_steps,96
+benchmark_24h_elapsed_hours_local_civil,24.00
+benchmark_24h_interval_start_local_civil,2018-01-12 09:00:00
+benchmark_24h_interval_end_local_civil,2018-01-13 09:00:00
+benchmark_7d_source_file,42_TradeStreet_local_civil_dynamic_degradation_benchmark_7d.csv
+benchmark_7d_simulation_input_file,46_TradeStreet_local_civil_dynamic_simulation_input_7d.csv
+benchmark_7d_source_anchor_rows,673
+benchmark_7d_simulation_steps,672
+benchmark_7d_elapsed_hours_local_civil,168.00
+benchmark_7d_interval_start_local_civil,2018-01-12 09:00:00
+benchmark_7d_interval_end_local_civil,2018-01-19 09:00:00
+benchmark_35d_source_file,43_TradeStreet_local_civil_dynamic_degradation_benchmark_35d.csv
+benchmark_35d_simulation_input_file,47_TradeStreet_local_civil_dynamic_simulation_input_35d.csv
+benchmark_35d_source_anchor_rows,3361
+benchmark_35d_simulation_steps,3360
+benchmark_35d_elapsed_hours_local_civil,840.00
+benchmark_35d_interval_start_local_civil,2018-01-12 09:00:00
+benchmark_35d_interval_end_local_civil,2018-02-16 09:00:00

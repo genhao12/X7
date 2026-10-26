@@ -1,0 +1,21 @@
+metric,value
+rule_version,v1.0_trade_street_dynamic_model_preparation_contract
+scope,"Preparation interface only; no dispatch optimization, battery state propagation, hydrogen state propagation, component sizing or degradation calibration is executed in this layer"
+source_file,47_TradeStreet_local_civil_dynamic_simulation_input_35d.csv
+interface_file,48_TradeStreet_local_civil_dynamic_model_input_interface_35d.csv
+test_window_id,benchmark_35d
+interval_count,3360
+interval_start_local_civil,2018-01-12 09:00:00
+interval_end_local_civil,2018-02-16 09:00:00
+time_axis_primary,timestamp_local_civil; derived UTC is retained only for traceable external joins
+time_step,fixed 900 seconds = 0.25 h
+observed_power_convention,right endpoint sample is the average power over preceding 15-minute interval
+observed_power_boundary,P_building=P_net+P_pv_model-P_bess_observed; positive observed BESS power denotes charging load and negative denotes discharge output
+required_dynamic_states,Battery SOC; battery capacity/health state if degradation is activated; hydrogen tank inventory; electrolyzer operating state; fuel-cell operating state; optional thermal states only if a validated thermal model is supplied
+required_control_decisions,PV curtailment; BESS charge/discharge command; electrolyzer power; fuel-cell power; grid import/export or unmet-load slack according to selected operating mode
+required_parameter_evidence_before_simulation,"BESS usable energy, charge/discharge limits and efficiencies; inverter limits; PV curtailment policy; electrolyzer/fuel-cell capacities and efficiency maps; hydrogen storage capacity/leakage; initial state values; degradation law and calibrated parameters"
+initial_state_policy,"Initial SOC and hydrogen inventory are not inferable from the supplied interval data and must be explicitly declared, sensitivity-tested, or estimated using a documented warm-up method"
+optimization_boundary_warning,"Observed BESS power is a measurement/reconstruction input for validation, not a command to force in a redesigned PV-hydrogen-BESS dispatch model unless the study explicitly reproduces observed operation"
+missing_data_policy,No imputed records are present; do not synthesize values for excluded intervals
+timezone_evidence_status,physical_consistency_supported_local_civil_interpretation_pending_source_confirmation
+publication_limit,The local-civil timestamp interpretation is physically supported by PV daylight behavior but remains pending confirmation by source metadata or the original metering system

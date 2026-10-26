@@ -1,0 +1,21 @@
+metric,value
+source_file,TradeStreetTotal.csv
+source_records,99227
+output_records,99227
+timestamp_parse_format,%m/%d/%Y %H:%M
+output_timestamp_format,%Y-%m-%d %H:%M:%S
+sort_order,ascending
+timezone_status,unresolved - source provides no timezone label
+duplicate_timestamp_count,12
+duplicate_extra_record_count,12
+records_marked_duplicate_timestamp,24
+missing_nan_power_count,85
+valid_numeric_power_count,99142
+zero_minute_interval_count,12
+negative_interval_count,0
+non_15min_interval_record_count,364
+non_15min_unique_timestamp_gap_count,352
+first_timestamp,2016-08-31 09:30:00
+last_timestamp,2019-07-26 11:45:00
+semantic_status,RealPower retained as raw measurement; not relabeled as load or net load
+processing_policy,"No records deleted, imputed, or power values altered; duplicates and NaN values retained with quality flags"

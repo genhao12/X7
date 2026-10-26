@@ -1,0 +1,17 @@
+metric,value
+rule_version,v2.0_incremental_admission_correction
+original_files_preserved,06-14 are not overwritten; 15-19 provide additive correction layers
+outlier_policy,Candidates are flags requiring manual review; this correction layer performs no automatic outlier replacement
+total_candidate_count,1
+pv_candidate_count,0
+bess_over_200kW_candidate_count,9
+pv_smoothed_max_kW_sigma_1,245.38784760343927
+bess_within_rating_rows,66693
+bess_over_rating_rows,9
+building_load_dynamic_eligible_rows,64297
+building_load_pending_total_or_pv_outlier_review_rows,1
+building_load_bess_over_rating_rows,7
+building_load_bess_unresolved_rows,34813
+building_load_total_or_pv_quality_ineligible_rows,2556
+dynamic_scope_correction,"Raw Total/PV completeness alone is not building-load dynamic eligibility. Building-load input additionally requires a raw-valid, within-rating BESS record and no pending Total/PV outlier review."
+building_load_formula,P_building_candidate=P_net+P_PV_model-P_BESS; only rows with eligible_for_building_load_dynamic_input may be used.

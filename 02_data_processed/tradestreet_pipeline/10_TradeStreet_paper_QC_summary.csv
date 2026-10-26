@@ -1,0 +1,21 @@
+metric,value
+qc_rule,Paper persistence: nearest earlier same-time same-day-type raw valid donor; fallback nearest earlier raw valid donor
+donor_rule,Only observed_raw_valid values may donate; imputed values never donate
+US_calendar,holidays.US() with weekday/non-holiday defined as business
+timezone_policy,Original local civil labels retained; timezone unresolved; no UTC conversion
+start_timestamp,2016-08-31 09:30:00
+end_timestamp,2019-07-26 11:45:00
+grid_records,101674
+total_observed_raw_valid,99118
+total_imputed_same_time_same_day_type,2554
+total_imputed_recent_prior_valid,2
+total_not_imputable,0
+pv_observed_raw_valid,101618
+pv_imputed_same_time_same_day_type,56
+pv_imputed_recent_prior_valid,0
+pv_not_imputable,0
+raw_complete_eligible_for_dynamic_layer,99118
+qc_sensitivity_only_contains_imputation,2556
+not_usable_no_prior_raw_donor,0
+dynamic_layer_policy,"Only raw_complete_eligible_for_dynamic_layer may be used for the default dynamic degradation, ramp, start-stop and coupling-identification input"
+qc_layer_policy,Rows with imputation are permitted only for labelled sizing/dispatch sensitivity analysis

@@ -1,0 +1,7 @@
+metric,value
+rule_version,v1.0_offgrid_optimization_study_design_register
+operating_mode,off_grid_optimization
+user_objective_order,1 battery_degradation; 2 total_cost; 3 unmet_load; 4 PV_curtailment; 5 carbon_emissions
+critical_consistency_finding,Unmet load cannot remain only a third-priority soft objective when battery degradation is first; reliability must be a hard constraint or explicitly bounded before lexicographic optimization.
+optimization_not_yet_permitted,"No state equation, dispatch optimization or degradation calculation may be executed until reliability criterion and missing component parameters are traceably resolved."
+next_required_user_feedback,Choose the off-grid reliability criterion and its numerical threshold; then provide BESS and hydrogen-system parameter evidence.
