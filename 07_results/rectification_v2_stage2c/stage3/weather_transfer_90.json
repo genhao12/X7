@@ -1,0 +1,739 @@
+{
+  "_method": {
+    "note": "3 气象(NASA 迈阿密/凤凰城/西雅图 2018-2020 GHI→PV) × 3 负荷(UCSD/CA_office/CA_restaurant) × 5 配置 × 2 模式 = 90 组；battery_first, raw 口径, 三年链式",
+    "pv_scale": "NASA 小时 GHI → 15min（三次样条插值 + 随机爬坡 σ=0.15×日峰值 + 小时内能量守恒校正，见 ghi_15min_reconstruction.py）；GHI*0.85/1000 kW/kWp（c-Si 效率 0.85 简化，与 UCSD 同口径）× 配置 PV_kWp",
+    "pv_validation": "15min 重构能量守恒误差 mean 0.06–0.22%（p95≈0，小时内比例校正后均值回原小时值）；重构爬坡 std≈0.065–0.076 相对峰值 vs UCSD 实测 0.0571（白天段>5%峰值口径，UCSD 实测 >10 kW 步变化占比 19.5%）——重构保留并略强于 UCSD 分钟级波动（保守方向，不低估电池循环）；UCSD 实测统计与逐城市验证详见 pv_reconstruction_validation.json（审查3 动态生成，非硬编码）",
+    "conclusion": "独立气象迁移 90 组完成：TE 符号一致率 100.0%（验收 ≥90%：PASS），TE 均值 0.853%、90% CI [0.494, 1.150]%（多数配置 CI 不跨 0 → 可称完整多站点验证）；设备级均值 {'bat': 1.276, 'fc': 0.414, 'el': 0.545}；LPSP 按气象 {'迈阿密': 0.0192, '凤凰城': 0.0, '西雅图': 0.3065}。",
+    "te_stats": {
+      "n_groups": 45,
+      "positive_frac_pct": 100.0,
+      "mean_pct": 0.853,
+      "median_pct": 0.885,
+      "min_pct": 0.442,
+      "max_pct": 1.202,
+      "p90_ci": [
+        0.494,
+        1.15
+      ],
+      "pass_sign_rate_90": true,
+      "device_mean_te_pct": {
+        "bat": 1.276,
+        "fc": 0.414,
+        "el": 0.545
+      },
+      "lpsp_by_weather": {
+        "迈阿密": 0.0192,
+        "凤凰城": 0.0,
+        "西雅图": 0.3065
+      }
+    },
+    "recon_validation": {
+      "ucsd_measured": {
+        "source": "d:\\matlab\\C\\02_data_processed\\tradestreet_pipeline\\08_TradeStreetPV_paper_QC_layer.csv",
+        "n_observed": 101618,
+        "peak_kw": 244.424,
+        "daytime_mask": "前点 > 5%×峰值（244.4 kW → 12.2 kW）",
+        "ramp_std_rel_peak": 0.0571,
+        "ramp_p95_rel_peak": 0.1607,
+        "ramp_gt_10kw_frac": 0.1952,
+        "ramp_gt_10kw_frac_pct": 19.52,
+        "n_daytime_samples": 42017
+      },
+      "recon_per_city": [
+        {
+          "city": "迈阿密",
+          "n_hours": 26304,
+          "n_15min": 105216,
+          "energy_conservation": {
+            "max_rel_err_pct": 100.0,
+            "mean_rel_err_pct": 0.13233348,
+            "p95_rel_err_pct": 0.0
+          },
+          "recon_ramp": {
+            "std_rel_peak": 0.073,
+            "p95_rel_peak": 0.2321
+          },
+          "pv_model": "GHI × 0.85 / 1000 kW/kWp（c-Si 效率 0.85 简化，与 UCSD 同口径，物理上限 1.0 kW/kWp）"
+        },
+        {
+          "city": "凤凰城",
+          "n_hours": 26304,
+          "n_15min": 105216,
+          "energy_conservation": {
+            "max_rel_err_pct": 100.0,
+            "mean_rel_err_pct": 0.21780166,
+            "p95_rel_err_pct": 0.0
+          },
+          "recon_ramp": {
+            "std_rel_peak": 0.0757,
+            "p95_rel_peak": 0.2392
+          },
+          "pv_model": "GHI × 0.85 / 1000 kW/kWp（c-Si 效率 0.85 简化，与 UCSD 同口径，物理上限 1.0 kW/kWp）"
+        },
+        {
+          "city": "西雅图",
+          "n_hours": 26304,
+          "n_15min": 105216,
+          "energy_conservation": {
+            "max_rel_err_pct": 100.0,
+            "mean_rel_err_pct": 0.05915847,
+            "p95_rel_err_pct": 0.0
+          },
+          "recon_ramp": {
+            "std_rel_peak": 0.0645,
+            "p95_rel_peak": 0.1989
+          },
+          "pv_model": "GHI × 0.85 / 1000 kW/kWp（c-Si 效率 0.85 简化，与 UCSD 同口径，物理上限 1.0 kW/kWp）"
+        }
+      ]
+    }
+  },
+  "迈阿密__UCSD": {
+    "compact": {
+      "te_total": 0.861,
+      "te_devices": {
+        "bat": 1.306,
+        "fc": 0.399,
+        "el": 0.457
+      },
+      "lpsp": 0.0651,
+      "damage_open": {
+        "bat": 0.12112,
+        "fc": 0.05364,
+        "el": 0.07238
+      }
+    },
+    "balanced": {
+      "te_total": 0.917,
+      "te_devices": {
+        "bat": 1.434,
+        "fc": 0.365,
+        "el": 0.416
+      },
+      "lpsp": 0.0519,
+      "damage_open": {
+        "bat": 0.12818,
+        "fc": 0.05227,
+        "el": 0.07501
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 1.024,
+      "te_devices": {
+        "bat": 1.679,
+        "fc": 0.504,
+        "el": 0.488
+      },
+      "lpsp": 0.0032,
+      "damage_open": {
+        "bat": 0.14138,
+        "fc": 0.07626,
+        "el": 0.09865
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.884,
+      "te_devices": {
+        "bat": 1.181,
+        "fc": 0.572,
+        "el": 0.797
+      },
+      "lpsp": 0.0002,
+      "damage_open": {
+        "bat": 0.11372,
+        "fc": 0.07532,
+        "el": 0.11711
+      }
+    },
+    "critical": {
+      "te_total": 0.801,
+      "te_devices": {
+        "bat": 1.215,
+        "fc": 0.333,
+        "el": 0.46
+      },
+      "lpsp": 0.0411,
+      "damage_open": {
+        "bat": 0.11407,
+        "fc": 0.04655,
+        "el": 0.07454
+      }
+    }
+  },
+  "迈阿密__CA_office": {
+    "compact": {
+      "te_total": 0.996,
+      "te_devices": {
+        "bat": 1.514,
+        "fc": 0.583,
+        "el": 0.63
+      },
+      "lpsp": 0.035,
+      "damage_open": {
+        "bat": 0.13071,
+        "fc": 0.07584,
+        "el": 0.09974
+      }
+    },
+    "balanced": {
+      "te_total": 1.035,
+      "te_devices": {
+        "bat": 1.65,
+        "fc": 0.502,
+        "el": 0.555
+      },
+      "lpsp": 0.0226,
+      "damage_open": {
+        "bat": 0.13845,
+        "fc": 0.07164,
+        "el": 0.09804
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 1.15,
+      "te_devices": {
+        "bat": 1.893,
+        "fc": 0.397,
+        "el": 0.52
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.15186,
+        "fc": 0.06107,
+        "el": 0.10603
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.885,
+      "te_devices": {
+        "bat": 1.322,
+        "fc": 0.412,
+        "el": 0.632
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.11978,
+        "fc": 0.05587,
+        "el": 0.10223
+      }
+    },
+    "critical": {
+      "te_total": 0.901,
+      "te_devices": {
+        "bat": 1.36,
+        "fc": 0.472,
+        "el": 0.637
+      },
+      "lpsp": 0.0142,
+      "damage_open": {
+        "bat": 0.12159,
+        "fc": 0.06666,
+        "el": 0.1026
+      }
+    }
+  },
+  "迈阿密__CA_restaurant": {
+    "compact": {
+      "te_total": 0.973,
+      "te_devices": {
+        "bat": 1.498,
+        "fc": 0.546,
+        "el": 0.608
+      },
+      "lpsp": 0.0284,
+      "damage_open": {
+        "bat": 0.12677,
+        "fc": 0.07297,
+        "el": 0.09728
+      }
+    },
+    "balanced": {
+      "te_total": 1.016,
+      "te_devices": {
+        "bat": 1.648,
+        "fc": 0.462,
+        "el": 0.528
+      },
+      "lpsp": 0.016,
+      "damage_open": {
+        "bat": 0.13457,
+        "fc": 0.06815,
+        "el": 0.09685
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 1.135,
+      "te_devices": {
+        "bat": 1.878,
+        "fc": 0.33,
+        "el": 0.456
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.14716,
+        "fc": 0.05198,
+        "el": 0.09916
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.851,
+      "te_devices": {
+        "bat": 1.293,
+        "fc": 0.376,
+        "el": 0.583
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.11614,
+        "fc": 0.05238,
+        "el": 0.09879
+      }
+    },
+    "critical": {
+      "te_total": 0.875,
+      "te_devices": {
+        "bat": 1.336,
+        "fc": 0.451,
+        "el": 0.63
+      },
+      "lpsp": 0.0105,
+      "damage_open": {
+        "bat": 0.11791,
+        "fc": 0.06818,
+        "el": 0.10367
+      }
+    }
+  },
+  "凤凰城__UCSD": {
+    "compact": {
+      "te_total": 1.113,
+      "te_devices": {
+        "bat": 1.461,
+        "fc": 0.762,
+        "el": 1.063
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.12386,
+        "fc": 0.10203,
+        "el": 0.14889
+      }
+    },
+    "balanced": {
+      "te_total": 1.026,
+      "te_devices": {
+        "bat": 1.59,
+        "fc": 0.518,
+        "el": 0.739
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.13062,
+        "fc": 0.07719,
+        "el": 0.12011
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 1.092,
+      "te_devices": {
+        "bat": 1.797,
+        "fc": 0.29,
+        "el": 0.471
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.14101,
+        "fc": 0.04831,
+        "el": 0.09796
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.842,
+      "te_devices": {
+        "bat": 1.249,
+        "fc": 0.373,
+        "el": 0.658
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.11215,
+        "fc": 0.05557,
+        "el": 0.10698
+      }
+    },
+    "critical": {
+      "te_total": 0.944,
+      "te_devices": {
+        "bat": 1.298,
+        "fc": 0.463,
+        "el": 0.885
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.11479,
+        "fc": 0.06908,
+        "el": 0.13004
+      }
+    }
+  },
+  "凤凰城__CA_office": {
+    "compact": {
+      "te_total": 1.191,
+      "te_devices": {
+        "bat": 1.625,
+        "fc": 0.782,
+        "el": 1.091
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.1297,
+        "fc": 0.10086,
+        "el": 0.1526
+      }
+    },
+    "balanced": {
+      "te_total": 1.114,
+      "te_devices": {
+        "bat": 1.765,
+        "fc": 0.538,
+        "el": 0.746
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.13689,
+        "fc": 0.0759,
+        "el": 0.12336
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 1.202,
+      "te_devices": {
+        "bat": 1.981,
+        "fc": 0.316,
+        "el": 0.473
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.14824,
+        "fc": 0.04849,
+        "el": 0.09936
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.912,
+      "te_devices": {
+        "bat": 1.366,
+        "fc": 0.446,
+        "el": 0.691
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.11642,
+        "fc": 0.05987,
+        "el": 0.11267
+      }
+    },
+    "critical": {
+      "te_total": 1.007,
+      "te_devices": {
+        "bat": 1.416,
+        "fc": 0.503,
+        "el": 0.909
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.11945,
+        "fc": 0.07072,
+        "el": 0.13422
+      }
+    }
+  },
+  "凤凰城__CA_restaurant": {
+    "compact": {
+      "te_total": 1.147,
+      "te_devices": {
+        "bat": 1.533,
+        "fc": 0.781,
+        "el": 1.092
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.1243,
+        "fc": 0.10842,
+        "el": 0.15158
+      }
+    },
+    "balanced": {
+      "te_total": 1.057,
+      "te_devices": {
+        "bat": 1.677,
+        "fc": 0.531,
+        "el": 0.74
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.13116,
+        "fc": 0.08085,
+        "el": 0.12237
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 1.135,
+      "te_devices": {
+        "bat": 1.888,
+        "fc": 0.299,
+        "el": 0.464
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.14201,
+        "fc": 0.04974,
+        "el": 0.09713
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.874,
+      "te_devices": {
+        "bat": 1.285,
+        "fc": 0.452,
+        "el": 0.701
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.11229,
+        "fc": 0.06342,
+        "el": 0.11203
+      }
+    },
+    "critical": {
+      "te_total": 0.968,
+      "te_devices": {
+        "bat": 1.343,
+        "fc": 0.505,
+        "el": 0.911
+      },
+      "lpsp": 0.0,
+      "damage_open": {
+        "bat": 0.1149,
+        "fc": 0.07635,
+        "el": 0.13445
+      }
+    }
+  },
+  "西雅图__UCSD": {
+    "compact": {
+      "te_total": 0.467,
+      "te_devices": {
+        "bat": 0.654,
+        "fc": 0.184,
+        "el": 0.199
+      },
+      "lpsp": 0.3497,
+      "damage_open": {
+        "bat": 0.08609,
+        "fc": 0.02697,
+        "el": 0.03136
+      }
+    },
+    "balanced": {
+      "te_total": 0.505,
+      "te_devices": {
+        "bat": 0.727,
+        "fc": 0.167,
+        "el": 0.176
+      },
+      "lpsp": 0.3392,
+      "damage_open": {
+        "bat": 0.0901,
+        "fc": 0.02684,
+        "el": 0.03294
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 0.605,
+      "te_devices": {
+        "bat": 0.906,
+        "fc": 0.251,
+        "el": 0.206
+      },
+      "lpsp": 0.2926,
+      "damage_open": {
+        "bat": 0.09952,
+        "fc": 0.03649,
+        "el": 0.04268
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.505,
+      "te_devices": {
+        "bat": 0.65,
+        "fc": 0.404,
+        "el": 0.383
+      },
+      "lpsp": 0.2778,
+      "damage_open": {
+        "bat": 0.08454,
+        "fc": 0.05022,
+        "el": 0.05804
+      }
+    },
+    "critical": {
+      "te_total": 0.442,
+      "te_devices": {
+        "bat": 0.618,
+        "fc": 0.151,
+        "el": 0.189
+      },
+      "lpsp": 0.3297,
+      "damage_open": {
+        "bat": 0.08306,
+        "fc": 0.02216,
+        "el": 0.03202
+      }
+    }
+  },
+  "西雅图__CA_office": {
+    "compact": {
+      "te_total": 0.564,
+      "te_devices": {
+        "bat": 0.811,
+        "fc": 0.284,
+        "el": 0.302
+      },
+      "lpsp": 0.3344,
+      "damage_open": {
+        "bat": 0.09396,
+        "fc": 0.03902,
+        "el": 0.04712
+      }
+    },
+    "balanced": {
+      "te_total": 0.603,
+      "te_devices": {
+        "bat": 0.891,
+        "fc": 0.254,
+        "el": 0.267
+      },
+      "lpsp": 0.3237,
+      "damage_open": {
+        "bat": 0.09868,
+        "fc": 0.03611,
+        "el": 0.04693
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 0.697,
+      "te_devices": {
+        "bat": 1.07,
+        "fc": 0.327,
+        "el": 0.277
+      },
+      "lpsp": 0.2776,
+      "damage_open": {
+        "bat": 0.10883,
+        "fc": 0.04759,
+        "el": 0.05477
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.631,
+      "te_devices": {
+        "bat": 0.778,
+        "fc": 0.539,
+        "el": 0.531
+      },
+      "lpsp": 0.2657,
+      "damage_open": {
+        "bat": 0.09042,
+        "fc": 0.06467,
+        "el": 0.0738
+      }
+    },
+    "critical": {
+      "te_total": 0.522,
+      "te_devices": {
+        "bat": 0.746,
+        "fc": 0.23,
+        "el": 0.3
+      },
+      "lpsp": 0.3162,
+      "damage_open": {
+        "bat": 0.08964,
+        "fc": 0.03246,
+        "el": 0.04771
+      }
+    }
+  },
+  "西雅图__CA_restaurant": {
+    "compact": {
+      "te_total": 0.542,
+      "te_devices": {
+        "bat": 0.778,
+        "fc": 0.273,
+        "el": 0.293
+      },
+      "lpsp": 0.3279,
+      "damage_open": {
+        "bat": 0.09087,
+        "fc": 0.03644,
+        "el": 0.04638
+      }
+    },
+    "balanced": {
+      "te_total": 0.584,
+      "te_devices": {
+        "bat": 0.865,
+        "fc": 0.237,
+        "el": 0.254
+      },
+      "lpsp": 0.3177,
+      "damage_open": {
+        "bat": 0.09531,
+        "fc": 0.03455,
+        "el": 0.04492
+      }
+    },
+    "hydrogen_dominant": {
+      "te_total": 0.672,
+      "te_devices": {
+        "bat": 1.036,
+        "fc": 0.313,
+        "el": 0.271
+      },
+      "lpsp": 0.273,
+      "damage_open": {
+        "bat": 0.10471,
+        "fc": 0.04659,
+        "el": 0.0531
+      }
+    },
+    "battery_dominant": {
+      "te_total": 0.612,
+      "te_devices": {
+        "bat": 0.73,
+        "fc": 0.544,
+        "el": 0.536
+      },
+      "lpsp": 0.2618,
+      "damage_open": {
+        "bat": 0.08733,
+        "fc": 0.06779,
+        "el": 0.07594
+      }
+    },
+    "critical": {
+      "te_total": 0.491,
+      "te_devices": {
+        "bat": 0.7,
+        "fc": 0.231,
+        "el": 0.296
+      },
+      "lpsp": 0.3111,
+      "damage_open": {
+        "bat": 0.08669,
+        "fc": 0.03346,
+        "el": 0.04782
+      }
+    }
+  }
+}

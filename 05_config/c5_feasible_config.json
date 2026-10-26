@@ -1,0 +1,69 @@
+{
+  "config_id": "C5_feasible",
+  "config_type": "feasible",
+  "description": "C5可行配置 — LPSP≤1%修正配置(2026-08-02)，替代C1作为基线",
+  "source": "search_feasible_config2.py: 3x-H2-1t, LPSP=0.23%",
+  "capacity": {
+    "PV_kWp": 300.0,
+    "BAT_kWh": 800.0,
+    "PEMFC_kW": 100.0,
+    "PEMEL_kW": 100.0,
+    "H2_kg": 1000.0
+  },
+  "capacity_note": "相对C1(120/135/37.5/35/25)的2.5-40x放大; H2储罐放大40x实现季节储能",
+  "capacity_ranges_source": {
+    "PV_kWp": [90, 300],
+    "BAT_kWh": [90, 800],
+    "PEMFC_kW": [30, 100],
+    "PEMEL_kW": [25, 100],
+    "H2_kg": [10, 1000]
+  },
+  "ems_parameters": {
+    "start_stop_threshold_fraction": 0.275,
+    "minimum_run_time": 75,
+    "critical_load_fraction": 0.5
+  },
+  "ems_strategy": "battery_first",
+  "control_layer": "L0_L1_L2_L3",
+  "topology": {
+    "dc_bus": "single_dc_bus",
+    "converter_isolation": "non_isolated_dc_dc",
+    "control_mode": "dc_bus_droop_power_tracking",
+    "auxiliary_power_accounting": "explicit_P_aux",
+    "P_aux_fraction_of_installed_power": 0.02
+  },
+  "time_resolution": {
+    "operational_degradation_min": 15,
+    "timestep": "15min"
+  },
+  "battery_constraints": {
+    "soh_eol": 0.8,
+    "soc_min": 0.15,
+    "soc_max": 0.95,
+    "soc_initial": 0.50,
+    "note": "SOC上下限来自微电网通用约束(0.15-0.95)，初始SOC=0.50为MVP默认"
+  },
+  "hydrogen_constraints": {
+    "m_min_fraction": 0.1,
+    "m_max_fraction": 1.0,
+    "leakage_rate_per_day": 0.0005,
+    "m_initial_fraction": 1.0,
+    "note": "初始储氢量取100%(满罐), 确保冬季有足够H2储备"
+  },
+  "minimum_stable_load": {
+    "PEMFC": 0.15,
+    "PEMEL": 0.15
+  },
+  "acceptance_thresholds": {
+    "power_residual_max": 1e-06,
+    "h2_mass_residual_max": 1e-06,
+    "lpsp_max": 0.01,
+    "critical_load_min": 0.99
+  },
+  "lpsp_verification": {
+    "lpsp_pct": 0.23,
+    "meets_constraint": true,
+    "verification_date": "2026-08-02",
+    "verification_script": "search_feasible_config2.py"
+  }
+}

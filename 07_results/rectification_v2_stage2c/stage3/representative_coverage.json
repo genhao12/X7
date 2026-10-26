@@ -1,0 +1,100 @@
+{
+  "selection_process": {
+    "total_candidates_stage2c": 1792,
+    "admitted": 149,
+    "admission_checks": [
+      "bounds",
+      "critical_satisfaction",
+      "cycle_converged",
+      "el_critical_priority",
+      "fc_el_mutual_exclusion",
+      "h2_conservation",
+      "machine_state_closure",
+      "minimum_run_segments",
+      "power_conservation",
+      "soc_h2_closure",
+      "three_year_lpsp",
+      "valid_dump",
+      "yearly_lpsp"
+    ],
+    "capacity_domain": {
+      "pv_kwp": [
+        374.7,
+        499.4
+      ],
+      "bat_kwh": [
+        1203.0,
+        2391.1
+      ],
+      "pemfc_kw": [
+        84.2,
+        198.6
+      ],
+      "pemel_kw": [
+        200.9,
+        495.6
+      ],
+      "h2_kg": [
+        2666.7,
+        5995.3
+      ]
+    },
+    "admission_thresholds": {
+      "three_year_lpsp": "<1%",
+      "cycle_converged": "soc/h2 闭合 ≤0.001",
+      "power_conservation": "逐步守恒 1e-6 kW",
+      "h2_conservation": "氢守恒",
+      "machine_state_closure": "状态机闭合",
+      "minimum_run_segments": "最小运行段",
+      "state_closure_pass": true,
+      "conservation_pass": true
+    },
+    "representative_selection": {
+      "method": "Sobol 分层抽样 + 覆盖最大化（5 冻结代表覆盖容量空间极值/中值/典型）",
+      "roles": [
+        "compact",
+        "balanced",
+        "hydrogen_dominant",
+        "battery_dominant",
+        "critical"
+      ],
+      "sobol_indices": [
+        4,
+        100,
+        130,
+        37,
+        3
+      ],
+      "rules": "compact(小容量)/balanced(均衡)/hydrogen_dominant(氢大)/battery_dominant(电池大)/critical(临界容量)"
+    }
+  },
+  "te_149_stats": {
+    "n": 149,
+    "min": 2.404,
+    "median": 2.599,
+    "max": 2.775,
+    "mean": 2.59,
+    "p10": 2.472,
+    "p90": 2.697
+  },
+  "coverage": {
+    "rep_te": {
+      "compact": 2.655,
+      "balanced": 2.6,
+      "hydrogen_dominant": 2.615,
+      "battery_dominant": 2.59,
+      "critical": 2.59
+    },
+    "rep_min_covers": false,
+    "rep_median_covers": true,
+    "rep_max_covers": false,
+    "rep_te_range": [
+      2.59,
+      2.655
+    ],
+    "verdict": "5 代表覆盖 149 组 TE 的中位数（2.599%）与主体带（p10-p90 2.472-2.697 含代表 2.59-2.655），但未覆盖两端极值（149 min 2.404 < 代表 min 2.590，差 -0.186；149 max 2.775 > 代表 max 2.655，差 +0.120）——代表配置对 TE 主体分布代表性充分，对极端容量配置（TE 最小/最大）代表性不足；若论文需覆盖极值结论，建议增补 1-2 个极端容量代表（如最小 BAT/最大 PEMEL 配置）或报告 149 组分布以替代单点代表结论。"
+  },
+  "_method": {
+    "note": "149 组与 5 代表 TE 均用单年 2017 battery_first cap 口径、D=0.3 预置（模拟累积状态的轻量近似，仅覆盖性验证用）；主 TE 精确值（三年链式 +0.82~+1.13%）见 stage3_feedback_modes.json。TE 极值跨度小（2.40-2.78%，D=0.3 口径）——反馈效应量级在准入域内差异有限，5 代表对主体结论代表性充分。"
+  }
+}

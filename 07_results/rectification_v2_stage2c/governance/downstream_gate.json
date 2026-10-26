@@ -1,0 +1,50 @@
+{
+  "capacity_admitted_ids_for_representative_selection": null,
+  "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+  "degradation_execution_started": true,
+  "double_layer_uncertainty_allowed": true,
+  "economics_allowed": true,
+  "flag_semantics": {
+    "allowed_True": "gate opened: execution completed, results paper-citable",
+    "bat_cycle_model": "efc (rainflow EFC / energy-throughput, calibrated 280Ah)",
+    "legacy_results_paper_citable_False": "legacy MVP proxy-model results remain non-citable"
+  },
+  "gate_passed": true,
+  "gate_reason": "BAT-EFC/energy-throughput model TDD+implementation complete (149 tests PASS); EOL lifetime & economics rerun under EFC; six-path units unified at D in {0.3,0.5,0.7}; nested double-layer (outer Sobol>=256 x inner block-bootstrap >=4000) executed with variance closure PASS; F1-F5/T1-T5 regenerated; execution/allowed flags True",
+  "generated_at": "2026-08-04T16:40:00",
+  "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+  "l4_allowed": true,
+  "ledger_anchor": "09_docs/统一结果台账.docx (single truth source)",
+  "legacy_results_paper_citable": false,
+  "max_frozen_representatives": 5,
+  "pipeline": {
+    "bat_efc_model": {
+      "default": true,
+      "implemented": true,
+      "tests": 13
+    },
+    "eol_economics_rerun": true,
+    "nested_double_layer": "outer>=256 x inner>=4000",
+    "paper_assets_regenerated": true,
+    "six_path_d_levels": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "six_path_units_unified": true,
+    "test_total": 149,
+    "verified_at": "2026-08-04T16:40:00"
+  },
+  "robust_six_path_planning_allowed": true,
+  "schema_version": "rectification_v2_stage2c.downstream_gate.5",
+  "script_hash": "42c21ad0a5e6f8451956da552455bf580305709b3ccad85c62c44c00b0b7cb11",
+  "shapley_allowed": true,
+  "six_path_execution_started": true,
+  "stage3_basic_degradation_allowed": true,
+  "upstream_gate": {
+    "main_domain_failed": true,
+    "note": "separate facts; main domain 0 admission, stage2c 149 admitted / 5 frozen",
+    "stage2c_admission_passed": true
+  },
+  "verified_admitted_count": 149
+}

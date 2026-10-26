@@ -1,0 +1,16 @@
+{
+  "capacity_admitted_ids_for_representative_selection": [],
+  "degradation_execution_started": false,
+  "double_layer_uncertainty_allowed": false,
+  "economics_allowed": false,
+  "gate_reason": "capacity_admission_not_obtained_downstream_frozen",
+  "l4_allowed": false,
+  "legacy_results_paper_citable": false,
+  "max_frozen_representatives": 5,
+  "robust_six_path_planning_allowed": false,
+  "schema_version": "rectification_v2_stage2b.downstream_gate.1",
+  "shapley_allowed": false,
+  "six_path_execution_started": false,
+  "stage3_basic_degradation_allowed": false,
+  "verified_admitted_count": 0
+}

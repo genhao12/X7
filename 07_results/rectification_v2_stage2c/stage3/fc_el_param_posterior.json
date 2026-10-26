@@ -1,0 +1,165 @@
+{
+  "compact": {
+    "fc_annual_dD": {
+      "nominal": 0.1042,
+      "posterior_band": [
+        0.0521,
+        0.2083
+      ]
+    },
+    "fc_lifetime_y": {
+      "nominal": 9.68,
+      "posterior_band": [
+        4.8,
+        19.2
+      ]
+    },
+    "el_annual_dD": {
+      "nominal": 0.1609,
+      "posterior_band": [
+        0.1609,
+        0.4826
+      ]
+    },
+    "el_lifetime_y": {
+      "nominal": 6.19,
+      "posterior_band": [
+        2.07,
+        6.22
+      ]
+    }
+  },
+  "balanced": {
+    "fc_annual_dD": {
+      "nominal": 0.0846,
+      "posterior_band": [
+        0.0423,
+        0.1692
+      ]
+    },
+    "fc_lifetime_y": {
+      "nominal": 11.69,
+      "posterior_band": [
+        5.91,
+        23.65
+      ]
+    },
+    "el_annual_dD": {
+      "nominal": 0.1387,
+      "posterior_band": [
+        0.1387,
+        0.4162
+      ]
+    },
+    "el_lifetime_y": {
+      "nominal": 7.3,
+      "posterior_band": [
+        2.4,
+        7.21
+      ]
+    }
+  },
+  "hydrogen_dominant": {
+    "fc_annual_dD": {
+      "nominal": 0.0662,
+      "posterior_band": [
+        0.0331,
+        0.1324
+      ]
+    },
+    "fc_lifetime_y": {
+      "nominal": 15.36,
+      "posterior_band": [
+        7.55,
+        30.2
+      ]
+    },
+    "el_annual_dD": {
+      "nominal": 0.1172,
+      "posterior_band": [
+        0.1172,
+        0.3515
+      ]
+    },
+    "el_lifetime_y": {
+      "nominal": 8.4,
+      "posterior_band": [
+        2.84,
+        8.53
+      ]
+    }
+  },
+  "battery_dominant": {
+    "fc_annual_dD": {
+      "nominal": 0.0665,
+      "posterior_band": [
+        0.0332,
+        0.133
+      ]
+    },
+    "fc_lifetime_y": {
+      "nominal": 15.36,
+      "posterior_band": [
+        7.52,
+        30.08
+      ]
+    },
+    "el_annual_dD": {
+      "nominal": 0.1246,
+      "posterior_band": [
+        0.1246,
+        0.3738
+      ]
+    },
+    "el_lifetime_y": {
+      "nominal": 7.68,
+      "posterior_band": [
+        2.67,
+        8.02
+      ]
+    }
+  },
+  "critical": {
+    "fc_annual_dD": {
+      "nominal": 0.0661,
+      "posterior_band": [
+        0.033,
+        0.1322
+      ]
+    },
+    "fc_lifetime_y": {
+      "nominal": 15.37,
+      "posterior_band": [
+        7.56,
+        30.26
+      ]
+    },
+    "el_annual_dD": {
+      "nominal": 0.1398,
+      "posterior_band": [
+        0.1398,
+        0.4194
+      ]
+    },
+    "el_lifetime_y": {
+      "nominal": 7.28,
+      "posterior_band": [
+        2.38,
+        7.15
+      ]
+    }
+  },
+  "_method": {
+    "fc_rate_band": [
+      0.5,
+      2.0
+    ],
+    "el_rate_band": [
+      1.0,
+      3.0
+    ],
+    "evidence": "L21: FC2 ripple ratio 1.92x, dynamic eta degradation 1.75-8.74 %/1000h; EL within Buttler&Spliethoff 2018 range (1.50-5.01 %/yr)",
+    "conclusion": "FC/EL 寿命为参数后验区间下的仿真产物，区间覆盖工况/文献不确定度；任何单一寿命数值（如 FC 9.7y）均不作设备真实寿命或工程结论（L3/L8/L21）",
+    "note": "后验带为保守因子带（非统计后验分布）；误差传播为区间算术"
+  }
+}

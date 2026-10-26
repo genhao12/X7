@@ -1,0 +1,15 @@
+{
+  "source": "PEMFC真实动态工况性能衰减数据 (999h)",
+  "eff_bol": 0.5297289664308997,
+  "eff_degradation_per_hour": 7.823575952042942e-05,
+  "eff_degradation_per_year": 0.6853452533989617,
+  "eol_eff_drop": 0.1,
+  "eol_time_hours": 1278.1878850922049,
+  "eol_time_years": 0.1459118590287905,
+  "hfr_bol": 58.56,
+  "hfr_growth_rate_per_s": 0.005120553831463357,
+  "evidence_grade_original": "A",
+  "evidence_grade_migrated": "B",
+  "migration_method": "current_density_normalization",
+  "uncertainty_range": "±20%"
+}

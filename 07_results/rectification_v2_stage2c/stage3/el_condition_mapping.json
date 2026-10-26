@@ -1,0 +1,371 @@
+{
+  "_note": "系统级模型年退化率 1.17-1.61 %/yr（degradation_summary）仅作相对指数参考，本文件不输出 EL 绝对寿命精度",
+  "load_efficiency_fit": {
+    "n_fit": 8226,
+    "eff_kwhkg_vs_load_frac": {
+      "poly2": [
+        -5.9294,
+        22.5985,
+        41.3259
+      ]
+    },
+    "eff_range_kwhkg": [
+      30.0,
+      79.99
+    ],
+    "voltage_vs_load_frac": {
+      "linear": [
+        66.43,
+        318.73
+      ]
+    },
+    "note": "负载率=电流/3000A；效率随负载率单调上升（满载高效），二次拟合"
+  },
+  "bot_eot_polarization": [
+    {
+      "sheet": "0.4 Gravure",
+      "n_bot": 19,
+      "n_eot": 19,
+      "mean_dV_V": 0.0156,
+      "max_dV_V": 0.0211,
+      "dV_at_half_load_V": 0.015,
+      "pct_dV_at_half_load": 0.847
+    },
+    {
+      "sheet": "0.2 Gravure",
+      "n_bot": 19,
+      "n_eot": 19,
+      "mean_dV_V": 0.0668,
+      "max_dV_V": 0.0793,
+      "dV_at_half_load_V": 0.0734,
+      "pct_dV_at_half_load": 4.021
+    },
+    {
+      "sheet": "0.4 Spray",
+      "n_bot": 19,
+      "n_eot": 19,
+      "mean_dV_V": 0.0075,
+      "max_dV_V": 0.0156,
+      "dV_at_half_load_V": 0.0096,
+      "pct_dV_at_half_load": 0.538
+    },
+    {
+      "sheet": "0.2 Spray",
+      "n_bot": 19,
+      "n_eot": 19,
+      "mean_dV_V": 0.0315,
+      "max_dV_V": 0.0358,
+      "dV_at_half_load_V": 0.0346,
+      "pct_dV_at_half_load": 1.896
+    }
+  ],
+  "four_component_decomposition": {
+    "wavePacWave-Noacc_4-200.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 86.2029,
+      "d_temp": 0.4862,
+      "d_startstop": 0.0,
+      "d_ramp": 42.7273,
+      "d_total": 129.4165,
+      "frac": {
+        "steady": 66.61,
+        "temp": 0.38,
+        "startstop": 0.0,
+        "ramp": 33.02
+      },
+      "n_steps": 1501,
+      "n_starts": 0
+    },
+    "wavePacWave-Noacc_4-400.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 87.5042,
+      "d_temp": 3.664,
+      "d_startstop": 0.0,
+      "d_ramp": 42.7467,
+      "d_total": 133.9149,
+      "frac": {
+        "steady": 65.34,
+        "temp": 2.74,
+        "startstop": 0.0,
+        "ramp": 31.92
+      },
+      "n_steps": 1501,
+      "n_starts": 0
+    },
+    "wavePacWave-Noacc_8-200.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 57.6345,
+      "d_temp": 1.1049,
+      "d_startstop": 0.0,
+      "d_ramp": 19.5411,
+      "d_total": 78.2805,
+      "frac": {
+        "steady": 73.63,
+        "temp": 1.41,
+        "startstop": 0.0,
+        "ramp": 24.96
+      },
+      "n_steps": 1501,
+      "n_starts": 0
+    },
+    "wavePacWave-Noacc_8-400.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 57.3236,
+      "d_temp": 4.5271,
+      "d_startstop": 0.0,
+      "d_ramp": 22.9886,
+      "d_total": 84.8393,
+      "frac": {
+        "steady": 67.57,
+        "temp": 5.34,
+        "startstop": 0.0,
+        "ramp": 27.1
+      },
+      "n_steps": 1500,
+      "n_starts": 0
+    },
+    "wavePacWave-acc_4-200.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 182.0385,
+      "d_temp": 1.926,
+      "d_startstop": 0.0,
+      "d_ramp": 16.3004,
+      "d_total": 200.2649,
+      "frac": {
+        "steady": 90.9,
+        "temp": 0.96,
+        "startstop": 0.0,
+        "ramp": 8.14
+      },
+      "n_steps": 1501,
+      "n_starts": 0
+    },
+    "wavePacWave-acc_4-400.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 182.006,
+      "d_temp": 3.8269,
+      "d_startstop": 0.0,
+      "d_ramp": 16.3389,
+      "d_total": 202.1719,
+      "frac": {
+        "steady": 90.03,
+        "temp": 1.89,
+        "startstop": 0.0,
+        "ramp": 8.08
+      },
+      "n_steps": 1501,
+      "n_starts": 0
+    },
+    "wavePacWave-acc_8-200.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 102.6545,
+      "d_temp": 1.7458,
+      "d_startstop": 0.0,
+      "d_ramp": 12.8226,
+      "d_total": 117.2229,
+      "frac": {
+        "steady": 87.57,
+        "temp": 1.49,
+        "startstop": 0.0,
+        "ramp": 10.94
+      },
+      "n_steps": 1501,
+      "n_starts": 0
+    },
+    "wavePacWave-acc_8-400.csv": {
+      "formulas": {
+        "d_steady": "Σ (I/I_rated)·Δt/T_ref",
+        "d_temp": "Σ max(0,(T-25)/25)²·Δt/T_ref",
+        "d_startstop": "Σ 1{启停}·(每次=1 等效小时)",
+        "d_ramp": "Σ |ΔI|/I_rated·Δt/T_ref",
+        "weights": {
+          "steady": 1.0,
+          "temp": 1.0,
+          "startstop": 1.0,
+          "ramp": 1.0
+        },
+        "I_rated_A": 3000.0,
+        "T_ref_h": 1.0,
+        "dt_h": 0.25
+      },
+      "d_steady": 105.3578,
+      "d_temp": 4.4044,
+      "d_startstop": 0.0,
+      "d_ramp": 25.4539,
+      "d_total": 135.2161,
+      "frac": {
+        "steady": 77.92,
+        "temp": 3.26,
+        "startstop": 0.0,
+        "ramp": 18.82
+      },
+      "n_steps": 1500,
+      "n_starts": 0
+    }
+  },
+  "relative_damage_index": {
+    "normalized_to_median": {
+      "wavePacWave-Noacc_4-200.csv": 0.983,
+      "wavePacWave-Noacc_4-400.csv": 1.017,
+      "wavePacWave-Noacc_8-200.csv": 0.595,
+      "wavePacWave-Noacc_8-400.csv": 0.644,
+      "wavePacWave-acc_4-200.csv": 1.521,
+      "wavePacWave-acc_4-400.csv": 1.535,
+      "wavePacWave-acc_8-200.csv": 0.89,
+      "wavePacWave-acc_8-400.csv": 1.027
+    },
+    "median_total": 131.6657,
+    "range_total": [
+      78.2805,
+      202.1719
+    ]
+  },
+  "_summary": {
+    "conclusion": "EL 工况映射完成：① 4 项损伤分解（稳态负载/温度/启停/爬坡，15min 轨迹累计，无量纲化公式与权重见各场景 formulas 字段）——稳态负载为主导项（占比 66.6-90.9%），启停/爬坡占比随场景动态性变化；② 负载-效率二次拟合：Efficiency(kWh/kg) 随负载率单调上升（满载高效），可校验系统级效率映射；③ BOT/EOT 极化差分给出归一化循环损伤（ΔV 0.5-4.0%，方向验证，映射方法见 bot_eot_polarization）；④ 无完整寿命标签 → 输出相对损伤指数（中位数归一化 0.595-1.535），**不再报告 EL 绝对寿命精度**（L23/L27/L31 延续）；⑤ 留一场景验证：相对指数对基准稳定（LOO 平均相对误差 1.71%）。注：动态实验为波浪能驱动（电流 300-3000A），与系统级 35kW 口径不同，仅作相对/方向验证。"
+  },
+  "leave_one_out_validation": {
+    "loo_results": {
+      "wavePacWave-Noacc_4-200.csv": {
+        "predicted_index_loo": 0.966,
+        "actual_index": 0.983,
+        "rel_err_pct": 1.69
+      },
+      "wavePacWave-Noacc_4-400.csv": {
+        "predicted_index_loo": 1.035,
+        "actual_index": 1.017,
+        "rel_err_pct": 1.75
+      },
+      "wavePacWave-Noacc_8-200.csv": {
+        "predicted_index_loo": 0.585,
+        "actual_index": 0.595,
+        "rel_err_pct": 1.76
+      },
+      "wavePacWave-Noacc_8-400.csv": {
+        "predicted_index_loo": 0.634,
+        "actual_index": 0.644,
+        "rel_err_pct": 1.63
+      },
+      "wavePacWave-acc_4-200.csv": {
+        "predicted_index_loo": 1.547,
+        "actual_index": 1.521,
+        "rel_err_pct": 1.74
+      },
+      "wavePacWave-acc_4-400.csv": {
+        "predicted_index_loo": 1.562,
+        "actual_index": 1.535,
+        "rel_err_pct": 1.77
+      },
+      "wavePacWave-acc_8-200.csv": {
+        "predicted_index_loo": 0.875,
+        "actual_index": 0.89,
+        "rel_err_pct": 1.65
+      },
+      "wavePacWave-acc_8-400.csv": {
+        "predicted_index_loo": 1.045,
+        "actual_index": 1.027,
+        "rel_err_pct": 1.73
+      }
+    },
+    "mean_rel_err_pct": 1.71,
+    "max_rel_err_pct": 1.77,
+    "verdict": "相对损伤指数对中位数基准稳定"
+  }
+}

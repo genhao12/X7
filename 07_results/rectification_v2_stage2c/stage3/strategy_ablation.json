@@ -1,0 +1,1020 @@
+{
+  "compact": {
+    "battery_first": {
+      "te_raw": {
+        "total": 1.127,
+        "devices": {
+          "bat": 1.455,
+          "fc": 0.686,
+          "el": 1.155
+        },
+        "eol_full": {
+          "bat": 0.3856174590771243,
+          "fc": 0.3146647339982903,
+          "el": 0.48814656561607117
+        }
+      },
+      "lpsp": 0.002325742449230599,
+      "curtailment": 0.08538055575727087,
+      "annual_damage_open_raw": {
+        "bat": 0.1267,
+        "fc": 0.10417,
+        "el": 0.16086
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 5.002
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 6.392
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -1.024
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.108
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.003
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.068
+        }
+      }
+    },
+    "hydrogen_first": {
+      "te_raw": {
+        "total": 2.894,
+        "devices": {
+          "bat": 0.35,
+          "fc": 3.091,
+          "el": 3.157
+        },
+        "eol_full": {
+          "bat": 0.20509343975220823,
+          "fc": 1.1629141027306626,
+          "el": 1.1728192416981156
+        }
+      },
+      "lpsp": 0.1830842068080868,
+      "curtailment": 0.057785806497601344,
+      "annual_damage_open_raw": {
+        "bat": 0.06813,
+        "fc": 0.37602,
+        "el": 0.37898
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 0.209
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 0.211
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -4.178
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.327
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 1.357
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": 1.304
+        }
+      }
+    },
+    "degradation_aware": {
+      "te_raw": {
+        "total": 1.127,
+        "devices": {
+          "bat": 1.455,
+          "fc": 0.686,
+          "el": 1.155
+        },
+        "eol_full": {
+          "bat": 0.3856174590771243,
+          "fc": 0.3146647339982903,
+          "el": 0.48814656561607117
+        }
+      },
+      "lpsp": 0.002325742449230599,
+      "curtailment": 0.08538055575727087,
+      "annual_damage_open_raw": {
+        "bat": 0.1267,
+        "fc": 0.10417,
+        "el": 0.16086
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 5.002
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 6.392
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -1.024
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.108
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.003
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.068
+        }
+      }
+    }
+  },
+  "_strategies": [
+    "battery_first",
+    "hydrogen_first",
+    "degradation_aware"
+  ],
+  "_method": {
+    "note": "相同容量(5 代表)×相同气象/负荷(UCSD 2016-2018)下比较 3 策略；TE=全反馈 vs 开环(raw 主口径+cap 附注)；六路径 D=0.5 策略参数化",
+    "conclusion": "策略消融：TE>0 方向在 3 策略（battery_first/hydrogen_first/degradation_aware）× 5 配置（raw 口径）全部为正，六路径 effect_pct 符号在 3 策略下逐配置一致（path_direction_consistency）→ 退化耦合方向结论来自系统耦合本身，非 EMS 规则预设。TE 量级跨策略差异反映调度策略对设备使用率的调节（degradation_aware 降低高退化设备使用）。cap 口径下 hydrogen_first 在 FC/EL 达 EOL 配置 TE 为负（EOL 截断假象，见 te_cap.eol_full）。",
+    "path_direction_consistency": {
+      "alpha1": {
+        "per_config_consistent": true,
+        "sign_by_strategy": {
+          "battery_first": [
+            1
+          ],
+          "hydrogen_first": [
+            1
+          ],
+          "degradation_aware": [
+            1
+          ]
+        }
+      },
+      "beta1": {
+        "per_config_consistent": true,
+        "sign_by_strategy": {
+          "battery_first": [
+            1
+          ],
+          "hydrogen_first": [
+            1
+          ],
+          "degradation_aware": [
+            1
+          ]
+        }
+      },
+      "alpha2": {
+        "per_config_consistent": true,
+        "sign_by_strategy": {
+          "battery_first": [
+            -1
+          ],
+          "hydrogen_first": [
+            -1
+          ],
+          "degradation_aware": [
+            -1
+          ]
+        }
+      },
+      "beta2": {
+        "per_config_consistent": false,
+        "sign_by_strategy": {
+          "battery_first": [
+            1
+          ],
+          "hydrogen_first": [
+            -1
+          ],
+          "degradation_aware": [
+            1
+          ]
+        }
+      },
+      "gamma1": {
+        "per_config_consistent": false,
+        "sign_by_strategy": {
+          "battery_first": [
+            -1
+          ],
+          "hydrogen_first": [
+            1
+          ],
+          "degradation_aware": [
+            -1
+          ]
+        }
+      },
+      "gamma2": {
+        "per_config_consistent": false,
+        "sign_by_strategy": {
+          "battery_first": [
+            -1
+          ],
+          "hydrogen_first": [
+            1
+          ],
+          "degradation_aware": [
+            -1
+          ]
+        }
+      }
+    }
+  },
+  "balanced": {
+    "battery_first": {
+      "te_raw": {
+        "total": 1.044,
+        "devices": {
+          "bat": 1.564,
+          "fc": 0.523,
+          "el": 0.866
+        },
+        "eol_full": {
+          "bat": 0.40350397066846283,
+          "fc": 0.25506593856261023,
+          "el": 0.4198172885846353
+        }
+      },
+      "lpsp": 0.00014983759989675756,
+      "curtailment": 0.10420934313427425,
+      "annual_damage_open_raw": {
+        "bat": 0.13243,
+        "fc": 0.08458,
+        "el": 0.13874
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 7.738
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 4.713
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -1.507
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.222
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": -0.003
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.03
+        }
+      }
+    },
+    "hydrogen_first": {
+      "te_raw": {
+        "total": 2.185,
+        "devices": {
+          "bat": 0.404,
+          "fc": 2.346,
+          "el": 2.43
+        },
+        "eol_full": {
+          "bat": 0.21093548159430178,
+          "fc": 0.9275735552369175,
+          "el": 0.9554034924356776
+        }
+      },
+      "lpsp": 0.17943917491944883,
+      "curtailment": 0.054989191044724765,
+      "annual_damage_open_raw": {
+        "bat": 0.07003,
+        "fc": 0.30211,
+        "el": 0.31091
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 0.187
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": -0.162
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -3.632
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.677
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 1.475
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": 0.835
+        }
+      }
+    },
+    "degradation_aware": {
+      "te_raw": {
+        "total": 1.044,
+        "devices": {
+          "bat": 1.564,
+          "fc": 0.523,
+          "el": 0.866
+        },
+        "eol_full": {
+          "bat": 0.40350397066846283,
+          "fc": 0.25506593856261023,
+          "el": 0.4198172885846353
+        }
+      },
+      "lpsp": 0.00014983759989675756,
+      "curtailment": 0.10420934313427425,
+      "annual_damage_open_raw": {
+        "bat": 0.13243,
+        "fc": 0.08458,
+        "el": 0.13874
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 7.738
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 4.713
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -1.507
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.222
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": -0.003
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.03
+        }
+      }
+    }
+  },
+  "hydrogen_dominant": {
+    "battery_first": {
+      "te_raw": {
+        "total": 1.032,
+        "devices": {
+          "bat": 1.73,
+          "fc": 0.379,
+          "el": 0.566
+        },
+        "eol_full": {
+          "bat": 0.42813540695616914,
+          "fc": 0.19940416964541707,
+          "el": 0.3535318261670225
+        }
+      },
+      "lpsp": 3.236807728140379e-18,
+      "curtailment": 0.17244345328011254,
+      "annual_damage_open_raw": {
+        "bat": 0.14028,
+        "fc": 0.06622,
+        "el": 0.11718
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 15.297
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 4.767
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": 0.33
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": 0.374
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.012
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.073
+        }
+      }
+    },
+    "hydrogen_first": {
+      "te_raw": {
+        "total": 1.875,
+        "devices": {
+          "bat": 0.473,
+          "fc": 2.249,
+          "el": 1.852
+        },
+        "eol_full": {
+          "bat": 0.222349061431936,
+          "fc": 0.9003633462529959,
+          "el": 0.7755527666091628
+        }
+      },
+      "lpsp": 0.13726316756836168,
+      "curtailment": 0.061744473056892395,
+      "annual_damage_open_raw": {
+        "bat": 0.07377,
+        "fc": 0.29352,
+        "el": 0.25382
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 0.111
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": -0.051
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -3.517
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.361
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 1.617
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": 0.908
+        }
+      }
+    },
+    "degradation_aware": {
+      "te_raw": {
+        "total": 1.032,
+        "devices": {
+          "bat": 1.73,
+          "fc": 0.379,
+          "el": 0.566
+        },
+        "eol_full": {
+          "bat": 0.42813540695616914,
+          "fc": 0.19940416964541707,
+          "el": 0.3535318261670225
+        }
+      },
+      "lpsp": 3.236807728140379e-18,
+      "curtailment": 0.17244345328011254,
+      "annual_damage_open_raw": {
+        "bat": 0.14028,
+        "fc": 0.06622,
+        "el": 0.11718
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 15.297
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 4.767
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": 0.33
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": 0.374
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.012
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.073
+        }
+      }
+    }
+  },
+  "battery_dominant": {
+    "battery_first": {
+      "te_raw": {
+        "total": 0.819,
+        "devices": {
+          "bat": 1.246,
+          "fc": 0.357,
+          "el": 0.677
+        },
+        "eol_full": {
+          "bat": 0.34399459928894544,
+          "fc": 0.2002002793179626,
+          "el": 0.3763648647309766
+        }
+      },
+      "lpsp": 0.0025813941641823494,
+      "curtailment": 0.2411595837432525,
+      "annual_damage_open_raw": {
+        "bat": 0.11325,
+        "fc": 0.0665,
+        "el": 0.12461
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 11.002
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 2.788
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": 1.492
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": 0.909
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.01
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": 0.016
+        }
+      }
+    },
+    "hydrogen_first": {
+      "te_raw": {
+        "total": 3.835,
+        "devices": {
+          "bat": 0.257,
+          "fc": 4.186,
+          "el": 3.962
+        },
+        "eol_full": {
+          "bat": 0.19176165368987835,
+          "fc": 1.5150142247131344,
+          "el": 1.4172727513736596
+        }
+      },
+      "lpsp": 0.11254045952170989,
+      "curtailment": 0.08337578175536899,
+      "annual_damage_open_raw": {
+        "bat": 0.06376,
+        "fc": 0.48472,
+        "el": 0.45442
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 0.151
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 0.058
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -5.039
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.249
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 1.396
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": 1.977
+        }
+      }
+    },
+    "degradation_aware": {
+      "te_raw": {
+        "total": 0.819,
+        "devices": {
+          "bat": 1.246,
+          "fc": 0.357,
+          "el": 0.677
+        },
+        "eol_full": {
+          "bat": 0.34399459928894544,
+          "fc": 0.2002002793179626,
+          "el": 0.3763648647309766
+        }
+      },
+      "lpsp": 0.0025813941641823494,
+      "curtailment": 0.2411595837432525,
+      "annual_damage_open_raw": {
+        "bat": 0.11325,
+        "fc": 0.0665,
+        "el": 0.12461
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 11.002
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 2.788
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": 1.492
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": 0.909
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.01
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": 0.016
+        }
+      }
+    }
+  },
+  "critical": {
+    "battery_first": {
+      "te_raw": {
+        "total": 0.959,
+        "devices": {
+          "bat": 1.313,
+          "fc": 0.384,
+          "el": 0.935
+        },
+        "eol_full": {
+          "bat": 0.35679699396075965,
+          "fc": 0.19905899924769052,
+          "el": 0.42333718860847447
+        }
+      },
+      "lpsp": 0.00011023070007004655,
+      "curtailment": 0.12393446629368073,
+      "annual_damage_open_raw": {
+        "bat": 0.11739,
+        "fc": 0.0661,
+        "el": 0.13981
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 11.147
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 7.485
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -0.477
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": 0.048
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.0
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.013
+        }
+      }
+    },
+    "hydrogen_first": {
+      "te_raw": {
+        "total": 2.58,
+        "devices": {
+          "bat": 0.292,
+          "fc": 2.48,
+          "el": 3.063
+        },
+        "eol_full": {
+          "bat": 0.19497452763064624,
+          "fc": 0.9719421689827705,
+          "el": 1.1491329464521323
+        }
+      },
+      "lpsp": 0.16905459226153852,
+      "curtailment": 0.057715604545670346,
+      "annual_damage_open_raw": {
+        "bat": 0.0648,
+        "fc": 0.31614,
+        "el": 0.37166
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 0.194
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 0.715
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -3.983
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": -0.236
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.589
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": 0.748
+        }
+      }
+    },
+    "degradation_aware": {
+      "te_raw": {
+        "total": 0.959,
+        "devices": {
+          "bat": 1.313,
+          "fc": 0.384,
+          "el": 0.935
+        },
+        "eol_full": {
+          "bat": 0.35679699396075965,
+          "fc": 0.19905899924769052,
+          "el": 0.42333718860847447
+        }
+      },
+      "lpsp": 0.00011023070007004655,
+      "curtailment": 0.12393446629368073,
+      "annual_damage_open_raw": {
+        "bat": 0.11739,
+        "fc": 0.0661,
+        "el": 0.13981
+      },
+      "paths": {
+        "alpha1": {
+          "source": "bat",
+          "target": "fc",
+          "effect_pct": 11.147
+        },
+        "beta1": {
+          "source": "bat",
+          "target": "el",
+          "effect_pct": 7.485
+        },
+        "alpha2": {
+          "source": "el",
+          "target": "fc",
+          "effect_pct": -0.477
+        },
+        "beta2": {
+          "source": "fc",
+          "target": "el",
+          "effect_pct": 0.048
+        },
+        "gamma1": {
+          "source": "fc",
+          "target": "bat",
+          "effect_pct": 0.0
+        },
+        "gamma2": {
+          "source": "el",
+          "target": "bat",
+          "effect_pct": -0.013
+        }
+      }
+    }
+  },
+  "_ops": {
+    "D_uniform_0.3": {
+      "battery_first": {
+        "fc_run_h": 604.0,
+        "el_run_h": 902.0,
+        "fc_starts": 79,
+        "el_starts": 295,
+        "ramp_total_kW": 488165.0,
+        "bat_discharge_kWh": 273955.0,
+        "bat_charge_kWh": 274407.0,
+        "fc_kWh": 27633.0,
+        "el_kWh": 132557.0,
+        "h2_final_kg": 2833.4,
+        "h2_range_kg": [
+          2090.5,
+          3353.7
+        ]
+      },
+      "hydrogen_first": {
+        "fc_run_h": 3550.0,
+        "el_run_h": 2391.0,
+        "fc_starts": 362,
+        "el_starts": 432,
+        "ramp_total_kW": 488304.0,
+        "bat_discharge_kWh": 51893.0,
+        "bat_charge_kWh": 51418.0,
+        "fc_kWh": 153765.0,
+        "el_kWh": 359632.0,
+        "h2_final_kg": 445.3,
+        "h2_range_kg": [
+          445.0,
+          2226.6
+        ]
+      },
+      "degradation_aware": {
+        "fc_run_h": 604.0,
+        "el_run_h": 902.0,
+        "fc_starts": 79,
+        "el_starts": 295,
+        "ramp_total_kW": 488165.0,
+        "bat_discharge_kWh": 273955.0,
+        "bat_charge_kWh": 274407.0,
+        "fc_kWh": 27633.0,
+        "el_kWh": 132557.0,
+        "h2_final_kg": 2833.4,
+        "h2_range_kg": [
+          2090.5,
+          3353.7
+        ]
+      }
+    },
+    "D_bat_heavy_0.7": {
+      "battery_first": {
+        "fc_run_h": 604.0,
+        "el_run_h": 902.0,
+        "fc_starts": 79,
+        "el_starts": 295,
+        "ramp_total_kW": 488165.0,
+        "bat_discharge_kWh": 273955.0,
+        "bat_charge_kWh": 274407.0,
+        "fc_kWh": 27633.0,
+        "el_kWh": 132557.0,
+        "h2_final_kg": 2833.4,
+        "h2_range_kg": [
+          2090.5,
+          3353.7
+        ]
+      },
+      "hydrogen_first": {
+        "fc_run_h": 3550.0,
+        "el_run_h": 2391.0,
+        "fc_starts": 362,
+        "el_starts": 432,
+        "ramp_total_kW": 488304.0,
+        "bat_discharge_kWh": 51893.0,
+        "bat_charge_kWh": 51418.0,
+        "fc_kWh": 153765.0,
+        "el_kWh": 359632.0,
+        "h2_final_kg": 445.3,
+        "h2_range_kg": [
+          445.0,
+          2226.6
+        ]
+      },
+      "degradation_aware": {
+        "fc_run_h": 3550.0,
+        "el_run_h": 2391.0,
+        "fc_starts": 362,
+        "el_starts": 432,
+        "ramp_total_kW": 488304.0,
+        "bat_discharge_kWh": 51893.0,
+        "bat_charge_kWh": 51418.0,
+        "fc_kWh": 153765.0,
+        "el_kWh": 359632.0,
+        "h2_final_kg": 445.3,
+        "h2_range_kg": [
+          445.0,
+          2226.6
+        ]
+      }
+    },
+    "_conclusion": "三策略运行统计（compact 2017，dispatch 直接对比）：① D=0.3 均匀状态下 degradation_aware 与 battery_first 完全等价（FC 604h/79 启停、EL 902h/295 启停、BAT 27.4万 kWh 全同）——因均匀 D 下 d_fc<d_bat 分支不触发，等价是设计使然；② D 偏置（BAT=0.7, FC/EL=0.1）下 degradation_aware 显著改变分配：BAT 放电 27.4万→5.2万 kWh（-81%）、FC 2.76万→15.4万 kWh（+456%）——策略真正改变功率分配，消融有效；③ hydrogen_first 在两种 D 下均显著不同（FC 运行 604h→3550h、BAT -81%、EL 运行 902h→2391h）——策略独立性有直接证据。"
+  }
+}

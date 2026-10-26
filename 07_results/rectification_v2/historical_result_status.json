@@ -1,0 +1,342 @@
+{
+  "file_count": 42,
+  "files": [
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/.gitkeep",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/annual_D_trajectory.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "77e3e672c7cf498325575b57ff7650d50fda17d2d84d8890a9aad5444c5d806e",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/annual_damage_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "ade741ce671c5c0dbf2897f3ffbae1a94ae07f11a816797ba074800f0806bcfe",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/blast_lfp_results.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "681a8e9bf744ca97db3375eec86f46e9d1bc9daf35bcc16755130c2394541f6e",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/capped_te_analysis.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "40068fecb47ec53664a103cee5a9f52dc78d30b85cb1c5a45d94e3016456565c",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/G2_G7_multiconfig_path_sweep.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "d29213bceff1e478ce57ed5d852da59dc2328eb6098d8eaa6f98a0e8493db17b",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/G4_rmse_curve_comparison.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "adfdde0ecaeb4861211e682e955a8c769df01636a9155c174dbf42b2e0e245c1",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/G6_lhs_expanded_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "92c6c004a9d162e19bb9d4a7cc8277a73f0a7ca249eebccebd17311e465c7ff2",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/G8_HF_BL_multiconfig_stability.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "177704f8866451efd910723e64306cd865b1721acd40acd59e3f2a012cbc6ed5",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/G8_multiconfig_annual_stability.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "ca94e17debb1f55471288479bad1aa51ba509372d5e3f5d4b2acae575500ef19",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/p1_revised_c5_eolguard.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "ed2f435ec5cce845497e789cf43778ab1a0bde097e8a2b561b2bf21dbdbf69a6",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/soc_profile_for_blast.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "61dea5ff4e734e68a951a786d6fa21ef581f7b0473499c333ec1dd44cb9c3553",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/supplementary_gaps_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "99d68bb64af834ee78cd3e4256c6be8840d9358872b5013a190d98ed6ad89f1a",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS1_conservation_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "0624e6e414bd27b2d855ff4e3958d432f8cada11fdb07cf0cb37108ae536761b",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS2_independent_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "2857a0566d5bd325842c13b5c3deeee59589a4749025d0caccafe2e34281d66a",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS3_path_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "54f00d7e724d70cf690c1758fdd09a2ae1737295481d77c774ee385c666b49cf",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS4_mediation_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "fa0068b1101b382e11b82ac9b7b3b6357750ad639dfa17794c4e23c148c3beb1",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS5_annual_stability_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "7e6d64de16987de27a6f2e1d59f2bd0d73fdab14baaedb9e2589c122276f8a95",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS6_decision_bias_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "c79b95b89f34a5fd7b5b468737b1dd424441ea2866929a7dddc1976bb1b631d9",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS7_PRCC_Spearman_consistency.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "046cfe45a1c2a58988d5a4a8419f261c6ccd5a143b7056c9da1b7537e333ead6",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS7_uncertainty_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "f204e2fab64466be8154e345aef00b0a26812fb344f03243352f08c0223d69e4",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/annual/VS8_boundary_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "dbf59cb56b5c628ddb94726ca8d7ed732c6ceaaeba378747c512501405a89a1a",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/crossyear/crossyear_comparison.csv",
+      "producer": "06_src/simulation/run_f8_crossyear_admissibility.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "3f898f39e8e8d0a0eaf360ed3fe5b1769b854dfd0bc6a0f4e0ffea52e6c56884",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/crossyear/f8_crossyear_admissibility.csv",
+      "producer": "06_src/simulation/run_f8_crossyear_admissibility.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "ea92cb5e0c24a7965531e7f561902e573dfde2601f192a4a5433d3a4dce0d569",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/crossyear/f8_crossyear_summary.json",
+      "producer": "06_src/simulation/run_f8_crossyear_admissibility.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "487da8ce0e8c27374a8074a90d9d97e6ce80bf942338b928dfbe5a20cc193696",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/economic/economic_comparison.csv",
+      "producer": "06_src/simulation/run_f5_timed_economic.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "453ae51bbf1bb0d9ff024b59debfc6a4c7b1c454a5447835b645d287fcdfc206",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/economic/f5_timed_economic_summary.json",
+      "producer": "06_src/simulation/run_f5_timed_economic.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "88a3c42d17d5ba506a3773b351bf76d96137f5c10088a262180bad5a5659856f",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/economic/f5_timed_replacement_schedule.csv",
+      "producer": "06_src/simulation/run_f5_timed_economic.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "b4610b9771171b4441ac1db4c68abf14ef835f1bbdb3bf248e92f87d6c96f9e3",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/l4_comparison/l4_crossyear_fullfeedback.csv",
+      "producer": "06_src/simulation/run_l4_comparison.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "5754bc5dd4b2206cbb460b1b302fa52253b9e5b6f4c3ef5a54c959ba47acb37e",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/l4_comparison/l4_final_validation.csv",
+      "producer": "06_src/simulation/run_l4_comparison.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "9289e2fd208e2535636fddcf0d8005cb5697062dbd133229727ab59a96e809f9",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/l4_comparison/l4_fine_sweep.csv",
+      "producer": "06_src/simulation/run_l4_comparison.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "406de933336e845e463be62216d38ecc216a547a9fd10efdcc0b8d17071b337a",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/l4_comparison/l4_m2_m3_comparison.csv",
+      "producer": "06_src/simulation/run_l4_comparison.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "47e62e64fe2585ae36244dde846e0e5a6f922f13f80df487c90d9740780c4a1e",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/l4_comparison/l4_parameter_sweep.csv",
+      "producer": "06_src/simulation/run_l4_comparison.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "df23ce94ee34be1322cfe120fec0de76ca5204f74ff83fa3a372109b65b7f0f1",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/lifetime/.gitkeep",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/lifetime/f4_replacement_events_2017.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "8a38c264c1c68aa7692227140e0008980ee395ebeb394c0077fef76d6bb76a51",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/lifetime/f4_replacement_summary_2017.json",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "d6340f0e6ee694f22b874246e70280fe472066ec997677e3b362377dfafdc9e3",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/lifetime/lifetime_summary.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "1da22509f969d42dd3c8edee9c305dd4a25f0930b777269ea29ca4bfef1df4b1",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/lifetime/lifetime_trajectory.csv",
+      "producer": "06_src/simulation/run_f4_annual_simulation.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "4b03c03406d2659c7d114bc79cd666b1fef3552de18ef6dc297bb37b14526929",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/path_identification/f6_path_activation_statistics.csv",
+      "producer": "06_src/utils/run_VS3_path_identification.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "c7702b90bb8dfc6cd7d2598f9ce8dfcb95f7e53fcd34bcf93427edc26b7419a6",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/path_identification/f7_coalition_values.csv",
+      "producer": "06_src/utils/run_VS3_path_identification.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "49ebaa197781f8490f72b6d8991fd38621df165608ecee29306b4b0287d1a454",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/path_identification/f7_path_aligned_shapley.json",
+      "producer": "06_src/utils/run_VS3_path_identification.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "0a0ce0e386445fbf621675d64c7bcf44aef55e8eba4c9376d267d2fc737be188",
+      "status": "historical_invalid_pv_scaling"
+    },
+    {
+      "paper_citable": false,
+      "path": "07_results/shap/.gitkeep",
+      "producer": "06_src/simulation/run_f7_shapley.py",
+      "reason": "generated before the 233 kW reference-capacity PV contract and continuous three-year capacity admission gate",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "historical_invalid_pv_scaling"
+    }
+  ],
+  "schema_version": "rectification_v2.0"
+}

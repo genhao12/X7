@@ -1,0 +1,798 @@
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+                    Available online at www.sciencedirect.com
+
+                 ScienceDirect
+
+                               journal homepage: www.elsevier.com/locate/he
+
+MATLAB/Simulink simulation of low-pressure PEM
+electrolyzer stack
+
+Dinko Brezak*, Ankica Kovac**, Mihajlo Firak
+
+University of Zagreb, Faculty of Mechanical Engineering and Naval Architecture, Ivana Lucica 5, 10000 Zagreb,
+Croatia
+
+highlights
+
+ Flexible Simulink model with variable operating conditions.
+ Water transfer across the membrane is considerable, about 10% of total incoming water.
+ Mathematical and Simulink model validated using available commercial electrolyzer data.
+ Balance of system accomplished using simple electronics and coding.
+
+article info                   abstract
+
+Article history:               Utilizing renewable energy sources for hydrogen production represents a key step forward
+Received 10 January 2022       in achieving a climate-neutral society by 2050. Water electrolysis using a polymer elec-
+Received in revised form       trolyte membrane (PEM) electrolyzer is one of the most efficient ways of hydrogen pro-
+7 March 2022                   duction. For the mentioned electrolyzer, a mathematical model is derived whose purpose
+Accepted 10 March 2022         is to better describe and predict the behavior of the system and its output parameters with
+Available online 5 April 2022  a brief overview of the assumptions introduced to simplify the model and their overall
+                               error. A simulation is made using MATLAB/Simulink software to calculate and plot the
+Keywords:                      desired output parameters and compare these results with the data obtained from several
+Hydrogen                       manufacturers. To make the simulation as flexible as possible, the possibility of changing
+PEM electrolyzer               the functional simulation parameters is introduced. The option allows more diverse results
+Mathematical modelling         and diagrams, as well as a closer inside into system performance and the detection of
+Simulink                       potential calculation errors.
+
+                                 © 2022 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+
+Introduction                                                additional pollution, it is crucial to replace fossil fuels with
+                                                            renewable energy sources (RES) from the sun, wind, water, etc
+By finding fossil fuels and ways to use them, humanity has  [1]. Some of the shortcomings of fulfilling this goal are the
+opened Pandora's box and embarked on rapid technological    intermittence of RES and their low energy density. Large
+progress leaving lasting and severe consequences for the    plantations of solar cells are necessary to utilize only a small
+environment, endangering its existence. To ensure further   portion of the sun's energy and utilizing wind energy is no
+technological development and human prosperity without      different [2]. On the other hand, RES's intermittence is an
+
+  * Corresponding author.
+ ** Corresponding author.
+
+    E-mail addresses: dinko.brezak@fsb.hr (D. Brezak), ankica.kovac@fsb.hr (A. Kovac).
+https://doi.org/10.1016/j.ijhydene.2022.03.092
+0360-3199/© 2022 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3  6159
+
+encouragement to store energy to use it when needed [3]. The      [23] concluded that water flow and pressure cause larger
+polymer electrolytic membrane (PEM) electrolyzer described        diffusion losses on the cathode, with pressure being the more
+in this paper presents an efficient (67e82%) way of producing     dominant cause. This is explained by the pressure-dependent
+high purity hydrogen (99.999%) [4], which proved to be a great    detachment size of the bubbles and their nucleation.
+storage medium and energy carrier due to its high mass en-
+ergy density [5].                                                     Based on a well-described mathematical model, a precise
+                                                                  Simulink model can be developed that describes the dynamics
+    PEM electrolyzer's ability to work with intermittent energy   of internal processes while changing operating parameters.
+sources makes it a great asset for usage in industrial appli-     These dynamic internal processes are a result of variable
+cations for producing green hydrogen. Authors in [6] have         electrochemical parameters that can be predicted using the
+designed a hybrid renewable energy system using photovol-         Particle Swarm Optimization algorithm similar to [24]. With
+taic (PV) panels for energy supply, PEM electrolyzer for          predicted parameters, Lopez et al. validated the electro-
+hydrogen production, and PEM fuel cell for electricity pro-       chemical submodel using polarization curves and thermal
+duction. The goal was to create a self-sustainable expedient      submodel using thermal experiments. They concluded that
+for powering the stand-alone application. Both Ismail et al. [7]  the exchange current density is pressure-dependent above
+and Sharifian et al. [8] investigated how to minimize losses in   60 C, but not substantially. A dynamical model of PEM elec-
+hydrogen production that come from using PV modules by            trolyzer can be obtained using Bond Graph in a modular
+simulating the PV-PEM electrolyzer system in MATLAB and           fashion as shown in [25]. This type of PEM electrolyzer model
+analyzing its transient behaviour. With PV modules as a           can fit and adapt to various configurations and types of elec-
+source of energy for PEM electrolyzer, DC-DC converters are       trolyzers. Using ANSYS/Fluent, computational fluid dynamics
+mandatory to achieve the desired DC voltage [9] and their         software, Ma et al. [26] have modeled PEM electrolysis cells to
+tuning of derivative, integral and proportional parts is based    simulate the performance of species transport, coupled
+on the PEM electrolyzer dynamic behaviour, with regulation        thermal-fluid and electrochemical processes. This modelling
+based on voltage or current.                                      accelerates PEM electrolyzer laboratory testing and material
+                                                                  development.
+    Afshari et al. [10] investigated how membrane thickness
+affects voltage losses and hydrogen crossover, and have               Albarghot et al. [27] presented a Simulink model of PEM
+concluded that with a thicker membrane, voltage losses in-        electrolyzer powered with solar panels and validated simu-
+crease while hydrogen crossover reduces. Authors at [11] have     lation results with obtained measurements from the experi-
+come to the same conclusion with an addition that the             mental set-up. A single PEM electrolyzer cell has been
+reduced gas penetration enables the PEM electrolyzer's oper-      modeled in Simulink using an equivalent electrical circuit by
+ation at higher pressures. Consequently, the system               Beainy et al. [28]. Gomez et al. [29], and Guilbert and Vitale [30]
+complexity is reduced and there is no need for one or two         used the same electrical circuit approach in developing a dy-
+stages of hydrogen compression [12]. Polymer membranes            namic emulator to investigate electrolyzer behaviour when
+exhibit thermal degradation at high temperatures, which is        subjected to sudden current variations. In [30], the authors
+why Ogumerem et al. [13] have developed a thermal man-            showed that the electrolyzer acts as a capacitor and that the
+agement strategy that can weaken high-temperature effects         least-squares regression algorithm can correctly determine
+on the membrane. Researching new materials and catalysts to       electrical model parameters. A similar investigation of dy-
+speed up the electrochemical reactions, making more durable       namic voltage variations was carried out by Immerz et al. [31],
+membranes and prolonging their lifetimes, ensures PEM             who experimentally analyzed that very low cell voltage can
+electrolyzer's higher competitiveness compared to other           lead to current density reversal phenomena with highly
+available electrolysis technologies [14].                         negative peak current densities. In [32], a simple PEM elec-
+                                                                  trolyzer model has been experimentally evaluated with
+    Mathematical models can be characterized with variable        conclusion that diffusion overpotentials happen only at low-
+reversible voltage as a function of temperature [15], and with    operating temperatures and high current densities. Simula-
+variable exchange current density [16]. Studies have shown        tion analysis from Rahim et al. [33] showed that when the
+that the aforementioned parameters greatly affect mathe-          operating temperature of the electrolyzer system increases,
+matical model result accuracy. Transfer coefficients can also     ohmic resistance decreases.
+be defined as variable, and determined by the temperature
+[17]. Their influence on the exchange current density and             PEM electrolyzer system comprises additional components
+resulting electrolyzer voltage are substantial [18,19]. In [20]   such as a water pump, filters, separators, storage vessels,
+Aouali et al. determined those transfer coefficients and ex-      valves, pipes, electronics, sensors and control logic. The
+change current densities are temperature-dependent using          importance of using power converters to match the PEM
+MATLAB parameter identification tool, and were able to ach-       electrolyzer input voltage, when the system is powered with
+ieve good compliance between experimental data and                RES is underlined in [34]. With RES, the PEM electrolyzer is
+modelling results. Hydrogen output pressure depends on            submitted to a dynamic operation, which if included in the
+polymer membrane thickness, which is why some high-               controller design, enhances the performance of the system.
+pressure electrolyzers can reach only up to 350 bar on the        Yodwong et al. [35] reproduced this dynamic using emulator,
+cathode side [21]. Anode and cathode diffusion overvoltages       an equivalent electrical scheme with supercapacitors.
+and the phenomenon of water passing through the membrane          Comparing voltage responses from the emulator and real
+have been investigated by Shin et al. [22]. Temperature and       electrolyzer has shown a sufficient agreement.
+current density affect the water mass flow rate on the
+hydrogen output, the latter being predominant. Navarro et al.         For the PEM electrolyzer stack in this work, a dynamic
+                                                                  model was introduced in MATLAB/Simulink, with time,
+6160                i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+temperature and power as the input variables, and cell              behavior deviates from the idealized one. Also, this deviation
+voltage, stack current, hydrogen, oxygen and water flows and        is more pronounced at lower temperatures and higher pres-
+oxygen and hydrogen tank pressures as the output variables.         sures. The electrolyzer operating pressures are in the range of
+All output variables are time-dependent. Anode and cathode          0.1 MPae2 MPa while the operating temperatures are from
+charge transfer coefficients as well as current densities are       295 K to 350 K. The equation is arranged to describe the
+changing linearly with temperature and can be adjusted for          isothermal filling of a constant volume tank [37].
+different scenarios.
+                                                                                R,T             pffiffiffi aRK,qn,ts
+                                                                    ps  ¼                    À                              ½Pa  (2)
+                                                                              VS     À  bRK             À VS          bRK
+                                                                             qn ,ts             T,VS,
+                                                                                                       qn ,ts
+
+Models and methods                                                  where ps is tank pressure, R is the universal gas constant
+                                                                    (8.314 J/molK), T is gas temperature, VS is tank volume, qn is
+Mathematical model                                                  gas molar flow and it is kept constant. ts is tank filling time and
+                                                                    parameters aRK and bRK are obtained by [37]:
+In this work, a derived mathematical model is characterized
+by variable reversible voltage as a function of temperature, as                                 5
+well as variable exchange current densities and transfer co-                         4275,R2,TC2 r
+efficients. Anode and cathode diffusion overvoltages and the        aRK  ¼   0;                pCr                               (3)
+phenomenon of water passing through the membrane were
+also taken into account and their influence was described.          bRK  ¼   0;      0866,R,TCr                                  (4)
+Based on the aforementioned mathematical model, a dynamic                                     pCr
+Simulink model was made, which, in addition to the electro-
+lyzer, also includes other additional components such as a          where TCr and pCr are critical gas temperature and pressure.
+water pump, hydrogen and oxygen separators and tanks that               Tank pressure for an ideal gas is calculated using a modi-
+ensure electrolyzer efficient performance. The hydraulic
+calculation was not considered in the mathematical model            fied general gas equation:
+and all pressure drops were neglected to simplify the calcu-
+lations. For that reason, uniform temperature distribution          pisdeal  ¼  qn   ,R,T                                        (5)
+throughout the system is assumed as well.                                            VS
+
+Assumptions                                                             Fig. 1 shows tank pressure dependence with the filling
+In order to simplify the calculation, it is necessary to introduce  time.
+assumptions, which will not significantly affect the deviation
+of the model from the real solution. The relationship between           Dashed lines in Fig. 1 represent the change of ideal gas
+Gibbs free energy and cell voltage has no losses and is directly    pressure, while full lines represent the change of real gas
+proportional [36].                                                  pressure. It can be seen that as the temperature and pressure
+                                                                    increase there is a greater difference between real and ideal gas.
+UEly  ¼  À  DG      (1)                                             For the maximum electrolyzer operating pressure (2 MPa), the
+            n,F                                                     difference between real and ideal gas pressures are negligible,
+                                                                    and can therefore be concluded that produced hydrogen and
+                                                                    oxygen can be considered ideal gases for given operating con-
+                                                                    ditions, thus simplifying the mathematical model.
+
+where UEly is the cell voltage, DG is the change in Gibbs free      Water transport through the membrane
+energy of the reaction, n is the number of electrons trans-
+ferred during the reaction (for water electrolysis reaction is 2)   The phenomenon of water transport through the membrane
+and F is Faraday's constant (96,485 C). Pressure losses due to
+the flow of reactants and products through the electrolyzer         is a consequence of diffusion due to concentration differences
+and pipelines are ignored to reduce mathematical complexity.
+Enthalpy, Gibbs free energy and cell voltage depend on tem-         of water on both sides of the membrane, electro-osmosis, the
+perature change. Hydrogen and oxygen behave as ideal gases
+and do not penetrate the membrane. Uniform temperature              process that occurs when a potential difference appears at the
+distribution through the electrolyzer and uniform distribution
+of exchange current density and reactants on active surfaces        ends of the porous structure (membrane) and finally, due to
+is assumed. Dissolved gases in deionized water are neglected.
+Finally, the water pump is considered ideal and has no leaks or     the pressure difference at the anode and cathode side, most
+pressure drops.
+                                                                    often in the opposite direction from the previous two phe-
+
+                                                                    nomena because the pressure at the cathode is generally
+
+                                                                    higher than the anode pressure. Water appears on the cathode
+
+                                                                    side during hydrogen production and its amount is propor-
+
+                                                                    tional to the current density and temperature.
+                                                                        Water transport due to diffusion described by Fick's law is
+
+                                                                    given by [22]:
+
+                                                                                                                 !
+                                                                                                          mol
+Real vs ideal gas assumption                                        qCd      ¼   À D,   CAH2O À CCH2O    cm2,s                   (6)
+By accepting the assumption that gases behave ideally, a              nH2 O                 4memb
+certain error is introduced into the mathematical calculation.
+The Redlich-Kwong equation for real gas is used to determine        where D is diffusion membrane coefficient, CHA2O is water
+whether this error will significantly affect the calculation. The   concentration on the anode, CCH2O is water concentration on
+closer the operating conditions of a gas are to its values of the   the cathode and 4memb is membrane thickness. Water trans-
+change of state or critical values, the more significantly its      port due to electro-osmosis is given by [22]:
+                                            i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3  6161
+
+                                Fig. 1 e Tank pressure ps dependence with the filling time ts (1 column, in color).
+
+            hdrag ,N4C ,,iFEly   mol     !
+                                cm2,s
+qCeo     ¼                                                           (7)                                         
+  nH2 O
+                                                                            psHa2tO ¼ 503685,10 AÀCÀ2B73þT ½Pa
+where hdrag is the electro-osmotic drag coefficient, NC is the                                                                                        (11)
+number of cells and iEly is the current density.
+                                                                            Finally, the total water transport through membrane is
+    The electro-osmotic drag coefficient is obtained experi-
+mentally [22] and depends on the operating conditions, more                 expressed as:
+precisely on current density and temperature. It essentially
+represents the ratio between the number of water molecules                                                         
+and the number of hydrogen ions passing through the mem-
+brane. The pressure difference between the electrodes causes                qC       ¼  À  D  ,  CHA2O À CHC2O       þ  hdrag  ,  NC ,iEly
+water transport from the higher electrode pressure to the                     nH2 O                À 4memb Á                        4,F
+lower electrode pressure, depends on the permeability of the
+membrane and is calculated using Darcy's law [15]:                          þ Kdarcy,rH2O, pA À pC                   mol  !
+
+                                                                                     4memb,mH2O,MH2O cm2,s                                            (12)
+
+                    À                    Á          !                       Cell voltage
+         ¼ Kdarcy,rH2O, pA À pC              mol                            PEM electrolyzer cell voltage represents the sum of all over-
+qCpd          4memb ,mH2 O ,MH2 O           cm2,s                    (8)    voltages due to losses, and resistances throughout the elec-
+  nH2 O                                                                     trolyzer. It depends on operating conditions such as
+                                                                            temperature, current density and electrode pressures.
+where Kdarcy is the membrane permeability to water [15], rH2O
+is the water density, mH2O is the water viscosity, MH2O is the              UEly ¼ Urev þ Up þ UAact þ UCact þ UAdif þ UCdif þ Uohm ½V                (13)
+water molar mass, and pA and pC are the total anode and
+cathode pressures consisting of partial gas pressure and                    where Urev is the reversible voltage that depends solely on
+saturated water vapor pressure according to Dalton's law:                   temperature, UP is the overvoltage due to pressure differences,
+                                                                            UAact and UCact are the activation overvoltages, UAdif and UCdif
+pA ¼ pO2 þ psHa2tO                                                   (9)    are the diffusion overvoltages and Uohm is the ohmic
+                                                                            overvoltage.
+   and
+                                                                                According to [32], temperature-dependent reversible
+pC ¼ pH2 þ pHsa2tO                                                   (10)   voltage is given by:
+
+where pO2 is the oxygen partial pressure, pH2 is the hydrogen               Urev ¼ 1; 5184 À 1; 5421,10À3,T þ 9; 523,10À5,T,lnðTÞ
+partial pressure and pHsa2tO is the saturated water vapor pressure
+and depends exclusively on temperature and is calculated                    þ 9; 84,10À8,T2½V                                                         (14)
+using a slightly modified Antoine equation [15] with its pa-
+rameters from Table 1.                                                      Overvoltage due to reactant and products pressure differ-
+
+                                                                            ences is [19] defined as:
+
+                                                                                                 pH2 ,pO0;25  !
+                                                                                                   pH2 O
+                                                                            Up ¼ Rn,,TF,ln                       ½V                                   (15)
+
+Table 1 e Antoine equation parameters for water [15].                       where pH2O is water pressure.
+                                                                                The electrochemical reaction of converting reactant water
+A                               B                      C        T min. (K)
+                                                                            to products, oxygen and hydrogen, has to overcome activation
+8.07131                         1730.63                233.426  274         overvoltages. These overvoltages are derived from the Butler-
+                                                                            Volmer equation and in practice, anode overvoltage is signif-
+                                                                            icantly larger than the cathode one because the exchange
+6162                                    i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+current density on the anode is far smaller. This results in a                                Utn ¼ 1; 4045 þ 1; 5784,10À4,T þ 3; 8037,10À7,T2½V  (23)
+
+significantly slower electrochemical reaction on the anode.                                       Efficiency is then simply a ratio between thermoneutral
+                                                                                              and total cell voltage:
+Regardless, in this paper, both overvoltages are considered.
+
+Anode activation overvoltage [19] is defined as.
+UAact ¼ n,Ra,AT,F,ln         iEly
+                             iA;0  ½V                                                   (16)  h ¼ Utn                                             (24)
+                                                                                                   UEly
+
+Cathode activation overvoltage is defined as:
+
+                                                                                              Simulation and system modelling
+
+UCact ¼ n,Ra,CT,F,ln      iEly     ½V                                                   (17)  PEM electrolyzer dynamic Simulink model
+                          iC;0                                                                The previously described mathematical model has been
+                                                                                              introduced inside MATLAB/Simulink program using common
+where aA and aC are the charge transfer coefficients for anode                                mathematical operations and blocks. To make the simulation
+and cathode and iA;0 and iC;0 represent the exchange current                                  adjustable, the possibility of changing the functional form
+densities on anode and cathode, respectively.                                                 (constant, linear change, exponential) of some input param-
+                                                                                              eters, such as temperature, current and pressure, has been
+Diffusion overvoltages are usually ignored because they                                       introduced. Fig. 2 shows the electrolyzer block with all its
+                                                                                              input and output parameters.
+are significantly lower than other overvoltages. Nevertheless,
+                                                                                                  Temperature is uniform throughout the electrolyzer and is
+for this article they are defined by using the Nernst equation.                               growing with time. The hydrogen and oxygen tanks are
+                                                                                              gradually filled and thus the pressure of the corresponding gas
+Anode diffusion overvoltage [19] is calculated as.                                            also gradually increases. Therefore, hydrogen and oxygen
+                                                                                              pressures are variable input parameters dependent on gas
+                    CmO2     !                                                                production rate and tank volume. Water flows, important for
+                    COm2;0                                                                    calculating diffusion voltages, are dependent on gas produc-
+UAdif ¼ R4,,TF,ln               ½V                                                      (18)  tion rate and pump flow. Exchange current densities and
+                                                                                              charge transfer coefficients are temperature-dependent pa-
+while cathode diffusion overvoltage is calculated as                                          rameters. By summing all overvoltages, the total cell voltage is
+                                                                                              obtained as shown in Fig. 3.
+                    CmH2     !
+                    CmH2;0                                                                        For a defined constant power, electrolyzer current is
+UCdif ¼ R4,,TF,ln            ½V                                                         (19)  calculated by an iterative procedure. For obtaining U-i po-
+                                                                                              larization curve, important for describing electrolyzer
+where COm2 and CmH2 are the oxygen and hydrogen concentra-                                    properties, `defining current' block enables changing the
+tions, CmO2;0 and CmH2;0 are the oxygen and hydrogen concentra-                               current from the unknown value to linearly increasing input
+tions under reference operating conditions [19].                                              parameter. `defining power' block allows the change of
+                                                                                              power parameter to a linear or constant value. This flexi-
+    Ohmic overvoltage is the overvoltage required to overcome                                 bility allows a wide variety of graphical results and a better
+the resistance of proton transfer through the membrane and                                    and more accurate explanation of the system. The list of
+electrons through the conductors [33].                                                        constant parameters needed for running the simulation is
+                                                                                              given in Table 2.
+Uohm  ¼ Rmem,iEly      þ  Rele ,A,iEly  ¼   4memb   ,iEly  þ  rohAmo,hlmohm ,A,iEly ½V
+                                              s                                                   Anode and cathode charge transfer coefficients, as well as
+                                                                                              anode and cathode exchange current densities, change line-
+                                                                                        (20)  arly with temperature. Their values were preselected ac-
+                                                                                              cording to other research papers [16,17]. Hydrogen tank
+    Rmem is membrane resistance, Rele is ohmic resistance, A is                               volume is far larger than oxygen tank so that pressure dif-
+active cell area or electrode area, rohm is conductor resistance,                             ference between cathode and anode can occur and be inves-
+lohm is conductor length, Aohm is conductor cross-sectional area,                             tigated. Choosing the membrane thickness is a compromise
+and s is the ionic conductivity that depends on water content                                 between crossover gas resistance and proton conductivity.
+                                                                                              With greater thickness, crossover gas resistance is larger but
+and temperature [33]                                                                          the proton conductivity decreases and vice versa. Naturally,
+                                                                                              with higher pressure differences, gas crossover is more
+                                            1268 À 1268                                       pronounced.
+                                            303 T
+s ¼ ð0; 005139 , l þ 0; 00326Þ,exp                                  ½S = cm             (21)
+
+    l is membrane humidification ratio [33] and for the purpose
+of this work is kept constant.
+
+    Finally, the total cell voltage is defined as:
+
+UEly ¼ 1; 5241 À 1; 2261,10À3,T þ 1; 1858,10À5,T,lnðTÞ
+                                                      !
+þ 5; 6692,10À7,T2 þ Rn,,TF,ln               pH2 ,p0O;25       n,Ra,AT,F,ln  
+                                                                            iEly
+                                              pH2 O        þ                iA;0
+
+                                            CmO2    !                    !
+                                            CmO2;0                  CmH2
+þ n,Ra,CT,F,ln         iEly  þ R4,,TF,ln               þ R4,,TF,ln  CmH2;0
+                       iC;0
+
+þ     4memb  ,iEly  þ  Rele ,A,iEly    ½V:                                                    PEM electrolyzer balance of system
+        s
+
+                                                                                        (22)  The PEM electrolyzer for which mathematical and Simulink
+                                                                                              models have been provided can be with additional compo-
+    For calculating water electrolysis efficiency, a higher                                   nents, controlled by a simple and cheap microchip like
+heating value (HHV) of hydrogen is used and represented in its                                Arduino MEGA. The simplified system can consist of the
+electrical form as thermoneutral voltage Utn [36]                                             electrolyzer, pump, power source, separators, tanks and
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3  6163
+
+Fig. 2 e PEM electrolyzer Simulink block showing input parameters on the left and output parameters on the right.
+
+amplifiers as well as sensors and measuring instruments            In Fig. 4, the power supply provides 7e12 V direct current
+(thermometers, pressure gauges, flow meters) shown in the      (DC) for Arduino, 24 V DC for the pump amplifier, and 40 V DC
+Fig. 4. All of the components for the system and the electro-  for the electrolyzer amplifier. Between the power supply and
+lyzer have not been procured, except the Arduino MEGA          amplifiers are solid-state relays that act as switches. Amplifiers
+microchip, so the balance of the system (BOS) is tested using  amplify the receiving signal from Arduino and power the pump
+multiple DC power sources connected to the Arduino inputs.     and electrolyzer. All measuring instruments are marked with a
+These DC sources are reproducing actual signals that would     colored circular frame and a symbol, depending on the type of
+otherwise come from electrolyzer sensors and sensors from      the physical unit they measure. Arduino outputs that control
+additional components. DC sources that reproduce electro-      the system are pulse width modulation (PWM) signals that are
+lyzer signals are identical to the Simulink model output pa-   depicted with corresponding symbols in a rectangular frame.
+rameters and are connected to the Arduino input parameters.    Temperature and flows are measured at the electrolyzer inlet,
+On the other end, Arduino output parameters depend on the      as well as at its outlets (anode and cathode side). In oxygen and
+input parameters and their mathematical correlation is         hydrogen tanks, temperature and pressure are measured. The
+defined by the Arduino program code. Output parameters         ammeter measures pump and electrolyzer currents. Finally,
+could be used for system control, but in this case, were only  electrolyzer temperature is measured and is considered equal
+connected to multimeters where their voltages were             through the entire stack for simplicity. Arduino program code
+measured and checked if they correspond to the expected        shown in Fig. 5 was written in Cþþ using Arduino software and
+mathematical results.                                          uploaded on the Arduino MEGA microchip.
+6164               i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+      Fig. 3 e Electrolyzer stack Simulink block showing cell voltage, current, power and electrolyzer efficiency.
+
+Table 2 e Parameters for the simulation.                             production) that are calculated using received input data.
+                                                                     Finally, it includes dependence between hydrogen production
+System parameters                       Value                Unit    rate and required inlet water flow, i.e., calculates needed
+                                                                     output voltage to achieve a constant desired stoichiometric
+Electrolyzer power PEly                 1                    KW      factor of the water flow. The output voltage enters the
+                                        15                           amplifier who in turn amplifies that signal and powers the
+Stack cell number NC                    30                   cm2     pump. By controlling the voltage while powering the electro-
+                                        1; 013,105           Pa      lyzer and the pump, the regulation of hydrogen production
+Active cell area A                                                   rate and water flow, respectively, is ensured. The program
+                                        1; 013,105           Pa      code was checked by setting the input signals (using variable
+Starting hydrogen pressure at           2,106                Pa      voltage DC power sources) at desired values, while simulta-
+   the cathode p0H2 ¼ pC                0,011                g=cm,s  neously observing the change on the output pins 2, 3, A23 and
+                                        1; 27,10À2           cm      A25.
+Staring anode pressure pA               12,7
+Final hydrogen tank pressure pH1 2      3; 5,10À5            U           More detailed balance of the system could include further
+Water viscosity m                       4; 15,10À2           cm      hydrogen purification with dryer and deoxidizer, as well as
+Dry membrane thickness 4 memb           4; 15,10À2           cm      hydrogen purity measurement (up to 99,9999%) and water
+Membrane humidification degree l        0; 4 À 0; 5 [17]             purification system. The proposed schematic is given in Fig. 6.
+                                        0; 3 À 0; 6 [17]     A=cm2
+Ohmic resistance Rele                   10À4 À 10À2 [16]     A=cm2       Tap water passes through a water purifier (E-1) that de-
+Anode thickness 4A                      10À11 À 3,10À5 [16]  K       ionizes (DI) it and lowers its conductance to around 0.1 mS/cm.
+Cathode thickness 4K                    313                  K       Water pump (E-2) injects DI water into the oxygen separator
+Cathode charge transfer coefficient aC  343                          (E-3) where it mixes with the rest of the water in the system.
+Anode charge transfer coefficient aA    10                   m3      Afterwards, it is pulled by a circulation pump (E-6) that cir-
+Cathode exchange current density iC;0   0,5                  m3      culates it throughout the system. If water conductance is not
+Anode exchange current density iA;0     5                    S       within desired limits, valve V-5 closes and V-3 opens to refilter
+Starting operating temperature T_1      120000                       the water (E-7), removing ion surplus. On the electrolyzer
+                                                                     anode outlet, a mixture of produced oxygen and unused water
+Final operating temperature T_2                                      exits and further enters the oxygen separator (E-3) where
+                                                                     water is separated from oxygen that is compressed (E-4) and
+Stoichiometric factor Sh                                             stored in the oxygen tank (E-5). On the electrolyzer cathode
+                                                                     outlet, a mixture of produced hydrogen and water exits and
+Hydrogen tank volume VH2                                             enters the hydrogen separator (E-9) where water is separated
+Oxygen tank volume VO2                                               from hydrogen. Dryer (E-10) removes excess water while
+Simulation time t                                                    deoxidizer (E-11) removes excess oxygen from hydrogen
+
+    The mathematical calculation within the code in Fig. 5
+includes electrolyzer current and voltage dependence, i.e.,
+ensures that their product is equal to the electrolyzer power
+(P_el) at all times by regulating the output voltage, which en-
+ters the amplifier who in turn amplifies that signal and powers
+the electrolyzer stack. The calculation also contains necessary
+parameters (water density, thermoneutral voltage, hydrogen
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3  6165
+
+Fig. 4 e Schematic representation of the PEM electrolyzer system.
+
+stream. After measuring its purity, hydrogen is stored in a       overvoltage due to pressure difference (yellow curve) rea-
+tank (E-12) at high pressure.                                     ches a value of 1.3 V minus reversible pressure value (red
+                                                                  curve) of 1.2 V for the same time. According to Fig. 7, due to
+Results and discussion                                            increasing temperature at the beginning of the simulation,
+                                                                  activation overvoltages (blue curves), overvoltage due to the
+Change of simulation parameters with respect to time              pressure difference, and ohmic overvoltage (pink curve)
+                                                                  decrease. Diffusion overvoltages (green curves) remain un-
+For this simulation, electrolyzer's starting anode and cathode    changed because they are insensitive to temperature
+operating pressures are equal to atmospheric pressure, at a       change. However, their change becomes noticeable with
+temperature of 40 C with gradual increase (within 2000 s) to      pressure change. Since the pressure increases only on the
+its final 70 C. Like temperature, the cathode pressure, due to    cathode side (anode pressure is kept constant), anode
+hydrogen production and storage, will also increase until it      diffusion overvoltage remains unchanged throughout the
+reaches the final value of 2 MPa, thus stopping the simulation.   simulation and is equal to the reversible voltage (therefore
+Electrolyzer power is defined as a constant value and the         not visible on the diagram). Cathode diffusion pressure in-
+current is calculated by an iterative procedure. Produced ox-     creases very slowly, which leads to the conclusion that
+ygen is released into the atmosphere, necessitating anode         ignoring diffusion overvoltages in the mathematical model
+pressure constant throughout the simulation. Fig. 7 shows         altogether, does not contribute to a substantial error. On the
+overvoltage losses as a function of time.                         other hand, overvoltage due to pressure difference has a
+                                                                  more noticeable change and should not be neglected. Ohmic
+    Except for the reversible and cell voltage, all other over-   and activation overvoltages remain unchanged (after 2000 s)
+voltages are shown as the sum of the reversible voltage for       during the rest of the simulation and are independent of the
+better visibility. For instance, at a simulation time of 24000 s  pressure change.
+6166  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+      Fig. 5 e Part of Arduino code.
+
+Change of simulation parameters with respect to current             because electrochemical reaction products start to rapidly
+density                                                             precipitate on electrode surfaces, thus slowing the reaction and
+                                                                    increasing the resistance. When current density further in-
+In order to obtain the polarization curve, the most important       creases, products are starting to leave the electrode surfaces at
+curve that defines electrolyzer properties, it is necessary to set  the same rate as are produced, which then flattens the over-
+the current to be an input parameter with a linear increase over    voltage curves. Naturally, overvoltage due to pressure differ-
+time. With current defined, a cell voltage is directly calculated   ence (yellow line) and diffusion overvoltages (green lines)
+without the need for iteration. For a better result representa-     remain unchanged because they only depend on pressure,
+tion, hydrogen pressure and temperature are kept constant           which is constant throughout the simulation. Electrolyzer ef-
+(2 MPa, 70 C). Fig. 8 shows the polarization curves (cell voltage   ficiency as a function of current density is given in Fig. 10 for
+over current density) under different operating conditions.         various temperatures, pressures and membrane thicknesses.
+
+    Fig. 8 shows cell voltage increase due to increased current         Efficiency increases with higher temperature and lower
+density, lower temperature, higher pressure, and thicker            pressure and membrane thickness. At low current densities
+membrane. The membrane thickness increase presents the              (<0.1 A/cm2) it is greater than one, which means that the
+greatest impact on the voltage due to reduced proton con-           electrochemical reaction is endothermic (heat from the envi-
+ductivity. Temperature increase reduces activation over-            ronment is required for the reaction to take place) and that the
+voltages by speeding the electrochemical reaction (especially       cell voltage is lower than thermoneutral voltage. It should be
+at the anode). Cathode pressure increase almost impercep-           noted that electrolyzer efficiency in Fig. 10 does not consider
+tibly changes cell voltage, which makes electrolyzer a great        the energy stored in compressed hydrogen.
+and efficient way to compress hydrogen. Fig. 9 shows voltage
+losses as a function of current density.                            Commercial electrolyzer vs Simulink model
+
+    In Fig. 9, ohmic overvoltage (red line) increases linearly      Using commercially available electrolyzer parameters inside
+proportional to current density. Anode (solid line) and cathode     the simulation, the Simulink model has been validated by
+(dashed) activation overvoltages initially swiftly increase
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3    6167
+
+Fig. 6 e Balance of system for a PEM electrolyzer.
+
+Fig. 7 e Voltage losses depending on time. a e first 2000 s, b e overall simulation (2- column, in color).
+
+comparing obtained simulation results and diagrams with          predicting electrolyzer behavior before experimental setup.
+commercial electrolyzer data found in manufacturer bro-          The goal is to use the given parameter information from
+chures which proves that the model describes an available        manufacturers (operating pressures, temperature, etc.) and
+PEM electrolyzer. Given model can be utilized for a large va-    use those values as input parameters for the simulation.
+riety of different electrolyzers and their operating parameters  Finally, by comparing the obtained data (specifically hydrogen
+as well as finding different output parameters depending on      production) from the simulation and manufacturer parame-
+the given inputs, which makes it a great and versatile tool for  ters, it can be concluded whether the mathematical model
+6168  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+Fig. 8 e Electrolyzer polarization curves for different. Temperature (a), pressure (b) and membrane thickness (c) (2-column, in
+color).
+
+      Fig. 9 e Voltage losses as a function of current density.
+
+satisfies the behavior of the electrolyzer. Commercial elec-               The second electrolyzer fulfills the tank last because it has
+trolyzer data is given in Table 3.                                     the least power (500 W) and thus the slowest hydrogen pro-
+                                                                       duction. Simulation results match quite well with data from
+    Manufacturer data are scarce, so to simulate true electro-         the manufacturer's catalog, but it should be taken into ac-
+lyzer behavior, some parameters must be assumed. Table 4               count the fact that a lot of data is missing, so the parameters
+shows parameters used in the simulation.                               within the simulation can be adjusted to achieve more accu-
+                                                                       rate results. For example, the temperature for the first elec-
+    Membrane thickness is the same for every electrolyzer except       trolyzer is set (due to lack of data) to 80 C, which is not a
+the third since its operating pressure is twice as high, which is      realistic operating temperature because at that temperature,
+why it is safe to assume it has a thicker membrane. Simulation         the membrane's lifespan is greatly shortened. Fig. 11 shows
+time is set according to the time it takes to fill the hydrogen tanks  the voltage change over time for every simulated electrolyzer.
+with produced gas, thus reaching the given cathode pressure
+(hydrogen tank pressure). Obtained results are given in Table 5.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3  6169
+
+Fig. 10 e Efficiency over current density at different. Temperatures (a), pressures (b) and membrane thicknesses (c).
+
+Table 3 e Commercially available electrolyzer data.
+
+                                    1. Electrolyzer  2. Electrolyzer  3. Electrolyzer                     4. Electrolyzer
+                                       h2planet        h2agentur            HIAT                              H e TEC
+                                        HY PEM            G5 [39]                                            Series e S
+                                                                       Purifier [40]
+                                     XP 3300 [38]      500 W                                                S 30/10 [41]
+                                                       e                  1500W
+Electrolyzer power PEly             816 W              0,1 Nm3/h          e                                 1000 W
+                                    24 V               e                  0,3 Nm3/h                         25 V
+Source voltage U                    0,2 Nm3/h          e                  10                                0,22 Nm3/h
+Hydrogen production PHN2            e                  1; 013,105 Pa      28,27 cm2                         e
+Number of cells in stack NC         e                  2,106 Pa           1; 5,105 Pa
+                                    1; 013,105 Pa      313 K              4,106 Pa                           -
+Active cell area A                  1; 6,106 Pa        313 K              e
+Anode pressure pA                   e                                     e                                 1; 013,105 Pa
+Cathode pressure pC                 e                                                                       2,106 Pa
+Starting operating temperature T_1                                                                          303 K
+                                                                                                            343 K
+Final operating temperature T_2
+
+Table 4 e Used parameters for the simulation.
+
+                                            For              For              For      For 4. ElectrolyzerH e TEC
+                                    1. Electrolyzer  2. Electrolyzer  3. Electrolyzer              Series e S
+                                                                                                     S 30/10
+                                       h2planet        h2agentur            HIAT
+                                        HY PEM               G5            Purifier                1000 W
+                                        XP 3300                                                    15
+                                                       500 W            1500W                      30 cm2
+Electrolyzer power PEly             816 W              7                10                         1; 013,105 Pa
+                                    13                 30 cm2           28,27 cm2                  1; 013,105 Pa
+Number of cells in stack NC         30 cm2             1; 013,105 Pa    1; 013,105 Pa              2,106 Pa
+                                    1; 013,105 Pa      1; 013,105 Pa    1; 5,105                   127 mm
+Active cell area A                  1; 013,105 Pa      2,106 Pa         4,106 Pa                   303 K
+Starting cathode pressure pC0       1; 6,106 Pa        127 mm           183 mm                     343 K
+Starting anode pressure pA          127 mm             313 K            343 K                      120000 s
+Final cathode pressure pC1          353 K              313 K            343 K
+Dry membrane thickness 4 memb       353 K              265000 s         190000 s
+                                    110000 s
+Starting operating temperature T_1
+
+Final operating temperature T_2
+
+Simulation time t
+6170                      i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+Table 5 e Simulation hydrogen production results.
+
+                               For                                       For          For                                                For
+                          1. h2planet                              2. h2agentur    3. HIAT                                          4. H e TEC
+                                                                                   Purifier                                         Series e S
+                            HY PEM                                        G5
+                            XP 3300                                              0,292 Nm3/h                                          S 30/10
+                                                                    0,107 Nm3/h  189744 s
+Hydrogen production PNH2  0,192 Nm3/h                               264528 s                                                        0,224 Nm3/h
+Simulation time t         109875 s                                                                                                  119735 s
+
+Fig. 11 e Cell voltage change over time for every simulated electrolyzer. a e first 2000 s, b e overall simulation.
+
+    The fourth electrolyzer has a sudden change in voltage         works at the lowest efficiency. Fig. 12 shows the change in
+because of variable temperature (30e70 C) in the first 2000 s,     hydrogen production as a function of time.
+afterwhich temperature slowly approximates to its final
+value. The first electrolyzer has the lowest cell voltage because      The slight decrease in hydrogen production is a consequence
+it has the lowest current density which is proportional to the     of gradually increasing cathode pressure, which slows down the
+power, cell voltage and active membrane surface, and               electrochemical reaction. This decrease is pronounced the most
+inversely proportional to stack cell number. For the same          in the third electrolyzer because cathode pressure at the end of
+reason, the third electrolyzer took the highest position (small    simulation reaches 4 MPa, which is twice as much as the others.
+cell number, high power), which leads to the conclusion that it    The second electrolyzer has the lowest hydrogen production
+                                                                   and the longest simulation time due to the lowest power (500 W).
+
+Fig. 12 e Hydrogen production over time for every simulated electrolyzer. a e first 2000 s, b e overall simulation
+                  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3                      6171
+
+Conclusions                                                         Aohm        Conductor cross-sectional area, m2
+                                                                    aRK, bRK
+The goal of this work was to describe, model, calculate and         CmH2        Redlich-Kwong equation parameters
+simulate 1 KW PEM electrolyzer stack consisting of 15 cells                     COm2 , CHm2;0, CmO2;0 Oxygen and hydrogen concentrations
+connected in series, as well as to present simplified balance of                mol mÀ3
+the system using Arduino MEGA microchip controlled with
+appropriate code. The mathematical model includes most often        CHA2 O      CHK2O Anode and cathode water concentrations, mol
+ignored diffusion losses due to gas transport, and water transfer               mÀ3
+through the membrane. Simulation result proves that anode
+and cathode diffusion losses are quite small and can be             D           Diffusion membrane coefficient
+neglected, ranging from 1:4,10À4 À 0:015 ½V, while water
+transfer is significant, with flows around 0.42e0.9 [l/h] for       F           Faraday constant, 96485 An s molÀ1
+hydrogen production of 0.1e0.3 [Nm3/h], respectively. Model
+accuracy is assessed by running simulations using commer-           G           Gibbs free energy, J
+cially available electrolyzer parameters. Simulation results and
+diagrams, with their similarity to experimental data, proved that   gmH2        gmH2O , gmO2 Mass flow of hydrogen, water and oxygen
+the mathematical model given in this work describes a practical
+PEM electrolyzer behavior quite well. When comparing com-                       kg/s
+mercial electrolyzer data (Table 3) with the obtained simulation
+results (Table 5), we get the minimum margin of error of 2.2% for   IEly        Electrolyzer current, A
+the fourth electrolyzer, while the maximum 7.4% corresponds to      iEly        Electrolyzer current density, A cmÀ2
+the second electrolyzer. Both comparisons are in term of            iA,0, iC,0
+hydrogen production. Furthermore, it is concluded that many                     Anode and cathode exchange current densities, A
+processes within electrolysis are still largely unknown which is                cmÀ2
+why the obtained simulation results must be considered with a
+certain level of caution. Future work for improving the mathe-      lohm        Conductor length, m
+matical model is to consider the hydraulic losses and variable      Kdarcy      Membrane permeability
+temperature distribution throughout the electrolyzer stack          MH2 O       Molar mass of water, g molÀ1
+taking into account its geometry as well. It is worth to note that  NC          Stack cell number
+insufficient research necessitate the authors to predict certain    n           Number of electrons per hydrogen molecule
+parameters, such as current densities and charge transfer co-
+efficients, to obtain results more similar to experimental mea-     PEly        Pel Electrolyzer power, W
+surements. This confirms that further research and
+development is necessary to further contribute to the               PHN2        PON2 Hydrogen and oxygen volumetric production,
+improvement of the PEM electrolysis modelling.
+                                                                                Nm/h
+Declaration of competing interest
+                                                                    pA          pC Anode and cathode pressures, Pa
+The authors declare that they have no known competing
+financial interests or personal relationships that could have       pCr         Critical gas pressure, Pa
+appeared to influence the work reported in this paper.
+                                                                    pH2         pO2 Hydrogen and oxygen partial pressures, Pa
+                                                                    pH2 O       Water pressure, Pa
+                                                                    psHa2tO
+                                                                    qC          Saturated water vapor pressure, Pa
+
+                                                                      nH2 O     qCnHd2O ,  qCeo     ,  qCpd     Molar density  flow  of  water  through
+                                                                                                                mol mÀ2sÀ1
+                                                                    R                        nH2 O       nH2 O
+
+                                                                                the membrane,
+
+                                                                                Universal gas constant, 8315 J molÀ1 KÀ1
+
+                                                                    Rele        Ohmic resistance, U
+                                                                    Rmem        Membrane resistance to proton transfer, U/m2
+                                                                    T
+                                                                                Electrolyzer temperature, K
+
+                                                                    t           Time, s
+
+                                                                    tS          Filling tank time, s
+
+                                                                    U           Voltage, V
+
+                                                                    UAakt, UCakt Anode and cathode activation overvoltages, V
+
+                                                                    UAdif, UCdif Anode and cathode diffusion overvoltages, V
+
+                                                                    UEly        Electrolyzer cell voltage, V
+
+                                                                    Uohm Ohmic overvoltage, V
+
+                                                                    Urev        Reversible voltage, V
+
+                                                                    Up          Overvoltage due to pressure difference, V
+
+                                                                    Utn         Thermoneutral voltage, V
+
+                                                                    VH2         VO2 Hydrogen and oxygen tank volumes, m3
+
+Acknowledgements                                                    Greek symbols
+
+The authors thank the Croatian Science Foundation, which            aA, aC Anode and cathode charge transfer coefficients
+finances the project UIP-2020-02-7332 Advanced methods of
+green hydrogen production and its transportation, within            h           Electrolyzer efficiency
+which research was conducted, and the results of which are
+presented in this work.                                             hdrag       Electro-osmotic drag coefficient
+                                                                    l
+Nomenclature                                                                    Membrane humidification ratio
+                                                                    mH2 O       Water viscosity, g cmÀ1sÀ1
+                                                                    rH2 O       Water density, kg/m3
+                                                                    rohm
+                                                                    s           Conductor resistance, Um
+                                                                                Ionic conductivity, S mÀ1
+
+A, B, C Antoine equation parameters                                 4memb Dry membrane thickness, cm
+                                                                    4A, 4K Anode and cathode thickness, cm
+A  Active cell area, cm2
+6172  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3
+
+references                                                            [17] Biaku CY, Dale NV, Mann MD, Salehfar H, Peters AJ, Han T. A
+                                                                            semiempirical study of the temperature dependence of the
+ [1] Carmo M, Fritz DL, Mergel J, Stolten D. A comprehensive                anode charge transfer coefficient of a 6 kW PEM electrolyzer.
+      review on PEM water electrolysis. Int J Hydrogen Energy               Int J Hydrogen Energy 2008;33:4247e54. https://doi.org/
+      2013;38:4901e34. https://doi.org/10.1016/                             10.1016/j.ijhydene.2008.06.006.
+      j.ijhydene.2013.01.151.
+                                                                      [18] Tijani AS, Ghani MFA, Rahim AHA, Muritala IK, Mazlan FAB.
+ [2] Dawood F, Anda M, Shafiullah GM. Hydrogen production for               Electrochemical characteristics of (PEM) electrolyzer under
+      energy: an overview. Int J Hydrogen Energy 2020;45:3847e69.           influence of charge transfer coefficient. Int J Hydrogen
+      https://doi.org/10.1016/j.ijhydene.2019.12.059.                       Energy 2019;44:27177e89. https://doi.org/10.1016/
+                                                                            j.ijhydene.2019.08.188.
+ [3] Abe JO, Popoola API, Ajenifuja E, Popoola OM. Hydrogen
+      energy, economy and storage: review and recommendation.         [19] Tijani AS, Kamarudin NAB, Mazlan FAB. Investigation of the
+      Int J Hydrogen Energy 2019;44:15072e86. https://doi.org/              effect of charge transfer coefficient (CTC) on the operating
+      10.1016/j.ijhydene.2019.04.068.                                       voltage of polymer electrolyte membrane (PEM) electrolyzer.
+                                                                            Int J Hydrogen Energy 2018;43:9119e32. https://doi.org/
+ [4] Schmidt O, Gambhir A, Staffell I, Hawkes H, Nelson J, Few S.           10.1016/j.ijhydene.2018.03.111.
+      Future cost and performance of water electrolysis: an expert
+      elicitation study. Int J Hydrogen Energy 2017;42:30470e92.      [20] Aouli FZ, Becherif M, Ramadan HS, Emziane M, Khellaf A,
+      https://doi.org/10.1016/j.ijhydene.2017.10.045.                       Mohammedi K. Analytical modelling and experimental
+                                                                            validation of proton exchange membrane electrolyzer for
+ [5] Ðukic A. Autonomous hydrogen production system. Int J                  hydrogen production. Int J Hydrogen Energy
+      Hydrogen Energy 2015;40:7465e74. https://doi.org/10.1016/             2017;42:1366e74. https://doi.org/10.1016/
+      j.ijhydene.2015.02.003.                                               j.ijhydene.2016.03.101.
+
+ [6] Ceylan C, Devrim Y. Design and simulation of the PV/PEM          [21] Yigit T, Selamet OF. Mathematical modeling and dynamic
+      fuel cell based hybrid energy system using MATLAB/                    Simulink simulation of high-pressure PEM electrolyzer
+      Simulink for greenhouse application. Int J Hydrogen Energy            system. Int J Hydrogen Energy 2016;41:13901e14. https://
+      2021;46:22092e106. https://doi.org/10.1016/                           doi.org/10.1016/j.ijhydene.2016.06.022.
+      j.ijhydene.2021.04.034.
+                                                                      [22] Shin HS, Soo Oh B. Water transport according to temperature
+ [7] Ismail TM, Ramzy K, Elnaghi BE, Abelwhab MN, El-Salam MA.              and current in PEM water electrolyzer. Int J Hydrogen Energy
+      Using MATLAB to model and simulate a photovoltaic system              2019;45:56e63. https://doi.org/10.1016/j.ijhydene.2019.10.209.
+      to produce hydrogen. Energy Convers Manag
+      2019;185:101e29. https://doi.org/10.1016/                       [23] Garcia-Navarro JC, Schulze M, Friedrich KA. Measuring and
+      j.enconman.2019.01.108.                                               modelling mass transport losses in proton exchange
+                                                                            membrane water electrolyzers using electrochemical
+ [8] Sharifian S, Kolur NA, Harasek M. Transient simulation and             impedance spectroscopy. J Power Sources 2019;431:189e204.
+      modeling of photovoltaic-PEM water electrolysis. Energy               https://doi.org/10.1016/j.jpowsour.2019.05.027.
+      Sources A: Recovery Util Environ Eff 2019:1556e7036. https://
+      doi.org/10.1080/15567036.2019.1602220.                          [24] Espinoza-Lopez M, Darras C, Poggi P, Glises R, Baucour P,
+                                                                            Rakotondrainibe A, Besse S, Serre-Combe P. Modelling and
+ [9] Maamouri R, Guilbert D, Zasadzinski M, Rafaralahy H. Proton            experimental validation of a 46 kW PEM high pressure water
+      exchange membrane water electrolysis: modeling for                    electrolyzer. Renew Energy 2018;119:160e73. https://doi.org/
+      hydrogen flow rate control. Int J Hydrogen Energy                     10.1016/j.renene.2017.11.081.
+      2021;46:7676e700. https://doi.org/10.1016/
+      j.ijhydene.2020.11.276.                                         [25] Sood S, Prakash O, Boukerdja M, Dieulot JY, Ould-
+                                                                            Bouamama B, Bressel M, Gehin AL. Generic dynamical model
+[10] Afshari E, Khodabakhsh S, Jahantigh N, Toghyani S.                     of PEM electrolyzer under intermittent sources. Energies
+      Performance assessment of gas crossover phenomenon and                2020;13:6556. https://doi.org/10.3390/en13246556.
+      water transport mechanism in high pressure PEM
+      electrolyzer. Int J Hydrogen Energy 2021;46. https://doi.org/   [26] Ma Z, Witteman L, Wrubel JA, Bender G. A comprehensive
+      10.1016/j.ijhydene.2020.10.180. 22029-11040.                          modeling method for proton exchange membrane
+                                                                            electrolyzer development. Int J Hydrogen Energy
+[11] Schalenbach M. Corrigendum to ''Pressurized PEM water                  2021;46:17627e43. https://doi.org/10.1016/
+      electrolysis: efficiency and gas crossover'' [Int J hydrogen          j.ijhydene.2021.02.170.
+      energy 38 (2013) 14921-14933]. Int J Hydrogen Energy
+      2016;41:729e32. https://doi.org/10.1016/                        [27] Albarghot M, Sasi M, Rolland L. MATLAB/Simulink modeling
+      j.ijhydene.2015.11.009.                                               and experimental results of a PEM electrolyzer powered by a
+                                                                            solar panel, vol.10. IEEE; 2016. p. 779e85. https://doi.org/
+[12] Scheepers F, Stahler M, Stahler A, Rauls E, Mu¨ ller M,                10.1109/EPEC.2016.7771691.
+      Carmo M, et al. Improving the Efficiency of PEM Electrolyzers
+      through Membrane-Specific Pressure Optimization. Energies       [28] Beainy A, Karami N, Moubayed N. Simulink model for a PEM
+      2020;13:612. https://doi.org/10.3390/en13030612.                      electrolyzer based on an equivalent electrical circuit. IEEE;
+                                                                            2014. https://doi.org/10.1109/REDEC.2014.7038547. REDEC
+[13] Ogumerem GS, Pistikopoulos EN. Parametric optimization                 2014.
+      and control for a smart proton exchange membrane water
+      electrolysis (PEMWE) system. J Process Control                  [29] Hernandez-Gomez A, Ramirez V, Guilbert D, Saldivar B.
+      2020;91:37e49. https://doi.org/10.1016/j.jprocont.2020.05.002.        Development of an adaptive static-dynamic electrical model
+                                                                            based on input electrical energy for PEM water electrolysis.
+[14] Kumar SS, Himabindu V. Hydrogen production by PEM water                Int J Hydrogen Energy 2020;45:18817e30. https://doi.org/
+      electrolysis. Mater Sci Energy Technol 2019;2:442e54. https://        10.1016/j.ijhydene.2020.04.182.
+      doi.org/10.1016/j.mset.2019.03.002.
+                                                                      [30] Guilbert D, Vitale G. Dynamic emulation of a PEM
+[15] Liso V, Savoia G, Araya SS, Cinti G, Kær SK. Modelling and             electrolyzer by time constant based exponential model.
+      experimental analysis of a polymer electrolyte membrane               Energies 2020;12:750. https://doi.org/10.3390/en12040750.
+      water electrolysis cell at different operating temperatures.
+      Energies 2018;11:3273. https://doi.org/10.3390/en11123273.      [31] Immerz C, Bensmann B, Trinke P, Suermann M, Hanke-
+                                                                            Rauschenbach R. Understanding electrical under- and
+[16] Zhang H, Su S, Lin G, Chen J. Efficiency calculation and               overshoots in proton exchange membrane water electrolysis
+      configuration design of a PEM electrolyzer system for                 cells. J Electrochem Soc 2019;166:1200e8. https://doi.org/
+      hydrogen production. Int J Electrochem Sci 2012;7:4143e57.            10.1149/2.0881914jes.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 8 ( 2 0 2 3 ) 6 1 5 8 e6 1 7 3  6173
+
+[32] Garcia-Valverde R, Espinosa N, Urbina A. Simple PEM water                 exchange membrane electrolyzer stack characteristics. J
+      electrolyzer model and experimental validation. Int J                    Power Sources 2008;185:1348e53. https://doi.org/10.1016/
+      Hydrogen Energy 2011;37:1927e38. https://doi.org/10.1016/                j.jpowsour.2008.08.054.
+      j.ijhydene.2011.09.027.                                            [37] Chemistry LibreTexts. 2020. https://chem.libretexts.org/
+                                                                               Bookshelves/Physical_and_Theoretical_Chemistry_Textbook
+[33] Rahim AHA, Tijani AS, Shukri FH, Hanapi S, Sainan KI.                     _Maps/Map%3A_Physical_Chemistry_(McQuarrie_and_
+      Mathematical modelling and simulation analysis of PEM                    Simon)/16%3A_The_Properties_of_Gases/16.02%3A_van_der_
+      electrolyzer system for hydrogen production. IET; 2014.                  Waals_and_Redlich-Kwong_Equations_of_State. [Accessed
+      https://doi.org/10.1049/cp.2014.1466. 2015; CEAT.                        15 January 2021].
+                                                                         [38] FuelCellStore. 2021. https://www.fuelcellstore.com/hy-pem-
+[34] Yodwong B, Guilbert D, Phattanasak M, Kaewmanee W,                        xp-3300-rack. [Accessed 21 January 2021].
+      Hinaje M, Vitale G. Proton exchange membrane electrolyzer          [39] h2agentur. 2021. https://h2agentur.de/en/pem-electrolysis-
+      modeling for power electronics control: a short review. J                stacks/. [Accessed 23 January 2021].
+      Carbon Res 2020;6:29. https://doi.org/10.3390/c6020029.            [40] HIAT. 2021. https://m.europages.com/filestore/gallery/c8/18/
+                                                                               20980627_81ff6a1c.pdf2021. [Accessed 28 January 2021].
+[35] Yodwong B, Guilbert D, Hinaje M, Phattanasak M,                     [41] H-TEC SYSTEMS. 2021. https://www.h-tec.com/en/products/
+      Kaewmanee W, Vitale G. Proton exchange membrane                          pem-electrolysis-stacks/h-tec-series-s/. [Accessed 25
+      electrolyzer emulator for power electronics testing applications.        January 2021].
+      Processes 2021;9:498. https://doi.org/10.3390/pr9030498.
+
+[36] Dale NV, Mann MD, Salehfar H. Semiempirical model based
+      on thermodynamic principles for determining 6 kW proton
+

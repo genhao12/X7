@@ -1,0 +1,316 @@
+                i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8
+
+                                Available online at www.sciencedirect.com
+
+                               ScienceDirect
+
+                                                     journal homepage: www.elsevier.com/locate/he
+
+Letter to the Editor
+
+Green hydrogen to address seasonal variability of
+wind and solar energy production in Australia
+
+Keywords:       abstract
+Energy storage
+Green hydrogen  Energy storage is fundamental to tackling irregular energy production by solar and wind.
+Australia       Unfortunately, the need for storage over different time scales is not properly acknowledged
+Wind energy     in many jurisdictions, with Australia being one of them. A key research question to address
+Solar energy    is how is it possible for Australia to move toward net zero producing energy only by solar
+                and wind, compensating for the large seasonal variability. We show as without having
+                dispatchable energy production using carbon and hydrocarbon fuels, or green hydrogen
+                energy storage, this is impossible. The limited battery energy storage or pumped hydro
+                energy storage being developed does not permit the necessary long-term storage in the
+                huge amounts needed. Every serious approach to progress toward net-zero should include
+                hydrogen and nuclear energy production. This perspective emphasizes the need for a
+                balanced and pragmatic approach that considers a variety of energy sources and storage
+                technologies to achieve both environmental and energy security goals.
+
+                 © 2023 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved..
+                                                                                                                                                     .
+
+1. Introduction                                                 investment and planning. Hydrogen has a low energy density
+                                                                per unit volume, making its storage and transportation com-
+The "hydrogen economy" is the only possible alternative to      plex. It requires advanced storage technologies that can
+the traditional fossil fuel-based economy, to reduce green-     handle high pressures or extremely low temperatures.
+house gas emissions and transition to more sustainable en-      Hydrogen is also highly flammable and has different safety
+ergy sources, [1e5]. In a hydrogen economy, hydrogen gas (H2)   considerations compared to other fuels, necessitating proper
+serves as a versatile and clean energy carrier, produced from   handling, storage, and infrastructure design. However, there
+renewable or nuclear energy through water electrolysis for a    is no other opportunity to progress toward net zero if not
+wide range of applications, including transportation, elec-     coupling wind and energy production of electricity, and
+tricity generation, and industrial processes. Produced from     possibly also nuclear energy production, and hydrogen energy
+renewable sources or nuclear energy, which do not emit          storage [6,7].
+greenhouse gases, when used in fuel cells, hydrogen produces
+electricity and emits only water vapor as a byproduct.              An important challenge in the transition to renewable
+Hydrogen can be used in various sectors, including trans-       energy sources is the need for effective energy storage solu-
+portation, energy storage, heating, and industrial processes.   tions to address the intermittency and changeability of solar
+Transitioning to a hydrogen economy reduce our dependence       and wind power. The current focus on battery energy storage
+on fossil fuels, helping to mitigate climate change and         and pumped hydro energy storage might not be sufficient to
+decrease air pollution.                                         meet the long-term storage requirements, especially in re-
+                                                                gions like Australia with large seasonal variability. To address
+    Scaling up green hydrogen production is a challenge due to  this, hydrogen and nuclear energy production should also be
+high costs and efficiency issues. Similarly, establishing a     considered as part of the solution [6,8]. Energy storage is
+hydrogen infrastructure, including production, trans-           crucial for balancing the variable nature of renewable energy
+portation, storage, and distribution, requires significant      sources such as solar and wind. These sources don't produce
+                                                                power consistently, and their output can be influenced by
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8  21
+
+weather conditions and seasonality. Energy storage technol-         only come from hydrogen. The amount of energy storage
+ogies can store excess energy when it is abundant and release       needed to address the seasonal variability of solar and wind
+it when there is a deficit.                                         across Australia at a time of net zero without nuclear power
+                                                                    generation would be massive. While a grid wind and solar
+    Current energy storage solutions suffer from major limi-        certainly partially ease some of the requirements having
+tations. Battery energy storage [9] and pumped hydro storage        wind a different seasonality from solar, the issue of energy
+[10] currently being developed might not provide the neces-         storage will remain insolvable without hydrogen energy
+sary long-term storage capacity in the huge amount due. This        storage and nuclear power generation. This perspective
+is because batteries have limitations in terms of their energy      emphasizes the need for a balanced and pragmatic approach
+density, and pumped hydro storage might not be feasible in all      that considers a variety of energy sources and storage tech-
+geographical locations and it is also subjected to limitations.     nologies to achieve both environmental and energy security
+Additionally, both technologies are not supposed to be used to      goals.
+store huge amounts of energy for six months, as is the case for
+seasonal variability. Hydrogen energy storage plays a role in       2. Net zero with only wind and solar energy
+addressing this issue. Green hydrogen, which is produced
+using renewable energy sources, can be stored and used as a         The total energy used by Australia in 2021 was 5,437,846 TJ or
+fuel when renewable energy generation is low. Hydrogen can          1,510,513,000 MWh [18]. Here we consider the opportunity of
+be used to effectively convert intermittent renewable energy        generating this electricity by solar, wind, or a combination of
+into a storable form. It can be used in various sectors, not only   solar and wind.
+power generation, including industry and transportation.
+                                                                    2.1. Net zero solar seasonal variability
+    Regarding the use of hydrogen for power generation, while
+fuel cells need to be improved and scaled up, combined cycle        We consider first a net zero solar future. If at the time of net
+gas plants are a proven technology [11,12]. While combined          zero, all the 1,510,513,000 MWh of the current total energy (we
+cycle gas power plants are well developed to work with nat-         avoid considering the opportunity the energy use of Australia
+ural gas (there are many examples across the world of power         could grow, phased with a growth of population and life
+plants of capacity also more than 4000 GW, working with high        quality) would have to come from solar, at an annual average
+capacity factors approaching 0.9, with fuel conversion effi-        capacity factor of 0.3 for farms, this would necessitate an
+ciencies above 0.5), and these plants could be easily converted     installed capacity of 574,777 MW. In the case of solar rooftops,
+to hydrogen, the scaling up of fuel cell [15] electricity pro-      with an annual average capacity factor of 0.1, this would
+duction is ongoing, same as the scaling up of electrolyzers for     translate into 1,724,330 MW.
+hydrogen production [13,14] from renewable electricity.
+                                                                        Given the fact in most locations, the number of hours of
+    Nuclear Energy Production is also relevant. Nuclear power       daylight, and the peak irradiance, varies enormously from
+plants produce consistent and reliable electricity without          the winter to the summer solstice, solar energy production
+emitting greenhouse gases. This reduces the need for storage        varies accordingly. We consider as an example the operation
+to compensate for wind and solar changeability [6]. Finally, of     over the year 2018 of the 57 MW nominal capacity solar farm
+the total energy used by a country, electricity is only part, with  in Moree, NSW, Australia, which operates at an annual
+fossil fuels currently covering this other part, in addition to     average power of 17 MW. There is a much larger production
+part of the electricity generation. Hydrogen is also the            during the summer months than during the winter months,
+replacement fuel for all the current non-electric uses that         Fig. 1a.
+cannot be electrified soon.
+                                                                        Considered individually, the 17 MW annual average power
+    If the need for hydrogen is clear, not everybody un-            output facility would need a minimum of 13,616 MWh of en-
+derstands. The progress toward net-zero has been so far full        ergy and 39 MW of power, even for perfect energy storage
+of inconsistencies. The government of Australia is so               which has unity round trip efficiency, to produce a stable
+committed to tackling climate change, that the country is           output.
+strengthening its position as one of the top exporters of
+natural gas and coal (in addition to uranium), www.energy.              By considering all solar farms connected to the very large
+gov.au [16], while limiting onshore consumption of natural          AEMO grid, for a total of 8809 MW of nominal capacity, there is
+gas and coal. The combustion of fossil fuels overseas is not        still a significant correlation between the grid average and the
+less polluting than the combustion of fossil fuels onshore,         single plant operation, Fig. 1b and c the winter and summer
+despite it being more polluting on a life cycle analysis since      solstices.
+there is a need for transport. Meanwhile, in August 2023,
+Australian citizens already pay 3.230 c/MJ for natural gas,             The issue of having a huge difference between the energy
+and 43.934 c/kWh per electricity, when the Australian share         produced in winter and summer, multiplied by a huge ca-
+of wind, solar, and hydro total energy has only marginally          pacity, has not yet a solution, with current energy storage
+improved from the 5% of 2021, and worldwide, the share of           technologies such as batteries and pumped hydro.
+solar, wind, hydro, geothermal and ocean is 5.5% of the total,
+www.iea.org, [17]. According to www.iea.org [18], only 1% of            Fig. 2 presents the hypothetical power output above a 100
+the total energy was hydroelectric, and 4% was wind and             MW annual average power output solar facility working with
+solar in 2021. This work aims to show the huge energy stor-         the same capacity factors of Moree and the energy in perfect
+age needs to make stable an electric grid that only received        storage to produce a constant output. The minimum energy of
+solar and wind energy in Australia. This energy storage may         the perfect storage is 78,275 MWh.
+22  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8
+
+Fig. 1 e (a) 24 hours and 4 weeks moving average of electricity production from the Moree solar farm, NSW, Australia. (b)
+And (c) the grid average capacity factor of all the AEMO solar farms during the winter (21 June) and summer (22 December)
+months. Data of (a) is from anero.id [19]. Images (b), (c), are from anero.id [19]. Courtesy of Andrew Miskelly.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8  23
+
+2.2. Net zero wind seasonal variability                       and 113 MW of power, even for perfect energy storage which
+                                                              has unity round trip efficiency, to produce a stable output.
+We then consider a net zero wind. While wind, which is also
+changeable, with significant storage needs, has a smaller         By considering all wind farms connected to the very large
+correlation between plants at the grid average, and a less    AEMO grid, for a total of 10,277 MW of nominal capacity, there
+obvious seasonal pattern, another nonedispatchable gener-     is still a significant correlation between the grid average and
+ator cannot compensate for the lack of production or over-    the single plant operation, Fig. 3b and c the June and
+production from another non-dispatchable generator.           December months.
+
+    If we consider as an example the operation over the year      As a wind farm has about the same as a solar farm's annual
+2018 of the 175 MW nominal capacity wind farm in White        average capacity factor, net zero would alternatively require
+Rock, NSW, Australia, which operates at an annual average     an installed capacity of 574,777 MW of only wind generators.
+power of 59 MW, there is considerable variability across the
+year, Fig. 3a.                                                    Fig. 4 presents the hypothetical power output above a 100
+                                                              MW annual average power output wind facility working with
+    Considered individually, the 59 MW annual average power   the same capacity factors of White Rock and the energy in
+output facility would need a minimum of 31,629 MWh of energy  perfect storage to produce a constant output. The minimum
+                                                              energy of the perfect storage is 53,227 MWh.
+
+Fig. 2 e (a) Hypothetical power output above a 100 MW annual average power output solar facility working with the same
+capacity factors of Moree, and (b) the energy in perfect storage to produce a constant output. 240 h moving averages
+superimposed in (a). The minimum energy of the perfect storage is 78,275 MWh.
+24  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8
+
+Fig. 3 e (a) 24 hours and 4 weeks moving average of electricity production from the White Rock wind farm, NSW, Australia.
+(b) And (c) the grid average capacity factor of all the AEMO wind farms during the June and December months. Data of (a) is
+from anero.id [19]. Images (b), (c), are from anero.id [19]. Courtesy of Andrew Miskelly.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8  25
+
+2.3. Net zero solar and wind seasonal variability                    Fig. 5a presents the instantaneous power minus the annual
+                                                                 average, and Fig. 5b is the minimum energy needed in perfect
+We finally consider a mix of wind and solar for net zero. While  energy storage. What is produced over the annual average
+a mix of solar farms, wind farms, and solar rooftops will        power is sent to the storage, and what is produced in defect
+require a pro-share installed capacity, and the mix of wind      comes from the storage.
+and solar energy having different seasonal patterns may
+certainly ease the need for total energy storage, this is not a      Without accounting for a round trip efficiency of less
+solution for the issue of solar seasonal variability.            than unity, and without any safety margin, the minimum
+                                                                 energy storage to stabilize a 100 MW effective mixed wind
+    We may couple the energy supply from a hypothetical          and solar power generation is 43,167 MWh with continuous
+wind farm working with the same instantaneous capacity           flow to and from the storage for short and long-term
+factor , ratio of actual power to nominal power, of White        purposes.
+Rock, and annual average power of 50 MW, with a hypothet-
+ical solar farm working with the same instantaneous capacity         Thus, coupling wind and solar reduces the burden of en-
+factor of Moree and annual average power also of 50 MW.          ergy storage. However, the need for storage is still huge and
+                                                                 cannot be covered by batteries or pumped hydro.
+
+Fig. 4 e (a) Hypothetical power output above a 100 MW annual average power output wind facility working with the same
+capacity factors of White Rock, and (b) the energy in perfect storage to produce a constant output. 240 h moving averages
+superimposed in (a). The minimum energy of the perfect storage is 53,227 MWh.
+26  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8
+
+Fig. 5 e (a) Hypothetical power output above the annual average coupling a 50 MW annual average power output wind
+facility working with the same capacity factors of White Rock with a 50 MW annual average power output solar facility
+working with the same capacity factors of Moree, and (b) the energy in perfect storage to produce a constant output. The
+minimum energy of the perfect storage is 43,167 MWh.
+
+2.4. Round trip efficiency less than unity and grid level       ZDt  ZDt
+analysis
+                                                                h $ maxð0; P0 À P*Þdt þ minð0; P0 À P*Þdt ¼ 0
+The previous analysis is optimistic, or pessimistic, as we do
+not consider the round trip efficiency, and we do not consider  0    0
+the grid averaging.
+                                                                where P0 is the instantaneous power.
+    By introducing a round trip efficiency h as the ratio of        In case h ¼ 0.5 for example, and the coupling wind and
+power out of the storage to power in to account for the inev-
+itable losses, the annual average power output of the hypo-     solar facilities of Fig. 5, the average power to the grid would
+thetical coupled one wind and one solar facility would reduce   reduce from 100 MW to 80.5 MW, and the installed capacity of
+to a lower threshold value P*, so                               wind and solar to deliver the same constant output of 100 MW,
+                                                                would have to be increased by 19.5%. This will also affect the
+                                                                size of the storage, which will have to accept more energy in
+                                                                for the same energy out.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8               27
+
+    The above exercise should be performed at the grid level,     from wind, which also has variability, does not help too much.
+accounting for the degree of correlation between the different    Limited battery or pumped hydro energy storage is
+solar or wind facilities. From Figs. 1 and 3, we know that the    insufficient.
+correlation is much larger for solar, and smaller for wind, but
+the details will ultimately depend on where specifically the          The progress toward net zero, therefore, must pass
+new facilities needed will be located.                            through hydrogen in Australia, not less than in New Zealand
+                                                                  [20]. Without considering hydrogen energy storage and nu-
+    While the lack of correlation with increases in the distance  clear energy production, progressing toward net zero, energy
+between the facilities helps address the energy storage issue,    will become increasingly expensive and scarce [18], without
+transmission losses between producers, storages, and users        even matching the desired reduction of CO2 emissions.
+will weigh negatively. Also, safety in production and storage
+should be included.                                                   Fig. 6 below summarizes the building blocks for net zero in
+                                                                  Australia. They include wind, solar, and nuclear power gen-
+    This exercise will be possible only when having clear         eration, hydrogen energy storage, other energy storage
+which part of the total energy now mixed electricity and          (lithium-ion and flow batteries, electric thermal energy stor-
+combustion fuels will have to be electric, which part is          age, pumped hydro energy storage), and finally hydrogen fuel.
+hydrogen, where the wind and solar facilities will be located,
+how they will operate, where the energy storage facilities will       Big government and big finance do not like hydrogen, or
+be located, which type of energy storage will be used, how        nuclear, as they would make total energy abundant and cheap
+they will operate, and which transmission losses will occur       at the time of net zero, while big government and big finance
+between producers, storage, and users, which are all un-          benefit more from expensive and scarce energy. There are
+knowns at present. For now, the government of Australia has       very good reasons why citizens should value hydrogen and
+started considering building up wind and solar capacity but       nuclear when better informed by scientists.
+has not fully appreciated the role of hydrogen to complete the
+coverage of the total energy and supply the energy storage        4. Conclusions
+needed. Similarly not acknowledge the relevance of nuclear
+energy.                                                           Australia has no other chance, if not using hydrogen energy
+                                                                  storage, to compensate for the difference between summer
+3. Discussion                                                     and winter electricity production from solar and wind.
+
+The above analysis may help in understanding the impor-               If net zero could be taken seriously in Australia, and not as
+tance of hydrogen energy storage in the progress toward net       an opportunity to benefit big government and big finance, at
+zero, which is something not well understood yet, and the         the expense of reducing the availability of energy to citizens
+need for additional production by nuclear, which would            (see the introductory remarks on limiting internal use of
+reduce the need for storage.                                      electricity and natural gas by price hikes, discourage domestic
+                                                                  uses of coal, natural gas and uranium, but at the same time
+    Without dispatchable energy producers, which use carbon       ramp up export of coal, natural gas, and uranium), more
+or hydrocarbon fuels, or hydrogen, it is hard to solve the issue  attention should be paid to nuclear energy production and
+of solar energy variability. Other non-dispatchable production    hydrogen energy storage.
+
+                                                                      A holistic approach is needed to progress toward net-zero
+                                                                  while maintaining a reliable energy supply. This involves a
+                                                                  mix of renewable sources like solar and wind, coupled with
+                                                                  various forms of energy storage including batteries, pumped
+                                                                  hydro, green hydrogen, and nuclear power. The exact mix
+                                                                  would depend on factors like geography, technological ad-
+                                                                  vancements, societal preferences, and the future share of
+                                                                  total energy by electricity or hydrogen.
+
+                                                                      The energy landscape is complex, and there is ongoing
+                                                                  debate and research about the most effective strategies for
+                                                                  transitioning to net-zero emissions. Different regions might
+                                                                  have different resource availability and priorities, so the
+                                                                  optimal solutions could vary. Public policy, economic factors,
+                                                                  and technological advancements will all play roles in shaping
+                                                                  the energy transition. However, the need for energy storage
+                                                                  and hydrogen, in addition to building up the capacity of wind
+                                                                  and solar, is clear. Similarly needed is nuclear power.
+
+Fig. 6 e Building blocks for net zero in Australia.               Availability of data and materials
+
+                                                                  Data is available at the listed references.
+28  i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 5 1 ( 2 0 2 4 ) 2 0 e2 8
+
+Funding                                                              [9] Abraham KM. Prospects and limits of energy storage in
+                                                                          batteries. J Phys Chem Lett 2015;6(5):830e44.
+The author declares that no funds, grants, or other support
+were received during the preparation of this manuscript.            [10] Rehman S, Al-Hadhrami LM, Alam MM. Pumped hydro
+                                                                          energy storage system: a technological review. Renew
+Author contributions                                                      Sustain Energy Rev 2015;44:586e98.
+
+AB wrote the manuscript.                                            [11] Kotowicz J, Job M, Brze czek M. The characteristics of
+                                                                          ultramodern combined cycle power plants. Energy
+Declaration of competing interest                                         2015;92:197e211.
+
+The author has no relevant financial or non-financial interests     [12] Spath PL, Mann MK. Life cycle assessment of a natural gas
+to disclose.                                                              combined cycle power generation system (No. NREL/TP-570-
+                                                                          27715). Golden, CO (United States): National Renewable
+references                                                                Energy Lab. (NREL); 2000.
+
+ [1] Bockris JOM. The hydrogen economy: its history. Int J          [13] Bernt M, Hartig-Weiß A, Tovini MF, El-Sayed HA,
+      Hydrogen Energy 2013;38(6):2579e88.                                 Schramm C, Schroter J, Gebauer C, Gasteiger HA. Current
+                                                                          challenges in catalyst development for PEM water
+ [2] Crabtree GW, Dresselhaus MS, Buchanan MV. The hydrogen               electrolyzers. Chem Ing Tech 2020;92(1e2):31e9.
+      economy. Phys Today 2004;57(12):39e44.
+                                                                    [14] Li C, Baek JB. The promise of hydrogen production from
+ [3] Tseng P, Lee J, Friley P. A hydrogen economy: opportunities          alkaline anion exchange membrane electrolyzers. Nano
+      and challenges. Energy 2005;30(14):2703e20.                         Energy 2021;87:106162.
+
+ [4] Marban G, Valdes-Soli´s T. Towards the hydrogen economy?       [15] Wang Y, Diaz DFR, Chen KS, Wang Z, Adroher XC. Materials,
+      Int J Hydrogen Energy 2007;32(12):1625e37.                          technological status, and fundamentals of PEM fuel cellsea
+                                                                          review. Mater Today 2020;32:178e203.
+ [5] Barreto L, Makihira A, Riahi K. The hydrogen economy in the
+      21st century: a sustainable development scenario. Int J       [16] www.energy.gov.au/data/australian-energy-trade-2020-21.
+      Hydrogen Energy 2003;28(3):267e84.                            [17] www.iea.org/energy-system/renewables.
+                                                                    [18] www.iea.org/countries/australia.
+ [6] Boretti A. Supply of abundant and low-cost total primary       [19] anero.id/energy/.
+      energy to a growing world needs nuclear energy and            [20] Boretti A. The progress toward net-zero passes through
+      hydrogen energy storage. Int J Hydrogen Energy
+      2023;48(5):1649e50.                                                 hydrogen also in New Zealand. Int J Hydrogen Energy 2023.
+                                                                          https://doi.org/10.1016/j.ijhydene.2023.07.269.
+ [7] Boretti A. Hydrogen key technology to cover the energy
+      storage needs of NEOM City. Int J Hydrogen Energy                                                                                  Alberto Boretti
+      2022;47(31):14371e4.                                          Melbourne Institute of Technology, 288 La Trobe Street, Melbourne,
+
+ [8] Boretti A, Castelletto S. Lacking energy storage, and nuclear                                                           Victoria, 3000, Australia
+      contribution, wind, and solar photovoltaic electricity is                                        E-mail address: a.a.boretti@gmail.com
+      expensive and scarce. Electr J 2022;35(10):107222.
+                                                                                                         Available online 30 September 2023
+
+                                                                                                  https://doi.org/10.1016/j.ijhydene.2023.09.120
+                                                                    0360-3199/© 2023 Hydrogen Energy Publications LLC. Published by
+
+                                                                                                                     Elsevier Ltd. All rights reserved.
+

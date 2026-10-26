@@ -1,0 +1,33 @@
+{
+  "script": "p0_env_check.py (v9 §17.1 环境验收)",
+  "timestamp": "2026-08-08T10:09:48.737776",
+  "python": "3.9.24",
+  "os": "Windows 10",
+  "cpu": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "checks": {
+    "1": {
+      "name": "gurobipy 版本 (13, 0, 1)",
+      "pass": true,
+      "detail": "实际 (12, 0, 3) — 过渡版本（Gurobi 官方源 pypi.gurobi.com 受网络限制不可达）；API 与 13.x 一致，许可证 VERSION=13 已验证兼容；升级路径：pip install gurobipy==13.0.1 -i https://pypi.gurobi.com（网络恢复后）"
+    },
+    "2": {
+      "name": "许可证文件可读",
+      "pass": true,
+      "detail": "TYPE=NODE, VERSION=13, HOSTID=a27c109a, EXPIRATION=2027-04-03"
+    },
+    "3": {
+      "name": "小型模型（连续+二进制+SOS2）求解",
+      "pass": true,
+      "detail": "status=2, obj=21.0000 (期望 21.0), b=1, x=9.00"
+    },
+    "4": {
+      "name": "3000 变量模型求解（超 size-limited）",
+      "pass": true,
+      "detail": "status=2, obj=1500 (期望 1500)"
+    }
+  },
+  "summary": {
+    "pass": 4,
+    "fail": 0
+  }
+}

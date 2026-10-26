@@ -1,0 +1,143 @@
+{
+  "compact": {
+    "reproduce_npc_cny": 33625405.95,
+    "m4_npc_cny": 33625405.95,
+    "npc_dev_pct": 0.0,
+    "reproduce_lcoe": 5.9236,
+    "m4_lcoe": 5.9236,
+    "lcoe_dev_pct": 0.0,
+    "replacement_schedule": {
+      "BAT": [
+        7,
+        15
+      ],
+      "PEMFC": [
+        9,
+        18
+      ],
+      "PEMEL": [
+        6,
+        12,
+        18
+      ]
+    },
+    "n_repl": {
+      "BAT": 2,
+      "PEMFC": 2,
+      "PEMEL": 3
+    },
+    "consistent": true
+  },
+  "balanced": {
+    "reproduce_npc_cny": 34618500.92,
+    "m4_npc_cny": 34618500.92,
+    "npc_dev_pct": 0.0,
+    "reproduce_lcoe": 6.0848,
+    "m4_lcoe": 6.0848,
+    "lcoe_dev_pct": 0.0,
+    "replacement_schedule": {
+      "BAT": [
+        7,
+        15
+      ],
+      "PEMFC": [
+        11
+      ],
+      "PEMEL": [
+        7,
+        14
+      ]
+    },
+    "n_repl": {
+      "BAT": 2,
+      "PEMFC": 1,
+      "PEMEL": 2
+    },
+    "consistent": true
+  },
+  "hydrogen_dominant": {
+    "reproduce_npc_cny": 42797737.05,
+    "m4_npc_cny": 42797737.05,
+    "npc_dev_pct": 0.0,
+    "reproduce_lcoe": 7.5213,
+    "m4_lcoe": 7.5213,
+    "lcoe_dev_pct": 0.0,
+    "replacement_schedule": {
+      "BAT": [
+        7,
+        14
+      ],
+      "PEMFC": [
+        15
+      ],
+      "PEMEL": [
+        8,
+        16
+      ]
+    },
+    "n_repl": {
+      "BAT": 2,
+      "PEMFC": 1,
+      "PEMEL": 2
+    },
+    "consistent": true
+  },
+  "battery_dominant": {
+    "reproduce_npc_cny": 34483986.03,
+    "m4_npc_cny": 34483986.03,
+    "npc_dev_pct": 0.0,
+    "reproduce_lcoe": 6.0765,
+    "m4_lcoe": 6.0765,
+    "lcoe_dev_pct": 0.0,
+    "replacement_schedule": {
+      "BAT": [
+        8,
+        17
+      ],
+      "PEMFC": [
+        15
+      ],
+      "PEMEL": [
+        7,
+        16
+      ]
+    },
+    "n_repl": {
+      "BAT": 2,
+      "PEMFC": 1,
+      "PEMEL": 2
+    },
+    "consistent": true
+  },
+  "critical": {
+    "reproduce_npc_cny": 36329606.76,
+    "m4_npc_cny": 36329606.76,
+    "npc_dev_pct": 0.0,
+    "reproduce_lcoe": 6.3853,
+    "m4_lcoe": 6.3853,
+    "lcoe_dev_pct": 0.0,
+    "replacement_schedule": {
+      "BAT": [
+        8,
+        17
+      ],
+      "PEMFC": [
+        15
+      ],
+      "PEMEL": [
+        7,
+        14
+      ]
+    },
+    "n_repl": {
+      "BAT": 2,
+      "PEMFC": 1,
+      "PEMEL": 2
+    },
+    "consistent": true
+  },
+  "_conclusion": {
+    "consistent_all": true,
+    "note": "当前 Stage2c 经济链（compute_economics）已使用 EOL 事件（周级精确 time_hours）生成替换计划（int(time_hours/8760), 0<yr<horizon）；与 degradation_summary 数值完全一致（偏差<0.01%）即证明 M4 已是周级口径，不存在 L16 描述的'M4 年累加高估'问题——L16 为旧 C1 体系历史记录，仅对旧 M4 实现成立"
+  }
+}

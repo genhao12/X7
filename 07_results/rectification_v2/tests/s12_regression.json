@@ -1,0 +1,89 @@
+{
+  "suite": "S12",
+  "passed_count": 9,
+  "total_count": 9,
+  "all_passed": true,
+  "checks": [
+    {
+      "check_id": "S12-01",
+      "name": "EOL逐步封顶守卫",
+      "input": "D_bat=1.0, 672步",
+      "expected": "sum(dD_bat)=0",
+      "actual": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "check_id": "S12-02",
+      "name": "逐步功率守恒",
+      "input": "load=50kW, PV=60kW, 672步",
+      "expected": "max_abs_residual<1e-3 kW",
+      "actual": 0.0,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    {
+      "check_id": "S12-03",
+      "name": "辅机功率时序长度",
+      "input": "672步调度",
+      "expected": "length=672",
+      "actual": 672,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check_id": "S12-04",
+      "name": "路径符号 alpha1",
+      "input": "PATHS_6 v3.0冻结定义",
+      "expected": "BAT→FC",
+      "actual": "BAT→FC",
+      "tolerance": "exact_string",
+      "passed": true
+    },
+    {
+      "check_id": "S12-05",
+      "name": "路径符号 alpha2",
+      "input": "PATHS_6 v3.0冻结定义",
+      "expected": "EL→FC",
+      "actual": "EL→FC",
+      "tolerance": "exact_string",
+      "passed": true
+    },
+    {
+      "check_id": "S12-06",
+      "name": "路径符号 beta1",
+      "input": "PATHS_6 v3.0冻结定义",
+      "expected": "BAT→EL",
+      "actual": "BAT→EL",
+      "tolerance": "exact_string",
+      "passed": true
+    },
+    {
+      "check_id": "S12-07",
+      "name": "路径符号 beta2",
+      "input": "PATHS_6 v3.0冻结定义",
+      "expected": "FC→EL",
+      "actual": "FC→EL",
+      "tolerance": "exact_string",
+      "passed": true
+    },
+    {
+      "check_id": "S12-08",
+      "name": "路径符号 gamma1",
+      "input": "PATHS_6 v3.0冻结定义",
+      "expected": "FC→BAT",
+      "actual": "FC→BAT",
+      "tolerance": "exact_string",
+      "passed": true
+    },
+    {
+      "check_id": "S12-09",
+      "name": "路径符号 gamma2",
+      "input": "PATHS_6 v3.0冻结定义",
+      "expected": "EL→BAT",
+      "actual": "EL→BAT",
+      "tolerance": "exact_string",
+      "passed": true
+    }
+  ]
+}

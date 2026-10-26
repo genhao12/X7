@@ -1,0 +1,296 @@
+{
+  "schema_version": "2.2",
+  "status": "FROZEN_FOR_STAGE_A_ONLY",
+  "governance": {
+    "single_source_of_truth": [
+      "整体冻结一致性实施版_v2.2.docx",
+      "frozen_parameters_v2.2.json",
+      "parameter_sources.xlsx",
+      "stage_A_test_report.json"
+    ],
+    "change_rule": "任何来源或数值变更均递增配置版本并重跑受影响阶段。"
+  },
+  "time_resolution": {
+    "operational_degradation_min": 15,
+    "required_native_inputs": [
+      "load_15min",
+      "irradiance_or_pv_15min"
+    ],
+    "hourly_data_scope": "仅容量初筛；不得输出启停、爬坡或动态退化结论。",
+    "raw_file_contract": {
+      "weather": "weather_15min.csv",
+      "load": "load_15min.csv",
+      "irradiance_or_pv": "irradiance_or_pv_15min.csv",
+      "rule": "EMS命令仅用于启停计数，不能替代负荷或辐照/PV原始功率变化数据。"
+    }
+  },
+  "topology": {
+    "dc_bus": "single_dc_bus",
+    "converter_isolation": "non_isolated_dc_dc",
+    "control_mode": "dc_bus_droop_power_tracking",
+    "auxiliary_power_accounting": "explicit_P_aux",
+    "P_aux_fraction_of_installed_power": 0.02
+  },
+  "power_balance": "P_PV + P_FC + P_BAT_dis + P_uns = P_load + P_EL + P_BAT_ch + P_cur + P_aux",
+  "hydrogen": {
+    "model": "available_mass_with_bounds",
+    "m_min_fraction_of_nominal": 0.1,
+    "m_max_fraction_of_nominal": 1.0,
+    "leakage_rate_per_day": 0.0005,
+    "note": "非瓶体压力、瓶组或压缩机工程设计。"
+  },
+  "equipment_eol": {
+    "BAT": {
+      "soh_eol": 0.8,
+      "D": "(1-SOH_BAT)/(1-SOH_EOL_BAT)"
+    },
+    "PEMFC": {
+      "rated_voltage_loss_eol_fraction": 0.1,
+      "D": "deltaV_actual/deltaV_EOL"
+    },
+    "PEMEL": {
+      "specific_energy_increment_eol_fraction": 0.1,
+      "D": "deltae_actual/deltae_EOL"
+    }
+  },
+  "minimum_stable_load_fraction": {
+    "PEMFC": 0.15,
+    "PEMEL": 0.15
+  },
+  "coupling": {
+    "time_window_baseline_damage_min": 1e-06,
+    "condition_number_max": 30,
+    "vif_max": 5,
+    "default_zero_paths": [
+      "BAT_to_FC_alpha1",
+      "BAT_to_EL_beta1",
+      "FC_to_EL_beta2",
+      "FC_to_BAT_gamma1",
+      "EL_to_BAT_gamma2"
+    ],
+    "activation_rule": "仅存在可独立关闭的额外母线纹波、压力、纯度或供氢波动模型且通过可辨识性检查的路径可解除零约束。"
+  },
+  "capacity_search": {
+    "PV_kWp": [
+      90,
+      150
+    ],
+    "BAT_kWh": [
+      90,
+      180
+    ],
+    "PEMFC_kW": [
+      30,
+      45
+    ],
+    "PEMEL_kW": [
+      25,
+      45
+    ],
+    "H2_kg": [
+      10,
+      40
+    ],
+    "autonomy_h": [
+      24,
+      48
+    ],
+    "separate_boundary_case": {
+      "zero_pv_days": 7,
+      "H2_kg": [
+        140,
+        150
+      ]
+    },
+    "autonomy_duration_rule": "按冻结负荷时序、可用储氢质量、PEMFC逐时效率和P_aux逐时计算；10–40 kg不预设固定保障时长。"
+  },
+  "lhs": {
+    "n_complete_configurations": 600,
+    "strategy": [
+      "battery_first",
+      "hydrogen_first",
+      "balanced"
+    ],
+    "control_layer": [
+      "baseline",
+      "L4"
+    ],
+    "per_combination": 100,
+    "split_by_design_id": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "continuous_variables": [
+      {
+        "name": "PV_kWp",
+        "min": 90,
+        "max": 150,
+        "distribution": "uniform",
+        "unit": "kWp",
+        "constraint": "capacity_search"
+      },
+      {
+        "name": "BAT_kWh",
+        "min": 90,
+        "max": 180,
+        "distribution": "uniform",
+        "unit": "kWh",
+        "constraint": "capacity_search"
+      },
+      {
+        "name": "PEMFC_kW",
+        "min": 30,
+        "max": 45,
+        "distribution": "uniform",
+        "unit": "kW",
+        "constraint": "capacity_search"
+      },
+      {
+        "name": "PEMEL_kW",
+        "min": 25,
+        "max": 45,
+        "distribution": "uniform",
+        "unit": "kW",
+        "constraint": "capacity_search"
+      },
+      {
+        "name": "H2_kg",
+        "min": 10,
+        "max": 40,
+        "distribution": "uniform",
+        "unit": "kg",
+        "constraint": "capacity_search"
+      },
+      {
+        "name": "start_stop_threshold_fraction",
+        "min": 0.15,
+        "max": 0.4,
+        "distribution": "uniform",
+        "unit": "p.u.",
+        "constraint": "greater_than_minimum_stable_load"
+      },
+      {
+        "name": "minimum_run_time",
+        "min": 15,
+        "max": 120,
+        "distribution": "discrete_uniform",
+        "unit": "min",
+        "constraint": "multiple_of_15"
+      },
+      {
+        "name": "critical_load_fraction",
+        "min": 0.3,
+        "max": 0.7,
+        "distribution": "uniform",
+        "unit": "p.u.",
+        "constraint": "less_than_or_equal_to_1"
+      }
+    ],
+    "learning_curve": {
+      "increment_per_round": 60,
+      "stop_after_consecutive_rounds": 2,
+      "nrmse_improvement_lt": 0.02,
+      "annual_damage_error_lte": 0.05
+    },
+    "final_variable_count": 8,
+    "final_variables": [
+      "PV_kWp",
+      "BAT_kWh",
+      "PEMFC_kW",
+      "PEMEL_kW",
+      "H2_kg",
+      "start_stop_threshold_fraction",
+      "minimum_run_time",
+      "critical_load_fraction"
+    ]
+  },
+  "ems": {
+    "mandatory_layers": [
+      "L0",
+      "L1_including_L2",
+      "L3",
+      "L4"
+    ],
+    "extended_only": [
+      "L5"
+    ],
+    "excluded_from_formal_implementation": [
+      "L5"
+    ],
+    "prediction_control_weights": "本轮不实施，不进入XGBoost输入、训练、仿真或验收。"
+  },
+  "lifetime": {
+    "years": 20,
+    "actual_weather_years_min": 3,
+    "PV_annual_degradation_rate": "manufacturer_spec_required",
+    "power_conversion_fixed_lifetime_years": 15,
+    "replacement": "same_capacity_default_state_continuity_required"
+  },
+  "economics": {
+    "base_year": 2026,
+    "currency": "CNY",
+    "price_type": "real",
+    "real_discount_rate": 0.06,
+    "horizon_years": 20,
+    "residual_value": 0,
+    "replacement_downtime_cost_included": true
+  },
+  "acceptance": {
+    "power_residual_fraction_of_rated_power_max": 1e-06,
+    "annual_h2_mass_residual_fraction_of_throughput_max": 1e-06,
+    "LPSP_formula": "unserved_energy/total_load_energy",
+    "LPSP_max": 0.01,
+    "critical_load_satisfaction_min": 0.99,
+    "independent_degradation": {
+      "NRMSE_max": 0.1,
+      "R2_min": 0.8,
+      "EOL_time_error_max": 0.1
+    },
+    "xgboost": {
+      "annual_damage_error_max": 0.05,
+      "replacement_year_error_max_year": 1,
+      "LCOE_error_max": 0.03
+    },
+    "tests_required": [
+      "power_conservation",
+      "hydrogen_mass_conservation",
+      "boundary",
+      "replacement_event",
+      "24h_integration"
+    ],
+    "power_residual_formula": "P_PV+P_FC+P_BAT,dis+P_uns−P_load−P_EL−P_BAT,ch−P_cur−P_aux",
+    "hydrogen_mass_residual_formula": "m_end−m_start−(m_prod−m_cons−m_leak)",
+    "test_scope": "阶段A定义并执行五项测试；未通过不得进入B–H。"
+  },
+  "xgboost": {
+    "model_count": 6,
+    "outputs": [
+      "alpha1",
+      "alpha2",
+      "beta1",
+      "beta2",
+      "gamma1",
+      "gamma2"
+    ],
+    "encoding": {
+      "dispatch": "one_hot",
+      "control_layer": "one_hot"
+    },
+    "default_zero_paths_output": 0,
+    "configuration_count": 600,
+    "combinations": 6,
+    "per_combination": 100,
+    "split_by_design_id": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "sample_increment_per_round": 60,
+    "stop_rule": "连续两轮NRMSE改善均<2%且年度损伤误差≤5%",
+    "dataset_name": "总数据集",
+    "dataset_count": 600,
+    "model_loading_rule": "统一加载6个单输出模型；调度策略和控制层采用独热编码；默认零路径直接输出0；按容量—控制配置键读取一次冻结映射。",
+    "shap_scope": "仅实际训练的非零路径模型；默认零路径不训练、不输出SHAP、不参与重要性比较。"
+  }
+}

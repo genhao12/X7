@@ -1,0 +1,8 @@
+{
+  "protocol": "continuous full-year dispatch; no weekly SOC/H2 resets",
+  "admission": "LPSP<=1% and |H2(T)-H2(0)|/H2(0)<=5%",
+  "admissible_config_years": [],
+  "configs_admissible_all_three_years": [],
+  "crossyear_validation_pass": false,
+  "conclusion": "no configuration is admissible in all three years; cross-year path stability is not established"
+}

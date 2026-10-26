@@ -1,0 +1,32 @@
+{
+  "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+  "deterministic_seed_policy": "first 8 hex digits of sha256(candidate_id)",
+  "domain_label_policy": "main, extended_pv, and legacy_extended_diagnostic are isolated",
+  "double_layer_uncertainty": {
+    "activation_probability_change_max": 0.02,
+    "consecutive_checkpoints_required": 2,
+    "endpoint_change_fraction_of_previous_ci_width_max": 0.05,
+    "inner_checkpoints": [
+      1000,
+      2000,
+      4000,
+      8000
+    ],
+    "inner_method": "season_stratified_4week_moving_block_bootstrap",
+    "minimum_inner_samples": 4000,
+    "minimum_outer_samples": 256,
+    "outer_checkpoints": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "outer_method": "nested_sobol"
+  },
+  "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+  "numpy_version": "1.24.4",
+  "python_version": "3.9.13",
+  "schema_version": "rectification_v2.0",
+  "script_hash": "42c21ad0a5e6f8451956da552455bf580305709b3ccad85c62c44c00b0b7cb11",
+  "upstream_gate": "frozen_capacity_admission_failed"
+}

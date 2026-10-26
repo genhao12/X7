@@ -1,0 +1,54 @@
+# ============================================================
+# MVP + W1 Python依赖清单
+# Python版本: >=3.13 (推荐3.13.12)
+# ============================================================
+
+# === 核心科学计算 ===
+numpy>=1.26.0
+scipy>=1.12.0
+pandas>=2.2.0
+
+# === 数据I/O ===
+openpyxl>=3.1.0          # IEEE PHM xlsx极化曲线读取
+h5py>=3.10.0             # BLAST-Lite h5数据(如有)
+
+# === BLAST-Lite兼容层 ===
+# BLAST-Lite使用np.trapz, Python>=3.12已移除, 需兼容补丁:
+#   方案1: 在代码中添加: np.trapz = np.trapezoid (如有trapezoid)
+#   方案2: import warnings; from numpy import trapezoid as trapz
+# BLAST-Lite原始依赖:
+#   h5pyd (仅HPC模式需要, MVP用mock替代)
+#   geopy (仅地理编码需要, MVP用mock替代)
+# 以下为mock占位(实际不需安装, 代码中已用try/except处理):
+# h5pyd>=0.10.0  # 可选, 仅HPC
+# geopy>=2.4.0   # 可选, 仅地理编码
+
+# === 可视化(报告生成) ===
+matplotlib>=3.8.0
+
+# === 统计(Shapley + Bootstrap) ===
+# scipy.stats 已包含在scipy中, 无需额外安装
+
+# === 机器学习(扩展阶段, MVP不需要) ===
+# scikit-learn>=1.4.0    # V3阶段Spearman相关
+# torch>=2.2.0           # NAICNO数字孪生(仅训练, 推理已绕过)
+
+# === 文档生成 ===
+python-docx>=1.1.0       # Word报告生成
+
+# === 测试 ===
+pytest>=8.0.0            # 单元/集成测试框架
+pytest-cov>=4.1.0        # 测试覆盖率
+
+# === 性能 ===
+# numba>=0.59.0          # 可选: JIT加速损伤计算(P5阶段)
+
+# ============================================================
+# 版本锁定(与BLAST-Lite requirements.lock对齐)
+# ============================================================
+# 以下版本为验证通过的最低版本, 实际安装时取>=指定版本:
+#   numpy 1.26.4 ✓ (trapz→trapezoid兼容)
+#   scipy 1.12.0 ✓ (stats模块完整)
+#   pandas 2.2.0 ✓ (15min时间序列处理)
+#   openpyxl 3.1.2 ✓ (IEEE PHM xlsx读取)
+#   matplotlib 3.8.2 ✓ (图表生成)

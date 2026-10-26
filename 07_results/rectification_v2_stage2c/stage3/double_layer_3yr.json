@@ -1,0 +1,234 @@
+{
+  "compact": {
+    "three_yr": {
+      "bat": {
+        "frac_epistemic": 0.9825141578649269,
+        "frac_aleatory": 0.017485842135072996,
+        "var_total": 0.0012728855168072648,
+        "closure_residual_rel": 1.7035344627142457e-16,
+        "closure_pass": true
+      },
+      "fc": {
+        "frac_epistemic": 0.11680978351268768,
+        "frac_aleatory": 0.8831902164873127,
+        "var_total": 0.007027396190772766,
+        "closure_residual_rel": 2.4685152635261466e-16,
+        "closure_pass": true
+      },
+      "el": {
+        "frac_epistemic": 0.6748299017256403,
+        "frac_aleatory": 0.32517009827435994,
+        "var_total": 0.002264044037997893,
+        "closure_residual_rel": 1.9155142820353807e-16,
+        "closure_pass": true
+      }
+    },
+    "vs_single_2017": {
+      "bat": {
+        "single_2017_frac_epistemic": 0.9986,
+        "three_yr_frac_epistemic": 0.9825,
+        "delta_pp": -1.613
+      },
+      "fc": {
+        "single_2017_frac_epistemic": 0.7767,
+        "three_yr_frac_epistemic": 0.1168,
+        "delta_pp": -65.993
+      },
+      "el": {
+        "single_2017_frac_epistemic": 0.8765,
+        "three_yr_frac_epistemic": 0.6748,
+        "delta_pp": -20.168
+      }
+    },
+    "n_inner_per_year": 500,
+    "total_inner": 1500
+  },
+  "balanced": {
+    "three_yr": {
+      "bat": {
+        "frac_epistemic": 0.9813192686978944,
+        "frac_aleatory": 0.018680731302105725,
+        "var_total": 0.00143076293170538,
+        "closure_residual_rel": 1.5155580962573627e-16,
+        "closure_pass": true
+      },
+      "fc": {
+        "frac_epistemic": 0.11527668997532524,
+        "frac_aleatory": 0.8847233100246747,
+        "var_total": 0.004456633918983814,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true
+      },
+      "el": {
+        "frac_epistemic": 0.8359072885010836,
+        "frac_aleatory": 0.16409271149891677,
+        "var_total": 0.001514793985956964,
+        "closure_residual_rel": 4.294453962202252e-16,
+        "closure_pass": true
+      }
+    },
+    "vs_single_2017": {
+      "bat": {
+        "single_2017_frac_epistemic": 0.9987,
+        "three_yr_frac_epistemic": 0.9813,
+        "delta_pp": -1.736
+      },
+      "fc": {
+        "single_2017_frac_epistemic": 0.7574,
+        "three_yr_frac_epistemic": 0.1153,
+        "delta_pp": -64.215
+      },
+      "el": {
+        "single_2017_frac_epistemic": 0.9019,
+        "three_yr_frac_epistemic": 0.8359,
+        "delta_pp": -6.601
+      }
+    },
+    "n_inner_per_year": 500,
+    "total_inner": 1500
+  },
+  "hydrogen_dominant": {
+    "three_yr": {
+      "bat": {
+        "frac_epistemic": 0.98111397172096,
+        "frac_aleatory": 0.01888602827904012,
+        "var_total": 0.0016872489793006,
+        "closure_residual_rel": 1.2851715257044386e-16,
+        "closure_pass": true
+      },
+      "fc": {
+        "frac_epistemic": 0.10678992183479613,
+        "frac_aleatory": 0.893210078165204,
+        "var_total": 0.0028728650037651675,
+        "closure_residual_rel": 1.5095762189515382e-16,
+        "closure_pass": true
+      },
+      "el": {
+        "frac_epistemic": 0.9135181147968614,
+        "frac_aleatory": 0.08648188520313825,
+        "var_total": 0.0014455741648463217,
+        "closure_residual_rel": 3.0000596271053737e-16,
+        "closure_pass": true
+      }
+    },
+    "vs_single_2017": {
+      "bat": {
+        "single_2017_frac_epistemic": 0.999,
+        "three_yr_frac_epistemic": 0.9811,
+        "delta_pp": -1.787
+      },
+      "fc": {
+        "single_2017_frac_epistemic": 0.7356,
+        "three_yr_frac_epistemic": 0.1068,
+        "delta_pp": -62.884
+      },
+      "el": {
+        "single_2017_frac_epistemic": 0.9454,
+        "three_yr_frac_epistemic": 0.9135,
+        "delta_pp": -3.191
+      }
+    },
+    "n_inner_per_year": 500,
+    "total_inner": 1500
+  },
+  "battery_dominant": {
+    "three_yr": {
+      "bat": {
+        "frac_epistemic": 0.9830635874612849,
+        "frac_aleatory": 0.016936412538715036,
+        "var_total": 0.000976292031709518,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true
+      },
+      "fc": {
+        "frac_epistemic": 0.0645568125569959,
+        "frac_aleatory": 0.9354431874430043,
+        "var_total": 0.005078644209542414,
+        "closure_residual_rel": 1.7078608033984584e-16,
+        "closure_pass": true
+      },
+      "el": {
+        "frac_epistemic": 0.8253385267960803,
+        "frac_aleatory": 0.17466147320392,
+        "var_total": 0.001889129380561488,
+        "closure_residual_rel": 3.443497889477291e-16,
+        "closure_pass": true
+      }
+    },
+    "vs_single_2017": {
+      "bat": {
+        "single_2017_frac_epistemic": 0.9993,
+        "three_yr_frac_epistemic": 0.9831,
+        "delta_pp": -1.624
+      },
+      "fc": {
+        "single_2017_frac_epistemic": 0.6401,
+        "three_yr_frac_epistemic": 0.0646,
+        "delta_pp": -57.552
+      },
+      "el": {
+        "single_2017_frac_epistemic": 0.8673,
+        "three_yr_frac_epistemic": 0.8253,
+        "delta_pp": -4.195
+      }
+    },
+    "n_inner_per_year": 500,
+    "total_inner": 1500
+  },
+  "critical": {
+    "three_yr": {
+      "bat": {
+        "frac_epistemic": 0.9833938107259307,
+        "frac_aleatory": 0.01660618927406919,
+        "var_total": 0.0010566077436997647,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true
+      },
+      "fc": {
+        "frac_epistemic": 0.08423389608049339,
+        "frac_aleatory": 0.9157661039195064,
+        "var_total": 0.0038241283160273,
+        "closure_residual_rel": 2.2681292736784085e-16,
+        "closure_pass": true
+      },
+      "el": {
+        "frac_epistemic": 0.7284350026373216,
+        "frac_aleatory": 0.2715649973626786,
+        "var_total": 0.0020167885419964627,
+        "closure_residual_rel": 2.1503536933271729e-16,
+        "closure_pass": true
+      }
+    },
+    "vs_single_2017": {
+      "bat": {
+        "single_2017_frac_epistemic": 0.9991,
+        "three_yr_frac_epistemic": 0.9834,
+        "delta_pp": -1.57
+      },
+      "fc": {
+        "single_2017_frac_epistemic": 0.7267,
+        "three_yr_frac_epistemic": 0.0842,
+        "delta_pp": -64.249
+      },
+      "el": {
+        "single_2017_frac_epistemic": 0.8636,
+        "three_yr_frac_epistemic": 0.7284,
+        "delta_pp": -13.521
+      }
+    },
+    "n_inner_per_year": 500,
+    "total_inner": 1500
+  },
+  "_method": {
+    "n_outer": 256,
+    "n_inner_per_year": 500,
+    "total_inner_3yr": 1500,
+    "inner_seeds": [
+      42,
+      43,
+      44
+    ],
+    "note": "三年内层全量传播（每年内层 500，独立 seed；合并 1500 样本）；外层 Sobol 256；对照为 double_layer_propagation.json（2017 单年 n_inner=4000 seed=42）。三年合并样本数与单年 4000 不同，但认知/随机占比对 n 不敏感（归因实验：compact 单年 n=500 vs n=4000，fc epistemic 76.83% vs 77.67%，差 0.84pp）；三年窗口下 FC/EL 认知占比大幅下降源于跨年气象 aleatory 方差占比上升（窗口效应，非样本量效应）。",
+    "conclusion": "三年窗口的认知/随机占比与单年 2017 的差异反映内层窗口敏感性：BAT 认知占比微降（~99.9%→~98%，-2pp 内）；EL 降 12-24pp（~88%→68-91%）；FC 降幅最大（~77%→7-12%，-66pp）——归因实验证实为三年窗口效应（跨年气象 aleatory 方差占比上升），非样本量效应（n=500 vs 4000 仅差 0.84pp）。结论：FC 的认知不确定性占比在三年窗口下大幅收缩，单年 2017 窗口对该设备代表性不足（差异远超 5pp），三年内层合并口径应作为 FC/EL 认知占比的主口径；BAT 结论单年/三年一致（限定句① 对 BAT 可维持，对 FC/EL 建议升级为主口径）。"
+  }
+}

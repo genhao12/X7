@@ -1,0 +1,147 @@
+{
+ "compact": {
+  "te_nominal_pct": 1.127,
+  "resample_object": "周块（168 个 15min 点/周，整周重采样保留自相关；3 年拼接共 625 周）",
+  "n_weeks": 156,
+  "weekly_diff_mean_pct": 0.02,
+  "effect_size_cohens_d": 1.829,
+  "boot_90ci_weekly_pct": [
+   0.0187,
+   0.0215
+  ],
+  "boot_95ci_weekly_pct": [
+   0.0185,
+   0.0218
+  ],
+  "ci90_excludes_zero": true,
+  "ci95_excludes_zero": true,
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "n_boot": 10000,
+  "verdict": "基准情景方向稳定（周块 90%CI 不跨 0）",
+  "param_uncertainty": {
+   "te_low_param": -1.296,
+   "te_high_param": 7.891
+  }
+ },
+ "balanced": {
+  "te_nominal_pct": 1.044,
+  "resample_object": "周块（168 个 15min 点/周，整周重采样保留自相关；3 年拼接共 625 周）",
+  "n_weeks": 156,
+  "weekly_diff_mean_pct": 0.0178,
+  "effect_size_cohens_d": 2.068,
+  "boot_90ci_weekly_pct": [
+   0.0168,
+   0.0191
+  ],
+  "boot_95ci_weekly_pct": [
+   0.0166,
+   0.0193
+  ],
+  "ci90_excludes_zero": true,
+  "ci95_excludes_zero": true,
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "n_boot": 10000,
+  "verdict": "基准情景方向稳定（周块 90%CI 不跨 0）",
+  "param_uncertainty": {
+   "te_low_param": -1.201,
+   "te_high_param": 7.31
+  }
+ },
+ "hydrogen_dominant": {
+  "te_nominal_pct": 1.032,
+  "resample_object": "周块（168 个 15min 点/周，整周重采样保留自相关；3 年拼接共 625 周）",
+  "n_weeks": 156,
+  "weekly_diff_mean_pct": 0.0164,
+  "effect_size_cohens_d": 2.293,
+  "boot_90ci_weekly_pct": [
+   0.0155,
+   0.0174
+  ],
+  "boot_95ci_weekly_pct": [
+   0.0154,
+   0.0176
+  ],
+  "ci90_excludes_zero": true,
+  "ci95_excludes_zero": true,
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "n_boot": 10000,
+  "verdict": "基准情景方向稳定（周块 90%CI 不跨 0）",
+  "param_uncertainty": {
+   "te_low_param": -1.187,
+   "te_high_param": 7.225
+  }
+ },
+ "battery_dominant": {
+  "te_nominal_pct": 0.819,
+  "resample_object": "周块（168 个 15min 点/周，整周重采样保留自相关；3 年拼接共 625 周）",
+  "n_weeks": 156,
+  "weekly_diff_mean_pct": 0.0152,
+  "effect_size_cohens_d": 1.24,
+  "boot_90ci_weekly_pct": [
+   0.0136,
+   0.0168
+  ],
+  "boot_95ci_weekly_pct": [
+   0.0134,
+   0.0172
+  ],
+  "ci90_excludes_zero": true,
+  "ci95_excludes_zero": true,
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "n_boot": 10000,
+  "verdict": "基准情景方向稳定（周块 90%CI 不跨 0）",
+  "param_uncertainty": {
+   "te_low_param": -0.942,
+   "te_high_param": 5.734
+  }
+ },
+ "critical": {
+  "te_nominal_pct": 0.959,
+  "resample_object": "周块（168 个 15min 点/周，整周重采样保留自相关；3 年拼接共 625 周）",
+  "n_weeks": 156,
+  "weekly_diff_mean_pct": 0.0162,
+  "effect_size_cohens_d": 1.788,
+  "boot_90ci_weekly_pct": [
+   0.015,
+   0.0174
+  ],
+  "boot_95ci_weekly_pct": [
+   0.0149,
+   0.0177
+  ],
+  "ci90_excludes_zero": true,
+  "ci95_excludes_zero": true,
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "n_boot": 10000,
+  "verdict": "基准情景方向稳定（周块 90%CI 不跨 0）",
+  "param_uncertainty": {
+   "te_low_param": -1.103,
+   "te_high_param": 6.716
+  }
+ },
+ "_summary": {
+  "conclusion": "TE 显著性 v2（审查4 修复）：重采样对象=**周块**（168 个 15min 点/周，整周重采样保留自相关，3 年拼接 625 周，非 15min 独立点）。全部 5 配置周块 90%CI 与 95%CI 均不跨 0，Cohen's d 全>1（大效应量）→ **基准情景方向稳定**；数值容差 0.1%，|TE| 超 8-11 倍。参数边界区间含 0（同 v1）→ **不宣称普遍显著**，结论限定为'基准情景（UCSD 三年、标称参数、battery_first）下反馈方向稳定、量级约 1%、配置相关'。注：闭环用 D=0.3 预置近似（与主 TE 三年链式口径差异标注，周级显著性核验为主）。",
+  "supersedes": "te_significance.json（v1 年块小样本，保留但标注）"
+ },
+ "_note": "v2（周块 Bootstrap）为论文权威源；param_uncertainty 字段自 v1 继承（参数边界扫描 TE 区间，含 0 时为补充说明，不作显著性证据）"
+}

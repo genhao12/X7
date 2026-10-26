@@ -1,0 +1,1088 @@
+                                            Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+                                                Contents lists available at ScienceDirect
+
+                       Renewable and Sustainable Energy Reviews
+
+                                    journal homepage: www.elsevier.com/locate/rser
+
+Current status of water electrolysis for energy storage, grid balancing and
+sector coupling via power-to-gas and power-to-liquids: A review
+
+Alexander Buttlera,, Hartmut Spliethoffa,b
+
+a TU München, Lehrstuhl für Energiesysteme, Boltzmannstr. 15, 85748 Garching b. München, Germany
+b ZAE Bayern, Walther-Meißner-Str. 6, 85748 Garching b. München, Germany
+
+ARTICLE INFO                                             ABSTRACT
+
+Keywords:                                                Water electrolysis has the potential to become a key element in coupling the electricity, mobility, heating and
+Alkaline electrolysis                                    chemical sector via Power-to-Liquids (PtL) or Power-to-Gas (PtG) in a future sustainable energy system. Based on
+PEM electrolysis                                         an extensive market survey, discussions with manufacturers, project reports and literature, an overview of the
+SOEC                                                     current status of alkaline, PEM and solid oxide electrolysis on the way to large-scale flexible energy storage is
+Energy storage                                           presented. These main water electrolysis technologies were compared in terms of available capacity, nominal
+Market survey                                            and part-load performance, flexibility (load range, load gradients, start-up time, stand-by losses) lifetime and
+Investment costs                                         investment costs. This review provides a basis of the parameters required and the necessary understanding of
+System performance                                       electrolysis fundamentals and technologies for a techno-economic analysis of water electrolysis-based concepts
+                                                         and an evaluation of PtG and PtL in energy system studies.
+
+1. Introduction                                                           oxide electrolysis) [12­14]. Moreover, the FCH JU (Fuel Cells and
+                                                                          Hydrogen Joint Undertaking) under the EU's funding programme
+    Power-to-Gas (PtG) and Power-to-Liquids (PtL) are often discussed     Horizon 2020 has implemented key performance indicators (KPIs) for
+as important elements in a future renewable energy system (e.g. [1­3]).   flexible water electrolysis as a target and for monitoring their multi
+The conversion of electricity via water electrolysis and optionally       annual work programme (Table 1) [15].
+subsequent synthesis together with CO or CO2 into a gaseous or liquid
+energy carrier enables a coupling of the electricity, chemical, mobility      The scope of this review is on commercial technologies and research
+and heating sectors. This opens up enormous storage or absorption         related to flexible electrolysis operation and performance relevant for
+capacities for excess energy with high electricity generation from re-    PtG and PtL applications. It provides an overview of the current status
+newable energies in excess of demand. It also supports the integration    of water electrolysis on the way to large-scale flexible energy storage
+of fluctuating renewables like wind and solar power in the energy         applications. After dealing with the fundamentals of water electrolysis,
+system, including the provision of balancing power. By substituting       the major electrolysis technologies (AEL, PEMEL, SOEL) are compared
+fossil fuels, this can help to reduce greenhouse gas emissions in the     with regard to the available capacity, nominal and part-load perfor-
+mobility or chemical sectors. The future demand for Power-to-Liquids      mance, flexibility (load range, load gradients, start-up time, stand-by
+and Power-to-Gas energy storage represents an emerging market for         losses) lifetime and investment costs. This comparison is based on the
+electrolysis systems. Operating strategies such as the absorption of ex-  above-mentioned literature reviews, discussions with manufacturers,
+cess energy at limited operating times per year, providing grid services  project reports and an extensive market survey of electrolysis suppliers.
+or arbitrage trading (exploitation of highly fluctuating electricity
+prices) are possible, which also could be combined [4]. This poses new    2. Fundamentals of water electrolysis
+requirements regarding efficiency, flexibility, part-load and stand-by
+performance, electrolyser capacity (multi MW to GW plants) and capital        The overall reaction of electrochemical splitting of water into hy-
+costs, depending on the specific application and operating strategies.    drogen and oxygen by supplying electrical (and thermal) energy is
+                                                                          given by:
+    There have been several excellent reviews on electrolysis technol-
+ogies in general [4­8] as well as on AEL (alkaline electrolysis) [9,10],  H2O                   1
+PEMEL (proton exchange membrane electrolysis) [11], and SOEL (solid             H2           +   O
+                                                                                                22                                       (2.1)
+                                                                               Electrolysis
+
+    Corresponding author.
+     E-mail address: buttler@es.mw.tum.de (A. Buttler).
+
+http://dx.doi.org/10.1016/j.rser.2017.09.003
+Received 26 February 2017; Accepted 3 September 2017
+1364-0321/ © 2017 Elsevier Ltd. All rights reserved.
+
+Please cite this article as: Buttler, A., Renewable and Sustainable Energy Reviews (2017), http://dx.doi.org/10.1016/j.rser.2017.09.003
+A. Buttler, H. Spliethoff                                                                               Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+Table 1
+State-of-the-art (SoA) and future targets of key performance indicators (KPIs) given by FCH JU [15] for hydrogen production from renewable electricity for energy storage and grid
+balancing (KPI 1, 2 and 3 are extended by own calculations marked in italics, conversion of values of KPI 2 and 3 are based on energy consumption specified in KPI 1).
+
+                                                                        SoA in 2012              2017               2020               2023
+
+KPI 1    Energy consumption @ rated power                               57­60 kWh/kg             55 kWh/kg          52 kWh/kg          50 kWh/kg
+                                                                        @100 kg/d                @500 kg/d          @1000 + kg/d       @1000+ kg/d
+KPI 2    CAPEX @ rated power including auxiliary equipment and          5.1­5.4 kWh/Nm3          4.9 kWh/Nm3        4.7 kWh/Nm3        4.5 kWh/Nm3
+KPI 3    commissioning                                                  8 M/(t/d)                3.7 M/(t/d)        2.0 M/(t/d)        1.5 M/(t/d)
+KPI 4    Efficiency degradation @ rated power and 8000 h operation      3400 /kWel               1600 /kWel         900 /kWel          700 /kWel
+KPI 5    / year                                                         2­4%/year                2%/year            1.5%/year          < 1%/year
+         Flexibility with a degradation < 2% per year (refer to KPI 3)  5.4­10.7 µV/h            5.2 µV/h           3.7 µV/h           < 2.3 µV/h
+                                                                        5­100% of nominal power  5­150% of nominal  0­200% of nominal  0­300% of nominal
+         Hot start from min to max power (refer to KPI 4)                                        power              power              power
+         Cold start                                                     1 min                    10 s               2s                 <1s
+                                                                        5 min                    2 min              30 s               10 s
+
+KPI 4 and KPI 5 shall be considered as optional targets to be fulfilled according to the profitability of the services brought to the grid thanks to the addition of flexibility and (or) reactivity
+(considering also potential degradation of the efficiency and lifetime duration).
+"H2 Production ... @ rated power" ­ corrected for 30 bar hydrogen output pressure.
+
+    The volumetric co-production of oxygen corresponds to half the                           electrolysis to take place in an ideal cell without heat integration (but in
+production of hydrogen. The heat of reaction gives the overall energy                        case of high temperature electrolysis, water is supplied as steam, which
+demand of reaction H, which can be partly supplied by heat (Q)                               means that it had to be evaporated externally):
+while another part (change in Gibbs energy G), has to be supplied
+electrically:                                                                                        H                                                    (2.4)
+                                                                                             Utn = zF
+
+H = G + Q                                                               (2.2)
+
+    As shown in Fig. 1, the overall energy demand H varies only                                  This means that the overall energy demand of the electrolysis re-
+slightly with temperature (between 283.5 and 291.6 kJ/mol H2 in the                          action (including heat) is supplied electrically. The thermoneutral cell
+illustrated temperature range of 0­1000 °C). However, the share of                           voltage is approx. 1.47­1.48 V (284­286 kJ/molH2) feeding liquid
+possible heat integration Q rises with temperature, reducing the                             water below 100 °C while it reduces to 1.26­1.29 V (243­249 kJ/
+minimum electrical demand G. Beside improved kinetics, the possible                          molH2) in the temperature range of 100­1000 °C if steam is supplied
+high heat utilisation of internal losses is a major motivation of high                       (see Fig. 1). This means that the minimum electrical energy consump-
+temperature electrolysis operated at 700­900 °C. Moreover, part of the                       tion of steam electrolysis compared to liquid water electrolysis can be
+heat demand corresponding to the latent heat of vapourisation is sup-                        reduced by the heat of evaporation of 41 kJ/mol at ambient pressure.
+plied by feeding water vapour instead of liquid water, as it is the case                     The total energy consumption including evaporation of the water is
+for low temperature electrolysis (AEL, PEMEL).                                               almost constant from 0 to 1000 °C. However, steam electrolysis offers
+                                                                                             the possibility to replace high valuable electrical energy in the order of
+    The theoretical minimum cell voltage of electrolysis operation, the                      0.5 kWh/Nm3 (41 kJ/mol) of hydrogen by low temperature heat for
+reversible cell voltage Urev, is characterised by a necessary external                       water evaporation. In a real electrolyser the cell voltage for thermo-
+thermal supply of the whole heat demand Q. It is directly proportional                       neutral operation is slightly higher than Utn due to heat losses (non-
+to the change in Gibbs free energy G:                                                        adiabatic operation) and thermodynamic irreversibilities [5].
+
+Urev  =  G                                                              (2.3)                    Thermoneutral voltage represents the standard operation mode of
+         zF                                                                                  high temperature electrolyser. The cell is operated at constant tem-
+                                                                                             perature as internal heat production by irreversibilities is equalised by
+where z is the number of electrons transferred per reaction (z = 2) and                      heat consumption of the electrolysis reaction. Low temperature elec-
+F represents the Faraday's constant (96 485 C/mol). Urev decreases with                      trolysers (AEL, PEMEL) are operated above the thermoneutral voltage
+rising temperature. It lies in the range of 1.25­0.91 V in the tempera-                      due to high internal losses or overvoltages. This results in a heating of
+ture range of 0­1000 °C (see Fig. 1).                                                        the electrolysis cells requiring external cooling of the module. The cell
+                                                                                             voltage can be expressed as the sum of the reversible cell voltage Urev
+    The thermoneutral cell voltage gives the minimum voltage for                             and the overvoltages caused by ohmic resistance Uohm, limitations in
+                                                                                             electrode kinetics (activation overvoltages Uact) and mass transport
+                                                                                             (concentration overvoltages Ucon ) [16]:
+
+                                                                                             U = Urev + Uohm + Uact + Ucon                                (2.5)
+
+Fig. 1. Total (H), thermal (Q) and electrical (G) energy demand of an ideal electrolysis         The dependency between cell voltage and current or current density
+process as function of the temperature.                                                      respectively is shown exemplary in Fig. 2. The current-voltage (I-U)
+                                                                                             relationship characterises the electrochemical behaviour of an electro-
+                                                                                             lysis cell. The current density is approximately proportional to the
+                                                                                             hydrogen production rate according to Faraday's law. However, Far-
+                                                                                             aday's law of an ideal electrolysis cell has to be extended by the Faraday
+                                                                                             efficiency F (or current efficiency) which is defined as the ratio of
+                                                                                             actual to theoretical hydrogen production rate. This deviation is caused
+                                                                                             by parasitic current losses along the gas ducts and cross permeation of
+                                                                                             product gases. Cross permeation of product gases increases with tem-
+                                                                                             perature and pressure and this negative effect is higher at low current
+                                                                                             densities due to lower gas production [17­21]. Parasitic current losses
+                                                                                             are especially relevant for AEL. The parasitic currents increase at lower
+
+                                                                                          2
+A. Buttler, H. Spliethoff                                                                                           Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+                                                                                             Es =  LHVH 2  =  2.4   Uc/V          (2.10)
+                                                                                                    LHV       F
+
+                                                                                                 The efficiency of an electrolyser decreases (or the overpotentials
+                                                                                             increase respectively):
+
+                                                                                             · with rising current density
+                                                                                             · with decreasing temperature
+                                                                                             · slightly with increasing pressure
+
+Fig. 2. Influence of temperature and pressure on the characteristic I-U-curve of a PEM           The operating temperature has a strong influence on performance
+electrolysis cell (experimental data from [25], Utn and Urev based on own calculations).     but it is limited by degradation issues of the electrolysis cells and ma-
+                                                                                             terial restrictions. Low temperature electrolysers are operated at tem-
+                                                                                             peratures of 60­90 °C while SOEL is operated at 700­900 °C. Typical
+                                                                                             operating conditions regarding pressure and current density of AEL,
+                                                                                             PEMEL and SOEL are discussed in Sections 5.1 and 5.2. The selection of
+                                                                                             the nominal current density of a system represents a weighting up of
+                                                                                             operating and capital costs as higher current densities result in:
+
+electric resistance caused by lower current densities and higher tem-                        · increased hydrogen production per cell area corresponding to re-
+perature [16,22]. At nominal current density, the Faraday efficiency of                        duced specific capital costs per Nm3 of hydrogen production
+AEL, PEMEL and SOEL is reported to be close to 100% (98­99.9%)
+[9,16,17,21­24]. A strong decrease in Faraday efficiency is observed                         · in a decrease in performance corresponding to an increase in op-
+below a current density of 50­100 mA/cm2 for AEL [16,22]. Grigoriev                            erational costs
+et al. report a decrease of the Faraday efficiency of a PEM electrolyser
+from nearly 100% at pressures up to 20 bar to 90% at a pressure of                           · an increase in the deactivation rate due to higher overpotentials.
+
+130 bar [17].                                                                                    Based on the nominal current density, part-load operation corre-
+    For the prevailing bipolar modules (properties of bipolar and                            sponds to a reduced current density and a higher efficiency. This means
+                                                                                             that each electrolyser can reach very high efficiencies in part-load. As a
+monopolar modules are very well discussed by Ursua et al. [5]) with a                        result, the nominal specific energy consumption in kW h per Nm3 of
+number of nc electrolysis cells electrically connected in series and op-                     hydrogen often given by manufacturer is not meaningful without spe-
+erated at a current I in A, the total hydrogen production rate in Nm3/h                      cifying the nominal current density. Therefore, the characteristic I-U-
+is given as follows:                                                                         curve of an electrolysis cell is a better measure for electrolysis perfor-
+                                                                                             mance (also in part-load) and a survey of I-U-curves of AEL, PEMEL and
+VH 2  =  F  nc I  × 22.414  3.6 Nm3/h                                                        SOEL will be given in Section 5.2.
+            2F                      mol/s                   (2.6)
+
+      The efficiency of an electrolyser is defined as:                                       3. Water electrolysis technologies
+
+HHV      =  VH 2 HHVH2                                      (2.7)                                Water electrolysis technologies can be classified according to the
+                 Pel                                                                         applied electrolyte, which separates the two half reactions at the anode
+                                                                                             (oxygen evolution reaction) and cathode (hydrogen evolution reaction)
+where VH 2 is the volume flow of hydrogen in Nm3/h, HHVH2 the higher                         of the electrolyser [7]. The main water electrolysis technologies are
+heating value of hydrogen (3.54 kW h/Nm3) and Pel the electric energy                        Alkaline Electrolysis (AEL), Polymer Electrolyte Membrane Electrolysis
+consumption in kW. While the current (or current density respectively)                       (PEMEL) and Solid Oxide Electrolysis (SOEL). The principle layout,
+is approximately proportional to the theoretical hydrogen production                         reactions and relating properties of AEL, PEMEL and SOEL are dis-
+rate (as long as Faraday efficiency is close to 100% which is not the case                   cussed in the following.
+at low current densities as discussed before), the cell voltage Uc given in
+V is inversely proportional to the efficiency:                                               3.1. Alkaline electrolysis (AEL)
+
+HHV      =  F  nc I  HHVH 2   =  1.48 V   F                                                      Alkaline electrolysis represents a mature technology, which has
+               2F                  Uc                                                        been applied for large-scale hydrogen production in the MW-scale al-
+                                                                                             ready in the beginning of the 20th century [26]. The principle layout of
+                  nc Uc I                                   (2.8)                            an alkaline electrolyser is shown in Fig. 3. The electrodes are immersed
+                                                                                             in a liquid electrolyte separated by a diaphragm. The electrolyte is
+    The efficiency of low temperature electrolyser is often given based                      usually a 25­30% aqueous KOH-solution. It is circulated for the re-
+on the higher heating value as the higher heating value corresponds to                       moval of product gas bubbles and heat either by pumps or by natural
+the enthalpy of reaction at standard conditions from liquid water to                         circulation due to temperature gradients and buoyancy of the gas
+gaseous hydrogen [7]. However, for the evaluation of an overall process                      bubbles. The electrolyte is stored in two separated drums for each
+chain, the partial efficiencies of the process steps and fuel prices are                     product gas (O2 and H2) which serve also as gas-liquid-separator. The
+usually referred to the lower heating value. Therefore, it is expedient to                   product gas quality after drying is typically in the range of 99.5­99.9%
+use the electrolyser efficiency referred to the lower heating value                          for H2 and 99­99.8% for O2 [27­35] which can be increased to above
+LHVH2 (3.00 kW h/Nm3):                                                                       99.999% by catalytic gas purification (deoxidiser) [27,28,34,35]. The
+                                                                                             partial reaction at the electrodes is given by:
+LHV      =  VH 2 LHVH2     =  3.00               1.25V   F  (2.9)
+                 Pel          3.54   HHV = Uc
+
+    Unless otherwise indicated, all efficiencies given within this paper                     2H2O + 2e-  H2 + 2OH- Cathode        (3.1.1)
+are related to the lower heating value. Beside efficiency, the specific
+energy consumption for the production of 1 Nm3 (or 1 kg) of hydrogen                         2OH-   1      +  H2 O  + 2e- Anode   (3.1.2)
+is often specified, which is proportional to the cell voltage:                                      2 O2
+
+                                                                                          3
+A. Buttler, H. Spliethoff                                                                       Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+                                                                                           Fig. 3. Layout of an alkaline electrolysis system (modified from
+                                                                                           [35]).
+
+    As seen, water is consumed on the cathode side while water is             current density operation compared to AEL (see Section 5.1). This
+produced on the anode side. As a result, the lye streams of both sides        supports the high-pressure operation of PEM electrolysis (see Section
+have to be mixed before entering the electrolyser to prevent a re-            5.2). The structural properties of the solid electrolyte also allow a high
+spective dilution or concentration of the electrolyte streams. This re-       differential pressure between the hydrogen and the oxygen side (cur-
+sults in a contamination of product gases due to the electrolyte streams      rently, stacks operated at up to 350 bar differential pressure are re-
+carrying dissolved gases, as the separators can only remove the gas           ported [39,40]).
+bubbles [19,36]. A critical contamination (flammable mixture) in part-
+load has to be avoided by a proper control of the lye circulation, which      3.3. Solid oxide electrolysis (SOEL)
+is automatically the case for natural circulation [19,37].
+
+3.2. PEM electrolysis (PEMEL)                                                     The development of solid oxide electrolysis was begun in the USA in
+                                                                              the 1970s by General Electric and Brookhaven National Laboratory,
+    Polymer Electrolyte Membrane or Proton Exchange Membrane                  followed by Dornier in Germany [7]. In recent years, SOEL has at-
+(PEM) electrolysis, sometimes also referred as Solid Polymer                  tracted increasing interest due to the progress in solid-oxide fuel cells
+Electrolysis (SPE), was introduced by General Electrics in the 1960s          and the motivation of carbon-neutral energy scenarios [12]. SOEL op-
+[11]. The basic layout of a PEM electrolyser is shown in Fig. 4. A proton     erates at temperatures of 700­900 °C. High temperature operation re-
+exchange membrane (Nafion® membrane in most cases) separates the              sults in higher efficiencies than AEL or PEMEL but implies a remarkable
+two half-cells, and the electrodes are usually directly mounted on the        challenge for material stability. The efficiency advantages result from
+membrane forming the MEA (membrane electrode assembly). The                   improved kinetics, thermodynamics favouring internal heat utilisation
+corrosive acidic regime provided by the proton exchange membrane              at higher temperature and the conversion of steam, as discussed earlier.
+requires the use of noble metal catalysts like iridium for the anode and      A simplified process layout of a SOEL system is shown in Fig. 5. The
+platinum for the cathode [11]. Water is supplied at the anode (partly         reactions at the electrodes are:
+transported to the cathode side due to the electroosmotic effect) and the
+following partial reactions take place:                                       H2 O + 2e-  H2 + O2- Cathode                                    (3.3.1)
+
+                                                                              O2-   1  O2  + 2e-Anode                                         (3.3.2)
+                                                                                    2
+2H+ + 2e-  H2 Cathode                  (3.2.1)
+
+H2 O   1     + 2H+         + 2e-Anode  (3.2.2)                                    The feed water or steam is pre-heated in a recuperator against the
+       2 O2                                                                   hot product streams leaving the stack. Additionally, low temperature
+                                                                              heat has to be integrated or electrical heating is required to account for
+    The polymer electrolyte membrane features a very low cross-per-           the heat of evaporation. The stack consists typically of planar cells
+meation, yielding hydrogen with a higher purity than AEL of typically         electrically connected in series. Steam, and recycled hydrogen to
+greater than 99.99% H2 after hydrogen drying [5,38]. PEM electrolysis         maintain reducing conditions, are supplied to the cathode and partly
+features a compact module design due to the solid electrolyte and high        converted to hydrogen. The reactant utilisation increases with current
+
+                                                                                           Fig. 4. Layout of a PEM electrolysis system [25].
+
+                                                                           4
+A. Buttler, H. Spliethoff                                                                    Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+Fig. 5. Simplified layout of a SOEL system including the necessary high-temperature (HT)     of PEM electrolysis could be identified. Additionally manufacturers of
+and low-temperature (LT) heat integration (often achieved by electrical heaters).            chloralkali electrolysis are about to enter the water electrolysis market
+                                                                                             like Thyssen Krupp (DE) [66] and Asahi Kasai (JP) [67].
+density (at constant feed flow). Experimental reactant utilisation typi-
+cally lies in the range of 40­80% [24,41­45]. Optionally air can be used                         SOEL is in a pre-commercial and fundamental research stage al-
+at the anode as sweep stream for the removal of product oxygen despite                       though Sunfire is already offering systems of 150 kW in a 20 ft or 40 ft
+of the efficiency penalty due to the critical handling of high-tempera-                      container. Other companies investigating SOEL are Haldor Topsoe (in
+ture pure oxygen [46]. The mixture of steam and hydrogen is separated                        cooperation with Riso DTU) [12], Cermatec (in cooperation with the
+by cooling and condensing of the water. Due to exergetic losses of the                       Idaho National Laboratory) [68], FuelCell Energy [59] and Toshiba
+heat exchanger and the difference in heat capacity of the make-up                            [24].
+steam and the SOEL product gas, the steam has to be further super-
+heated to reach the SOEL inlet temperature of 700­1000 °C. The high                              Beside the main technologies, one commercial supplier of anion
+temperature heat is either supplied by an external heat source or by an                      exchange membrane (AEM) electrolysis was identified though it will
+electrical heater [47]. Heat integration with subsequent exothermal                          not be treated in more detail within this review. Acta (IT) offers small-
+synthesis processes (e.g. methanol, DME, substitute natural gas or FT-                       scale stacks with a capacity of 1 Nm3/h at 30 bar [69].
+Diesel) represents an interesting application as shown in [43,48­51].
+                                                                                             5. Comparison of technologies
+    Current electrolysis cells are often operated below thermoneutral
+voltage in endothermic mode (see Section 5.1) due to the current                             5.1. Nominal and part-load performance
+density limitation below 1 A/cm2 for degradation reasons (see Section
+5.5). This requires additional preheating of the feed gas to hold the                            Electrolysers feature an increase in performance in part-load as
+temperature of the system constant [52]. Additionally, high-tempera-                         discussed before. Therefore, the efficiency of an electrolyser including
+ture heat integration is possible with the aim of reducing the electrical                    part-load operation is best characterised by its I-U-curve (cell voltage
+demand. However, this increases the specific cell area, which is cur-                        vs. current density). After discussing the rated specific energy con-
+rently not economically reasonable [53].                                                     sumption of commercial electrolysers, a survey of exemplary I-U-curves
+                                                                                             for AEL, PEMEL and SOEL from literature is given in the following.
+    An interesting feature of SOEL is the ability of co-electrolysis of CO2
+and steam to produce a syngas containing H2 and CO for the synthesis                             Rated efficiency and specific energy consumption of commercial
+of fuels (e.g. [42,45,48,51,54­58]). Another interesting application of                      electrolysis stacks are in the range of 63­71%LHV and 4.2­4.8 kW h/
+SOEL represents reversible operation increasing the capacity utilisation.                    Nm3 for AEL and 60­68%LHV and 4.4­5.0 kW h/Nm3 for PEMEL (based
+The possibility of flexible operation between fuel cell and electrolysis                     on Table 2). Given specific energy consumptions of electrolysis systems
+mode was recently investigated experimentally by Fuel Cell Energy                            (including rectifier and utilities, excluding external compression) are in
+[59], Haldor Topsoe [60] and Sunfire [61]. To summarise, SOEL offers                         the range of 5.0­5.9 kW h/Nm3 (LHV = 51­60%) for AEL and
+several interesting features with a high potential for PtG and PtL ap-                       5.0­6.5 kW h/Nm3 (LHV = 46­60%) for PEMEL. The additional con-
+plications. However, SOEL is still at the research stage based on single-                    sumption of utilities and losses by rectification lies typically in the
+cell or short-stack tests, although the company Sunfire does offer                           range of 0.4­0.8 kW h/Nm3 [89,97­100]. A reduced performance at
+commercial reversible SOEL systems and has demonstrated a small-                             lower capacity is observed for electrolysis systems below a hydrogen
+scale FT-diesel production (1 bbl/day) [61,62].                                              production rate of approx. 100 Nm3/h (0.5 MW), mainly due to the
+                                                                                             decreasing efficiency of the utilities [7]. However, the rated specific
+4. Market survey of electrolysis technologies                                                energy consumption is only meaningful in combination with the current
+                                                                                             density. Additionally, the decrease in performance over lifetime must
+    The electrolysis market is very dynamic with several fusions and                         be taken into account, as discussed in Section 5.5.
+acquisitions in recent years (e.g. McPhy acquired Piel (IT) and Hytec
+Enertrag (DE) in 2013, Areva H2Gen, resulting from the fusion of Areva                           Characteristic I-U-curves of AEL are summarised in Fig. 6. Com-
+Helion and CETH2 in 2014, Hitachi Zosen Inova (CH) acquired ETOGAS                           mercial electrolysers reach current densities up to 0.45 A/cm2
+(DE) in 2016, NEL Hydrogen (NO) aquired Proton OnSite (US) in 2017,                          [35,70,101], corresponding to a theoretical specific hydrogen produc-
+Accagen (CH) became EnerBlue in 2013). In this context, the companies                        tion rate of 1.9 Nm3 per m3 of cell area. The cell voltage at a current
+H2Nitidor [63] (using Voltiana technology from Casale Chemicals) and                         density of 0.4 A/cm2 varies between 1.7­2.1 V, corresponding to a
+Avalance [64] in our electrolysis database could not be found in a re-                       specific energy stack consumption of 4­5 kWh/Nm3 (LHV = 60­75%).
+cent internet search.                                                                        Exceptions are the results from GHW (Gesellschaft für Ho-
+                                                                                             chleistungselektrolyseure, now part of NEL Hydrogen) [19] with cur-
+    An overview of the researched manufacturers of medium to large-                          rent densities up to 1 A/cm2, which are not applied in commercial
+scale electrolysis systems is given in Table 2 (only the largest stack                       operation however. Another exception is the cell performance pre-
+series are mentioned). Manufacturers of laboratory-scale electrolysers                       sented by Wasserelektrolyse Hydrotechnik [102] with very high over-
+(e.g. Schmidlin, Claind) are not considered. In summary, 20 manu-                            potentials and a low current density of 0.25 A/cm2 only. This is due to
+facturers of alkaline electrolysis (Casale Chemicals [65] is excluded in                     the use of a non-activated anode for reliable operation under harsh
+Table 2 as no current information was available) and 12 manufacturers                        conditions in remote areas.
+
+                                                                                                 In part-load operation, the stack-efficiency based on LHV is in-
+                                                                                             creased up to 73­86% (Es = 3.5­4.1 kWh/Nm3) at 0.1 A/cm2 (25%
+                                                                                             based on nominal current density of 0.4 A/cm2). However, decreasing
+                                                                                             Faraday efficiency and relatively increasing consumption of utilities
+                                                                                             have to be taken into account for overall system performance.
+
+                                                                                                 Overall efficiency of AEL systems including compression are stated
+                                                                                             to be approx. 50%, based on HHV (LHV = 42%) in the HARI project
+                                                                                             (36 kW electrolyser, compression to maximum 137 bar) [103] and
+                                                                                             Res2H2 project (25 kW electrolyser, compression to maximum 220 bar)
+                                                                                             [104]. However, a poor rectifier efficiency of 72­89% is reported in the
+                                                                                             HARI project. Within the "Power-to-Gas" project, a total efficiency of
+                                                                                             53% based on LHV is reached at full load operation (10 bar hydrogen
+                                                                                             pressure, including all auxiliaries), which increase slightly to 55% at a
+
+                                                                                          5
+A. Buttler, H. Spliethoff                                                                                              Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+Table 2
+Overview of commercial electrolysis systems (not exhaustive, only the largest systems from each supplier are listed).
+
+Manufacturer (location) Series           H2 rate,  Nominal power, Max. pressure, Specific energy consumptiona,b, LHVa,b,c,% Load flexibility Ref.
+                                         Nm3/ha
+                                                   MWa   bar                  kWh/Nm3                                           (%)
+
+Alkaline electrolysis
+
+     (AEL)                 LURGI SEd     1400      6.0   30                   4.3­4.65                                 65­70    25­100        [28,70]
+ELB (DE)                                                 16                   4.7                                      64       10­110        [32]
+                                                         30                   4.2                                      79       n.a.          [30]
+Suzhou Jingli (CN)         DQ 1000       1000      4.7   32                   4.3­4.65                                 65­70    25­100        [71]
+                                                         15                   4.6                                      65       n.a.          [29,34]
+Verde (US)                 Verde-1000    1000      4.5   atm.g                3.8­4.4                                  68       20­100        [72]
+                                                         atm.g                4.3­4.6                                  71       25­100        [28,70]
+IHT (CH)                   S-556d        760       3.5   10                   (5.9i)                                   (51)     17­100        [73,74]
+                                                         atm.g                n.a.                                     n.a.     n.a.          [75]
+PERICe (CN)                ZDQ-600       600       2.8   30                   < 4.4                                    68       n.a.          [76]
+                                                         60                   4.3                                      70       n.a.          [77]
+NEL Hydrogenf (NO)         NEL A485      485       2.1   atm.g                4.7                                      64       25­100        [28,70]
+                                                         10                   n.a.                                     n.a.     n.a.          [78]
+ELB(DE)                    ELB ND4       480       2.0   atm.g                (5.3)                                    (57)     20­100        [34]
+Teledyneh (US)                                           atm.g                n.a.                                     n.a.     n.a.          [78]
+McPhyj (FR)                NH-450        450       2.7   45                   n.a.                                     n.a.     n.a.          [75]
+                                                         6                    (5.6)                                    (54)     n.a.          [79]
+                           McLyzer       400       2.0   15                   4.8                                      63       10­110        [33]
+                                                         30                   4.2                                      72       15­100        [80]
+Tianjin Mainland (CN)      FDQ-400/3.0 400         1.76  30                   (5.4)                                    (56)     20­100        [27,81]
+                                                         10(25)               (5.2)                                    (58)     40­100        [82,83]
+Ener Blue (CH)             L-size        375       1.6   7                    (5)                                      (60)     n.a.          [84]
+                                                         25                   n.a.                                     n.a.     25­100        [85]
+ELB(DE)                    BAMAG S300E 330         1.5
+                                                         40                   5                                        60       n.a.          [86]
+Uralhimmasch (RU)          BEU-250       250       n.a.  30                   (5­5.4)                                  (56­60)  1­100         [83]
+                                                         35                   (5.1­5.4)                                (56­69)  0­160         [87]
+HT-Hydrotechnik (DE)       EV 150        220       1.1   20­80                (5.5)                                    (54)     n.a.          [88]
+                                                         30                   5                                        60       0­100         [38]
+Uralhimmasch (RU)          FV-200        200       n.a.  35                   4.4                                      68       10­150        [89,90]
+McPhy j (FR)               McLyzer                       30/50                4.5                                      67       n.a.          [91]
+                                         100       0.5   76                   n.a.                                     n.a.     n.a.          [92]
+                                                         4                    (5.8)                                    (52)     n.a.          [93]
+Idroenergy (IT)            Model 120     80        0.4   4­8                  (5.5­6.5)                                (46­55)  0­100         [94]
+ETOGAS (DE)                                              30                   4.9                                      61       n.a.          [95]
+                                         62.5k     0.3   50                   (5.5)                                    (55)     n.a.          [80]
+
+Green Hydrogen (DK)        HyProvide A60 60        0.25  10                   (3.7)                                    (96)     -100 to 100z  [96]
+ErreDuel (IT)                                      0.11
+Hydrogenicsn(CA)           G256m         21        0.08
+
+                           HySTAT-100­10o 15
+
+Sagim (FR)                 M 5000        5         0.03
+Linde AG (DE)              HYDROSS       n.a.p     n.a.
+
+PEM electrolysis (PEMEL)                           MW
+
+Giner Inc. (US)            Allagashq     400       2
+
+Hydrogenicsn(CA)           HyLYZER-3000r 300       1.5
+
+Siemens (DE)               SILYZER 200   225       1.25
+ITM Power (GB)                           127s      0.7
+Proton OnSite (US)         M400t         50        0.25
+AREVA H2Genu (FR)          E120v         30        0.13
+
+H-TEC (DE)                 ELS450        14.1      0.06
+
+Treadwell Corp. (US)                     10.2      n.a.
+
+Angstrom Advanced (US) HGH170000         10        0.06
+
+Kobelco Eco-Solutions (JP) SH/SL60Dw     10        0.06
+
+Sylatech (DE)              HE 32         2         0.01
+
+GreenHydrogenx (DK)        HyProvide P1  1         0.01
+
+Solid oxide electrolysis (SOEL)                    kW
+
+Sunfire (DE)               RSOC          ~0.6      2.2y
+
+a Entries in column 3, 4, 6 and 7 are partly our own calculations based on other relevant columns.
+b Specific energy consumption of the stack, values for the overall system given by manufacturers are indicated in brackets.
+c Efficiency calculation based on LHV of hydrogen (3 kW h/Nm3), efficiency based on HHV of hydrogen (3.54 kW h/Nm3) is 18% higher.
+d ELB and IHT are based on the same technology.
+e Electrolysis technology of PERIC distributed by Wasserelekctrolyse Hydrotechnik in Germany.
+f NEL Hydrogen acquired GHW (DE), H2Logic (DK), Proton Onsite (US) and Rotolyzer (NO).
+g "atm." means close to atmospheric pressure (20­40 mbar).
+h Modules are supplied by Next Hydrogen Corporation (CA).
+i 5.9 kWh/Nm3 at nominal production rate of 450 Nm3/h, 5.1 kWh/Nm3 at 225 Nm3/h.
+j McPhy acquired Piel (IT) and Hytec Enertrag (DE) in 2013.
+k ETOGAS offers systems with a hydrogen capacity of 250 Nm3/h, 1.2 MW, consisting of 4 stacks.
+l Modules of ErreDue are also sold by Pure Energy Centre (GB).
+m ErreDue offers systems (G256) up to a hydrogen capacity of 171 Nm3/h, 0.9 MW, consisting of 8 stacks, a doubling of the current stack capacity is in development.
+n Hydrogenics acquired Stuart Energy (CA) which acquired Vandenborre Hydrogen Systems (BE) and Elwatec (DE).
+o Hydrogencis offers the skid-mounted system HySTAT-100-10 with a hydrogen capacity of 100 Nm3/h, 0.5 MW, consisting of 6 cell stacks.
+p HYDROSS is offered with a hydrogen capacity up to 250 Nm3/h, number of cell stack was not available.
+q Giner is developing a stack with a rated hydrogen capacity of about 1100 Nm3/h at 15.5 bar (Kennebec stack).
+r Hydrogencis offers HyLYZER-3000-30 as an indoor installation with a hydrogen capacity of 3000 Nm3/h, 15 MW, consisting of 10 cell stacks.
+s ITM Power offers a platform with a capacity of 1365 kg/day (630 Nm3/h), 3.5 MW, consisting of 5 stacks.
+t Proton Onsite offers modular, skid-based systems up to 400 Nm3/h (M400), 3 MW consisting of 8 cell stacks.
+u AREVA H2Gen results from the fusion of AREVA Helion (FR) and CETH2 (FR) in 2014.
+v AREVA H2Gen offers skid-mounted systems up to 120 Nm3/h (E120), 0.6 MW, consisting of four stacks.
+w Kobelco Eco-Solutions offers skid-mounted systems up to 60 Nm3/h (SH/SL60D), 0.3 MW, consisting of six stacks.
+x GreenHydrogen ApS and EWII Fuel Cells A/S (former IRD) have entered into a long-term partnership for the commercialisation of EWII Fuel Cells PEM electrolyser ELZE1050.
+y Modules with a rated electrical power of 150 kW (40 Nm3) are offered by Sunfire.
+z Reversible operation of SOC in electrolysis and fuel cell mode possible, idle mode close to operation temperature possible.
+
+minimum load of 40% of full load [100]. The efficiency of the rectifier       20 A/cm2 are reported [107]. A current density of 2 A/cm2 corresponds
+increases from 94.6% at full load to above 98% at minimum load.               to a theoretical specific hydrogen production rate of up to 8.4 Nm3 per
+                                                                              m2 of cell area, which is over four times higher than for AEL. The cell
+    An overview of characteristic I-U-curves of PEMEL is given in Fig. 7.     voltages at a nominal current density of 2 A/cm2 are in the range of
+PEMEL is typically operated at higher current densities of presently          1.65­2.5 V (4.0­6.0 kW h/Nm3, LHV = 50­76%), which is in the same
+approx. 1­2 A/cm2 [90,91,97,105,106] although laboratory tests up to
+
+                                                                           6
+A. Buttler, H. Spliethoff                                                           Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+                                                                               Fig. 6. Overview of characteristic I-U-curves of alkaline electro-
+                                                                               lysis from literature [16,19,23,36,70,101,102,115].
+
+range as AEL but at a higher current density. At a current density of          Fig. 8. Efficiency evaluation including all consumers (compression, cooling, purification,
+0.1 A/cm2 (5% based on a nominal current density of 2 A/cm2) the               control) of the Siemens PEM electrolysis system at Energiepark Mainz [108].
+efficiency of the presented PEMEL cells increases to 76­84%, based on
+LHV (U = 1.5­1.65 V, Es = 3.6­3.9 kW h/Nm3).                                   waste heat of the electrolyser and integrating the by-product oxygen.
+                                                                               Heat integration has been demonstrated for example within the
+    Overall system performance of a pilot plant is presented in detail by      Stromlückenfüller project (PEM electrolysis by H-TEC) [109] and the
+Hydrogenics for the DonQuichote project [97]. The mean specific                RWE's Ibbenbüren power-to-gas plant (PEM electrolysis by ITM) [88]
+consumption (DC) of the stack is stated to be 4.47 kWh/Nm3 (LHV =              stating an overall energy utilisation (including heat) of 95% and 86%
+67%) for a transient operated 30 Nm3/h PEM electrolyser. The specific          (based on HHV), respectively. In the BioCat project, featuring 2 ×
+energy consumption of the system (including utilities and rectification        500 kW AEL of Hydrogencis, the capability and economic viability of
+with a poor mean efficiency of 88%) is given to be 5.25 kWh/Nm3 (LHV           the integration of by-product oxygen and waste heat in a biogas plant
+= 57%) and 5.55 kW h/Nm3 (LHV = 54%) including compression to                  should be shown [110].
+450 bar. The power consumption of the utilities in stand-by is approx.
+                                                                                   As previously discussed, operating temperature has a strong influ-
+1 kW, which corresponds to less than one percent of the nominal                ence on stack efficiency. An increase in temperature corresponds to a
+electrolyser power. Despite the increase in efficiency of the electrolyser     reduction in cell voltage or specific energy consumption of 0.01­0.1 V/
+in part-load, the overall system efficiency decreases due to the de-
+                                                                                                              Fig. 7. Overview of characteristic I-U-curves of PEM electrolysis
+creasing performance of the oversized compressor. Results of the                                              from literature [21,40,90,97,105,107,116­124].
+
+6 MWpeak PEM electrolysis system from Siemens for the Energiepark
+Mainz project are shown in Fig. 8. The system efficiency is calculated on
+
+the basis of purchased electricity and the higher heating value of
+measured hydrogen production [108]. It therefore includes rectification
+and all utilities like cooling, purification and compression to 80 or
+225 bar, respectively. As can be seen, the overall efficiency increases
+from approx. 58% based on HHV (Es = 6.1 kW h/Nm3, LHV = 49%) at
+peak total power of 6.2 MW (165% of rated power) to 65% (Es =
+5.4 kW h/Nm3, LHV = 55%) at rated total power of 3.75 MW. The
+maximum overall efficiency is reached at 1 MW (27% of rated power)
+with up to 76% based on HHV (Es = 4.7 kW h/Nm3, LHV = 64%)
+before it declines very strongly.
+
+    An increase in efficiency is possible utilising the low-temperature
+
+                                                                            7
+A. Buttler, H. Spliethoff                                                            Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+                                                                                Fig. 9. Overview of characteristic I-U-curves of solid oxide elec-
+                                                                                trolysis from literature [24,59,111,112,125­130].
+
+10 °C or 0.02­0.24 kW h/Nm3/10 °C for AEL and PEMEL respectively                Fig. 10. Summary of efficiency and operational range of AEL [16,19,23,36,
+(based on I-U curves determined at different temperatures from litera-          70,101,102,115], PEMEL [21,40,90,97,105,107,116­124] and SOEL [24,59,111,112,
+ture [16,21,23,25,97,100­102]). However, the temperature-related                125­130] cells or stacks.
+increase in efficiency is reduced at higher temperatures. Pressure has
+only a little influence on stack efficiency, which will be discussed in the     5.2. Pressurised operation
+next section.
+                                                                                    Hydrogen is usually stored or utilised (e.g. methanol synthesis) at
+    Comparison of characteristic I-U-curves of SOEL is more difficult           high pressure. If the pressurised operation of electrolysis has the po-
+than for AEL and PEMEL. On the one hand, SOEL I-U-curves are de-                tential to increase the efficiency and to reduce the investment and
+pendent on further parameters such as steam conversion rate (rising at          maintenance costs is discussed controversially in literature
+higher current density at given feed flow rate or decreasing at higher          [36,131,132].
+feed flow rate at given current density), feed composition (humidity,
+inert gases) and sweep gas on the oxygen side [42,45,111,112]. On the               On the one hand liquid compression of water is more efficient than
+other hand, significant differences between single-cell and stack tests         compression of the gaseous products [131] and pressure has only a
+are observed in some cases due to the research state of SOEL                    minor impact on electrolyser performance [21,111,117,119,124,
+[24,45,113]. Because of this, the I-U-curves of SOEL presented in Fig. 9        133,134]. Higher pressure operation slightly increases the reversible
+are only aimed to provide an orientation of the performance. As can be          cell voltage (decreases the internal heat integration) but results in
+seen, most of the solid oxide cells are operated at up to 1 A/cm2, mainly       smaller gas bubbles at the electrode surface thus reducing the related
+due to degradation issues. Exceptions are the results measured by               overvoltages [18,100]. Ayers et al. report that increasing the pressure
+FuelCell Energy up to a current density of above 6 A/cm2, although              from 14 bar to 165 bar results in an increase in cell voltage of less than
+long-term tests presented by FuelCell Energy are also carried out below         50 mV (approx. 0.1 kWh/Nm3) [132]. Based on these experiments, they
+1 A/cm2 [59]. However, this shows the potential of SOEL to be oper-             calculated that electrochemical compression via PEMEL up to 70 bar
+ated at thermoneutral cell voltage at much higher current densities             followed by mechanical compression is energetically optimal for a de-
+once degradation is reduced [52]. Several SOEL cells have been oper-            livery pressure of 350 bar. The elimination of the compressor increases
+ated below thermoneutral cell voltage due to current density limitation         reliability and reduces investment costs and maintenance especially for
+by degradation issues. However, a thermoneutral cell voltage of approx.         small-scale systems [132,135]. However, increased pressure leads to
+1.28 V at 700­900 °C represents the nominal operation point of SOEL.            higher degradation [36,136], higher cross permeation corresponding to
+This corresponds to a specific energy consumption of approx. 3.1 kWh/           an efficiency penalty and a safety issue (risk of a flammable gas mix-
+Nm3 or an efficiency of 98% based on the LHV. Additionally, the ex-             ture) thus increasing the minimum load range [17,18,137,138] and
+ternal supply of steam, which can be generated by heat integration, has         higher gas leakage [36]. Grigoriev et al. proposes modified membranes
+to be taken into account. The overall efficiency including water eva-           (low-permeability protective layer, thicker membranes) platinized
+poration of an ideal SOEL system (without losses) is limited to 84.6%           backside surface of the current collector or external catalytic gas re-
+based on LHV (100% based on HHV). Mathiesen et al. [114] estimated              combiner to avoid a critical contamination in PEMEL [18]. Moreover,
+the efficiency of an SOEL system to be approx. 76.8% based on the LHV           high pressure electrolyser require additional safety devices and result in
+including losses (rectifier losses, surface heat losses and auxiliary           higher investment costs and complexity of the electrolyser [7,36].
+heating). The specific energy consumption of the overall system of
+Sunfire, including gas purification and rectification, is stated to be 3.7
+kWh/Nm3, which corresponds to an efficiency of 81% based on LHV
+[96].
+
+    A summary of the stack performance of AEL, PEMEL and SOEL
+based on the I-U-curves presented before is shown in Fig. 10 (stack-
+efficiency is calculated based on given cell voltages, assuming an ideal
+Faraday efficiency of 100%). It shows the high efficiency of SOEL cells,
+as well as the comparable efficiency of AEL and PEMEL, with PEMEL
+reaching significantly higher current densities. The potential to reduce
+capital costs by increasing current density (higher production per cell
+area) and cutting operational costs by increasing efficiency is discussed
+in Section 5.6.
+
+                                                                             8
+A. Buttler, H. Spliethoff                                                      Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+    As a result, the standard pressure of commercial AEL and PEMEL is          Fig. 11. Installed electrolysis power of flexible PtG and PtL pilot plants (own illustration
+below 30­50 bar in most cases (see Table 2). However, also very high           based on [2,88,108,145­148]).
+pressure operation at 5000­6500 psig (345­448 bar) for direct filling of
+hydrogen cars is investigated and was demonstrated for alkaline elec-          in 2015 (IS, 6 MW, n.a.) and the EON demonstration plant in Falk-
+trolysis by the company Avalance LCC [64,135,139] as well as for PEM           enhagen in 2013 (DE, 2 MW, Hydrogenics). The largest SOEL pilot plant
+electrolysis by the companies Giner Inc. [40] and Proton Onsite [39]. It       to date is a 140 kW system of Sunfire delivered to its partner Boeing and
+represents a huge challenge for AEL to reach a reliable gas purity at          commissioned at a US navy microgrid test facility in 2016.
+high pressure operation due to cross-permeation [64,135,137]. In
+contrast, Proton and Giner were able to demonstrate reliable PEMEL             5.4. Flexibility
+operation even at a high differential pressure as a result of the low
+permeation across the membrane [39,40]. The hydrogen side was op-                  Transient operation of the electrolysis section to react to electricity
+erated at 170 or 345 bar respectively while the oxygen side was oper-          price variations is the basis of both PtG and PtL energy storage.
+ated at atmospheric pressure. Recently also pressurised operation of           Flexibility is defined by a feasible load range (minimum load and
+SOEL was investigated by several research groups [111,133,140,141] at          overload possibility), the load gradients, start-up time (warm, cold) and
+pressure up to 15 bar and Sunfire offers a commercial module operated          stand-by losses. However, an agreement on terminology (stand-by, idle,
+at 15 bar [96].                                                                cold start, black start, warm start) is required, according to electrolyser
+                                                                               companies [4,149]. In the following, a warm start is defined as start-up
+5.3. Available and realised capacity ranges                                    from heated stand-by or idle mode, which means that the system is held
+                                                                               at operating temperature and pressure if necessary. A cold start is de-
+    Electrolysis is used primarily for small-scale on-site hydrogen pro-       fined as start-up from ambient temperature after a long shut-down.
+duction in industrial applications e.g. for hydrogen cooled generators,
+semiconductor or food processing. On the other hand, fertiliser plants         5.4.1. Load range
+based on large-scale (100­200 MW) alkaline electrolysis have been                  In practice, large-scale electrolysis systems consist of several elec-
+constructed in the 20th century in remote areas with excess electricity
+supply from large hydro plants in combination with a weak grid. Main           trolysers in parallel. Therefore, it is possible to vary the power con-
+examples are Assuan (Egypt) in 1960 (40,000 Nm3/h, 288                         sumption of the overall system over a wide range by switching off in-
+electrolysers, > 200 MWel), Nangal (India) in 1961 (30,000 Nm3/h),             dividual electrolysers.
+Glomfjord (Norway) in 1949 (27,100 Nm3/h), Rjukan (Norway) in
+1929 (27,900 Nm3/h) and Kwekwe (Zimbabwe) in 1974 (pressurised                     The minimum load of AEL is limited to 10­40% (mainly 20­25%
+AEL, 21,000 Nm3/h, 28 electrolysers) [7,26,34,71].                             based on Table 2) of nominal hydrogen production due to the lateral
+                                                                               diffusion of hydrogen across the membrane to the oxygen side, resulting
+    Energy storage and carbon utilisation represent an emerging market         in a flammable mixture at low production rates [19,20]. In practice,
+for electrolysis requiring very large capacities (multi MW systems).           safety shut-downs take place at a hydrogen contamination of 1­2% in
+Large electrolysis plants in the multi MW range are built up by electrical     the oxygen stream [6,37,99,100], corresponding to approx. 25­50% of
+parallel arrangement of electrolysis stacks typically accommodated in-         the lower explosive limit, which is in the range of 4­6% H2 in O2, de-
+door. On the other hand several manufacturers of electrolyser offer            pending on temperature and pressure [137]. Reported contamination
+"plug and play" units in 20 ft or 40 ft container including water pur-         by dissolved gases in the mixed circulating electrolyte streams is not
+ification, power supply, hydrogen purification and system control up to        relevant due to the shut-down of electrolyte circulation for heat re-
+a hydrogen production rate of 100­400 Nm3/h (0.5­2 MW)                         moval in part-load [7,37]. For PEM electrolysis, most suppliers state no
+[38,73,83,86,88,89,94].                                                        technical limit of minimum load due to the low gas permeability of the
+                                                                               membrane. However, at high pressure (or due to thinner membranes for
+    While alkaline electrolysis stacks have been available on a MW-scale       improved performance) PEMEL also faces critical gas contamination at
+for a long time, a scale-up of PEM electrolysis has been realised in the       low current densities [17]. Several vendors of PEMEL have advertised
+last few years, driven by PtG and PtL. The market survey indicates that        the possibility of overload operation. However, this is dependent on the
+currently AEL stacks are available up to 6 MW (1400 Nm3/h), PEM                definition of nominal load (nominal current density) and requires
+stacks up to 2 MW (400 Nm3/h) and SOEL stacks in a low kilowatt                power supply and thermal management to be dimensioned for max-
+range. Moreover, Siemens recently announced a new product line with            imum load [150]. The impact of overload on long-term performance
+a single stack capacity of 6 MW to be installed in the H2Future project        has yet to be investigated (increased degradation at high overpotentials
+[142]. MW-scale stacks are provided by 12 manufacturers of AEL and 3           has to be considered).
+manufacturer of PEMEL (Giner, Hydrogenics, and Siemens). Ad-
+ditionally, Proton Onsite and ITM offer standardised PEM electrolysis              In case of SOEL, reversible operation is possible, allowing for an
+systems on the MW-scale, consisting of several stacks.                         operating range of -100 to 100% [96]. However, if the cell is operated
+                                                                               below thermoneutral voltage, external heat must be supplied to prevent
+    Cell area, nominal current density and number of cells determine           the stack from cooling. Air sweep and electric heaters have been
+the production rate of a single stack. Currently, the active cell area of
+PEMEL (< 0.13 m2 [86,89­91,120]) and SOEL (< 0.06 m2
+[41,44,58,59,125,128,143,144]) is of one and two orders of magnitude
+smaller than AEL (up to 3­3.6 m2 [33,34,70]). The higher nominal
+current densities of PEMEL and SOEL compared to AEL partly offset the
+lower cell area.
+
+    An analysis of flexible electrolysis in PtG and PtL pilot plants pre-
+sented in Fig. 11 shows that recently, several plants larger than 1 MW
+were realised with PEMEL catching up to AEL. Examples of large-scale
+PEMEL projects are the Energiepark Mainz commissioned in 2015 (DE,
+6 MW, Siemens), WindGas Haßfurt in 2016 (DE, 1.25 MW, Siemens)
+and WindGas Hamburg in 2015 (DE, 1 MW, Hydrogenics). Large-scale
+AEL pilot plants were realised in the Audi e-gas power-to-gas plant in
+Werlte in 2013 (DE, 6.3 MW, McPhy), the commercial George Olah
+Renewable Methanol Plant in Svartsengi in 2012, which was expanded
+
+                                                                            9
+A. Buttler, H. Spliethoff                                                         Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+considered for the temperature control of the electrolysis cells [47,151].        limited at low temperature to ensure the stack and system leak-tight-
+                                                                                  ness and to minimise mechanical stress to the system due to rises in
+5.4.2. Transient operation and grid balancing capability                          operating temperature [154].
+    In general, electrolysis systems can be operated very dynamically,
+                                                                                      PEMEL have shorter heat-up times compared to AEL following from
+limited mainly by the heat management, the maximum voltage of the                 the more compact design and lower thermal capacity and in some cases
+rectifier and the time coefficients of external components [7,37].                lower operating temperature [25,97]. In the Don Quichote project.
+Running PEMEL and AEL systems at nominal temperature can vary                     thermal ramps of 0.3­1 °C/min, depending on the current applied, are
+their full load range from less than one second to a few seconds                  presented for a 30 Nm3/h PEM electrolyser [97]. Stated cold start-up
+[6,19,33,74,87,99,100,104,118,121]. This permits both PEMEL and                   times to full load for PEMEL systems are in the range of 5­10 min
+AEL for grid balancing service. PEMEL and AEL performed similarly in              [38,87,90,155].
+frequency-regulation experiments at NREL [152]. Results show that
+both the PEM and alkaline electrolysers are capable of adding or re-                  A SOEL module has to be held at the high operating temperature of
+moving stack power to provide a sub-second response that reduces the              700­900 °C in idle mode [96]. Otherwise a long start-up time is ne-
+duration of the frequency disturbances in a microgrid. Hydrogenics,               cessary to heat the system up and to avoid the risk of thermal stress [7].
+offering AEL and PEMEL technology, states that both technologies can              Sunfire claims that flexible operation from 1% to 100% in 15 min is
+react very rapidly (power response signal < 1 s) to stabilise power grids         possible when the system is at operating temperature [61]. Load cycling
+when the system is running and at operating temperature [83]. Fre-                experiments of reversible solid oxide cells (-100 to 100%) were pre-
+quency regulation was demonstrated by Hydrogenics with an alkaline                sented by Sunfire [44], Haldor Topsoe [60] and Fuel Cell Energy [59]
+electrolyser in the Ontario Grid [121]. Within the Thüga project, the             showing only slight degradation (0.06%/cycle). Petipas et al. [158]
+300 kW PEM electrolyser provided by ITM could be prequalified for                 showed that SOEC can be operated under on-off conditions without
+primary grid balancing in Germany in 2016 [153].                                  increased degradation rates. Mougin et al. [128] carried out on-off tests
+                                                                                  and thermal cycling (20­800 °C, 1 °C/min) on a three-cell stack,
+5.4.3. Cold and warm start-up                                                     showing only minor degradation. However, it has to be taken into ac-
+    For flexible operation, PEMEL and AEL are held on temperature in              count that the presented experiments of dynamic operation of SOEL are
+                                                                                  based on laboratory test benches in order to investigate the impact on
+stand-by mode due to the lower electrochemical performance in cold                cell degradation. Transient operation of a SOEL system is more difficult
+operation and the required time for heat-up. Moreover, Reissner et al.            due to the complex thermal management of the overall system in-
+report that some large-scale alkaline models have to be held above a              cluding heat recuperation.
+minimum temperature to ensure the leak-tightness of the electrolyser
+block [154]. Warm start-up time from heated and pressurised stand-by              5.4.4. Stand-by losses
+mode to full load is possible within 1­5 min for AEL [6,33,37,70,                     Losses by dynamic operation of electrolysis units result from:
+100,155,156] and within seconds for PEMEL [6,38,87,90,105,155]. On
+a MW-scale, less than 10 s from idle or stand-by mode to full load are            · Purging the gas compartments after a longer shut-down for safety
+reported by Siemens and Proton Onsite [87,105].                                       reasons (especially relevant for pressurised alkaline electrolysers
+                                                                                      due to cross permeation) [36,99,154]
+    The 6 MW alkaline electrolysis unit (3 × 2 MW) of the Audi e-gas
+plant Werlte, which is held on temperature in stand-by through heat               · Applying a protective current in stand-by to avoid degradation
+integration with a biogas plant, can be started from 0 MW to 6 MW                 · Optional heating in stand-by mode to guarantee a fast reaction time.
+within 4 min [157]. However, the risk of product gas contamination by
+dissolved gases carried by the mixed lye streams being circulated for                 For SOEL especially, it is very energy consuming to hold the system
+heat integration has to be considered. Jensen et al. report that pres-            on temperature but Petipas et al. [158] showed that SOEL does not
+surised Lurgi electrolysers can be shut down for up to 4­6 h without              require a protection current.
+losing pressure or temperature and without reducing the operating life
+[6].                                                                                  Depending on the electrode activation, a protective current is ne-
+                                                                                  cessary in stand-by mode for AEL [9,19,159,160]. In the Res2H2 project
+    The heat-up time of the electrolyser determines the time for cold             it is reported that a protective current consuming 0.35 kW for a 25 kW
+start-up. A free variation of power of an alkaline electrolyser is typically      electrolyser is recommended by the manufacturer Casale [104]. How-
+possible above a temperature of 50 °C [37,100]. The heating of the                ever, no degradation has been indicated after two years of intermittent
+electrolyser by internal losses is limited by the maximum current or the          operation without applying the recommend protective current due to
+maximum voltage of the rectifier, as well as by corrosion at high vol-            the use of corrosion-resistant activated electrodes. Personal commu-
+tages or current densities respectively [37,100]. The maximum voltage             nications with Mr. Barisic from ELB and Mr. Hug from Wasserelek-
+becomes limiting at low operating or start-up temperature as this re-             trolyse Hydrotechnik revealed that both manufacturers use electrodes
+sults in high overpotentials during start-up. Therefore, a cold start re-         that do not require a protective current [37,156].
+sults in high cell voltages at low current densities limiting the maximum
+power (PU I) of the electrolyser at the beginning [37,100]. Heat-up                   Zuberbühler et al. state that the Hydrogenics HySTAT alkaline
+experiments on a small alkaline electrolyser (Hydrogencis HySTAT-1                electrolyser holds the pressure in stand-by mode for several days (and
+Nm3/h, approx. 5 kW) have been conducted by Dieguez et al., in-                   even weeks) permitting a start-up without any prior inert gas purging of
+dicating heat-up times of more than 2 h from 20 °C to 70 °C at a max-             the gas ducts [100].
+imum current density of 0.4 A/cm2 [101]. In contrast, experiments by
+Zuberbühler et al. with a HySTAT-60 electrolyser show heat-up times                   According to Siemens, no inert gas flushing, no protective current
+from 15 °C to 50 °C of 1.25 h at the minimum current density of                   and no preheating is required for their PEMEL technology [108], while
+0.175 A/cm2 and only 24 min at the maximum current density of                     Areva H2Gen reported a pressure loss of only 2.5 bar over more than
+0.43 A/cm2 (37 min from 15 to 70 °C). At maximum current density, a               12 h of a pressurised PEM at 35 bar held in heated stand-by [90].
+heat-up ramp of 1.5 K/min of the small-scale 15 Nm3/h stack was
+achieved. For large-scale industrial AEL plants designed for continuous           5.5. Lifetime
+operation, necessary heat-up times of 2 h have been reported [6,156].
+According to Mr. Hug from Wasserelektrolyse Hydrotechnik, a reduc-                    Lifetime is an important parameter for the economic analysis of
+tion in heat-up time to 1 h could be demonstrated by auxiliary heating            electrolysis systems and voltage degradation results in reduced per-
+[37]. For some commercial alkaline models, the power increase is                  formance during operating life. In the following, an overview of tech-
+                                                                                  nology related values of lifetime is given and the dependency on op-
+                                                                                  erating conditions (pressure, temperature, current density, intermittent
+
+                                                                              10
+A. Buttler, H. Spliethoff                                                       Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+operation) is discussed.                                                        cell experiments [128,158]. Recent investigations by Rakousky et al.
+    Regarding the lifetime of an electrolyser, it has to be distinguished       have revealed that the degradation of PEMEL can even be reduced by
+                                                                                intermittent operation [166]. Variation of the current density is found
+between the stack and the plant. Balance of plant has a typical lifetime        to have a positive effect on durability, as it lets reversible parts of de-
+of about 20 years [89,98,129,161] for SOEL and PEMEL with up to                 gradation recover. However, short cycling intervals of 10 min show
+30­50 years stated for stationary operated AEL [30,31,37,70]. The in-           higher degradation than long intervals of 6 h. For the reversible op-
+crease in overpotentials or the decrease in efficiency with time due to         eration of SOEL, a cycle degradation rate of 0.06%/cycle (-0.38/
+degradation of the cells determines the lifetime of the stack based on a        +0.31 A/cm2) has been observed by experiments by Sunfire [61] and
+defined, acceptable efficiency drop (e.g. less than 10% efficiency loss         approx. 0.02%/cycle (0.03 mV/cycle at +/- 0.3 A/cm2) by FuelCell
+after 60,000 h [106]). A replacement or partial overhaul of the cell            Energy [59].
+stack is typically required after 8­15 years for AEL [32,37,70,72].
+Felgenhauer and Hamacher [162] report a stack lifetime of                           The effects of transient operation on stack and system lifetime are
+55,000­96,000 h at an efficiency degradation of 0.25­1.5%/a, based on           not yet well quantified [4] and systematic studies to quantify the im-
+11 quotes for commercial AEL systems in 2014. ELB reports an annual             pact of operating parameters on durability and to understand the de-
+voltage degradation of 10­15 mV (approx. 1­2 µV/h corresponding to              gradation mechanisms are still necessary [113].
+0.5­1%/a efficiency degradation) [70]. Manufacturers of PEMEL report
+lifetimes in the range of 60,000­100,000 h [40,105,106,108,162]. The            5.6. Investment and maintenance costs
+voltage degradation rate is below 4­8 µV/h [105,107,120,163], which
+is in line with Felgenhauer and Hamacher [162], who have stated an                  The electrolysis section represents a major proportion of the in-
+annual efficiency degradation of PEMEL of 0.5­2.5%/a. In summary,               vestment costs of a PtG or PtL plant. The overview of investment costs
+AEL and PEMEL achieve comparable stack lifetimes although PEMEL                 presented in the following is based on market surveys by Jensen et al.
+does tend to have slightly higher degradation rates.                            (2008) [6], Smolinka et al. (2011) [7], Dahl et al. (2013) [8], E4tech
+                                                                                (2014) [4] and Felgenhauer and Hamacher (2015) [162].
+    The voltage degradation effectively results in a reduced average
+efficiency over the lifetime of an electrolyser [4]. Assuming a cell vol-           E4tech reports that the combined capital costs include electrolyser
+tage of 1.9 V (LHV = 66.0%), a linear voltage degradation of 2­4 µV/h           stack, gas water separator, gas drying (H2 purity above 99.4%), water
+over a lifetime of 80,000 h results in a cell voltage of 2.06­2.22 V (LHV       management, lye system (AEL), system control and power supply but
+= 56.5­60.9%) at end-of-life (approx. 5­10% points below start of life).        exclude installation, grid connection, external compression, external
+This corresponds to an average efficiency of 61.2­63.5%, which is ap-           purification and hydrogen storage [4]. Smolinka et al. (2011) [7] also
+prox. 3­5% below the efficiency at the start of life.                           give uninstalled costs while the data from Jensen et al. [6] and Dahl
+                                                                                et al. [8] is not specified. The values given by Felgenhauer and Ha-
+    In contrast to AEL and PEMEL, only limited long-term experience             macher [162] are based on 16 quotes by electrolyser manufacturers in
+mainly based on SRU (single repeat units), single cells or short stacks         2014 and include all the necessary auxiliary components, such as feed
+(< 10 cells) is available for SOEL. Most of the durability tests reported       water treatment, cooling system, hydrogen purification for a hydrogen
+in literature are below 5000 h. The longest experiment reported so far          purity above 99.999%, shipping, foundation/shelter and the "turnkey"
+in literature of more than 16,000 h was conducted at the European               installation. Smolinka et al. assume that the additional costs for in-
+Institute for Energy Research (EIFER) in the context of the SUNFIRE             stallation and transportation would be approx. 10% of the investment
+project [52,61]. The average degradation rate in this single cell test was      costs [7]. The investment costs of AEL and PEMEL are shown in Fig. 12.
+below 0.6%/1000 h (< 7.3 µV/h) at current densities up to 0.9 A/cm2
+(T = 847 °C, steam conversion 51%). This is within the range of the                 Installed system costs of large-scale AELs above 500 kW are cur-
+lowest available values for SOEL and close to the degradation rates of          rently mainly in the range of 800­1500 /kWel. Uninstalled costs are
+PEMEL. At the start of life, the cell is operated below thermoneutral           slightly lower, mainly in the range of 700­1300 /kWel. PEMEL system
+voltage at 1.185 V (determined by the applied current density of 0.9 A/         costs are almost twice as high with given uninstalled costs ranging from
+cm2). Based on the stated degradation rate, the thermoneutral voltage is        1300 to 2200 /kWel. The installed costs calculated based on
+calculated to be reached after 17,000 h of operation. Assuming an               Felgenhauer and Hamacher [162] are in the same range as the unin-
+identical degradation in a stack environment, this corresponds to about         stalled costs stated by others at 1400­2100 /kWel.
+two years of operation without any increase in overall electrical con-
+sumption. The increasing consumption of the stack is compensated for                The economy-of-scale effect is limited for electrolysis systems. The
+by a reduced electrical heating demand to maintain the temperature of           hydrogen production rate is linearly dependent on the electrolysis cell
+the stack. Topsoe Fuel Cell, H2Logic and Riso DTU report a state-of-the         area and mainly the specific costs of the auxiliaries reduce at increased
+art stack lifetime of 8000 h for SOEC in the planSOEC project report            scale. Market surveys by Smolinka et al. [7] and Jenssen et al. [6] in-
+[164].                                                                          dicate that a significant effect of scale for AEL systems is only visible at
+                                                                                capacities below 0.5 MW (100 Nm3/h) and further cost reductions
+    Based on a good overview of durability results from literature by           above this scale are low. However, Proton Onsite reports that a scale-up
+Mougin [113], current degradation rates of SOEC are mainly in the               of their PEMEL system from 0.5 to 2 MW almost halves the specific
+range of 0.4­6%/1000 h at temperatures of 650­850 °C and current                costs per kW although the cost trajectory flattens above 0.5 MW [167].
+densities of 0.26­1 A/cm2. FuelCell Energy reported cell degradations
+for cells with an active area of 81 cm2 and 550 cm2 of 0.7% and 3%/                 In the future, a cost reduction is expected from the higher volume
+1000 h (9 and 33 µV/h) at a current density of 0.5 and 0.36 A/cm2               production of electrolysers, the supply chain development, improve-
+[59]. Ebbesen et al. [13] define operation below 1 A/cm2 as mild                ments in manufacturing (increased automation) and technology in-
+conditions. This represents the limit so far of current density to main-        novations [4]. Reduction in capital costs by increased current densities
+tain moderate degradation rates [7,128].                                        and reduction in operating costs through higher efficiency at higher
+                                                                                operating temperatures are often mentioned. However, the impact on
+    Operating conditions have a significant impact on degradation.              lifetime and degradation also has to be taken into account. The formation
+Degradation is increased at higher current densities and increased              of gas bubbles limits the current density of AEL, as it reduces the effective
+temperature [113,136]. In the case of SOEL, degradation also tends to           active electrode area. Development of catalysts with increased current
+increase at higher steam concentration and higher steam conversion              exchange rates and the application of advanced cell designs such as zero
+[13,113]. With regard to PtG or PtL applications, the impact of tran-           gas configurations are required to overcome this problem [4]. PEMEL has
+sient operation on lifetime is relevant. Several manufacturers report           the potential of cost reduction by increased cell areas reducing the waste
+that load cycling has no significant effect on the lifetime of PEMEL            material, a decrease in the noble metal content of the electrodes and
+[108,120,165]. This has also been reported for SOEL based on initial            alternative membrane materials and flow field plates [4,11,106,167].
+
+                                                                            11
+A. Buttler, H. Spliethoff                                                       Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+                                                                                           Fig. 12. Current capital costs, expected future trend
+                                                                                           and targets for AEL and PEMEL systems (based on
+                                                                                           [4,6­8,15,162,169]).
+
+    In the E4tech study [4], cost reduction trend lines are derived based       Table 3
+on stakeholder consultations. In the mid-term a cost reduction in AEL to        Summary of parameters of state-of-the-art of water electrolysis technologies.
+about 630 /kW by 2020 and 580 /kW by 2030 is expected (central
+case). The uninstalled system costs of PEMEL are predicted to fall to                                                 AEL        PEMEL     SOEL
+1000 /kW by 2020 and 760 /kW by 2030.
+                                                                                Operation parameters                  60­90      50­80     700­900
+    Due to the pre-commercial status of SOEL, there is a high level of          Cell temperature (°C)                 10­30      20­50     1­15
+uncertainty about investment costs. E4Tech [4] states expected com-             Typical pressure (bar)                0.25­0.45  1.0­2.0   0.3­1.0
+mercial costs of 2000 /kWel between 2012 and 2020, 1000 /kWel                   Current density (A/cm2)
+between 2020 and 2030 and 300 /kWel in the longer term. A recent                Flexibility                           20­100     0­100     -100/+100
+DOE report [168] even assumes uninstalled capital costs of approx. 640          Load flexibility (% of nominal load)  1­2 h      5­10 min  hours
+/kWel in 2014 and below 340 /kWel by 2025 for a large-scale central             Cold start-up time                    1­5 min    < 10 s    15 min
+plant (50,000 kg/day).                                                          Warm start-up time
+                                                                                Efficiency                            63­71%     60­68%    100%a
+    The operational cost per year including planned and unplanned               Nominal stack efficiency (LHV)        4.2­4.8    4.4­5.0   3
+maintenance, as well as overhauls (excluding electricity) are often             ...specific energy consumption (kWh/
+provided, based as a percentage of initial capital expenditure (capex).                                               51­60%     46­60%    76­81%
+The E4tech study reports opex (operational expenditure) values of                    Nm3)                             5.0­5.9    5.0­6.5   3.7­3.9
+2­5% of capex per year with no distinction between different technol-           Nominal systemb efficiency (LHV)
+ogies [4]. Based on own calculations using the opex data given by               ...specific energy consumption (kWh/  6          2         < 0.01
+Felgenhauer and Hamacher. [162] eight of the AEL quotes provide opex                                                  1400       400       < 10
+values of 2­3% of capex per year while three quotes state opex values in             Nm3)                             < 3.6      < 0.13    < 0.06
+the range of 5­6% of capex per year. The five quotes for PEMEL system
+have opex values of 3­5% of capex per year. This corresponds to higher          Available capacity                    55­120     60­100    (8­20)c
+operational and maintenance costs of PEMEL compared to AEL due to               Max. nominal power per stack (MW)     0.25­1.5   0.5­2.5   3­50
+the higher capex of PEMEL. Moreover, the specific opex values per               H2 production per stack (Nm3/h)
+installed capacity show a similar trend as the capex, tending to decrease       Cell area (m2)                        800­1500 1400­2100 (> 2000)c
+with the size of the electrolysis system [162].                                 Durability
+                                                                                Life time (kh)                        2­3        3­5       n.a.
+6. Conclusions                                                                  Efficiency degradation (%/a)
+                                                                                Economic parameter
+    The main parameters of the water electrolysis technologies in-              Investment costs (/kW)
+vestigated (AEL, PEMEL and SOEL) are summarised in Table 3. Alkaline            Maintenance costs (% of investment
+electrolysis (AEL) represents the most mature technology, having been
+commercial available for over a century. It has the lowest specific in-              costs per year)
+vestment and maintenance costs. Twenty manufacturers of AEL could
+be identified that offer single-stack capacities up to 6 MW. Historically,      a Operating at thermoneutral voltage.
+AEL was designed for stationary applications and has to be adapted to           b Including auxiliaries and heat supply (SOEL).
+the new flexibility requirements. In contrast, the development of               c High uncertainty due to pre-commercial status of SOEL.
+PEMEL has been driven very strongly by flexible energy storage ap-
+plication in recent years. PEMEL has entered the MW class and several           due to the risk of a flammable mixture arising due to cross con-
+pilot plants in the MW range up to 6 MW have recently been realised.            tamination of the product gas streams. However, grid stabilising could
+Twelve manufacturers of PEMEL could be identified, with three offering          be demonstrated by PEMEL and AEL systems as both offer very fast load
+stacks on the MW scale (with two other manufacturers with systems on            dynamics (response < 1 s) when they are at operating temperature.
+the MW-scale). PEMEL offers several advantages compared to AEL with
+regard to compact design (high current-densities), pressurised opera-               In the future, the mode of operation needs to be further optimised for
+tion and flexibility. PEMEL features shorter start-up times, especially         dynamic operation and the impact of flexible operation on lifetime has to
+from cold, and the production rate can be varied over the full load             be investigated in more detail. The integration of electrolysis systems in
+range. In contrast, the load range of AEL is limited to approx. 20­25%          other processes, such as biogas plants, fuel synthesis or industrial pro-
+                                                                                cesses (e.g. steel manufacturing) has been demonstrated in initial pro-
+                                                                                jects. Further projects are required to indicate interesting buisness cases
+                                                                                and to investigate the potential for generating synergy effects by in-
+                                                                                tegrating waste heat or oxygen as a by-product. Investment costs are
+                                                                                likely to fall in the future due to the higher volume production of elec-
+                                                                                trolysers, supply chain development, improvements in manufacturing
+                                                                                (increased automation) and technology innovations (e.g. increased cur-
+                                                                                rent density, reduction in expensive materials for PEMEL) supporting the
+                                                                                competitiveness of electrolysis against other storage options.
+
+                                                                            12
+A. Buttler, H. Spliethoff                                                                                                           Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+    In contrast to AEL and PEMEL, SOEL is still at pre-commercial stage                                 electrolyzer operating temperature on hydrogen production in wind­hydrogen
+although the company Sunfire is offering the first pilot plants. SOEL has                               systems. J Power Sources 2011;196(9):4418­26.
+the potential to increase the efficiency of hydrogen production and                              [24] Inuzuka R, Kameda T, Watanabe H, Yamada M. Development of hydrogen pro-
+offers interesting features as reversible operation and syngas production                               duction and power storage systems using solid oxide electrolysis cell. Los Angeles,
+via co-electrolysis. The development of SOEL systems and the proof of                                   US; 2015.
+lifetime, pressurised operation and cycling stability have to be con-                            [25] Smolinka T, Rau S, Hebling C. Polymer electrolyte membrane (PEM) water elec-
+tinued.                                                                                                 trolysis. In: Stolten D, editor. Hydrogen and fuel cells. 1st edWeinheim: Wiley-
+                                                                                                        VCH; 2010. p. 271­89.
+    The development of the last few years shows that water electrolysis                          [26] Yan XL, Hino R. Nuclear hydrogen production handbook. Boca Raton: CRC Press;
+is on its way to large-scale flexible energy-storage applications.                                      2011.
+                                                                                                 [27] ErreDue spa. Webpage. [December 13]; 2016. Available from: http://www.
+Acknowledgments                                                                                         erreduegas.it/en/.
+                                                                                                 [28] ELB Elektrolysetechnik GmbH. Webpage. [December 13]; 2016. Available from:
+    This work is related to the HotVeGas III project, which is supported                                http://elektrolyse.de/wordpress/.
+by the BMWi and industrial partners (Air Liquide and RWE) under                                  [29] Purification Equipment Reseach Institute of CISC (Peric). Webpage. [February 06];
+contract number 0327773I. The authors would like to thank all the                                       2017. Available from: http://www.peric718.com/Products/.
+manufacturers of electrolysis systems who we contacted for their va-                             [30] Verde LCC. Webpage. [December 13]; 2016. Available from: http://www.
+luable input and discussions (especially Mr. Hug of Wasserelektrolyse                                   verdellc.com/.
+Hydrotechnik and Mr. Barisic of ELB). Thanks also go to the TUM                                  [31] NEL Hydrogen. If the future could choose: Company brochure. [January 10]; 2012.
+Graduate School and Stephan Herrmann (TUM) for proofreading as                                          Available from: http://www.nel-hydrogen.com/home/docs/If_The_Future_Could_
+well as Maximilian Möckl (ZAE Bayern) for valuable discussions espe-                                    Choose_2.pdf.
+cially about PEM electrolysis.                                                                   [32] Suzhou Jingli Hydrogen Production Equipment Co. L. Webpage. [December 13];
+                                                                                                        2016. Available from: http://www.jingli-hydrogen.com/.
+References                                                                                       [33] Etogas. Webpage. [December 13]; 2016. Available from: http://www.etogas.
+                                                                                                        com/.
+  [1] FCH JU. Commercialisation of energy storage in Europe: Final report; 2015.                 [34] Wasserelektrolyse Hydrotechnik GmbH. Webpage. [December 13]; 2016.
+  [2] Deutsche Energie-Agentur GmbH (dena). Webpage: strategieplattform power to                        Available from: http://www.ht-hydrotechnik.de/.
+                                                                                                 [35] Reissner R, Vaes J, Hosseiny SS. RESelyser: System Concept for a combined RES-
+         gas. [December 19, 2016]; Available from: http://www.powertogas.info/.                         Electrolyser plant with optimised efficiency: Part 1 Review of electrolyser system
+  [3] Klaus T, Vollmer C, Werner K, Lehmann H, Müschen K Energieziel 2050: 100%                         with special emphasis on the HYSOLAR system. [January 04]; 2017. Available
+                                                                                                        from: http://www.reselyser.eu/.
+         Strom aus erneuerbaren Quellen; 2010.                                                   [36] Roy A, Watson S, Infield D. Comparison of electrical energy efficiency of atmo-
+  [4] Bertuccioli L, Chan A, Hart D, Lehner F, Madden B, Standen E. Development of                      spheric and high-pressure electrolysers. Int J Hydrog Energy
+                                                                                                        2006;31(14):1964­79.
+         water electrolysis in the European Union: Final Report; 2014.                           [37] Hug W. Alkaline electrolysis at wasserelektrolyse hydrotechnik GmbH. Telephone
+  [5] Ursúa A, Gandía LM, Sanchis P. Hydrogen production from water electrolysis:                       communication; 2013.
+                                                                                                 [38] Proton OnSite. High capacity hydrogen systems M series PEM electrolysers: MW
+         current status and future trends. Proc IEEE 2011;99:1­17.                                      scale energy storage solutions. [December 12]; 2016. Available from:
+  [6] Jensen JO, Bandur V, Bjerrum N, Jensen S, Ebbesen S, Mogensen M et al. Pre-                       protononsite.com/resources/commercial%20brochures/pd-0600-0115_rev_a.
+                                                                                                        pdf.
+         investigation of water electrolysis: PSO-F & U 2006-1-6287, Draft 04-02-2008.           [39] Ayers KE, Anderson EB, Capuano C, Carter B, Dalton L, Hanlon G, et al. Research
+         [January 31, 2012]; Available from: 130.226.56.153/rispubl/NEI/NEI-DK-5057.                    advances towards low cost, high efficiency PEM electrolysis. ECS Trans
+         pdf.                                                                                           2010;33:3­15.
+  [7] Smolinka T, Günther M, Garche J. Stand und entwicklungspotenzial der wasser-               [40] Hamdan M. High efficiency large PEM electrolyzers.
+         elektrolyse zur herstellung von wasserstoff aus regenerativen energien: kurzfas-        [41] Brisse A, Schefold J. High temperature electrolysis at EIFER, main achievements at
+         sung des abschlussberichts. NOW-Stud 2011.                                                     cell and stack level. Energy Procedia 2012;29:53­63.
+  [8] Dahl PI, Bünger U, Völler S, Korpas M, Moller-Holst S. Hydrogen for transport from         [42] Graves C, Ebbesen SD, Mogensen M. Co-electrolysis of CO2 and H2O in solid oxide
+         renewable energy in Mid - Norway: Final report; Available from: http://www.                    cells: performance and durability. Solid State Ion 2011;192(1):398­403.
+         transnova.no/wp-content/uploads/2012/07/H2iMidtNorge_Sluttrapport.pdf.                  [43] Saint Jean M, de Baurens P, Bouallou C, Couturier K. Economic assessment of a
+  [9] Stolten D, Krieg D. Alkaline electrolysis ­ introduction and overview. In: Stolten D,             power-to-substitute-natural-gas process including high-temperature steam elec-
+         editor. Hydrogen and fuel cells. 1st ed.Weinheim: Wiley-VCH; 2010. p. 243­70.                  trolysis. Int J Hydrog Energy 2015;40(20):6487­500.
+ [10] Zeng K, Zhang D. Recent progress in alkaline water electrolysis for hydrogen               [44] Posdziech O. Development of high-temperature electrolysers for renewable elec-
+         production and applications. Progress Energy Combust Sci 2010;36(3):307­26.                    tricity storage. Prague: sunfire GmbH; 2015.
+ [11] Carmo M, Fritz DL, Mergel J, Stolten D. A comprehensive review on PEM water                [45] Reytier M, Di Iorio S, Chatroux A, Petitjean M, Cren J, Saint Jean M de, et al. Stack
+         electrolysis. Int J Hydrog Energy 2013;38(12):4901­34.                                         performances in high temperature steam electrolysis and co-electrolysis. Int J
+ [12] Hansen JB. Solid oxide electrolysis--a key enabling technology for sustainable                    Hydrog Energy 2015;40(35):11370­7.
+         energy scenarios. Faraday Discuss 2015;182:9­48.                                        [46] O'Brien JE, McKellar MG, Harvego EA, Stoots CM. High-temperature electrolysis
+ [13] Ebbesen SD, Jensen SH, Hauch A, Mogensen MB. High temperature electrolysis in                     for large-scale hydrogen and syngas production from nuclear energy ­ summary of
+         alkaline cells, solid proton conducting cells, and solid oxide cells. Chem Rev                 system simulation and economic analyses. Int J Hydrog Energy
+         2014;114(21):10697­734.                                                                        2010;35(10):4808­19.
+ [14] Laguna-Bercero MA. Recent advances in high temperature electrolysis using solid            [47] Petipas F, Brisse A, Bouallou C. Model-based behaviour of a high temperature
+         oxide fuel cells: a review. J Power Sources 2012;203:4­16.                                     electrolyser system operated at various loads. J Power Sources 2013;239:584­95.
+ [15]. Fuel Cells and Hydrogen Joint Undertaking (FCH JU). Multi - Annual Work Plan              [48] Botta G, Solimeo M, Leone P, Aravind PV. Thermodynamic analysis of coupling a
+2014 - 2020.                                                                                            SOEC in Co-electrolysis mode with the dimethyl ether synthesis. Fuel Cells
+ [16] Ulleberg O. Modeling of advanced alkaline electrolyzers: a system simulation ap-                  2015;15(5):669­81.
+         proach. Int J Hydrog Energy 2003;28(1):21­33.                                           [49] Hansen JB, Christiansen N, Nielsen JU. Production of sustainable fuels by means of
+ [17] Grigoriev SA, Porembskiy VI, Korobtsev SV, Fateev VN, Auprêtre F, Millet P. High-                 solid oxide electrolysis. ECS Trans 2011;35:2941­8.
+         pressure PEM water electrolysis and corresponding safety issues. Int J Hydrog           [50] Giglio E, Lanzini A, Santarelli M, Leone P. Synthetic natural gas via integrated
+         Energy 2011;36(3):2721­8.                                                                      high-temperature electrolysis and methanation: part I--energy performance. J
+ [18] Grigoriev SA, Millet P, Korobtsev SV, Porembskiy VI, Pepic M, Etievant C, et al.                  Energy Storage 2015;1:22­37.
+         Hydrogen safety aspects related to high-pressure polymer electrolyte membrane           [51] Becker WL, Braun RJ, Penev M, Melaina M. Production of Fischer­Tropsch liquid
+         water electrolysis. Int J Hydrog Energy 2009;34(14):5986­91.                                   fuels from high temperature solid oxide co-electrolysis units. Energy
+ [19] Schug C. Operational characteristics of high-pressure, high-efficiency water-hy-                  2012;47(1):99­115.
+         drogen-electrolysis. Int J Hydrog Energy 1998;23(12):1113­20.                           [52] Schefold J, Brisse A, Poepke H. Long-term steam electrolysis with electrolyte-
+ [20] Raballo S, Llera J, Pérez A, Bolcich JC Clean Hydrogen Production in Patagonia                    supported solid oxide cells. Electrochim Acta 2015;179:161­8.
+         Argentina. In: Stolten D, Grube T, (Eds). 18th World Hydrogen Energy Conference         [53] Buttler A, Koltun R, Wolf R, Spliethoff H. A detailed techno-economic analysis of
+         2010 - WHEC 2010: Parallel Sessions Book 3: Hydrogen Production Technologies ­                 heat integration in high temperature electrolysis for efficient hydrogen production.
+         Part 2 Proceedings of the WHEC. Schriften des Forschungszentrums Jülich/                       Int J Hydrog Energy 2015;40(1):38­50.
+         Energy & Environment, Vol. 78-3; 2010, p. 10­16.                                        [54] Graves C. Recycling CO2 into sustainable hydrocarbon fuels: electrolysis of CO2
+ [21] Bidault C, Besse S, Nietsch T, Chaudron V. Electrolyser development at HELION/                    and H2O (Ph.D. Thesis); 2010.
+         AREVA status & perspectives. Phoenix, Arizona, USA; 2008.                               [55] O'Brien JE, McKellar MG, Stoots CM, Herring JS. Parametric study of large-scale
+ [22] Hug W, Bussmann H, Brinner A. Intermittent operation and operation modeling of                    production of syngas via hightemperature co-electrolysis. INL/CON-07-12819.
+         an alkaline electrolyzer. Int J Hydrog Energy 1993;18(12):973­7.                               AIChE annual meeting; 2007.
+ [23] Pino FJ, Valverde L, Rosa F. Influence of wind turbine power curve and                     [56] Stoots C, O'Brien J, Hartvigsen J. Results of recent high temperature coelectrolysis
+                                                                                                        studies at the Idaho National Laboratory. Int J Hydrog Energy
+                                                                                                        2009;34(9):4208­15.
+
+                                                                                             13
+A. Buttler, H. Spliethoff                                                                                                          Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+ [57] Alenazey F, Alyousef Y, Almisned O, Almutairi G, Ghouse M, Montinaro D, et al.                    http://www.sylatech.de/.
+         Production of synthesis gas (H2 and CO) by high-temperature co-electrolysis of         [96] Sunfire GmbH. RSOC Electrolyzer Factsheet. [December 16]; 2016. Available
+         H2O and CO2. Int J Hydrog Energy 2015;40(32):10274­80.
+                                                                                                        from: www.sunfire.de/.
+ [58] Ebbesen SD, Høgh J, Nielsen KA, Nielsen JU, Mogensen M. Durable SOC stacks for            [97] Vaes J. Field Experience with Hydrogenics' Prototype Stack and System for MW
+         production of hydrogen and synthesis gas by high temperature electrolysis. Int J
+         Hydrog Energy 2011;36(13):7363­73.                                                             PEM electrolysis. Freiburg, Germany.
+                                                                                                [98] Saur G, Ramsden T, James B, Colella W. Current Central Hydrogen Production
+ [59] Petri R, Wood A, He H, Joia T, Brown C, Borglum B. et al. Reversible solid oxide
+         fuel cell (RSOFCEL) development at versa power systems. Los Angeles, US; 2015.                 from PEM Electrolysis version 3.0. [January 20]; 2017. Available from: http://
+                                                                                                        www.hydrogen.energy.gov/h2a_production.html.
+ [60] Wonsyld K, Bech L, Nielsen JU, Pedersen CF. Operational robustness studies of             [99] Steeb H, AbaOud H. HYSOLAR: German-Saudi Joint Program on Solar Hydrogen.
+         solid oxide electrolysis stacks. JEPE 2015;9(2).                                               Production and Utilitzation. Phase II 1992­1995; 1996.
+                                                                                               [100] Zuberbühler U, Specht M, Stürmer B, Brinner A, Brellochs J, Feigl B. et al.
+ [61] Olshausen Cvon. Sunfire ­ liquid hydrocarbonates from CO2 and H2O and re-                         Verbundprojekt Power-to-Gas - Errichtung und Betrieb einer Forschungsanlage zur
+         newable energy. Berlin, Germany; 2015.                                                         Speicherung von erneuerbarem Strom als erneuerbares Methan im 250 kWel
+                                                                                                        Maßstab. Schlussbericht zum Teilvorhaben; 2014.
+ [62] Olshausen Cvon. Closing the carbon cycle; 2014.                                          [101] Dieguez P, Ursua A, Sanchis P, Sopena C, Guelbenzu E, Gandia L. Thermal per-
+ [63] H2Nitidor. Hydrogen-Oxygen high-pressure generator & more ... [January 11];                       formance of a commercial alkaline water electrolyzer: experimental study and
+                                                                                                        mathematical modeling. Int J Hydrog Energy 2008;33(24):7338­54.
+         2017. Available from: www.h2fc-fair.com/hm12/images/exhibitors/                       [102] Wasserelektrolyse Hydrotechnik GmbH. Produktdatenblatt Elektroylseur Typ EV
+         h2nitidor001.pdf.                                                                              50. [January 06]; 2017. Available from: www.ht-hydrotechnik.de/fileadmin/
+ [64] Dunn P. high-capacity, high-pressure electrolysis system with renewable power                     Datenblaetter/Produktdatenblatt_EV_05-13c.pdf.
+         sources. DOE Hydrog Program FY 2010 Annu Progress Report 2010:99­102.                 [103] Gammon R, Roy A, Barton J, Little M. Case Study - Hydrogen and Renewables
+ [65] Sioli G Advanced water electrolysers power by renewable energy sources;                           Integration (HARI): IEA­Hydrogen Implementing Agreement; 2006.
+         Available from: http://www.casale.ch/images/casalegroup/events/paper_                 [104] Mentado D, Ramirez P, Suarez S, Piernavieja G RES2H2 - 2007 Final technical
+         archive/chemicals/2004/h2_age_pisa_italy_2004_advanced_water_electrolysers_                    report; 2008.
+         powered_by_renewable_energy_sources.pdf.                                              [105] Anderson E. PEM electrolyzer reliability based on 20 years of product experience
+ [66] Thyssen Krupp AG. Water electrolysis: Power to gas. [February 04]; 2017.                          in commercial markets. Freiburg, Germany; 2016.
+         Available from: https://www.thyssenkrupp.com/en/company/innovation/                   [106] Pewinksi P. AREVAH2Gen - PEM Electrolyser cost reduction strategy. Herten,
+         technologies-for-the-energy-transition/water-electrolysis.html.                                Germany; 2015.
+ [67] Jo M. Hydrogen production activitiesin Japan. Herten, Germany; 2015.                     [107] Lewinski KA, van der Vliet D, Luopa SM. NSTF advances for PEM electrolysis - the
+ [68] Ceramatec Inc., Webpage. [December 16]; 2016. Available from: http://www.                         effect of alloying on activity of NSTF electrolyzer catalysts and performance of
+         ceramatec.com/.                                                                                NSTF based PEM electrolyzers. ECS Trans 2015;69(17):893­917.
+ [69] ACTA S.P.A. AES500-1000. [December 16]; 2016. Available from: www.actaspa.               [108] Schönberger D. P2G durch Elektrolyse ­ eine flexible Speicherlösung. Zürich;
+         com/wp-content/uploads/2013/08/AES500-1000.pdf.                                                2016.
+ [70] Barisic M. Alkalische elektrolyseure ­ industrielle anwendungen und dynamischer          [109] Joule GP. Stromlückenfüller. [January 17]; 2017. Available from: https://www.
+         Betrieb. München; 2014.                                                                        gp-joule.de/fileadmin/Content/Downloads/DE/Produktblaetter/
+ [71] Industrie Haute Technology (IHT). Webpage. [December 13]; 2016. Available                         Stromlueckenfueller_DE.pdf.
+         from: http://www.iht.ch/.                                                             [110] Thomas D. Electrolyzer technology of the BioCat project. Copenhagen; 2016.
+ [72] NEL Hydrogen. Webpage. [December 13]; 2016. Available from: http://                      [111] Jensen SH, Sun X, Ebbesen SD, Knibbe R, Mogensen M. Hydrogen and synthetic
+         nelhydrogen.com/.                                                                              fuel production using pressurized solid oxide electrolysis cells. Int J Hydrog
+ [73] Next Hydrogen. Webpage. [December 13]; 2016. Available from: http://www.                          Energy 2010;35(18):9544­9.
+         nexthydrogen.com/.                                                                    [112] Ebbesen SD, Graves C, Mogensen M. Production of synthetic fuels by co-electro-
+ [74] Teledyne Energy Systems Inc., Webpage. [December 13]; 2016. Available from:                       lysis of steam and carbon dioxide. Int J Green Energy 2009;6(6):646­60.
+         http://www.teledynees.com/.                                                           [113] Mougin J Hydrogen production by high-temperature steam electrolysis, p.
+ [75] McPhy Energy SA. Webpage. [December 13]; 2016. Available from: http://www.                        225­253.
+         mcphy.com/.                                                                           [114] Mathiesen BV, Rijhan I, Connolly D, Nielsen MP, Hendriksen PV, Mogensen MB.
+ [76] Tianjin Mainland Hydrogen Equipment Co. Ltd. Company Webpage. [January 01];                       et al. Technology data for high temperature solid oxide electrolyser cells, alkali
+         2017. Available from: http://www.cnthe.com/HT_world/chanpin1_en/index1.                        and PEM electrolysers; 2013.
+         asp.                                                                                  [115] Schnurnberger W, Janßen H, Wittstadt U. Wasserspaltung mit Strom und Wärme.
+ [77] Ener Blue SA. Webpage. [December 14]; 2016. Available from: http://www.ener-                      FVS Theme 2004:50­9.
+         blue.com/.                                                                            [116] Suermann M, Schmidt TJ, Buchi FN. Investigation of mass transport losses in
+ [78] Uralhimmasch. Webpage: [in Russian]. [December 13]; 2016. Available from:                         polymer electrolyte electrolysis cells. ECS Trans 2015;69(17):1141­8.
+         http://en.ekb.ru/.                                                                    [117] Bernt M, Gasteiger HA. Influence of ionomer content in IrO 2 /TiO 2 electrodes on
+ [79] Idroenergy. Data Sheet Modell 120. [December 13]; 2016. Available from: http://                   PEM water electrolyzer performance. J Electrochem Soc 2016;163(11):F3179­89.
+         www.idroenergy.it/pdf/schede_gen_idr/120.pdf.                                         [118] Anderson E, Ayers K, Capuano C. R & D focus areas based on 60,000 h Life PEM
+ [80] GreenHydrogen. Webpage. [February 08]; 2017. Available from: http://                              water electrolysis stack experience. Freiburg; 2013.
+         greenhydrogen.dk/.                                                                    [119] Santarelli M, Medina P, Calì M. Fitting regression model and experimental vali-
+ [81] PURE Energy Centre. Webpage. [December 13]; 2016. Available from: http://                         dation for a high-pressure PEM electrolyzer. Int J Hydrog Energy
+         pureenergycentre.com/.                                                                         2009;34(6):2519­30.
+ [82] Hydrogenics. HySTAT Hydrogen Generators: Product brochure. [December 13];                [120] Auprêtre F. Technology roadmap and lifetime expectations in PEM electrolysis.
+         2016. Available from: http://www.hydrogenics.com/docs/default-source/pdf/2-                    Freiburg; 2013.
+         1-1-industrial-brochure_english.pdf?Sfvrsn=2.                                         [121] Cargnelli J, Evers B. Recent advances in PEM water electrolysis. Freiburg; 2013.
+ [83] Hydrogenics. Renewable Hydrogen Solutions. [December 12]; 2016. Available                [122] Arico A, Siracusano S, Briguglio N, Stassi A, Alegre D, Sebastian D. et al.
+         from: www.hydrogenics.com/wp-content/uploads/HYDROGENICS_                                      Electrohypem ­ enhanced performance and cost-effective materials for long-ter-
+         RenewableHydrogen.pdf.                                                                         moperation of PEM water electrolysers coupled to renewable power sources:
+ [84] Sagim SA. Webpage. [December 13]; 2016. Available from: http://www.sagim-                         Deliverable report; 2015.
+         gip.com/.                                                                             [123] Waidhas M, Woywode P. Elektrolyse- und H2-Rückverstromungstechnik von
+ [85] Linde AG. ECOVAR® ­ Standard on-site lösungen: company brochure. [September                       Siemens. Leipzig; 2011.
+         10]; 2013. Available from: http://www.linde-gas.de/.                                  [124] Tremel A. Electrolysis and chemical synthesis as key technologies for future
+ [86] Giner Inc. Webpage: high pressure hydrogen generators. [December 12]; 2016.                       power-to-product routes. München; 2014.
+         Available from: http://www.ginerinc.com/.                                             [125] Schiller G, Ansar A, Patz O. High temperature water electrolysis using metal
+ [87] Siemens AG. SILYZER 200 (PEM electrolysis system). [December 13]; 2016.                           supported solid oxide electrolyser cells (SOEC). Adv Sci Technol 2010;72:135­43.
+         Available from: www.industry.siemens.com/topics/global/en/pem-electrolyzer/           [126] Brisse A, Schefold J, Zahid M. High temperature water electrolysis in solid oxide
+         silyzer/Documents/silyzer-200-en_v1.3_InternetVersion.pdf.                                     cells. Int J Hydrog Energy 2008;33(20):5375­82.
+ [88] ITM Power. Final results presentation. [December 12]; 2016. Available from:              [127] Chauveau F, Mougin J, Bassat JM, Mauvy F, Grenier JC. A new anode material for
+         www.itm-power.com/wp-content/uploads/2016/08/Results-Aug-2016.pdf.                             solid oxide electrolyser: the neodymium nickelate Nd2NiO4+. J Power Sources
+ [89] AREVA H2Gen. Webpage. [December 13]; 2016. Available from: http://www.                            2010;195(3):744­9.
+         arevah2gen.com/.                                                                      [128] Mougin J, Chatroux A, Couturier K, Petitjean M, Reytier M, Gousseau G, et al. High
+ [90] Gemmer-Berkbilek K. Field test experience with Areva's PEM electrolysis systems.                  temperature steam electrolysis stack with enhanced performance and durability.
+         Freiburg, Germany; 2016.                                                                       Energy Procedia 2012;29:445­54.
+ [91] H-TEC Systems. Webpage. [December 13]; 2016. Available from: http://www.                 [129] Graves C, Ebbesen SD, Mogensen M. Co-electrolysis of CO2 and H2O in solid oxide
+         htec-systems.de/.                                                                              cells: performance and durability. Solid State Ion 2011;192(1):398­403.
+ [92] Treadwell Corporation. Webpage. [December 12]; 2016. Available from: http://             [130] Zhang X, O'Brien JE, O'Brien RC, Hartvigsen JJ, Tao G, Housley GK. Improved
+         www.treadwellcorp.com/.                                                                        durability of SOEC stacks for high temperature electrolysis. Int J Hydrog Energy
+ [93] Angstrom Advanced Inc., Webpage. [December 12]; 2016. Available from:                             2013;38(1):20­8.
+         http://www.angstrom-advanced.com/.                                                    [131] Onda K, Kyakuno T, Hattori K, Ito K. Prediction of production power for high-
+ [94] Kobelco Eco-Solution Co. Ltd. Webpage: Product overview electrolyzer.                             pressure hydrogen by high-pressure water electrolysis. J Power Sources
+         [December 12]; 2016. Available from: http://www.kobelco-eco.co.jp/product/
+         suisohassei/hhog_seihin.html.
+ [95] Sylatech GmbH. Company Webpage. [December 12]; 2016. Available from:
+
+                                                                                           14
+A. Buttler, H. Spliethoff                                                                                                           Renewable and Sustainable Energy Reviews xxx (xxxx) xxx­xxx
+
+         2004;132(1­2):64­70.                                                                            development. Gas Energy 2014;1:44­7.
+[132] Ayers KE, Dalton LT, Anderson EB. Efficient generation of high energy density fuel        [151] Udagawa J, Aguiar P, Brandon N. Hydrogen production through steam electro-
+
+         from water. In: 220th ECS Meeting: ECS, 2012, p. 27­38.                                         lysis: control strategies for a cathode-supported intermediate temperature solid
+[133] Momma A, Takano K, Tanaka Y, Kato T, Yamamoto A. Experimental investigation                        oxide electrolysis cell. J Power Sources 2008;180(1):354­64.
+                                                                                                [152] Harrison K. Renewable electrolysis integrated systems development and testing;
+         of the effect of operating pressure on the performance of SOFC and SOEC. ECS                    2012.
+         Trans 2013;57(1):699­708.                                                              [153] Thüga Aktiengesellschaft. Project webpage Strom zu Gas Demonstrationsanlage.
+[134] Abe I, Fujimaki T, Matsubara M. Hydrogen production by high temperature, high                      [January 12]; 2017. Available from: http://www.szg-energiespeicher.de/.
+         pressure water electrolysis, results of test plant operation. Int J Hydrog Energy      [154] Reissner R, Vaes J, Hosseiny SS. RESelyser: System Concept for a combined RES-
+         1984;9(9):753­8.                                                                                Electrolyser plant with optimised efficiency: Part 2 Modern electrolyser systems
+[135] Dunn P, Mauterer D. High-capacity, high pressure electrolysis system with re-                      and aspects of connecting to Renewable Energy sources. [January 04]; 2017.
+         newable power sources; 2011.                                                                    Available from: http://www.reselyser.eu/.
+[136] van Dijk N. PEM electrolyser degradation mechanisms and practical solutions.              [155] Müller-Syring G, Henel M, Köppel W, Mlaker H, Sterner M, Höcher T. et al.
+         Freiburg; 2013.                                                                                 Entwicklung von modularen Konzepten zur Erzeugung, Speicherung und
+[137] Janssen H, Bringmann J, Emonts B, Schroeder V. Safety-related studies on hy-                       Einspeisung von Wasserstoff und Methan ins Erdgasnetz: Abschlussbericht DVGW-
+         drogen production in high-pressure electrolysers. Int J Hydrog Energy                           Projekt G1-07-10; 2013.
+         2004;29(7):759­70.                                                                     [156] Barisic M. Alkaline electrolysis at ELB Elektrolysetechnik GmbH. Telephone
+[138] Schalenbach M, Carmo M, Fritz DL, Mergel J, Stolten D. Pressurized PEM water                       communication; 2013.
+         electrolysis: efficiency and gas crossover. Int J Hydrog Energy                        [157] Otten R. Audi e-fuels: energy carriers based on CO2. Berlin, Germany; 2015.
+         2013;38(35):14921­33.                                                                  [158] Petipas F, Fu Q, Brisse A, Bouallou C. Transient operation of a solid oxide elec-
+[139] Brengel D, Dunn P. High-capacity, high pressure electrolysis system with renew-                    trolysis cell. Int J Hydrog Energy 2013;38(7):2957­64.
+         able power sources. 2012.                                                              [159] Emonts B. Weltweit größtes Photovoltaik-Wasserstoff-Komplettsystem: Phoebus -
+[140] O'Brien J, Zhang X, Housley GK, DeWall K, Moore-McAteer L, Tao G. High tem-                        solare Wasserstoff-Erzeugung. HZwei ­ das Magazin für Wasserstoff und
+         peratureelectrolysis pressurized experiment design, operation, and results. INL/                Brennstoffzellen;4; 2001.
+         EXT-12-26891; 2012.                                                                    [160] Bergen A, Pitt L, Rowe A, Wild P, Djilali N. Transient electrolyser response in a
+[141] Bernadet L, Gousseau G, Chatroux A, Laurencin J, Mauvy F, Reytier M. Influence                     renewable-regenerative energy system. Int J Hydrog Energy 2009;34(1):64­70.
+         of pressure on solid oxide electrolysis cells investigated by experimental and         [161] James B, DeSantis D, Moton J, Saur G Current hydrogen production from central
+         modeling approach. Int J Hydrog Energy 2015;40(38):12918­28.                                    solid oxide electrolysis; Available from: http://www.hydrogen.energy.gov/h2a_
+[142] Siemens AG. Press release H2Future project. [February 08]; 2017. Available from:                   production.html.
+         http://w5.siemens.com/web/at/de/corporate/portal/presse/                               [162] Felgenhauer M, Hamacher T. State-of-the-art of commercial electrolyzers and on-
+         presseinformationen/presse/pages/h2future.aspx.                                                 site hydrogen generation for logistic vehicles in South Carolina. Int J Hydrog
+[143] Stoots CM, O'Brien JE, Herring JS, Housley GK, Milobar DG, Sohal MS. et al. Long-                  Energy 2015;40(5):2084­90.
+         term degradation testing of high-temperature electrolytic cells: INL/EXT-09-           [163] Delplancke J-L. FCH 2 JU funded water electrolysis projects ­ status and per-
+         16559; 2009.                                                                                    spectives. Freiburg, Germany; 2016.
+[144] Stoots CM, O'Brien JE, Hartvigsen JJ Test results of high temperature steam/CO2           [164] Richter A, Pedersen CF, Mogensen M, Jensen S, Sloth M, Chen M. et al. planSOEC ­
+         co-electrolysis in a 10-Cell stack: INL/CON-07-12103PREPRINT.                                   R & D and commercialization roadmap for SOEC electrolysis, R & D of SOEC stacks
+[145] Gahleitner G. Hydrogen from renewable electricity: an international review of                      with improved durability: Project report; 2011.
+         power-to-gas pilot plants for stationary applications. Int J Hydrog Energy             [165] ITM Power. The development of a PEM electrolyzer AST; 2014.
+         2013;38(5):2039­61.                                                                    [166] Rakousky C, Reimer U, Wippermann K, Kuhri S, Carmo M, Lueke W, et al. Polymer
+[146] Bailera M, Lisbona P, Romeo LM, Espatolero S. Power to Gas projects review: lab,                   electrolyte membrane water electrolysis: restraining degradation in the presence
+         pilot and demo plants for storing renewable energy and CO2. Renew Sustain                       of fluctuating power. J Power Sources 2017;342:38­47.
+         Energy Rev 2017;69:292­312.                                                            [167] Anderson E. Cost reduction strategies for PEM electrolysis. Herten, Germany;
+[147] Sigurbjörnsson OF. Sustainable fuels and chemicals by carbon recycling; 13; 2015.                  2015.
+[148] Sunfire GmbH. Webpage. [December 19]; 2016. Available from: http://www.                   [168] Peterson D, Miller E Hydrogen production cost from solid oxide electrolysis: DOE
+         sunfire.de/de/.                                                                                 hydrogen and fuel cells program record 16014.
+[149] Anderson E. Advancement in PEM electrolysis & the realization of MW scale.                [169] Ainscough C, Peterson D, Miller E Hydrogen production cost from PEM electro-
+         Hannover, Germany; 2015.                                                                        lysis: DOE hydrogen and fuel cells program record 14004; 2014.
+[150] Schiller M, Anderson E. Five considerations for large-scale hydrogen electrolyzer
+
+                                                                                            15
+

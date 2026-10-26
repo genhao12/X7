@@ -1,0 +1,20 @@
+{
+  "legacy_bat_aux_active_when_idle": true,
+  "legacy_fc_el_flags_do_not_follow_same_step_power": true,
+  "legacy_has_run_shorter_than_5_steps": true,
+  "legacy_kernel": "06_src/ems/ems_bf_lite.py",
+  "legacy_pv_aux_active_at_zero_pv": true,
+  "observed_el_run_lengths_steps": [
+    1,
+    1
+  ],
+  "observed_fc_run_lengths_steps": [
+    1,
+    1,
+    1
+  ],
+  "paper_citable": false,
+  "reason": "pre_stage2b_auxiliary_flags_and_minimum_run_semantics",
+  "schema_version": "stage2b_legacy_invalidation.1",
+  "superseded_by": "rectification_v2_stage2b"
+}

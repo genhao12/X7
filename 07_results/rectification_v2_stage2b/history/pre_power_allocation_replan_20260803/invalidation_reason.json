@@ -1,0 +1,12 @@
+{
+  "schema_version": "rectification_v2_stage2b.history_invalidation.1",
+  "status": "historical_invalid",
+  "paper_citable": false,
+  "reason": "same_step_battery_reallocation_and_power_residual_defect",
+  "details": [
+    "balanced dispatch could call battery charge or discharge twice and overwrite the recorded command",
+    "battery-first dispatch could discharge BAT before starting FC and then dump FC minimum-load surplus despite BAT headroom",
+    "the audit exceeded the 1e-6 power-residual gate and therefore could not authorize search"
+  ],
+  "superseded_code_hash": "a364e9c454507ac9d0f7b236f0bb498f5b50ac73e9da11ff6060d13f9a7a32b7"
+}

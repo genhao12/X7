@@ -1,0 +1,167 @@
+{
+  "schema_version": "fc_el_model_sanity.1",
+  "method": "external-data deviation check (task A / gap G1)",
+  "fc": {
+    "model_fc1_fit": {
+      "fit_keys": [
+        "voltage_decay_func",
+        "r_hfr_growth_func",
+        "iv_func",
+        "r2_voltage",
+        "r2_r_hfr",
+        "u_bol_V",
+        "k_v_mV_per_h",
+        "t_eol_h",
+        "alpha_r",
+        "r_hfr_bol_ohm",
+        "voltage_loss_eol",
+        "bol_voltage_rated_V",
+        "bol_voltage_70a_V",
+        "d_range_data",
+        "extrapolation_note",
+        "n_voltage_points",
+        "n_eis_points"
+      ],
+      "k_v_mV_per_h": 0.0235,
+      "rate_mv_per_1000h_cell": 23.5,
+      "t_eol_h": 2842.3,
+      "r2_voltage": 0.9072,
+      "alpha_r": 0.0539,
+      "u_bol_V": 0.667
+    },
+    "fc1_raw_fit": {
+      "ok": true,
+      "n_points": 143847,
+      "slope_v_per_h": -2.346498479503803e-05,
+      "rate_mv_per_1000h": 23.46498479503803,
+      "t_max_h": 1154.21335611121,
+      "v_start": 0.6634,
+      "v_end": 0.6422000000000001
+    },
+    "fc2_ripple_fit": {
+      "ok": true,
+      "n_points": 65522,
+      "slope_v_per_h": -4.5152534772130154e-05,
+      "rate_mv_per_1000h": 45.15253477213015,
+      "t_max_h": 505.14086750003,
+      "v_start": 0.665,
+      "v_end": 0.6460000000000001
+    },
+    "dynamic_efficiency_degradation": {
+      "CCM A": {
+        "n_points": 850,
+        "t_max_h": 999.0,
+        "eta_start": 0.541,
+        "eta_end": 0.451,
+        "degrade_pct_per_1000h": 7.8236
+      },
+      "CCM B": {
+        "n_points": 997,
+        "t_max_h": 1000.0,
+        "eta_start": 0.556,
+        "eta_end": 0.532,
+        "degrade_pct_per_1000h": 1.7503
+      },
+      "CCM C": {
+        "n_points": 997,
+        "t_max_h": 1000.0,
+        "eta_start": 0.559,
+        "eta_end": 0.47,
+        "degrade_pct_per_1000h": 8.7393
+      }
+    },
+    "fc1_model_vs_raw_dev_pct": -0.15,
+    "fc2_ripple_vs_fc1_ratio": 1.924,
+    "fc_ripple_note": "FC2 为纹波电流工况（加速退化），速率比>1 与文献'纹波加速 PEMFC 退化'方向一致",
+    "dynamic_eta_degrade_pct_per_1000h_range": [
+      1.75,
+      8.739
+    ],
+    "fc_conclusion": "FC 模型标定与 FC1 原始数据内部一致（偏差 -0.15%）；纹波工况速率比 1.924（>1 加速，方向符合文献）；动态工况效率退化 [1.75, 8.739] %/1000h。模型标定与外部工况方向一致 → 量级/方向性结论可用；绝对寿命不作工程结论（L3/L8）。"
+  },
+  "el": {
+    "model_annual_rates": {
+      "compact": {
+        "dD_el_per_yr": 0.16085806765627367,
+        "specific_energy_increment_pct_per_yr": 1.6085806765627366
+      },
+      "balanced": {
+        "dD_el_per_yr": 0.13873784679274492,
+        "specific_energy_increment_pct_per_yr": 1.3873784679274492
+      },
+      "hydrogen_dominant": {
+        "dD_el_per_yr": 0.11718121660557662,
+        "specific_energy_increment_pct_per_yr": 1.171812166055766
+      },
+      "battery_dominant": {
+        "dD_el_per_yr": 0.12461085127696318,
+        "specific_energy_increment_pct_per_yr": 1.2461085127696319
+      },
+      "critical": {
+        "dD_el_per_yr": 0.13980566199689018,
+        "specific_energy_increment_pct_per_yr": 1.3980566199689017
+      }
+    },
+    "literature_range": {
+      "source": "Buttler & Spliethoff (2018) — PDF 文本提取",
+      "pdf_extracted": true,
+      "regex_v_per_h_hits": [
+        [
+          "5.4",
+          "10.7"
+        ],
+        [
+          "5.2",
+          ""
+        ],
+        [
+          "3.7",
+          ""
+        ],
+        [
+          "2.3",
+          ""
+        ],
+        [
+          "1",
+          "2"
+        ],
+        [
+          "4",
+          "8"
+        ],
+        [
+          "2",
+          "4"
+        ],
+        [
+          "7.3",
+          ""
+        ],
+        [
+          "33",
+          ""
+        ]
+      ],
+      "embedded_range": [
+        3.0,
+        10.0
+      ]
+    },
+    "model_vs_lit_pct_per_yr": {
+      "model_min": 1.172,
+      "model_max": 1.609,
+      "lit_range_pct_per_yr": [
+        1.502,
+        5.006
+      ],
+      "model_within_2x_lit": true
+    },
+    "el_conclusion": "量级一致（模型年退化在文献区间 2 倍带内）"
+  },
+  "summary": {
+    "fc": "FC 模型标定与 FC1 原始数据内部一致（偏差 -0.15%）；纹波工况速率比 1.924（>1 加速，方向符合文献）；动态工况效率退化 [1.75, 8.739] %/1000h。模型标定与外部工况方向一致 → 量级/方向性结论可用；绝对寿命不作工程结论（L3/L8）。",
+    "el": "量级一致（模型年退化在文献区间 2 倍带内）",
+    "paper_guidance": "FC/EL 模型输出可用于方法层方向性/相对结论；绝对寿命值不可作工程结论（limitations L3/L8）。若任一结论为'仅方向性'，论文须明确限定。"
+  }
+}

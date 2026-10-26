@@ -1,0 +1,277 @@
+# -*- coding: utf-8 -*-
+"""全设备退化反馈仿真 — BAT+FC+EL退化全部反馈到EMS"""
+import sys, json, csv
+import numpy as np
+import pandas as pd
+from pathlib import Path
+import matplotlib; matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+
+PROJECT_ROOT = Path(r"D:\matlab\C")
+sys.path.insert(0, str(PROJECT_ROOT / "06_src"))
+from utils.fit_table import auto_fit_table
+plt.rcParams.update({'axes.unicode_minus': False, 'font.family': 'sans-serif', 'font.sans-serif': ['Microsoft YaHei', 'SimHei', 'Arial', 'DejaVu Sans'],
+    'font.size': 11, 'axes.titlesize': 10, 'axes.labelsize': 10, 'xtick.labelsize': 9,
+    'ytick.labelsize': 9, 'legend.fontsize': 8, 'axes.linewidth': 0.8, 'lines.linewidth': 1.5,
+    'grid.alpha': 0.25, 'axes.spines.top': False, 'axes.spines.right': False})
+
+C_BO = '#3288BD'; C_FF = '#D73027'; C_BOL = '#999999'
+OUT_DIR = PROJECT_ROOT / "07_results" / "full_feedback"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+OUT_CSV = OUT_DIR / "full_feedback_comparison.csv"
+OUT_FIG = PROJECT_ROOT / "07_results" / "figures" / "full_feedback_comparison.png"
+SPW = 672; WPY = 52
+
+from ems.ems_bf_lite import EMSConfig, rule_based_dispatch
+from simulation.closed_loop_lite import CoalitionState, compute_damage
+from components.hp_bat_lite import _load_280ah_data, fit_hppc, interpolate_hp as interp_bat
+from components.hp_fc_lite import _load_fc1_data, fit_fc_aging, interpolate_hp as interp_fc
+from components.hp_el_lite import _load_el_bol_data, fit_el_aging, interpolate_hp as interp_el
+
+# === FF03 动态判据（方案 B+，2026-08-31 预注册） ====================================
+# 语义：FF03 = 本脚本 BAT-only(反馈) TE 与 P1 主仿真(capped_te_analysis) 的跨脚本对账。
+# 同源证据：capped_te_analysis Total FB未封顶=0.876636 ≡ 本脚本 BO_dD_total=0.87663601
+# （逐位一致；同 2017 年、mvp_c1_config.json C1 配置、BAT-only 反馈口径）。
+# 守卫：参考文件 mtime 必须晚于其输入 annual_damage_summary.csv，否则判 STALE；
+# 任何读取失败一律显式 FAIL，绝不静默 PASS（防止"陈旧值当判据→错误 PASS"）。
+P1_TE_CSV = PROJECT_ROOT / "07_results" / "annual" / "capped_te_analysis.csv"
+P1_TE_INPUT = PROJECT_ROOT / "07_results" / "annual" / "annual_damage_summary.csv"
+P1_TE_TOL = 5e-4  # 0.05 pp，沿用原 FF03 容差
+
+
+def _p1_te_reference():
+    """返回 (te_or_None, status)。status != 'OK' 时 te 为 None（调用方必须判 FAIL）。"""
+    if not P1_TE_CSV.exists():
+        return None, "MISSING: capped_te_analysis.csv not found (run run_capped_te_analysis.py first)"
+    if P1_TE_INPUT.exists() and P1_TE_CSV.stat().st_mtime < P1_TE_INPUT.stat().st_mtime:
+        return None, ("STALE: capped_te_analysis.csv older than its input annual_damage_summary.csv "
+                      "-> re-run run_capped_te_analysis.py before trusting FF03")
+    try:
+        rows = list(csv.reader(P1_TE_CSV.open(encoding="utf-8", newline="")))
+    except OSError as e:
+        return None, f"UNREADABLE: {e}"
+    hdr_col = None
+    total_row = None
+    for r in rows:
+        if r and r[0] == "设备":
+            try:
+                hdr_col = r.index("TE封顶(%)")
+            except ValueError:
+                return None, "UNREADABLE: column 'TE封顶(%)' not found in header"
+        elif r and r[0] == "Total" and hdr_col is not None:
+            total_row = r
+            break
+    if hdr_col is None:
+        return None, "UNREADABLE: header row (设备,...) not found"
+    if total_row is None:
+        return None, "UNREADABLE: Total row not found"
+    try:
+        te = float(total_row[hdr_col].lstrip("+"))
+    except (ValueError, IndexError):
+        return None, "UNREADABLE: Total 'TE封顶(%)' not parseable"
+    return te / 100.0, "OK"
+
+
+cfg = json.load(open(PROJECT_ROOT / "05_config" / "mvp_c1_config.json", encoding='utf-8'))
+cap = cfg['capacity']; ep = cfg['ems_parameters']; bc = cfg['battery_constraints']
+hc = cfg['hydrogen_constraints']; msl = cfg['minimum_stable_load']; topo = cfg['topology']
+ems_cfg = EMSConfig(pv_kwp=cap['PV_kWp'], bat_kwh=cap['BAT_kWh'], pemfc_kw=cap['PEMFC_kW'],
+    pemel_kw=cap['PEMEL_kW'], h2_kg=cap['H2_kg'], soc_min=bc['soc_min'], soc_max=bc['soc_max'],
+    soc_initial=bc['soc_initial'], h2_min_fraction=hc['m_min_fraction'], h2_max_fraction=hc['m_max_fraction'],
+    h2_initial_fraction=hc['m_initial_fraction'], h2_leakage_per_day=hc['leakage_rate_per_day'],
+    start_stop_threshold=ep['start_stop_threshold_fraction'], minimum_run_time_min=float(ep['minimum_run_time']),
+    critical_load_fraction=ep['critical_load_fraction'], p_aux_fraction=topo['P_aux_fraction_of_installed_power'],
+    min_stable_load_fc=msl['PEMFC'], min_stable_load_el=msl['PEMEL'], dt_min=15.0)
+bat_rated_kw = cap['BAT_kWh'] * 0.5; bat_cap_kwh = cap['BAT_kWh']
+config_dict = {'capacity': cap, 'battery_constraints': bc, 'ems_parameters': ep,
+    'hydrogen_constraints': hc, 'minimum_stable_load': msl, 'topology': topo}
+
+print("=" * 70); print("全设备退化反馈仿真 — BAT+FC+EL退化全部反馈到EMS"); print("=" * 70)
+print("\n[0] 构建健康-性能映射...")
+hp_bat = interp_bat(fit_hppc(_load_280ah_data()), {'bat_kwh': cap['BAT_kWh'], 'bat_voltage_nominal': 3.2*48, 'bat_rated_kw': bat_rated_kw})
+hp_fc = interp_fc(fit_fc_aging(_load_fc1_data()), {'stack_config': {}, 'fc_system_kw': cap['PEMFC_kW']})
+hp_el = interp_el(fit_el_aging(_load_el_bol_data()), {'el_system_kw': cap['PEMEL_kW'], 'active_area_cm2': 50.0})
+print("  hp_bat/hp_fc/hp_el: OK")
+
+csv_path = str(PROJECT_ROOT / "02_data_processed" / "tradestreet_pipeline" / "64_TradeStreet_2016_2018_synthetic_reconstructed_PV_building_load_evaluation_years.csv")
+raw = pd.read_csv(csv_path, parse_dates=['timestamp_local_civil'])
+df = raw[raw['local_civil_year'] == 2017].copy()
+df = df.rename(columns={'timestamp_local_civil': 'timestamp', 'p_pv_available_reconstructed_nonnegative_kW': 'P_pv_kW', 'p_building_load_reconstructed_kW': 'P_load_kW'})
+df['P_pv_kW'] = df['P_pv_kW'].ffill().bfill(); df['P_load_kW'] = df['P_load_kW'].ffill().bfill()
+pv_full = df['P_pv_kW'].values; load_full = df['P_load_kW'].values
+n_weeks = min(WPY, len(pv_full) // SPW); coal = CoalitionState.from_code('1111')
+print(f"  2017年: {len(pv_full)}步, {n_weeks}周")
+
+def run_sim(feedback_mode):
+    """运行年度仿真。feedback_mode: 'bol', 'bat_only', 'full'"""
+    D = {'bat': 0.0, 'fc': 0.0, 'el': 0.0}
+    weekly = []
+    for w in range(n_weeks):
+        s = w * SPW; e = s + SPW
+        pv_w = pv_full[s:e]; load_w = load_full[s:e]
+        kw = {}
+        if feedback_mode != 'bol':
+            D_bat = D['bat']
+            if D_bat > 0:
+                q, r0, p_max = hp_bat(D_bat)
+                kw['bat_p_max_kw'] = bat_rated_kw * q
+                kw['bat_capacity_kwh'] = bat_cap_kwh * q
+            if feedback_mode == 'full':
+                D_fc = D['fc']
+                if D_fc > 0:
+                    eta_fc, _, pmax_fc = hp_fc(D_fc)
+                    kw['fc_eff_frac'] = eta_fc; kw['fc_p_max_kw'] = pmax_fc
+                D_el = D['el']
+                if D_el > 0:
+                    eta_el, _, pmax_el = hp_el(D_el)
+                    kw['el_eff_frac'] = eta_el; kw['el_p_max_kw'] = pmax_el
+        np.random.seed(42)
+        cmds, state = rule_based_dispatch(load_w, pv_w, ems_cfg, **kw)
+        # BOL模式: D_state保持0 (不累积退化), 用临时dict
+        dD_state = D if feedback_mode != 'bol' else {'bat': 0.0, 'fc': 0.0, 'el': 0.0}
+        dD = compute_damage(hp_bat, cmds, config_dict, dt_min=15.0, D_state=dD_state, coalition=coal)
+        dD_b = float(np.sum(dD['dD_bat'])); dD_f = float(np.sum(dD['dD_fc'])); dD_e = float(np.sum(dD['dD_el']))
+        if feedback_mode != 'bol':
+            D['bat'] = min(D['bat'] + dD_b, 1.0); D['fc'] = min(D['fc'] + dD_f, 1.0); D['el'] = min(D['el'] + dD_e, 1.0)
+        weekly.append({'week': w+1, 'dD_bat': dD_b, 'dD_fc': dD_f, 'dD_el': dD_e,
+            'lpsp': float(np.sum(state['p_uns'])/max(np.sum(load_w),1e-6)),
+            'D_bat': D['bat'], 'D_fc': D['fc'], 'D_el': D['el']})
+    return weekly, D
+
+print("\n[1] BOL基线...")
+wb, Db = run_sim('bol')
+bt_b = sum(w['dD_bat'] for w in wb); bt_f = sum(w['dD_fc'] for w in wb); bt_e = sum(w['dD_el'] for w in wb)
+bt = bt_b + bt_f + bt_e; bl = np.mean([w['lpsp'] for w in wb])
+print(f"  BOL: {bt:.6f} (BAT={bt_b:.6f}, FC={bt_f:.6f}, EL={bt_e:.6f}), LPSP={bl*100:.3f}%")
+
+print("\n[2] BAT-only反馈...")
+wbo, Dbo = run_sim('bat_only')
+bo_b = sum(w['dD_bat'] for w in wbo); bo_f = sum(w['dD_fc'] for w in wbo); bo_e = sum(w['dD_el'] for w in wbo)
+bo = bo_b + bo_f + bo_e; bol = np.mean([w['lpsp'] for w in wbo])
+te_bo = (bo-bt)/abs(bt) if abs(bt)>1e-10 else 0
+print(f"  BAT-only: {bo:.6f}, TE={te_bo*100:+.2f}%, LPSP={bol*100:.3f}%")
+
+print("\n[3] 全设备反馈...")
+wf, Df = run_sim('full')
+ff_b = sum(w['dD_bat'] for w in wf); ff_f = sum(w['dD_fc'] for w in wf); ff_e = sum(w['dD_el'] for w in wf)
+ff = ff_b + ff_f + ff_e; fl = np.mean([w['lpsp'] for w in wf])
+te_ff = (ff-bt)/abs(bt) if abs(bt)>1e-10 else 0
+print(f"  Full: {ff:.6f}, TE={te_ff*100:+.2f}%, LPSP={fl*100:.3f}%")
+
+print("\n" + "=" * 70); print("[4] 对比分析"); print("=" * 70)
+te_ue = te_ff - te_bo
+print(f"  TE: BO={te_bo*100:+.2f}%, Full={te_ff*100:+.2f}%, 差={te_ue*100:+.2f}%")
+print(f"  BAT-only高估量: {(te_bo-te_ff)*100:+.2f}% (相对Full: {(te_bo-te_ff)/te_ff*100:.1f}%)" if abs(te_ff)>1e-10 else "")
+print(f"  损伤差: BAT={ff_b-bo_b:+.6f}, FC={ff_f-bo_f:+.6f}, EL={ff_e-bo_e:+.6f}")
+print(f"  LPSP: BO={bol*100:.3f}%, Full={fl*100:.3f}%, 差={(fl-bol)*100:+.3f}%")
+print(f"  D年末: BO[BAT={Dbo['bat']:.4f},FC={Dbo['fc']:.4f},EL={Dbo['el']:.4f}]")
+print(f"         FF[BAT={Df['bat']:.4f},FC={Df['fc']:.4f},EL={Df['el']:.4f}]")
+
+ref_te, ref_status = _p1_te_reference()
+if ref_te is None:
+    print(f"  [FF03 判据告警] P1 参考不可用: {ref_status}")
+checks = [
+    ('FF01', 'Full TE < BAT-only TE (self-limiting)', te_ff < te_bo, f'Full={te_ff*100:+.2f}% < BO={te_bo*100:+.2f}%'),
+    ('FF02', 'Full LPSP >= BAT-only LPSP', fl >= bol - 0.001, f'Full={fl*100:.3f}% >= BO={bol*100:.3f}%'),
+    ('FF03',
+     ('BAT-only TE matches P1 (dynamic ref: capped_te_analysis.csv)' if ref_te is not None
+      else f'BAT-only TE reference unavailable — {ref_status}'),
+     (ref_te is not None) and abs(te_bo - ref_te) < P1_TE_TOL,
+     f'BO TE={te_bo*100:.2f}%' + (f' vs P1 {ref_te*100:.2f}% [tol ±{P1_TE_TOL*100:.2f}pp]'
+                                  if ref_te is not None else ' (reference unavailable)')),
+    ('FF04', 'All TE > 0', te_bo>0 and te_ff>0, f'BO={te_bo*100:+.2f}%, Full={te_ff*100:+.2f}%'),
+    ('FF05', 'FC damage Full < BAT-only (FC self-limiting)', ff_f < bo_f, f'Full FC={ff_f:.6f} < BO FC={bo_f:.6f}'),
+    ('FF06', 'EL damage Full < BAT-only (EL self-limiting)', ff_e < bo_e, f'Full EL={ff_e:.6f} < BO EL={bo_e:.6f}'),
+    ('FF07', 'BAT damage unchanged (BAT feedback same)', abs(ff_b - bo_b) < 0.001, f'Full BAT={ff_b:.6f} vs BO BAT={bo_b:.6f}'),
+]
+np_chk = sum(1 for _,_,p,_ in checks if p); nt_chk = len(checks)
+print(f"\n[5] 验证检查 ({np_chk}/{nt_chk} PASS)")
+for cid, desc, passed, details in checks:
+    print(f"  {cid}: {'PASS' if passed else 'FAIL'} — {desc} — {details}")
+
+print("\n[6] 导出CSV...")
+with open(OUT_CSV, 'w', newline='', encoding='utf-8') as f:
+    w = csv.writer(f)
+    w.writerow(['Week', 'BOL_dD_total', 'BOL_LPSP_pct', 'BO_dD_total', 'BO_LPSP_pct', 'BO_D_bat', 'BO_D_fc', 'BO_D_el',
+                'FF_dD_total', 'FF_LPSP_pct', 'FF_D_bat', 'FF_D_fc', 'FF_D_el'])
+    for i in range(n_weeks):
+        b, bo_w, ff_w = wb[i], wbo[i], wf[i]
+        w.writerow([i+1, f"{b['dD_bat']+b['dD_fc']+b['dD_el']:.8f}", f"{b['lpsp']*100:.4f}",
+                    f"{bo_w['dD_bat']+bo_w['dD_fc']+bo_w['dD_el']:.8f}", f"{bo_w['lpsp']*100:.4f}",
+                    f"{bo_w['D_bat']:.8f}", f"{bo_w['D_fc']:.8f}", f"{bo_w['D_el']:.8f}",
+                    f"{ff_w['dD_bat']+ff_w['dD_fc']+ff_w['dD_el']:.8f}", f"{ff_w['lpsp']*100:.4f}",
+                    f"{ff_w['D_bat']:.8f}", f"{ff_w['D_fc']:.8f}", f"{ff_w['D_el']:.8f}"])
+    w.writerow([]); w.writerow(['=== Summary ==='])
+    w.writerow(['Metric', 'BOL', 'BAT-only', 'Full', 'Diff'])
+    w.writerow(['Total', f"{bt:.8f}", f"{bo:.8f}", f"{ff:.8f}", f"{ff-bo:+.8f}"])
+    w.writerow(['TE(%)', '', f"{te_bo*100:.2f}", f"{te_ff*100:.2f}", f"{te_ue*100:+.2f}"])
+    w.writerow(['LPSP(%)', f"{bl*100:.4f}", f"{bol*100:.4f}", f"{fl*100:.4f}", f"{(fl-bol)*100:+.4f}"])
+    w.writerow([]); w.writerow(['=== Checks ==='])
+    w.writerow(['ID', 'Description', 'Result', 'Details'])
+    for cid, desc, passed, details in checks:
+        w.writerow([cid, desc, 'PASS' if passed else 'FAIL', details])
+print(f"  CSV: {OUT_CSV}")
+
+print("\n[7] 生成图表...")
+fig = plt.figure(figsize=(16, 14))
+gs = GridSpec(3, 2, hspace=0.40, wspace=0.30, left=0.07, right=0.93, top=0.93, bottom=0.06)
+weeks = np.arange(1, n_weeks + 1)
+
+ax1 = fig.add_subplot(gs[0, 0])
+ax1.plot(weeks, [w['D_bat'] for w in wbo], color=C_BO, label=f'BAT-only ({Dbo["bat"]:.4f})', linewidth=2)
+ax1.plot(weeks, [w['D_bat'] for w in wf], color=C_FF, label=f'Full ({Df["bat"]:.4f})', linewidth=2, ls='--')
+ax1.axhline(1.0, color='gray', ls=':', lw=0.8); ax1.set_xlabel('Week'); ax1.set_ylabel('D_BAT')
+ax1.set_title('(a) D_BAT: BAT-only vs Full', fontsize=10, fontweight='bold'); ax1.legend(fontsize=8); ax1.grid(True, alpha=0.3)
+
+ax2 = fig.add_subplot(gs[0, 1])
+ax2.plot(weeks, [w['D_fc'] for w in wbo], color=C_BO, label=f'BAT-only ({Dbo["fc"]:.4f})', linewidth=2)
+ax2.plot(weeks, [w['D_fc'] for w in wf], color=C_FF, label=f'Full ({Df["fc"]:.4f})', linewidth=2, ls='--')
+ax2.axhline(1.0, color='gray', ls=':', lw=0.8); ax2.set_xlabel('Week'); ax2.set_ylabel('D_FC')
+ax2.set_title('(b) D_FC: BAT-only vs Full', fontsize=10, fontweight='bold'); ax2.legend(fontsize=8); ax2.grid(True, alpha=0.3)
+
+ax3 = fig.add_subplot(gs[1, 0])
+bo_wt = np.array([w['dD_bat']+w['dD_fc']+w['dD_el'] for w in wbo])
+ff_wt = np.array([w['dD_bat']+w['dD_fc']+w['dD_el'] for w in wf])
+ax3.bar(weeks - 0.2, bo_wt, 0.4, label='BAT-only', color=C_BO, alpha=0.7)
+ax3.bar(weeks + 0.2, ff_wt, 0.4, label='Full', color=C_FF, alpha=0.7)
+ax3.set_xlabel('Week'); ax3.set_ylabel('Weekly total dD')
+ax3.set_title('(c) Weekly Damage Comparison', fontsize=10, fontweight='bold'); ax3.legend(fontsize=8); ax3.grid(True, alpha=0.3, axis='y')
+
+ax4 = fig.add_subplot(gs[1, 1])
+cum_bo = np.cumsum([wbo[i]['dD_bat']+wbo[i]['dD_fc']+wbo[i]['dD_el']-wb[i]['dD_bat']-wb[i]['dD_fc']-wb[i]['dD_el'] for i in range(n_weeks)])
+cum_ff = np.cumsum([wf[i]['dD_bat']+wf[i]['dD_fc']+wf[i]['dD_el']-wb[i]['dD_bat']-wb[i]['dD_fc']-wb[i]['dD_el'] for i in range(n_weeks)])
+ax4.plot(weeks, cum_bo, color=C_BO, label=f'BAT-only AE ({cum_bo[-1]:+.2e})', linewidth=2)
+ax4.plot(weeks, cum_ff, color=C_FF, label=f'Full AE ({cum_ff[-1]:+.2e})', linewidth=2, ls='--')
+ax4.axhline(0, color='gray', lw=0.5); ax4.set_xlabel('Week'); ax4.set_ylabel('Cumulative AE')
+ax4.set_title('(d) Cumulative AE vs BOL', fontsize=10, fontweight='bold'); ax4.legend(fontsize=8); ax4.grid(True, alpha=0.3)
+
+ax5 = fig.add_subplot(gs[2, 0])
+ax5.plot(weeks, [w['lpsp']*100 for w in wbo], color=C_BO, label=f'BAT-only ({bol*100:.2f}%)', linewidth=1.5)
+ax5.plot(weeks, [w['lpsp']*100 for w in wf], color=C_FF, label=f'Full ({fl*100:.2f}%)', linewidth=1.5, ls='--')
+ax5.set_xlabel('Week'); ax5.set_ylabel('LPSP (%)')
+ax5.set_title('(e) Weekly LPSP Comparison', fontsize=10, fontweight='bold'); ax5.legend(fontsize=8); ax5.grid(True, alpha=0.3)
+
+ax6 = fig.add_subplot(gs[2, 1]); ax6.axis('off')
+td = [['Total', f'{bt:.4e}', f'{bo:.4e}', f'{ff:.4e}'],
+      ['TE(%)', '-', f'{te_bo*100:+.2f}', f'{te_ff*100:+.2f}'],
+      ['LPSP(%)', f'{bl*100:.2f}', f'{bol*100:.2f}', f'{fl*100:.2f}'],
+      ['D_BAT(EOY)', '-', f'{Dbo["bat"]:.4f}', f'{Df["bat"]:.4f}'],
+      ['D_FC(EOY)', '-', f'{Dbo["fc"]:.4f}', f'{Df["fc"]:.4f}'],
+      ['D_EL(EOY)', '-', f'{Dbo["el"]:.4f}', f'{Df["el"]:.4f}']]
+tbl = ax6.table(cellText=td, colLabels=['Metric', 'BOL', 'BAT-only', 'Full'], loc='center',
+                cellLoc='center', colColours=['#4477AA']*4)
+tbl.auto_set_font_size(False); tbl.set_fontsize(7.0)
+auto_fit_table(ax6, tbl)
+ax6.set_title(f'(f) Summary ({np_chk}/{nt_chk} PASS, BO高估TE={(te_bo-te_ff)*100:+.2f}%)', fontsize=10, fontweight='bold', pad=10)
+
+fig.suptitle('Full Feedback vs BAT-only: FC/EL Degradation Feedback Impact (2017)\n'
+             f'TE: BO={te_bo*100:+.2f}% vs Full={te_ff*100:+.2f}% (BO高估={(te_bo-te_ff)*100:+.2f}%)',
+             fontsize=12, fontweight='bold', y=0.98)
+fig.savefig(OUT_FIG, dpi=300, bbox_inches='tight'); plt.close(fig)
+print(f"  图表: {OUT_FIG}")
+
+print("\n" + "=" * 70); print("全设备退化反馈仿真完成"); print("=" * 70)
+print(f"  TE: BAT-only={te_bo*100:+.2f}%, Full={te_ff*100:+.2f}%, BAT-only高估={(te_bo-te_ff)*100:+.2f}%")
+print(f"  验证: {np_chk}/{nt_chk} PASS")
+print(f"  输出: {OUT_CSV}"); print(f"        {OUT_FIG}"); print("=" * 70)

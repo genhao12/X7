@@ -1,0 +1,31 @@
+{
+  "protocol": "F4 dynamic lifetime with instantaneous EOL replacement",
+  "baseline": "C5-H2-500, UCSD 2017, 15-min",
+  "fc_calibration": "F2 voltage-based scenario calibration",
+  "fc_eol_operating_hours": 1882.0,
+  "fc_operating_hours": 237.75,
+  "fc_equivalent_full_load_hours": 125.52607014618575,
+  "annual_load_energy_kwh": 510027.303,
+  "annual_delivered_energy_kwh": 350084.343134842,
+  "lpsp": 0.3135968582943844,
+  "admissible": false,
+  "final_soc": 0.5397746777647802,
+  "final_h2_kg": 52.18926062883768,
+  "replacement_counts": {
+    "bat": 0,
+    "fc": 0,
+    "el": 0
+  },
+  "final_damage_state": {
+    "bat": 0.10226941409396714,
+    "fc": 0.12632837407013497,
+    "el": 0.1898974668027642
+  },
+  "raw_damage_totals": {
+    "bat": 0.10226941409394752,
+    "fc": 0.12632837407013803,
+    "el": 0.1898974668027648
+  },
+  "event_count": 0,
+  "assumption": "replacement is instantaneous; downtime and logistics are excluded"
+}

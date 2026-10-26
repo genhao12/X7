@@ -1,0 +1,42 @@
+# ===== 大体量数据与原始文献（27G，不入库）=====
+数据文献/
+02_data_processed/
+
+# ===== 巨型预测输出（06_src 内 1.3G CSV）=====
+06_src/**/results/forecasts/
+*.csv.gz
+
+# ===== 结果目录：只保留 json 复现证据，排除大 CSV 与图片 =====
+07_results/**/*.csv
+07_results/**/*.png
+
+# ===== Python 虚拟环境 =====
+.venv/
+venv/
+env/
+**/site-packages/
+*.pyd
+*.lib
+*.dll
+
+# ===== Python 缓存 =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ===== 工具与编辑器本地配置 =====
+.workbuddy/
+.vscode/
+.idea/
+
+# ===== 系统垃圾文件 =====
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ===== 单个大文件兜底（GitHub 硬限 100MB）=====
+*.mat
+*.sav
+*.gz

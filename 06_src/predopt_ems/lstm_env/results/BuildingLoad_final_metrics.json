@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-08-08T20:50:17",
+  "purpose": "Load 预测正式版：v3 超参冻结 + 2018 首次 held-out 评估 + MPC 预测文件",
+  "cfg": {
+    "seq_len": 96,
+    "horizon": 96,
+    "lag": 96,
+    "stride": 24,
+    "hidden": 64,
+    "layers": 2,
+    "dropout": 0.1,
+    "epochs": 40,
+    "batch": 64,
+    "lr": 0.001,
+    "patience": 8,
+    "loss": "mae",
+    "time_feat": 4,
+    "seeds": [
+      42,
+      202,
+      777,
+      1337,
+      20260807
+    ],
+    "improve_criterion": 0.05
+  },
+  "baseline": {
+    "naive_mae_2016": 7.6563,
+    "naive_mae_2017": 12.8449,
+    "naive_mae_2018": 10.6129,
+    "thr_2018_mae": 10.0822
+  },
+  "seeds_mase_2017": {
+    "42": 1.0373327997149053,
+    "202": 1.0579025195969936,
+    "777": 1.0505506925984796,
+    "1337": 1.0282373707658439,
+    "20260807": 1.0647070264804408
+  },
+  "chosen_seed": 777,
+  "metrics_2018": {
+    "mae_kW": 7.564,
+    "rmse_kW": 11.0016,
+    "r2": 0.8215,
+    "mase": 0.9879,
+    "improve_vs_bstar2018_pct": 28.728
+  },
+  "criteria_2018": {
+    "mae_le_threshold": true,
+    "improve_ge5pct": true
+  },
+  "forecast_file": "d:\\matlab\\C\\06_src\\predopt_ems\\lstm_env\\scripts\\..\\results\\forecasts\\Load_forecast_2018.csv",
+  "note": "2018 为 v9 §13 held-out 首次评估（超参冻结后）；MASE 分母=2016 训练段 naive 7.656，B*_2018=2018 自身 naive 10.613；判据=相对 B*_2018 改善≥5%"
+}

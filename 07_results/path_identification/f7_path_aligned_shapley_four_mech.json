@@ -1,0 +1,69 @@
+{
+  "protocol": "F7 path-aligned Shapley, fixed BAT D=0.9, W1, FC model=four_mech(Refaat2026+FC1)",
+  "mediators": {
+    "C": "BAT usable capacity passed to EMS",
+    "E": "source-to-target efficiency interface; absent for BAT source, fixed zero",
+    "P": "BAT power limit passed to EMS",
+    "I": "source-to-target inventory-policy interface; absent in current EMS, fixed zero"
+  },
+  "paths": {
+    "alpha1": {
+      "path_effect": 0.0005563262788605694,
+      "shapley_values": {
+        "C": 0.0005563262788605694,
+        "E": 0.0,
+        "P": 0.0,
+        "I": 0.0
+      },
+      "validation": {
+        "path_effect": 0.0005563262788605694,
+        "shapley_sum": 0.0005563262788605694,
+        "coalition_effect": 0.0005563262788605694,
+        "closure_relative_error": 0.0,
+        "efficiency_relative_error": 0.0,
+        "max_interaction_fraction": 0.0,
+        "interactions": {
+          "C:E": 0.0,
+          "C:P": 0.0,
+          "C:I": 0.0,
+          "E:P": 0.0,
+          "E:I": 0.0,
+          "P:I": 0.0
+        },
+        "closure_pass": true,
+        "efficiency_pass": true,
+        "interaction_pass": true,
+        "all_pass": true
+      }
+    },
+    "beta1": {
+      "path_effect": 0.000205474,
+      "shapley_values": {
+        "C": 0.00020547399999999998,
+        "E": 0.0,
+        "P": 0.0,
+        "I": 0.0
+      },
+      "validation": {
+        "path_effect": 0.000205474,
+        "shapley_sum": 0.00020547399999999998,
+        "coalition_effect": 0.000205474,
+        "closure_relative_error": 1.3191476445748664e-16,
+        "efficiency_relative_error": 1.3191476445748664e-16,
+        "max_interaction_fraction": 0.0,
+        "interactions": {
+          "C:E": 0.0,
+          "C:P": 0.0,
+          "C:I": 0.0,
+          "E:P": 0.0,
+          "E:I": 0.0,
+          "P:I": 0.0
+        },
+        "closure_pass": true,
+        "efficiency_pass": true,
+        "interaction_pass": true,
+        "all_pass": true
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "method": "BOL dispatch single-year 2017 comparison",
+  "bat_cycle_model_efc": "rainflow+Woehler k=1, a_d=5.0714e-4 D/EFC (280Ah)",
+  "bat_cycle_model_proxy": "legacy dD_cyc=BAT_K_CYC_H*DOD*p_ratio*dt, BAT_K_CYC_H=2e-3/h",
+  "representatives": [
+    {
+      "role": "compact",
+      "efc": {
+        "total": 0.13017156828650073,
+        "cyclic": 0.08017156828650072,
+        "calendar": 0.05
+      },
+      "proxy": {
+        "total": 0.08620686154518079,
+        "cyclic": 0.03620686154518078,
+        "calendar": 0.05
+      },
+      "lifetime_years_efc": 7.68,
+      "lifetime_years_proxy": 11.6,
+      "ratio_proxy_over_efc": 0.45
+    },
+    {
+      "role": "balanced",
+      "efc": {
+        "total": 0.1364587545427492,
+        "cyclic": 0.08645875454274919,
+        "calendar": 0.05
+      },
+      "proxy": {
+        "total": 0.08967180293508825,
+        "cyclic": 0.03967180293508825,
+        "calendar": 0.05
+      },
+      "lifetime_years_efc": 7.33,
+      "lifetime_years_proxy": 11.15,
+      "ratio_proxy_over_efc": 0.46
+    },
+    {
+      "role": "hydrogen_dominant",
+      "efc": {
+        "total": 0.14536780980133318,
+        "cyclic": 0.09536780980133318,
+        "calendar": 0.05
+      },
+      "proxy": {
+        "total": 0.09733235233954053,
+        "cyclic": 0.04733235233954053,
+        "calendar": 0.05
+      },
+      "lifetime_years_efc": 6.88,
+      "lifetime_years_proxy": 10.27,
+      "ratio_proxy_over_efc": 0.5
+    },
+    {
+      "role": "battery_dominant",
+      "efc": {
+        "total": 0.11688338024378,
+        "cyclic": 0.06688338024378,
+        "calendar": 0.05
+      },
+      "proxy": {
+        "total": 0.08534337401293494,
+        "cyclic": 0.03534337401293494,
+        "calendar": 0.05
+      },
+      "lifetime_years_efc": 8.56,
+      "lifetime_years_proxy": 11.72,
+      "ratio_proxy_over_efc": 0.53
+    },
+    {
+      "role": "critical",
+      "efc": {
+        "total": 0.12083875603989819,
+        "cyclic": 0.07083875603989818,
+        "calendar": 0.05
+      },
+      "proxy": {
+        "total": 0.08384096080716948,
+        "cyclic": 0.03384096080716947,
+        "calendar": 0.05
+      },
+      "lifetime_years_efc": 8.28,
+      "lifetime_years_proxy": 11.93,
+      "ratio_proxy_over_efc": 0.48
+    }
+  ]
+}

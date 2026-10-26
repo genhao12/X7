@@ -1,0 +1,92 @@
+{
+  "fc": {
+    "model_rate_mv_per_1000h": 23.5,
+    "fc1_independent": {
+      "ok": true,
+      "n_points": 143847,
+      "t_start_h": 0.0,
+      "t_end_h": 1154.21335611121,
+      "duration_h": 1154.21335611121,
+      "v_start": 0.6634,
+      "v_end": 0.6422000000000001,
+      "slope_mv_per_1000h": -23.465181361483726,
+      "pct_per_1000h": -3.5371090385112645,
+      "pct_per_yr": -30.985075177358674,
+      "r2": 0.9072
+    },
+    "fc2_ripple_independent": {
+      "ok": true,
+      "n_points": 65522,
+      "t_start_h": 0.0,
+      "t_end_h": 505.14086750003,
+      "duration_h": 505.14086750003,
+      "v_start": 0.665,
+      "v_end": 0.6460000000000001,
+      "slope_mv_per_1000h": -45.20432937387845,
+      "pct_per_1000h": -6.797643514868939,
+      "pct_per_yr": -59.5473571902519,
+      "r2": 0.2422
+    },
+    "fc1_dev_pct_vs_model": -0.15,
+    "fc1_verdict": "量级一致（内部独立重算）",
+    "fc2_fc1_rate_ratio": 1.93,
+    "fc2_verdict": "纹波加速退化方向符合文献（工况对照，非精度验证）"
+  },
+  "el": {
+    "model_pct_per_yr_range": [
+      1.17,
+      1.61
+    ],
+    "model_scope_note": "系统级年比能耗增量（degradation_summary）；PEMEL 原始数据为实验室 MEA 加速恒流（1A/cm² 级），运行条件不同，仅作方向/量级对照",
+    "fits": {
+      "UF15_20W": {
+        "ok": true,
+        "file": "electrolyzer_tests/21032025_MEA_UF15_HP80_7pt3Nm_RuOx_15_20W_on_highPorPtTiFelt_Pt_cathode_from_FuelCellStore_withGasket_07_CP_C01.txt",
+        "n_points": 1364501,
+        "t_start_h": 0.7821077123519796,
+        "t_end_h": 390.30661408903916,
+        "duration_h": 389.52450637668716,
+        "v_start": 1.741087,
+        "v_end": 1.9208473,
+        "slope_mv_per_1000h": 258.55978433129087,
+        "pct_per_1000h": 14.850480437295257,
+        "pct_per_yr": 130.09020863070646,
+        "r2": 0.7137
+      },
+      "UF19_80W": {
+        "ok": true,
+        "file": "electrolyzer_tests/08052025_MEA_UF17_HP80_7pt3Nm_RuOx_16_80W_on_highPorPtTiFelt_Pt_cathode_from_FuelCellStore_withGasket_07_CP_C01.txt",
+        "n_points": 1255875,
+        "t_start_h": 0.7316361645879766,
+        "t_end_h": 359.0560164938267,
+        "duration_h": 358.3243803292387,
+        "v_start": 1.7665061,
+        "v_end": 1.9094509,
+        "slope_mv_per_1000h": 294.84782932824305,
+        "pct_per_1000h": 16.69101676627344,
+        "pct_per_yr": 146.21330687255534,
+        "r2": 0.897
+      }
+    },
+    "UF15_20W_relation": {
+      "independent_pct_per_yr": 130.09,
+      "model_pct_per_yr": [
+        1.17,
+        1.61
+      ],
+      "verdict": "实验室加速数据退化率远高于系统级模型（>10×，运行条件不同：加速/高电流密度 vs 系统额定），方向一致（电压随运行单调上升=退化），量级不可直接类比，不作工程外推——符合 L3/L8/L23 边界"
+    },
+    "UF19_80W_relation": {
+      "independent_pct_per_yr": 146.21,
+      "model_pct_per_yr": [
+        1.17,
+        1.61
+      ],
+      "verdict": "实验室加速数据退化率远高于系统级模型（>10×，运行条件不同：加速/高电流密度 vs 系统额定），方向一致（电压随运行单调上升=退化），量级不可直接类比，不作工程外推——符合 L3/L8/L23 边界"
+    }
+  },
+  "_summary": {
+    "conclusion": "P3-2 独立实现交叉验证完成：FC 侧独立重算 FC1 原始 143k 点电压轨迹，与模型标定偏差 -0.15%（量级一致）；FC2 纹波速率比 1.93x（工况对照）。EL 侧用 PEMEL 恒流耐久原始数据（UF15/UF19, 逗号小数 CP 轨迹）独立拟合电压退化率：实验室 MEA 加速条件退化率远高于系统级模型年比能耗增量（方向一致、量级差 10×+，运行条件不同），模型 EL 年退化率仅适用于系统级方法演示，不得外推到加速/实验室条件。",
+    "note": "独立实现 = 不 import hp_fc_lite/hp_el_lite 的任何标定/拟合函数；FC 用 openpyxl 直读原始 xlsx，EL 用 zipfile 直读 CP txt 并独立 polyfit。"
+  }
+}

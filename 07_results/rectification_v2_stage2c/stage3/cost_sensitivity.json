@@ -1,0 +1,1380 @@
+{
+  "schema_version": "stage3_cost_sensitivity.1",
+  "notes": {
+    "capex_source": "economics.npc_lite.compute_equipment_capex",
+    "replacement_source": "stage3 EOL event model (int-year rounding, de-duplicated)",
+    "exchange_rate_scope": "USD reporting only; all unit costs are CNY-denominated, so NPC and CNY LCOE are invariant under exchange rate"
+  },
+  "representatives": {
+    "compact": {
+      "baseline": {
+        "total_capex_cny": 21948644.41431119,
+        "equipment_capex_cny": 14865308.776870951,
+        "bop_capex_cny": 4718889.280916395,
+        "npc_cny": 33625405.94754794,
+        "annual_opex_cny": 219486.4441431119,
+        "lcoe_cny_per_kwh": 5.923607623058546,
+        "lcoe_usd_per_kwh": 0.8170493273184201,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "PV_-30%": {
+        "total_capex_cny": 20540471.280763283,
+        "equipment_capex_cny": 13894154.891665502,
+        "bop_capex_cny": 4378985.421094488,
+        "npc_cny": 32055716.46496109,
+        "annual_opex_cny": 205404.71280763284,
+        "lcoe_cny_per_kwh": 5.647083836270944,
+        "lcoe_usd_per_kwh": 0.7789081153477164,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "PV_+30%": {
+        "total_capex_cny": 23356817.54785909,
+        "equipment_capex_cny": 15836462.662076402,
+        "bop_capex_cny": 5058793.140738303,
+        "npc_cny": 35195095.43013479,
+        "annual_opex_cny": 233568.1754785909,
+        "lcoe_cny_per_kwh": 6.200131409846146,
+        "lcoe_usd_per_kwh": 0.8551905392891236,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "BAT_-30%": {
+        "total_capex_cny": 20307691.516935598,
+        "equipment_capex_cny": 13733617.123508476,
+        "bop_capex_cny": 4322797.202239528,
+        "npc_cny": 30571382.07463967,
+        "annual_opex_cny": 203076.91516935598,
+        "lcoe_cny_per_kwh": 5.385596598811522,
+        "lcoe_usd_per_kwh": 0.7428409101808996,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "BAT_+30%": {
+        "total_capex_cny": 23589597.311686777,
+        "equipment_capex_cny": 15997000.430233426,
+        "bop_capex_cny": 5114981.359593261,
+        "npc_cny": 36679429.820456184,
+        "annual_opex_cny": 235895.97311686777,
+        "lcoe_cny_per_kwh": 6.461618647305564,
+        "lcoe_usd_per_kwh": 0.8912577444559399,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "PEMFC_-30%": {
+        "total_capex_cny": 21349290.0037326,
+        "equipment_capex_cny": 14451960.907506406,
+        "bop_capex_cny": 4574217.526638804,
+        "npc_cny": 32645726.995545078,
+        "annual_opex_cny": 213492.900037326,
+        "lcoe_cny_per_kwh": 5.751022830557107,
+        "lcoe_usd_per_kwh": 0.7932445283527044,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "PEMFC_+30%": {
+        "total_capex_cny": 22547998.824889775,
+        "equipment_capex_cny": 15278656.646235496,
+        "bop_capex_cny": 4863561.035193985,
+        "npc_cny": 34605084.89955079,
+        "annual_opex_cny": 225479.98824889775,
+        "lcoe_cny_per_kwh": 6.0961924155599805,
+        "lcoe_usd_per_kwh": 0.8408541262841353,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "PEMEL_-30%": {
+        "total_capex_cny": 20270850.388089854,
+        "equipment_capex_cny": 13889847.133719012,
+        "bop_capex_cny": 4377477.705813216,
+        "npc_cny": 30543823.508878402,
+        "annual_opex_cny": 202708.50388089856,
+        "lcoe_cny_per_kwh": 5.380741753921957,
+        "lcoe_usd_per_kwh": 0.7421712764030286,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "PEMEL_+30%": {
+        "total_capex_cny": 23626438.44053252,
+        "equipment_capex_cny": 15840770.42002289,
+        "bop_capex_cny": 5060300.856019573,
+        "npc_cny": 36706988.38621748,
+        "annual_opex_cny": 236264.3844053252,
+        "lcoe_cny_per_kwh": 6.466473492195134,
+        "lcoe_usd_per_kwh": 0.8919273782338116,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "H2_tank_-30%": {
+        "total_capex_cny": 20690325.55774125,
+        "equipment_capex_cny": 13897371.194894075,
+        "bop_capex_cny": 4525301.7645210195,
+        "npc_cny": 32222758.909451082,
+        "annual_opex_cny": 206903.25557741252,
+        "lcoe_cny_per_kwh": 5.6765108088136325,
+        "lcoe_usd_per_kwh": 0.7829670081122252,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "H2_tank_+30%": {
+        "total_capex_cny": 23206963.270881124,
+        "equipment_capex_cny": 15833246.358847827,
+        "bop_capex_cny": 4912476.79731177,
+        "npc_cny": 35028052.9856448,
+        "annual_opex_cny": 232069.63270881123,
+        "lcoe_cny_per_kwh": 6.170704437303459,
+        "lcoe_usd_per_kwh": 0.851131646524615,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "ALL_-30%": {
+        "total_capex_cny": 15364051.090017831,
+        "equipment_capex_cny": 10405716.143809665,
+        "bop_capex_cny": 3303222.4966414766,
+        "npc_cny": 23537784.163283557,
+        "annual_opex_cny": 153640.5109001783,
+        "lcoe_cny_per_kwh": 4.146525336140981,
+        "lcoe_usd_per_kwh": 0.571934529122894,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "ALL_+30%": {
+        "total_capex_cny": 28533237.738604542,
+        "equipment_capex_cny": 19324901.409932237,
+        "bop_capex_cny": 6134556.065191314,
+        "npc_cny": 43713027.73181232,
+        "annual_opex_cny": 285332.3773860454,
+        "lcoe_cny_per_kwh": 7.700689909976108,
+        "lcoe_usd_per_kwh": 1.062164125513946,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "rate-50%": {
+        "total_capex_cny": 21948644.41431119,
+        "equipment_capex_cny": 14865308.776870951,
+        "bop_capex_cny": 4718889.280916395,
+        "npc_cny": 33625405.94754794,
+        "annual_opex_cny": 219486.4441431119,
+        "lcoe_cny_per_kwh": 5.923607623058546,
+        "lcoe_usd_per_kwh": 1.6340986546368401,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 3.625,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "rate+50%": {
+        "total_capex_cny": 21948644.41431119,
+        "equipment_capex_cny": 14865308.776870951,
+        "bop_capex_cny": 4718889.280916395,
+        "npc_cny": 33625405.94754794,
+        "annual_opex_cny": 219486.4441431119,
+        "lcoe_cny_per_kwh": 5.923607623058546,
+        "lcoe_usd_per_kwh": 0.5446995515456134,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 10.875,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      },
+      "no_BOP": {
+        "total_capex_cny": 14865308.776870951,
+        "equipment_capex_cny": 14865308.776870951,
+        "bop_capex_cny": 0.0,
+        "npc_cny": 25729617.29284675,
+        "annual_opex_cny": 148653.08776870952,
+        "lcoe_cny_per_kwh": 4.532648836181569,
+        "lcoe_usd_per_kwh": 0.6251929429215958,
+        "annual_served_kwh": 494903.83348349895,
+        "exchange_rate": 7.25,
+        "include_bop": false,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 2,
+          "PEMEL": 3
+        }
+      }
+    },
+    "balanced": {
+      "baseline": {
+        "total_capex_cny": 23504919.94578068,
+        "equipment_capex_cny": 15666053.190653328,
+        "bop_capex_cny": 5085917.652146513,
+        "npc_cny": 34618500.91605925,
+        "annual_opex_cny": 235049.1994578068,
+        "lcoe_cny_per_kwh": 6.084810807798084,
+        "lcoe_usd_per_kwh": 0.8392842493514598,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_-30%": {
+        "total_capex_cny": 22072123.449386306,
+        "equipment_capex_cny": 14677917.675898585,
+        "bop_capex_cny": 4740070.221982352,
+        "npc_cny": 33021363.790306084,
+        "annual_opex_cny": 220721.23449386307,
+        "lcoe_cny_per_kwh": 5.804085848970932,
+        "lcoe_usd_per_kwh": 0.800563565375301,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_+30%": {
+        "total_capex_cny": 24937716.44217506,
+        "equipment_capex_cny": 16654188.705408072,
+        "bop_capex_cny": 5431765.082310673,
+        "npc_cny": 36215638.04181243,
+        "annual_opex_cny": 249377.1644217506,
+        "lcoe_cny_per_kwh": 6.365535766625237,
+        "lcoe_usd_per_kwh": 0.8780049333276189,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_-30%": {
+        "total_capex_cny": 22005057.121409737,
+        "equipment_capex_cny": 14631665.035914745,
+        "bop_capex_cny": 4723881.797988009,
+        "npc_cny": 31827063.770579703,
+        "annual_opex_cny": 220050.57121409738,
+        "lcoe_cny_per_kwh": 5.594166601300292,
+        "lcoe_usd_per_kwh": 0.7716091863862471,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_+30%": {
+        "total_capex_cny": 25004782.770151626,
+        "equipment_capex_cny": 16700441.34539191,
+        "bop_capex_cny": 5447953.506305017,
+        "npc_cny": 37409938.06153879,
+        "annual_opex_cny": 250047.82770151627,
+        "lcoe_cny_per_kwh": 6.575455014295875,
+        "lcoe_usd_per_kwh": 0.9069593123166725,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_-30%": {
+        "total_capex_cny": 22686060.577763923,
+        "equipment_capex_cny": 15101322.592021082,
+        "bop_capex_cny": 4888261.942625226,
+        "npc_cny": 33467724.595987,
+        "annual_opex_cny": 226860.60577763923,
+        "lcoe_cny_per_kwh": 5.882541616341401,
+        "lcoe_usd_per_kwh": 0.8113850505298484,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_+30%": {
+        "total_capex_cny": 24323779.313797437,
+        "equipment_capex_cny": 16230783.789285574,
+        "bop_capex_cny": 5283573.361667799,
+        "npc_cny": 35769277.23613149,
+        "annual_opex_cny": 243237.79313797437,
+        "lcoe_cny_per_kwh": 6.287079999254765,
+        "lcoe_usd_per_kwh": 0.867183448173071,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_-30%": {
+        "total_capex_cny": 21237685.158742156,
+        "equipment_capex_cny": 14347893.430747207,
+        "bop_capex_cny": 4624561.73617937,
+        "npc_cny": 30923476.198524114,
+        "annual_opex_cny": 212376.85158742155,
+        "lcoe_cny_per_kwh": 5.435345182730855,
+        "lcoe_usd_per_kwh": 0.7497027838249456,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_+30%": {
+        "total_capex_cny": 25772154.73281921,
+        "equipment_capex_cny": 16984212.95055945,
+        "bop_capex_cny": 5547273.568113655,
+        "npc_cny": 38313525.63359439,
+        "annual_opex_cny": 257721.5473281921,
+        "lcoe_cny_per_kwh": 6.734276432865313,
+        "lcoe_usd_per_kwh": 0.9288657148779742,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_-30%": {
+        "total_capex_cny": 22472197.437867083,
+        "equipment_capex_cny": 14871651.261489023,
+        "bop_capex_cny": 4927037.266313652,
+        "npc_cny": 33467325.950081564,
+        "annual_opex_cny": 224721.97437867083,
+        "lcoe_cny_per_kwh": 5.882471547307512,
+        "lcoe_usd_per_kwh": 0.8113753858355189,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_+30%": {
+        "total_capex_cny": 24537642.453694277,
+        "equipment_capex_cny": 16460455.119817633,
+        "bop_capex_cny": 5244798.037979374,
+        "npc_cny": 35769675.88203693,
+        "annual_opex_cny": 245376.42453694277,
+        "lcoe_cny_per_kwh": 6.287150068288655,
+        "lcoe_usd_per_kwh": 0.8671931128674008,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_-30%": {
+        "total_capex_cny": 16453443.962046478,
+        "equipment_capex_cny": 10966237.23345733,
+        "bop_capex_cny": 3560142.356502559,
+        "npc_cny": 24232950.641241483,
+        "annual_opex_cny": 164534.43962046478,
+        "lcoe_cny_per_kwh": 4.2593675654586605,
+        "lcoe_usd_per_kwh": 0.5874989745460222,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_+30%": {
+        "total_capex_cny": 30556395.92951489,
+        "equipment_capex_cny": 20365869.14784933,
+        "bop_capex_cny": 6611692.947790466,
+        "npc_cny": 45004051.19087703,
+        "annual_opex_cny": 305563.9592951489,
+        "lcoe_cny_per_kwh": 7.91025405013751,
+        "lcoe_usd_per_kwh": 1.091069524156898,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate-50%": {
+        "total_capex_cny": 23504919.94578068,
+        "equipment_capex_cny": 15666053.190653328,
+        "bop_capex_cny": 5085917.652146513,
+        "npc_cny": 34618500.91605925,
+        "annual_opex_cny": 235049.1994578068,
+        "lcoe_cny_per_kwh": 6.084810807798084,
+        "lcoe_usd_per_kwh": 1.6785684987029197,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 3.625,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate+50%": {
+        "total_capex_cny": 23504919.94578068,
+        "equipment_capex_cny": 15666053.190653328,
+        "bop_capex_cny": 5085917.652146513,
+        "npc_cny": 34618500.91605925,
+        "annual_opex_cny": 235049.1994578068,
+        "lcoe_cny_per_kwh": 6.084810807798084,
+        "lcoe_usd_per_kwh": 0.5595228329009732,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 10.875,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "no_BOP": {
+        "total_capex_cny": 15666053.190653328,
+        "equipment_capex_cny": 15666053.190653328,
+        "bop_capex_cny": 0.0,
+        "npc_cny": 25880522.31969048,
+        "annual_opex_cny": 156660.5319065333,
+        "lcoe_cny_per_kwh": 4.548957284550104,
+        "lcoe_usd_per_kwh": 0.6274423840758764,
+        "annual_served_kwh": 496021.77633876976,
+        "exchange_rate": 7.25,
+        "include_bop": false,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      }
+    },
+    "hydrogen_dominant": {
+      "baseline": {
+        "total_capex_cny": 29742891.79310377,
+        "equipment_capex_cny": 19687909.76540884,
+        "bop_capex_cny": 6288766.941833426,
+        "npc_cny": 42797737.05364923,
+        "annual_opex_cny": 297428.9179310377,
+        "lcoe_cny_per_kwh": 7.521287615095089,
+        "lcoe_usd_per_kwh": 1.037418981392426,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_-30%": {
+        "total_capex_cny": 28162867.34108902,
+        "equipment_capex_cny": 18598237.7295366,
+        "bop_capex_cny": 5907381.7292781435,
+        "npc_cny": 41036485.04175433,
+        "annual_opex_cny": 281628.6734108902,
+        "lcoe_cny_per_kwh": 7.211764638973226,
+        "lcoe_usd_per_kwh": 0.9947261570997553,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_+30%": {
+        "total_capex_cny": 31322916.24511852,
+        "equipment_capex_cny": 20777581.80128108,
+        "bop_capex_cny": 6670152.15438871,
+        "npc_cny": 44558989.06554414,
+        "annual_opex_cny": 313229.1624511852,
+        "lcoe_cny_per_kwh": 7.830810591216953,
+        "lcoe_usd_per_kwh": 1.080111805685097,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_-30%": {
+        "total_capex_cny": 28388842.313455254,
+        "equipment_capex_cny": 18754082.538065035,
+        "bop_capex_cny": 5961927.412263094,
+        "npc_cny": 40254298.04176723,
+        "annual_opex_cny": 283888.42313455255,
+        "lcoe_cny_per_kwh": 7.074302852423235,
+        "lcoe_usd_per_kwh": 0.9757659106790669,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_+30%": {
+        "total_capex_cny": 31096941.272752292,
+        "equipment_capex_cny": 20621736.992752645,
+        "bop_capex_cny": 6615606.471403758,
+        "npc_cny": 45341176.0655312,
+        "annual_opex_cny": 310969.41272752295,
+        "lcoe_cny_per_kwh": 7.968272377766937,
+        "lcoe_usd_per_kwh": 1.0990720521057844,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_-30%": {
+        "total_capex_cny": 28754379.21129267,
+        "equipment_capex_cny": 19006176.950366702,
+        "bop_capex_cny": 6050160.456568678,
+        "npc_cny": 41468272.22988961,
+        "annual_opex_cny": 287543.7921129267,
+        "lcoe_cny_per_kwh": 7.287647053653413,
+        "lcoe_usd_per_kwh": 1.005192697055643,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_+30%": {
+        "total_capex_cny": 30731404.37491487,
+        "equipment_capex_cny": 20369642.580450978,
+        "bop_capex_cny": 6527373.427098175,
+        "npc_cny": 44127201.87740884,
+        "annual_opex_cny": 307314.0437491487,
+        "lcoe_cny_per_kwh": 7.754928176536762,
+        "lcoe_usd_per_kwh": 1.0696452657292086,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_-30%": {
+        "total_capex_cny": 26307814.606402136,
+        "equipment_capex_cny": 17690771.866163705,
+        "bop_capex_cny": 5589768.677097629,
+        "npc_cny": 37337303.26994656,
+        "annual_opex_cny": 263078.1460640214,
+        "lcoe_cny_per_kwh": 6.561669284365898,
+        "lcoe_usd_per_kwh": 0.9050578323263307,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_+30%": {
+        "total_capex_cny": 33177968.979805402,
+        "equipment_capex_cny": 21685047.664653976,
+        "bop_capex_cny": 6987765.206569224,
+        "npc_cny": 48258170.83735189,
+        "annual_opex_cny": 331779.68979805405,
+        "lcoe_cny_per_kwh": 8.480905945824277,
+        "lcoe_usd_per_kwh": 1.1697801304585211,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_-30%": {
+        "total_capex_cny": 28177687.955348633,
+        "equipment_capex_cny": 18483906.813289504,
+        "bop_capex_cny": 6047966.351409559,
+        "npc_cny": 41053005.56879362,
+        "annual_opex_cny": 281776.87955348636,
+        "lcoe_cny_per_kwh": 7.214667961531138,
+        "lcoe_usd_per_kwh": 0.9951266153836053,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_+30%": {
+        "total_capex_cny": 31308095.630858906,
+        "equipment_capex_cny": 20891912.717528176,
+        "bop_capex_cny": 6529567.532257293,
+        "npc_cny": 44542468.538504824,
+        "annual_opex_cny": 313080.9563085891,
+        "lcoe_cny_per_kwh": 7.827907268659036,
+        "lcoe_usd_per_kwh": 1.0797113474012463,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_-30%": {
+        "total_capex_cny": 20820024.25517264,
+        "equipment_capex_cny": 13781536.835786188,
+        "bop_capex_cny": 4402136.859283399,
+        "npc_cny": 29958415.937554456,
+        "annual_opex_cny": 208200.2425517264,
+        "lcoe_cny_per_kwh": 5.264901330566561,
+        "lcoe_usd_per_kwh": 0.7261932869746981,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_+30%": {
+        "total_capex_cny": 38665759.331034906,
+        "equipment_capex_cny": 25594282.695031494,
+        "bop_capex_cny": 8175397.0243834555,
+        "npc_cny": 55637058.169744,
+        "annual_opex_cny": 386657.5933103491,
+        "lcoe_cny_per_kwh": 9.777673899623617,
+        "lcoe_usd_per_kwh": 1.348644675810154,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate-50%": {
+        "total_capex_cny": 29742891.79310377,
+        "equipment_capex_cny": 19687909.76540884,
+        "bop_capex_cny": 6288766.941833426,
+        "npc_cny": 42797737.05364923,
+        "annual_opex_cny": 297428.9179310377,
+        "lcoe_cny_per_kwh": 7.521287615095089,
+        "lcoe_usd_per_kwh": 2.074837962784852,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 3.625,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate+50%": {
+        "total_capex_cny": 29742891.79310377,
+        "equipment_capex_cny": 19687909.76540884,
+        "bop_capex_cny": 6288766.941833426,
+        "npc_cny": 42797737.05364923,
+        "annual_opex_cny": 297428.9179310377,
+        "lcoe_cny_per_kwh": 7.521287615095089,
+        "lcoe_usd_per_kwh": 0.6916126542616173,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 10.875,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "no_BOP": {
+        "total_capex_cny": 19687909.76540884,
+        "equipment_capex_cny": 19687909.76540884,
+        "bop_capex_cny": 0.0,
+        "npc_cny": 31589456.508836787,
+        "annual_opex_cny": 196879.0976540884,
+        "lcoe_cny_per_kwh": 5.551540907634045,
+        "lcoe_usd_per_kwh": 0.7657297803633166,
+        "annual_served_kwh": 496098.7979166666,
+        "exchange_rate": 7.25,
+        "include_bop": false,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      }
+    },
+    "battery_dominant": {
+      "baseline": {
+        "total_capex_cny": 23587548.787287258,
+        "equipment_capex_cny": 15904423.041112022,
+        "bop_capex_cny": 5194887.257354276,
+        "npc_cny": 34483986.0319861,
+        "annual_opex_cny": 235875.4878728726,
+        "lcoe_cny_per_kwh": 6.076470993293893,
+        "lcoe_usd_per_kwh": 0.8381339301095024,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_-30%": {
+        "total_capex_cny": 21914603.198871966,
+        "equipment_capex_cny": 14750667.462894578,
+        "bop_capex_cny": 4791072.80497817,
+        "npc_cny": 32619154.902550112,
+        "annual_opex_cny": 219146.03198871968,
+        "lcoe_cny_per_kwh": 5.7478665142496626,
+        "lcoe_usd_per_kwh": 0.7928091743792638,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_+30%": {
+        "total_capex_cny": 25260494.375702556,
+        "equipment_capex_cny": 17058178.619329467,
+        "bop_capex_cny": 5598701.709730381,
+        "npc_cny": 36348817.1614221,
+        "annual_opex_cny": 252604.94375702555,
+        "lcoe_cny_per_kwh": 6.405075472338124,
+        "lcoe_usd_per_kwh": 0.8834586858397413,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_-30%": {
+        "total_capex_cny": 21437649.793529104,
+        "equipment_capex_cny": 14421734.0798995,
+        "bop_capex_cny": 4675946.120929893,
+        "npc_cny": 30606619.996207647,
+        "annual_opex_cny": 214376.49793529106,
+        "lcoe_cny_per_kwh": 5.3932349478745305,
+        "lcoe_usd_per_kwh": 0.7438944755689008,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_+30%": {
+        "total_capex_cny": 25737447.78104542,
+        "equipment_capex_cny": 17387112.002324544,
+        "bop_capex_cny": 5713828.393778659,
+        "npc_cny": 38361352.06776457,
+        "annual_opex_cny": 257374.47781045418,
+        "lcoe_cny_per_kwh": 6.759707038713258,
+        "lcoe_usd_per_kwh": 0.9323733846501046,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_-30%": {
+        "total_capex_cny": 23016235.095677346,
+        "equipment_capex_cny": 15510413.598622428,
+        "bop_capex_cny": 5056983.952482918,
+        "npc_cny": 33715618.01087701,
+        "annual_opex_cny": 230162.35095677347,
+        "lcoe_cny_per_kwh": 5.941075798895159,
+        "lcoe_usd_per_kwh": 0.8194587308820909,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_+30%": {
+        "total_capex_cny": 24158862.47889717,
+        "equipment_capex_cny": 16298432.483601617,
+        "bop_capex_cny": 5332790.562225634,
+        "npc_cny": 35252354.05309519,
+        "annual_opex_cny": 241588.6247889717,
+        "lcoe_cny_per_kwh": 6.211866187692627,
+        "lcoe_usd_per_kwh": 0.8568091293369141,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_-30%": {
+        "total_capex_cny": 21871760.523175277,
+        "equipment_capex_cny": 14906871.724767843,
+        "bop_capex_cny": 4845744.2966338135,
+        "npc_cny": 31726509.431599338,
+        "annual_opex_cny": 218717.60523175276,
+        "lcoe_cny_per_kwh": 5.590572218094447,
+        "lcoe_usd_per_kwh": 0.7711134093923375,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_+30%": {
+        "total_capex_cny": 25303337.051399246,
+        "equipment_capex_cny": 16901974.3574562,
+        "bop_capex_cny": 5544030.218074739,
+        "npc_cny": 37241462.63237288,
+        "annual_opex_cny": 253033.37051399247,
+        "lcoe_cny_per_kwh": 6.56236976849334,
+        "lcoe_usd_per_kwh": 0.9051544508266677,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_-30%": {
+        "total_capex_cny": 22621230.688996434,
+        "equipment_capex_cny": 15161101.427042158,
+        "bop_capex_cny": 5046222.934540303,
+        "npc_cny": 33406832.009100582,
+        "annual_opex_cny": 226212.30688996435,
+        "lcoe_cny_per_kwh": 5.886664189367499,
+        "lcoe_usd_per_kwh": 0.8119536812920688,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_+30%": {
+        "total_capex_cny": 24553866.88557808,
+        "equipment_capex_cny": 16647744.655181887,
+        "bop_capex_cny": 5343551.580168249,
+        "npc_cny": 35561140.05487162,
+        "annual_opex_cny": 245538.66885578082,
+        "lcoe_cny_per_kwh": 6.266277797220286,
+        "lcoe_usd_per_kwh": 0.864314178926936,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_-30%": {
+        "total_capex_cny": 16511284.151101084,
+        "equipment_capex_cny": 11133096.128778415,
+        "bop_capex_cny": 3636421.080147993,
+        "npc_cny": 24138790.222390268,
+        "annual_opex_cny": 165112.84151101086,
+        "lcoe_cny_per_kwh": 4.2535296953057244,
+        "lcoe_usd_per_kwh": 0.5866937510766517,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_+30%": {
+        "total_capex_cny": 30663813.42347344,
+        "equipment_capex_cny": 20675749.95344563,
+        "bop_capex_cny": 6753353.434560558,
+        "npc_cny": 44829181.84158193,
+        "annual_opex_cny": 306638.1342347344,
+        "lcoe_cny_per_kwh": 7.899412291282061,
+        "lcoe_usd_per_kwh": 1.0895741091423532,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate-50%": {
+        "total_capex_cny": 23587548.787287258,
+        "equipment_capex_cny": 15904423.041112022,
+        "bop_capex_cny": 5194887.257354276,
+        "npc_cny": 34483986.0319861,
+        "annual_opex_cny": 235875.4878728726,
+        "lcoe_cny_per_kwh": 6.076470993293893,
+        "lcoe_usd_per_kwh": 1.6762678602190049,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 3.625,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate+50%": {
+        "total_capex_cny": 23587548.787287258,
+        "equipment_capex_cny": 15904423.041112022,
+        "bop_capex_cny": 5194887.257354276,
+        "npc_cny": 34483986.0319861,
+        "annual_opex_cny": 235875.4878728726,
+        "lcoe_cny_per_kwh": 6.076470993293893,
+        "lcoe_usd_per_kwh": 0.558755953406335,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 10.875,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "no_BOP": {
+        "total_capex_cny": 15904423.041112022,
+        "equipment_capex_cny": 15904423.041112022,
+        "bop_capex_cny": 0.0,
+        "npc_cny": 25919611.81560126,
+        "annual_opex_cny": 159044.23041112022,
+        "lcoe_cny_per_kwh": 4.56733073748631,
+        "lcoe_usd_per_kwh": 0.6299766534463876,
+        "annual_served_kwh": 494772.5494473088,
+        "exchange_rate": 7.25,
+        "include_bop": false,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      }
+    },
+    "critical": {
+      "baseline": {
+        "total_capex_cny": 25027491.21556454,
+        "equipment_capex_cny": 16917963.40858098,
+        "bop_capex_cny": 5415369.914591545,
+        "npc_cny": 36329606.76058932,
+        "annual_opex_cny": 250274.91215564543,
+        "lcoe_cny_per_kwh": 6.385305689007023,
+        "lcoe_usd_per_kwh": 0.8807318191733825,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_-30%": {
+        "total_capex_cny": 23539709.582725473,
+        "equipment_capex_cny": 15891907.110071275,
+        "bop_capex_cny": 5056250.210113148,
+        "npc_cny": 34671177.74655933,
+        "annual_opex_cny": 235397.09582725473,
+        "lcoe_cny_per_kwh": 6.0938195661903105,
+        "lcoe_usd_per_kwh": 0.8405268367159049,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PV_+30%": {
+        "total_capex_cny": 26515272.848403618,
+        "equipment_capex_cny": 17944019.707090687,
+        "bop_capex_cny": 5774489.619069942,
+        "npc_cny": 37988035.774619326,
+        "annual_opex_cny": 265152.72848403617,
+        "lcoe_cny_per_kwh": 6.676791811823738,
+        "lcoe_usd_per_kwh": 0.9209368016308603,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_-30%": {
+        "total_capex_cny": 23063615.041304193,
+        "equipment_capex_cny": 15563566.04702212,
+        "bop_capex_cny": 4941330.8380459435,
+        "npc_cny": 32787734.887231816,
+        "annual_opex_cny": 230636.15041304193,
+        "lcoe_cny_per_kwh": 5.762784923183111,
+        "lcoe_usd_per_kwh": 0.7948668859562912,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "BAT_+30%": {
+        "total_capex_cny": 26991367.389824893,
+        "equipment_capex_cny": 18272360.770139843,
+        "bop_capex_cny": 5889408.991137147,
+        "npc_cny": 39871478.63394681,
+        "annual_opex_cny": 269913.67389824893,
+        "lcoe_cny_per_kwh": 7.007826454830933,
+        "lcoe_usd_per_kwh": 0.9665967523904735,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_-30%": {
+        "total_capex_cny": 24201910.880352326,
+        "equipment_capex_cny": 16348597.66015876,
+        "bop_capex_cny": 5216091.902643768,
+        "npc_cny": 35219271.8644554,
+        "annual_opex_cny": 242019.10880352327,
+        "lcoe_cny_per_kwh": 6.190152799637517,
+        "lcoe_usd_per_kwh": 0.8538141792603472,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMFC_+30%": {
+        "total_capex_cny": 25853071.550776765,
+        "equipment_capex_cny": 17487329.1570032,
+        "bop_capex_cny": 5614647.926539322,
+        "npc_cny": 37439941.65672326,
+        "annual_opex_cny": 258530.71550776766,
+        "lcoe_cny_per_kwh": 6.5804585783765335,
+        "lcoe_usd_per_kwh": 0.9076494590864184,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_-30%": {
+        "total_capex_cny": 23111866.917077497,
+        "equipment_capex_cny": 15804228.351321071,
+        "bop_capex_cny": 5025562.644550577,
+        "npc_cny": 33207619.05429349,
+        "annual_opex_cny": 231118.66917077499,
+        "lcoe_cny_per_kwh": 5.836583926247778,
+        "lcoe_usd_per_kwh": 0.805046058792797,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "PEMEL_+30%": {
+        "total_capex_cny": 26943115.514051586,
+        "equipment_capex_cny": 18031698.46584089,
+        "bop_capex_cny": 5805177.184632514,
+        "npc_cny": 39451594.466885164,
+        "annual_opex_cny": 269431.1551405159,
+        "lcoe_cny_per_kwh": 6.93402745176627,
+        "lcoe_usd_per_kwh": 0.9564175795539683,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_-30%": {
+        "total_capex_cny": 23712106.291693866,
+        "equipment_capex_cny": 15906128.851757385,
+        "bop_capex_cny": 5213003.003226826,
+        "npc_cny": 34863348.22222979,
+        "annual_opex_cny": 237121.06291693868,
+        "lcoe_cny_per_kwh": 6.127595523074295,
+        "lcoe_usd_per_kwh": 0.845185589389558,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "H2_tank_+30%": {
+        "total_capex_cny": 26342876.139435217,
+        "equipment_capex_cny": 17929797.965404578,
+        "bop_capex_cny": 5617736.8259562645,
+        "npc_cny": 37795865.29894884,
+        "annual_opex_cny": 263428.7613943522,
+        "lcoe_cny_per_kwh": 6.643015854939749,
+        "lcoe_usd_per_kwh": 0.9162780489572068,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_-30%": {
+        "total_capex_cny": 17519243.85089518,
+        "equipment_capex_cny": 11842574.386006687,
+        "bop_capex_cny": 3790758.9402140817,
+        "npc_cny": 25430724.732412532,
+        "annual_opex_cny": 175192.4385089518,
+        "lcoe_cny_per_kwh": 4.469713982304918,
+        "lcoe_usd_per_kwh": 0.6165122734213679,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "ALL_+30%": {
+        "total_capex_cny": 32535738.58023391,
+        "equipment_capex_cny": 21993352.431155276,
+        "bop_capex_cny": 7039980.888969009,
+        "npc_cny": 47228488.788766146,
+        "annual_opex_cny": 325357.3858023391,
+        "lcoe_cny_per_kwh": 8.300897395709136,
+        "lcoe_usd_per_kwh": 1.144951364925398,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate-50%": {
+        "total_capex_cny": 25027491.21556454,
+        "equipment_capex_cny": 16917963.40858098,
+        "bop_capex_cny": 5415369.914591545,
+        "npc_cny": 36329606.76058932,
+        "annual_opex_cny": 250274.91215564543,
+        "lcoe_cny_per_kwh": 6.385305689007023,
+        "lcoe_usd_per_kwh": 1.761463638346765,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 3.625,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "rate+50%": {
+        "total_capex_cny": 25027491.21556454,
+        "equipment_capex_cny": 16917963.40858098,
+        "bop_capex_cny": 5415369.914591545,
+        "npc_cny": 36329606.76058932,
+        "annual_opex_cny": 250274.91215564543,
+        "lcoe_cny_per_kwh": 6.385305689007023,
+        "lcoe_usd_per_kwh": 0.5871545461155883,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 10.875,
+        "include_bop": true,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      },
+      "no_BOP": {
+        "total_capex_cny": 16917963.40858098,
+        "equipment_capex_cny": 16917963.40858098,
+        "bop_capex_cny": 0.0,
+        "npc_cny": 27289922.502947114,
+        "annual_opex_cny": 169179.6340858098,
+        "lcoe_cny_per_kwh": 4.796487299159589,
+        "lcoe_usd_per_kwh": 0.661584455056495,
+        "annual_served_kwh": 496042.1356205679,
+        "exchange_rate": 7.25,
+        "include_bop": false,
+        "replacements": {
+          "BAT": 2,
+          "PEMFC": 1,
+          "PEMEL": 2
+        }
+      }
+    }
+  }
+}

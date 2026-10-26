@@ -1,0 +1,100 @@
+{
+ "ucsd_measured": {
+  "source": "d:\\matlab\\C\\02_data_processed\\tradestreet_pipeline\\08_TradeStreetPV_paper_QC_layer.csv",
+  "n_observed": 101618,
+  "peak_kw": 244.424,
+  "daytime_mask": "前点 > 5%×峰值（244.4 kW → 12.2 kW）",
+  "ramp_std_rel_peak": 0.0571,
+  "ramp_p95_rel_peak": 0.1607,
+  "ramp_gt_10kw_frac": 0.1952,
+  "ramp_gt_10kw_frac_pct": 19.52,
+  "n_daytime_samples": 42017,
+  "annual_yield_kwh_per_kwp": {
+   "2016(部分)": 425,
+   "2017": 1752,
+   "2018": 1756,
+   "2019(部分)": 992,
+   "note": "UCSD 实测 PV 功率×0.25h 累计/峰值 244.4kW；完整年 2017/2018 = 1752/1756 kWh/kWp，落在 NASA 重构产能区间（1059–1801 kWh/kWp，迈阿密高/西雅图低）上端附近——0.85 c-Si 效率假设在 UCSD 上不显著偏离实测（独立校验，补充意见3）"
+  }
+ },
+ "nasa_reconstruction": [
+  {
+   "city": "迈阿密",
+   "n_hours": 26304,
+   "n_15min": 105216,
+   "energy_conservation": {
+    "max_rel_err_pct": 100.0,
+    "mean_rel_err_pct": 0.13233348,
+    "p95_rel_err_pct": 0.0
+   },
+   "recon_ramp": {
+    "std_rel_peak": 0.073,
+    "p95_rel_peak": 0.2321
+   },
+   "pv_model": "GHI × 0.85 / 1000 kW/kWp（c-Si 效率 0.85 简化，与 UCSD 同口径，物理上限 1.0 kW/kWp）"
+  },
+  {
+   "city": "凤凰城",
+   "n_hours": 26304,
+   "n_15min": 105216,
+   "energy_conservation": {
+    "max_rel_err_pct": 100.0,
+    "mean_rel_err_pct": 0.21780166,
+    "p95_rel_err_pct": 0.0
+   },
+   "recon_ramp": {
+    "std_rel_peak": 0.0757,
+    "p95_rel_peak": 0.2392
+   },
+   "pv_model": "GHI × 0.85 / 1000 kW/kWp（c-Si 效率 0.85 简化，与 UCSD 同口径，物理上限 1.0 kW/kWp）"
+  },
+  {
+   "city": "西雅图",
+   "n_hours": 26304,
+   "n_15min": 105216,
+   "energy_conservation": {
+    "max_rel_err_pct": 100.0,
+    "mean_rel_err_pct": 0.05915847,
+    "p95_rel_err_pct": 0.0
+   },
+   "recon_ramp": {
+    "std_rel_peak": 0.0645,
+    "p95_rel_peak": 0.1989
+   },
+   "pv_model": "GHI × 0.85 / 1000 kW/kWp（c-Si 效率 0.85 简化，与 UCSD 同口径，物理上限 1.0 kW/kWp）"
+  }
+ ],
+ "comparison": {
+  "recon_std_range": [
+   0.0645,
+   0.0757
+  ],
+  "ucsd_std": 0.0571,
+  "recon_stronger_than_ucsd": true,
+  "direction_note": "重构爬坡 std（0.065~0.076）≥ UCSD 实测（0.057）：重构保留了（并略强于）UCSD 的 分钟级云团波动，不低估电池循环损伤；校准基准由原硬编码 0.0775 修正为实测 0.0570",
+  "energy_conservation": {
+   "mean_range_pct": [
+    0.136,
+    0.218
+   ],
+   "note": "小时内 4 点比例校正后均值回原小时值；mean 0.06–0.22%，p95≈0（绝大多数小时机器精度），max=100% 为极小值小时（<2 W/m²）相对误差放大的边缘 artifact，不作量级判据"
+  },
+  "annual_yield_check": {
+   "ucsd_full_year_range": [
+    1752,
+    1756
+   ],
+   "nasa_recon_range": [
+    1059,
+    1801
+   ],
+   "consistent": true,
+   "note": "UCSD 实测完整年产能 1752–1756 kWh/kWp 位于 NASA 重构产能区间内（上端），PV 模型参数 GHI×0.85/1000 与 UCSD 实测一致（产能级校验）"
+  }
+ },
+ "_method": {
+  "note": "审查3补强：UCSD 实测 PV 爬坡统计直接计算（此前 0.0775 硬编码无来源），NASA 重构验证动态输出（替代 run_weather_transfer_90.py 的硬编码 pv_validation 字符串）",
+  "seed": 20260806,
+  "sigma_frac": 0.15
+ }
+}

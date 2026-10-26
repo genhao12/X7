@@ -1,0 +1,50 @@
+{
+  "protocol": "F5 exact-time replacement-event discounting",
+  "baseline": "C5-H2-500, UCSD 2017, 15-min",
+  "annual_damage": {
+    "BAT": 0.10226941409394752,
+    "PEMFC": 0.12632837407013803,
+    "PEMEL": 0.1898974668027648
+  },
+  "annual_delivered_energy_mwh": 350.084343134842,
+  "replacement_counts": {
+    "BAT": 2,
+    "PEMFC": 2,
+    "PEMEL": 3,
+    "power_electronics": 1
+  },
+  "npc_cny": 18216316.329528674,
+  "npc_million_cny": 18.216316329528674,
+  "lcoe_cny_per_kwh": 2.601703944599473,
+  "capex_pv_cny": 10130062.5,
+  "opex_pv_cny": 2939597.4343030415,
+  "replacement_pv_cny": 5146656.395225633,
+  "admissible": false,
+  "admission_failure": "annual LPSP=31.36% exceeds 1%; NPC/LCOE is scenario-only",
+  "schedule_years": {
+    "BAT": [
+      9.778094544292317,
+      19.556189088584635
+    ],
+    "PEMFC": [
+      7.915878023133551,
+      15.831756046267103
+    ],
+    "PEMEL": [
+      5.2659996830744475,
+      10.531999366148895,
+      15.797999049223344
+    ],
+    "power_electronics": [
+      15.0
+    ]
+  },
+  "correction": {
+    "old_fc_annual_hours": 6462,
+    "old_fc_20yr_replacements": 69,
+    "old_error": "15-minute steps were treated as hours (dt=0.25 h omitted)",
+    "f4_fc_active_hours": 237.75,
+    "f4_fc_equivalent_full_load_hours": 125.52607014618575
+  },
+  "scope": "scenario economics; literature costs, no downtime/logistics"
+}

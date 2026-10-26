@@ -1,0 +1,251 @@
+{
+  "admission": {
+    "critical_load_definition": "all_load_until_separate_series_exists",
+    "critical_satisfaction_min_each_year": 0.99,
+    "el_critical_displacement_kwh_max": 0.0,
+    "fc_el_overlap_count_max": 0,
+    "h2_closure_fraction_max": 0.05,
+    "h2_residual_abs_max_kg": 1e-06,
+    "invalid_dump_count_max": 0,
+    "lpsp_max_each_year": 0.01,
+    "lpsp_max_three_year": 0.01,
+    "power_residual_abs_max_kW": 1e-06,
+    "short_run_count_max": 0,
+    "soc_closure_max": 0.05
+  },
+  "audit": {
+    "anchor_configurations": [
+      {
+        "BAT_kWh": 1200.0,
+        "H2_kg": 2000.0,
+        "PEMEL_kW": 200.0,
+        "PEMFC_kW": 80.0,
+        "PV_kWp": 350.0,
+        "name": "stage2c_lower_anchor"
+      },
+      {
+        "BAT_kWh": 1800.0,
+        "H2_kg": 4000.0,
+        "PEMEL_kW": 350.0,
+        "PEMFC_kW": 140.0,
+        "PV_kWp": 425.0,
+        "name": "stage2c_midpoint_anchor"
+      },
+      {
+        "BAT_kWh": 2400.0,
+        "H2_kg": 6000.0,
+        "PEMEL_kW": 500.0,
+        "PEMFC_kW": 200.0,
+        "PV_kWp": 500.0,
+        "name": "stage2c_upper_anchor"
+      }
+    ],
+    "paper_citable": false,
+    "write_hourly_trace": true
+  },
+  "auxiliary": {
+    "bat_fraction_rated_when_on": 0.01,
+    "el_fraction_rated_when_on": 0.025,
+    "fc_fraction_rated_when_on": 0.03,
+    "model_status": "conservative_rated_power_proxy_not_manufacturer_curve",
+    "pv_fraction_rated_when_on": 0.015,
+    "record_components_separately": true,
+    "sensitivity_multipliers": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "standby_kW": 0.5
+  },
+  "capacity_domains": {
+    "tier1": {
+      "BAT_kWh": [
+        1200.0,
+        2400.0
+      ],
+      "H2_kg": [
+        2000.0,
+        6000.0
+      ],
+      "PEMEL_kW": [
+        200.0,
+        500.0
+      ],
+      "PEMFC_kW": [
+        80.0,
+        200.0
+      ]
+    },
+    "tier2_activation": "tier1_admitted_count_below_5_and_audited_equipment_upper_bound_trigger",
+    "tier2_increment_rule": "BAT_kWh>2400 or PEMFC_kW>200 or PEMEL_kW>500 or H2_kg>6000",
+    "tier2_total": {
+      "BAT_kWh": [
+        1200.0,
+        4000.0
+      ],
+      "H2_kg": [
+        2000.0,
+        10000.0
+      ],
+      "PEMEL_kW": [
+        200.0,
+        600.0
+      ],
+      "PEMFC_kW": [
+        80.0,
+        250.0
+      ]
+    }
+  },
+  "cycle": {
+    "admission_closure_tolerance": 0.05,
+    "carry_machine_state_across_years": true,
+    "machine_state_boundary_closure": "exact",
+    "max_repetitions": 50,
+    "single_year_closure_required": false,
+    "soc_h2_solver_tolerance": 0.001,
+    "years": [
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "design_document": "09_docs/plans/2026-08-03_stage2b_ems_capacity_design.md",
+  "double_layer_uncertainty": {
+    "inner_checkpoints": [
+      1000,
+      2000,
+      4000
+    ],
+    "inner_method": "season_stratified_4week_moving_block_bootstrap_on_dispatch",
+    "inner_seed": 42,
+    "min_inner": 4000,
+    "min_outer": 256,
+    "outer_method": "sobol",
+    "outer_seed": 20260803,
+    "status": "registered_2026-08-04"
+  },
+  "downstream_gate": {
+    "always_frozen_in_stage2c": [
+      "degradation_execution",
+      "six_paths_execution",
+      "Shapley",
+      "L4",
+      "economics",
+      "double_layer_uncertainty"
+    ],
+    "max_frozen_representatives": 5,
+    "robust_six_path_min_admitted": 3,
+    "stage3_min_admitted": 1
+  },
+  "ems": {
+    "battery_c_rate": 0.5,
+    "count_start_step": true,
+    "critical_load_priority": true,
+    "decrement_after_dispatch": true,
+    "dt_min": 15.0,
+    "dump_definition": "forced_fc_output_after_load_and_soc_power_limited_battery_absorption",
+    "el_efficiency_lhv": 0.7,
+    "el_min_stable_fraction": 0.15,
+    "fc_efficiency_lhv": 0.5,
+    "fc_el_mutually_exclusive": true,
+    "fc_min_stable_fraction": 0.15,
+    "h2_leakage_per_day": 0.0005,
+    "h2_max_fraction": 1.0,
+    "h2_min_fraction": 0.1,
+    "minimum_run_steps": 5,
+    "soc_max": 0.95,
+    "soc_min": 0.15,
+    "strategies": [
+      "battery_first",
+      "hydrogen_first",
+      "balanced"
+    ]
+  },
+  "forecast": {
+    "horizon_steps": 5,
+    "oracle_mode": "perfect_forecast_upper_bound",
+    "oracle_paper_citable": false,
+    "poisoned_future_isolation_test_required": true,
+    "primary_definition": "future_steps_repeat_current_observation",
+    "primary_mode": "causal_persistence"
+  },
+  "legacy_result_policy": {
+    "paper_citable": false,
+    "superseded_by": "rectification_v2_stage2c"
+  },
+  "main_domain_status": "frozen_90_150_kWp",
+  "parallel": {
+    "atomic_checkpoint_each_candidate": true,
+    "max_workers": 8,
+    "reserve_logical_cores": 1
+  },
+  "predecessor": "rectification_v2_stage2b",
+  "predecessor_outcome": "1792_candidates_evaluated_0_admitted_LPSP_bottleneck_8_percent",
+  "predecessor_result": "07_results/rectification_v2_stage2b",
+  "pv_domain_kWp": [
+    350.0,
+    500.0
+  ],
+  "pv_source": {
+    "candidate_formula": "max(0,P_raw)*P_nom/233",
+    "load_column": "p_building_load_reconstructed_kW",
+    "provider": "historical_power_linear_scale",
+    "raw_column": "p_pv_available_reconstructed_nonnegative_kW",
+    "reference_capacity_kw": 233.0,
+    "reject_amplification_when_clipping_detected": true
+  },
+  "rationale": "Stage2b PV domain 160-320 kWp insufficient; feasibility scan shows PV>=400 kWp achieves LPSP<1%",
+  "representative_bounds": {
+    "bat_kwh": [
+      1200.0,
+      4000.0
+    ],
+    "h2_kg": [
+      2000.0,
+      10000.0
+    ],
+    "pemel_kw": [
+      200.0,
+      600.0
+    ],
+    "pemfc_kw": [
+      80.0,
+      250.0
+    ],
+    "pv_kwp": [
+      350.0,
+      500.0
+    ]
+  },
+  "result_root": "07_results/rectification_v2_stage2c",
+  "schema_version": "rectification_v2_stage2c.2",
+  "screening": {
+    "fine_scope": "continuous_2016_2018_complete_state_periodic_cycle",
+    "necessary_energy_includes_standby_lower_bound": true,
+    "necessary_energy_scope": "continuous_three_year_total",
+    "single_year_coarse_is_non_eliminating": true,
+    "single_year_coarse_year": 2017
+  },
+  "search": {
+    "batch_size": 128,
+    "coverage_count": 26,
+    "coverage_rule": "sequential_maximum_minimum_distance_in_normalized_5d",
+    "exploit_count": 102,
+    "finish_current_batch_after_fifth_admission": true,
+    "flat_batches_to_stop": 4,
+    "initial_count": 256,
+    "normalized_improvement_min": 0.05,
+    "representative_normalization": "stage2c_global_bounds",
+    "sobol": {
+      "d": 5,
+      "generate_once": true,
+      "pool_size_per_tier": 2048,
+      "scramble": true,
+      "seed": 20260803
+    },
+    "violation_predictor_neighbors": 8,
+    "violation_predictor_weight": "1/(distance+1e-12)^2"
+  },
+  "status": "STAGE_2C_EXTENSION"
+}

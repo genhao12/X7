@@ -1,0 +1,93 @@
+{
+  "admissible_candidates": [],
+  "domain_summaries": {
+    "extended_pv": {
+      "admissible_candidates": [],
+      "admissible_count": 0,
+      "candidate_count": 2880,
+      "clipping_report": {
+        "detected": false,
+        "plateau_count": 3,
+        "plateau_value_kw": 213.30000000000004,
+        "reason": "no_contiguous_plateau"
+      },
+      "code_hash": "788a11f40be0750c288e49364696cb8bec1bc51625ed4f18c46cae6693c9b3a8",
+      "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+      "domain": "extended_pv",
+      "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "max_workers": 8,
+      "necessary_energy_pass_count": 640
+    },
+    "legacy_extended_diagnostic": {
+      "admissible_candidates": [],
+      "admissible_count": 0,
+      "candidate_count": 2,
+      "clipping_report": {
+        "detected": false,
+        "plateau_count": 3,
+        "plateau_value_kw": 213.30000000000004,
+        "reason": "no_contiguous_plateau"
+      },
+      "code_hash": "788a11f40be0750c288e49364696cb8bec1bc51625ed4f18c46cae6693c9b3a8",
+      "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+      "domain": "legacy_extended_diagnostic",
+      "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "max_workers": 2,
+      "necessary_energy_pass_count": 2
+    },
+    "main": {
+      "admissible_candidates": [],
+      "admissible_count": 0,
+      "candidate_count": 2240,
+      "clipping_report": {
+        "detected": false,
+        "plateau_count": 3,
+        "plateau_value_kw": 213.30000000000004,
+        "reason": "no_contiguous_plateau"
+      },
+      "code_hash": "788a11f40be0750c288e49364696cb8bec1bc51625ed4f18c46cae6693c9b3a8",
+      "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+      "domain": "main",
+      "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "max_workers": 8,
+      "necessary_energy_pass_count": 0
+    }
+  },
+  "downstream_physical_inference_allowed": false,
+  "downstream_status": "frozen_capacity_admission_failed",
+  "extended_admissible_count": 0,
+  "frozen_configuration_ids": [],
+  "frozen_modules": [
+    "degradation",
+    "six_paths",
+    "Shapley",
+    "L4",
+    "economics",
+    "double_layer_uncertainty"
+  ],
+  "legacy_diagnostic_admissible_count": 0,
+  "main_admissible_count": 0,
+  "schema_version": "rectification_v2.0",
+  "uncertainty_design": {
+    "activation_probability_change_max": 0.02,
+    "consecutive_checkpoints_required": 2,
+    "endpoint_change_fraction_of_previous_ci_width_max": 0.05,
+    "inner_checkpoints": [
+      1000,
+      2000,
+      4000,
+      8000
+    ],
+    "inner_method": "season_stratified_4week_moving_block_bootstrap",
+    "minimum_inner_samples": 4000,
+    "minimum_outer_samples": 256,
+    "outer_checkpoints": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "outer_method": "nested_sobol"
+  },
+  "uncertainty_execution_status": "not_started_capacity_gate_failed"
+}

@@ -1,0 +1,328 @@
+{
+  "experiment": "gap2_l4_economic_surplus + gap1 integration",
+  "description": "富余配置(C5/C6/C7/C5_plus_diag) 3年链式 M2/M3/M3_L4 经济重评; 连续口径为主, 时刻贴现口径为鲁棒性检验; 含FC四机制与电池后验集成",
+  "results": [
+    {
+      "config": "C5_feasible",
+      "mode": "M2",
+      "lpsp_pct": 0.4135,
+      "annual_D_bat": 0.16995,
+      "annual_D_fc": 0.32791,
+      "annual_D_el": 0.11948,
+      "annual_efc": 239.2,
+      "fc_four_mech_annual_D": 0.86986,
+      "npc_cont_million_cny": 24.613109976929014,
+      "lcoe_cont_cny_kwh": 2.497690128174829,
+      "npc_timed_million_cny": 23.06311075626926,
+      "lcoe_timed_cny_kwh": 2.3403992471870385
+    },
+    {
+      "config": "C5_feasible",
+      "mode": "M3",
+      "lpsp_pct": 0.464,
+      "annual_D_bat": 0.17231,
+      "annual_D_fc": 0.36049,
+      "annual_D_el": 0.13959,
+      "annual_efc": 243.6,
+      "fc_four_mech_annual_D": 0.92611,
+      "npc_cont_million_cny": 25.361147133994344,
+      "lcoe_cont_cny_kwh": 2.5749058007532657,
+      "npc_timed_million_cny": 23.771924811275962,
+      "lcoe_timed_cny_kwh": 2.4135527769395657
+    },
+    {
+      "config": "C5_feasible",
+      "mode": "M3_L4",
+      "lpsp_pct": 0.545,
+      "annual_D_bat": 0.16761,
+      "annual_D_fc": 0.5278,
+      "annual_D_el": 0.15124,
+      "annual_efc": 234.4,
+      "fc_four_mech_annual_D": 1.42106,
+      "npc_cont_million_cny": 27.648586959428382,
+      "lcoe_cont_cny_kwh": 2.809432987445413,
+      "npc_timed_million_cny": 26.31330777084182,
+      "lcoe_timed_cny_kwh": 2.673752368201862
+    },
+    {
+      "config": "C5_feasible",
+      "mode": "M3_L4_gentle",
+      "lpsp_pct": 0.5486,
+      "annual_D_bat": 0.17107,
+      "annual_D_fc": 0.51456,
+      "annual_D_el": 0.14736,
+      "annual_efc": 241.5,
+      "fc_four_mech_annual_D": 1.38626,
+      "npc_cont_million_cny": 27.48971208394519,
+      "lcoe_cont_cny_kwh": 2.79339203179246,
+      "npc_timed_million_cny": 25.877186777164177,
+      "lcoe_timed_cny_kwh": 2.629533809877634
+    },
+    {
+      "config": "C6_compact",
+      "mode": "M2",
+      "lpsp_pct": 1.8513,
+      "annual_D_bat": 0.14324,
+      "annual_D_fc": 0.69123,
+      "annual_D_el": 0.07609,
+      "annual_efc": 189.0,
+      "fc_four_mech_annual_D": 1.72,
+      "npc_cont_million_cny": 20.667054650326826,
+      "lcoe_cont_cny_kwh": 2.1279753432421127,
+      "npc_timed_million_cny": 19.3749261489733,
+      "lcoe_timed_cny_kwh": 1.9949318284451363
+    },
+    {
+      "config": "C6_compact",
+      "mode": "M3",
+      "lpsp_pct": 2.1523,
+      "annual_D_bat": 0.14494,
+      "annual_D_fc": 0.72227,
+      "annual_D_el": 0.08262,
+      "annual_efc": 192.7,
+      "fc_four_mech_annual_D": 1.73674,
+      "npc_cont_million_cny": 21.088119164995454,
+      "lcoe_cont_cny_kwh": 2.178010174632535,
+      "npc_timed_million_cny": 19.86075200132664,
+      "lcoe_timed_cny_kwh": 2.051245992888064
+    },
+    {
+      "config": "C6_compact",
+      "mode": "M3_L4",
+      "lpsp_pct": 2.8485,
+      "annual_D_bat": 0.1394,
+      "annual_D_fc": 0.85881,
+      "annual_D_el": 0.07218,
+      "annual_efc": 182.9,
+      "fc_four_mech_annual_D": 2.09113,
+      "npc_cont_million_cny": 22.36126788589911,
+      "lcoe_cont_cny_kwh": 2.3260518074197556,
+      "npc_timed_million_cny": 21.361740752600255,
+      "lcoe_timed_cny_kwh": 2.2220795323753255
+    },
+    {
+      "config": "C7_balanced",
+      "mode": "M2",
+      "lpsp_pct": 1.6936,
+      "annual_D_bat": 0.17057,
+      "annual_D_fc": 0.5854,
+      "annual_D_el": 0.17596,
+      "annual_efc": 242.3,
+      "fc_four_mech_annual_D": 1.44309,
+      "npc_cont_million_cny": 21.7232404124793,
+      "lcoe_cont_cny_kwh": 2.2331369181073626,
+      "npc_timed_million_cny": 20.592738575354254,
+      "lcoe_timed_cny_kwh": 2.1169219639598285
+    },
+    {
+      "config": "C7_balanced",
+      "mode": "M3",
+      "lpsp_pct": 1.9068,
+      "annual_D_bat": 0.17165,
+      "annual_D_fc": 0.62031,
+      "annual_D_el": 0.18825,
+      "annual_efc": 245.0,
+      "fc_four_mech_annual_D": 1.48386,
+      "npc_cont_million_cny": 22.239199058996068,
+      "lcoe_cont_cny_kwh": 2.29114683624364,
+      "npc_timed_million_cny": 21.127990786082023,
+      "lcoe_timed_cny_kwh": 2.1766669346904903
+    },
+    {
+      "config": "C7_balanced",
+      "mode": "M3_L4",
+      "lpsp_pct": 2.4587,
+      "annual_D_bat": 0.16599,
+      "annual_D_fc": 0.75944,
+      "annual_D_el": 0.17397,
+      "annual_efc": 235.2,
+      "fc_four_mech_annual_D": 1.86275,
+      "npc_cont_million_cny": 23.497538396574505,
+      "lcoe_cont_cny_kwh": 2.4344812534112066,
+      "npc_timed_million_cny": 22.60963283902426,
+      "lcoe_timed_cny_kwh": 2.342489088182069
+    },
+    {
+      "config": "C5_plus_diag",
+      "mode": "M2",
+      "lpsp_pct": 0.4019,
+      "annual_D_bat": 0.18075,
+      "annual_D_fc": 0.27643,
+      "annual_D_el": 0.2204,
+      "annual_efc": 260.0,
+      "fc_four_mech_annual_D": 0.71409,
+      "npc_cont_million_cny": 27.04394090296164,
+      "lcoe_cont_cny_kwh": 2.744045650290929,
+      "npc_timed_million_cny": 25.383638691243505,
+      "lcoe_timed_cny_kwh": 2.575581110356417
+    },
+    {
+      "config": "C5_plus_diag",
+      "mode": "M3",
+      "lpsp_pct": 0.4348,
+      "annual_D_bat": 0.18223,
+      "annual_D_fc": 0.3134,
+      "annual_D_el": 0.25002,
+      "annual_efc": 262.8,
+      "fc_four_mech_annual_D": 0.78757,
+      "npc_cont_million_cny": 27.959599213117464,
+      "lcoe_cont_cny_kwh": 2.8378921352511846,
+      "npc_timed_million_cny": 26.532844087441344,
+      "lcoe_timed_cny_kwh": 2.6930768566335295
+    },
+    {
+      "config": "C5_plus_diag",
+      "mode": "M3_L4",
+      "lpsp_pct": 0.5223,
+      "annual_D_bat": 0.17719,
+      "annual_D_fc": 0.48488,
+      "annual_D_el": 0.29077,
+      "annual_efc": 253.0,
+      "fc_four_mech_annual_D": 1.30255,
+      "npc_cont_million_cny": 30.68274714668556,
+      "lcoe_cont_cny_kwh": 3.117029755423325,
+      "npc_timed_million_cny": 28.94151203013441,
+      "lcoe_timed_cny_kwh": 2.9401394123412445
+    }
+  ],
+  "deltas_m2_vs_m3l4": [
+    {
+      "config": "C5_feasible",
+      "lpsp_pct": 0.4135,
+      "damage_reduction_pct": -37.14,
+      "dnpc_million_cny": -3.0355,
+      "dnpc_pct": -12.3328,
+      "dnpc_timed_million_cny": -3.2502,
+      "replacements_m2": {
+        "BAT": 3,
+        "PEMFC": 6,
+        "PEMEL": 2,
+        "power_electronics": 0
+      },
+      "replacements_m3l4": {
+        "BAT": 3,
+        "PEMFC": 10,
+        "PEMEL": 3,
+        "power_electronics": 0
+      }
+    },
+    {
+      "config": "C6_compact",
+      "lpsp_pct": 1.8513,
+      "damage_reduction_pct": -17.55,
+      "dnpc_million_cny": -1.6942,
+      "dnpc_pct": -8.1977,
+      "dnpc_timed_million_cny": -1.9868,
+      "replacements_m2": {
+        "BAT": 2,
+        "PEMFC": 13,
+        "PEMEL": 1,
+        "power_electronics": 0
+      },
+      "replacements_m3l4": {
+        "BAT": 2,
+        "PEMFC": 17,
+        "PEMEL": 1,
+        "power_electronics": 0
+      }
+    },
+    {
+      "config": "C7_balanced",
+      "lpsp_pct": 1.6936,
+      "damage_reduction_pct": -17.97,
+      "dnpc_million_cny": -1.7743,
+      "dnpc_pct": -8.1677,
+      "dnpc_timed_million_cny": -2.0169,
+      "replacements_m2": {
+        "BAT": 3,
+        "PEMFC": 11,
+        "PEMEL": 3,
+        "power_electronics": 0
+      },
+      "replacements_m3l4": {
+        "BAT": 3,
+        "PEMFC": 15,
+        "PEMEL": 3,
+        "power_electronics": 0
+      }
+    },
+    {
+      "config": "C5_plus_diag",
+      "lpsp_pct": 0.4019,
+      "damage_reduction_pct": -40.62,
+      "dnpc_million_cny": -3.6388,
+      "dnpc_pct": -13.4552,
+      "dnpc_timed_million_cny": -3.5579,
+      "replacements_m2": {
+        "BAT": 3,
+        "PEMFC": 5,
+        "PEMEL": 4,
+        "power_electronics": 0
+      },
+      "replacements_m3l4": {
+        "BAT": 3,
+        "PEMFC": 9,
+        "PEMEL": 5,
+        "power_electronics": 0
+      }
+    }
+  ],
+  "fc_four_mechanism_comparison": {
+    "C5_M3_legacy_annual_D": 0.36049,
+    "C5_M3_four_mech_annual_D": 0.92611,
+    "ratio": 2.569,
+    "fc1_replay": {
+      "replay_uv_per_h": 23.5,
+      "expected_uv_per_h": 23.5,
+      "t_eol_h": 2838.0,
+      "expected_t_eol_h": 2838.0,
+      "pass": true
+    }
+  },
+  "battery_posterior_propagation": {
+    "prior": {
+      "a_d_mean": 0.0005070021967689182,
+      "a_d_ci95": [
+        0.0002677201163953676,
+        0.0007455927005434508
+      ],
+      "annual_D_mean": 0.33403363718799484,
+      "annual_D_ci95": [
+        0.212927306497087,
+        0.46523368203538734
+      ],
+      "annual_D_cv_pct": 19.877992683703315
+    },
+    "posterior": {
+      "a_d_mean": 0.0005074452112489792,
+      "a_d_ci95": [
+        0.00045663288845554324,
+        0.0005592299294826799
+      ],
+      "annual_D_mean": 0.33601727697737305,
+      "annual_D_ci95": [
+        0.2435345093777674,
+        0.4392052896336227
+      ],
+      "annual_D_cv_pct": 16.310866804242607
+    },
+    "efc_per_year": 243.6,
+    "posterior_fit": {
+      "a_qloss_mean": 0.00010170126252873217,
+      "a_qloss_sd": 5.5786676796523964e-06,
+      "a_qloss_ci95": [
+        9.098914616132024e-05,
+        0.00011260379318979601
+      ],
+      "a_d_mean": 0.000508506312643661,
+      "a_d_sd": 2.789333839826199e-05,
+      "a_d_ci95": [
+        0.00045494573080660127,
+        0.0005630189659489802
+      ],
+      "a_d_point_estimate_legacy": 0.00050714,
+      "r2": 0.878344,
+      "n_points": 15
+    }
+  }
+}

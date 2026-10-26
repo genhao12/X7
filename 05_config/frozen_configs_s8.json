@@ -1,0 +1,42 @@
+{
+  "frozen_configs": {
+    "description": "S8冻结的3个代表配置集, 覆盖从紧凑可行到充足上界",
+    "frozen_date": "2026-08-02",
+    "configs": {
+      "C6_compact": {
+        "description": "紧凑可行配置 — 最接近原目标等级的最小可行配置",
+        "capacity": {"PV_kWp": 200, "BAT_kWh": 500, "PEMFC_kW": 80, "PEMEL_kW": 80, "H2_kg": 500},
+        "h2_initial_fraction": 1.0,
+        "lpsp_pct": 0.42,
+        "curtail_pct": 3.1,
+        "fc_run_steps": 13693,
+        "el_run_steps": 2463,
+        "h2_end_init_ratio": 0.775,
+        "role": "临界可行配置, 代表最小容量需求"
+      },
+      "C7_balanced": {
+        "description": "平衡配置 — 中间过渡, 弃光率与可靠性平衡",
+        "capacity": {"PV_kWp": 250, "BAT_kWh": 500, "PEMFC_kW": 80, "PEMEL_kW": 80, "H2_kg": 500},
+        "h2_initial_fraction": 1.0,
+        "lpsp_pct": 0.45,
+        "curtail_pct": 2.9,
+        "fc_run_steps": 13918,
+        "el_run_steps": 2420,
+        "h2_end_init_ratio": 0.764,
+        "role": "平衡配置, PV增加但BAT/FC/EL不变"
+      },
+      "C5_feasible": {
+        "description": "可行性上界 — 充足容量, 用于上限对比",
+        "capacity": {"PV_kWp": 300, "BAT_kWh": 800, "PEMFC_kW": 100, "PEMEL_kW": 100, "H2_kg": 1000},
+        "h2_initial_fraction": 1.0,
+        "lpsp_pct": 0.24,
+        "curtail_pct": 1.0,
+        "fc_run_steps": 12251,
+        "el_run_steps": 691,
+        "h2_end_init_ratio": 0.885,
+        "role": "可行性上界, 充足容量对比"
+      }
+    },
+    "note": "3个配置均满足LPSP≤1%和关键负荷≥99%。C6_compact最接近原目标等级(FC 80kW接近45kW上限的1.8x)。C5_feasible为超大容量上界。后续六路径/Shapley/跨年验证基于这3个配置。"
+  }
+}

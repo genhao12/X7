@@ -1,0 +1,73 @@
+{
+  "source": {
+    "cycle_csv": "D:\\matlab\\C\\数据文献\\PEMFC真实动态工况性能衰减数据\\Time_current_reference_cycle.csv",
+    "eff_csv": "D:\\matlab\\C\\数据文献\\PEMFC真实动态工况性能衰减数据\\Efficiencies.csv",
+    "n_points_cycle": 4194,
+    "cycle_span_min": 70.0,
+    "j_min": 0.0,
+    "j_max": 1.75,
+    "j_mean": 0.4090042918454936,
+    "dt_h": 0.0002782415136338342,
+    "n_repeat": 857,
+    "n_steps_999h": 3590406
+  },
+  "measured": {
+    "eff_bol": 0.541,
+    "eff_eol": 0.451,
+    "rel_drop_pct": 16.635859519408505,
+    "D_measured": 1.6635859519408505
+  },
+  "main_j_rated_1.0": {
+    "j_rated": 1.0,
+    "p_pu_peak": 1.75,
+    "p_pu_mean": 0.4089757573377492,
+    "n_starts": 5992,
+    "D_legacy": 1.2964560275792971,
+    "D_four_mech": 3.7433171285904,
+    "eff_end_legacy": 0.47086172890763067,
+    "eff_end_four": 0.3384865433525461,
+    "rel_drop_legacy_pct": 12.964560275853856,
+    "rel_drop_four_pct": 37.433171284187424,
+    "ratio_legacy": 0.7793141232448885,
+    "ratio_four": 2.250149518408229,
+    "ratio_four_over_legacy": 2.887346002455484,
+    "mechanism_breakdown": {
+      "low_load": 0.26763593161682997,
+      "high_load": 0.07023003273069914,
+      "transient": 1.257494342653672,
+      "startstop": 2.1479568215891978
+    },
+    "pass_legacy": false,
+    "pass_four": false
+  },
+  "sens_j_rated_1.75": {
+    "j_rated": 1.75,
+    "p_pu_peak": 1.0,
+    "p_pu_mean": 0.23370043276442826,
+    "n_starts": 5992,
+    "D_legacy": 1.2544320157595998,
+    "D_four_mech": 3.2007378483673743,
+    "eff_end_legacy": 0.47313522794825125,
+    "eff_end_four": 0.36784008241350946,
+    "rel_drop_legacy_pct": 12.544320157439701,
+    "rel_drop_four_pct": 32.007378481791235,
+    "ratio_legacy": 0.7540530228066038,
+    "ratio_four": 1.9239990844074992,
+    "ratio_four_over_legacy": 2.5515434939128387,
+    "mechanism_breakdown": {
+      "low_load": 0.29129985925234364,
+      "high_load": 0.04291297172372391,
+      "transient": 0.7185681958020982,
+      "startstop": 2.1479568215891978
+    },
+    "pass_legacy": false,
+    "pass_four": false
+  },
+  "verdict": "FAIL(偏激进)",
+  "recommended_action": "Refaat 启停/瞬态系数对本机组偏激进 -> 建议在 fc_four_mechanism.py 头部将标定等级降为 C 级",
+  "notes": [
+    "legacy ±20% 判据预期 FAIL: 999h为加速动态耐久试验(D≈1.66, ~600h到EOL), legacy标定目标为10y@500h/yr(~5000h), 属regime差异非模型缺陷。",
+    "主口径 J_rated=1.0 A/cm2 (FC1锚定); 敏感性 J_rated=1.75 (周期峰值归一化)。",
+    "效率映射 eff = eff_bol*(1-0.10*D), 与 S4 eol_eff_drop=0.10 及 fc_four_mechanism VOLTAGE_LOSS_EOL=0.10 一致。"
+  ]
+}

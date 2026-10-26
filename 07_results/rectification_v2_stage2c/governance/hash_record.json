@@ -1,0 +1,69 @@
+{
+  "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+  "extended_hashes": {
+    "annual_input_contract": "67eba4edb20b57a3f1106712bebe5f8fc13ea9df226a48f6e0cedd8bccfa9d9c",
+    "capacity_gate_config": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+    "closed_loop_lite": "94cc05ddc56174447d3665d5ad89c7b5601752d70f56cefc026d5b884e50a05e",
+    "economic_params": "b1d67517dd2acb79e57a9a6ec3110c0e642a0f990afa91495af7828ae8bd603a",
+    "efc_cycle_model": "2563e3cb9487d8212cd8f0003a225164f7a0b9a28be668c3b2ecf8c55eec069b",
+    "ems_stage2b": "93ef50305e8032a5280378c79acd5ecb4432dedea125b3302d58d1cca9d4db8a",
+    "frozen_params": "db04bca0208a5ec888e6b6af6e15869aea76ad73932253d1dc742294966d8dfd",
+    "input_csv": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+    "mvp_c1_config": "50c6ab1c129519f626891899ce2c12075f4ebff45cf7ac11f888c866ab4cc5f6",
+    "npc_lite": "b8e7dd97db927cf610364b63c27eb7cdea3d518f41ea589a624e27225917f2d3",
+    "run_cost_sensitivity": "78b34459e84d8fb864b33f5c922fe97c098fe96f5abbd2dcb2a684f0218632ea",
+    "run_cross_device_paths": "2bf1d5fb38bc80d44a391edcfb1c468a18af9f0d401d901cb60b6de7724815f8",
+    "run_cycle_iteration_trajectory": "e6a12d8133999ee3073b500d12d9d475228ba16830843cd50a4556a93e96c5b3",
+    "run_degradation_uncertainty": "171ab8ccca23267201e1cd428f09dab77169111a63155397701ebf87e7ac9bad",
+    "run_double_layer_propagation": "ae40e3ded94d902a60a95299764c0f791ab5d71c36b467a5625276d9bec60cbb",
+    "run_efc_vs_proxy_comparison": "e3e4e7b3afdb3e377690e19f96e050e18ed7592ff897a06a0a856d1947a8b49f",
+    "run_imputation_sensitivity": "22aa1620462bd32f774c6d805c7dbbcd1e29748ea0068274ae50e02be7df0a39",
+    "run_l4_ablation": "bbda9779e79b75df6658bca989d77dc98419ebd92502d73bde685678934b7a20",
+    "run_stage3_full_analysis": "7a39c63e99b0b75e6bf802f4deab4fdad800d3745b97e2c098decba9428089c6",
+    "run_stage3_paper_assets": "d1a931e5bb5751b5f79436f628ec4ae9bc408aded16c393a6ab6992b635c8929",
+    "stage2c_config": "33ad8453ea58ed1652f81c44480dd430018fdb1f0291dbe565483cc49c474670",
+    "fc_el_model_sanity": "4459a395633e08b58d89737e4aad2707237b3b4055fedf1e8669a42a78465258",
+    "double_layer_yearly_window_check": "c77c3083620701ae3aa643d1cfe8880e1dd146e77ec3a82b7a33ad96a330d0ae",
+    "feedback_ablation": "58362947b69886a32339312f3b46cf4eb0146fa8acb3cda17e500e73ab775ed5",
+    "joint_sensitivity": "d5ad0db5ff453ceaed479ddb58200f51085c363e193d9a492d6bf02961c6e0f9",
+    "fc_el_param_posterior": "a146ceb22d4e2c61d95e6142993743987f9d3771e657db68bc3fd5f8732e487d",
+    "stage3_feedback_modes": "9a961ed9741ebef857bf82b66bf61421d9ad529396a370dc86118f08184cb364",
+    "econ_p2_schedule": "f9e5e2303cfdb6c56369eef460072329b1ccf88f1add5dcf58bd7a51029edf02",
+    "stage3_feedback_modes_3strategy": "324f23a6d72057fa67a4f7c3266d70031ecb30a8d9f5998c0c2ce3ffe9b5b008",
+    "double_layer_3yr": "a087f8dde82e3dd72356e94b88aa0321bfbe54255215b22fdba58b0a8e17e506",
+    "fc_el_independent_crosscheck": "8485a32c3b56102abacd855adc4a9402a386c8fd2f522763d3c14b77b27836af",
+    "site_transfer_check": "31eb51d02530a3aacbe427618a711b8ee20622ebd748b1f0cf4eb8a9378f0ac0",
+    "strategy_ablation": "1bb864adfc2464acf7a161ddb5e8420fe135d128b650acc3a44d4461f8645d86",
+    "weather_transfer_90": "c32179c797b15da482616dd1547e12f7e18bb5f0293e4e1daf2a668dcc7cc840",
+    "el_condition_mapping": "7267340b3901f8c9d93775901df4e1a5e68cc22225949c9b50feaa2349d8a1ec",
+    "te_significance": "f646e996fe83b552459342338cd8159b6c3306eeecc5ecafac44e7fd593e80bb",
+    "representative_coverage": "2491c113a57442ef8a32c1f6d10c3e24ed0d14514b1a2c63a95cf51003c08740",
+    "sobol_convergence": "2945b28e9fea6b37b9711fe744316d30abc5758110a59ce8911ac44e501dc763",
+    "te_significance_v2": "8b7cd8f85a16b40e2dc8ac96586f6c4c423a07754e609fd1e45840e97fcfab62"
+  },
+  "extended_hashes_note": "covers EFC code, Stage2c config, degradation/economic params, and all Stage3 analysis scripts",
+  "generated_at": "2026-08-06T20:23:44",
+  "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+  "note": "contract hashes identical across input_contract / ledger Table0 / downstream_gate.json / run_manifest.json",
+  "round10_extension": {
+    "extended_coverage": true,
+    "verified_at": "2026-08-04T17:44:15"
+  },
+  "round14_rerun": {
+    "date": "2026-08-04",
+    "note": "economic params + npc_lite + double_layer + uncertainty hashes updated after cost-accounting fix"
+  },
+  "round16_cost_boundary": {
+    "date": "2026-08-05",
+    "note": "literature_source 已更新为公开替代（CRU/HDSAM/BNEF → IRENA 2020/H2A xlsm/NREL ATB），数值不变（65 项 CAPEX 偏差 0）；哈希随内容更新"
+  },
+  "round17_imputation_sensitivity": {
+    "date": "2026-08-05"
+  },
+  "round18_cycle_trajectory": {
+    "date": "2026-08-05"
+  },
+  "schema_version": "rectification_v2_stage2c.hash_record.5",
+  "script_hash": "42c21ad0a5e6f8451956da552455bf580305709b3ccad85c62c44c00b0b7cb11",
+  "source": "07_results/rectification_v2/input_contract/{input_audit,run_manifest}.json"
+}

@@ -1,0 +1,314 @@
+{
+  "artifacts": [
+    {
+      "hash_in": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "id": "verified_admissions",
+      "mtime": "2026-08-03T16:00:21",
+      "path": "07_results/rectification_v2_stage2c/search/verified_admissions.json",
+      "round14_rerun": true,
+      "round16_rerun": true,
+      "script": "rectification_v2_stage2c adaptive search",
+      "sha256": "c7526607d2a543bf7eecd1821aec892d9350fea9d9d9f199d877d3ddf79152d9",
+      "status": "verified_149_admitted_5_frozen"
+    },
+    {
+      "hash_in": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "id": "degradation_summary",
+      "mtime": "2026-08-05T15:51:12",
+      "path": "07_results/rectification_v2_stage2c/stage3/degradation_summary.json",
+      "round14_rerun": true,
+      "round16_rerun": true,
+      "script": "run_stage3 (degradation)",
+      "sha256": "688413754a3633bd1031f85e49dc185278b7b703ecc60d528ccb19d6c061b823",
+      "status": "landed (method-layer; degradation_execution_started=False)"
+    },
+    {
+      "hash_in": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "id": "uncertainty_propagation",
+      "mtime": "2026-08-05T15:58:33",
+      "path": "07_results/rectification_v2_stage2c/stage3/uncertainty_propagation.json",
+      "round14_rerun": true,
+      "round16_rerun": true,
+      "script": "run_degradation_uncertainty.py",
+      "sha256": "3f2525162b25f735f7ec65f94c832c673a2d12ff7f8cea0b274f4bf25a849d95",
+      "status": "single_layer_LHS_128_method_pass"
+    },
+    {
+      "hash_in": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "id": "cost_sensitivity",
+      "mtime": "2026-08-05T15:52:21",
+      "path": "07_results/rectification_v2_stage2c/stage3/cost_sensitivity.json",
+      "round14_rerun": true,
+      "round16_rerun": true,
+      "script": "run_cost_sensitivity.py",
+      "sha256": "31ead5bee1880bb7a3aa83a3a47301a923167e58d1f9ff9b105d824e6a8e6012",
+      "status": "5x16=80 groups; economics_allowed=False"
+    },
+    {
+      "hash_in": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "id": "cross_device_paths",
+      "mtime": "2026-08-04T15:50:57",
+      "path": "07_results/rectification_v2_stage2c/stage3/cross_device_paths.json",
+      "round14_rerun": true,
+      "round16_rerun": true,
+      "script": "run_cross_device_paths.py",
+      "sha256": "cea090f6e2c054f90dea7201c5c651f91e4cc34008519e8678db8dbd1e0983a1",
+      "status": "6 paths all non-zero; units not unified; no magnitude-leading claim; shapley_allowed=False"
+    },
+    {
+      "hash_in": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "id": "l4_ablation",
+      "mtime": "2026-08-04T15:52:43",
+      "path": "07_results/rectification_v2_stage2c/stage3/l4_ablation.json",
+      "round14_rerun": true,
+      "round16_rerun": true,
+      "script": "run_l4_ablation.py",
+      "sha256": "ac02f823822c0ad529fafb4fc3d8c3ab7534649e99b667e569df560862e44e42",
+      "status": "negative result 4/5 configs; percentages from unrounded values; l4_allowed=False"
+    },
+    {
+      "hash_in": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+      "id": "double_layer_propagation",
+      "mtime": "2026-08-04T21:01:35",
+      "path": "07_results/rectification_v2_stage2c/stage3/double_layer_propagation.json",
+      "round14_rerun": true,
+      "round16_rerun": true,
+      "script": "run_double_layer_propagation.py",
+      "sha256": "1a25f874a74b56fa9068d0a0a0bfe9860d858a91c83fb763f22210921761914f",
+      "status": "PROTOTYPE single-year 2017; 32x25=800; min_inner_samples=4000 NOT met; double_layer_uncertainty_allowed=False"
+    },
+    {
+      "mtime": "2026-08-05T16:33:13",
+      "name": "imputation_sensitivity",
+      "path": "07_results/rectification_v2_stage2c/stage3/imputation_sensitivity.json",
+      "round17": true,
+      "sha256": "3b4049fe52e68a15727d08120f6417cbd5f51362c2e90ebdf01b8c14819c6c1a"
+    },
+    {
+      "mtime": "2026-08-05T16:37:20",
+      "name": "cycle_iteration_trajectory",
+      "path": "07_results/rectification_v2_stage2c/stage3/cycle_iteration_trajectory.json",
+      "round18": true,
+      "sha256": "047c9aceeb1a2cc25e076606827be7857d43e7afab23293fa99825060b98fc58"
+    },
+    {
+      "id": "fc_el_model_sanity",
+      "path": "07_results/rectification_v2_stage2c/stage3/fc_el_model_sanity.json",
+      "hash": "4459a395633e08b58d89737e4aad2707237b3b4055fedf1e8669a42a78465258",
+      "mtime": "2026-08-05T20:56:57",
+      "note": "taskA: FC1 internal -0.15%; FC2 ripple ratio 1.92x; dynamic 1.75-8.74 %/1000h; EL 1.17-1.61 %/yr within Buttler2018 range"
+    },
+    {
+      "id": "double_layer_yearly_window_check",
+      "path": "07_results/rectification_v2_stage2c/stage3/double_layer_yearly_window_check.json",
+      "hash": "c77c3083620701ae3aa643d1cfe8880e1dd146e77ec3a82b7a33ad96a330d0ae",
+      "mtime": "2026-08-05T21:08:45",
+      "note": "taskD-light: inner-layer yearly window sensitivity; max inter-year dev 6.235%; supports limitation sentence (2017 single-year only)"
+    },
+    {
+      "id": "feedback_ablation",
+      "path": "07_results/rectification_v2_stage2c/stage3/feedback_ablation.json",
+      "hash": "58362947b69886a32339312f3b46cf4eb0146fa8acb3cda17e500e73ab775ed5",
+      "mtime": "2026-08-06T09:26:41",
+      "note": "round32 task feedback_ablation"
+    },
+    {
+      "id": "joint_sensitivity",
+      "path": "07_results/rectification_v2_stage2c/stage3/joint_sensitivity.json",
+      "hash": "d5ad0db5ff453ceaed479ddb58200f51085c363e193d9a492d6bf02961c6e0f9",
+      "mtime": "2026-08-06T09:26:41",
+      "note": "round32 task joint_sensitivity"
+    },
+    {
+      "id": "fc_el_param_posterior",
+      "path": "07_results/rectification_v2_stage2c/stage3/fc_el_param_posterior.json",
+      "hash": "a146ceb22d4e2c61d95e6142993743987f9d3771e657db68bc3fd5f8732e487d",
+      "mtime": "2026-08-06T09:27:29",
+      "note": "round32 task T3: FC/EL param posterior band & error propagation"
+    },
+    {
+      "id": "stage3_feedback_modes",
+      "path": "07_results/rectification_v2_stage2c/stage3/stage3_feedback_modes.json",
+      "hash": "9a961ed9741ebef857bf82b66bf61421d9ad529396a370dc86118f08184cb364",
+      "mtime": "2026-08-06T09:45:45",
+      "note": "round32 P1a: Stage2c 链式反馈模式主仿真（open_loop/bat_only/full, raw/cap 双报告）; open_loop 与 degradation_summary 15/15 一致"
+    },
+    {
+      "id": "econ_p2_schedule",
+      "path": "07_results/rectification_v2_stage2c/stage3/econ_p2_schedule.json",
+      "hash": "f9e5e2303cfdb6c56369eef460072329b1ccf88f1add5dcf58bd7a51029edf02",
+      "mtime": "2026-08-06T09:51:52",
+      "note": "round32 P2-3: M4 经济链 EOL 周级替换计划复现验证，5 配置 NPC/LCOE 偏差 0.0000%（已周级，L16 为旧 C1 历史）"
+    },
+    {
+      "id": "stage3_feedback_modes_3strategy",
+      "path": "07_results/rectification_v2_stage2c/stage3/stage3_feedback_modes_3strategy.json",
+      "hash": "324f23a6d72057fa67a4f7c3266d70031ecb30a8d9f5998c0c2ce3ffe9b5b008",
+      "mtime": "2026-08-06T09:58:20",
+      "note": "round32 P2-1: 策略×反馈交互矩阵（3 策略×3 模式×cap/raw）；raw 全为正（策略不预设耦合方向）；cap 截断已标注"
+    },
+    {
+      "id": "double_layer_3yr",
+      "path": "07_results/rectification_v2_stage2c/stage3/double_layer_3yr.json",
+      "hash": "a087f8dde82e3dd72356e94b88aa0321bfbe54255215b22fdba58b0a8e17e506",
+      "mtime": "2026-08-06T15:40:19",
+      "note": "round32 P2-2: 三年内层全量传播（n=500/年×3=1500, seed 42/43/44, 外层 Sobol 256）；FC 认知占比单年77%→三年7-12%（-66pp 窗口效应，归因实验证实非样本量效应）；closure 全部 <2.5e-16"
+    },
+    {
+      "id": "fc_el_independent_crosscheck",
+      "path": "07_results/rectification_v2_stage2c/stage3/fc_el_independent_crosscheck.json",
+      "hash": "8485a32c3b56102abacd855adc4a9402a386c8fd2f522763d3c14b77b27836af",
+      "mtime": "2026-08-06T16:14:12",
+      "note": "P3-2: FC/EL 独立实现交叉验证（不调 hp_fc_lite/hp_el_lite）：FC1 独立重算 143k 点偏差 -0.15%（量级一致）；FC2 纹波比 1.93x；PEMEL UF15/UF19 CP 独立拟合年退化 130/146%（实验室加速 vs 系统级模型 1.17-1.61%/yr，方向一致量级差 10x+，不作外推）"
+    },
+    {
+      "id": "site_transfer_check",
+      "path": "07_results/rectification_v2_stage2c/stage3/site_transfer_check.json",
+      "hash": "31eb51d02530a3aacbe427618a711b8ee20622ebd748b1f0cf4eb8a9378f0ac0",
+      "mtime": "2026-08-06T16:31:12",
+      "note": "P3-1: ComStock 多站点迁移验证（UCSD/CA_office/CA_restaurant × 5 配置，只替换负荷形状同均值 PV 复用）：3 站点×5 配置 TE 全为正 0.65-1.19%（跨场景方向稳健，BAT 主导），绝对损伤不跨站比较（L12 落实）"
+    },
+    {
+      "id": "strategy_ablation",
+      "path": "07_results/rectification_v2_stage2c/stage3/strategy_ablation.json",
+      "hash": "1bb864adfc2464acf7a161ddb5e8420fe135d128b650acc3a44d4461f8645d86",
+      "mtime": "2026-08-06T19:47:56",
+      "note": "4-strategy-ablation: degradation_aware added + 3 strategies x 5 configs (raw): TE all positive (bf 0.82-1.13 / hf 1.88-3.84 / da 0.82-1.13); main path alpha1 sign consistent across strategies (all +), secondary paths strategy-sensitive; hydrogen_first lowers LPSP (0.273 to 0.092) and curtailment (0.085 to 0.058)"
+    },
+    {
+      "id": "weather_transfer_90",
+      "path": "07_results/rectification_v2_stage2c/stage3/weather_transfer_90.json",
+      "hash": "c32179c797b15da482616dd1547e12f7e18bb5f0293e4e1daf2a668dcc7cc840",
+      "mtime": "2026-08-06T20:02:24",
+      "note": "2-weather-transfer-90: NASA 3 cities (Miami/Phoenix/Seattle) 2018-2020 GHI-to-PV x 3 loads x 5 configs x open/closed = 90 runs; TE sign rate 100% (45/45 positive), mean +0.81%, p90 CI [0.472,1.101] (not crossing 0) -> PASS full multi-site validation; device BAT +1.20% dominant"
+    },
+    {
+      "id": "el_condition_mapping",
+      "path": "07_results/rectification_v2_stage2c/stage3/el_condition_mapping.json",
+      "hash": "7267340b3901f8c9d93775901df4e1a5e68cc22225949c9b50feaa2349d8a1ec",
+      "mtime": "2026-08-06T20:04:22",
+      "note": "3-EL-condition-mapping: 4-component damage (steady 65-91% dominant / ramp 8-33% / temp <6% / startstop ~0); load-efficiency poly2 (-5.93,22.60,41.33); BOT/EOT dV 0.5-4.0%; relative damage index 0.595-1.535 (median-normalized); NO absolute EL lifetime claims (L23/L27 continued)"
+    },
+    {
+      "id": "te_significance",
+      "path": "07_results/rectification_v2_stage2c/stage3/te_significance.json",
+      "hash": "f646e996fe83b552459342338cd8159b6c3306eeecc5ecafac44e7fd593e80bb",
+      "mtime": "2026-08-06T20:13:46",
+      "note": "task2-TE-significance: paired diff + Bootstrap 10000 90% CI all exclude 0 (5/5); |TE| > solver-tolerance bound (0.1%) by 8-11x; param-bound scan CI contains 0 (e.g. compact [-1.30,+7.89]%) -> main conclusion upgraded to 'feedback direction stable, magnitude limited, config-dependent'"
+    },
+    {
+      "id": "representative_coverage",
+      "path": "07_results/rectification_v2_stage2c/stage3/representative_coverage.json",
+      "hash": "2491c113a57442ef8a32c1f6d10c3e24ed0d14514b1a2c63a95cf51003c08740",
+      "mtime": "2026-08-06T20:23:44",
+      "note": "task3-representative-coverage: 1792->149->5 selection documented (13 admission checks, capacity ranges); 149 TE (D=0.3 preset single-year) 2.404-2.775 median 2.599; 5 reps 2.590-2.655 cover median & p10-p90 but NOT extremes (min 2.404/max 2.775) -> honest gap reported"
+    },
+    {
+      "id": "sobol_convergence",
+      "path": "07_results/rectification_v2_stage2c/stage3/sobol_convergence.json",
+      "hash": "2945b28e9fea6b37b9711fe744316d30abc5758110a59ce8911ac44e501dc763",
+      "mtime": "2026-08-07T00:56:31",
+      "note": "review8: Sobol outer convergence 128/256/512 -> frac_epistemic stable (bat 0.9987->0.9986, fc 0.7683, el 0.8655; adjacent delta <0.01% <5% threshold) PASS"
+    },
+    {
+      "id": "te_significance_v2",
+      "path": "07_results/rectification_v2_stage2c/stage3/te_significance_v2.json",
+      "hash": "8b7cd8f85a16b40e2dc8ac96586f6c4c423a07754e609fd1e45840e97fcfab62",
+      "mtime": "2026-08-07T00:56:31",
+      "note": "review4: weekly-block Bootstrap 10000 (168-step weeks, 625 weeks over 3yr); all 5 configs 90/95% CI exclude 0; Cohen d 1.24-2.29 (large); conclusion limited to baseline-scenario direction stable"
+    },
+    {
+      "id": "pv_reconstruction_validation",
+      "path": "07_results/rectification_v2_stage2c/stage3/pv_reconstruction_validation.json",
+      "hash": "5a6c2e916878ceba9c44f8a77c02fd6016406a972f1b3ea968c01b81e02cbbb6",
+      "mtime": "2026-08-07T10:10:34",
+      "note": "review3: UCSD 实测 PV 爬坡统计(std=0.0571,>10kW 19.5%) + NASA 3 城市 15min 重构验证(能量守恒 mean 0.06-0.22%, 爬坡 0.065-0.076)"
+    }
+  ],
+  "bat_cycle_model": "efc",
+  "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+  "cost_sensitivity_groups": 80,
+  "data_points_per_year": {
+    "2016": 35136,
+    "2017": 35040,
+    "2018": 35040,
+    "note": "2016 leap year (366x96=35136); verified in input_audit.json"
+  },
+  "generated_at": "2026-08-06T20:23:44",
+  "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+  "pipeline_status": {
+    "bat_efc": "completed",
+    "eol_economics_rerun": true,
+    "nested_double_layer": "completed",
+    "paper_assets_regenerated": true,
+    "six_path_units_unified": true,
+    "updated_at": "2026-08-04T16:40:00"
+  },
+  "representatives": 5,
+  "round14_rerun": {
+    "date": "2026-08-04",
+    "reason": "cost accounting fix: power_electronics excludes H2_tank; device unit costs exclude installation; learning-curve checkpoints added"
+  },
+  "round16_cost_boundary": {
+    "date": "2026-08-05",
+    "reason": "cost boundary completion (gas conditioning 12%, H2 compression 15%, system BOP 10%, tax 0)"
+  },
+  "round17_imputation_sensitivity": {
+    "date": "2026-08-05",
+    "note": "165 load NaN (2016=101/2017=62/2018=2); methods ffill/linear/seasonal; impact <0.02%"
+  },
+  "round18_cycle_trajectory": {
+    "date": "2026-08-05",
+    "note": "3-year block fixed-point iteration: 5 reps converge in 3-4 iters to closure=0"
+  },
+  "round4_consistency_gate": {
+    "passed": true,
+    "verified_at": "2026-08-04T14:50:38"
+  },
+  "round5_consistency_gate": {
+    "allowed_now": "planning + TDD case authoring only; result recomputation NOT started",
+    "gate_status_unchanged": {
+      "degradation_execution_started": false,
+      "double_layer_uncertainty_allowed": false,
+      "economics_allowed": false,
+      "gate_passed": false,
+      "l4_allowed": false,
+      "legacy_results_paper_citable": false,
+      "shapley_allowed": false,
+      "six_path_execution_started": false,
+      "stage3_basic_degradation_allowed_plan_only": true
+    },
+    "l4_percent_precision_noted": true,
+    "magnitude_leading_claims_removed": true,
+    "passed": true,
+    "verified_at": "2026-08-04T15:12:00"
+  },
+  "schema_version": "rectification_v2_stage2c.run_manifest.5",
+  "script_hash": "42c21ad0a5e6f8451956da552455bf580305709b3ccad85c62c44c00b0b7cb11",
+  "tests": {
+    "breakdown_cases": {
+      "efc": 13,
+      "special": 40,
+      "stage2b": 50,
+      "stage3": 12,
+      "unit": 34
+    },
+    "breakdown_functions": {
+      "efc": 13,
+      "special": 40,
+      "stage2b": 43,
+      "stage3": 12,
+      "unit": 32
+    },
+    "cases": 149,
+    "functions": 140,
+    "note": "127 fn -> 149 cases after EFC TDD (13 new)"
+  },
+  "upstream_gate": {
+    "main_domain_failed": true,
+    "note": "main_domain = Stage0-2 rectification_v2 主域 PV 160-320 kWp: 0 admission (2016-09 seasonal storage gap); stage2c = 扩展域 350-500 kWp: 149 admitted / 5 frozen representatives. These are two separate facts and must not be merged.",
+    "stage2c_admission_passed": true
+  },
+  "round25_taskA_fc_el_sanity": true,
+  "round25_taskD_yearly_window": true
+}

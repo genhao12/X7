@@ -1,0 +1,12 @@
+{
+  "schema_version": "rectification_v2_stage2b.history_invalidation.1",
+  "status": "historical_invalid",
+  "paper_citable": false,
+  "reason": "ems_minimum_run_reserve_and_dump_headroom_defect",
+  "details": [
+    "FC and EL could consume fuel or tank headroom reserved for later committed steps",
+    "battery absorption headroom did not subtract same-step charging power",
+    "the resulting search had zero converged candidates passing every state-machine check"
+  ],
+  "superseded_code_hash": "0d5f3d78c2caf61714b721abbfbc9a53f2a4eb70f76355d35691a24e3abf5b5f"
+}

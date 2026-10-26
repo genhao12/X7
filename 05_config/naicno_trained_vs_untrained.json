@@ -1,0 +1,62 @@
+{
+  "i_lim_ref": {
+    "untrained": 1.0,
+    "trained": 1.0389172510131293,
+    "rel_diff_pct": 3.9
+  },
+  "i0_a_ref": {
+    "untrained": 9.999999999999997e-06,
+    "trained": 1.1594543838442923e-05,
+    "rel_diff_pct": 15.9
+  },
+  "i0_c_ref": {
+    "untrained": 0.0010000000000000002,
+    "trained": 0.001087911076694174,
+    "rel_diff_pct": 8.8
+  },
+  "R_ohm_ref": {
+    "untrained": 0.10000000000000002,
+    "trained": 0.11775639141021621,
+    "rel_diff_pct": 17.8
+  },
+  "alpha_a": {
+    "untrained": 0.6499999999999999,
+    "trained": 0.6426368446784498,
+    "rel_diff_pct": 1.1
+  },
+  "alpha_c": {
+    "untrained": 0.6499999999999999,
+    "trained": 0.6442310261164454,
+    "rel_diff_pct": 0.9
+  },
+  "corr_a": {
+    "untrained": 0.01,
+    "trained": 0.06404411792755127,
+    "rel_diff_pct": 540.4
+  },
+  "corr_b": {
+    "untrained": 1.0,
+    "trained": 0.9540091156959534,
+    "rel_diff_pct": 4.6
+  },
+  "corr_c": {
+    "untrained": 1.0,
+    "trained": 0.958186686038971,
+    "rel_diff_pct": 4.2
+  },
+  "corr_d": {
+    "untrained": 0.0,
+    "trained": 0.05769236013293266,
+    "rel_diff_pct": Infinity
+  },
+  "corr_p": {
+    "untrained": 0.0,
+    "trained": 0.3201889991760254,
+    "rel_diff_pct": Infinity
+  },
+  "corr_t": {
+    "untrained": 0.0,
+    "trained": 0.19502893090248108,
+    "rel_diff_pct": Infinity
+  }
+}

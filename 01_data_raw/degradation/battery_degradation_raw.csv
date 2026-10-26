@@ -1,0 +1,1 @@
+﻿record_id,timestamp_or_cycle,cell_id,soc,dod,c_rate,temperature_c,capacity_ah,internal_resistance_mohm,source_ref,quality_flag

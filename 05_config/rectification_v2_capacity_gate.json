@@ -1,0 +1,77 @@
+{
+  "schema_version": "rectification_v2.0",
+  "status": "STAGE_0_2_ONLY",
+  "pv_source": {
+    "provider": "historical_power_linear_scale",
+    "reference_capacity_kw": 233.0,
+    "raw_column": "p_pv_available_reconstructed_nonnegative_kW",
+    "load_column": "p_building_load_reconstructed_kW",
+    "candidate_formula": "max(0,P_raw)*P_nom/233",
+    "converter_nominal_rule": "equal_candidate_pv_nominal",
+    "temperature_correction": "not_applied_available_power_input_no_irradiance_or_module_temperature",
+    "reject_amplification_when_clipping_detected": true
+  },
+  "main_domain": {
+    "PV_kWp": [90, 100, 110, 120, 130, 140, 150],
+    "BAT_kWh": [90, 120, 150, 180],
+    "PEMFC_kW": [30, 35, 40, 45],
+    "PEMEL_kW": [25, 30, 35, 40, 45],
+    "H2_kg": [10, 20, 30, 40]
+  },
+  "extended_pv_domain": {
+    "PV_kWp": [160, 180, 200, 220, 240, 260, 280, 300, 320],
+    "BAT_kWh": [90, 120, 150, 180],
+    "PEMFC_kW": [30, 35, 40, 45],
+    "PEMEL_kW": [25, 30, 35, 40, 45],
+    "H2_kg": [10, 20, 30, 40]
+  },
+  "legacy_extended_diagnostic": [
+    {"name": "C5_H2_500", "PV_kWp": 300, "BAT_kWh": 800, "PEMFC_kW": 100, "PEMEL_kW": 100, "H2_kg": 500},
+    {"name": "C5_H2_1000", "PV_kWp": 300, "BAT_kWh": 800, "PEMFC_kW": 100, "PEMEL_kW": 100, "H2_kg": 1000}
+  ],
+  "screening": {
+    "necessary_pv_energy_fraction_of_load": 0.99,
+    "coarse_year": 2017,
+    "coarse_initial_soc": [0.2, 0.6, 0.95],
+    "coarse_initial_h2_fraction": [0.2, 0.6, 1.0],
+    "coarse_screen_is_non_eliminating": true
+  },
+  "cycle": {
+    "years": [2016, 2017, 2018],
+    "state_tolerance": 0.001,
+    "max_repetitions": 50,
+    "carry_state_across_year_boundaries": true
+  },
+  "admission": {
+    "lpsp_max_each_year": 0.01,
+    "lpsp_max_three_year_total": 0.01,
+    "critical_load_satisfaction_min_each_year": 0.99,
+    "critical_load_definition": "all_load_until_separate_series_exists",
+    "three_year_soc_closure_max": 0.05,
+    "three_year_h2_closure_max": 0.05,
+    "single_year_state_closure_required": false,
+    "power_residual_fraction_max": 1e-6,
+    "h2_residual_fraction_max": 1e-6
+  },
+  "parallel": {
+    "max_workers": 8,
+    "reserve_logical_cores": 1,
+    "atomic_checkpoint_each_candidate": true
+  },
+  "uncertainty": {
+    "outer_method": "nested_sobol",
+    "outer_checkpoints": [64, 128, 256, 512],
+    "inner_method": "season_stratified_4week_moving_block_bootstrap",
+    "inner_checkpoints": [1000, 2000, 4000, 8000],
+    "minimum_outer_samples": 256,
+    "minimum_inner_samples": 4000,
+    "endpoint_change_fraction_of_previous_ci_width_max": 0.05,
+    "activation_probability_change_max": 0.02,
+    "consecutive_checkpoints_required": 2
+  },
+  "downstream_gate": {
+    "freeze_until_capacity_admission": true,
+    "freeze_target_min": 3,
+    "freeze_target_max": 5
+  }
+}

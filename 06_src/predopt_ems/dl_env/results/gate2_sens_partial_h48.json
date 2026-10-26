@@ -1,0 +1,47 @@
+{
+ "H": 192,
+ "tag": "h48",
+ "n_opt": 2688,
+ "n_infeas": 0,
+ "n_tl": 4,
+ "solve_med_s": 3.405873656272888,
+ "solve_max_s": 67.20531964302063,
+ "lpsp": 2.0790131257917275e-07,
+ "exact_damage": {
+  "bat_D": 0.012603760111203222,
+  "fc_D": 0.01809686471385922,
+  "el_D": 0.007214821130154062
+ },
+ "lcoe_cny_per_kwh": 3.8517223380373653,
+ "npc_million_cny": 35.70383065156025,
+ "replacement_schedule": {
+  "PEMFC": [
+   4.25,
+   8.5,
+   12.75,
+   17.0
+  ],
+  "BAT": [
+   6.08,
+   12.17,
+   18.26
+  ]
+ },
+ "annual_damage": {
+  "bat": 0.16435,
+  "fc": 0.23532,
+  "el": 0.09436
+ },
+ "seasons_covered": [
+  "winter",
+  "spring",
+  "summer",
+  "autumn"
+ ],
+ "fc_run_steps": 359,
+ "el_run_steps": 416,
+ "soc_range": [
+  0.1558985700144118,
+  0.95
+ ]
+}

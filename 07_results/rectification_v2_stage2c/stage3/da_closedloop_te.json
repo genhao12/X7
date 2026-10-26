@@ -1,0 +1,168 @@
+{
+  "_method": {
+    "note": "degradation_aware 闭环感知消融：三年链式每年把当前累积 D 传入 EMS（degradation 参数），调度命令随 D 变化；raw 口径；与主链 battery_first（stage3_feedback_modes.json）并列对比",
+    "reference_bf_te": {
+      "compact": 1.127,
+      "balanced": 1.044,
+      "hydrogen_dominant": 1.032,
+      "battery_dominant": 0.819,
+      "critical": 0.959
+    },
+    "conclusion": "degradation_aware 闭环感知（EMS 接入累积 D 后按退化调整优先级，cap 口径，单次前向）已完成 5 配置；其 TE（1.170%~96.391%）度量的是『调度感知退化』效应，与主链 battery_first TE（+0.82~+1.13%，stage3_feedback_modes.json，模型层退化反馈）语义不同，不作并列主结论；本实验的直接证据是各配置 ops（FC/EL 运行小时、启停、BAT 放电量随 D 变化）——证明 EMS 真正接入退化状态后调度命令改变（策略消融有效）；主消融（run_strategy_ablation.py）中 da≡bf 的原因已澄清：该链路未把 D 传入 EMS（EMS 未感知退化时等价是设计使然）。注意：本实验为单次前向（D 逐年变化无不动点），未做周期闭合迭代，SOC/H₂ 首尾偏差见各配置 soc_delta_final/h2_delta_final，仅作方法演示，不作论文结果表。"
+  },
+  "compact": {
+    "te_closedloop": 1.17,
+    "te_devices": {
+      "bat": 1.456,
+      "fc": 0.683,
+      "el": 1.252
+    },
+    "damage_open_avg": {
+      "bat": 0.12678,
+      "fc": 0.10387,
+      "el": 0.17276
+    },
+    "damage_full_avg": {
+      "bat": 0.12863,
+      "fc": 0.10458,
+      "el": 0.17492
+    },
+    "ops": {
+      "fc_run_h": 1978.8,
+      "el_run_h": 2827.5,
+      "fc_starts": 208,
+      "el_starts": 890,
+      "bat_discharge_kWh": 787605.8,
+      "h2_final_kg": 3478.5,
+      "h2_min_kg": 588.4
+    },
+    "converged": false,
+    "iterations": 1,
+    "soc_delta_final": 0.243401,
+    "h2_delta_final": 0.563288
+  },
+  "balanced": {
+    "te_closedloop": 31.939,
+    "te_devices": {
+      "bat": -9.429,
+      "fc": 110.977,
+      "el": 25.108
+    },
+    "damage_open_avg": {
+      "bat": 0.13259,
+      "fc": 0.08284,
+      "el": 0.15555
+    },
+    "damage_full_avg": {
+      "bat": 0.12009,
+      "fc": 0.17477,
+      "el": 0.19461
+    },
+    "ops": {
+      "fc_run_h": 4890.0,
+      "el_run_h": 3695.0,
+      "fc_starts": 487,
+      "el_starts": 1058,
+      "bat_discharge_kWh": 644222.7,
+      "h2_final_kg": 366.3,
+      "h2_min_kg": 366.3
+    },
+    "converged": false,
+    "iterations": 1,
+    "soc_delta_final": 0.048877,
+    "h2_delta_final": 0.799448
+  },
+  "hydrogen_dominant": {
+    "te_closedloop": 35.065,
+    "te_devices": {
+      "bat": -11.107,
+      "fc": 130.682,
+      "el": 36.313
+    },
+    "damage_open_avg": {
+      "bat": 0.14069,
+      "fc": 0.06614,
+      "el": 0.13768
+    },
+    "damage_full_avg": {
+      "bat": 0.12507,
+      "fc": 0.15258,
+      "el": 0.18768
+    },
+    "ops": {
+      "fc_run_h": 4708.5,
+      "el_run_h": 4308.8,
+      "fc_starts": 449,
+      "el_starts": 1209,
+      "bat_discharge_kWh": 621280.3,
+      "h2_final_kg": 4613.2,
+      "h2_min_kg": 554.6
+    },
+    "converged": false,
+    "iterations": 1,
+    "soc_delta_final": 0.348197,
+    "h2_delta_final": 0.666713
+  },
+  "battery_dominant": {
+    "te_closedloop": 96.391,
+    "te_devices": {
+      "bat": -14.662,
+      "fc": 305.175,
+      "el": 87.661
+    },
+    "damage_open_avg": {
+      "bat": 0.11339,
+      "fc": 0.06648,
+      "el": 0.14759
+    },
+    "damage_full_avg": {
+      "bat": 0.09676,
+      "fc": 0.26937,
+      "el": 0.27696
+    },
+    "ops": {
+      "fc_run_h": 5960.0,
+      "el_run_h": 4538.8,
+      "fc_starts": 446,
+      "el_starts": 948,
+      "bat_discharge_kWh": 620617.6,
+      "h2_final_kg": 341.9,
+      "h2_min_kg": 341.9
+    },
+    "converged": false,
+    "iterations": 1,
+    "soc_delta_final": 0.153683,
+    "h2_delta_final": 0.799917
+  },
+  "critical": {
+    "te_closedloop": 45.469,
+    "te_devices": {
+      "bat": -10.793,
+      "fc": 169.435,
+      "el": 35.725
+    },
+    "damage_open_avg": {
+      "bat": 0.11753,
+      "fc": 0.06634,
+      "el": 0.1654
+    },
+    "damage_full_avg": {
+      "bat": 0.10485,
+      "fc": 0.17875,
+      "el": 0.2245
+    },
+    "ops": {
+      "fc_run_h": 5178.8,
+      "el_run_h": 3911.2,
+      "fc_starts": 449,
+      "el_starts": 968,
+      "bat_discharge_kWh": 662511.0,
+      "h2_final_kg": 465.2,
+      "h2_min_kg": 465.2
+    },
+    "converged": false,
+    "iterations": 1,
+    "soc_delta_final": 0.059878,
+    "h2_delta_final": 0.8
+  }
+}

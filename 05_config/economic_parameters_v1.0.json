@@ -1,0 +1,190 @@
+{
+  "capex": {
+    "BAT": {
+      "capacity_unit": "kWh",
+      "design_life_years": "退化至SOH=0.8(EOL)",
+      "includes": "电芯+BMS+Pack（设备本体，不含安装；电力电子与安装按设备 subtotal 另计）",
+      "literature_source": "NREL ATB 2024 (atb.nrel.gov, 公开免费已下载 CSV; BNEF 商业订阅已弃用)",
+      "replacement_cost_fraction_of_capex": 1.0,
+      "replacement_needed": true,
+      "unit_cost_cny_per_kWh": 2175.0,
+      "unit_cost_usd_per_kWh": 300.0
+    },
+    "H2_tank": {
+      "capacity_unit": "kg",
+      "design_life_years": 30,
+      "includes": "Type III/IV高压储氢罐+安全阀（设备本体，不含安装、不含电力电子；安装按设备 subtotal 20% 另计，电力电子不施加于储罐）",
+      "literature_source": "DOE H2 Storage Cost Assessment 2023 (已下载: DOE 储氢成本评估报告示例.pdf)",
+      "replacement_needed": false,
+      "unit_cost_cny_per_kg": 725.0,
+      "unit_cost_usd_per_kg": 100.0
+    },
+    "PEMEL": {
+      "capacity_unit": "kW",
+      "design_life_years": "退化至D=1.0(EOL)",
+      "includes": "电堆+BOP（纯水系统/换热器/控制器，设备本体，不含安装；电力电子与安装按设备 subtotal 另计）",
+      "literature_source": "IRENA Green Hydrogen Cost Reduction 2020 (已下载 PDF); IEA Global Hydrogen Review 2023 (已下载 PDF)",
+      "replacement_cost_fraction_of_capex": 0.8,
+      "replacement_needed": true,
+      "replacement_note": "电堆更换, BOP复用",
+      "unit_cost_cny_per_kW": 14500.0,
+      "unit_cost_usd_per_kW": 2000.0
+    },
+    "PEMFC": {
+      "capacity_unit": "kW",
+      "design_life_years": "退化至D=1.0(EOL)",
+      "includes": "电堆+BOP（压缩机/换热器/控制器，设备本体，不含安装；电力电子与安装按设备 subtotal 另计）",
+      "literature_source": "DOE James et al. 2018 PEMFC Manufacturing Cost (已下载 PDF, CC BY 4.0); DOE Hydrogen Program Record 2024",
+      "replacement_cost_fraction_of_capex": 0.8,
+      "replacement_needed": true,
+      "replacement_note": "电堆更换, BOP复用",
+      "unit_cost_cny_per_kW": 14500.0,
+      "unit_cost_usd_per_kW": 2000.0
+    },
+    "PV": {
+      "capacity_unit": "kWp",
+      "design_life_years": 25,
+      "includes": "组件+支架（设备本体，不含安装；电力电子与安装按设备 subtotal 另计）",
+      "literature_source": "IRENA Renewable Power Generation Costs 2022 (已下载 PDF); NREL ATB 2024 (已下载 CSV)",
+      "replacement_needed": false,
+      "unit_cost_cny_per_kWp": 8337.5,
+      "unit_cost_usd_per_kWp": 1150.0
+    },
+    "h2_compression": {
+      "cost_fraction_of_pemel_capex": 0.15,
+      "design_life_years": 15,
+      "includes": "氢气压缩机+级间冷却（电解出口→30bar 储氢罐）",
+      "literature_source": "DOE H2A PEM Production Models x4 (nlr.gov 公开下载 xlsm, 含压缩机 CAPEX 默认值); Kavanagh Lab 2025: compression £1.62M ≈ 19.5% (已存档); 取保守 15% (HDSAM 需注册已弃用)",
+      "replacement_cost_fraction_of_capex": 1.0,
+      "replacement_needed": true
+    },
+    "installation_and_engineering": {
+      "cost_fraction_of_equipment_capex": 0.2,
+      "includes": "土建+电气布线+调试+许可",
+      "note": "按全部设备 subtotal 20% 另计；设备单价均为本体（不含安装）",
+      "replacement_needed": false
+    },
+    "pemel_gas_conditioning": {
+      "cost_fraction_of_pemel_capex": 0.12,
+      "design_life_years": 20,
+      "includes": "氢气干燥(De-ox)/纯化/冷却（PEMEL 输出侧）",
+      "literature_source": "IRENA Green Hydrogen Cost Reduction 2020 (已下载 PDF, 电解槽系统成本分解含气体处理 10-15% 区间; CRU 2025 商业订阅已弃用)",
+      "replacement_needed": false
+    },
+    "power_electronics": {
+      "cost_fraction_of_total_equipment_capex": 0.15,
+      "design_life_years": 15,
+      "includes": "DC-DC变换器+汇流柜+保护电路",
+      "note": "frozen_parameters_v2.2.json → lifetime.power_conversion_fixed_lifetime_years=15；round14：仅施加于 PV+BAT+PEMFC+PEMEL，不含 H2 罐",
+      "replacement_cost_fraction_of_capex": 1.0,
+      "replacement_needed": true
+    },
+    "system_bop_aux": {
+      "cost_fraction_of_equipment_capex": 0.1,
+      "design_life_years": 20,
+      "includes": "管道/仪表/控制系统/安全联锁（系统级辅机）",
+      "literature_source": "IRENA Green Hydrogen Cost Reduction 2020 (已下载 PDF, 系统级 BOP 占比区间; CRU 2025 商业订阅已弃用); 现有 installation 20% 覆盖土建/布线, 本项补其余部分",
+      "replacement_needed": false
+    }
+  },
+  "currency": {
+    "base": "USD",
+    "exchange_rate_source": "2026年文献基线汇率估计, 非实时报价",
+    "exchange_rate_usd_to_cny": 7.25,
+    "price_year": 2026,
+    "target": "CNY"
+  },
+  "discount": {
+    "rate": 0.06,
+    "source": "frozen_parameters_v2.2.json → economics.real_discount_rate",
+    "type": "real"
+  },
+  "energy_delivered": {
+    "annual_delivered_energy_MWh": "load_energy - unserved_energy",
+    "annual_load_energy_MWh": "从P1结果计算: 52周×load_mean均值",
+    "annual_unserved_energy_MWh": "从P1结果计算: LPSP×load_energy",
+    "note": "LCOE分母为年度实际供电量, 20年累计按线性外推",
+    "source": "P1 annual simulation → annual_damage_summary.csv"
+  },
+  "governance": {
+    "change_rule": "任何成本数值变更须更新版本号并重跑NPC/LCOE",
+    "disclaimer": "本配置为方法演示用文献基线成本, 不构成工程采购依据",
+    "source": "v4.0方案方法与情景研究; 文献基线值, 非厂家报价"
+  },
+  "horizon": {
+    "source": "frozen_parameters_v2.2.json → economics.horizon_years",
+    "years": 20
+  },
+  "opex": {
+    "BAT": {
+      "annual_fraction_of_capex": 0.01,
+      "includes": "BMS校准+热管理维护"
+    },
+    "H2_tank": {
+      "annual_fraction_of_capex": 0.005,
+      "includes": "年检+安全阀校验+泄漏检测"
+    },
+    "PEMEL": {
+      "annual_fraction_of_capex": 0.03,
+      "includes": "纯水系统维护+催化剂检查+密封件更换"
+    },
+    "PEMFC": {
+      "annual_fraction_of_capex": 0.03,
+      "includes": "催化剂检查+气体净化+滤芯更换"
+    },
+    "PV": {
+      "annual_fraction_of_capex": 0.015,
+      "includes": "清洗+巡检+逆变器维护"
+    },
+    "general": {
+      "annual_fixed_fraction_of_total_capex": 0.01,
+      "includes": "保险+场地+管理",
+      "note": "覆盖未归入设备级OPEX的杂项"
+    },
+    "power_electronics": {
+      "annual_fraction_of_capex": 0.01,
+      "includes": "定期检查+散热维护"
+    }
+  },
+  "replacement_schedule_source": {
+    "columns": "A_repl_bat, A_repl_fc, A_repl_el (cumulative by year)",
+    "extrapolation_20yr": "10年数据线性外推至20年, 或直接使用年均替换率",
+    "file": "07_results/lifetime/lifetime_summary.csv",
+    "module": "P2 lifetime extrapolation (Strategy A: BOL reset)",
+    "note": "M3(L4 EMS)替换计划由M3年度损伤率重新推导"
+  },
+  "residual_value": {
+    "fraction_of_capex": 0.0,
+    "source": "frozen_parameters_v2.2.json → economics.residual_value"
+  },
+  "schema_version": "economic_parameters_v1.0.round16_cost_boundary",
+  "sensitivity": {
+    "capex_variation": [
+      -0.3,
+      -0.15,
+      0.0,
+      0.15,
+      0.3
+    ],
+    "discount_rate_variation": [
+      0.04,
+      0.05,
+      0.06,
+      0.08,
+      0.1
+    ],
+    "note": "±30% CAPEX扫描 + 贴现率扫描, 评估NPC稳健性",
+    "opex_variation": [
+      -0.3,
+      0.0,
+      0.3
+    ]
+  },
+  "status": "LITERATURE_SOURCED_NOT_FACTORY_QUOTES",
+  "taxes": {
+    "fraction": 0.0,
+    "literature_source": "中国增值税政策（2019 公告第 39 号, 一般纳税人 13%, 公开法规）；此处仅作情景标识",
+    "note": "基准口径不含税费（边界声明）；中国增值税 13%/关税等为政策情景参考，不作基准",
+    "scenario_vat_cn_13pct": 0.13
+  }
+}

@@ -1,0 +1,749 @@
+{
+  "compact": {
+    "battery_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 1.455,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.471
+        },
+        "full": {
+          "bat": 1.455,
+          "fc": 0.686,
+          "el": 1.155,
+          "total": 1.127
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 1.455,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.471
+        },
+        "full": {
+          "bat": 1.455,
+          "fc": 0.686,
+          "el": 1.155,
+          "total": 1.127
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.12669570997721097,
+        "fc": 0.10417324952107711,
+        "el": 0.16085806765627367
+      },
+      "full_avg_cap": {
+        "bat": 0.1285391530257081,
+        "fc": 0.10488824466609677,
+        "el": 0.16271552187202373
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "hydrogen_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.35,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.029
+        },
+        "full": {
+          "bat": 0.35,
+          "fc": -11.351,
+          "el": -12.044,
+          "total": -10.702
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.35,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.029
+        },
+        "full": {
+          "bat": 0.35,
+          "fc": 3.091,
+          "el": 3.157,
+          "total": 2.894
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.06812602110230292,
+        "fc": 0.3760150913165961,
+        "el": 0.37897693073248995
+      },
+      "full_avg_cap": {
+        "bat": 0.06836447991740274,
+        "fc": 0.3333333333333355,
+        "el": 0.3333333333333177
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": true,
+        "el": true
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "balanced": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.35,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.029
+        },
+        "full": {
+          "bat": 0.35,
+          "fc": -11.351,
+          "el": -12.044,
+          "total": -10.702
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.35,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.029
+        },
+        "full": {
+          "bat": 0.35,
+          "fc": 3.091,
+          "el": 3.157,
+          "total": 2.894
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.06812602110230292,
+        "fc": 0.3760150913165961,
+        "el": 0.37897693073248995
+      },
+      "full_avg_cap": {
+        "bat": 0.06836447991740274,
+        "fc": 0.3333333333333355,
+        "el": 0.3333333333333177
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": true,
+        "el": true
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    }
+  },
+  "balanced": {
+    "battery_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 1.564,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.582
+        },
+        "full": {
+          "bat": 1.564,
+          "fc": 0.523,
+          "el": 0.866,
+          "total": 1.044
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 1.564,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.582
+        },
+        "full": {
+          "bat": 1.564,
+          "fc": 0.523,
+          "el": 0.866,
+          "total": 1.044
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.13242972304164324,
+        "fc": 0.08457968123381472,
+        "el": 0.13873784679274492
+      },
+      "full_avg_cap": {
+        "bat": 0.13450132355615427,
+        "fc": 0.08502197952087008,
+        "el": 0.13993909619487843
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "hydrogen_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.404,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.041
+        },
+        "full": {
+          "bat": 0.404,
+          "fc": 2.346,
+          "el": 2.43,
+          "total": 2.185
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.404,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.041
+        },
+        "full": {
+          "bat": 0.404,
+          "fc": 2.346,
+          "el": 2.43,
+          "total": 2.185
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.07002880822897185,
+        "fc": 0.30210518313076146,
+        "el": 0.3109139910644418
+      },
+      "full_avg_cap": {
+        "bat": 0.0703118271981006,
+        "fc": 0.30919118507897253,
+        "el": 0.3184678308118925
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "balanced": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.404,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.041
+        },
+        "full": {
+          "bat": 0.404,
+          "fc": 2.346,
+          "el": 2.43,
+          "total": 2.185
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.404,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.041
+        },
+        "full": {
+          "bat": 0.404,
+          "fc": 2.346,
+          "el": 2.43,
+          "total": 2.185
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.07002880822897185,
+        "fc": 0.30210518313076146,
+        "el": 0.3109139910644418
+      },
+      "full_avg_cap": {
+        "bat": 0.0703118271981006,
+        "fc": 0.30919118507897253,
+        "el": 0.3184678308118925
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    }
+  },
+  "hydrogen_dominant": {
+    "battery_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 1.73,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.75
+        },
+        "full": {
+          "bat": 1.73,
+          "fc": 0.379,
+          "el": 0.566,
+          "total": 1.032
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 1.73,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.75
+        },
+        "full": {
+          "bat": 1.73,
+          "fc": 0.379,
+          "el": 0.566,
+          "total": 1.032
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.140284883665445,
+        "fc": 0.0662169412452231,
+        "el": 0.11718121660557661
+      },
+      "full_avg_cap": {
+        "bat": 0.14271180231872305,
+        "fc": 0.06646805654847236,
+        "el": 0.11784394205567417
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "hydrogen_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.473,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.056
+        },
+        "full": {
+          "bat": 0.473,
+          "fc": 2.249,
+          "el": 1.852,
+          "total": 1.875
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.473,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.056
+        },
+        "full": {
+          "bat": 0.473,
+          "fc": 2.249,
+          "el": 1.852,
+          "total": 1.875
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.07376746042627595,
+        "fc": 0.2935206662189418,
+        "el": 0.2538181392812014
+      },
+      "full_avg_cap": {
+        "bat": 0.07411635381064534,
+        "fc": 0.3001211154176653,
+        "el": 0.2585175888697209
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "balanced": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.473,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.056
+        },
+        "full": {
+          "bat": 0.473,
+          "fc": 2.249,
+          "el": 1.852,
+          "total": 1.875
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.473,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.056
+        },
+        "full": {
+          "bat": 0.473,
+          "fc": 2.249,
+          "el": 1.852,
+          "total": 1.875
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.07376746042627595,
+        "fc": 0.2935206662189418,
+        "el": 0.2538181392812014
+      },
+      "full_avg_cap": {
+        "bat": 0.07411635381064534,
+        "fc": 0.3001211154176653,
+        "el": 0.2585175888697209
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    }
+  },
+  "battery_dominant": {
+    "battery_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 1.246,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.464
+        },
+        "full": {
+          "bat": 1.246,
+          "fc": 0.357,
+          "el": 0.677,
+          "total": 0.819
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 1.246,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.464
+        },
+        "full": {
+          "bat": 1.246,
+          "fc": 0.357,
+          "el": 0.677,
+          "total": 0.819
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.11325316804382453,
+        "fc": 0.06649597306055959,
+        "el": 0.12461085127696318
+      },
+      "full_avg_cap": {
+        "bat": 0.11466486642964847,
+        "fc": 0.06673342643932087,
+        "el": 0.12545495491032552
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "hydrogen_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.257,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.016
+        },
+        "full": {
+          "bat": 0.257,
+          "fc": -31.231,
+          "el": -26.646,
+          "total": -27.152
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.257,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.016
+        },
+        "full": {
+          "bat": 0.257,
+          "fc": 4.186,
+          "el": 3.962,
+          "total": 3.835
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.0637566395704418,
+        "fc": 0.48471620489983086,
+        "el": 0.45441826860197887
+      },
+      "full_avg_cap": {
+        "bat": 0.06392055122995945,
+        "fc": 0.3333333333333335,
+        "el": 0.33333333333334164
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": true,
+        "el": true
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "balanced": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.257,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.016
+        },
+        "full": {
+          "bat": 0.257,
+          "fc": -31.231,
+          "el": -26.646,
+          "total": -27.152
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.257,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.016
+        },
+        "full": {
+          "bat": 0.257,
+          "fc": 4.186,
+          "el": 3.962,
+          "total": 3.835
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.0637566395704418,
+        "fc": 0.48471620489983086,
+        "el": 0.45441826860197887
+      },
+      "full_avg_cap": {
+        "bat": 0.06392055122995945,
+        "fc": 0.3333333333333335,
+        "el": 0.33333333333334164
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": true,
+        "el": true
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    }
+  },
+  "critical": {
+    "battery_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 1.313,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.477
+        },
+        "full": {
+          "bat": 1.313,
+          "fc": 0.384,
+          "el": 0.935,
+          "total": 0.959
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 1.313,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.477
+        },
+        "full": {
+          "bat": 1.313,
+          "fc": 0.384,
+          "el": 0.935,
+          "total": 0.959
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.11739102857579094,
+        "fc": 0.06609931464223026,
+        "el": 0.13980566199689018
+      },
+      "full_avg_cap": {
+        "bat": 0.11893233132025322,
+        "fc": 0.06635299974923017,
+        "el": 0.1411123962028248
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": false
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "hydrogen_first": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.292,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.025
+        },
+        "full": {
+          "bat": 0.292,
+          "fc": 2.48,
+          "el": -10.312,
+          "total": -4.026
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.292,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.025
+        },
+        "full": {
+          "bat": 0.292,
+          "fc": 2.48,
+          "el": 3.063,
+          "total": 2.58
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.06480206035855492,
+        "fc": 0.3161400248027321,
+        "el": 0.37166085671586985
+      },
+      "full_avg_cap": {
+        "bat": 0.06499150921021542,
+        "fc": 0.32398072299425684,
+        "el": 0.3333333333333183
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": true
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    },
+    "balanced": {
+      "te_cap": {
+        "bat_only": {
+          "bat": 0.292,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.025
+        },
+        "full": {
+          "bat": 0.292,
+          "fc": 2.48,
+          "el": -10.312,
+          "total": -4.026
+        }
+      },
+      "te_raw": {
+        "bat_only": {
+          "bat": 0.292,
+          "fc": 0.0,
+          "el": 0.0,
+          "total": 0.025
+        },
+        "full": {
+          "bat": 0.292,
+          "fc": 2.48,
+          "el": 3.063,
+          "total": 2.58
+        }
+      },
+      "open_loop_avg": {
+        "bat": 0.06480206035855492,
+        "fc": 0.3161400248027321,
+        "el": 0.37166085671586985
+      },
+      "full_avg_cap": {
+        "bat": 0.06499150921021542,
+        "fc": 0.32398072299425684,
+        "el": 0.3333333333333183
+      },
+      "eol_reached_full_cap": {
+        "bat": false,
+        "fc": false,
+        "el": true
+      },
+      "note": "cap 口径下若 FC/EL 达 EOL（eol_reached=True），其 TE 被 EOL 封顶截断（无物理意义），应读 raw 口径或未达 EOL 设备"
+    }
+  },
+  "_summary": {
+    "strategy": [
+      "battery_first",
+      "hydrogen_first",
+      "balanced"
+    ],
+    "modes": [
+      "open_loop",
+      "bat_only",
+      "full"
+    ],
+    "policy": "cap（raw 见各配置 te_raw 字段）",
+    "te_full_total_range": {
+      "battery_first": {
+        "bat_only": [
+          0.464,
+          0.75
+        ],
+        "full": [
+          0.819,
+          1.127
+        ]
+      },
+      "hydrogen_first": {
+        "bat_only": [
+          0.016,
+          0.056
+        ],
+        "full": [
+          -27.152,
+          2.185
+        ]
+      },
+      "balanced": {
+        "bat_only": [
+          0.016,
+          0.056
+        ],
+        "full": [
+          -27.152,
+          2.185
+        ]
+      }
+    },
+    "conclusion": "策略不预设耦合方向：raw（不封顶）口径下三策略 full 反馈 TE 均为正（battery_first +0.82~+1.13%；hydrogen_first/balanced +1.88~+3.84%），TE>0（反馈放大损伤）方向跨策略稳健。cap（EOL 封顶 1.0）口径下 hydrogen_first/balanced 在 FC/EL 达 EOL 的配置（compact/battery_dominant/critical，eol_reached=True）TE 为负（-10.7%/-27.2%/-4.0%），属 EOL 封顶截断假象（达 EOL 后年损伤被 cap 至 0，损伤放大被掩盖），无物理意义，须读 raw 口径或未达 EOL 设备（L13/L24 表述边界）。策略×反馈交互存在且同向：氢优先策略 FC/EL 利用率高→raw full TE 高于 battery_first。hydrogen_first 与 balanced 在本准入域（容量充裕）调度轨迹一致（等价）。统一 dispatch_stage2b，消除旧 dispatch_strategy 不对称（L9）。",
+    "note": "D 逐年累积（cap 封顶 1.0）；open_loop 为开环基线；与 run_stage3_feedback_modes.py 的 battery_first 列应一致（交叉验证）"
+  }
+}

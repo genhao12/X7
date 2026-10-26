@@ -1,0 +1,1 @@
+﻿record_id,timestamp_h,stack_id,power_kw,current_a,voltage_v,temperature_c,h2_flow_kgph,start_command,voltage_loss_fraction,source_ref,quality_flag

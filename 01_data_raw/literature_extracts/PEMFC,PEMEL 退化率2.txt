@@ -1,0 +1,711 @@
+                                                                            Applied Energy 142 (2015) 154­163
+
+                                                              Contents lists available at ScienceDirect
+
+                                                          Applied Energy
+
+                                          journal homepage: www.elsevier.com/locate/apenergy
+
+Lifetime prediction and the economic lifetime of Proton Exchange
+Membrane fuel cells
+
+Huicui Chen, Pucheng Pei , Mancun Song
+
+State Key Lab. of Automotive Safety and Energy, Tsinghua University, Beijing 100084, China
+
+highlights
+
+ A formula to predict the PEMFC lifetime is presented.
+ A PEMFC residual life evaluation method is presented.
+ The evaluation method realizes online forecasting of the PEMFC residual life.
+ The PEMFC economic lifetime is studied to confirm the best design lifetime.
+
+article info                              abstract
+
+Article history:                          Lifetime and cost are two main factors that restrict the commercialization of Proton Exchange Membrane
+Received 18 June 2014                     (PEM) fuel cells. This paper mainly studies the prediction and the evaluation methods of PEM fuel cell
+Received in revised form 7 November 2014  lifetime. A formula to predict the PEM fuel cell lifetime is presented. The formula is based on the vehicular
+Accepted 28 December 2014                 operation records and the tested results in the lab. Also the difference between the vehicular operation
+Available online 14 January 2015          condition and the test is taken into consideration. The formula realizes the PEM fuel cell lifetime rapid
+                                          prediction. A PEM fuel cell residual life evaluation method is also presented. The evaluation method
+Keywords:                                 realizes online forecasting of the residual life through updating the environmental affecting factor and
+PEM fuel cell                             voltage degradation rate caused by the operating conditions. Furthermore, the PEM fuel cell economic
+Lifetime prediction                       lifetime is studied. The economic lifetime is the working lifetime which gains the lowest average cost.
+Residual lifetime                         The synthesis of the lifetime and the cost provides a basis to confirm the best design lifetime.
+Economic lifetime
+                                                                                                                                      Ó 2015 Elsevier Ltd. All rights reserved.
+
+1. Introduction                                                          service life is less than 3000 h and the price is over US$50/kW,
+                                                                         and unable to compete with the internal combustion engine now-
+    Over the past decades, the environmental pollution problem           adays [4,5]. Lee et al.[6] studied the hydrogen lifecycle cost by
+and the energy crisis problems were seriously highlighted. Because       measuring the well-to-tank cost, the tank-to-wheel cost, the gas
+Proton Exchange Membrane fuel cells are high efficiency and              emission cost, the greenhouse gas cost and the external cost, the
+environmental friendly [1]. Many research institutes, universities       result indicated that the lifecycle cost mainly depends on the fuel
+worldwide have conducted research on the PEM fuel cells [2]. Men-        cell cost, the production capacity, the fuel efficiency, the social cost,
+tioning PEM fuel cells on vehicle applications, people mainly focus      and the hydrogen production method.
+on whether the lifetime and the cost have reached the commercial
+requirements [3].                                                            In recent years, studies to prolonging PEM fuel cell lifetime and
+                                                                         reducing the manufacturing cost have made considerable progress.
+    The PEM fuel cell firstly come to space 30 years ago, and it is too  The PEM fuel cell cost has been reduced form $275/kW in 2002 to
+expensive for the other applications until now. The cost is one of       $73 kW in 2008, further reduced to $61/kW in 2009 ($34 for
+the main factors hindering the widely use of PEM fuel cells. In          balance of plant including assembly and testing, and 27$/kW for
+order to realize the commercialization of the PEM fuel cells, the        stack). More than 35% reduction in the 2008 and 2009. And there
+cost competence with other powers is necessary. When the PEM             is room for further reduction. The DOE targets for the fuel cell cost
+fuel cell is applied on vehicle, such as cars, trucks and buses,         is $30/kW for transportation applications [7]. Marquis and
+                                                                         Coppens [8] decreased the cost of the catalyst layer by changing
+  Corresponding author. Tel.: +86 10 62788558.                           the micro-structure of the cathode catalyst layer to increase the
+                                                                         Pt utilization rate. Avasarala and Haldar [9] applied the synthetic
+     E-mail address: pchpei@mail.tsinghua.edu.cn (P. Pei).
+
+http://dx.doi.org/10.1016/j.apenergy.2014.12.062
+0306-2619/Ó 2015 Elsevier Ltd. All rights reserved.
+H. Chen et al. / Applied Energy 142 (2015) 154­163                                                                                  155
+
+Pt/TiN catalyst instead of Pt/C to improve the catalytic effect and       prolonging for low cost. Therefore searching for the best fuel cells
+lower the cost of the catalyst layer. Nikolic et al. [10] pointed out     design lifetime based on the existing cost is of great significance.
+that the Pd/WC catalyst effect is the same as Pt/C, and can be used       Users' double requirements of lifetime and cost can be considered
+as the anode catalyst to decrease the catalyst cost. Heinzel et al.       from the perspective of an economic lifetime. But there are fewer
+[11] cut down the manufacturing cycle through the injection mod-          studies on the composite indicator of PEM fuel cells lifetime and
+eling, further decreasing the manufacturing cost. Hou et al. [12]         cost. This paper presents the PEM fuel cell lifetime quick evaluation
+presented a method that evaluated the efficiency of the fuel cell         formula, and then propounds the PEM fuel cells residual life
+reasonably and objectively. Bar-On et al. [13] built a technical cost     forecasting during operation, further investigates the PEM fuel
+model. They considered the fuel cell design standard, the subsidi-        cells economic lifetime evaluation method.
+ary equipment cost, the technological design cost and the details
+machining cost, to study PEM fuel cell stack assemble cost and            2. The lifetime prediction based on operation conditions
+the whole system cost. Kamarudin et al. [14] built an economics
+model to study the fuel cell manufacture cost and system accesso-             Running conditions of the PEM fuel cell vehicle vary greatly, but
+ries, and predicted the PEM fuel cell stack and system income and         they are mainly composed of start, idling, load changing, high
+cost. Sun et al. [4] applied societal lifetime cost to evaluation the     power load and stop, as seen in Fig. 1. Fig. 1 is the real running data
+PEM fuel cell cost. The defined social lifetime cost includes the         of our self-developed fuel cell bus in Beijing during 29th Olympic
+vehicle retail cost (usually the function of fuel cell performance),      Games in 2008. The rated power of the PEM fuel cell stack is
+the energy consume cost (the function of fuel cost), the run and          10 kW, and the rated current is 100 A. The operating temperature
+maintenance cost, especially the fuel consumption, the noise and          is 60 °C, and the operation pressure is the atmospheric pressure.
+contamination gas disposal cost. They compared the PEM fuel cell          The stoichiometric ratio of hydrogen is 1.1, and the stoichiometric
+with the traditional internal combustion engine form the perspec-         ratio is 2.5. The stack is a 100-cell PEM fuel cell stack with 274 cm2
+tive of societal welfare, and also applied many models to estimate        effective area in every single cell, which is provided by Shanghai
+the system cost changes with time then compared with the com-             Shen-li High tech Co., Ltd. The fuel cell bus had operated on a spe-
+bustion engine. Their conclusion indicates that the PEM fuel cell         cific bus line for one year as a green energy vehicle demonstration
+cost is much higher than internal combustion engine at the begin-         project for public transportation. Therefore PEM fuel cell vehicle
+ning, but with the increase of PEM fuel cell production, their life-      real driving condition can be simulated as the sum of start-stop,
+time cost will be more competition than the internal combustion           idling, load changing and high power load four typical operating
+engine. The above researches are very important, but they did             conditions.
+not give a evaluation method that combines the lifetime and the
+exciting cost level to confirm a best fuel cell design-lifetime.          Driving cycle ¼ fn1; t1; n2; t2g                          ð1Þ
+
+    Until now, a unified PEM fuel cell lifetime evaluation method has     Here, n1 stands for the average start-stop cycles per hour; t1 stands
+not existed. The method of real road driving tests requires a long        for the average idling time per hour; n2 stands for the average load
+testing period involving high costs. There are various laboratory         change cycles per hour; t2 stands for the average high power load
+researches on PEM fuel cell durability. Bae et al. [15] proposed an       operation time per hour. These parameters will be called the load
+accelerated degradation testing (ADT) procedure for a PEMFC stack
+with a series reliability structure and estimated the lifetime of PEM-    spectrum of the driving cycle.
+FC stack with a series reliability structure. Jung et al. [16] performed      Consider a PEM fuel cell bus real driving cycle, as seen in Fig. 1;
+the ADT test to elucidate the membrane electrode assembly (MEA)
+degradation mechanisms. Onanena et al. [17] conducted interval            what follows is the load spectrum of the driving cycle in per hour:
+loading method to evaluate the performance degradation and resis-
+tance change during degradation of the fuel cell. By measuring the        Driving cycle ¼ fn1 ¼ 1; t1 ¼ 13 min; n2 ¼ 56; t2
+Electrochemical Impedance Spectra (EIS) and the current voltage
+curves, it was possible to evaluate the PEM fuel cell residual life.      ¼ 14 ming                                                 ð2Þ
+Zhang et al. [18] applied the cyclic voltammetry test to evaluate
+the Pt active area degradation. Kocha et al. [19] applied the cyclic          Fig. 2 shows the corresponding tested load cycle results in the
+voltammetry test to study the change of hydrogen permeation cur-          lab. The fuel cell stack we used in the experiment is the same as
+rent. Bouzek et al. [20] applied hydrogen gas with mercury vapor          the fuel cell stack applied on the bus. The performance degradation
+contamination to study the PEM fuel cell durability. Mukundan             rate of start-stop, idling, load change and high power load under
+et al. reported on the DOE Hydrogen and Fuel cell Program, they           rated current are tested respectively. The fuel cell stack start-stop
+conducted the Accelerate Stress Tests on the real bus to study the        cycling test was carried out in the strict process, start-up, idling
+fuel cell failure modes. Marrony et al. [21] studied the PEM fuel cell    1 min at constant current of 10 mA/cm2, stop, purging hydrogen
+durability and conducted lifetime tests during the load cycling. Bae      by nitrogen gas, waiting until the stack voltage falls to zero, and
+et al. [22] presented a PEM fuel cell lifetime evaluation method by       then to the next cycle. During the fuel cell stack idling condition
+means of acceleration and start-stop degradation tests. Cheng et al.
+[23] reinforced the PEM fuel cell catalyst layer by polymer to miti-      Fig. 1. The real driving cycle of a PEM fuel cell bus.
+gate the catalyst layer decay, further to prolong the lifetime of the
+fuel cells. However, there is no corresponding relationship between
+fuel cell durability and the real road running lifetime. Besides there
+is no PEM fuel cell real road cycling for comparison. And different
+driving cycles or different test modes mean that different fuel cells
+lifetime is obtained. The PEM fuel cell research group in Tsinghua
+University worked out a PEM fuel cell lifetime quick evaluation
+method. The method combines the real road running results and
+the test results [24].
+
+    There is always cost problems when researchers seeking for the
+fuel cells' long lifetime, and the lifetime was shortened when
+156                                                                               H. Chen et al. / Applied Energy 142 (2015) 154­163
+
+                                                                                                          Tf stands for the predicted PEM fuel cell lifetime; DV stands for the
+                                                                                                          permitted voltage degradation value from the beginning to end of
+                                                                                                          lifetime. k is the difference factor between the tested driving cycle
+                                                                                                          and the vehicular driving cycle, equal to the ratio of the voltage
+                                                                                                          degradation of the real driving cycle and the voltage degradation
+                                                                                                          of the tested driving cycle in the lab, and measured k % 1.72 [24].
+                                                                                                          Eq. (5) can be applied to PEM fuel cells in any applications.
+
+                                                                                                              The denominator of Eq. (5) is the predicted voltage degradation
+                                                                                                          rate, as follows:
+
+                                                                                                          R   ¼  k  Á  ðn1  V  0  þ   t1U  0  þ    n2  V  0  þ  t2U  0  Þ               ð6Þ
+                                                                                                                               1           1              2          2
+
+                            Fig. 2. The tested PEM fuel cells driving cycle.                                  We applied the same fuel cell stacks with the fuel cell stack
+                                                                                                          tested in the lab, two fuel cell buses were developed and driven
+test, the current density was set at 10 mA/cm2, the operating tem-                                        for one year. The operating condition of the fuel cell bus was
+perature was no more than 60 °C, the air stoichiometric ratio was                                         counted. The performance degradation rate was calculated and
+2.5 and the hydrogen stoichiometric ratio was 1.2. The load chang-                                        the lifetime of the fuel cell was predicted applying Eqs. (4) and
+ing cycle test was carried out from idling condition to rated power                                       (5). The results are in Table 2. Fig. 3 is the comparison between
+condition. The steady high power load cycling test was carried out                                        the predicted performance degradation and on road performance
+in a strict process also, in which the first step is start up and then                                    degradation. The results proved that the predicted performance
+warm up to above 40 °C the second step is to load high power in                                           degradation fits the on road performance degradation very well.
+steady, and make a performance record every 15 min. The
+performance degradation rate of four operating conditions was                                                 The above shows that the PEM fuel cell lifetime under any
+recorded, as seen in Table 1.                                                                             driving cycle can be predicted after about 200 h of testing.
+
+    Table 1 data was brought into the load spectrum of the driving                                            The premise of applying Eq. (5) is that the fuel cell voltage
+cycle, and then obtained the total voltage degradation rate of the                                        decays linearly with time. For PEM fuel cells under other applica-
+fuel cell:                                                                                                tions, Eq. (5) can be applied as long as the performance decays
+                                                                                                          linearly.
+
+                                                                                                              Therefore Eq. (5) changes to general forms:
+
+                                                                                                          Tf  ¼     P             DV    P                 ðhÞ                           ð7Þ
+                                                                                                                  kð
+n1  V   0  þ     t1U  0  þ  n2  V  0  þ  t2U    0  ¼  41:44   lV=h                                   ð3Þ               ni      V  0  þ     tj  Uj0  Þ
+        1             1            2            2                                                                                 i
+
+     An       offset     of  1.7%       from       V  0    ¼  42:16  lV=h.                                                            1
+                                                                                                                                      þ
+                                                      drv
+     Here, Vdrv0 stands for the voltage degradation rate under vehic-
+                                                                                                          Or  Tf    ¼   P                P     tj      ðhÞ                              ð8Þ
+ular driving cycle. V10 stands for the voltage degradation rate of                                                     k          ni           Tj
+                                                                                                                                  Ni
+each start-stop cycle, U01 stands for the voltage degradation rate
+
+of idling. V20 stands for the voltage degradation rate of each load                                       where ni stands for the operating cycles of condition i per hour; Vi0
+                                                                                                          stands for the average voltage degradation of condition i per cycle;
+change cycle. U20 stands for the voltage degradation rate of the high                                     tj stands for the average operating time of condition j per hour; Uj0
+                                                                                                          stands for the average voltage degradation rate caused by condition
+power load.                                                                                               j; Ni stands for the i condition cycling times that causes the voltage
+                                                                                                          degradation DV totally; Tj is the j condition operating time that
+     Therefore, the voltage degradation rate of the vehicular driving                                     causes the voltage degradation DV totally.
+
+cycle is approximately equal to the sum of voltage degradation rate                                           Eqs. (7) and (8) are available for various applications, such as a
+                                                                                                          backup power long period placement.
+under each operating condition.
+                                                                                                              Fuel cells lifetime evaluation Eq. (5) is a basis of fuel cells life-
+V  0       %  n1  V   0  þ t1U01      þ  n2  V  0  þ t2U02                                           ð4Þ  time prediction. The prediction method based on Eq. (5), saved
+                      1                         2                                                         90% consumption compared to the lifetime evaluation method
+   drv                                                                                                    based on the real road running [24]. However, during real road
+                                                                                                          operations, the fuel cell performance degradation rate is
+    The test time of each voltage degradation rate in Eq. (4) is nearly                                   changeable because of the uncontrollable environment and the
+50 h. As long as four voltage degradation rates were tested, the fifth                                    distribution of operating conditions. Therefore, an online
+voltage degradation rate can be calculated. Therefore, only about                                         prediction method of PEM fuel cells residual life is presented in
+200 h total test time is needed to finish the test. The start-stop                                        the following part.
+condition is easily disturbed by many factors. Thus, the fuel cell
+performance degradation under start-stop was suggested to
+calculate the other four performance degradation test results.
+
+    If we define the permitted single fuel cell voltage degradation
+value as DV. The fuel cell lifetime formula is presented as follows:
+
+Tf  ¼                              DV                           ðhÞ                                  ð5Þ
+
+           k  Á  ðn1  V  0  þ  t1 U 10  þ  n2   V  0  þ t2U02Þ
+                         1                         2
+
+                                                                                                          Table 2
+                                                                                                          Load spectrum statistics and the performance prediction.
+
+Table 1                                                              Voltage degradation rate                 Load spectrum                                                1#FCB        2#FCB
+The tested PEM fuel cells voltage degradation rate.
+                                                                     V      0  ¼  13:79  lV=cycle             n1 (cycles/h)                                                1.18         0.88
+    Operating conditions                                                    1                                 t1 (min/h)                                                   9            10
+                                                                                                              n2 (cycles/h)                                                28           41
+    Start-stop                                                       U10 ¼ 8:662 lV=h                         t2 (min/h)                                                   21           25
+    Idling                                                                                                    Predicted voltage degradation rate (V/h)                     2.66 Â 10À5  3.65 Â 10À5
+    Load change                                                      V      0  ¼  0:4185   lV=cycle           Predicted lifetime (h)a                                      2600         1900
+    High power load                                                         2
+    Total driving cycle
+                                                                     U20 ¼ 10:00 lV=h                       a Notes: The fuel cell lifetime defined as the operation time experiences the
+                                                                                                          voltage 10% degradation under rated current.
+                                                                     V      0    ¼  42:16  lV=h
+
+                                                                            drv
+H. Chen et al. / Applied Energy 142 (2015) 154­163                                                                                  157
+
+Fig. 3. The fuel cell buses real driving performance and the predicted performance. (a) 1# fuel cell bus and (b) 2# fuel cell bus.
+
+3. The residual life prediction during application                       lL  ¼  DV 0     ¼                   DV 0                   ð9Þ
+                                                                                                      þ t1U1 þ n2V 2
+    Based on the lifetime estimation formula, the residual lifetime             kV  0       kðn1 V 1                  þ t2U2Þ
+prediction method was presented. The details are as follows:
+                                                                                    drv
+   (1) Updating the affecting factor k according to the measured
+         voltage and the estimated voltage during operation, k was       Here, DV0 stands for the residual voltage under a calibrating current
+         conducted as the reference value of the lifetime evaluation     (commonly considered the 10% voltage degradation as the terminal
+         of the following week. The affecting factor changes were        voltage). lL is the predicted residual life. k is the affecting factor,
+         considered with both the fuel cells operating time and the      including mainly air quality and other external factors.
+         dynamic variation of the external environment.
+                                                                         3.2. Residual life estimation procedure
+   (2) Modifying the voltage degradation rate every four weeks.
+         Updating the load spectrum, the affecting factor and the            Parameter definition:
+         voltage degradation rate of the four operation conditions,
+         thus approaching the real running operation gradually.             (1) The expression of operation time
+         Therefore lifetime prediction is more accurate. Moreover,
+         users can observe the voltage degradation rate at any time          The fuel cells operation time counts in day. tin stands for the fuel
+         during operation.                                               cell operation time, here, subscript i stands for the i week during
+                                                                         fuel cell operation, subscript n stands for the n day in the i week
+   (3) The residual life evaluation procedure considers the operat-      (0 6 n 6 7).
+         ing environments and conditions at the beginning of each
+         week, and is guidance for the fuel cells operation condition       (2) The expression of voltage
+         optimization.
+                                                                             When initial voltage V0 equal to the rated voltage, we define the
+   (4) The residual life evaluation is mainly carried on by numeri-      current as I0. The current I0 is applied to calibrate the PEMFC
+         cal statement and calculation, thus simplified the test proce-  voltage performance. During the fuel cell operation, we define
+         dure in the laboratory.                                         the voltage as Vin (the subscript stands for the voltage of the i week
+                                                                         and the n day). Because the voltage degradation rate is fairly small
+3.1. Residual life estimation formula                                    comparing to the total fuel cells voltage, the error will be very large
+                                                                         if we measure it every day. Therefore the voltage is measured once
+    Based on the lifetime quick evaluation formula (5), the follow-      a week. We measure Vin under I0 at the seventh day of every week,
+ing is the residual life estimation formula.
+158                                                                             H. Chen et al. / Applied Energy 142 (2015) 154­163
+
+then record them as V17, V27, . . . Vi7. After the i week, the PEMFC                                                 (3) At the end of the 5th week, measuring V57 then calculating
+residual voltage records as DVl,i, the value is as follows:
+                                                                                                                             k6:
+
+DV l;i ¼ V i7 À V d                                                                               ð10Þ           k6  ¼    k5  Á  V 57                                                     ð18Þ
+                                                                                                                                 V_ 57
+Here, Vd stands for the final voltage of the fuel cell lifecycle. The
+voltage degradation rate of four operation conditions are updated                                                    (4) And the like, update the affecting factor ki every week. And
+every four weeks, and are described as V 1;p7; U1;p7; V 2;p7; U2;p7, where                                                the residual lifetime can be estimated every day.
+the subscript p stands for the up round number of i/4, and i stands
+for the i week during the fuel cell operation.                                                                       (5) Updating the voltage degradation rate every four weeks, for
+                                                                                                                          example when the operation time of the PEMFC is ti7, then
+    (3) The load spectrum                                                                                                 we can use the data that recorded during the week i to cal-
+                                                                                                                          culate the voltage degradation rates under four operation
+    During the PEMFC operation, we record the load spectrum and                                                           conditions V 1;p7; U1;p7; V 2;p7; U2;p7, the equations are as
+the operation time every day. The load spectrum of the PEMFC                                                              follows:
+operation conditions at the end of tin day is n1;in; t1;in; n2;in; t1;in.
+                                                                                                                 V 0 À V ðiÀ3Þ7 ¼ k1ÀðiÀ3ÞðV 1;p7n1;ðiÀ3Þ7 þ U1;p7t1;ðiÀ3Þ7               ð19Þ
+   (4) Affecting factor k                                                                                                           þ V 2;p7n2;ðiÀ3Þ7 þ U2;p7t2;ðiÀ3Þ7Þ
+
+    Define the affecting factor of every week as ki, the subscript i                                             V 0 À V ðiÀ2Þ7 ¼ k1ÀðiÀ2ÞðV 1; p7n1;ðiÀ2Þ7 þ U1;p7t1;ðiÀ2Þ7              ð20Þ
+(i = 1, 2, . . ., i) stands for i week during the PEMFC operation.                                                                  þ V 2;p7n2;ðiÀ2Þ7 þ U2;p7t2;ðiÀ2Þ7Þ
+
+    According to Eq. (9), the voltage degradation is the product of                                              V 0 À V ðiÀ1Þ7 ¼ k1ÀðiÀ1ÞðV 1;p7n1;ðiÀ1Þ7 þ U1;p7t1;ðiÀ1Þ7
+the load spectrum and the corresponding voltage degradation                                                                         þ V 2;p7n2;ðiÀ1Þ7 þ U2;p7t2;ðiÀ1Þ7Þ
+rates. The voltage degradation of i week is as follows:
+
+V iÀ1 À V i ¼ kiðn1;i7V 1;p7 þ t1;i7U1;p7 þ n2;i7V 2;p7 þ t2;i7U2;p7Þ                             ð11Þ                                                                                    ð21Þ
+
+    Parameters solution:                                                                                         V 0 À V i7 ¼ k1--iðV 1;p7n1;i7 þ U1;p7t1;i7 þ V 2;p7n2;i7 þ U2;p7t2;i7Þ  ð22Þ
+    After four weeks operation, according to Eq. (9), we obtain the                                              Where,
+following results:
+
+    (1) At the end of the 4 week is day t47, consider                                                            k1Ài     ¼  k1   þ  k2  þ  .  .  .  þ  ki                                ð23Þ
+                                                                                                                                         i
+          k1 = k2 = k3 = k4 = 1,          then  k1À4     ¼  k1 þk2þk3 þk4       ¼    1; k1--4  stands
+                                                                     4
+                                                                                                                     The voltage degradation rate is used to estimate the residual
+          for the average affecting factor of the initial 4 weeks. We                                            lifetime of the following four weeks.
+
+          can calculate the voltage degradation rate under four opera-
+
+          tion conditions V 1;17; U1;17; V 2;17; U2;17. The voltage degrada-                                     4. The economic lifetime
+          tion equations of the first 4 weeks are as follows:
+
+    At the first week,                                                                                           4.1. Model building
+V 0 À V 17 ¼ k1ðn1;17V 1;17 þ t1;17U1;17 þ n2;17V 2;17 þ t2;17U2;17Þ
+                                                                                                  ð12Þ               From the fuel cell stack manufacture to its service time t, the
+
+The second week,                                                                                                 total consumption includes the fuel cell stack manufacture cost,
+
+V 0 À V 27 ¼ k2ðn1;27V 1;17 þ t1;27U1;17 þ n2;27V 2;17 þ t2;27U2;17Þ                              ð13Þ           the total hydrogen consumption and attachment consumption.
+
+                                                                                                                 What follows is the equation of the total consumption at service
+
+The third week,                                                                                                  time t:
+
+V 0 À V 37 ¼ k3ðn1;37V 1;17 þ t1;37U1;17 þ n2;37V 2;17 þ t2;37U2;17Þ                              ð14Þ                                            Zt        Zt
+
+                                                                                                                 Q totalðtÞ ¼ Q stack þ Q opedt þ Q H2 dt                                 ð24Þ
+
+The fourth week,                                                                                                                                     0      0
+
+V 0 À V 47 ¼ k4ðn1;47V 1;17 þ t1;47U1;17 þ n2;47V 2;17 þ t2;47U2;17Þ                              ð15Þ           Qtotal stands for the total consumption of the fuel cell stack during
+                                                                                                                 its service time t; Qstack stands for the manufacturing cost of the fuel
+Here V0 stands for the voltage at the fuel cell initial state.                                                   cell stack; Qope is the accessory cost per hour; Q H2 is the hydrogen
+   (1) During the 5th week, taking k5 ¼ k4 ¼ 1, according to the                                                 cost per hour.
+         calculated voltage degradation rates under four operation
+                                                                                                                     (1) The fuel cell stack consumption includes the manufacturing
+          conditions of the first four weeks V 1;17; U1;17; V 2;17; U2;17. Then
+                                                                                                                             cost and the daily cost. Here, the daily cost mainly includes
+          we calculate the estimated voltage of the t5nth day of the 5th
+                                                                                                                             the consumption of hydrogen and other attachments. The
+          week     V_ 5Ân.
+V_ 5n  ¼  V 47 À   k5 V 1;17  Á  ðn1;5n   À  n1;47 Þ  þ  U1;17     Á  ðt1Ã;5n   À  t 1;47 Þ                                  manufacturing cost is defined as:
+
+                                                                                                                 Q stack ¼ C0P0                                                           ð25Þ
+
+       þV 2;17ðn2;5n À n2;47Þ þ U2;17 Á ðt2;5n À t2;47Þ                                           ð16Þ           C0 is the PEM fuel cell stack manufacturing cost per unit power, $/
+                                                                                                                 kW; P0 is the PEM fuel cell initial design power.
+Therefore, the estimated residual lifetime (in days) is as follows:
+
+                                                                                   
+                                                                   V_ 5n À V d Á n
+Ll       h                                                                                                                                    i                                           ð17Þ
+    ¼  k5 V_ 1;17                            U_ 1;17                               V_ 2;17ðn2;5n                 U_ 2;17                t 2;47 Þ
+
+                   Á  ðn1;5n  À  n1;47 Þ  þ           Á  ðt1;5n  À    t 1;47 Þ  þ                 À  n2;47 Þ  þ           Á  ðt2;5n  À
+                                                                                    H. Chen et al. / Applied Energy 142 (2015) 154­163                                                          159
+
+Table 3                                                                                            Price        middle load operation, and the large-scale load changing four oper-
+The accessory consumptions [14,15].                                                                             ation conditions.
+                                                                                                   1$ mÀ3
+    Classification                                                                                 0.011$ kWÀ1      The electric energy produced is proportional to the hydrogen
+                                                                                                   0.011$ kWÀ1  consumption during the fuel cell stack operation. Therefore the
+    Humidification and cooling water                                                                            assistant systems consumption is proportional to the hydrogen
+    Consumption of electronic control devices                                                                   consumption.
+    Consumption of the air supply system
+
+                                                                                                                Q elec ¼ k3Q H2                                                                 ð31Þ
+
+(2) Besides the hydrogen consumption, there is attachment con-                                                  Here, k3 stands for the proportion of the assistant system consump-
+                                                                                                                tion and the hydrogen cost.
+        sumption that includes the air compressor, the cooling
+                                                                                                                    Through Eqs. (19), (20), and (22) we can calculate the total
+        water, the electronic control device and so forth. Table 3 is                                           assistant system consumption is as follows:
+
+        the accessory consumptions [14,15].
+
+Q ope ¼ Q hum H2O þ Q cold H2O þ Q air þ Q elec                                                         ð26Þ    Q ope ¼ kopeQ H2                                                                ð32Þ
+
+Q hum H2O is the humidification water cost, Q cold H2O is the cooling                                           Here, kope ¼ k1 þ k2 þ k3.
+water cost and Qelec is the consumption of electronic control device.                                              (3) In vehicle applications, the main operating conditions of the
+                                                                                                                         fuel cell are start-stop, idling, load change, low power load
+    During operation the reactant gases of the fuel cell are both                                                        and high power load five typical driving conditions. Pei
+                                                                                                                         et al. [24] analyzed the data gathered from the fuel cell
+100% humidified. To ensure the fuel cell stack operates under the                                                        bus and obtained the average load spectrum that the fuel
+                                                                                                                         cell bus loaded 56 times per hour, start-stop 0.99 times,
+ideal temperature, the cooling water consumption is related to                                                           idling 13 min per hour, high power load 14 min per hour.
+                                                                                                                         Therefore we can assume that the fuel cell operates under
+the heat production.                                                                                                     low power load besides idling and high power load. The load
+                                                                                                                         changing and the start-stop are finished instantaneously and
+According to the humidifying water consumption formula [25]:                                                             ignore the time they consumed, only affecting the fuel cells
+                                                                                                                         performance.
+                                                                                                                    The fuel cell average voltage in each hour t is following [24]:
+           þm_ ami_r HMM2 HMaM2irOHH22OPÀuP PuÀusaPPutsðsaaTPttðÞsðaTTtÞðÞTÀÞ  uamb Psat ðT amb Þ
+m_ H2O  ¼
+                                                                               u Pamb À ambPsatðTambÞ 
+                                                                               u ÀambPsat ðTambÞ
+                                                                                                        ð27Þ
+                                                                               u Pamb À ambPsatðTambÞ
+
+Here, u stands for the relative humidity of the reactant gas and                                                Vt ¼ Vin À at                                                                   ð33Þ
+uamb stands for the relative humidity of the ambient air. T stands
+                                                                                                                Here, Vin stands for the fuel cell voltage at the initial state.
+for the temperature of the reactant gas and Tamb stands for the tem-                                                As described before, the average output power per hour is as
+perature of the ambient air. P stands for the pressure of the fuel cell
+stack inlet and Pamb stands for the pressure of the atmosphere.                                                 follows:                                                                        ð34Þ
+                                                                                                                         X
+    During the PEM fuel cell operation, the inlet pressure is con-
+stant, the inlet temperature is constant and the reactant gases                                                 PðtÞ ¼ tjPj ¼ tidlPidl þ tlowPlow þ thig Phig
+are 100% humidified. The humidification water consumption is
+proportional to the consumption of gas and hydrogen, because                                                    Here, tj stands for the operation time of every driving cycles, pj stands
+we have assumed the stoichiometric ratio of the reactant gas is                                                 for the operation power of every driving cycles, the subscript j stands
+constant. The gas supply is proportional to the oxygen consumed
+and also is proportional to the hydrogen consumed. Therefore in                                                 for idling (idl), low power (low) and high power (hig). tidl stands for
+Eq. (27), the humidify water consumption is proportion to the                                                   the fuel cell vehicle average idling time per hour during running. tlow
+hydrogen consumption.                                                                                           stands for the fuel cell vehicle average low power load operation time
+
+Q hum H2O ¼ k1Q H2                                                                                      ð28Þ    per hour during running. thig is the fuel cell vehicle average high
+                                                                                                                power load operation time per hour. Pidl is the fuel cell vehicle average
+Here, k1 stands for the proportion of the humidity water cost and                                               output power during idling. Plow is the fuel cell vehicle average output
+the hydrogen cost.                                                                                              power during low power load operations. Phig is the fuel cell vehicle
+                                                                                                                average output power during high power load operations.
+    The cooling water is calculated based on the consideration that
+the stack temperature is approximately constant and cooling well.                                               Here, combining Eq. (24) gains the average current each hour
+The heat production is proportional to the intensity of the reaction.
+Therefore the cooling water consumption is considered to be pro-                                                I(t).
+portional to the hydrogen consumption.
+                                                                                                                          PðtÞ     P     tjPj     tidl Pidl  þ  tlowPlow þ  thig Phig
+                                                                                                                           Vt
+                                                                                                                IðtÞ   ¼        ¼  V in  À at  ¼                Vin À at                        ð35Þ
+
+Q cold H2O ¼ k2Q H2                                                                                     ð29Þ    The average current density each hour i(t) is as follows:
+
+Here, k2 is the proportion of the cooling water cost and the hydro-                                                                P                 tidl Pidl  þ tlowPlow þ  thig Phig
+gen cost.                                                                                                                 PðtÞ             tjPj
+                                                                                                                iðtÞ   ¼  VtA   ¼  ðV in          ¼             ðV in À atÞA                    ð36Þ
+                                                                                                                                          À atÞA
+During the fuel cell system operation, the percentage of electric
+
+energy consumed by the assistant systems such as the air supply                                                 Vt stands for the fuel cell voltage at service time t and a stands for
+
+system, the pump and the electronic control devices is s. In many                                               the fuel cell voltage degradation rate. A stands for the area of the
+                                                                                                                electrode area.
+existing fuel cell systems, s is about 22%. Therefore the total con-
+                                                                                                                    The hydrogen consumption per hour is as follows:
+sumption of the assistant systems (the air supply system and the
+
+electronic control system) per hour is as follows:                                                                        tjMH2 kH2 nIðtÞ      X tjMH2 kH2 nPj
+
+s Q air þ Q elec ¼ Celec  X  Pj                                                                         ð30Þ    mH2    ¼       zFg         ¼          zFV t g
+
+In Eq. (30), s stands for the proportion of accessory consumption on                                                   ¼  tidlMH2 kH2 nPidl    þ  tlowMH2 kH2 nPlow  þ      thig MH2 kH2 nPhig  ð37Þ
+
+the total power generation cost; Celec stands for the cost of per                                                         zFðVin À atÞg            zFðVin À atÞg             zFðVin À atÞg
+kW h; Pj stands for the PEMFC power under different operating
+condition, the subscript j stands for the idling, the start-stop, the                                           Here, g stands for the fuel cell generating efficiency; MH2 stands for
+
+                                                                                                                the molar mass of the hydrogen. kH2 stands for the stoichiometric
+160                                                                      H. Chen et al. / Applied Energy 142 (2015) 154­163
+
+ratio of the hydrogen. n stands for the number of cells inside the                  Table 4
+stack. z stands for the amount of electrons transferred by each                     Model calculation parameters.
+hydrogen molecules. F stands for the Faraday constant.
+                                                                                    C0 ($ KWÀ1) P0 (KW) k                         a (lV hÀ1)  CH2 ($ kgÀ1)  V0 (V)  g
+    The hydrogen cost per hour:                                                                                                               6.5           0.7
+                                                                                    50  88                                   1.5  6                                 0.95
+
+Q H2 ¼ CH2 mH2                                                                ð38Þ
+
+Here, CH2 is the hydrogen price per kilogram and mH2 is the amount                  polarization area and the concentration polarization area. BF is
+of hydrogen consumption.                                                            the boundary line of the active polarization area and the ohmic
+                                                                                    polarization area, and also is the minimum power line of the fuel
+     By substituting the Eqs. (16)­(29) into Eq. (15), at the service               cell in vehicular application. CE is the power line of the 0.6 times
+                                                                                    peak power of the fuel cell vehicle. The power line through D is
+time t, the total consumption of the fuel cell system is as follows:                the peak power line of the fuel cell vehicle.
+
+Q totalðtÞ  ¼  C0P0    Zt      X  t j M H2    kH2 nPj  dt           Zt                  The area marked pink is the fuel cell high load area. In this
+                     þ            zFðV in                                           working region, the fuel cell outputs the high power for vehicle
+                                              À atÞg        þ kope                  applications. The operating conditions of this area include acceler-
+                            0                                                       ation, high speed, high power load and so on. The area that is
+                                                                           0        marked green is the low power load operation area. The transit
+                                                                                    power area is marked with yellow. The start-stop and the idling
+               Â  X     t j M H2  kH2 nPj     dt                              ð39Þ  conditions are distributed in this area, and are mainly applied to
+                        zFðV in                                                     transit to others operation areas.
+                                  À atÞg
+                                                                                        The economic lifetime of the fuel cell is searching for the opti-
+Here, tj is the average operation time of operation condition j per                 mal operation time in the available operation area.
+hour and Pj is the average power output under operation condition
+j.                                                                                      The economic lifetime model is calculated by MATLAB. Table 4
+                                                                                    is the calculation parameters [26,27].
+     The average cost of the fuel cell from the beginning to service
+                                                                                       Here, the selection of voltage degradation rate a accords to the
+life t is shown by the following:
+                                                                                    most influential experimental data in the literatures.
+Q ðtÞ  ¼  C0P0    þ  1  ð1  þ        Zt       X   t j MH2   kH2 nPj  dt       ð40Þ      As seen in Fig. 5, when the fuel cell service lifetime t is equal to
+            t        t                            zF ðV in
+                               kope Þ                       À atÞg                  5581 h, we gain the minimum value of the average cost 72.051$/h,
+                                                                                    thus 5 581 h is the fuel cell economic lifetime. The result satisfies
+                                           0                                        the commercial requirement of 5000 h [7,2]. The costs increase
+                                                                                    after the minimum is due to performance degradation, and the
+The fuel cell economic lifetime t/ is the service life t corresponding              requirement to operate at higher currents (and therefore greater
+                                                                                    consumptions) in order to achieve the same power. When fuel cell
+to Qmin that is the minimum value of the Eq. (31). At the economic                  service time is longer or shorter than the economic lifetime t, both
+lifetime t/ the average cost of the fuel cell is minimum, and when                  lead to the increase of the average cost; therefore it is not cost-
+the service life is greater or shorter than t/, the average cost is more            effective for the users.
+
+than Qmin. Eq. (40) can be apply to PEM fuel cells in any applications.             4.2.1. Sensitivity analysis of different hydrogen prices
+                                                                                        Fuel consumption is mainly determined by the price of hydro-
+4.2. Analysis of the fuel cell economic lifetime evaluation model
+                                                                                    gen. Therefore the hydrogen price has a strong influence on the
+    Because the fuel cell performance reduces during operation, the                 average cost and the economic lifetime. Therefore we chose differ-
+output voltage under a certain current and the output peak power                    ent hydrogen price for sensitivity analysis. The price datum come
+both reduce with the operation time. The fuel cells working inter-                  from the different hydrogen market price in china. As seen from
+val is determined by the load and service time. The real working                    Fig. 6, the lower the hydrogen gas price, the lower the average cost
+interval is an area that is composed of the current­voltage curve                   per hour. After the hydrogen production cost is reduced, a
+which shifts with the fuel cell service time. As seen in Fig. 4, the                reduction of the hydrogen price cuts the fuel cell average cost
+black line and the green line are calculated by the real vehicular                  and promotes the commercialization of the fuel cell. As seen from
+operation data. They stand for the polarization curves at the initial               Fig. 6, the fuel cells economic lifetime is extending as the hydrogen
+lifetime of the fuel cells and the end of the lifetime respectively.                price is reducing. With the hydrogen price cut down, the influence
+Through extending the tangential path of the real measured polar-
+ization curves, we gain the fuel cell peak power line.
+
+    The fuel cell has an available working range in vehicle applica-
+tions. As seen in Fig. 4, DEF is the boundary line of the ohmic
+
+                            Fig. 4. The fuel cell operation range.                      Fig. 5. The fuel cell average cost changes with service time.
+H. Chen et al. / Applied Energy 142 (2015) 154­163                                                                                                             161
+
+Fig. 6. The fuel cell average cost and economic lifetime under different hydrogen   Fig. 8. The fuel cell average cost and the economic lifetime under different stack
+price.                                                                              manufacturing cost.
+
+                                                                                    Table 5
+                                                                                    PEM fuel cell stack manufacturing costs of inside parts (DOE).
+
+                                                                                                         Sample fuel cell  Mass production             Target
+                                                                                                                                                       $/KW %
+                                                                                                         $/KW  %           $/KW  %
+
+                                                                                    Membrane             250   14          14    16                    13  25
+                                                                                    Electrode
+                                                                                    Bipolar-plate        710   39          50    49                    24  48
+                                                                                    Pt catalyst
+                                                                                    Accessory equipment  825   45          30    29                    9   17
+                                                                                    Assemble
+                                                                                    Total cost           25    1           3                        3  2   4
+
+                                                                                                         8     0           1                        1  1   2
+
+                                                                                                         8     0           2                        2  2   4
+
+                                                                                                         1826              100                         50
+
+Fig. 7. The present investigations and the future prediction of water-electrolytic  manufacturing cost. Undoubtedly, further reduction of the fuel cell
+hydrogen production cost (DOE).                                                     requires the development of new materials and new technologies
+                                                                                    to cut down the cost proportion of the main parts such as the
+of daily consumption on the total cost is reduced, and the influence                membrane and the catalyst layer.
+of the manufacturing cost is increased. When the manufacturing
+cost is fixed giving a longer service time, there will be a lower aver-             4.2.3. Sensitivity analysis of different fuel cell voltage degradation
+age manufacturing cost. Fig. 7 is an investigation of water-electro-                rates
+lytic hydrogen production status and a prediction of future costs
+[28]. Obviously the key to reduce the price of hydrogen is the quan-                    Different fuel cell voltage degradation rates, eÀ5 V hÀ1 [30],
+tity of the production and the size of the users group, but still has               6 Â eÀ6 V hÀ1 [31], 4 Â eÀ6 V hÀ1 [32] and 2 Â eÀ6 V hÀ1 [33] were
+to overcome significant barriers, both technological and economi-                   applied to carry on sensitivity analysis. A larger fuel cell degrada-
+cal [29].                                                                           tion rate leads to a shorter economic lifetime and higher average
+                                                                                    costs during operations, as seen in Fig. 9. When the fuel cell degra-
+4.2.2. Sensitivity analysis of different fuel cell stack manufacturing cost         dation rate increases, the fuel cell performance and efficiency
+per unit power                                                                      decreases rapidly. This leads to the increase of the proportion of
+                                                                                    the daily consumption, therefore the fuel cell reaches its economic
+    In this part, different stack manufacturing cost per unit was                   lifetime rapidly. The good design and matching of the flow field
+selected to carry out the sensitivity analysis. The cost of $60/kW                  and MEA is needed, as well as good thermal management and
+comes form a report in 2009, and he cost of $30/kW is the DOE tar-                  water management, and appropriate control of the loading speed
+get cost of PEM fuel cell stack for transportation applications. A                  and loading range. In all, correct protection of the fuel cell
+40$/kW and a 50$/kW was chose between these two numbers.                            decreases the fuel cell degradation, and in turn, prolongs the fuel
+As seen in Fig. 8, the higher the fuel cell stack manufacturing cost,               cell economic lifetime and decreases the average cost.
+the longer the economic lifetime, and the higher the average cost.
+With the increase of the manufacturing cost per unit power, the                     4.2.4. Sensitivity analysis of different stack design powers
+manufacturing cost for a given stack also increased. Compared                           Fig. 10 is the result of Sensitivity analysis of different stack
+with the daily cost, the proportions of the manufacturing cost are
+greater, and need a longer service time to share the manufacturing                  design power, these stacks come from our lab. It can be seen that
+cost. Table 5 is the investigated and predicted manufacturing cost                  reducing the stack design power leads to an increase of the eco-
+of the PEM fuel cell stack (DOE). As can be seen from the table, the                nomic lifetime, which leads to a reduction of average cost. Reduc-
+mass production promotes the reduction of the fuel cell stack                       tion of the stack design power, leads to the reduction of the
+                                                                                    hydrogen consumption. However, reduction of daily consumption
+                                                                                    increases the proportion of the manufacturing cost thus needing
+162  H. Chen et al. / Applied Energy 142 (2015) 154­163
+
+                                                                                      (2) Taking the various changes of the operating condition into
+                                                                                           consideration, then the fuel cell lifetime quick evaluation
+                                                                                           method developed into the residual life prediction method.
+                                                                                           The residual life prediction method improves the accuracy
+                                                                                           of the fuel cell lifetime prediction, and provides the fuel cell
+                                                                                           residual lifetime and detailed operating condition to users at
+                                                                                           any time.
+
+                                                                                      (3) The PEM fuel cell economic lifetime evaluation method is a
+                                                                                           determination method of the fuel cell design life based on
+                                                                                           the optimal benefits and costs ratio. It directs the designers
+                                                                                           to choose appropriate materials and techniques, thus avoid-
+                                                                                           ing simply pursuing prolonging the fuel cell lifetime.
+
+Fig. 9. The fuel cell average cost and the economic lifetime under different voltage  Acknowledgements
+degradation rate.
+                                                                                          This work has been supported by Nature Science Foundation of
+                                                                                      China (Nos. 21376138, 20976095) the 973 Program (No.
+                                                                                      2012CB215500), and the 863 Program (Nos. 2012AA110601,
+                                                                                      2012AA053402).
+
+Fig. 10. The fuel cell average cost and the economic lifetime under different design  References
+power.
+                                                                                       [1] Cheng S, Miao J, Wu S. Use of metamodeling optimal approach promotes the
+a longer service time to achieve the minimum value of the average                            performance of proton exchange membrane fuel cell (PEMFC). Appl Energy
+cost.                                                                                        2013;105:161­9.
+
+    In all, reduction of the hydrogen price, increase of the manufac-                  [2] Xu L, Ouyang M, Li J, Yang F, Lu L, Hua J. Optimal sizing of plug-in fuel cell
+ture cost, reduction of the voltage degradation rate and reduction                           electric vehicles using models of vehicle performance and system cost. Appl
+of the fuel cell initial design power all lead to the extending of fuel                      Energy 2013;103:477­87.
+cells economic lifetime. During the fuel cell design and manufac-
+ture, it is better for a shorter economic lifetime which can reduce                    [3] Pei P, Chen H. Main factors affecting the lifetime of Proton Exchange
+the durability of the material and the difficulty of manufacture.                            Membrane fuel cells in vehicle applications: a review. Appl Energy 2014;
+But for users, it is better for a longer economic lifetime which                             125:60­75.
+can be realized by the reduction of hydrogen price and the reduc-
+tion of the voltage degradation rate through proper application.                       [4] Sun Y, Ogden J, Delucchi M. Societal lifetime cost of hydrogen fuel cell vehicles.
+                                                                                             Int J Hydrogen Energy 2010;35(21):11932­46.
+5. Conclusion
+                                                                                       [5] Cao T, Lin H, Chen L, He Y, Tao W. Numerical investigation of the coupled water
+    This paper studied the PEM fuel cell lifetime quick evaluation                           and thermal management in PEM fuel cell. Appl Energy 2013;112:1115­25.
+method, residual lifetime online prediction and the optimum eco-
+nomic lifetime. Following are the main conclusions:                                    [6] Lee J, Yoo M, Cha K, Lim TW, Hur T. Life cycle cost analysis to examine the
+                                                                                             economical feasibility of hydrogen as an alternative fuel. Int J Hydrogen Energy
+   (1) The PEM fuel cell lifetime quick evaluation method is avail-                          2009;34(10):4243­55.
+         able for the fuel cells in vehicle application and greatly
+         shortens the test period of the fuel cell lifetime. The general               [7] Wang Y, Chen KS, Mishler J, Cho SC, Adroher XC. A review of polymer
+         expression of the formula is suitable for various applications.                     electrolyte membrane fuel cells: technology, applications, and needs on
+                                                                                             fundamental research. Appl Energy 2011;88(4):981­1007.
+
+                                                                                       [8] Marquis J, Coppens MO. Achieving ultra-high platinum utilization via
+                                                                                             optimization of PEM fuel cell cathode catalyst layer microstructure. Chem
+                                                                                             Eng Sci 2013;102:151­62.
+
+                                                                                       [9] Avasarala B, Haldar P. Durability and degradation mechanism of titanium
+                                                                                             nitride based electrocatalysts for PEM (proton exchange membrane) fuel cell
+                                                                                             applications. Energy 2013;57:545­53.
+
+                                                                                      [10] Nikolic VM, Zugic DL, Perovic IM, Saponjic AB, Babic BM, Pasti IA, et al.
+                                                                                             Investigation of tungsten carbide supported Pd or Pt as anode catalysts for
+                                                                                             PEM fuel cells. Int J Hydrogen Energy 2013;38(26):11340­5.
+
+                                                                                      [11] Heinzel A, Mahlendorf F, Niemzig O, Kreuz C. Injection moulded low cost
+                                                                                             bipolar plates for PEM fuel cells. J Power Sources 2004;131(1­2):35­40.
+
+                                                                                      [12] Hou Y, Wang B, Yang Z. A method for evaluating the efficiency of PEM fuel cell
+                                                                                             engine. Appl Energy 2011;88(4):1181­6.
+
+                                                                                      [13] Bar-On I, Kirchain R, Roth R. Technical cost analysis for PEM fuel cells. J Power
+                                                                                             Sources 2002;109(1):71­5.
+
+                                                                                      [14] Kamarudin SK, Daud W, Md Som A, Takriff MS, Mohammad AW. Technical
+                                                                                             design and economic evaluation of a PEM fuel cell system. J Power Sources
+                                                                                             2006;157(2):641­9.
+
+                                                                                      [15] Bae SJ, Kim S, Lee J, Song I, Kim N, Seo Y, et al. Degradation pattern prediction
+                                                                                             of a polymer electrolyte membrane fuel cell stack with series reliability
+                                                                                             structure via durability data of single cells. Appl Energy 2014;131:48­55.
+
+                                                                                      [16] Jung G, Chuang K, Jao T, Yeh C, Lin C. Study of high voltage applied to the
+                                                                                             membrane electrode assemblies of proton exchange membrane fuel cells as an
+                                                                                             accelerated degradation technique. Appl Energy 2012;100:81­6.
+
+                                                                                      [17] Onanena R, Oukhellou L, Candusso D, Harel F, Hissel D, Aknin P. Fuel cells static
+                                                                                             and dynamic characterizations as tools for the estimation of their ageing time.
+                                                                                             Int J Hydrogen Energy 2011;36(2):1730­9.
+
+                                                                                      [18] Zhang S, Yuan X, Hin JNC, Wang H, Friedrich KA, Schulze M. A review of
+                                                                                             platinum-based catalyst layer degradation in proton exchange membrane fuel
+                                                                                             cells. J Power Sources 2009;194(2):588­600.
+
+                                                                                      [19] Kocha SS, DeliangYang J, Yi JS. Characterization of gas crossover and its
+                                                                                             implications in PEM fuel cells. AiChE J 2006;52(5):1916­25.
+
+                                                                                      [20] Bouzek K, Paidar M, Malis J, Jakubec I, Janík L. Influence of hydrogen
+                                                                                             contamination by mercury on the lifetime of the PEM-type fuel cell.
+                                                                                             Electrochim Acta 2010;56(2):889­95.
+
+                                                                                      [21] Marrony M, Barrera R, Quenet S, Ginocchio S, Montelatici L, Aslanides A.
+                                                                                             Durability study and lifetime prediction of baseline proton exchange
+H. Chen et al. / Applied Energy 142 (2015) 154­163                                    163
+
+       membrane fuel cell under severe operating conditions. J Power Sources          [27] H. Meada, A. Yoshimura, Fukumoto H. Proceedings of fuel cell seminar 2000.
+       2008;182(2):469­75.                                                                   Portland, USA; 2000. p. 379­400.
+[22] Bae SJ, Kim S, Park JI, Park CW, Lee J, Song I, et al. Lifetime prediction of a
+       polymer electrolyte membrane fuel cell via an accelerated startup-shutdown     [28] C.S. Spiegel, Design & building fuel cells. In: Xin Ma SWGC, editor. Beijing:
+       cycle test. Int J Hydrogen Energy 2012;37(12):9775­81.                                Publishing House of Electronics Industry; 2008.
+[23] Cheng N, Mu S, Pan M, Edwards PP. Improved lifetime of PEM fuel cell
+       catalysts through polymer stabilization. Electrochem Commun 2009;11(8):        [29] Bartolozzi I, Rizzi F, Frey M. Comparison between hydrogen and electric
+       1610­4.                                                                               vehicles by life cycle assessment: a case study in Tuscany, Italy. Appl Energy
+[24] Pei P, Chang Q, Tang T. A quick evaluating method for automotive fuel cell              2013;101:103­11.
+       lifetime. Int J Hydrogen Energy 2008;33(14):3829­36.
+[25] Barbir F, editor. PEM fuel cells: theory and practice. Burlington: Elsevier      [30] Yu J, Matsuura T, Yoshikawa Y, Islam MN, Hori M. In situ analysis of
+       Academic Press; 2005.                                                                 performance degradation of a PEMFC under nonsaturated humidification.
+[26] Sishtla C, Koncar G, Platon R, Gamburzev S, Appleby AJ, Velev OA. Performance           Electrochem Solid-State Lett 2005;8(3):A156­8.
+       and endurance of a PEMFC operated with synthetic reformate fuel feed.
+       J Power Sources 1998;71(1­2):249­55.                                           [31] K. W. Proceedings of fuel cell seminar 2000. Portland, USA; 2000. p. 468­72.
+                                                                                      [32] Ralph TR. Proton exchange membrane fuel cells: progress in cost reduction of
+
+                                                                                             the key components. Platinum Metals Rev 1997;41(3):102­13.
+                                                                                      [33] St-Pierre J, Jia N. Successful demonstration of Ballard PEMFCS for space shuttle
+
+                                                                                             applications. J New Mater Elect Syst 2002;5(4):263­71.
+

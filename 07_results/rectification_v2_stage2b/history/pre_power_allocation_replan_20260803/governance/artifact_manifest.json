@@ -1,0 +1,65 @@
+{
+  "checkpoint_count": 0,
+  "complete_checkpoint_count": 0,
+  "file_count": 14,
+  "files": {
+    "audit/audit_manifest.json": {
+      "bytes": 510,
+      "sha256": "4da8978be81130308dc667b904f83010ed6a868702fe16456a27168a98f51c58"
+    },
+    "audit/bottleneck_summary.json": {
+      "bytes": 279818,
+      "sha256": "f9150d75bbb23597540f8a54ec3c01b8ae877e586760f039a483c276a304d053"
+    },
+    "audit/legacy_invalidation.json": {
+      "bytes": 555,
+      "sha256": "83000d6d1e8223ad8808cfd7ccfd7f40e95bf32b955210877f5052bf74ae2c0b"
+    },
+    "audit/traces/legacy_c5_500_failed__balanced.csv": {
+      "bytes": 25084143,
+      "sha256": "c7ed63f5bd1f2aec4243b61140d8f775b74ce6d1ba0dc76f2bfc6dcbd38f70ac"
+    },
+    "audit/traces/legacy_c5_500_failed__battery_first.csv": {
+      "bytes": 23116070,
+      "sha256": "de76f02adf095c297cfcd2f0a31c1e283669a6d32e4cb4b32a13fedcd3694cd0"
+    },
+    "audit/traces/legacy_c5_500_failed__hydrogen_first.csv": {
+      "bytes": 24542216,
+      "sha256": "09eefb745092b32d9c9a7524133ab89955849df5dd07850cd30944ec83a710f9"
+    },
+    "audit/traces/stage02_best_failed__balanced.csv": {
+      "bytes": 24894652,
+      "sha256": "42c087a01028fe5a0af24dac734392c0745a78e48b1e683fc7b10bf36e5ac569"
+    },
+    "audit/traces/stage02_best_failed__battery_first.csv": {
+      "bytes": 24654327,
+      "sha256": "b56f1f11bd96aaf09933044150014993449f3cc750253db84e63da21b7b3cf46"
+    },
+    "audit/traces/stage02_best_failed__hydrogen_first.csv": {
+      "bytes": 24879218,
+      "sha256": "16f94a15058ac3f43baf235817bc8181207483763a8833338a122587e5f4c5a3"
+    },
+    "audit/traces/stage2b_global_upper_anchor__balanced.csv": {
+      "bytes": 27597362,
+      "sha256": "dfca42945e65025b018f7e6a34877b67510e7a77ca3aa863c7a14005b30ea12a"
+    },
+    "audit/traces/stage2b_global_upper_anchor__battery_first.csv": {
+      "bytes": 23141631,
+      "sha256": "60d558d5e26fbed954bef4a1d07fe8725ee3052a01849214f8f586685a3336da"
+    },
+    "audit/traces/stage2b_global_upper_anchor__hydrogen_first.csv": {
+      "bytes": 27225915,
+      "sha256": "d244e55c62b0aca38abee28316a4cd00f140914328b93e8c148f8a609526cc11"
+    },
+    "governance/downstream_gate.json": {
+      "bytes": 603,
+      "sha256": "695b03ac45578de2d1d158f6c3e1543917bb3f1513ed8ae5e2e1e807468f80a7"
+    },
+    "invalidation_reason.json": {
+      "bytes": 648,
+      "sha256": "509109a7739a2c5da071836dda66cc80440051aac11fb71344cf638d31681aba"
+    }
+  },
+  "invalid_checkpoint_count": 0,
+  "schema_version": "rectification_v2_stage2b.artifact_manifest.1"
+}

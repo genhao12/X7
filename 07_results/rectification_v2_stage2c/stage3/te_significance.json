@@ -1,0 +1,146 @@
+{
+ "compact": {
+  "te_nominal_pct": 1.127,
+  "pairwise": {
+   "pairwise_diff_mean": 0.004415892409266838,
+   "pairwise_diffs": [
+    0.0,
+    0.004634,
+    0.008614
+   ],
+   "boot_90ci": [
+    0.001545,
+    0.007287
+   ],
+   "ci_excludes_zero": true,
+   "n_boot": 10000
+  },
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "param_uncertainty": {
+   "te_low_param": -1.296,
+   "te_high_param": 7.891
+  },
+  "verdict": "统计显著（CI 不跨 0 且 |TE| > 数值容差）"
+ },
+ "balanced": {
+  "te_nominal_pct": 1.044,
+  "pairwise": {
+   "pairwise_diff_mean": 0.003715148203699873,
+   "pairwise_diffs": [
+    0.0,
+    0.003928,
+    0.007218
+   ],
+   "boot_90ci": [
+    0.001309,
+    0.006121
+   ],
+   "ci_excludes_zero": true,
+   "n_boot": 10000
+  },
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "param_uncertainty": {
+   "te_low_param": -1.201,
+   "te_high_param": 7.31
+  },
+  "verdict": "统计显著（CI 不跨 0 且 |TE| > 数值容差）"
+ },
+ "hydrogen_dominant": {
+  "te_nominal_pct": 1.032,
+  "pairwise": {
+   "pairwise_diff_mean": 0.0033407594066248714,
+   "pairwise_diffs": [
+    0.0,
+    0.003823,
+    0.006199
+   ],
+   "boot_90ci": [
+    0.001274,
+    0.005407
+   ],
+   "ci_excludes_zero": true,
+   "n_boot": 10000
+  },
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "param_uncertainty": {
+   "te_low_param": -1.187,
+   "te_high_param": 7.225
+  },
+  "verdict": "统计显著（CI 不跨 0 且 |TE| > 数值容差）"
+ },
+ "battery_dominant": {
+  "te_nominal_pct": 0.819,
+  "pairwise": {
+   "pairwise_diff_mean": 0.0024932553979475727,
+   "pairwise_diffs": [
+    0.0,
+    0.003276,
+    0.004204
+   ],
+   "boot_90ci": [
+    0.001092,
+    0.003895
+   ],
+   "ci_excludes_zero": true,
+   "n_boot": 10000
+  },
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "param_uncertainty": {
+   "te_low_param": -0.942,
+   "te_high_param": 5.734
+  },
+  "verdict": "统计显著（CI 不跨 0 且 |TE| > 数值容差）"
+ },
+ "critical": {
+  "te_nominal_pct": 0.959,
+  "pairwise": {
+   "pairwise_diff_mean": 0.0031017220573968016,
+   "pairwise_diffs": [
+    0.0,
+    0.003242,
+    0.006063
+   ],
+   "boot_90ci": [
+    0.001081,
+    0.005123
+   ],
+   "ci_excludes_zero": true,
+   "n_boot": 10000
+  },
+  "numerical_tolerance": {
+   "solver_tol": 0.001,
+   "te_abs_error_pct": 0.1,
+   "te_gt_tolerance": true
+  },
+  "param_uncertainty": {
+   "te_low_param": -1.103,
+   "te_high_param": 6.716
+  },
+  "verdict": "统计显著（CI 不跨 0 且 |TE| > 数值容差）"
+ },
+ "_summary": {
+  "conclusion": "TE 统计显著性（5 配置，cap 口径配对差值，Bootstrap 10000 次）：① 配对差值全部为正且 Bootstrap 90% CI 全部不跨 0（5/5）——TE>0 在统计抽样意义上显著；② 数值容差：|TE|（0.82~1.13%）全部大于求解容差传播界（0.1%）约 8~11 倍——差值高于求解误差；③ 参数不确定性（PARAM_DEFS 边界扫描）区间含 0（如 compact [-1.30%, +7.89%]）——在参数边界组合下 TE 方向不绝对保证（BAT A_D 上界 4× 时损伤放大被参数波动覆盖）。**主结论（升级）：反馈方向稳定（配对 Bootstrap 下 TE>0 统计显著）、量级有限（约 +0.4~+1.1% 配对均值）、且配置相关（battery_dominant 最低、hydrogen_dominant 最高）**；参数不确定性区间作补充说明（非绝对方向保证）。",
+  "method": "配对 Bootstrap 10000 次（3 年×3 设备总损伤逐年配对）；数值容差=求解收敛 tolerance 0.001 传播；参数区间=PARAM_DEFS 边界线性传播"
+ },
+ "_superseded": {
+  "by": "te_significance_v2.json",
+  "date": "2026-08-07",
+  "reason": "v1 为年块重采样（小样本）；v2 升级为周块重采样（168 点/周，保留自相关），补 95%CI/效应量/参数不确定性字段，为论文权威源。v1 仅历史参考，不作论文引用。"
+ }
+}

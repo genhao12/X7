@@ -1,0 +1,170 @@
+{
+ "timestamp": "2026-08-12T10:02:08",
+ "rule": "v9 §10/§12 + 2026-08-09 冻结口径（Spearman 主指标，L1/LPSP 可靠性检查）",
+ "params": {
+  "n_windows": 35040,
+  "sources": [
+   "bstar",
+   "lstm",
+   "perfect"
+  ],
+  "forecast_dir": "D:\\matlab\\C\\06_src\\predopt_ems\\lstm_env\\results\\forecasts"
+ },
+ "per_source": {
+  "bstar": {
+   "meta": {
+    "l1_kwh": 0.0,
+    "l2": 17883.93124362259,
+    "l3": 12489835.939279968,
+    "n_opt": 35040,
+    "n_infeas": 0,
+    "infeas_idx": [],
+    "n_tl": 0,
+    "tl_idx": [],
+    "mip_gap_p95": 0.0,
+    "mip_gap_max": 0.0,
+    "solve_time_p50_s": 0.790556788444519,
+    "solve_time_p95_s": 1.9307063221931442,
+    "solve_time_max_s": 11.730364084243774
+   },
+   "lpsp": 1.3347920517413952e-07,
+   "spearman": {
+    "bat": {
+     "rho": 0.9887304704174847,
+     "pvalue": 6.562320482017601e-43,
+     "n_blocks": 52
+    },
+    "fc": {
+     "rho": 0.996134363553222,
+     "pvalue": 1.7265149651663434e-54,
+     "n_blocks": 52
+    },
+    "el": {
+     "rho": 0.915540271875547,
+     "pvalue": 2.0442428174167114e-21,
+     "n_blocks": 52
+    }
+   },
+   "soc_range": [
+    0.15,
+    0.95
+   ],
+   "fc_run_steps": 1872,
+   "el_run_steps": 4299
+  },
+  "lstm": {
+   "meta": {
+    "l1_kwh": 194741.96021133396,
+    "l2": 35612.978193096715,
+    "l3": 6475799.671364117,
+    "n_opt": 35030,
+    "n_infeas": 10,
+    "infeas_idx": [
+     6629,
+     18188,
+     25586,
+     25588,
+     25589,
+     25590,
+     25592,
+     25593,
+     32584,
+     32585
+    ],
+    "n_tl": 6,
+    "tl_idx": [
+     9449,
+     25587,
+     30220,
+     31112,
+     32573,
+     32582
+    ],
+    "mip_gap_p95": 0.0,
+    "mip_gap_max": 0.5352469470620026,
+    "solve_time_p50_s": 1.1722973585128784,
+    "solve_time_p95_s": 7.694568598270407,
+    "solve_time_max_s": 156.9229917526245
+   },
+   "lpsp": 0.015481776133184685,
+   "spearman": {
+    "bat": {
+     "rho": 0.9952189874498419,
+     "pvalue": 3.467735767655174e-52,
+     "n_blocks": 52
+    },
+    "fc": {
+     "rho": 0.986509566437443,
+     "pvalue": 5.73940597965356e-41,
+     "n_blocks": 52
+    },
+    "el": {
+     "rho": 0.8941347221036454,
+     "pvalue": 4.476306249158924e-19,
+     "n_blocks": 52
+    }
+   },
+   "soc_range": [
+    0.15,
+    0.95
+   ],
+   "fc_run_steps": 3889,
+   "el_run_steps": 3925
+  },
+  "perfect": {
+   "meta": {
+    "l1_kwh": 0.0,
+    "l2": 17713.844113066538,
+    "l3": 12524745.451449867,
+    "n_opt": 35040,
+    "n_infeas": 0,
+    "infeas_idx": [],
+    "n_tl": 0,
+    "tl_idx": [],
+    "mip_gap_p95": 0.0,
+    "mip_gap_max": 0.0,
+    "solve_time_p50_s": 0.7964977025985718,
+    "solve_time_p95_s": 1.9193531036376938,
+    "solve_time_max_s": 12.93865418434143
+   },
+   "lpsp": 8.751575175286669e-08,
+   "spearman": {
+    "bat": {
+     "rho": 0.9952189874498419,
+     "pvalue": 3.467735767655174e-52,
+     "n_blocks": 52
+    },
+    "fc": {
+     "rho": 0.9896686864105685,
+     "pvalue": 7.551383299662188e-44,
+     "n_blocks": 52
+    },
+    "el": {
+     "rho": 0.9341900247558189,
+     "pvalue": 4.9935577775910244e-24,
+     "n_blocks": 52
+    }
+   },
+   "soc_range": [
+    0.15,
+    0.95
+   ],
+   "fc_run_steps": 1946,
+   "el_run_steps": 4326
+  }
+ },
+ "checks": {
+  "spearman_ge090": {
+   "bstar": true,
+   "lstm": false,
+   "perfect": true
+  },
+  "lpsp_lt1pct": {
+   "bstar": true,
+   "lstm": false,
+   "perfect": true
+  }
+ },
+ "pass": false,
+ "note": "代理 Spearman 按周块（672 点）聚合代理 vs 精算损伤秩相关，为第二关主验收；LPSP=ΣP_uns·Δt/Σload 能量缺失比，<1% 为可靠性准入（防退化检查，非主指标）；预测层冻结规则：3 源预测文件一次性缓存于 lstm_env/results/forecasts/，复用不重算。"
+}

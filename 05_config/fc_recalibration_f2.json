@@ -1,0 +1,73 @@
+{
+  "fc_recalibration_f2": {
+    "title": "F2: FC退化标定补全 (观测变量/拟合误差/验证集)",
+    "date": "2026-08-02",
+    "data_source": "PEMFC真实动态工况性能衰减数据 (999h)",
+    "observables": {
+      "voltage": {
+        "variable": "Operando voltage (V)",
+        "data_points": 937,
+        "range": "0.8410 -> 0.7880 V",
+        "degradation_pct": 6.30,
+        "linear_fit": "V = 0.8299 - 0.000045 * cycle",
+        "R2": 0.9475,
+        "RMSE_V": 0.0036,
+        "degradation_rate_per_cycle": 4.5e-5,
+        "EOL_10pct_voltage_drop_hours": 1882,
+        "note": "1 cycle = 1h (参考循环)"
+      },
+      "efficiency": {
+        "variable": "Overall efficiency (dimensionless)",
+        "data_points": 850,
+        "range": "0.541 -> 0.451",
+        "degradation_pct": 16.64,
+        "linear_fit": "Eff = 0.5297 - 0.000078 * t",
+        "R2": null,
+        "note": "效率退化含电压+法拉第效率+气体串扰, 不能等同于电压退化"
+      },
+      "HFR": {
+        "variable": "HFR at 1kHz (mOhm/cm2)",
+        "data_points": 3625,
+        "range": "58.56 -> 80.01",
+        "growth_pct": 36.63,
+        "note": "阻抗增长, 反映膜/催化层退化"
+      }
+    },
+    "calibration_result": {
+      "primary_observable": "voltage",
+      "EOL_criterion": "10% voltage drop from BOL",
+      "BOL_voltage": 0.841,
+      "EOL_voltage": 0.757,
+      "EOL_time_hours": 1882,
+      "degradation_rate": "4.5e-5 V/cycle (R2=0.9475, RMSE=0.0036V)",
+      "validation_split": "前80%训练(749点), 后20%验证(188点)",
+      "validation_R2": "待计算",
+      "cross_validation": "CCMB/CCMC数据交叉验证(待执行)"
+    },
+    "uncertainty": {
+      "method": "Bootstrap 1000次重采样",
+      "confidence_interval_95pct": "待计算",
+      "scale_migration_uncertainty": "电流密度归一化, ±20% (假设, 非推导)",
+      "note": "±20%区间为经验假设, 无严格推导依据; 只能称情景标定"
+    },
+    "evidence_grade": {
+      "original_data": "A级 (999h真实动态工况 + EIS + 极化曲线)",
+      "migrated_to_system": "情景标定 (非已验证B级)",
+      "reason": "999h电芯级数据到100kW系统级迁移无独立验证; ±20%区间无推导; 观测变量为电压而非系统级功率/效率"
+    },
+    "key_corrections_vs_s4": {
+      "s4_error_1": "S4用效率退化率(68.53%/年)计算EOL, 但10%电压EOL≠10%效率损失",
+      "s4_error_2": "S4标注B级, 但缺验证集/参数后验/系统尺度验证, 只能称情景标定",
+      "s4_error_3": "S4的±20%无推导依据",
+      "corrected": "F2改用电压退化率(主观测变量), EOL=1882h(非1278h), 标注为情景标定"
+    },
+    "economic_impact": {
+      "FC_annual_operating_hours": 6462,
+      "EOL_hours": 1882,
+      "annual_replacements": 3.43,
+      "20yr_replacements": 69,
+      "s4_error": "S4经济模型只算20次更换(每年1次), 实际应69次",
+      "note": "此修正使NPC大幅增加, LCOE失真"
+    }
+  }
+}

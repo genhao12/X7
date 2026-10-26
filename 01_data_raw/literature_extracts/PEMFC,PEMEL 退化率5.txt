@@ -1,0 +1,730 @@
+Journal of The
+Electrochemical Society
+
+OPEN ACCESS                                                             You may also like
+
+Impact of Intermittent Operation on Lifetime and                              - Comparison between Iridium Oxide- and
+Performance of a PEM Water Electrolyzer                                         Iridium Metal-Based Anode Catalysts
+                                                                                during Intermittent Operation in PEM
+To cite this article: A. Weiß et al 2019 J. Electrochem. Soc. 166 F487          Water Electrolyzers
+                                                                                Carina Schramm, Matthias Kornherr,
+View the article online for updates and enhancements.                           Michele Piana et al.
+
+                                                                              - A Platinum Micro-Reference Electrode for
+                                                                                Impedance Measurements in a PEM
+                                                                                Water Electrolysis Cell
+                                                                                Alexandra Hartig-Weiß, Maximilian Bernt,
+                                                                                Armin Siebel et al.
+
+                                                                              - Diagnosis of Voltage Losses of the Proton
+                                                                                Exchange Membrane Water Electrolyzer
+                                                                                with Nonlinear Frequency Response
+                                                                                Method
+                                                                                Tamara Milicic, Kasun Muthunayakage,
+                                                                                Thanh Vu Hoang et al.
+
+This content was downloaded from IP address 66.90.98.106 on 18/07/2026 at 09:48
+Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)                                                                      F487
+
+         Impact of Intermittent Operation on Lifetime and Performance of
+         a PEM Water Electrolyzer
+
+            A. Weiß, 1,=,,z A. Siebel, 1,=, M. Bernt, 1,2, T.-H. Shen,3 V. Tileli,3
+            and H. A. Gasteiger1,
+
+               1Chair of Technical Electrochemistry, Department of Chemistry and Catalysis Research Center, Technical University of
+               Munich, 85747 Garching, Germany
+               2Bayerisches Zentrum für angewandte Energieforschung, 85748 Garching, Germany
+               3Institute of Materials, École Polytechnique Fédérale de Lausanne, CH-1015 Lausanne, Switzerland
+
+The aim of this study is to provide a better understanding of performance degrading mechanisms occurring when a proton exchange
+membrane water electrolyzer (PEM-WE) is coupled with renewable energies, where times of operation and idle periods alternate.
+An accelerated stress test (AST) is proposed, mimicking a fluctuating power supply by operating the electrolyzer cell between high
+(3 A cm-2geo) and low current densities (0.1 A cm-2geo), alternating with idle periods during which no current is supplied and the
+cell rests at open circuit voltage (OCV). Polarization curves, periodically recorded during the OCV-AST, reveal an initial increase
+in activity (50 mV after 10 cycles) followed by a significant decrease in performance during prolonged OCV cycling due to an
+increasing high frequency resistance (HFR) (1.6-fold after 718 cycles). These performance changes can clearly be related to the
+OCV periods, since they are not observed in a reference experiment where the OCV period is replaced by a potential hold at 1.3 V.
+The origin of the phenomena, which are responsible for the initial performance gain as well as the subsequent decay are analyzed via
+detailed electrochemical and physical characterization of the MEAs, and an operating strategy to prevent performance degradation
+is proposed.
+© The Author(s) 2019. Published by ECS. This is an open access article distributed under the terms of the Creative Commons
+Attribution 4.0 License (CC BY, http://creativecommons.org/licenses/by/4.0/), which permits unrestricted reuse of the work in any
+medium, provided the original work is properly cited. [DOI: 10.1149/2.0421908jes]
+
+Manuscript submitted January 3, 2019; revised manuscript received April 8, 2019. Published April 29, 2019. This was Paper 1606
+presented at the Cancun, Mexico, Meeting of the Society, September 30-October 4, 2018.
+
+    In light of the fact that the energy demand is ever-increasing and      owing to stabilization of the polymer endgroups,13 so that membrane
+that renewable energy sources, inherently intermittent in energy out-
+put, are becoming more and more important, an efficient way of storing      thinning is likely less of an issue when using state-of-the-art PFSA
+energy is of crucial importance. One prominent example for an energy        membranes.14 Another membrane related degradation effect is the con-
+carrier meeting these requirements is gaseous hydrogen, produced in         tamination of the ionomeric membrane with cations,11,15­16 typically
+a polymer electrolyte membrane water electrolyzer (PEM-WE) via
+electrochemical water splitting.1,2 The reliability of a PEM-WE has         introduced by improperly treated feed-water which is the major cause
+already been reported for 60,000 h of operation, showing only a             for PEM-WE failures in the field,16­17 Sun et al. showed the operation
+marginal loss in performance.3­4 In an ideal scenario, PEM-WE sys-
+tems would be coupled with renewable energy sources in order to             of a 9-cell PEM-WE stack for 7800 h at constant current, and recorded
+fully utilize their output by converting temporary excess energy into
+H2.5 This dynamic mode of operation involves frequent load changes          a gradual decrease in performance that they attributed to cationic con-
+and idle periods during which no current is supplied.2,6­8 While it is
+well known that alkaline water electrolyzers must be operated with a        tamination, since the initial performance was mostly recovered by
+so-called protective current in stand-by/idle conditions (i.e., when no
+power is provided by renewable energy sources) in order to avoid a          boiling the degraded MEA (membrane-electrode-assembly) in sulfu-
+substantial performance degradation,4,7,9­10 very little is known about     ric acid.18
+the gravity of this effect in PEM-WEs, even though it will be an im-
+portant consideration for coupling PEM-WEs with renewable energy                Apart from degradation of the membrane in the membrane-
+sources.6,11 In this paper, we will try to further investigate this phe-
+nomenon, but first will briefly review the most common failure mech-        electrode-assembly via chemical degradation and cationic contamina-
+anisms of PEM-WEs.
+                                                                            tion, gradual passivation of the titanium porous transport layer (PTL)
+    A commonly observed failure of PEM-WEs has been related to
+the chemical degradation of the perfluorosulfonic acid (PFSA) based         at the high potentials experienced by the anode electrode of an elec-
+polymer electrolyte membrane, often observed as thinning of the mem-
+brane or as localized pinholes in the membrane. The concomitant in-         trolyzer increases the internal ohmic resistance and, hence, leads to a
+crease in gas permeation ultimately leads to an unacceptably large,
+safety-critical H2 concentration in the O2 anode compartment, as the        decrease of performance. This was demonstrated by Rakousky et al.
+H2 oxidation activity of iridium based anode catalysts is very poor         after operation at 2 A cm-2geo for 1000 h, where the high-frequency
+(contrary to the O2 reduction activity in the H2 anode). This is de-        resistance (HFR) increased by 26 m cm2geo (20%) due to passi-
+scribed in an early study by Stucki et al., who showed that the failure of  vation of the Ti-PTL.19 In addition, the authors observed a reduction
+a dynamically operated 100 kW PEM-WE plant after only 15,000 h
+was mostly related to thinning of the PFSA membrane, caused by              of the anodic exchange current density, which they attribute to a con-
+chemical degradation.12 Here, however, it should be noted that the
+chemical durability of today's PFSA membranes is dramatically better        tamination with titanium from either the anode catalyst itself (iridium
+
+   =These authors contributed equally to this work.                         oxide coated onto a titanium oxide support) or the anodic Ti-PTL.
+   Electrochemical Society Student Member.
+  Electrochemical Society Fellow.                                               With regards to the effect of dynamic PEM-WE operation, Rak-
+    zE-mail: alexandra.weiss@tum.de
+                                                                            ousky et al. investigated the influence of different load profiles over
+                                                                            1000 h, namely constant current of 1 or 2 A cm-2geo, cycling be-
+                                                                            tween 1 and 2 A cm-2geo, or cycling between open-circuit voltage
+                                                                            (OCV) and 2 A cm-2 geo.20 At a constant current of 2 A cm-2geo
+                                                                            the authors observed an untypically high degradation rate (200 V
+                                                                            h-1) compared to that at a constant current of 1 A cm-2geo (<1 V
+                                                                            h-1). When cycling between 1 and 2 A cm-2geo or between OCV and
+                                                                            2 A cm-2geo, the degradation rate was substantially lower than that at
+                                                                            a constant current of 2 A cm-2geo, which the authors claim to be due
+                                                                            to a not clearly defined reversible degradation effect.20 Interestingly,
+
+                                                                            comparing the degradation rates when cycling between OCV and
+                                                                            2 A cm-2geo at different interval times (10 min vs. 6 h per step), the
+                                                                            degradation rate increased with the number of OCV periods over the
+                                                                            1000 h of test (16 V h-1 for 80 OCV periods vs. 50 V h-1 for
+                                                                            3000 OCV periods over 1000 h). While the authors suggested that
+
+                                                                            this might be due to cathode catalyst degradation, our data presented
+F488                                           Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)
+
+below would suggest that it is related to the degradation of the anode    brightness gun source operated at 200 kV. The current was kept low
+catalyst.                                                                 to avoid possible electron beam induced damage which would cause
+                                                                          collapse of the polymeric film. High-angle annular dark field-STEM
+    To date, a detailed understanding of performance degrading phe-       (HAADF-STEM) images of the interface between the IrO2/TiO2 an-
+nomena associated with discontinuous operation, particularly with in-     ode catalyst layer and the Nafion membrane were acquired by collect-
+termittent OCV periods, has not been established. In this work, we        ing incoherently scattered electrons. Energy dispersive spectroscopy
+propose a dynamic accelerated stress test (AST) procedure, mimick-        (STEM-EDS) elemental maps of iridium and oxygen were obtained by
+ing the variable power supply of renewable energy sources, where          collecting characteristic X-ray signals via four silicon drift detectors
+operation at low and high current densities (0.1 and 3 A cm-2geo,         located in close proximity to the sample at the TEM column.
+respectively) alternate with idle periods, during which no current is
+supplied and the electrolyzer cell rests at the open circuit voltage.         Contact resistance measurement.--Contact resistance measure-
+This test will be complemented by an experiment during which the          ments were carried out with the test setup described by Bernt et al.22
+cell voltage is not varying freely during the OCV periods but instead     PTLs, along with an insulating Kapton foil (25 m) to ensure that the
+is potentiostated at 1.3 V, where the current density is on the order of  resistance is only measured along the PTL were sandwiched between
+1 mA cm-2geo (i.e, significantly smaller than the 100 mA cm-2geo).        two titanium flow-fields which, in turn, were sandwiched between
+We will show that cycling into OCV leads to a significant performance     and two copper plates. A pressure of 1.7 MPa was applied to this
+loss, particularly at high current densities, compared to 1.3 V holds.    stack in order to simulate the contact pressure in the cell. By applying
+The origin of this phenomenon will be examined via detailed elec-         different currents via the copper plates and measuring the associated
+trochemical and physical characterization of the MEA before, during,      voltage drops across the flow-fields, the electronic resistance (essen-
+and after the respective cycling test.                                    tially equating to the contact resistance) was quantified.
+
+                               Experimental                                    Electronic resistance measurement of the anode electrode.--
+                                                                          Electronic conductivities of the IrO2/TiO2 anode catalyst layers in
+     Membrane electrode assembly (MEA) preparation and cell               the size of 5 cm2geo were determined by 4-point-probe in-plane con-
+                                                                          ductivity measurements (Lucas/Signatone, pin distance 1 mm) on the
+assembly.--MEAs with an active area of 5 cm2 were prepared via            electrode coated onto the membrane by applying different potentials
+                                                                          between 0.1­0.5 V and recording the corresponding current.
+the decal transfer method, where platinum supported on Vulcan XC72
+                                                                               Electrochemical characterization.--All electrochemical mea-
+carbon (45.8 wt.-% Pt/C, TEC10V50E from Tanaka, Japan) served as          surements of the MEAs were performed on an automated test sta-
+                                                                          tion from Greenlight Innovation, using a potentiostat equipped with
+catalyst for the hydrogen evolution reaction (HER) at the cathode elec-   a current booster (BioLogic VSP 300). The anode was supplied with
+                                                                          5 mLH2O min-1 deionized (DI) water, which was pre-heated to 80°C.
+trode and IrO2 supported on TiO2 (IrO2/TiO2 with 75 wt.-% iridium,        During the measurements, the cell temperature was kept constant at
+                                                                          80°C, and the product gas exiting from the anode side was diluted
+Elyst Ir75 0480 from Umicore, Germany) as catalyst for the oxygen         with nitrogen (200 nccm) to avoid the formation of an explosive gas
+                                                                          mixture due to hydrogen permeation through the membrane into the
+evolution reaction (OER) at the anode electrode. De-ionized (DI) wa-      anode compartment. During warm-up, the cathode is flushed with N2
+                                                                          for 300 s while 5 mLH2O min-1 are constantly supplied to the anode
+ter (18 M cm), 2-Propanol (purity 99.9% from Sigma Aldrich), and          side. After reaching the desired cell temperature of 80°C, the cell was
+                                                                          conditioned at 1 A cm-2geo for 30 min. Subsequently, polarization
+Nafion ionomer solution (20 wt.-% ionomer, D2021 from IonPower,           curves were taken at ambient pressure (1 bara) and 10 bara, stepwise
+                                                                          increasing the current density from 0.01 to 4 A cm-2geo and holding at
+USA) were used as solvents for the catalyst ink. The suspension was       each current for 5 min to ensure a stable cell voltage reading. Finally,
+                                                                          the last 10 s of the cell voltage at each current density were averaged.
+mixed for 24 h using a roller mill, where ZrO2 grinding balls (5 mm       Considering the first two polarization curves as part of the condition-
+                                                                          ing, they were not included in the analysis. For the load-cycling pro-
+diameter) were added to achieve a homogenous suspension. The ink          cedure, the flow of H2O through the anode compartment and the cell
+                                                                          temperature were kept constant also during the open-circuit voltage
+was coated onto a thin decal transfer substrate (PTFE, 50 m thick,        (OCV) or the 1.3 V-hold periods.
+
+from Angst+Pfister, Germany) using the Mayer rod technique. Sub-              Additionally, AC impedance measurements were performed at the
+                                                                          end of each current density step in a range from 100 kHz to 1 Hz, ad-
+sequently, 5 cm2 decals were punched from the coating after drying        justing the amplitude of the current perturbation such that it was always
+                                                                          <20% of the applied current, except for the smallest current density
+and then hot-pressed onto a Nafion 212 membrane (50 m thick, from         of 10 mA cm-2geo where it was 40%. The high-frequency resistance
+                                                                          (HFR) was determined from the high-frequency intercept with the real
+Quintech, Germany) at 155°C for 3 minutes at a pressure of 2.5 MPa.       axis in a Nyquist plot. At the beginning-of-test (BoT) as well as during
+                                                                          the test and at the end-of-test (EoT), cyclic voltammograms (CVs) of
+By weighing the decals before and after hot-pressing, the actual weight   the anode electrode were recorded. For this, the test procedure was
+                                                                          stopped either after the open-circuit voltage or the 1.3 V-hold period,
+of the electrodes was determined. Throughout the study, the loading       and the cathode counter electrode was flushed with dry H2 at 50 nccm
+                                                                          at ambient pressure to ensure a stable reference potential, while the
+was kept constant at 0.2 ± 0.1 mgPt cm-2geo for the hydrogen cathode      anode electrode was continuously fed with 5 mLH2O min-1 deionized
+                          cm-                                             water. The CVs were recorded in a potential range of 0.05 V­1.3 V at
+and  1.75  ±  0.15  mgIr       2     for  the  oxygen  anode.             50 mV s-1 at 80°C; showing the steady-state CVs (2nd one recorded).
+                                geo
+
+At the anode, sintered titanium (from Mott Corporation, USA) with
+
+a porosity of 50%, a thickness of 280 ± 10 m and a pore size of
+
+10­50 m (determined by SEM) was used as a porous transport layer
+
+(PTL), whereas a carbon fiber paper (TGP-H 120T from Toray, no
+
+MPL, 20 wt.-% PTFE) with a thickness of 370 ± 10 m and pore sizes
+
+of 20­50 m21 was used on the cathode. The MEA and PTLs were
+
+placed between the flow-fields of the electrolyzer cell and sealed with
+
+virgin PTFE gaskets. By choosing the right thickness of the gaskets,
+
+a compression of the carbon PTL by 25% was set, corresponding to
+
+a compressive contact pressure of 1.7 MPa at the MEA. Specific
+
+details about the cell hardware are reported elsewhere.22
+
+    Physical characterization.--After the electrochemical character-
+ization and testing, a small piece of each MEA was embedded into
+room-temperature curing epoxy for scanning electron microscopy
+(SEM). Using SiC paper, the sample surface was polished in two
+steps (grade P320 and P1200) and afterwards polished using a 9 m
+diamond polishing agent (from Buehler, USA). The cross-sectional
+lamellae of the pristine and operated samples were prepared by fo-
+cused ion beam milling (FIB, Zeiss NVision 40). Due to the porosity
+of the catalyst layer and the sensitive nature of the polymeric mem-
+brane, the area thinned for TEM analysis was kept to a minimum
+to keep the lamellae intact. The scanning transmission electron mi-
+croscopy (STEM) was performed with a spherical aberration corrected
+TEM (ThermoScientific Titan Themis 60-300) equipped with a high
+Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)                  F489
+
+Figure 1. Test protocol for the accelerated stress test (AST) to mimic an in-     Figure 2. Evolution of the cell voltage and the HFR-corrected cell voltage
+termittent power supply of a PEM-WE with periods of low and high current          at 0.1 A cm-2geo and 3 A cm-2geo during the OCV-AST at 80°C, cycling
+density followed by OCV ("OCV-AST", black solid lines) and of a reference         the cell according to the protocol shown in Figure 1 (black solid line) with
+test avoiding OCV ("reference test", blue dotted lines) by holding the potential  pcathode = 10 bara and panode = 1 bara, while feeding 5 mL H2O min-1 into
+at 1.3 V instead of OCV. a) Current profiles during the first cycle of the OCV-   the anode compartment (same MEA specifications as in Figure 1). For better
+test; b) associated potential profiles recorded at 80°C with pcathode = 10 bara   legibility, only every 15th point was plotted; the inset is a zoomed view of the
+and panode = 1 bara, while feeding 5 mL H2O min-1 into the anode compart-         initial 40 cycles including all data points.
+ment. MEA specification: 5 cm2 active-area with 1.75 mgIr cm-2geo anode
+and 0.2 mgPt cm-2geo cathode loading using a Nafion 212 (50 m thick)              for water electrolysis at 80°C. This is followed by a gradual decrease
+membrane.                                                                         of the potential to 0.8 V, caused by the gradual enrichment of H2
+                                                                                  in the anode compartment by permeation from the cathode compart-
+                           Results and Discussion                                 ment that is held at 10 bara (i.e., at a H2 partial pressure of 9.5 bara),
+                                                                                  resulting in a H2 permeation flux of 5.610-2 cms(H2)3 cm-2 min-1
+     Degradation test protocols.--In this section, we propose a test              (from the above quoted permeation rate). In this H2-rich gas-phase
+protocol to mimic transient operation of a PEM-WE. First a high                   at 80°C, the surface of the crystalline IrO2 on the TiO2 support un-
+(3 A cm-2geo) and then a low (0.1 A cm-2geo) current density are                  dergoes a gradual partial reduction to a surface which is catalytically
+drawn from the cell, followed by a current interrupt during which                 active for the hydrogen oxidation reaction (HOR).24 Once its HOR ac-
+the cell is left to rest at the OCV, simulating shut-off periods of a             tivity is high enough (apparently at 0.8 V), the equilibrium potential
+PEM-WE operated with intermittent renewable energy (denoted as                    for the HOR at 0 V is being established very quickly (in less than
+"OCV-AST"). The duration of each interval was 10 min, and one                     0.5 min), resulting in a drop of the cell voltage of the electrolyzer to
+cycle refers to the two current steps and the OCV period (black solid             0 V vs. the reversible hydrogen electrode (RHE) potential (note that
+line in Figure 1a). In a second experiment, referred to as "reference             the platinum catalyzed cathode is still under a high H2 pressure, so that
+test", the OCV period at the end of each cycle was replaced by a po-              the 0 V cell voltage are clearly due to a drop of the anode potential to
+tential hold at 1.3 V (blue dotted line in Figure 1a). During the entire          0 V vs. RHE). When holding the cell voltage at 1.3 V instead in case
+operation (i.e., including the shut-off periods), the temperature was             of the reference test, the reduction of the IrO2 catalyst will be prevented
+held at 80°C and 5 mL min-1 DI water was continuously fed into                    (as will be proven later), however at the cost of applying a small bias
+the anode compartment of the cell. During the OCV or 1.3 V-hold                   current, as will be discussed in the last section of this work.
+phase, the cathode pressure decreased by 1 bara (i.e., from 10 bara
+to 9 bara) due to H2 permeating through the membrane into the                         The evolution of the cell voltage as a function of the number of
+anode compartment (the H2 partial pressure normalized permeation                  current/OCV cycles of the OCV-AST is shown in Figure 2. The cell
+rate through a 175 m thick Nafion 117 membrane in a PEM-WE                        voltage at both current densities initially decreases by 50 mV (inset
+at 80°C between 10 and 30 bara cathode pressure was found to be                   of Figure 2) and above 10 cycles gradually increases, particularly at
+0.24 mA cm-2geo bara(H2)-1,23 which if scaled to a 50 m thick                     high current density. Since the HFR-corrected cell voltage also de-
+Nafion 212 membrane equates to 0.85 mA cm-2geo bara(H2)-1 or                      creases during the first 10 cycles (cf. hollow blue and black symbols
+5.910-3 cms(H2)3 cm-2 bara(H2)-1 min-1 (with cms3 referenced to                   in Figure 2), the initially decreasing cell voltage must be due to an in-
+1.103 bara and 25°C)).                                                            crease of the OER activity of the anode catalyst (note that the cathode
+                                                                                  overpotential would be <10 mV even if the loading of the Pt cathode
+    Voltage and current response during the OCV-AST and the ref-                  catalyst would be reduced by an order of magnitude from the value of
+erence test.--Figure 1b shows the cell voltage recorded during the dif-           0.2 mgPt cm-2geo used in this work).25 As was shown previously24 and
+ferent operation intervals in Figure 1a. During operation at constant             as will be further discussed below, this is indeed due to an increase
+current, the cell voltage remains essentially constant. Upon current              in the OER activity of the IrO2 based anode catalyst after extended
+interruption in the OCV-AST (black line), the potential drops imme-               exposure to H2 during the OCV periods. The increase in cell voltage
+diately to 1.2 V, i.e., to the approximate thermodynamic cell voltage             starting after 10 cycles is largely caused by an increase in the HFR, re-
+                                                                                  flected by the fact that the HFR-corrected cell voltage at 3 A cm-2geo
+                                                                                  rises much less significantly than the cell voltage. The nevertheless
+F490  Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)
+
+Figure 3. Evolution of the cell voltage and the HFR-free cell voltage at           Figure 4. Ambient pressure PEM-WE performance data at 80°C recorded dur-
+0.1 A cm-2geo and 3 A cm-2geo during the reference test at 80°C with OCV pe-       ing the OCV-AST shown in Figure 2 a) Ecell vs. i performance (filled symbols)
+riods replaced by 1.3 V-holds, cycling the cell according to the protocol shown    and HFR-free performance data (hollow symbols) with a cathode water-feed
+in Figure 1 (blue dotted line) with pcathode = 10 bara and panode = 1 bara, while  of 5 mLH2O min-1; b) corresponding HFR values. The polarization curve and
+feeding 5 mLH2O min-1 into the anode compartment (same MEA specifica-              the HFR after 200 OCV-AST cycles for an independent repeated experiment
+tions as in Figure 1). For better legibility, only every 10th point was plotted;   are marked by the yellow lines.
+the inset is a zoomed view of the initial 40 cycles including all data points.
+                                                                                   increases continuously, consistent with the results presented above
+noticeable increase of the HFR-corrected cell voltage upon extended                under differential pressure conditions (pcathode/panode = 10/1 bara, see
+cycling suggests the growth of a more complex mass transport resis-                Figure 2). This increase in cell voltage is accompanied by a substantial
+tance.                                                                             increase of the HFR (Figure 4b) by a factor of 1.3 after 200 cycles
+                                                                                   (71 m cm2geo) and by a factor of 1.6 after 718 cycles (88 m
+    In the reference test, the potentiostatic control at 1.3 V during the          cm2geo) compared to its BoT value (56 m cm2geo). Since the HFR
+shut-down period results in a constant cell as well as HFR-corrected               represents the sum of the membrane ionic resistance and the electronic
+potential at both currents over the entire cycling test (Figure 3). In-            contact resistances at the PTL/electrode and PTL/flow field interface,
+terestingly, the substantial performance improvement observed over                 one (or all) of these terms must be responsible for the performance
+the first 10 cycles cannot be observed here, particularly not for the              degradation. A large fraction of the performance decrease between
+HFR-corrected data, as can be seen in the inset of Figure 3 (<10 mV                10 cycles (blue circles) and EoT (read diamonds) can be ascribed to
+vs. 50 mV in Figure 2). This suggests that the (partial) reduction                 this dramatically increasing HFR, as indicated by the much smaller
+of the anode catalyst does not occur at 1.3 V. The comparison                      increase of the HFR-corrected voltage (open symbols in Figure 4a).
+of both experiments proves that the performance degradation during                 However, the HFR increase alone cannot explain all of the perfor-
+the first experiment (Figure 2) is directly related to the OCV period              mance losses over extended cycling, as the HFR-corrected voltage at
+at the end of each cycle, during which H2 accumulates in the an-                   each current density still increases between 10 cycles and EoT.
+ode compartment and lowers the potential of the anode catalyst to
+0 V vs. RHE (Figure 1b, blue dotted line). It further proves that the                  This analysis of the OCV-AST will be compared next to that of the
+degradation observed during the OCV-AST (Figure 2) is not caused                   reference test where OCV periods are replaced by 1.3 V-hold periods
+by experimental artefacts (e.g., ionic contamination of the feed-water).           (Figure 5). Quite astoundingly, the cell voltage up to 4 A cm-2geo even
+Apparently, avoiding temporary potential excursions of the anode cat-              slightly improves over 500 cycles (Figure 5a), which is related to the
+alyst to below 1.3 V during intermittent shut-down mitigates parasitic             slightly decreasing HFR (Figure 5b), from  54 m cm2geo initially
+processes that lead to an increasing cell voltage, which, to a large ex-           (green squares) to  50 m cm2geo after 500 cycles (red diamonds).
+tent but not completely, can be attributed to an increase in HFR. The              The perfectly unchanged HFR-corrected cell voltage over 500 cycles
+current/power required to hold the potential at 1.3 V during shut-down             signifies that the OER catalyst activity must remain unaltered. Consid-
+periods will be discussed in the last section of this work.                        ering the observations and conclusions from the polarization curves
+                                                                                   along with the development of the cell voltage over extended cycling,
+    In order to gain further insights into the observed performance de-            it is evident that the initial performance improvement observed after
+cay during the OCV-AST, we examine polarization curves recorded                    10 cycles in the OCV-AST is not observed in the reference experi-
+at various stages of the OCV-AST and the reference test. Figure 4                  ment, so that it must be linked directly to a change of the OER catalyst
+shows ambient pressure polarization curves and the corresponding                   during the OCV periods. Quite clearly, the rather substantial perfor-
+HFR values recorded over the course of the OCV-AST, namely at                      mance degradation during OCV can be effectively prevented if the cell
+the beginning-of-test (BoT, green squares) and after 10 (blue circles),            potential remains always at or above 1.3 V.
+200 (orange triangles), and 718 cycles (end-of-test or EoT; red dia-
+monds). It is remarkable that the performance increases by 45 mV
+over the entire current density range after ten cycles (blue circles)
+compared to BoT (green squares), which can only be rationalized by
+an improved OER activity of the anode catalyst. However, upon fur-
+ther cycling, the ambient pressure cell voltage at each current density
+Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)                 F491
+
+Figure 5. Ambient pressure PEM-WE performance data at 80°C recorded
+during the reference test shown in Figure 3. a) Ecell vs. i performance (filled
+symbols) and HFR-free performance data (hollow symbols) with a cathode
+water-feed of 5 mLH2O min-1; b) corresponding HFR values.
+
+     Analysis of the effect of OCV periods on the OER catalyst.--                Figure 6. Tafel plots of EHFR-free vs. i at ambient pressure and 80°C, obtained
+                                                                                 over the course of the cycling tests: a) for the OCV-AST (data from Figure 4);
+This section will provide a detailed insight into the performance                b) for the reference test where the OCV period was replaced by a potential
+                                                                                 hold at 1.3 V (data from Figure 5). Tafel slopes were determined between
+increase observed during the first ten cycles of the OCV-AST by                  0.01 A cm-2geo and 0.1 A cm-2geo (gray shaded region), and the values are
+                                                                                 given in the legend heading each of the two Tafel plots.
+taking a closer look at the OER kinetics. The Tafel slope, deter-
+mined from the linear region (i.e., between 0.01 A cm-2geo and 0.1 A             to that of crystalline IrO2 rather than amorphous iridium oxide.26,27
+cm-2geo) of the ambient pressure HFR-corrected polarization curves               However, the CV changes significantly after the first 10 OCV periods
+recorded over the course of the OCV-AST (Figure 6a), decreases from              of the OCV-AST (blue line): i) the capacitive currents are 2 times
+60 mV dec-1 to 47 mV dec-1 after the initial 10 cycles, clearly evi-             higher than at the beginning of test; ii) distinct H-UPD features can
+                                                                                 be observed at low potentials, characteristic of metallic iridium26,28,29
+dencing a change in the OER kinetics. Over further cycling, the Tafel            (see region (1) in Figure 7); and, iii) the redox features observed in re-
+slope increases slightly by 3 mV dec-1 (50 mV dec-1 after 200 cy-                gion (2) can be attributed to the transition between Ir(III)/Ir(IV).26 The
+cles) and then stays constant until EoT (50 mV dec-1 after 718 cycles).          same change in CV features was reported for the same catalyst upon
+                                                                                 its exposure to pure H2 at 80 C for 15 h.24 Thus, this suggests a gradual
+As one would expect, the initial Tafel slope obtained in the reference           reduction of the crystalline IrO2 catalyst surface into a hydrous iridium
+                                                                                 oxide during the OCV-AST (i.e., during repeated polarization of the
+test is essentially identical with the initial value of the OCV-AST ex-          anode catalyst to 0 V vs. RHE), consistent with the latter's higher
+periment (59 vs. 60 mV dec-1). However, contrary to the OCV-AST,                 OER activity,24,30­32 as demonstrated in Figure 6a. Quite clearly, since
+it remained essentially constant, with a value of 56 mV dec-1 (Fig-              thermally prepared, crystalline IrO2 is not stable below 0.8 V,24,33
+ure 6b). This suggests that neither the iridium oxide surface nor the            its surface is reduced to metallic iridium, which will be oxidized upon
+                                                                                 extended cycling to high potentials during the OCV-AST (i.e, up to an
+OER reaction mechanism seem to be affected during the reference ex-
+
+periment, while the substantial decrease of the Tafel slope in the first
+
+10 cycles of the OCV-AST clearly suggests a change in the iridium
+
+oxide surface chemistry, induced by the OCV periods. In previous
+
+studies, we had observed a similar decrease of the Tafel slope upon
+
+in-situ reduction of the same IrO2 catalyst under H2 at 80°C for 15 h,
+accompanied by a 40 mV increase in OER activity and by the ap-
+pearance of hydrogen underpotential deposition (H-UPD) features in
+the CV of the H2-exposed iridium oxide catalyst.24 This was ratio-
+nalized by the fact that thermally prepared, highly crystalline IrO2
+exhibits very different CV features than that of hydrous iridium oxide
+or metallic iridium.26 Therefore, since the voltammetric response of
+
+the iridium oxide catalyst can provide valuable insights into the sur-
+
+face chemistry of the anode catalyst, we recorded the CVs of the anode
+
+catalyst before and during the OCV-AST and the reference test.
+
+    The BoT CV of the TiO2 supported IrO2 anode catalyst shows only
+capacitive currents but no well-defined features (region (1) & (2), green
+
+line Figure 7), which is characteristic of thermally treated, crystalline
+
+IrO2, and suggests that the surface of the iridium oxide corresponds
+F492  Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)
+
+Figure 7. Cyclic voltammograms (CVs) recorded after different numbers of   Figure 8. a) Cyclic voltammograms (CVs) recorded during the reference test,
+cycles of the OCV-AST (see Figure 2), recorded at 50 mV/s, 80°C, ambient   where the OCV periods are replaced by 1.3 V hold periods. b) Comparison
+pressure, and 5 mLH2O min-1 (anode)/ 50 nccm H2 (cathode).                 between CVs recorded after 10 cycles for the OCV-AST (black line) and after
+                                                                           10 cycles of the reference test with 1.3 V-holds (blue line); the dotted lines
+anode potential of 1.6 V vs. RHE, as indicated by the HFR-corrected        represent the CVs recorded at BoT. CVs were recorded at 50 mV/s, 80°C,
+voltage at 3 A cm-2geo in Figure 2), forming hydrous iridium oxide.34      ambient pressure, and 5 mLH2O min-1 (anode)/ 50 nccm H2 (cathode).
+The fact that these hydrous iridium oxide features are still present in
+the CVs recorded after 200 and 718 cycles (Figure 7, yellow and red        at high current density leads to a transformation of the initially crys-
+lines) indicates an irreversible change of the iridium hydration state     talline IrO2 into hydrous iridium oxide, concomitant with a substantial
+at the anode electrode surface with respect to that at the beginning       decrease in performance and a large increase of the HFR (Figure 4).
+of test, because it appears impossible to electrochemically form crys-     On the other hand, if the cell potential is controlled to 1.3 V dur-
+talline IrO2. Instead, the surface remains a hydrous iridium oxide (no     ing idle periods, the initial crystalline IrO2 is retained over extended
+significant changes from 200 to 718 cycles). However, the well-defined     cycling, and neither a performance degradation nor an increase of the
+H-UPD features present after the 10th cycle disappear over the course      HFR is found (Figure 5).
+of extended cycling, showing that the initially formed metallic iridium
+is indeed converted into hydrous iridium oxide.34 Since the electronic         Origin of the cell performance decrease during the OCV-AST.--
+conductivity of hydrous iridium oxide is reported to be lower than         In this section, we will discuss possible reasons for the observed de-
+that of crystalline IrO2,30 and since the long-time stability of hydrous   crease in cell performance over the course of the OCV-AST, largely
+iridium oxide in a PEM-WE is reported to be inferior to that of crys-      due to an increase of the HFR (Figure 4), contrary to the essentially
+talline IrO2,31 the transformation of the initially crystalline IrO2 into  constant performance and HFR when the OCV periods are replaced
+hydrous iridium oxide may be the cause for the large degradation over      by potential holds at 1.3 V (Figure 5). Consequently, the increase
+the course of the OCV-AST (Figure 2) and thus would have important         of the HFR must be related to processes which take place during
+consequences for the operational requirements for a PEM-WE.                OCV periods when the anode potential was shown to decrease to
+                                                                           0 V vs. RHE or which are related to the recurring transition be-
+    If our hypothesis was true that the performance degradation ob-        tween high potentials (operation) and low potentials (OCV period).
+served for the OCV-AST is due to a change of the surface chemistry         In general, an increase of the HFR can could be ascribed to different
+of the iridium based anode catalyst, we would expect that the surface      processes occurring in the cell (see Figure 9), which will be discussed
+chemistry of the iridium catalyst after the reference test remains un-     individually in the following.
+changed compared to its initial state, as no performance degradation
+is observed in this case (Figure 3). Indeed, the CVs recorded over             At low potentials, not only can IrO2 be reduced, but also parts
+the course of the reference test (Figure 8a) only exhibit marginal dif-    of the cell can be corroded (e.g., flow-fields, PTL). If either of these
+ferences between the BoT (green line) and the EoT after 500 cycles         processes were to result in the formation of metal cations (e.g., from
+(red line). This minor increase of the overall capacity, mostly occur-     metal impurities in titanium or cationic titanium species), these cations
+ring over the first 10 cycles, is either due to a small extent of surface  would be ion-exchanged into the membrane/ionomer phase and dis-
+roughening of the IrO2 catalyst or perhaps more likely to a removal        place protons, which would not only lead to a reduction of the mem-
+of (surface) impurities, as could be inferred from the slight decrease     brane/ionomer conductivity and to an increase of the HFR,35 but it
+in HFR over cycling (Figure 5b). Nevertheless, the H-UPD as well           would also introduce additional mass transport resistance losses, par-
+as the characteristic hydrous iridium oxide features are absent in the     ticularly at high current densities, as described for cation-contaminated
+reference test, so that their presence in the OCV-AST is clearly related   membranes in PEM fuel cells ( 1 in Figure 9). The performance de-
+to the repetitive polarization of the anode to 0 V vs. RHE during the      crease and HFR increase over the course of the OCV-AST could in
+OCV periods. Although the potential is cycled close to 0 V vs. RHE         principle be also produced by the introduction of ionic contaminants
+during the CV measurements, the time spent at low potentials is in-        into the feed water. However, in our test system, the deionized (DI)
+sufficient to form metallic iridium and hence, hydrous iridium oxide,      feed water was supplied through an ion-exchanger, and the resistiv-
+which is why no change is expected. Summarizing our observations           ity measured between the ion-exchanger and the cell inlet was always
+and analysis so far, the repetitive cycling of the anode catalyst during   >15 M hmom during the measurements. Moreover, the DI-water was
+the OCV-AST between 0 V vs. RHE at OCV and 1.6 V vs. RHE                   not recycled during operation and therefore we can definitely exclude
+                                                                           the presence of ionic contaminants. Moreover, ionic contamination of
+Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)                F493
+
+Figure 9. Scheme of a single cell, illustrating possible reasons for the ob-    shows that the increase of the HFR during the OCV-AST can clearly be
+served HFR increase during the OCV-AST: 1) cationic contamination of the        related to an increasing HFR on the anode side of the MEA. Cationic
+membrane; 2) dissolution of iridium from the anode catalyst and its redeposi-   contamination, on the other hand, would lead to a lower ionic con-
+tion in the membrane; 3) formation of an electronically insulating oxide film   ductivity of the entire membrane and, hence, would result in an HFR
+on the Ti-PTL surface; 4) additional resistance due to the low electronic con-  increase measured between the reference electrode and the anode as
+ductivity of hydrous iridium oxide.                                             well as between the reference electrode and the cathode. Thus, cationic
+                                                                                contamination can clearly be eliminated as a possible cause of the per-
+the feed water would be independent of the cell operating conditions            formance decrease over the course of the OCV-AST.
+and, hence, would have to be observed in both the OCV-AST and
+the reference test. If cationic contamination of the membrane from                  Besides cationic contaminations, dissolution and re-precipitation
+cell components were present, the HFR should be recovered upon                  of iridium within the membrane due to reaction with crossover hydro-
+ion-exchanging the aged MEA in 1 M H2SO4 at 80°C for 2 h.18 How-                gen might cause an increase in HFR ( 2 in Figure 9), if precipitated
+ever, since the HFR after reassembling the cell with the acid treated           iridium were to form a barrier toward proton transport in the mem-
+MEA was still high (100 m cm2geo) and almost identical to the                   brane. Geiger et al. reported that cycling iridium and thermally grown
+one measured after the end of test (90 m cm2geo), as shown in                   IrO2 films between 0.04 and 1.4 V vs. RHE in H2SO4 at 25°C leads
+Figure 10, cationic contaminations can be ruled out as a reason for             to the dissolution of iridium (quantified in a flow cell connected to
+the observed performance loss. Dis- and reassembling of the MEA                 an inductively coupled plasma mass spectrometer), whereby the dis-
+and PTL (which is considered incompressible) always bears the risk              solution rates for crystalline IrO2 were shown to be up to 100-fold
+of a different alignment as well as the mechanical deformation of the           lower than those of iridium and hydrous iridium oxide.26,37,38 This
+catalyst or membrane and could be an explanation for the small dis-             would predict that the repetitive transition of the HFR-corrected cell
+crepancy observed. However, both phenomena would most likely not                voltage (i.e., of the anode potential) between 0 V and 1.6 V dur-
+be significant enough to mask the decrease in HFR due to the removal            ing the OCV-AST should lead to the dissolution of iridium, which
+of ionic contaminations. Additionally, an experiment including a ref-           would either precipitate in the membrane and/or leave the cell with
+erence electrode placed in between two membranes which were sub-                the water effluent. A similar effect involving the dissolution and the
+sequently laminated and processed into an MEA (unpublished data36)              precipitation of the catalyst within the membrane due to reaction with
+                                                                                crossover hydrogen was reported in the literature for platinum.39­41
+Figure 10. High frequency resistance of a fresh MEA at BoT, of a cycled         Grigoriev et al. used Pt as an OER catalyst at the anode of a
+MEA (500 OCV-AST cycles analogous to Figure 2), and of the cycled MEA           PEM-WE, where they found it to dissolve and re-precipitate in the
+cycled after 2 h in 1 M H2SO4 at 80°C. The HFR was measured at OCV in the       membrane during a long-term test (albeit at unrealistically high po-
+(re-assembled) electrolyzer cell at 80 C and ambient pressure, with a flow of   tentials exceeding 3 V vs. RHE).40 On the other hand, in the case of fuel
+5 mLH2O min-1 at the anode.                                                     cells, voltage-cycling of the Pt-based cathode catalyst41 or extended
+                                                                                holds at OCV39 lead to the precipitation of Pt in the membrane, ap-
+                                                                                pearing as a so-called "Pt-band". The latter study also showed that the
+                                                                                position of the Pt-band depends on the H2/O2 partial pressure ratio,39
+                                                                                from which one would predict that the deposition of dissolved iridium
+                                                                                in a PEM-WE operated at the differential pressure conditions used in
+                                                                                our OCV-AST (pH2 = 9.5 bara, pO2 = 0.5 bara) would have to occur
+                                                                                very close to the anode/membrane interface.39 To find out whether irid-
+                                                                                ium is indeed being deposited within the membrane over the course of
+                                                                                the OCV-AST, site specific TEM analysis were performed, where the
+                                                                                membrane area close to the anode/membrane interface was closely
+                                                                                inspected. HAADF-STEM images of the degraded MEA after EoT
+                                                                                (718 OCV-AST cycles, Figures 11b and 11c) show a distribution of
+                                                                                nanoparticles with particle size 10 nm (Figure 11d) for at least 1 m
+                                                                                away from the interface, whereas a new MEA (Figure 11a) remains
+                                                                                particle-free.
+
+                                                                                    The STEM-EDS iridium map of a precipitated particle (Figure 11e)
+                                                                                revealed that the particles are iridium-based with no obvious oxygen
+                                                                                contribution as shown in the homogenous distribution of the oxygen
+                                                                                EDS map (Figure 11f). Therefore, the precipitates are primarily com-
+                                                                                posed of metallic iridium. Even though the amount of precipitated
+                                                                                iridium is too small to cause the observed increase in HFR, the dis-
+                                                                                solution and re-precipitation results in a loss of active material in the
+                                                                                anode electrode over time, which ultimately would lead to a lower
+                                                                                OER activity due to a reduced electrochemically active surface area
+                                                                                (ECSA). We believe that this effect is insignificant during the duration
+                                                                                of the here shown experiment due the high catalyst loadings used in
+                                                                                this study, but would lead to a more significant performance decay
+                                                                                for low Ir-loadings and longer test periods, which is the focus of our
+                                                                                current studies.
+
+                                                                                    Alternatively, the HFR could increase due to the formation of an
+                                                                                electronically insulating surface film on the Ti-PTL ( 3 in Figure 9),
+                                                                                leading to a higher contact resistance at the anode/PTL and/or the
+                                                                                PTL/flow field interface. This was reported previously by Rakousky
+                                                                                et al.19 and can be easily verified by ex-situ measurements of the con-
+                                                                                tact resistance between one PTL/flow-field interface for new or aged
+                                                                                PTLs (cf. details in Experimental section).22 Contact resistances mea-
+                                                                                sured ex-situ should be considered with caution, since temperature,
+                                                                                contact pressure, and the exact nature of the interface (PTL/catalyst
+                                                                                vs. PTL/flow field) during the measurement are different compared
+F494  Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)
+
+Figure 11. HAADF-STEM images of the interface between anode catalyst layer and membrane of (a) a new MEA and (b) an MEA after 718 cycles of the
+OCV-AST. (c) HAADF-STEM image of the interface of the MEA after 718 cycles of the OCV-AST (red dashed rectangular region in b). (d) HAADF-STEM
+image of a single particle precipitated at anode/membrane interface as well as the associated STEM-EDS elemental maps of (d) iridium and (e) oxygen.
+
+to in-situ measurements. Nevertheless, they can be used to qualita-       could be observed. This is in good agreement with the constant perfor-
+tively judge the contribution of an additional contact resistance. For a  mance recorded during the OCV-AST when using a Au-sputtered PTL
+simplified presentation, the contact resistances measured at EoT are      (data not shown) and thus, the recorded increase in HFR during the
+normalized to the contact resistances measured at BoT.                    OCV-AST is correlated to the passivation of the Ti-PTL. However, the
+                                                                          increase of the contact resistance over the OCV-AST (6 m cm2geo)
+    The PTL/flow-field contact resistance for a PTL after 718             is much lower than the increase in HFR (see Figure 4) and would only
+OCV-AST cycles measured ex-situ at 1.7 MPa (equivalent to the             account for a loss of 20 mV compared to the 117 mV cell voltage
+compression in the cell) is twice as high (black triangle in Figure 12)   increase at 3 A cm-2geo (see Figure 2). In addition to the increasing
+compared to BoT, while it even decreases slightly (-10%) after 500        contact resistance for a passivated Ti-PTL, the transition from the ini-
+cycles of the reference test with the 1.3 V-hold (black square in Fig-    tially crystalline IrO2 to an amorphous, hydrous iridium oxide, which
+ure 12). The observed decrease in contact resistance along with the       is known to exhibit lower conductivity,30 can contribute to an increase
+HFR in case of the reference test, might be correlated to an improving    in HFR. In this case, the observed HFR increase can be due to either an
+alignment at the PTL/electrode interface during operation. In contrast    increase of the electronic through-plane resistance of the anode elec-
+to that, the observed increase in HFR along with the measured in-         trode and/or an increase of the contact resistance at the anode/PTL
+crease in contact resistance during the OCV-AST might be related to       interface due to a lowering of the bulk conductivity of the anode cata-
+the passivation of the Ti-PTL. This was further investigated by repeat-   lyst as it transforms from a crystalline IrO2 to hydrous iridium oxide.
+ing the OCV-AST with a Ti-PTL sputtered with a thin layer of gold,        Here it must be considered that the electronic through-plane resis-
+which is in the order of several micrometer (measured by SEM), on         tance of an electrode does not add directly to the HFR due to coupling
+both sides, hoping that it would improve the contact resistance and       of ionic and electronic currents in the electrode, as was shown by a
+serve as a protective coating.42 Indeed, the contact resistance of the    transmission-line analysis by Landesfeind et al.43 For example, if the
+Au-sputtered PTL remained essentially constant after 135 OCV-AST          ionic and the electronic resistances in an electrode are equally large,
+cycles (black circle in Figure 12) and a slightly improved HFR at EoT
+Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)                F495
+
+Figure 12. Percentage variation of the in-cell HFR (red; measured at            periods and the resulting degradation phenomena will be discussed in
+0.01 A cm-2geo 80°C, ambient pressure, with 5 mLH2O min-1) and the ex-situ      terms of a practical application of PEM electrolyzer systems. In the
+determined contact resistances between the titanium PTL and two Ti flow-fields  reference test shown in this study, a potential hold at 1.3 V was applied
+(black; measured at 1.7 MPa compression) for various PTLs with respect to       to avoid a potential drop during idle periods. The current density mea-
+their BoT values. Left: after 500 cycles of the reference test with the 1.3 V-  sured during these potential hold periods was typically very low with
+hold using an uncoated PTL ("ref. test"); middle: after 718 OCV-AST cycles      a value of 1 mA cm-2geo or below toward the end of the experiment.
+with an uncoated PTL ("OCV-AST"); right: after 135 OCV-AST cycles with          This translates into a power density of 1.3 mW cm-2geo required to
+a gold-sputtered PTL ("OCV-AST (Au-sputtered)").                                hold the cell potential at 1.3 V, which is only 0.025% of the maximum
+                                                                                power density of 5.25 W cm-2geo obtained at a current density of
+only 50% of the electronic resistance are reflected in the HFR. For the         3 A cm-2geo and a corresponding cell voltage of 1.75 V. Conse-
+anode used here, RH+,an ranges between 14­30 m cm2geo, depending                quently, the amount of energy required to avoid OCV periods by a
+on the tortuosity of the electrode.22 In order to explain an increase of        potential hold at 1.3 V would be negligible.
+26 m cm2geo over the course of the OCV-AST (i.e, the observed
+HFR increase minus the increase of the contact resistance between the               In a real system, however, this operating strategy might not be
+aged PTL and the flow-field), the electronic through-plane resistance           practical, since it would lead to an accumulation of hydrogen in the
+of the anode electrode would have to be roughly twice as high (i.e.,            anode compartment of the electrolyzer due to hydrogen permeation
+50 m cm2geo). For a pristine IrO2/TiO2 electrode, the electronic                through the membrane during the potential hold at 1.3 V. This ac-
+through-plane resistance is 0.04 m cm2geo and for an MEA after                  cumulation of hydrogen cannot be prevented when operated at dif-
+200 OCV-AST cycles it was determined to be 0.08 m cm2geo. This                  ferential pressure (pcathode = 10 bara, panode = 1 bara), even when a
+clearly cannot explain the increase in HFR after 200 OCV-AST cycles             recombination catalyst in the membrane44 or the flow field is used,
+of 15 m cm2geo. Thus, the only viable explanation for the HFR in-               since almost no oxygen, which would be required for a recombination
+crease during the OCV-AST is that the lower conductivity of hydrous             with hydrogen to water, is produced at the very low current density of
+iridium oxide in combination with a passivated Ti-PTL leads to an               1 mA cm-2geo or below. The amount of oxygen which needs to be
+increase of the interfacial contact resistance between the PTL and the          evolved to allow a full recombination of hydrogen with oxygen can
+anode catalyst layer (a resistance that would not be detectable with            be estimated based on the permeation rate of hydrogen at the applied
+the contact resistance measurements shown in Figure 12). Due to the             cathode pressure, in the present case pcathode = 10 bara. At a tempera-
+low contact area between the electrode and the coarse PTL structure             ture of 80°C and in the presence of liquid water, a permeation rate of
+(10­50 m pores) and the poor electronic conductivity of the passi-              0.85 mA cm-2geo bara(H2)-1 can be assumed (see also above).23 For
+vated PTL surface (see Figure 12), even a comparably small change               cathode pressures of 10 bara or 30 bara, this results in current densities
+in the electronic conductivity of the catalyst could cause a significant        of 8.1 mA cm-2geo or 25.1 mA cm-2geo, respectively, which would
+increase of the contact resistance. Thus, the most likely reason for the        need to be applied to produce enough oxygen to achieve a hydrogen
+increase of the HFR and the increase of the HFR-corrected cell volt-            to oxygen stoichiometry of 2:1 and, consequently, to enable a full re-
+age over the course of the OCV-AST (Figure 4) is the development of             combination of the permeating hydrogen. Taking the corresponding
+a contact resistance between hydrous iridium oxide and the titanium             cell voltage values from Figure 5, this results in power densities of
+PTL.                                                                            12 mW cm-2geo at 10 bara and 36 mW cm-2geo at 30 bara, respec-
+                                                                                tively. This means that only 0.2% (at 10 bara) and 0.7% (at 30 bara)
+    In summary, the repetitive transition between 1.6 V at 3 A cm-2geo          of the maximum power would need to be applied during idle periods
+and 0 V vs. RHE at extended OCV periods during the OCV-AST                      to prevent hydrogen accumulation on the anode. Assuming an elec-
+leads to the transformation of crystalline IrO2 into a hydrous iridium          trolyzer system which is directly coupled to a fluctuating power source
+oxide surface. These large voltage cycles cause the dissolution of irid-        and cannot obtain energy from the grid, the required energy could be
+ium and its precipitation into the membrane near the anode/membrane             supplied by, e.g., coupling a battery to the electrolyzer.45 In summary,
+interface, but the overall activity loss due to this mechanism is negli-        this analysis shows that operating the electrolyzer at a small current
+gible for anodes with a high iridium loading. The vast majority of the          density during idle periods (<<1% of maximum power required) in
+performance loss is due to an increase of the HFR, whereby the above            combination with a recombination catalyst is a promising operating
+analysis shows that the most likely reason for its increase is a parasitic      strategy to avoid OCV periods and the associated performance degra-
+contact resistance developing between hydrous iridium oxide (formed             dation as well as safety concerns due to hydrogen permeation.
+during the OCV-AST) and the passivated titanium PTL.
+                                                                                                                 Conclusions
+     Current density and energy requirement for a 1.3 V-hold dur-
+ing idle periods.--In this section, an operating strategy to avoid OCV              In this study, the impact of intermittent power supply on the per-
+                                                                                formance and lifetime of a PEM water electrolyzer was investigated.
+                                                                                An AST protocol was designed comprising periods of operation at
+                                                                                two current densities (3 A cm-2geo and 0.1 A cm-2geo), alternating
+                                                                                with idle periods where the cell is left at the OCV in order to simu-
+                                                                                late the discontinuous power output of renewable energy sources. An
+                                                                                initial increase in performance was observed during the first 10 cycles
+                                                                                (50 mV) while prolonged cycling led to a significant decrease in
+                                                                                performance due to an increasing HFR (1.6-fold after 700 cycles).
+
+                                                                                    The initial increase in performance is related to the OCV periods
+                                                                                during which hydrogen crossover and accumulation leads to a decrease
+                                                                                of the cell voltage close to the HOR potential (0 V), leading to a
+                                                                                reduction of the surface of the thermal IrO2 anode catalyst (coated
+                                                                                onto a TiO2 support) to metallic Ir. The subsequent oxidation of the
+                                                                                catalyst during periods of operation leads to the transformation of the
+                                                                                crystalline IrO2 to an amorphous iridium oxide, which was evidenced
+                                                                                by a lower Tafel slope (consistent with an increased activity) and the
+                                                                                evolution of the characteristic features of metallic Ir and amorphous
+                                                                                iridium oxide in a CV. Amorphous iridium oxide is known to exhibit
+                                                                                a higher activity compared to crystalline IrO2, explaining the initial
+                                                                                performance increase.
+F496  Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)
+
+    However, the repetitive transition between oxidizing conditions                         10. A. Bergen, L. Pitt, A. Rowe, P. Wild, and N. Djilali, Transient Electrolyser Response
+during operation and reducing conditions during OCV periods (i.e.,                               in a Renewable-Regenerative Energy System, International Journal of Hydrogen
+between hydrous iridium oxide and metallic iridium) causes an en-                                Energy, 34, 64 (2009).
+hanced dissolution of Ir, which was revealed by STEM imaging of
+the anode/membrane interface showing Ir nanoparticles deposited in                          11. U. Babic, M. Suermann, F. N. Büchi, L. Gubler, and T. J. Schmidt, Critical Review--
+the membrane. Even though the amount of precipitated Ir is too small                             Identifying Critical Gaps for Polymer Electrolyte Water Electrolysis Development,
+to have a significant impact on performance, continuous dissolution                              Journal of The Electrochemical Society, 164, F387 (2017).
+will result in a loss of active material and ultimately in a lower OER
+activity.                                                                                   12. S. Stucki, G. G. Scherer, S. Schlagowski, and E. Fischer, Pem Water Electrolysers:
+                                                                                                 Evidence for Membrane Failure in 100kw Demonstration Plants, Journal of Applied
+    The increasing HFR, which is the major reason for the performance                            Electrochemistry, 28, 1041 (1998).
+loss during the OCV-AST, can be partially explained by an increas-
+ing contact resistance arising from passivation of the Ti-PTL during                        13. D. E. Curtin, R. D. Lousenberg, T. J. Henry, P. C. Tangeman, and M. E. Tisack,
+OCV/load cycles (20 mV out of 117 mV at 3 A cm-2geo). How-                                       Advanced Materials for Improved Pemfc Performance and Life, Journal of power
+ever, an additional contribution is hypothesized to be the formation                             Sources, 131, 41 (2004).
+of hydrous iridium oxide, which has a lower electronic conductivity.
+Due to the low contact area between the electrode and the coarse PTL                        14. C. K. Mittelsteadt, Pem Electrolysis: Ready for Impact. ECS Transactions, 69, 205
+structure (10­50 m pores) along with a poor electronic conductivity                              (2015).
+of the passivated PTL surface, even a relatively small reduction of
+the electronic conductivity of the catalyst could cause a significant in-                   15. S. Siracusano, N. Van Dijk, R. Backhouse, L. Merlo, V. Baglio, and A. Aricò, Degra-
+crease of the interfacial contact resistance between catalyst layer and                          dation Issues of Pem Electrolysis Meas, Renewable Energy, 123, 52 (2018).
+PTL, thus explaining the HFR increase.
+                                                                                            16. S. A. Grigoriev, D. G. Bessarabov, and V. N. Fateev, Degradation Mechanisms of
+    Since a reference test where the OCV period was replaced by a                                Mea Characteristics During Water Electrolysis in Solid Polymer Electrolyte Cells,
+potential hold at 1.3 V showed no degradation over 500 cycles, the                               Russian Journal of Electrochemistry, 53, 318 (2017).
+performance loss can clearly be attributed to the OCV periods. Hence,
+avoiding OCV periods during operation of a PEM-WE is crucial to                             17. N. Danilovic, K. E. Ayers, C. Capuano, J. N. Renner, L. Wiles, and M. Pertoso,
+ensure long-term stability. Based on these findings, we suggest that                             (Plenary) Challenges in Going from Laboratory to Megawatt Scale Pem Electrolysis,
+applying a small current density (<<1% of maximum power re-                                      ECS Transactions, 75, 395 (2016).
+quired) during idle periods in combination with a recombination cat-
+alyst is required for a dynamically operated PEM water electrolyzer                         18. S. Sun, Z. Shao, H. Yu, G. Li, and B. Yi, Investigations on Degradation of the
+to avoid degradation and mitigate safety concerns related to hydrogen                            Long-Term Proton Exchange Membrane Water Electrolysis Stack, Journal of Power
+crossover.                                                                                       Sources, 267, 515 (2014).
+
+                             Acknowledgments                                                19. C. Rakousky, U. Reimer, K. Wippermann, M. Carmo, W. Lueke, and D. Stolten,
+                                                                                                 An Analysis of Degradation Phenomena in Polymer Electrolyte Membrane Water
+    This work was funded by the Bavarian Ministry of Economic Af-                                Electrolysis, Journal of Power Sources, 326, 120 (2016).
+fairs and Media, Energy and Technology through the project ZAE-ST
+(storage technologies) and by the German Ministry of Education and                          20. C. Rakousky, U. Reimer, K. Wippermann, S. Kuhri, M. Carmo, W. Lueke, and
+Research (funding number 03SFK2V0, Kopernikus-project P2X). We                                   D. Stolten, Polymer Electrolyte Membrane Water Electrolysis: Restraining Degra-
+thank Matthias Singer for electrode preparation.                                                 dation in the Presence of Fluctuating Power. Journal of Power Sources, 342, 38
+                                                                                                 (2017).
+                                    ORCID
+                                                                                            21. M. F. Mathias, J. R., J. Fleming and W. Lehnert, Diffusion Media Materials and
+A. Weiß https://orcid.org/0000-0001-7094-5016                                                    Characterisation, 2003; Vol. 3.
+A. Siebel https://orcid.org/0000-0001-5773-3342
+M. Bernt https://orcid.org/0000-0001-8448-5532                                              22. M. Bernt and H. A. Gasteiger, Influence of Ionomer Content in Iro2/Tio2 Electrodes
+                                                                                                 on Pem Water Electrolyzer Performance, Journal of The Electrochemical Society,
+                                  References                                                     163, F3179 (2016).
+
+ 1. M. Carmo, D. L. Fritz, J. Mergel, and D. Stolten, A Comprehensive Review on Pem         23. M. Bernt, J. Schröter, A. Weiß, A. Siebel, and H. A. Gasteiger, InAnalysis of
+     Water Electrolysis, International Journal of Hydrogen Energy, 38, 4901 (2013).              Gas Permeation Phenomena in a Pem Water Electrolyzer Operated at High Pres-
+                                                                                                 sure and Current Density, Meeting Abstracts, The Electrochemical Society: 2018;
+ 2. F. Barbir, Pem Electrolysis for Production of Hydrogen from Renewable Energy                 pp 1598.
+     Sources, Solar Energy, 78, 661 (2005).
+                                                                                            24. P. J. Rheinländer, M. Bernt, Y. Incedag, and H. A. Gasteiger, Stability and Oer Ac-
+ 3. K. E. Ayers, E. B. Anderson, K. Dreier, and K. W. Harrison, Fueling Vehicles with            tivity of Irox in Pem Water Electrolysis, Meeting Abstracts, (2016), MA2016-02,
+     Sun and Water, ECS Transactions, 50, 35 (2013).                                             2427.
+
+ 4. A. Buttler and H. Spliethoff, Current Status of Water Electrolysis for Energy Storage,  25. M. Bernt, A. Siebel, and H. A. Gasteiger, Analysis of Voltage Losses in Pem Water
+     Grid Balancing and Sector Coupling Via Power-to-Gas and Power-to-Liquids: A                 Electrolyzers with Low Platinum Group Metal Loadings, Journal of The Electro-
+     Review, Renewable and Sustainable Energy Reviews, (2017).                                   chemical Society, 165, F305 (2018).
+
+ 5. A. Mohammadi and M. Mehrpooya, A Comprehensive Review on Coupling Different             26. S. Geiger, O. Kasian, B. R. Shrestha, A. M. Mingers, K. J. J. Mayrhofer, and
+     Types of Electrolyzer to Renewable Energy Sources, Energy, (2018).                          S. Cherevko, Activity and Stability of Electrochemically and Thermally Treated Irid-
+                                                                                                 ium for the Oxygen Evolution Reaction, Journal of The Electrochemical Society, 163,
+ 6. R. Clarke, S. Giddey, F. Ciacchi, S. Badwal, B. Paul, and J. Andrews, Direct Cou-            F3132 (2016).
+     pling of an Electrolyser to a Solar Pv System for Generating Hydrogen, International
+     Journal of Hydrogen Energy, 34, 2531 (2009).                                           27. S. Ardizzone, A. Carugati, and S. Trasatti, Properties of Thermally Prepared Iridium
+                                                                                                 Dioxide Electrodes, Journal of Electroanalytical Chemistry and Interfacial Electro-
+ 7. M. Little, M. Thomson, and D. Infield, Electrical Integration of Renewable Energy into       chemistry, 126, 287 (1981).
+     Stand-Alone Power Supplies Incorporating Hydrogen Storage, International Journal
+     of Hydrogen Energy, 32, 1582 (2007).                                                   28. R. Woods, Hydrogen Adsorption on Platinum, Iridium and Rhodium Electrodes at
+                                                                                                 Reduced Temperatures and the Determination of Real Surface Area, Journal of Elec-
+ 8. A. S. Aricò, S. Siracusano, N. Briguglio, V. Baglio, A. Di Blasi, and V. Antonucci,          troanalytical Chemistry and Interfacial Electrochemistry, 49, 217 (1974).
+     Polymer Electrolyte Membrane Water Electrolysis: Status of Technologies and Poten-
+     tial Applications in Combination with Renewable Power Sources, Journal of Applied      29. J. Durst, C. Simon, F. Hasché, and H. A. Gasteiger, Hydrogen Oxidation and Evolution
+     Electrochemistry, 43, 107 (2013).                                                           Reaction Kinetics on Carbon Supported Pt, Ir, Rh, and Pd Electrocatalysts in Acidic
+                                                                                                 Media, Journal of The Electrochemical Society, 162, F190 (2015).
+ 9. C. Schug, Operational Characteristics of High-Pressure, High-Efficiency Water-
+     Hydrogen-Electrolysis, International journal of hydrogen energy, 23, 1113 (1998).      30. E. Rasten, G. Hagen, and R. Tunold, Electrocatalysis in Water Electrolysis with Solid
+                                                                                                 Polymer Electrolyte, Electrochimica Acta, 48, 3945 (2003).
+
+                                                                                            31. S. Siracusano, V. Baglio, S. A. Grigoriev, L. Merlo, V. N. Fateev, and A. S. Aricò, The
+                                                                                                 Influence of Iridium Chemical Oxidation State on the Performance and Durability of
+                                                                                                 Oxygen Evolution Catalysts in Pem Electrolysis, Journal of Power Sources, 366, 105
+                                                                                                 (2017).
+
+                                                                                            32. T. Reier, D. Teschner, T. Lunkenbein, A. Bergmann, S. Selve, R. Kraehnert,
+                                                                                                 R. Schlögl, and P. Strasser, Electrocatalytic Oxygen Evolution on Iridium Oxide: Un-
+                                                                                                 covering Catalyst-Substrate Interactions and Active Iridium Oxide Species, Journal
+                                                                                                 of The Electrochemical Society, 161, F876 (2014).
+
+                                                                                            33. M. Pourbaix, Atlas of Electrochemical Equilibria in Aqueous Solutions, 2nd. Eng.
+                                                                                                 edn. ed.; NACE International Cebelcor Houston, Texas, USA 1974, p 373.
+
+                                                                                            34. P. G. Pickup and V. I. Birss, A Model for Anodic Hydrous Oxide Growth at Iridium,
+                                                                                                 Journal of Electroanalytical Chemistry and Interfacial Electrochemistry, 220, 83
+                                                                                                 (1987).
+
+                                                                                            35. T. Okada, Effect of Ionic Contaminants, Handbook of fuel cells, 3, 627 (2003).
+                                                                                            36. A. Weiß, M. Bernt, A. Siebel, and H. A. Gasteiger, A Platinum Micro-Reference
+
+                                                                                                 Electrode for Impedance Measurements in Polymer Electrolyte Membrane Water
+                                                                                                 Electrolysis, Manuscript in preparation.
+                                                                                            37. S. Cherevko, S. Geiger, O. Kasian, A. Mingers, and K. J. J. Mayrhofer, Oxygen
+                                                                                                 Evolution Activity and Stability of Iridium in Acidic Media. Part 1. ­ Metallic Iridium,
+                                                                                                 Journal of Electroanalytical Chemistry, 773, 69 (2016).
+                                                                                            38. S. Cherevko, S. Geiger, O. Kasian, A. Mingers, and K. J. J. Mayrhofer, Oxygen Evo-
+                                                                                                 lution Activity and Stability of Iridium in Acidic Media. Part 2. ­ Electrochemically
+                                                                                                 Grown Hydrous Iridium Oxide, Journal of Electroanalytical Chemistry, 774, 102
+                                                                                                 (2016).
+Journal of The Electrochemical Society, 166 (8) F487-F497 (2019)                         F497
+
+39. J. Zhang, B. A. Litteer, W. Gu, H. Liu, and H. A. Gasteiger, Effect of Hydrogen and       Titanium Bipolar Plates in Unitized Regenerative Fuel Cell Operation, Journal of
+     Oxygen Partial Pressure on Pt Precipitation within the Membrane of Pemfcs, Journal       Power Sources, 194, 972 (2009).
+     of The Electrochemical Society, 154, B1006 (2007).                                  43. J. Landesfeind, M. Ebner, A. Eldiven, V. Wood, and H. A. Gasteiger, Tortuosity of
+                                                                                              Battery Electrodes: Validation of Impedance-Derived Values and Critical Comparison
+40. S. A. Grigoriev, K. A. Dzhus, D. G. Bessarabov, and P. Millet, Failure of Pem Water       with 3d Tomography, Journal of The Electrochemical Society, 165, A469 (2018).
+     Electrolysis Cells: Case Study Involving Anode Dissolution and Membrane Thinning,   44. E. Price, Durability and Degradation Issues in Pem Electrolysis Cells and Its Com-
+     International Journal of Hydrogen Energy, 39, 20440 (2014).                              ponents, Johnson Matthey Technology Review, 61, 47 (2017).
+                                                                                         45. B. Gillessen, H. Heinrichs, P. Stenzel, and J. Linssen, Hybridization Strategies of
+41. P. Ferreira, Y. Shao-Horn, D. Morgan, R. Makharia, S. Kocha, and H. Gasteiger, In-        Power-to-Gas Systems and Battery Storage Using Renewable Energy, International
+     stability of Pt C Electrocatalysts in Proton Exchange Membrane Fuel Cells a Mech-        Journal of Hydrogen Energy, 42, 13554 (2017).
+     anistic Investigation, Journal of The Electrochemical Society, 152, A2256 (2005).
+
+42. H.-Y. Jung, S.-Y. Huang, P. Ganesan, and B. N. Popov, Performance of Gold-Coated
+

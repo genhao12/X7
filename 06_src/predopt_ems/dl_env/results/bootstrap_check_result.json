@@ -1,0 +1,87 @@
+{
+ "timestamp": "2026-08-08T17:33:29",
+ "rule": "bootstrap_invalid_rule.md (Gate B ④, v9 §13/§17.3)",
+ "params": {
+  "block": 672,
+  "block_step": 96,
+  "n_rep": 200,
+  "seed": 0,
+  "soc_bounds": [
+   0.15,
+   0.95
+  ],
+  "soc_tol": 1e-06,
+  "pre_validate_threshold_pct": 5,
+  "invalid_rate_threshold": 0.1,
+  "min_valid_n": 100,
+  "ci_levels": [
+   90,
+   95
+  ]
+ },
+ "baseline": {
+  "n_windows": 1344,
+  "start_day": 0,
+  "soc_range": [
+   0.15,
+   0.95
+  ],
+  "fc_run_steps": 275,
+  "el_run_steps": 30
+ },
+ "pre_validate": {
+  "efc_orig_continuous": 0.00522227,
+  "efc_cut_sum_blocks": 0.00522227,
+  "rel_err_pct": 0.0,
+  "pass": true
+ },
+ "invalid": {
+  "n": 0,
+  "rate": 0.0,
+  "examples": [],
+  "rule": "SOC 越界 [0.15-1e-6, 0.95+1e-6] 剔除；率≤10% 且有效≥100 才认可 CI"
+ },
+ "valid_n": 200,
+ "damage_ci": {
+  "bat": {
+   "median": 0.004707259366985557,
+   "ci90": [
+    0.0042841123594768655,
+    0.0052222659900329794
+   ],
+   "ci95": [
+    0.004245909762103566,
+    0.005275923008198412
+   ]
+  },
+  "fc": {
+   "median": 0.02412,
+   "ci90": [
+    0.0173,
+    0.026520000000000002
+   ],
+   "ci95": [
+    0.01256,
+    0.026520000000000002
+   ]
+  },
+  "el": {
+   "median": 0.00152,
+   "ci90": [
+    0.00046,
+    0.00304
+   ],
+   "ci95": [
+    0.00046,
+    0.00304
+   ]
+  }
+ },
+ "checks": {
+  "1_pre_validate_le5pct": true,
+  "2_invalid_rate_le10pct": true,
+  "3_valid_n_ge100": true
+ },
+ "pass": true,
+ "ci_semantics": "条件时间变异：给定已实现调度轨迹下的时间块重采样变异；非完整控制策略不确定性（不重采样 PV/负荷、不重跑 MILP）"
+}

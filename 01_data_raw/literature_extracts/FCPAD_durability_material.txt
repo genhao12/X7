@@ -1,0 +1,2804 @@
+                                                                                                         2016 FUEL CELLS SECTION
+
+3.4 Fuel Cells
+
+Fuel cells efficiently convert diverse fuels directly into
+electricity without combustion, and they are key
+elements of a broad portfolio for building a
+competitive, secure, and sustainable clean energy
+economy. They offer a broad range of benefits,
+including reduced greenhouse gas emissions; reduced
+oil consumption; expanded use of renewable power
+(through the use of hydrogen derived from renewable
+resources as a transportation fuel as well as for energy
+storage and transmission); highly efficient energy conversion; fuel flexibility (use of diverse, domestic fuels,
+including hydrogen, natural gas, biogas, and methanol); reduced air pollution, criteria pollutants, water use;
+and highly reliable grid support. Fuel cells also have numerous advantages that make them appealing for end
+users, including quiet operation, low maintenance needs, and high reliability. Because of their broad
+applicability and diverse uses, fuel cells can address critical challenges in all energy sectors: commercial,
+residential, industrial, and transportation.
+
+The fuel cell industry had revenues of approximately $2.2 billion in 2014, an increase of almost $1 billion over
+revenues in 2013.1 The largest markets for fuel cells today are in stationary power, portable power, auxiliary
+power units, backup power, and material handling equipment. Approximately 155,000 fuel cells were shipped
+worldwide in the four-year period from 2010 through 2013, accounting for 510­583 MW of fuel cell capacity.2
+In 2014 alone, more than 50,000 fuel cells accounting for over 180 MW of capacity were shipped.1 In
+transportation applications, manufacturers have begun to commercialize fuel cell electric vehicles (FCEVs).
+Hyundai and Toyota have recently introduced their FCEVs in the marketplace, and Honda is set to launch its
+new FCEV in the market in 2016. Others, including Daimler, reportedly are set to begin commercialization in
+2017.3
+
+While fuel cells are becoming competitive in a few markets, commercialization can be greatly expanded with
+improvements in durability, performance, and cost reductions. The Fuel Cells sub-program in the Fuel Cell
+Technologies Office (the Office) has been addressing key challenges to accelerate market growth. In
+particular, the Fuel Cells sub-program is pursuing fuel cells as replacements for internal combustion engines in
+light-duty vehicles to increase vehicle efficiency and support the goals of reducing oil use in and emissions
+from the transportation sector.
+
+The Office also supports fuel cells for stationary power applications (primary and backup) due to their high
+efficiency and the potential to reduce primary energy use for and emissions from electricity production. In
+addition, the Office supports fuel cells for early markets such as material handling equipment, specialty
+vehicles, and auxiliary power applications. Growth in early markets can help to reduce costs industry-wide by
+driving manufacturing volume. Growth in these markets can also help develop infrastructure, strengthen
+consumer acceptance, and address a variety of other logistical challenges. The technical focus is on developing
+materials, components, and subsystems at the stack and system level that enable fuel cell technology to achieve
+the Office's objectives, primarily related to system cost and durability. The Fuel Cells sub-program's research
+and development (R&D) portfolio is primarily focused on polymer electrolyte membrane fuel cells (PEMFCs),
+but it also includes work on longer term technologies such as alkaline membrane fuel cells (AMFCs) and
+
+1 DOE Fuel Cell Technologies Office, 2014 Fuel Cells Technology Market Report (Washington, D.C. 2015),
+http://energy.gov/sites/prod/files/2015/10/f27/fcto_2014_market_report.pdf.
+
+2 E4Tech, The Fuel Cell Industry in Review 2015 (London, U.K.: 2015), www.FuelCellIndustryReview.com.
+
+3 Daimler, AG, Ready to Start Up (Stuttgart, Germany: 2015), https://www.daimler.com/documents/company/other/daimler-corporateprofile-en-2015.pdf.
+
+                                              Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 1
+2016 FUEL CELLS SECTION
+
+higher temperature fuel cells such as molten carbonate fuel cells (MCFCs) for stationary applications. The
+development of high-temperature solid oxide fuel cells (SOFCs) operating on coal or natural gas is in the
+purview of the Office of Fossil Energy (FE), with the Office (Fuel Cell Technologies Office) Fuel Cells sub-
+program supporting application-driven efforts such as utilization of FE-developed technologies for small-scale
+combined heat and power (CHP) applications. For transportation applications, the Office's effort is focused on
+direct hydrogen fuel cells, in which the hydrogen fuel is stored onboard and supplied by a hydrogen production
+and fueling infrastructure. Hydrogen production and delivery technologies are being developed in parallel with
+fuel cell development efforts. For distributed stationary power generation applications, fuel cell systems will
+likely be fueled with reformate produced from natural gas, liquefied petroleum gas (LPG, consisting
+predominantly of propane), associated petroleum gas (APG), or renewable fuels such as biogas derived from
+wastewater treatment plants and landfill gas. In material handling equipment and portable power applications,
+hydrogen and liquid biofuels such as methanol will be the fuel of choice for these fuel cell systems,
+respectively. Fuel cells for auxiliary power units (APUs) in trucks will mainly use either (bio-) diesel or LPG.
+
+3.4.1 Technical Goal and Objectives
+
+Goal
+
+Advance fuel cell technologies for transportation, stationary, and early market applications.
+
+Objectives
+
+· Develop a 65% peak-efficient, direct hydrogen fuel cell power system for transportation that can achieve
+     5,000-hour durability (ultimate 8,000 hours) and be mass produced at a cost of $40/kW by 2020 (ultimate
+     $30/kW).
+
+· Develop distributed generation and micro-CHP fuel cell systems (5 kW) operating on natural gas that
+     achieve 45% electrical efficiency and 60,000-hour durability at an equipment cost of $1,500/kW by 2020.
+
+· Develop medium-scale CHP systems (100 kW­3 MW) by 2020 that achieve 50% electrical efficiency,
+     90% CHP efficiency and 80,000-hour durability at a cost of $1,500/kW for operation on natural gas and
+     $2,100/kW when configured for operation on biogas.
+
+3.4.2 Technical Approach
+
+The Fuel Cells sub-program focuses on R&D to address challenges facing fuel cells for automotive
+applications with potential spillover benefits for near-term applications such as distributed power (primary and
+backup), material handling equipment, specialty vehicles, and APUs, which will help drive manufacturing
+volume. These near-term applications will generate market traction for the adoption of longer term applications
+such as light-duty vehicles, which have the greatest potential impact for fuel cell technologies on national
+energy goals and associated metrics, as well as other transportation systems such as APUs that could be
+applicable for truck, marine, or aircraft applications, and they would also provide substantial environmental
+and energy-security benefits.
+
+Fuel cell R&D emphasizes activities aimed at achieving high efficiency and durability along with low material
+and manufacturing costs for the fuel cell stack. R&D activities include developing lower cost, better
+performing system balance of plant (BOP) components such as air compressors, fuel processors, sensors, and
+water and heat management systems. The sub-program also supports the development of experimental
+diagnostics and theoretical models to gain a foundational understanding of reaction mechanisms and to
+optimize material structures and technology configurations. Each application--light-duty vehicle and bus
+transportation, stationary power, material handling equipment, specialty vehicles, APUs for heavy-duty
+
+Page 3.4 - 2 Multi-Year Research, Development, and Demonstration Plan
+                                                                                                         2016 FUEL CELLS SECTION
+
+vehicles, and portable power for consumer electronics--has specific market-driven requirements for
+technology development.
+PEMFCs (Figure 3.4.1) are being considered for applications that require faster start-up times and frequent
+starts and stops, such as automotive applications, material handling equipment, and backup power. For
+PEMFCs, continuing advancements are needed to minimize or eliminate precious metal loading, improve
+component durability, and manage water transport within the cell. Additionally, membranes that are capable of
+operation at higher temperatures (up to 120°C for automotive applications and above 120°C for stationary
+applications) are needed for better thermal management. R&D is required to reduce cost and increase
+durability of the membrane electrode assembly (MEA) as well as optimize the integration of advanced cell
+components into the MEA. R&D is also required to reduce the cost and improve the durability of system BOP
+components, such as humidifiers and compressors.
+
+                               Figure 3.4.1 Polymer electrolyte membrane fuel cell (PEMFC) schematic.
+
+Direct methanol fuel cells (DMFCs) are well suited for early market applications as sources of portable and
+backup power in consumer electronic devices and similar applications where the power requirements are low
+and the cost targets and infrastructure requirements are not as stringent as for transportation applications. A
+higher energy density alternative to existing technologies is required to fill the increasing gap between energy
+demand and energy storage capacity in these low power applications. Challenges for DMFCs include reducing
+Pt loading, reducing methanol crossover to increase efficiency, and simplifying the BOP to increase energy
+and power density, improve reliability, and reduce cost.
+Alkaline fuel cells (AFCs) (Figure 3.4.2) were one of the first fuel cell technologies developed, and they were
+the first type widely used in the U.S. space program to produce electricity and water onboard spacecraft. One
+advantage of AFCs is that they can use a variety of nonprecious metal catalysts at the anode and cathode. The
+initial AFCs used aqueous potassium hydroxide (KOH) solutions as the electrolyte. To address some of the
+issues dealing with these liquid electrolytes, novel AFCs that use a polymer membrane as the electrolyte have
+been developed. These fuel cells are closely related to conventional PEMFCs except that they use an alkaline
+membrane instead of an acid membrane, and they are commonly referred to as AMFCs. Challenges for
+AMFCs include tolerance to carbon dioxide, membrane conductivity and durability, higher temperature
+operation, water management, power density, and anode electrocatalysis.
+
+                                             Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 3
+2016 FUEL CELLS SECTION
+
+                                                Figure 3.4.2 Alkaline fuel cell (AFC) schematic.
+
+Medium-temperature (phosphoric acid) (Figure 3.4.3a) and high-temperature (solid oxide and molten
+carbonate) (Figure 3.4.3b and 3.4.3c, respectively) fuel cells are more applicable for systems that run for
+extended periods of time without frequent start and stop cycles. These systems also have benefits for CHP
+generation, and they offer simplified operation on fossil and renewable fuels. The high-temperature systems
+can also be utilized in tri-generation mode to produce electrical power, heat, and hydrogen. R&D needs for
+phosphoric acid-based fuel cells (PAFCs) include methods to decrease or eliminate anion adsorption on the
+cathode, lower cost materials for the cell stack and BOP components, and durable electrode catalyst and
+support materials. Polymer-phosphoric acid-based systems including polybenzimidazole-phosphoric acid type
+(PBI-type) have applications similar to PAFC. For high-temperature MCFCs, R&D is needed to limit
+electrolyte loss and prevent microstructural changes in the electrolyte support that lead to early stack failure.
+R&D is also needed to develop more robust cathode materials. For SOFCs, challenges include stack
+survivability during repeated thermal cycling, decreasing long start-up times, and potential mechanical and
+chemical compatibility/reactivity issues between the various stack and cell components due to high-
+temperature operation. For all of these systems, improved fuel processing and cleanup, especially for fuel-
+flexible operation and operation on biofuels, are needed to improve durability and reduce system costs. Table
+3.4.1 describes the different fuel cell types discussed here.
+To meet the efficiency, durability, and cost requirements for fuel cells, R&D will focus on identifying new
+materials and novel design and manufacturing methods for electrolytes and electrolyte supports, catalysts and
+supports, gas diffusion media, cell hardware (including bipolar plates and seals), and BOP components (e.g.,
+compressors, radiators, humidifiers, fuel processors, etc.). Testing of new materials, designs, and fabrication
+methods will be carried out by industry, national laboratories, and universities. New R&D efforts will include
+demonstrations in single cells or membrane electrolyte assemblies (MEAs), in stacks, and at the subsystem and
+system level. The Technology Validation sub-program section provides fuel cell vehicle and stationary power
+data under real-world conditions and, in turn, supplies valuable results to help refine and direct future activities
+for fuel cell R&D.
+
+Page 3.4 - 4 Multi-Year Research, Development, and Demonstration Plan
+                                                                       2016 FUEL CELLS SECTION
+
+Figure 3.4.3 Schematics of (a) phosphoric acid-based fuel cells (PAFCs), (b) solid oxide fuel cells (SOFCs), and (c)
+                                                  molten carbonate fuel cells (MCFCs).
+
+                                        Table 3.4.1 Fuel Cell Types
+
+                 Fuel Cell Type                     Temperature                     Applications
+                                              Common Electrolyte/
+Polymer Electrolyte Membrane                                           Backup power,
+(PEMFC)                                            Charge Carrier      Portable power,
+                                        <120°C                         Distributed generation,
+Direct Methanol (DMFC)                                                 Transportation,
+                                        Perfluorosulfonic acid / H+    Specialty vehicles
+
+                                        <100°C                         Early market applications
+                                        Perfluorosulfonic acid / H+
+
+Alkaline (AFC), Alkaline Membrane Fuel  <100°C                         Military,
+Cell (AMFC)                                                            Space,
+                                        aqueous KOH, alkaline polymer  Backup power,
+                                        / OH-                          Transportation
+
+                                 Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 5
+2016 FUEL CELLS SECTION
+
+                                    Table 3.4.1 Fuel Cell Types
+
+                 Fuel Cell Type                Temperature                          Applications
+                                          Common Electrolyte/          Distributed generation
+Phosphoric Acid (PAFC) and Polymer
+Phosphoric Acid                               Charge Carrier
+                                    150­200°C
+
+                                    H3PO4, Polymer/H3PO4, H+
+
+Molten Carbonate (MCFC)             600­700°C                          Electric utility,
+Solid Oxide (SOFC)                                                     Distributed generation
+                                    (Li,K,Na)2CO3 / CO32-
+                                                                       Electric utility,
+                                    500­1,000°C                        Distributed generation,
+                                    Yttria­Stabilized Zirconia         APUs
+                                    (Zr.92Y.08O2) / O2-
+
+3.4.3 Programmatic Status
+
+Current Activities
+
+Table 3.4.2 summarizes the FY 2016 Fuel Cells sub-program activities. Catalysts are a major cost driver and a
+current focus area. Catalysts with reduced platinum group metal (PGM) loading or no PGMs, increased
+activity and durability, and lower cost are under development. Catalyst supports with increased durability and
+conductivity are being evaluated to address a key degradation mode of fuel cells. Ionomers and membranes are
+being identified and developed with increased conductivity (especially under conditions of low relative
+humidity and high temperature), increased mechanical and chemical durability, and reduced material costs.
+Electrode and MEA design (integration of the catalysts, support, membrane, and GDLs) are being pursed
+because they can have a large impact on overall performance, especially under high power conditions. Bipolar
+plates with lower weight, lower volume, and higher corrosion resistance are being developed. Scalable
+manufacturing processes for the production of catalysts, membranes, electrodes, MEAs, and bipolar plates are
+being designed. Failure mechanisms in fuel cells are being explored both experimentally and via modeling,
+including measuring the effects of impurities on fuel cell performance and durability. To enable early-market
+entry of fuel cells, the sub-program supports R&D pertaining to stationary, backup, and auxiliary power units.
+To gauge the status of the technology, the cost and performance of fuel cell components are benchmarked and
+evaluated annually.
+
+In an effort to further accelerate the development of the critical materials needed to realize widespread
+deployment of hydrogen and fuel cell technologies, the sub-program launched and planned several national
+laboratory-based consortia. The purpose of the consortium structure is to coordinate the powerful and unique
+capabilities found across the U.S. national laboratory system to make it easier for external research partners to
+rapidly connect and take advantage of these resources. In 2015, the Fuel Cells sub-program launched a lab-led
+consortium project on Fuel Cell Performance and Durability (FC-PAD)4 to further advance progress in
+
+4 "Fuel Cell Consortium for Performance and Durability (FC-PAD)," http://energy.gov/eere/fuelcells/fc-pad-fuel-cell-consortium-performance-and-durability.
+
+Page 3.4 - 6 Multi-Year Research, Development, and Demonstration Plan
+                                                                                                         2016 FUEL CELLS SECTION
+
+improving performance and durability of fuel cell systems. Funding opportunities for adding industry,
+university, and other national lab projects to FC-PAD are currently underway. Additionally, to address the
+need for PGM-free catalysts and electrodes, the Fuel Cells sub-program also recently launched the ElectroCat
+(Electrocatalysis) Consortium5 under the DOE's Energy Materials Network,6 an extension of the Materials
+Genome Initiative.7 A schematic of the FC-PAD consortium structure is shown in Figure 3.4.4.
+
+Figure 3.4.4 Organizational structure of the Fuel Cell Performance and Durability (FC-PAD) consortium, created in 2015
+                                     to accelerate advances in fuel cell performance and durability.
+
+              Table 3.4.2 Current (2016) Fuel Cell Activities
+
+        Task  Approach                                                                                         Activities
+
+Catalysts/    · Develop electrocatalysts and electrodes        · 3M: Highly Active, Durable, and Ultra-low
+Electrodes         with reduced PGM loading, increased              PGM NSTF Thin Film ORR Catalysts and
+                   activity, improved durability / stability,       Supports
+                   and increased tolerance to air, fuel, and
+                   system-derived impurities                   · Argonne National Laboratory: Tailored
+                                                                    High Performance Low-PGM Cathode
+              · Optimize electrode design and assembly              Catalysts
+              · Develop PGM-free anode catalysts for
+                                                               · Brookhaven National Laboratory:
+                   AMFCs and PGM-free cathode catalysts             Platinum Monolayer Electrocatalysts
+                   for PEMFCs and AMFCs
+                                                               · General Motors: Highly-Accessible
+                                                                    Catalysts for Durable High-Power
+                                                                    Performance
+
+                                                               · Illinois Institute of Technology: Corrosion-
+                                                                    Resistant Non-Carbon Electrocatalyst
+                                                                    Supports for PEMFCs
+
+                                                               · National Renewable Energy Laboratory:
+                                                                    Extended Surface Electrocatalyst
+                                                                    Development
+
+                                                               · Northeastern University: Innovative Non
+                                                                    PGM Catalysts for CHP Relevant Proton
+
+5 "Electrocatalysis Consortium (ElectroCat)," http://www.electrocat.org.
+6 "Energy Materials Network (EMN)," http://energy.gov/eere/energy-materials-network/energy-materials-network.
+7 "Materials Genome Initiative (MGI)," https://www.whitehouse.gov/mgi.
+
+              Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 7
+2016 FUEL CELLS SECTION
+
+                         Table 3.4.2 Current (2016) Fuel Cell Activities
+
+Task                            Approach                                  Activities
+
+                                                                   Exchange Membrane Fuel Cells
+                                                              · University of New Mexico: Development
+
+                                                                   of non-PGM Catalysts for Hydrogen
+                                                                   Oxidation Reaction in Alkaline Media
+                                                              · ElectroCat (Electrocatalysis Consortium):
+                                                                   Argonne National Laboratory, Los Alamos
+                                                                   National Laboratory, National Renewable
+                                                                   Energy Laboratory, Oak Ridge National
+                                                                   Laboratory
+
+Membranes/       · Develop / identify electrolytes and        · 3M: New Fuel Cell Membranes with
+Electrolytes
+                 membranes/matrices (for low and high-        Improved Durability and Performance
+
+                 temperature proton exchange, alkaline        · Colorado School of Mines: Advanced
+
+                 membrane, molten carbonate) with             Hybrid Membranes for Next Generation
+
+                 improved conductivity over the entire        PEMFC Automotive Applications
+
+                 temperature and humidity range of a fuel · FuelCell Energy: `Smart' Matrix
+
+                 cell and increased mechanical, chemical,     Development for Direct Carbonate Fuel
+
+                 and thermal stability, with                  Cells
+
+                 reduced/eliminated fuel cross-over           · Los Alamos National Laboratory:
+
+                 · Fabricate membranes from ionomers          Advanced Materials for Fully-Integrated
+
+                 with scalable fabrication processes,         MEAs in AEMFCs
+
+                 increased mechanical, chemical, and          · National Renewable Energy Laboratory:
+
+                 thermal stability, and reduced cost          Advanced Ionomers and MEAs for
+
+                 · Perform membrane testing and               Alkaline Exchange Membrane Fuel Cells
+
+                 characterization to improve durability       · University of Delaware: Highly Stable
+
+                                                              Anion-Exchange Membranes for High-
+
+                                                              Voltage Redox-Flow Batteries
+
+Membrane         · Integrate membranes, electrolytes and      · 3M: High Performance, Durable, Low Cost
+
+Electrode        electrodes                                   Membrane Electrode Assemblies for
+
+Assemblies, Cells, · Expand MEA operating range, addressing   Transportation Applications
+
+and Other Stack  temperature and humidity range,              · Advent Technologies: Facilitated Direct
+
+Components       improving stability, and mitigating effects  Liquid Fuel Cells with High Temperature
+
+                 of impurities                                Membrane Electrode Assemblies
+
+                 · Test, analyze, and characterize MEAs       · Giner: Advanced Catalysts and MEAs for
+
+                 · Improve gas diffusion layer/micro-porous   Reversible Alkaline Membrane Fuel Cells,
+
+                 layer (GDL/MPL) performance and              · Giner: Ionomer Dispersion Impact on
+
+                 durability                                   Advanced Fuel Cell and Electrolyzer
+
+                 · Decrease cost of bipolar plates            Performance and Durability, Small
+
+                 · Improve performance and durability of      Business Innovation Research (SBIR)
+
+                 bipolar plates                               project
+
+                 · Integrate low-temp (<600°C) SOFC           · Redox Fuel Cells: Affordable, High
+
+                 electrolyte and electrodes into a single     Performance, Lower Temperature SOFCs
+
+                 cell
+
+Fuel Cell        · Improve component stability and            · Fuel Cell Performance and Durability
+Performance and       durability                                   Consortium (FC-PAD): Los Alamos
+Durability                                                         National Laboratory, Lawrence Berkeley
+                 · Improve cell performance with optimized         National Laboratory, Argonne National
+                      transport                                    Laboratory, National Renewable Energy
+                                                                   Laboratory, Oak Ridge National
+                 · Develop new diagnostics,                        Laboratory
+                      characterization tools, and models
+
+Page 3.4 - 8 Multi-Year Research, Development, and Demonstration Plan
+                                                                         2016 FUEL CELLS SECTION
+
+             Table 3.4.2 Current (2016) Fuel Cell Activities
+
+Task         Approach                                                                           Activities
+
+BOP Components · Develop air management technologies                     · Eaton: Roots Air Management System
+                                 for motive and stationary applications       with Integrated Expander
+
+                           · Develop humidifiers                         · Tetramer: New High Performance Water
+                                                                              Vapor Membranes to Improve Fuel Cell
+Fuel Cell Systems · Develop stationary fuel cell systems for                  Balance of Plant Efficiency and Lower
+                                 use in distributed generation                Costs, SBIR project
+
+                           · Develop auxiliary power units               · No current activities
+                           · Develop fuel cell technologies for early
+                                                                         · Argonne National Laboratory: Fuel Cells
+                                 market applications                          Systems Analysis
+                           · Develop low cost fuel processors for
+                                                                         · Strategic Analysis: Manufacturing Cost
+                                 stationary systems                           Analysis of Fuel Cell Systems
+
+Testing and  · Perform cost analysis                                     · Oak Ridge National Laboratory:
+Technical    · Annually update technology status and                          Characterization of Fuel Cell Materials
+Assessment
+                  cost                                                   · National Institute of Standards and
+             · Conduct trade-off analysis                                     Technology: Neutron Imaging Study of
+             · Experimentally determine long-term                             the Water Transport in Operating Fuel
+                                                                              Cells
+                  stack failure mechanisms
+             · Perform independent testing to                            · Battelle: Stationary and Emerging Market
+                                                                              Fuel Cell System Cost Analysis
+                  characterize component and stack
+                  properties                                             · Lawrence Berkeley National Laboratory:
+                                                                              A Total Cost of Ownership Model for
+                                                                              Design and Manufacturing Optimization
+                                                                              of Fuel Cells in Stationary and Emerging
+                                                                              Market Applications
+
+                                                                         · National Renewable Energy Laboratory:
+                                                                              Fuel Cell Technology Status Analysis
+
+3.4.4 Technical Challenges
+
+Cost and durability are the major challenges to fuel cell commercialization. In order to displace established
+technologies in the marketplace, fuel cells must provide advantages over the incumbent technology (such as
+increased efficiency and lower emissions) at similar cost and durability. The efficiency and environmental
+advantages for fuel cells have been demonstrated, but it is still a challenge meeting the cost and durability of
+incumbent technologies. Fuel cell cost and durability status and challenges for several applications are
+discussed below:
+
+Transportation Systems
+
+Light-Duty Vehicles
+
+As shown in Figure 3.4.5, durability and cost are the primary challenges to fuel cell commercialization in light-
+duty vehicle transportation applications. The cost of fuel cell stacks and systems must be reduced before they
+
+             Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 9
+2016 FUEL CELLS SECTION
+
+can be competitive with conventional vehicle technologies (gasoline internal combustion engines). The DOE
+system cost target for 2020 is $40/kW, which is believed to be the point where fuel cell vehicles would be
+competitive on a life-cycle cost basis with incumbent and future competing technologies. Long-term
+competitiveness with alternative powertrains, including future advanced gasoline engines, is expected to
+require further cost reduction to $30/kW, which represents the sub-program's ultimate cost target.
+
+   Figure 3.4.5. Fuel cell power system 2020 targets versus 2015 status (blue) for light-duty vehicle applications. (The
+ status is indicated as a fraction of the targets.) Cost status is for a modeled system when manufactured at a volume of
+
+                                                                 500,000 units/year.
+
+Current modeled cost estimates (2015) place the cost of an 80-kWnet automotive polymer electrolyte
+membrane (PEM) fuel cell system based on next-generation laboratory technology and operating on direct
+hydrogen to be $53/kW when manufactured at a volume of 500,000 units/year and $60/kW at a volume of
+100,000 units/year. A significant fraction of the cost of a PEM fuel cell comes from the PGM catalysts that are
+currently used on the anode and cathode for the electrochemical reactions. Other key cost factors include the
+membrane, cell hardware, and BOP components. It should be noted that the projected cost status is based on an
+analysis of state-of-the-art components that have been developed and demonstrated through the Fuel Cells sub-
+program at the laboratory scale. Additional efforts would be needed for the integration of components into a
+complete automotive system that meets durability requirements in real-world conditions. The expected cost of
+automotive PEM fuel cell systems based on current technology, planned for commercialization in the 2016
+time frame, is approximately $280/kW when manufactured at a volume of 20,000 units/year.8
+Fuel cell power systems must be as durable and reliable as current automotive engines. The DOE targets a
+durability of 5,000 hours (equivalent to approximately 150,000 miles of driving) with less than 10% loss of
+performance. Ultimately, the DOE targets 8,000 hours of durability to allow 150,000 miles of driving on a
+
+8 DOE Hydrogen and Fuel Cells Program Record, 15015: Fuel Cell System Cost--2015, September 30, 2015,
+https://www.hydrogen.energy.gov/pdfs/15015_fuel_cell_system_cost_2015.pdf.
+
+Page 3.4 - 10 Multi-Year Research, Development, and Demonstration Plan
+                                                                                                         2016 FUEL CELLS SECTION
+
+lower average-speed drive cycle. This target would address an even larger percentile of drivers. Also, fuel cell
+power systems should be able to function over a broad range of external environmental conditions (-40° to
++40°C) as well as respond to the rapid variations in power demand required in automotive applications.
+Results from the Technology Validation sub-program's Learning Demonstration indicated a projected
+durability of 3,900 hours (2015) before 10% degradation for the automotive fuel cell systems evaluated.9 Key
+contributors to fuel cell degradation include loss of catalytic surface area and membrane deterioration. The
+durability of catalysts can be compromised by platinum sintering and dissolution, especially under conditions
+of load-cycling and high electrode potentials. Carbon support corrosion is another challenge at high electrode
+potentials and can worsen under load cycling and high-temperature operation. Membrane durability is affected
+by both humidity variations, which cause mechanical stresses from swelling and shrinking, and chemical
+degradation, which can be accelerated by degradation products from the bipolar plates and other components
+in the fuel cell system. Understanding of the effects of air, fuel, and system-derived impurities (including those
+from the fuel storage system) needs to be improved, and mitigation strategies need to be identified and
+demonstrated.
+
+Fuel cell and stack hardware (bipolar plates, gas diffusion layers, and seals) also need further development.
+Bipolar plates in particular represent a significant fraction of the stack cost, and they must be a focus of cost
+reduction efforts. Seal materials must be durable over the lifetime of a fuel cell and yield acceptable leak rates.
+
+Cost, efficiency, and packaging of fuel cell BOP components for air, thermal, and water management are also
+barriers to the commercialization of fuel cells in transportation applications. Air management for fuel cell
+systems is a challenge because today's compressor technologies are not optimized for automotive fuel cell
+applications. In addition, thermal and water management for fuel cells are issues. Fuel cell operation at lower
+temperatures creates a small differential between the operating and ambient temperatures necessitating large
+heat exchangers and humidifiers. These components increase the cost and complexity of the system and use
+some of the power that is produced, reducing overall system efficiency.
+
+Buses and Heavy-Duty Vehicles
+
+Transit bus applications represent a promising mid-term market for fuel cell technology. Central fueling of
+transit bus fleets facilitates the introduction of hydrogen fuel in the transportation market, and the less stringent
+cost, weight, and volume criteria of heavier vehicles make the implementation of fuel cell propulsion systems
+less challenging in transit buses than in other transportation applications. However, cost and durability are still
+challenges for fuel cells in bus applications.
+
+PEMFC technology is the primary fuel cell type considered in fuel cell- or battery-dominant hybrid systems
+operating on hydrogen. Fuel cell bus development and demonstration activities have been primarily funded by
+the U.S. Department of Transportation's Federal Transit Administration. While not focusing directly on bus
+applications, the Office continues to fund research on fuel cell materials that are relevant to bus applications.
+
+Fuel cell bus power plants are offered with a 12,000-hour or 5-year warranty, including air, fuel, and water
+management systems. A recent fuel cell bus demonstration has surpassed 20,000 operating hours in real-world
+service with the original cell stacks and no cell replacement.10 Remaining fuel cell durability issues are
+difficult to identify and understand through field data. The development and implementation of accelerated
+stress tests (ASTs) are needed to shorten the time required to address durability issues for all drive cycles and
+hybridization strategies. Because BOP components, power electronics, and power plant integration issues
+cause more forced shutdowns than the fuel cell system does, the development of fuel cell-powered buses
+
+9 Jennifer Kurtz et al., "Fuel Cell Electric Vehicle Evaluation," Slide 8 (presented at the DOE Hydrogen and Fuel Cells Program and Vehicle Technologies Office
+Annual Merit Review, Washington, D.C., June 10, 2015), http://www.hydrogen.energy.gov/pdfs/review15/tv001_kurtz_2015_o.pdf.
+
+10 L. Eudy, M. Post, and C. Gikakis, Fuel Cell Buses in U.S. Transit Fleets: Current Status 2015 (Technical Report NREL/TP-5400-64974) (Golden, CO: National
+Renewable Energy Laboratory, 2015), http://www.nrel.gov/docs/fy16osti/64974.pdf.
+
+                                            Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 11
+2016 FUEL CELLS SECTION
+
+should be done at the overall system level. Of course, the hybridization strategy chosen has a major effect on
+system design and technical requirements.
+
+Although fuel cell durability increases have been realized and costs have been reduced for bus applications, the
+efficiency, durability, and cost targets (manufacturing, capital, operations, and maintenance) for fuel cells have
+not yet been met. Initial capital cost is a particularly important target.
+
+Medium- and heavy-duty trucks are an emerging application for fuel cells. Medium- and heavy-duty vehicles
+accounted for 6 quads of petroleum use in 2012.11 Emissions from these vehicles are also a concern because
+they were the source of over 400 MMT of CO2 emissions in 2012, and diesel-powered vehicles and equipment
+account for nearly half of NOx and more than two-thirds of all particulate matter emissions from U.S.
+transportation sources.7,12 Fuel cells offer the opportunity for reduced emissions and petroleum usage while
+increasing efficiency in this sector. Central fueling of fleets for some heavy- and medium-duty trucks
+facilitates the introduction of hydrogen fuel in this market, especially if fleets are colocated with material
+handling equipment utilizing hydrogen. However, fuel cells still need to be demonstrated in these applications.
+See the Market Transformation section for information on the application of fuel cells in medium- and heavy-
+duty trucks. Truck technical targets are currently under development.
+
+Stationary Power Systems
+
+The stationary fuel cell market accounts for the majority of the current global fuel cell market in terms of
+megawatts shipped.13 Stationary fuel cells can be used in a broad range of commercial, industrial, and
+residential applications, from multi-megawatt systems for large centralized power generation to small units
+(e.g., 1 kW) for backup power or micro- CHP systems. Even though the specific performance requirements
+differ between the stationary applications and are different from those for transportation applications, the main
+challenges are the same: reducing cost and increasing durability. While the acceptable price point for
+stationary fuel cell systems is considerably higher than that for transportation systems, current costs are still
+too high to be competitive with conventional/incumbent technology for most applications. Recent studies have
+indicated that prices range from ~$4,000/kW for large prime power systems to over ~ $20,000/kW for small
+prime power (<11 kW), values that are considerably higher than DOE targets.14 Additionally, the durability of
+stationary fuel cell systems in most instances does not match that of the incumbent technology. More specifics
+related to the challenges for particular stationary application segments are described below.
+
+Medium-Scale CHP/Distributed Generation (100 kW­3 MW Modular)
+
+PEMFCs, SOFCs, PAFCs, and MCFCs are being commercialized for medium-scale CHP and distributed
+generation applications. PAFCs and MCFCs have had the most success in this market due to their modularity,
+the quality of the waste heat generated, and their demonstrated durability (PAFC >80,000 and MCFC >40,000
+hours). SOFCs are also making headway in this application as the technology further matures.
+
+The initial costs for capital equipment, manufacturing processes, installation, and warranty associated with
+these systems need to be reduced. Challenges to reducing these costs for PAFCs and PAFCs such as PBI-type
+fuel cells include increasing catalyst performance by reducing or eliminating anion adsorption and developing
+
+11 DOE, Quadrennial Technology Review: An Assessment of Energy Technologies and Research Opportunities, Table 9.1.1 (Washington, D.C.: September 2015),
+http://energy.gov/quadrennial-technology-review-2015.
+
+12 S.C. Davis, S.W. Diegel, and R.G. Boundy, Transportation Energy Data Book: Edition 33 (Technical Report ORNL-6990) (Oak Ridge, TN: Oak Ridge National
+Laboratory).
+
+13 DOE Fuel Cell Technologies Office, 2014 Fuel Cells Technology Market Report (Technical Report) (Washington, D.C.: October 2015),
+http://energy.gov/eere/fuelcells/downloads/2014-fuel-cell-technologies-market-report.
+
+14 "Aggregated Price Data by Application, at Low Volume Production Levels," NREL, April 2015, http://www.nrel.gov/hydrogen/images/cdp_lab_15.jpg.
+
+Page 3.4 - 12 Multi-Year Research, Development, and Demonstration Plan
+                                                                                                         2016 FUEL CELLS SECTION
+
+more durable and stable catalysts and catalyst support materials that enable stable operation over the extended
+life of the fuel cell. Development of lower cost materials for the cell stack (e.g., replacement of Teflon in the
+cell stack) and the BOP is also a challenge.
+
+For MCFCs, durability needs to be increased. In particular, more robust cathode materials must be developed
+to decrease the rate of cathode dissolution. The development of new electrolyte compositions to limit
+electrolyte loss, as well as new electrolyte supports with a more durable microstructure, is needed to prevent
+early stack failure. Tri-generation may provide an additional value stream for MCFCs by providing hydrogen
+to early markets, which would improve system economics. Common technical challenges for both MCFCs and
+PAFCs include reducing the system conditioning time and developing low-cost manufacturing methods as well
+as decreasing the cost of the fuel processor and the fuel cleanup system.
+
+SOFC stacks have demonstrated durability in excess of 25,000 hours. The high operating temperature can lead
+to compatibility and reactivity issues among the various cell and stack components, especially over extended
+operating times. The ability of the stack to survive repeated thermal cycling and the relatively long start-up
+times are additional technical challenges. Reducing the operating temperature of SOFCs further will help
+resolve these challenges. FE is funding R&D work to develop SOFCs for medium-scale applications.
+
+The lower operating temperature of traditional (low-temperature) PEMFC systems results in a lower tolerance
+to fuel impurities such as carbon monoxide relative to higher temperature systems and thus in more complex
+and costly fuel processing systems for PEMFCs when they operate on fuels other than hydrogen. While
+PEMFCs offer lower grade waste heat for CHP applications than SOFC, MCFC, and PAFC systems, high-
+level waste heat can be collected from the fuel processor. As is also true for the previously mentioned fuel cell
+types, PEMFC CHP systems may be used for tri-generation, where the hydrogen generated may provide an
+added value stream to the technology. Cost estimates for a 100-kW LT-PEMFC CHP system indicate that BOP
+and fuel processor costs are the dominant contributor to system costs, and must be reduced.15 While low-
+temperature PEMFC systems have lower Pt loadings than PAFC systems, the cost of the catalyst is still high
+enough to be a major factor in overall cost. Both stack cost and Pt loading must be reduced. Additionally,
+increasing the temperature of operation could help simplify the fuel processor (possibly eliminating the low-
+temperature shift reactor), reduce costs, and provide higher quality waste heat from the fuel cell.
+
+Micro CHP (<1­25 kW)
+
+Common challenges for micro CHP applications across fuel cell technology types lie in decreasing cost and
+increasing durability and cell component stability. For PEMFC systems, challenges also include decreasing
+fuel processor costs and raising operating temperatures. Substantial progress has been made in this application
+area, and tens of thousands of micro CHP systems have been installed in Japan and Europe under the ene-farm
+and ene.field programs, respectively. Durability of residential micro CHP systems has been improved to
+70,000 hours for PEMFC systems. However, the price of these systems is still quite high, at approximately 1.7
+million JPY for a 700-W system, the equivalent of $22,000/kW.16 This price is substantially higher than the
+DOE cost targets for micro CHP. The technical issues for SOFC systems designed for micro CHP applications
+are similar to those described in the Medium-Scale CHP/Distributed Generation section above. In portions of
+the United States where heating demand is low, the heat from CHP systems is larger than the heat
+requirements for most of the year, resulting in longer payback periods. The development of systems that can
+efficiently use this excess heat as part of a cooling system (combined heat cooling and power, CHCP) would
+be beneficial.
+
+15 M. Wei, "A Total Cost of Ownership Model for Design and Manufacturing Optimization of Fuel Cells in Stationary and Emerging Market Applications" (presented
+at the DOE Hydrogen and Fuel Cells Program and Vehicle Technologies Office Annual Merit Review and Peer Evaluation Meeting, Washington, D.C., June 19,
+2014), http://www.hydrogen.energy.gov/pdfs/review14/fc098_wei_2014_o.pdf.
+
+16 "Specifications of a Residential Fuel Cell Unit for a Detached House," Panasonic, http://panasonic.co.jp/ap/FC/en_about_01.html.
+
+                                            Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 13
+2016 FUEL CELLS SECTION
+
+Fuel Processing
+
+Stationary and distributed generation systems often include a fuel processing subsystem to convert raw fuel to
+clean hydrogen or synthesis gas for fuel cell consumption. The fuel processing system can have significant
+issues with fuel flexibility, durability, cost, impurity tolerance, thermal and physical integration, cold start-up
+time, and fuel cleanup. Current fuel processing systems need to be developed further to improve efficiency and
+reduce costs. To improve the efficacy of these systems, hardware and catalysts capable of generating fuel cell
+grade hydrogen or reformate from a variety of fuel sources (anaerobic digester gas, LPG, APG, landfill gas,
+biodiesel, and alcohols) are of interest. These fuels require varying degrees of treatment depending on the
+initial composition of the raw fuel, its heating value, and the type of fuel cell used. The impurities present in
+these fuels vary depending on the raw fuel type and its geographical origin and comprise a wide variety of
+compounds including various sulfur-containing compounds, siloxanes, halogens, and ammonia, among others.
+Military logistic fuels such as JP8 are not included here, but they are covered by U.S. Department of Defense
+funding.
+
+Sulfur impurities, siloxanes, and halogenated compounds are impurities that have the greatest impact on gas
+cleanup system reliability, capital costs, and operating costs. Current technology can remove contaminants of
+concern and provide fuel that meets the purity requirements for fuel cell systems, but the costs are too high.
+Estimates showed the cleanup of biogas costs about 2 cents per kWh of electricity, and they make up 30% of
+the operating and maintenance costs in an anaerobic digester gas-fueled power plant.17 The development of
+higher capacity sorbents and real-time online sensors to optimize the use of current sorbents will decrease the
+cleanup costs. The sorbents should preferably be fuel-flexible, environmentally friendly, and insensitive to
+water and hydrocarbons.
+
+Currently, each plant is designed with a customized gas cleanup system to match the fuel and its quality and
+the fuel cell application. This limits potential cost savings from volume production. The development of a
+single cleanup system capable of purifying multiple fuels such as natural gas, biogas, landfill gas, APG, and
+other opportunity fuels will also decrease costs by increasing production volumes and will thus help to increase
+fuel cell deployment. Consideration of the few fuel cell plants in operation, additional studies, and plant
+demonstrations can provide much needed data for the industry on solutions for gas cleanup.
+
+Reversible Fuel/Flow Cells
+
+Reversible fuel cells are of interest for energy storage applications and hold promise as an enabler for the
+implementation of intermittent renewable energy technologies. This technology allows for the storage of
+excess energy in the form of hydrogen during periods of low electricity demand that can then be used during
+times of peak demand. Reversible fuel cells are capable of operating in both power production (fuel cell) and
+energy storage (electrolysis) modes. Advantages of reversible fuel/flow cell technology include high round-trip
+efficiency (60­90%), decoupled power and energy capacity, long cycle life, low self-discharge rate, and
+reliable and stable performance. A key challenge to reversible fuel cells is maintaining electrode function and
+performance during repeated cycles between fuel cell and electrolysis modes.
+
+Flow cells are often referred to as flow batteries and involve circulating the electrolyte through the cell from
+tanks external to the cell. When the electrolyte is spent, it must be externally recharged. Some types of flow
+cells, such as hydrogen/halogen cells, are closely related in structure to conventional fuel cells.
+
+Cost and durability are barriers to the implementation of both reversible fuel cells and flow cells, but
+leveraging fuel cell R&D in the areas of membranes, electrocatalysts, electrode architectures, bipolar plates,
+and diffusion media for this technology would result in cost reduction and durability improvements.
+
+17 DOE Fuel Cell Technologies Office, Gas Clean-Up for Fuel Cell Applications Workshop (Technical Report) (Lemont, IL: Argonne National Laboratory, March 6­
+7, 2014), http://energy.gov/sites/prod/files/2016/04/f30/fcto_gas_cleanup_workshop_report.pdf.
+
+Page 3.4 - 14 Multi-Year Research, Development, and Demonstration Plan
+                                                                                                         2016 FUEL CELLS SECTION
+
+Auxiliary Power Units
+
+Fuel cells can provide clean, efficient auxiliary power for trucks, recreational vehicles, marine vessels (yachts,
+commercial ships), airplanes, locomotives, and similar applications that have significant auxiliary power
+demands. In many of these applications, the primary motive-power engines are often kept running solely for
+auxiliary loads. This practice is inefficient, resulting in significant additional fuel consumption and emissions.
+Fuel cell APUs are being considered for terrestrial, aviation, and maritime applications. APUs for heavy-duty
+vehicles represent a potential early market opportunity for fuel cell deployment. Significant fuel savings, as
+well as reduction in CO2 and criteria pollutant emissions, may be achieved through more efficient fuel
+conversion and reduction in engine idling time. For the approximately 500,000 long-haul Class 7 and Class 8
+trucks in the United States, emissions during overnight idling have been estimated to be 11 million tons of CO2
+and 55,000 tons of NOX annually.18 A related application is refrigerated trucks, where diesel engines are used
+to power the transportation refrigeration units (TRUs). Emissions from idling and auxiliary power are likely to
+be the subject of increasing regulations in the future. Idling restrictions for heavy-duty highway vehicles have
+already been enacted in 28 states.19 In 2008, the EPA adopted new requirements for limiting idling emissions
+from locomotives. In addition, noise pollution from diesel engines can be an issue and is regulated by local
+ordinances, making deliveries to these areas difficult.
+
+The main challenges for APU applications are the cost and the combination of the transient operation of the
+APU and the harsh environment (shock and vibrations on the vehicle). In addition, the APU unit must fit in the
+available space and not add unnecessary weight to the vehicle. For long-haul trucks, fueling a fuel cell APU
+with a different fuel than the engine requires is not considered a viable option. Fuel cell systems with fuel
+reformers using the diesel onboard the vehicle and without adding additional requirements (i.e., no additional
+water for reforming) are being developed. For TRUs for refrigerated trucks, a hydrogen fueling option is
+considered to be marketable. Fuel cells for APU applications need to have increased specific power and power
+density to meet packaging requirements for heavy-duty trucks, and they need to reduce costs to decrease
+payback periods. See the Market Transformation chapter for more information.
+
+Early Market Applications
+
+Early markets for fuel cells exist for applications that have less stringent cost and performance requirements
+than light-duty vehicles, and they are those where fuel cells offer advantages and can compete more readily
+with incumbent technologies. The introduction of fuel cells into the marketplace for these applications will
+help increase fuel cell manufacturing capacity and volumes and will help reduce production costs while
+increasing consumer familiarity with and acceptance of fuel cells. These applications include portable power
+systems, backup power installations, material handling equipment, and short-haul trucks. The material
+handling equipment and short-haul truck applications in particular share reduced infrastructure demands
+compared to light-duty vehicles. Short-haul trucks return to a central location each night to refuel, and as such
+they do not rely on an extensive public hydrogen refueling network. In some cases, these trucks may be able to
+take advantage of the existing hydrogen refueling infrastructure already in place for material handling
+equipment. Challenges in these markets are reducing cost of the systems themselves and of the hydrogen
+refueling stations.
+
+Backup power installations, material handling equipment, yard dogs (tractor trailer type trucks used for
+moving freight trailers within a facility), and short-haul trucks are recognized as early markets for fuel cells.
+Fuel cell R&D advances will have a positive impact on fuel cell technology for these applications.
+Demonstration projects, including projects initially supported by the American Recovery and Reinvestment
+
+18 Argonne National Laboratory, "Long Haul Truck Idling Burns Up Profits" (Lemont, IL: 2015), http://www.anl.gov/sites/anl.gov/files/es_long-
+haul_truck_idling_factsheet_Sept2015.pdf.
+
+19 "Idling Regulations Compendium--Updated December 2015," ATRI, http://atri-online.org/2014/10/20/idling-regulations-compendium/.
+
+                                            Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 15
+2016 FUEL CELLS SECTION
+
+Act of 2009, have highlighted these applications as areas for near-term fuel cell market penetration.
+Performance targets for backup power have been developed with input from the previous demonstration
+projects.
+Portable power applications, including battery chargers, consumer electronics, handheld terminals, unattended
+security devices, notebook PCs, and emergency response mobile communications, also make up one of the
+main early markets for fuel cell technologies. Fuel cell systems with higher energy density, power density, and
+specific power than existing technologies can fill the increasing gap between energy demand and energy
+supply for these applications. Challenges for fuel cells for portable power include reducing cost (mainly by
+reducing catalyst loading), increasing efficiency (by reducing fuel crossover and increasing catalyst
+selectivity), and reducing the size of the system. Portable power R&D needs include the development of
+electrodes with higher activity and selectivity, reduction of methanol crossover, and decrease in system volume
+and weight. Additionally, total life-cycle efficiency improvement would have a positive impact on emissions
+reduction during operation and disposal. Flexible fuel capability (e.g., ethanol, butane) based on renewable
+fuels is also attractive.
+Technical Targets
+Tables 3.4.3 through 3.4.10 list the DOE technical targets set specifically for integrated PEMFC power
+systems, fuel cell stacks, and components operating on direct hydrogen for light-duty transportation
+applications. These targets have been developed with input from the U.S. DRIVE Partnership, which includes
+automotive and energy companies, and specifically the Fuel Cell Technical Team. The guideline component
+targets are developed to assist component developers in evaluating progress without testing full systems.
+Tables 3.4.11 and 3.4.12 list the DOE technical targets for bus and backup power applications, respectively.
+Tables 3.4.13 and 3.4.14 list the DOE technical targets for CHP applications. These targets have been
+developed with input from developers of stationary fuel cell power systems. Tables 3.4.15 and 3.4.16 list the
+DOE technical targets for portable power and auxiliary power applications, respectively. In all cases, all targets
+must be achieved simultaneously; however, the status values are not necessarily from a single system. Where
+applicable, testing protocols for the technical targets listed below are identified and listed in appendix tables
+P.1 through P.11.
+
+Page 3.4 - 16 Multi-Year Research, Development, and Demonstration Plan
+                                                                     2016 FUEL CELLS SECTION
+
+Table 3.4.3 Technical Targets: 80-kWe (net) Integrated Transportation Fuel Cell Power Systems
+                                         Operating on Direct Hydrogen a
+
+                Characteristic                Units     2015 Status   2020    Ultimate
+                                                                     Targets  Targets
+
+Peak energy efficiencyb                   %          60c             65       70
+
+Power density                             W/L        640d            650      850
+
+Specific power                            W / kg     659e            650      650
+
+Costf                                     $ / kWnet  53g             40       30
+
+Cold start-up time to 50% of rated power  seconds    20h             30       30
+@­20°C ambient temperature                seconds    <10h            5        5
+@+20°C ambient temperature
+Start-up and shutdown energyi             MJ         7.5             5        5
+from -20°C ambient temperature            MJ         -               1        1
+from +20°C ambient temperature            hours      3,900j          5,000k   8,000k
+
+Durability in automotive drive cycle
+
+Start-up/shutdown durabilityl             cycles     -               5,000    5,000
+
+Assisted start from low temperaturesm     °C         -               -40      -40
+
+Unassisted start from low temperaturesm   °C         -30n            -30      -30
+
+a Targets exclude hydrogen storage, power electronics and electric drive.
+b Ratio of DC output energy to the lower heating value of the input fuel (hydrogen). Peak efficiency occurs at less than 25%
+
+      rated power.
+c W. Sung, Y. Song, K. Yu, and T. Lim, "Recent Advances in the Development of Hyundai-Kia's Fuel Cell Electric Vehicles,"
+
+      SAE Int. J. Engines 3.1 (2010): 768­772, doi: 10.4271/2010-01-1089.
+d J. Juriga, Hyundai Motor Group's Development of the Fuel Cell Electric Vehicle, May 10th, 2012,
+
+      http://www.hydrogen.energy.gov/pdfs/htac_may2012_hyundai.pdf.
+e U. Eberle, B. Muller, and R von Helmolt, Energy & Environmental Science 5 (2012): 8780.
+f Cost projected to high-volume production (500,000 systems per year).
+g Cost at 500,000 systems per year based on an analysis of state-of-the-art components that have been developed and
+
+      demonstrated primarily through the Fuel Cells sub-program at the laboratory scale. Additional efforts would be needed for
+      integration of components into a complete automotive system that meets durability requirements in real-world conditions.
+      DOE Hydrogen and Fuel Cells Program Record 15015, "Fuel Cell System Cost--2015."
+      http://www.hydrogen.energy.gov/program_records.html
+h Based on average of status values reported at 2010 SAE World Congress (W. Sung, Y-I. Song, K-H Yu, T.W. Lim, SAE-2-10-
+      01-1089). These systems do not necessarily meet other system-level targets.
+i H2 fuel energy (lower heating value) to include the fuel energy required to account for the electrical energy consumed from
+      cold start.
+j Average projected time to 10% voltage degradation for the fleet with the highest durability, as reported in J. Kurtz et al., "Fuel
+      Cell Electric Vehicle Evaluation," 2015 Annual Merit Review,
+      http://www.hydrogen.energy.gov/pdfs/review15/tv001_kurtz_2015_o.pdf (slide 9). Testing reflects real-world driving, not a
+      simulated drive cycle. Catalyst loading was not reported, and did not necessarily match the target value of 0.125 mgPGM/cm2
+      (Table 3.4.7).
+k Need to meet or exceed at temperatures of 80°C up to peak temperature. Based on polarization curve and durability testing
+      protocols in Tables P.6 and P.7, with <10% drop in rated power after test.
+l Measured according to protocol in Table P.8, with less than 5% decrease in voltage at 1.2 A/cm2.
+m 8-hour soak at stated temperature must not impact subsequent achievement of targets.
+n Press Release: Honda Demonstrates the FCX Concept Vehicle, Sep 25, 2006,
+      http://world.honda.com/news/2006/4060925FCXConcept/; Associated Press, Toyota Develops a New Fuel Cell Hybrid, June
+      6, 2008, http://www.nbcnews.com/id/25004758/.
+
+                                Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 17
+2016 FUEL CELLS SECTION
+
+Table 3.4.4. Technical Targets: 80-kWe (net) Transportation Fuel Cell Stacks
+                            Operating on Direct Hydrogena,b
+
+Characteristic                         Units            2015 Status      2020          Ultimate
+                                                                        Targets        Targets
+
+Stack power densityc                   W/L        3,000d                2,250    2,500
+
+Stack specific power                   W / kg     2,000e                2,000    2,000
+
+Performance @ 0.8 Vf                   mA / cm2   -                     300      300
+
+Costg                                  $ / kWnet  26h                   20       15
+Durability in automotive drive cyclei  hours      3,900j                5,000    8,000
+
+Start-up/shutdown durabilityk          cycles     -                     5,000    5,000
+
+Q/Til                                  kW/ºC      1.9m                  1.45     1.45
+Robustness (cold operation)n
+                                       see footnote -                   0.7      0.7
+
+Robustness (hot operation)o            see footnote -                   0.7      0.7
+
+Robustness (cold transient)p           see footnote -                   0.7      0.7
+
+a Excludes hydrogen storage, power electronics, electric drive, and fuel cell ancillaries: thermal, water, and air management
+      systems.
+
+b Stacks operating on direct hydrogen and air at up to 150 kPa (absolute) inlet pressure.
+c Power refers to net power (i.e., stack power minus projected BOP power). Volume is "box" volume, including dead space.
+d Press Release: Toyota Motor Company Announces Status of its Environmental Technology Development, Future Plans, Sep
+
+      24, 2012, http://www2.toyota.co.jp/en/news/12/09/0924.pdf.
+e M. Hanlon, "Nissan doubles power density with new Fuel Cell Stack," Oct 13, 2011, http://www.gizmag.com/nissan-doubles-
+
+      power-density-with-new-fuel-cell-stack/20156/.
+f Measured using polarization curve protocol in Table P.6.
+g Cost projected to high-volume production (500,000 stacks per year).
+h Cost at 500,000 stacks per year based on an analysis of state-of-the-art components that have been developed and
+
+      demonstrated primarily through the Fuel Cell Technologies Office Fuel Cells sub-program at the laboratory scale. Additional
+      efforts would be needed for integration of components into a complete automotive system that meets durability requirements
+      in real-world conditions. DOE Hydrogen and Fuel Cells Program Record 15015, "Fuel Cell System Cost--2015."
+      http://www.hydrogen.energy.gov/program_records.html
+i Need to meet or exceed at temperatures of 80°C up to peak temperature. Based on polarization curve and durability testing
+      protocols in Tables P.6 and P.7, with <10% drop in rated power after test.
+j Average projected time to 10% voltage degradation for the fleet with the highest durability, as reported in J. Kurtz et al., "Fuel
+      Cell Electric Vehicle Evaluation," 2015 Annual Merit Review,
+      http://www.hydrogen.energy.gov/pdfs/review15/tv001_kurtz_2015_o.pdf (slide 9). Testing reflects real-world driving.
+      Catalyst loading was not reported, and did not necessarily match the target value of 0.125 mgPGM/cm2.
+k Measured according to protocol in Table P.8, with less than 5% decrease in voltage at 1.2 A/cm2.
+l Q/Ti = [Stack power (90 kW) x (1.25 V - Voltage at Rated Power) / (Voltage at Rated Power)] / [(Stack Coolant out temp
+      (°C) - Ambient temp (40°C)]. Target assumes 90 kW stack gross power required for 80 kW net power, and is to be measured
+      using the polarization curve protocol in Table P.6 except inlet humidification and coolant outlet temperature. Inlet
+      humidification is up to 40% RH and coolant outlet temperature is up to maximum operating temperature. Cathode and anode
+      inlet pressures are up to 150 kPa (absolute).
+m Based on a voltage of 0.67 V and stack coolant outlet temperature of 80°C.
+n Ratio of fuel cell stack voltage at 30°C to fuel cell stack voltage at 80°C operation at 1.0 A/cm2, measured using the protocol
+      for a polarization curve found in Table P.6. A 25°C dew point is used only for 30°C operation.
+o Ratio of fuel cell stack voltage at 90°C to fuel cell stack voltage at 80°C operation at 1.0 A/cm2, measured using the protocol
+      for a polarization curve found in Table P.6. A 59°C dew point is used for both 90°C and 80°C operations.
+p Ratio of fuel cell stack voltage at 30°C transient to fuel cell stack voltage at 80°C steady-state operation at 1.0 A/cm2,
+      measured using the protocol for a polarization curve found in Table P.6. A 25°C dew point is used only for 30°C operation.
+      30°C transient operation is at 1 A/cm2 for at least 15 minutes then lowered to 0.1 A/cm2 for 3 minutes without changing
+      operating conditions. After 3 minutes, the current density is returned to 1 A/cm2. The voltage is measured 5 seconds after
+      returning to 1 A/cm2.
+
+Page 3.4 - 18 Multi-Year Research, Development, and Demonstration Plan
+                                                                 2016 FUEL CELLS SECTION
+
+Table 3.4.5 Technical Targets: Membrane Electrode Assemblies for Transportation Applications
+
+Characteristic                 Units                2015 Status       2020 Targets
+
+Costa                          $ / kWnet     17b                 14
+Durability with cycling        Hours         2,500c              5,000d
+
+Start-up/shutdown durabilitye  Cycles        -                   5,000
+
+Performance @ 0.8 Vf           mA / cm2      240g                300
+                               mW / cm2      810i                1,000
+Performance @ rated powerh     see footnote  1.09k               0.7
+(150 kPaabs)
+
+Robustness (cold operation)j
+
+Robustness (hot operation)l    see footnote  0.87k               0.7
+
+Robustness (cold transient)m   see footnote  0.84k               0.7
+
+a Costs projected to high volume production (500,000 80-kWnet systems per year).
+b Cost when producing sufficient MEAs for 500,000 systems per year. DOE Hydrogen and Fuel Cells Program Record 15015,
+
+      "Fuel Cell System Cost--2015." http://www.hydrogen.energy.gov/program_records.html. Cost includes all MEA
+      components, including frames and gaskets.
+c Time until 10% decrease in voltage at 1.0­1.5 A/cm2 for a Gore MEA using a 510 catalyst (anode/cathode loading of 0.2/0.4
+      mgPGM/cm2) operated on durability test protocol in Table P.7. Rod Borup and Rangachary Mukundan (LANL), private
+      communication and 2013 Annual Merit Review presentation
+      (http://www.hydrogen.energy.gov/pdfs/review13/fc016_mukundan_2013_o.pdf). Higher durability values have been reported
+      elsewhere (e.g. 3,900 hours in on-the-road testing, Table 3.4.3), but these higher values were not measured using the drive
+      cycle specified in Table P.7.
+d Need to meet or exceed at temperatures of 80°C up to peak temperature. Based on polarization curve and durability testing
+      protocols in Table P.6 and Table P.7, with <10% drop in rated power after test.
+e Measured according to protocol in Table P.8, with less than 5% decrease in voltage at 1.2 A/cm2.
+f Measured using polarization curve protocol in Table P.6.
+g Kongkanand et al. (General Motors), "High-Activity Dealloyed Catalysts," 2014 Annual Progress Report,
+      http://www.hydrogen.energy.gov/pdfs/progress14/v_a_9_kongkanand_2014.pdf
+h Measured using polarization curve protocol in Table P.6, but any temperature up to maximum operating temperature may be
+      used, with maximum inlet RH of 40%. Rated power operating point depends on MEA temperature and is defined as the
+      voltage at which V = 77.6 / (22.1 + T[°C]), based on target of Q/Ti = 1.45 kW/°C and definition of Q/Ti from Table 3.4.4,
+      with an approximation of MEA temperature as equal to stack coolant outlet temperature.
+i Areal power density of 810 mW/cm2 at 150 kPaabs and 1,060 mW/cm2 At 250 kPaabs. A. Steinbach et al. (3M), "High-
+      Performance, Durable, Low-Cost Membrane Electrode Assemblies for Transportation Applications," 2014 Annual Merit
+      Review, http://www.hydrogen.energy.gov/pdfs/review14/fc104_steinbach_2014_o.pdf
+j Ratio of voltage at 30°C to voltage at 80°C during operation at 1.0 A/cm2, measured using the protocol for a polarization curve
+      found in Table P.6. A 25°C dew point is used only for 30°C operation.
+k Based on testing performed at LANL using a Gore MEA with high cathode loading (0.1/0.4 mgPGM/cm2 anode/cathode) and
+      SGL GDLs (25BC/25BC). Rod Borup, presentation to the Fuel Cell Tech Team, July 15, 2015.
+l Ratio of voltage at 90°C to voltage at 80°C during operation at 1.0 A/cm2, measured using the protocol for a polarization curve
+      found in Table P.6. A 59°C dew point is used for both 90°C and 80°C operations.
+m Ratio of voltage at 30°C transient operation to voltage at 80°C steady-state operation at 1.0 A/cm2, measured using the
+      protocol for a polarization curve found in Table P.6. A 25°C dew point is used only for 30°C operation. 30°C transient
+      operation is at 1 A/cm2 for at least 15 minutes then lowered to 0.1 A/cm2 for 3 minutes without changing operating conditions.
+      After 3 minutes, the current density is returned to 1 A/cm2. The voltage is measured 5 seconds after returning to 1 A/cm2.
+
+                               Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 19
+2016 FUEL CELLS SECTION
+
+Table 3.4.6 Technical Targets: Membranes for Transportation Applications
+
+Characteristic                                          Units                2015 Status     2020 Targets
+
+Maximum oxygen crossovera                      mA / cm2                2.4b               2
+
+Maximum hydrogen crossovera                    mA / cm2                1.1c               2
+
+Area specific proton resistance at:            ohm cm2                 0.072              0.02
+                                               ohm cm2                 (120°C, 40 kPa)c   0.02
+    Maximum operating temperature and          ohm cm2                 0.027 (25 kPa)c    0.03
+    water partial pressures from 40­80 kPa     ohm cm2                                    0.2
+    80°C and water partial pressures from 25­                          0.027 (4 kPa)c
+    45 kPa
+    30°C and water partial pressures up to 4                           0.1b
+    kPa
+    -20°C
+
+Maximum operating temperature                  °C                      120c               120
+Minimum electrical resistance                  ohm cm2                 >5,600c            1,000
+Costd                                          $ / m2                  17e                20
+Durabilityf
+                                               Cycles until >15        23,000c            20,000
+    Mechanical                                 mA/cm2 H2 crossoverg    742c               >500
+    Chemical                                   Hours until >15 mA/cm2
+                                                                       -                  20,000
+    Combined chemical/mechanical               crossover or >20% loss
+
+                                               in OCV
+
+                                               Cycles until >15
+                                               mA/cm2 crossover or
+
+                                               >20% loss in OCV
+
+a Tested in MEA on O2 or H2, 80°C, fully humidified gases, 1 atm total pressure. For H2 test methods, see M. Inaba et. al.
+      Electrochimica Acta, 51, 5746, 2006. For O2 test methods, see Zhang et. al. Journal of The Electrochemical Society, 160,
+      F616-F622, 2013.
+
+b 14 µm PFIA membrane with nanofiber support. M. Yandrasits (3M), private communication, February 1, 2016.
+c Reinforced and chemically stabilized PFIA membrane. M. Yandrasits et al. (3M), U.S. Department of Energy Hydrogen and
+
+      Fuel Cells Program 2015 Annual Progress Report,
+      https://www.hydrogen.energy.gov/pdfs/progress15/v_b_1_yandrasits_2015.pdf.
+d Costs projected to high-volume production (500,000 80 kW systems per year).
+e Cost when producing sufficient membrane for 500,000 systems per year. DOE Hydrogen and Fuel Cells Program Record
+      15015, "Fuel Cell System Cost--2015." http://www.hydrogen.energy.gov/program_records.html.
+f Measured according to protocols in Table P.3, Table P.4, and Table P.5.
+g For air or N2 testing, an equivalent crossover metric of 0.1 sccm/cm2 at a 50 kPa pressure differential, 80ºC, and 100%RH may
+      be used as an alternative.
+
+Page 3.4 - 20 Multi-Year Research, Development, and Demonstration Plan
+                                                                              2016 FUEL CELLS SECTION
+
+Table 3.4.7 Technical Targets: Electrocatalysts for Transportation Applications
+
+          Characteristic                 Units                   2015 Status      2020 Targets
+                            g / kW (rated,b gross) @  0.16c,d                 0.125
+Platinum group metal total  150 kPa (abs)
+content (both electrodes)a  mg PGM / cm2 electrode    0.13c                   0.125
+Platinum group metal (pgm)  area
+total loading (both         A / mg PGM @              >0.5f                   0.44
+electrodes)a                900 mViR-free             66c                     <40
+                            % mass activity loss      13c                     <30
+Mass activitye                                        41h                     <40
+                            mV                        65h                     <30
+Loss in initial catalytic                             0.024i                  >0.044j
+activitye                   % mass activity loss
+Loss in performance at 0.8
+A/cm2,e                     mV
+Electrocatalyst support
+stabilityg                  A / cm2 @ 900 mVIR-free
+Loss in performance at 1.5
+A/cm2,g
+
+PGM-free catalyst activity
+
+a PGM content and loading targets may have to be lower to achieve system cost targets.
+b Rated power operating point depends on MEA temperature and is defined as the voltage at which V = 77.6 / (22.1 + T[°C]),
+
+      based on target of Q/Ti = 1.45 kW/°C and definition of Q/Ti from Table 3.4.4, with an approximation of MEA temperature
+      as equal to stack coolant outlet temperature.
+c Steinbach et al. (3M), "High-Performance, Durable, Low-Cost Membrane Electrode Assemblies for Transportation
+      Applications," 2014 Annual Merit Review, http://www.hydrogen.energy.gov/pdfs/review14/fc104_steinbach_2014_o.pdf
+d Based on MEA gross power at 150 kPa abs. Measured at 0.692 V and 90°C, satisfying Q/T < 1.45 kW/°C. At 250 kPa abs
+      status is 0.12 g/kW.
+e Measured using protocol in Table P.1.
+f Kongkanand et al. (General Motors), "High-Activity Dealloyed Catalysts," 2014 Annual Merit Review,
+      http://www.hydrogen.energy.gov/pdfs/review14/fc087_kongkanand_2014_o.pdf
+g Measured using protocol in Table P.2.
+h B. Popov et al., "Development of Ultra-low Doped-Pt Cathode Catalysts for PEM Fuel Cells," 2015 Annual Merit Review,
+      http://www.hydrogen.energy.gov/pdfs/review15/fc088_popov_2015_o.pdf.
+i D.J. Liu (ANL), "Novel Non-PGM Catalysts from Rationally Designed 3-D Precursors," 2015 Annual Merit Review,
+      http://www.hydrogen.energy.gov/pdfs/review15/fc118_liu_2015_p.pdf, slide 9.
+j Target is equivalent to PGM catalyst mass activity target of 0.44 A/mgPGM at 0.1 mgPGM/cm2.
+
+                            Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 21
+2016 FUEL CELLS SECTION
+
+       Table 3.4.8 Technical Targets: Bipolar Plates for Transportation Applications
+
+Characteristic                      Units       2015 Status                 2020 Targets
+
+Costa                    $ / kWnet              7b                      3
+                                                <0.4c                   0.4
+Plate weight             kg / kWnet             0e                      <1.3 x 10­14,f
+Plate H2 permeation      Std cm3/(sec cm2Pa)    No active peakh         <1 and no active peak
+coefficientd             @ 80°C, 3 atm 100% RH  <0.1c                   <1
+Corrosion, anodeg        µA / cm2               >100j                   >100
+                                                0.006h                  <0.01
+Corrosion, cathodei      µA / cm2               >34 (carbon plate)m     >25
+
+Electrical conductivity  S / cm
+                         ohm cm2
+Areal specific           MPa
+resistancek
+Flexural strengthl
+
+Forming elongationn %                           20­40o                  40
+
+a Costs projected to high volume production (500,000 80 kW systems per year), assuming MEA meets performance target of
+      1,000 mW/cm2.
+
+b Cost when producing sufficient plates for 500,000 systems per year. DOE Hydrogen and Fuel Cells Program Record 15015,
+      "Fuel Cell System Cost--2015." http://www.hydrogen.energy.gov/program_records.html.
+
+c C.H. Wang (Treadstone), "Low-cost PEM Fuel Cell Metal Bipolar Plates," 2012 Annual Progress Report,
+      http://www.hydrogen.energy.gov/pdfs/progress12/v_h_1_wang_2012.pdf.
+
+d Per the standard gas transport test (ASTM D1434).
+e C.H. Wang (Treadstone), private communication, October 2014.
+f Blunk, et al, J. Power Sources 159 (2006) 533­542.
+g pH 3 0.1ppm HF, 80°C, peak active current <1x10-6 A/cm2 (potentiodynamic test at 0.1 mV/s, -0.4V to +0.6V (Ag/AgCl)), de-
+
+      aerated with Ar purge.
+h Kumar, M. Ricketts, and S. Hirano, "Ex-situ evaluation of nanometer range gold coating on stainless steel substrate for
+
+      automotive polymer electrolyte membrane fuel cell bipolar plate," Journal of Power Sources 195 (2010): 1401­1407,
+      September 2009.
+i pH 3 0.1ppm HF, 80°C, passive current <5x10-8 A/cm2 (potentiostatic test at +0.6V (Ag/AgCl) for >24h, aerated solution.
+j O. Adrianowycz (GrafTech), "Next Generation Bipolar Plates for Automotive PEM Fuel Cells," 2009 Annual Progress
+      Report, http://www.hydrogen.energy.gov/pdfs/progress09/v_g_2_adrianowycz.pdf.
+k Includes interfacial contact resistance (on as received and after potentiostatic test) measured both sides per Wang, et al. J.
+      Power Sources 115 (2003) 243­251 at 200 psi (138 N/cm2).
+l ASTM-D 790-10 Standard Test Method for Flexural Properties of Unreinforced and Reinforced Plastics and Electrical
+      Insulating Materials.
+m D. Haack et al. (Porvair), "Carbon-Carbon Bipolar Plates," 2007 Annual Progress Report,
+      http://www.hydrogen.energy.gov/pdfs/progress07/v_b_3_haack.pdf.
+n Per ASTM E8M-01 Standard Test Methods for Tension Testing of Metallic Materials, or demonstrate ability to stamp generic
+      channel design with width, depth, and radius.
+o M. Brady et al. (Oak Ridge National Laboratory), "Nitrided Metallic Bipolar Plates," 2010 Annual Progress Report,
+      http://www.hydrogen.energy.gov/pdfs/progress10/v_l_1_brady.pdf.
+
+Page 3.4 - 22 Multi-Year Research, Development, and Demonstration Plan
+                                                                            2016 FUEL CELLS SECTION
+
+                      Table 3.4.9 Technical Targets: Air Compression System for
+             80-kWe Transportation Fuel Cell Systems Operating on Direct Hydrogen
+
+             Characteristic                                      Units 2015 Status      2020
+                                                                                       Targets
+Input powera at full flowb (with / without expander)          kWe     11.0 / 17.3   8 / 14
+Combined motor and motor controller efficiency at full flowb                        90
+                                                              %       80            75 / 80
+                                                                                    1.0 / 2.0
+Compressor / expander efficiency at full flowb                %       71 / 73       80
+                                                                                    65 / 70
+Input power at 25% flowc (with / without expander)            kWe     2.3 / 3.3     200 / 200
+Combined motor / motor controller efficiency at 25% flowc                           70
+                                                              %       57            60 / 60
+                                                                                    5,000
+Compressor / expander efficiency at 25% flowc                 %       62 / 64       250,000
+                                                                                    20
+Input power at idled (with / without expander)                We      600 / 765     65
+Combined motor / motor controller efficiency at idled                               1
+                                                              %       35            15
+                                                                                    15
+Compressor / expander efficiency at idled                     %       61 / 59       500
+
+Durabilitye                                                   h       ­
+
+Number of start-up and shutdown cycles                        ­       ­
+
+Turndown ratio (max/min flow rate)                            ­       20
+Noise at maximum flow
+Transient time for 10­90% of maximum flow                     dBA at  ­
+System volumef                                                1m
+System weightf
+System costg                                                  s       1
+
+                                                              L       15
+
+                                                              kg      22
+
+                                                              $       750h
+
+a Electrical input power to motor controller when bench testing fully integrated system. Fully integrated system includes control
+      system electronics, air filter, and any additional air flow that may be used for cooling.
+
+b Compressor: 92 g/s flow rate, 2.5 bar (absolute) discharge pressure; 40°C, 25% RH inlet conditions. Expander: 88 g/s flow
+      rate, 2.2 bar (absolute) inlet pressure, 70°C, 100% RH inlet conditions.
+
+c Compressor: 23 g/s flow rate, minimum 1.5 bar (absolute) discharge pressure; 40°C, 25% RH inlet conditions. Expander: 23
+      g/s flow rate, 1.4 bar (absolute) inlet pressure, 70°C, 100% RH inlet conditions.
+
+d Compressor: 4.6 g/s flow rate, minimum 1.2 bar (absolute) discharge pressure; 40°C, 25% RH inlet conditions. Expander: 4.6
+      g/s flow rate, < compressor discharge pressure, 70°C, 20% RH inlet conditions.
+
+e Durability testing performed according to protocol in Table P.10.
+f Weight and volume include the motor, motor controller.
+g Cost target based on a manufacturing volume of 500,000 units per year.
+h Includes cost of compressor, expander, and motor controller manufactured at a volume of 500,000 systems per year. DOE
+
+      Hydrogen and Fuel Cells Program Record 15015, "Fuel Cell System Cost--2015."
+      http://www.hydrogen.energy.gov/program_records.html.
+
+             Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 23
+2016 FUEL CELLS SECTION
+
+        Table 3.4.10 Technical Targets: Cathode Humidification System and Humidifier Membrane for
+
+                80-kWe Transportation Fuel Cell Systems Operating on Direct Hydrogen
+
+                Characteristic                            Units  2015 Status a           2020 Targets
+
+Maximum operating temperature                          oC        110­125          >95
+                                                                                  75
+Maximum pressure differential between wet and dry      kPa       75               3.5
+sides                                                                             5
+                                                                 <3               5,000
+Maximum pressure drop at full flow (each side)         kPa       7.4 at BOL, 5.5
+                                                                 after 5,000 h
+Water transfer at full flowb                           g s-1     5,000
+
+Durabilityc                                            h
+
+Maximum air leakage at full flow                       %         0.5              0.5
+
+Volume                                                 L         4.3              5
+
+Weight                                                 kg        2.7              5
+Humidifier membrane water transfer flux at full flowb  g min-1   >0.03            0.025
+System costd                                           cm-2      81e              100
+                                                                 20e              10
+                                                       $
+
+Membrane costd                                         $/m2
+
+a Gore final report DE-EE0000465, Materials and Modules for Low Cost, High Performance Fuel Cell Humidifiers, Feb. 2013.
+b Dry air in: 3000 SLPM dry gas flow, 183 kPa (absolute), 80°C, 0% RH. Wet air in: 2600 SLPM dry gas flow, 160 kPa
+
+      (absolute), 80°C, 85% RH.
+c Durability testing performed according to protocol in Table P.11.
+d Cost projected to high-volume production (500,000 80 kW systems per year).
+e DOE Hydrogen and Fuel Cells Program Record 15015, "Fuel Cell System Cost--2015."
+
+      http://www.hydrogen.energy.gov/program_records.html.
+
+Page 3.4 - 24 Multi-Year Research, Development, and Demonstration Plan
+                                                                            2016 FUEL CELLS SECTION
+
+Table 3.4.11 Technical Targets: Fuel Cell Transit Buses
+
+            Characteristic                 Units            2015 Status  2016 Targets 2020 Targets
+                               years/miles
+Bus Lifetime                   hours                    0.25­4.9/7,900­  12/500,000 12/500,000
+Power Plant Lifetimeb,c                                 117,000a
+                                                        20,000a          18,000  25,000
+Bus Availability
+Fuel Fillsd                    %                        40­92a           85      90
+Bus Coste
+Power Plant Costb,e            per day                  1a               1 (< 10 min) 1 (< 10 min)
+
+Hydrogen Storage Cost          $                        800,000f         1,000,000 600,000
+Road Call Frequency (Bus/Fuel
+Cell System)                   $                        60,000­120,000g 450,000  200,000
+Operation Time
+Scheduled and Unscheduled      $                        100,000h         75,000  50,000
+Maintenance Costi                                       1,800­6,800/
+Range                          miles between road       9,000­104,000a   3,500/15,000 4,000/20,000
+                               calls                    7­21/5­7a
+Fuel Economy                   hours per day/days per                    20/7    20/7
+                               week                     0.54­1.33a
+                                                                         0.75    0.40
+                               $/mile
+
+                               miles                    240­340a         300     300
+
+                               miles per gallon diesel  5.6­7.7a         8       8
+                               equivalent
+
+a L. Eudy et al., "Fuel Cell Buses in U.S. Transit Fleets: Current Status 2015," Technical Report NREL/TP-5400­64974,
+      December 2015. http://www.nrel.gov/docs/fy16osti/64974.pdf.
+
+b The power plant is defined as the fuel cell system and the battery system. The fuel cell system includes supporting subsystems
+      such as the air, fuel, coolant, and control subsystems. Power electronics, electric drive, and hydrogen storage tanks are
+      excluded.
+
+c According to an appropriate duty cycle.
+d Multiple sequential fuel fills should be possible without increase in fill time.
+e Cost projected to a production volume of 400 systems per year. This production volume is assumed for analysis purposes only,
+
+      and does not represent an anticipated level of sales.
+f Paul Jenné, "Fuel Cell Electric Bus Projects - Status and Outlook from an Industry Perspective," Presentation at the 2015
+
+      International Fuel Cell Bus Workshop, http://gofuelcellbus.com/index.php/workshops/2015-international-fuel-cell-bus-
+      workshop-registration.
+g $40,000-$100,000, for fuel cell system only, based on Monte Carlo analysis of projected manufacturing cost at 200­1,000
+      buses per year. B.D. James et al. (Strategic Analysis, Inc.), "Mass Production Cost Estimation of Direct H2 PEM Fuel Cell
+      Systems for Transportation Applications: 2014 Update," final report. Batteries estimated to cost an additional $20,000 per
+      system (B.D. James, private communication, May 2015).
+h DOE Hydrogen and Fuel Cells Program Record #12012, "Fuel Cell Bus Targets,"
+      http://www.hydrogen.energy.gov/program_records.html.
+i Excludes mid-life overhaul of power plant.
+
+                               Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 25
+2016 FUEL CELLS SECTION
+
+                    Table 3.4.12 Technical Targets: Fuel Cell Backup Power Systems (1­10kWe)
+                                                Operating on Direct Hydrogen
+
+Characteristic                       Units      2015 Statusa                    2020 Targets
+
+Lifetime                    Years           10                          15
+Durabilityb                 hours           2,500                       10,000
+Energy efficiencyc          %               50                          60
+
+Mean time between failures  years           5                           5
+
+Ambient temperature range   °C              -20 to 40                   -50 to 50
+
+Noise                       dB at 1 m       65                          60
+Start-up timed
+                            seconds         60                          15
+
+Availability                %               99.7                        96.3
+                            $/kW            3,000                       1,000
+Equipment coste             $/kW            30                          20
+                            $/kW            500                         200
+Annual Maintenance coste
+Annualized Total cost of
+ownershipf
+
+a Status based on input from RFI DE-FOA-0000738.
+b Time until 10% voltage degradation when operated on a backup power duty cycle.
+c Ratio of DC output energy from the power plant to the lower heating value of the input fuel (hydrogen), averaged over duty
+
+      cycle.
+d Time indicated is start-up time for the fuel cell. The backup power system, including hybridized batteries, is expected to
+
+      provide uninterruptible power.
+e Excludes tax credits and subsidies.
+f Annualized cost of ownership, including cost of capital equipment, installation, operation and maintenance, fuel, and fuel
+
+      storage. Based on a 5 kW system with 10 year lifetime.
+
+Page 3.4 - 26 Multi-Year Research, Development, and Demonstration Plan
+                                                                    2016 FUEL CELLS SECTION
+
+Table 3.4.13 Technical Targets: 1­25kWe Residential and Light Commercial Combined Heat and Power
+                   and Distributed Generation Fuel Cell Systems Operating on Natural Gasa
+
+Characteristic                                 Units      2015 Status  2020 Targets
+
+Electrical efficiency at rated powerb  % (LHV)        34­40            >45 c
+
+CHP energy efficiencyd                 % (LHV)        80­90            90
+
+Equipment coste, 5-kWavg systemf       $/kW           2,300­2,800g     1,500
+
+Transient response (10 - 90% rated power) min         5                2
+                                                                       20
+Start-up time from 20°C ambient        min            10               0.3%
+temperature
+
+Degradation with cyclingh              %/1,000 h      <2%
+
+Operating lifetimei                    h              12,000-70,000    60,000
+
+System availabilityj                   %              97               99
+
+a Pipeline natural gas delivered at typical residential distribution line pressures.
+b Regulated AC net/LHV of fuel.
+c Higher electrical efficiencies (e.g. 60% using SOFC) are preferred for non-CHP applications.
+d Ratio of regulated AC net output energy plus recovered thermal energy to the LHV of the input fuel. For inclusion in CHP
+
+      energy-efficiency calculation, heat must be available at a temperature sufficiently high to be useful in space and water heating
+      applications. Provision of heat at 80°C or higher is recommended.
+e Complete system, including all necessary components to convert natural gas to electricity suitable for grid connection, and
+      heat exchangers and other equipment for heat rejection to conventional water heater, and/or hydronic or forced air heating
+      system. Includes all applicable tax and markup. Based on projection to high-volume production (50,000 units per year).
+f kWavg is the average output (AC) electric power delivered over the life of system while unit is running.
+g Battelle preliminary 2015 cost assessment of stationary CHP systems, range represents different technologies (SOFC vs
+      PEMFC) at manufacturing volumes of 50,000 units per year.
+h Durability testing should include effects of transient operation, start-up, and shutdown.
+i Time until >20% net power degradation.
+j Percentage of time the system is available for operation under realistic operating conditions and load profile. Unavailable time
+      includes time for scheduled maintenance.
+
+                           Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 27
+2016 FUEL CELLS SECTION
+
+Table 3.4.14 Technical Targetsa: 100 kW­3 MW Combined Heat and Power and Distributed Generation
+                                     Fuel Cell Systems Operating on Natural Gasb
+
+Characteristic                     Units       2015 Statusc                     2020 Targets
+
+Electrical efficiency at rated  % (LHV)   42­47                         >50e
+powerd
+
+CHP energy efficiencyf          % (LHV)   70­90                         90
+
+Equipment cost, natural gas $/kW          1,200g­4,500h                 1,000i
+
+Installed cost, natural gas     $/kW      2,400g­5,500h                 1,500i
+
+Equipment cost, biogas          $/kW      3,200­6,500j                  1,400i
+
+Installed cost, biogas          $/kW      4,900­8,000j                  2,100i
+                                ­         50                            40
+Number of planned/forced        h         40,000­80,000                 80,000
+outages over lifetime
+Operating lifetimek
+
+System availabilityl            %         95%                           99%
+
+a Includes fuel processor, stack and ancillaries.
+b Pipeline natural gas delivered at typical residential distribution line pressures.
+c Status varies by technology.
+d Ratio of regulated AC net output energy to the lower heating value (LHV) of the input fuel.
+e Higher electrical efficiencies (e.g. 60% using SOFC) are preferred for non-CHP applications.
+f Ratio of regulated AC net output energy plus recovered thermal energy to the LHV of the input fuel. For inclusion in CHP
+
+      energy-efficiency calculation, heat must be available at a temperature sufficiently high to be useful in space and water heating
+      applications. Provision of heat at 80°C or higher is recommended.
+g M. Wei, 100 kW LTPEMFC, projection at volume of 1,000 systems/year,
+      http://www.hydrogen.energy.gov/pdfs/review14/fc098_wei_2014_o.pdf.
+h DOE Hydrogen and Fuel Cells Program Record 11014, "Medium-scale CHP Fuel Cell System Targets,"
+      https://www.hydrogen.energy.gov/pdfs/11014_medium_scale_chp_target.pdf.
+i Includes projected cost advantage of high-volume production (totaling 100 MW per year).
+j Assumed $2,500/kW higher cost to operate on biogas than on hydrogen
+      (https://www.hydrogen.energy.gov/pdfs/11014_medium_scale_chp_target.pdf).
+k Time until >10% net power degradation.
+l Percentage of time the system is available for operation under realistic operating conditions and load profile. Unavailable time
+      includes time for scheduled maintenance.
+
+Page 3.4 - 28 Multi-Year Research, Development, and Demonstration Plan
+                                                                         2016 FUEL CELLS SECTION
+
+                       Table 3.4.15 Technical Targets: Portable Power Fuel Cell Systems
+                                            (5­50 Watts / 100­200 Watts)a
+
+       Characteristic          Units               2015 Status           Ultimate Targets
+
+Specific powerb                W/kg   23h / 25i                 45 / 50
+
+Power densityb                 W/L    24h / 30i                 55 / 70
+
+Specific energyb,c             Wh/kg  121j / 450j               650 / 640
+
+Energy densityb,c              Wh/L   200i / 300i,,j            650 / 900
+
+Costd                          $/system 15i / 15i               7/5
+
+Durabilitye,f                  hours  1,500i / 2,000i           5,000 / 5,000
+
+Mean time between failuresf,g  hours  500i / 500i               5,000 / 5,000
+
+a These targets are technology neutral and make no assumption about the type of fuel cell technology or type of fuel used. In
+      addition to meeting these targets, portable power fuel cells are expected to operate safely, providing power without exposing
+      users to hazardous or unpleasant emissions, high temperatures, or objectionable levels of noise. Portable power fuel cells are
+      also expected to be compatible with the requirements of portable electronic devices, including operation under a range of
+      ambient temperature, humidity, and pressure conditions, and exposure to freezing conditions, vibration, and dust. They should
+      be capable of repeatedly turning off and on, and should have turndown capabilities required to match the dynamic power
+      needs of the device. For widespread adoption, portable power fuel cell systems should minimize life-cycle environmental
+      impact through the use of reusable fuel cartridges, recyclable components, and low-impact manufacturing techniques.
+
+b This is based on rated net power of the total fuel cell system, including fuel tank, fuel, and any hybridization batteries. In the
+      case of fuel cells embedded in other devices, only device components required for power generation, power conditioning, and
+      energy storage are included. Fuel capacity is not specified, but the same quantity of fuel must be used in calculation of specific
+      power, power density, specific energy, and energy density.
+
+c Efficiency of 35% is recommended to enable high specific energy and energy density.
+d Cost includes material and labor costs required to manufacture the fuel cell system and any required auxiliaries (e.g., refueling
+
+      devices). Cost is defined at production rates of 50,000, 25,000 and 10,000 units per year for <2, 10­50, and 100­200 W units,
+      respectively.
+e Durability is defined as the time until the system rated power degrades by 20%, though for some applications higher or lower
+      levels of power degradation may be acceptable.
+f Testing should be performed using an operating cycle that is realistic and appropriate for the target application, including
+      effects from transient operation, start-up and shutdown, and offline degradation.
+g Mean Time Between Failures (MTBF) includes failures of any system components that render the system inoperable without
+      maintenance.
+h Status calculated based on commercial products from myFC at www.myfcpower.com/pages/jaq
+i DOE Hydrogen and Fuel Cells Program Record 11009, www.hydrogen.energy.gov/pdfs/11009_portable_fuel_cell_targets.pdf
+j Status calculated based on commercial products from ultracell at www.ultracell-llc.com
+
+                               Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 29
+2016 FUEL CELLS SECTION
+
+                Table 3.4.16 Technical Targets: Fuel Cell Auxiliary Power Units (1 to 10 kWe)
+                                      Operating on Ultra-low Sulfur Diesel Fuel
+
+Characteristic                        Units          2015 Status            2020 Targets
+
+Electrical efficiency at rated  % (LHV)      29b                        40
+powera
+
+Power density                   W/L          16b                        40
+
+Specific power                  W/kg         18b                        45
+
+Factory cost, systemc           $/kWe        2,100d                     1,000
+Transient response (10 to 90%   min          5e                         2
+rated power)                                 70b                        30
+Start-up time from:             min          -                          5
+                                %/1,000 h    2.6e                       1
+   20°C                         h            3,000e                     20,000
+   Standby conditionsf          %            97e                        99
+
+Degradation with cyclingg
+
+Operating lifetimeg,h
+
+System availabilityi
+
+a Regulated DC net/LHV of fuel.
+b DESTA--Demonstration of 1st European SOFC Truck APU, Programme Review Days 2015,
+
+      http://www.fch.europa.eu/sites/default/files/8-DESTA_PRD2015%20%28ID%202848595%29.pdf.
+c Cost includes materials and labor costs to produce system. Cost defined at 50,000 unit/year production of a 5 kW system.
+
+      Today's low-volume cost is expected to be higher than quoted status. Allowable cost is expected to be higher than the target
+      for systems with rated power below 5 kW, and lower than the target for systems with rated power above 5 kW.
+d Modeled cost of a 5 kW SOFC APU system produced at 50,000 units/year. F. Eubanks et al., "Stationary and Emerging
+      Market Fuel Cell System Cost Analysis--Auxiliary Power Units," 2015 Annual Merit Review, slide 20,
+      https://www.hydrogen.energy.gov/pdfs/review14/fc097_contini_2014_o.pdf
+e DOE Hydrogen Program Record 11001, "Revised APU Targets,"
+      https://www.hydrogen.energy.gov/pdfs/11001_apu_targets.pdf.
+f Standby conditions may be at or above ambient temperature depending on operating protocol.
+g Durability testing should include, at minimum, daily cycles to stand-by condition, and weekly cycles to full off condition
+      (ambient temperature). The system should be able to meet durability criteria during and after exposure to vibration associated
+      with transportation and highway operation, and during operation in a range of ambient temperature from -40 to 50°C, a range
+      of ambient relative humidity from 5% to 100%, and in dust levels up to 2 mg/m3.
+h Time until >20% net power degradation.
+i Percentage of time the system is available for operation under realistic operating conditions and load profile. Scheduled
+      maintenance does not count against system availability.
+
+Page 3.4 - 30 Multi-Year Research, Development, and Demonstration Plan
+                                                                                                         2016 FUEL CELLS SECTION
+
+3.4.5 Technical Barriers
+
+A. Durability
+
+Fuel cells have not yet demonstrated a level of durability comparable to the incumbent technologies in the
+main application areas of transportation and stationary power generation. In these applications, realistic
+operating conditions can include impurities in the fuel and air, starting and stopping, freezing and thawing, and
+humidity and load cycles that result in stresses on the chemical and mechanical stability of the fuel cell
+materials, components, and interfaces. While some of the ageing and degradation mechanisms are known,
+effective mitigation strategies to provide the required lifetime are still lacking.
+
+Fuel cell systems have yet to demonstrate the needed 5,000 hour durability in automotive drive cycles.
+Although the required lifetime in automotive applications is much shorter than for stationary applications, the
+rapid cycling and frequent stops and starts make meeting the durability requirements more challenging.
+Durability results from second-generation vehicle demonstrations indicated that they were far short of the
+durability requirement, with the highest average projected time to 10% voltage degradation of approximately
+2,500 hours. In the laboratory environment with newer technology NREL determined an average projected
+durability of 3,900 hours (time to 10% degradation) for automotive applications.20 However, the Pt loadings
+were not reported for these data, and it is unclear if the loadings were appropriate to meet the cost targets.
+Higher loadings would improve durability at the expense of further distancing the technology from the cost
+targets. In addition, there are considerable gaps between degradation observed in the lab and degradation
+observed in the field for some motive power applications. Key obstacles to overcoming the durability
+limitations are understanding catalyst and membrane degradation and mitigating performance degradation at
+high power conditions. Tolerance to air, fuel, and system derived impurities also needs to be established.
+
+Stationary fuel cells must achieve greater than 60,000 hours durability to compete against other distributed
+power generation systems and to allow for an acceptable return on investment to the end-user. The operating
+temperatures required for high-temperature fuel cells place stringent durability requirements on materials and
+components, including the separator, electrolyte, electrolyte support, and electrode. Improved durability under
+start-up and transient operation is also required for high-temperature fuel cells. Durability of phosphoric acid
+based (PBI-type) fuel cells needs to be increased to conventional PAFC systems, for which established
+durability comes at a high cost. Research is also needed to understand failure mechanisms and develop
+mitigation strategies. Accelerated testing protocols need to be updated to enable projection of durability and to
+allow for timely iterations and improvements in the technology. State-of-the-art systems must also be
+benchmarked.
+
+Regardless of application, system BOP component durability needs to be improved. The majority of fuel cell
+system failures and forced outages (~90% in automotive systems21 and ~90% in micro CHP systems22) are the
+result of non-fuel cell stack BOP events.
+
+B. Cost
+
+For fuel cells and fuel cell systems to be commercially viable, significant reduction in cost is required.
+Materials and manufacturing costs for stack components need to be reduced. To make fuel cell stacks
+competitive, lower costs are needed for high-performance membranes, high-performance catalysts with ultra-
+
+20 J. Kurtz, "Analysis of Laboratory Fuel Cell Technology Status-Degradation" (presented as a 2015 annual progress report for the DOE Hydrogen and Fuel Cells
+Program, Washington, D.C., December, 2015; V-174), http://www.hydrogen.energy.gov/pdfs/progress15/v_f_10_kurtz_2015.pdf.
+21 "CDP #64: Fuel Cell Vehicle Maintenance By System" (results from the Controlled Hydrogen Fleet and Infrastructure Demonstration and Validation Project),
+http://www.nrel.gov/hydrogen/docs/cdp/cdp_64.ppt.
+22 P. Mocoteguy (presented at the International Workshop on Degradation Issues of Fuel Cells, Hersonessos, Crete, Greece, Sept. 19­21, 2007).
+
+                                            Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 31
+2016 FUEL CELLS SECTION
+
+low or PGM-free loading, and lighter, corrosion-resistant bipolar plates. PEMFCs, phosphoric acid based
+(PBI-type) fuel cells, and PAFCs suffer from reliance on relatively high priced PGM catalysts. PGM cost is
+particularly important for stationary power applications, where the need for enhanced durability and reformate
+tolerance requires the use of high PGM loadings; in the case of PAFCs, the PGM cost has been reported to
+account for 4 to 6% of the current installed costs of the power plant.23 Furthermore, for automotive
+applications, the cost of the electrocatalyst is projected to be the largest single component of the cost of a
+PEMFC system when manufactured at high volume.24 The use of PGM-free catalysts will further reduce the
+cost of MEAs, but performance of these catalysts must be dramatically improved. For high-temperature fuel
+cells, such as MCFCs and SOFCs, PGM-free materials are available, but research is required to lower stack
+component costs, such as for cells and interconnects, as well as for system BOP components required for high-
+temperature operation.
+
+BOP components and subsystems specifically designed for use in fuel cell systems need further development
+in order to achieve cost targets. For automotive fuel cell systems, system BOP constitutes about half the cost of
+the system.20 For stationary primary power applications, the relatively high cost of the fuel processor needs to
+be addressed. One of the most important issues that is not specific to any fuel cell type is the development of a
+cost-effective process and subsystem for removing contaminants, especially those found in renewable fuels,
+which would considerably reduce overall cost and allow for fuel flexibility. For high-temperature fuel cells,
+some of the BOP components (e.g., heat exchangers) must operate at elevated temperatures, and so the
+temperature limitations imposed by other components (e.g., anode recycle blower) can negatively impact the
+overall system efficiency.
+
+C. Performance
+
+Fuel cell system performance must improve while simultaneously reducing cost and increasing durability to
+allow for market penetration and the inherent environmental benefits of the technology. This section describes
+some areas that affect fuel cell performance.
+
+Cell Issues
+
+Improved cell performance is required to ensure lower cost and enhanced durability for the full range of fuel
+cell technologies. For instance, poor cathode kinetics cause overpotentials of 0.4 V or greater in state-of-the-art
+PEMFCs operating under typical conditions. This overpotential represents a loss at the cathode of
+approximately one-third of the theoretically available energy from a fuel cell. Therefore, cathode R&D is
+needed to meet efficiency targets simultaneously with other targets. Mitigation of catalyst
+dissolution/degradation during operation of low-temperature and high-temperature fuel cells drives higher
+performance and leads to lower cost. Power densities, especially at the higher voltages required for high-
+efficiency operation, are currently too low to meet cost and packaging targets. Also, performance loss is
+observed at high current densities with cathodes that have an ultra-low PGM loading; the source of this loss is
+under investigation. Higher power densities, across the technologies, could be achieved by increasing the ionic
+conductivity of the electrolyte and decreasing polarization losses of the electrodes. Novel electrolytes could
+achieve higher conductivities, but materials must meet operation requirements. Membrane performance under
+the extremes of automotive drive cycles and the steady-state lifetime requirements for stationary applications
+have not been established. For low temperature fuel cells, conductivity under low humidity conditions needs to
+be increased, and stable membrane performance at higher temperatures for both proton- and anion-conducting
+polymer electrolyte fuel cells needs to be achieved.
+
+23 R.J. Remick, D. Wheeler, and P. Singh, MCFC and PAFC R&D Workshop Summary Report (Washington, D.C.: U.S. Department of Energy, 2010),
+http://www1.eere.energy.gov/hydrogenandfuelcells/pdfs/mcfc_pafc_workshop_summary.pdf.
+
+24 B.D. James, J.M. Moton, and W.G. Colella, Mass Production Cost Estimation of Direct H2 PEM Fuel Cell Systems for Transportation Applications: 2014 Update
+(Technical Report) (Arlington, VA: Strategic Analysis, Inc., 2014), http://energy.gov/eere/fuelcells/fuel-cell-technical-publications.
+
+Page 3.4 - 32 Multi-Year Research, Development, and Demonstration Plan
+                                                                                                         2016 FUEL CELLS SECTION
+
+The chemical and electrical interface between the electrode and the electrolyte material can affect
+performance, with a poor interface resulting in higher electronic resistance and low utilization. Also, new
+electrolyte materials may require redesign of the electrode structure and interface to maintain performance.
+Interfacial contact resistance at the electrode/bipolar plate interface needs to be further reduced.
+
+Stack Water Management
+
+Effective management of the water produced in low-temperature fuel cells is needed to alleviate flooding
+and/or drying out of the membrane over the full operating temperature range. Ineffective water management
+leads to liquid-phase water blockage and mass-transport-limited performance (flooding) or, alternatively,
+decreased proton conductivity (drying out). Transportation-based and stationary fuel cells must be able to
+operate in environments where ambient temperatures may fall below 0°C, which is a challenge for low-
+temperature fuel cells. R&D is needed to improve the designs of the gas diffusion layers, gas flow fields in
+bipolar plates, catalyst layers, and membranes in these fuel cells to enable effective water management and
+operation in subfreezing environments.
+
+System Thermal and Water Management
+
+Thermal and water management processes include heat and water use, cooling, and humidification. Improved
+heat utilization, cooling, and humidification techniques are needed. The low operating temperature of PEM
+fuel cells results in a relatively small difference between the fuel cell stack operating temperature and ambient
+air temperature, which is not conducive to conventional heat rejection approaches and limits the use of heat
+generated by the fuel cell (approximately 50% of the energy supplied by the fuel). More efficient heat recovery
+systems, improved system designs, advanced heat exchangers and/or higher temperature operation of current
+systems are needed to utilize the low-grade heat and achieve the most efficient (electrical and thermal)
+systems, particularly for distributed power generation. The high quality heat generated by high-temperature
+fuel cells leads to higher overall system efficiencies; however, the need to remove heat generated by the high-
+temperature stacks can complicate stack/system design, as well as limit the operating power density and cell
+size. Improved techniques to manage water during start-up and shutdown at subfreezing temperatures are also
+needed.
+
+System Air Management
+
+Compressors/expanders specifically designed for low-temperature and high-temperature fuel cell applications
+are needed to minimize parasitic power consumption, while meeting packaging and cost requirements.
+
+System Start-Up and Shutdown Time and Energy/Transient Operation
+
+Automotive fuel cell systems must start rapidly from any ambient condition with minimal fuel consumption.
+For stationary power applications, and especially for high-temperature fuel cells, rapid start-up and thermal
+cycling during operation is not anticipated, but transient times need to be minimized and stacks need to be
+designed to survive thermal upsets. Strategies to address start-up and shutdown time and energy such as the
+use of hybrid systems and/or stored hydrogen are needed. Fuel cell power plants will also be required to follow
+load variations, which are dependent on application.
+
+                                           Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 33
+2016 FUEL CELLS SECTION
+
+3.4.6 Technical Task Descriptions
+
+                         Table 3.4.17 Technical Task Descriptions
+
+Task                     Description                                                            Barriers
+                                                                                                A, B, C
+      Catalysts/Electrodes                                                                      A, B, C
+      Develop Improved Catalysts
+
+           · Reduce/eliminate PGM loading of catalysts
+           · Increase the specific and mass activities of catalysts
+           · Increase the durability/stability of catalysts during potential cycling
+           · Increase the tolerance of catalysts to air, fuel, and system-derived
+
+                 impurities
+           · Test and characterize catalysts
+           · Develop PGM-free catalysts for PEMFCs (oxygen reduction reaction)
+           · Develop PGM-free catalysts for AMFCs (hydrogen oxidation reaction and
+
+                 oxygen reduction reaction)
+           · Increase catalyst utilization
+           · Develop catalysts with high durability at high current density
+
+1 Develop Improved Catalyst Supports
+             · Reduce corrosion of catalyst supports
+             · Improve appropriate support conductivity
+             · Develop lower cost catalyst support materials and structures
+             · Develop viable supports that allow increased loading and/or thickness of
+                   PGM-free catalyst layer
+
+      Catalyst process scale up
+           · Design and demonstrate small-scale production of newly-developed and
+                 promising catalysts (minimum viable product)
+
+      Optimize Electrode Design and Assembly
+           · Optimize catalyst/support interactions and microstructure.
+           · Develop and streamline high-throughput combinatorial experimental and
+                 modeling tools for PGM-free catalyst and electrode R&D
+
+      Electrolytes
+      Identify and develop novel electrolytes (PEMs, alkaline membranes, high-temperature
+      electrolytes and matrices)
+
+           · Improve electrolyte conductivity, for both proton and alkaline systems, over
+                 the entire temperature and humidity operating range
+
+           · Increase the mechanical/chemical/thermal stability of electrolytes over the
+                 entire temperature and humidity operating range
+
+           · Reduce/eliminate fuel cross-over
+
+2 Fabricate Membranes from Ionomers
+              · Design scalable membrane fabrication processes
+              · Increase the mechanical/chemical/thermal stability of the membrane over
+                   the entire temperature and humidity operating range (e.g., up to 95 - 120°C
+                   for transportation systems, and >120°C for CHP systems)
+              · Reduce the cost of membranes
+
+Page 3.4 - 34 Multi-Year Research, Development, and Demonstration Plan
+                                                                         2016 FUEL CELLS SECTION
+
+                  Table 3.4.17 Technical Task Descriptions
+
+Task                                    Description                                        Barriers
+                                                                                           A, B, C
+      Perform Membrane/Electrolyte Testing and Characterization to Improve Durability       A, B, C
+           · Evaluate the tolerance of the electrolyte material to air, fuel, and system-
+                 derived impurities
+           · Evaluate the mechanical stability of the membrane with relative humidity
+                 (RH) cycling
+           · Identify chemical and mechanical degradation mechanisms
+           · Develop strategies for mitigating degradation in performance
+
+      Membrane process scale up
+           · Demonstrate small-scale production of newly-developed and promising
+                 membranes (minimum viable product)
+
+      Membrane Electrode Assemblies, Cells, and Other Stack Components
+      Integrate Membranes/Electrolytes and Electrodes
+
+           · Integrate catalysts with membranes and GDLs into MEAs
+           · Optimize mechanical and chemical interactions of the catalyst, support,
+
+                 ionomer, and membrane
+           · Develop methods to minimize CO2 migration in alkaline fuel cells
+
+      Test, Analyze, and Characterize MEAs
+           · Characterize MEAs/cells before, during, and after fabrication and operation
+           · Test cells, MEAs, and short stacks
+
+      MEA integration process scale up
+
+3     · Demonstrate small-scale production of newly-developed and promising
+
+      MEAs (minimum viable product)
+
+      Improve Performance of Bipolar Plates
+           · Decrease weight and volume
+           · Develop coatings to eliminate plate corrosion and maintain conductivity
+
+      Decrease Cost of Bipolar Plates
+           · Evaluate the use of different low-cost materials and coatings to improve
+                 corrosion resistance
+
+      Improve Durability of Bipolar Plates
+           · Identify degradation mechanisms
+           · Develop strategies/technologies for mitigating degradation
+
+      Fuel Cell Performance and Durability
+
+      Improve MEA and component stability and durability
+
+      · Improve MEA/cell stability under voltage and humidity cycling
+
+      · Develop techniques to mitigate effects of air, fuel, and system-derived
+
+      impurities
+
+4     · Demonstrate robustness
+
+      Expand MEA/Cell Operating Range
+           · Address freeze/thaw issues
+           · Expand temperature and humidity range
+
+                  Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 35
+2016 FUEL CELLS SECTION
+
+                           Table 3.4.17 Technical Task Descriptions
+
+Task                               Description                                           Barriers
+
+      Improve MEA/cell Performance                                                       A, B, C
+           · Optimize three-phase boundary for improved transport properties.            A, B, C
+           · Minimize interfacial resistances
+           · Improve performance at high power conditions
+
+      Develop Protocols for Testing
+           · Develop accelerated testing to project durability for stationary fuel cell
+                 applications
+
+      Improve Technical Understanding/Characterization
+           · Develop, validate, and use models to address impurity effects
+           · Develop, validate, and use models to address durability/degradation
+           · Develop, validate, and use models to address transport issues and their
+                 effects on fuel cell operation
+           · Develop and validate component performance models using most recent
+                 data
+           · Identify long term stack failure mechanisms through experimentation
+           · Optimize MEA and stack water management, including freeze/thaw issues
+           · Mitigate system issues
+           · Improve performance and durability of higher temperature fuel cells (MCFC,
+                 PAFC) experimentally determine long-term stack failure mechanisms
+
+      System BOP Components
+      Develop Air Management Technologies (Blowers, Compressors/Expanders) for
+      Transportation Applications
+
+           · Meet performance, packaging, and cost requirements
+           · Minimize parasitic power
+
+5     Develop Humidifiers for Transportation Applications
+           · Increase efficiency, durability, and reliability
+
+      · Develop humidification materials and concepts
+
+      · Minimize parasitic power
+
+      · Develop lightweight, low cost materials to enable compact humidifiers
+
+      Develop Low Cost Sensors for Fuel Cell Systems
+           · Develop durable, low cost sensors for high-temperature fuel cell systems
+
+      Fuel Cell Systems
+
+      Develop Stationary Fuel Cell Systems for Distributed Generation (DG) and backup
+
+      power including CHP
+
+      · Improve system durability
+
+      · Improve stack performance with reformate
+
+      · Increase system electrical and thermal efficiency
+
+6     · Reduce cost
+      · Develop fuel-flexible, impurity-tolerant, durable fuel processors
+
+      Develop Auxiliary Power Units
+           · Develop fuel cell system that operates on reformate
+           · Design, build and test APUs under real-world conditions
+           · Reduce cost
+
+Page 3.4 - 36 Multi-Year Research, Development, and Demonstration Plan
+                                                                          2016 FUEL CELLS SECTION
+
+      Table 3.4.17 Technical Task Descriptions
+
+Task  Description                                                                       Barriers
+                                                                                        A, B, C
+      Develop Backup Power and Early Market Technologies
+           · Design, build, and test systems for early market applications under real-
+                 world conditions
+           · Design, build, and test systems for backup power applications under real-
+                 world conditions
+           · Reduce cost
+
+      Develop Fuel Flexible Processors for Stationary Fuel Cells Applications
+
+      Testing and Technical Assessments
+      Perform Cost Analysis of Stationary, Portable, and Transportation Applications
+
+           · Perform cost analyses for automotive and bus applications
+           · Perform cost analyses for stationary power and early market applications
+
+                 including APUs, backup power, and material handling (forklifts)
+
+        Annually Update Technology Status
+7
+
+        Conduct Trade-Off Analysis
+              · Rated power design points vs. performance and efficiency
+              · Start-up energy and start-up time
+              · Hydrogen quality level vs. durability and performance
+
+      Perform Independent Testing to Characterize Component and Stack Properties
+      Before, During, and After Operation
+
+3.4.7 Milestones
+
+The following chart shows the interrelationship of milestones and tasks for the Fuel Cells sub-program from
+FY 2016 through FY 2020. All milestones are to be assessed under prescribed test conditions according to
+appropriate protocols listed in the appendix.
+
+      Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 37
+FY2016        FY2017              FY2018          Fuel Cells Sub-program Milestone Chart  FY2023  FY2024  FY2025
+
+                                                  FY2019 FY2020 FY2021 FY2022
+
+                                            1.12
+                                       1.12
+
+                                          1.6
+
+                                                                    1.12
+
+                                          1.5                        1.12
+                                                                1.12
+        1.12          1.12                        1.12 1.12
+
+1.12                  1.12                1.4 1.12 1.12 1.12        1.11
+                 1.12
+                                  1.12
+
+        1.1 1.12      1.2 1.12            1.3 1.7      1.8 1.9 1.10
+
+Task 1: Catalysts/Electrodes
+
+                          2.2                     2.4        2.5    2.6
+                         2.1 2.3
+
+Task 2: Electrolytes
+
+                                                             3.10
+
+                      3.4                                      3.9
+                                                             3.8
+                      3.3
+
+        3.1       3.2             3.5             3.6        3.7 3.11
+
+Task 3: Membrane Electrode Assemblies, Cells, and Other Stack Components
+
+                      4.6
+
+                      4.5
+
+                 4.3 4.4 4.7 4.8                       4.9          4.10
+
+                  4.2 4.2 4.2 4.2 4.2 4.2 4.2 4.2
+
+        4.1 4.2   4.2 4.2 4.2 4.2                      4.2 4.2      4.2
+
+Task 4: Fuel Cell Performance and Durability
+
+Milestone                                 Recurring                        Go/No-Go Multi-Year RD&D Plan Page 3.4 - 38
+                                          Milestone
+FY2016  FY2017             FY2018       Fuel Cells Sub-program Milestone Chart  FY2024  FY2025
+
+                                        FY2019 FY2020 FY2021 FY2022 FY2023
+
+                                                   5.3
+
+                                              5.1  5.2
+
+Task 5: System BOP Components
+
+                                                   6.9
+
+                                                   6.8
+
+                                                   6.7
+
+                                                   6.6
+
+                           6.3                     6.5
+
+                6.1 6.2                            6.4
+
+Task 6: Fuel Cell Systems
+
+           7.4 7.5                 7.6             7.7
+
+    7.3 7.3 7.3 7.3 7.3 7.3 7.3 7.3 7.3
+    7.2 7.2 7.2 7.2 7.2 7.2 7.2 7.2 7.2
+    7.1 7.1 7.1 7.1 7.1 7.1 7.1 7.1 7.1
+7.3 7.3 7.3 7.3 7.3 7.3 7.3 7.3 7.3
+7.2 7.2 7.2 7.2 7.2 7.2 7.2 7.2 7.2
+7.1 7.1 7.1 7.1 7.1 7.1 7.1 7.1 7.1
+
+Task 7: Testing and Technical Assessment
+
+Milestone                          Recurring            Go/No-Go Multi-Year RD&D Plan Page 3.4 - 39
+                                   Milestone
+2016 FUEL CELLS SECTION
+
+                         Task 1: Catalysts/Electrodes
+
+1.1   Improve the catalyst specific power of fuel cells (kW per gram of PGM) to 6.9 kW/gPGM in a 50 cm2
+      or greater MEA. (4Q, 2016)
+
+1.2   Improve the catalyst specific power of fuel cells (kW per gram of PGM) to 7.2 kW/gPGM in a 50 cm2
+      or greater MEA. (4Q, 2017)
+
+          Develop PAFCs or similar technologies with advanced catalysts and catalyst layer deposition
+1.3 methods to enable 50% reduction in PGM loading compared to the baseline of 0.7 mg/cm2 (anode
+
+          + cathode). (4Q, 2018)
+
+1.4   Improve the catalyst specific power of fuel cells (kW per gram of PGM) to 7.5 kW/gPGM in a 50 cm2
+      or greater MEA. (4Q, 2018)
+
+          Develop a low-cost support that demonstrates at least: 100 mS/cm proton conductivity, 5 S/cm
+1.5 electron conductivity, >50 m2/g BET surface area, and <10% mass loss on cycling between 1.0 and
+
+          1.5V at 0.5V/s and cycling between 0.6 and 1.0V under 1,000 load cycles. (4Q, 2018)
+
+1.6   Demonstrate a PGM-free catalyst with an activity of 0.044 A/cm2 at 0.88 V in a PEMFC MEA. (4Q,
+      2018)
+
+          Demonstrate less than 40% loss of initial mass activity and less than 30 mV loss at 1.5 A/cm2 after
+
+1.7 30,000 potential cycles for cathode catalyst in MEA with total PGM loading of less than 0.125
+          mg/cm2 electrode area. (1Q, 2019)
+
+1.8   Improve the catalyst specific power of fuel cells (kW per gram of PGM) to 7.8 kW/gPGM in a 50 cm2
+      or greater MEA. (4Q, 2019)
+
+          Develop PGM-free catalysts demonstrating alkaline membrane fuel cell peak power performance
+1.9 of > 600 mW/cm2 under hydrogen/air (maximum pressure of 1.5 atm) in PGM-free MEA. (2Q,
+
+          2020)
+
+1.10  Improve the catalyst specific power of fuel cells (kW per gram of PGM) to 8 kW/gPGM in a 50 cm2
+      or greater MEA. (4Q, 2020)
+
+1.11  Demonstrate a PGM-free catalyst with an activity of 0.044 A/cm2 at 0.9 V in a PEMFC MEA. (4Q,
+      2020)
+
+1.12  Develop and streamline high-throughput combinatorial experimental and modeling tools for PGM-
+      free catalyst and electrode development. (3Q, 2016 thru 4Q, 2020)
+
+Page 3.4 - 40 Multi-Year Research, Development, and Demonstration Plan
+                           2016 FUEL CELLS SECTION
+
+     Task 2: Electrolytes
+
+          Develop a PEM membrane for transportation with an area specific resistance  0.02 ohm cm2 at
+2.1 95°C and 40 kPa water partial pressure that is durable for 20,000 voltage cycles and that has 500
+
+          hours chemical durability testing. (2Q, 2017)
+
+2.2  Develop anion-exchange membranes with an area specific resistance  0.1 ohm cm2, that is
+     maintained for 500 hours during testing at 600 mA/cm2 at T >60 oC. (2Q, 2017)
+
+2.3  Develop MCFC electrolyte matrix structure and chemistry with 10-year life incorporating stable
+     supports and electrolyte management/retention. (4Q, 2017)
+
+2.4  Demonstrate electrolytes for high-temperature fuel cells with a projected durability of 80,000
+     hours in a stack for 10,000 h. (2Q, 2019)
+
+          Develop a PEM membrane for transportation with an area specific resistance  0.02 ohm cm2 at
+2.5 120°C and 40 kPa water partial pressure that is durable for 20,000 voltage cycles and that has
+
+          500 hours chemical durability testing. (1Q, 2020)
+
+          Develop a membrane with performance similar to current supported perfluorosulfonic acid
+2.6 (PFSA) membranes with 50% decreased projected costs compared to supported PFSA
+
+          membranes. (4Q, 2020)
+
+     Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 41
+2016 FUEL CELLS SECTION
+
+      Task 3: Membrane Electrode Assemblies, Cells, and Other Stack Components
+
+3.1   Demonstrate an MEA with catalyst specific power (kW per gram of PGM) of 6.9 kW/gPGM. (4Q,
+      2016)
+
+3.2   Demonstrate a phosphoric acid-based MEA with reduced anion poisoning resulting in a 25%
+      increase in areal power density compared to baseline value of 160 mW/cm2. (3Q, 2017)
+
+3.3 Evaluate short stack with improved MEAs against 2020 membrane and MEA targets. (4Q, 2017)
+
+3.4   Demonstrate alkaline membrane fuel cell peak power performance > 600 mW/cm2 on H2/O2
+      (maximum pressure of 1.5 atm) in MEA with a total loading of  0.125 mgPGM/cm2. (4Q, 2017)
+
+          Report on status of MEA/cell durability to meet stationary fuel cell target of >60,000 hours.
+3.5
+
+          (2Q, 2018)
+
+      Demonstrate alkaline membrane fuel cell initial performance of 0.6 V at 600 mA/cm2 on H2/O2
+      (maximum pressure of 1.5 atm) in MEA with a total loading of < 0.1 mgPGM/cm2 , and less than 10%
+3.6   voltage degradation over 2,000 hour hold test at 600 mA/cm2 at T>60 oC. Cell may be
+
+      reconditioned during test to remove recoverable performance losses. (2Q, 2019)
+
+3.7   Demonstrate MEA performance of 1,000 mW/cm2 at rated power at a high-volume projected cost
+      of $14/kW. (1Q, 2020)
+
+3.8   Demonstrate MEA performance of 300 mA/cm2 at 0.8 V while meeting catalyst loading targets.
+      (1Q, 2020)
+
+3.9   Develop an MEA that can operate at maximum temperature of 120°C with a projected durability of
+      5,000 hours in automotive applications. (2Q, 2020)
+
+          Demonstrate long-term stable operation of metal bipolar plates with a projected cost less than or
+3.10 equal to $3/kW while meeting other technical targets for corrosion (<1µA/cm2) and resistivity
+
+          (<0.01cm2). (2Q, 2020)
+
+3.11  Demonstrate short stack with improved MEAs meeting 2020 membrane and MEA technical and
+      cost targets. (4Q, 2020)
+
+Page 3.4 - 42 Multi-Year Research, Development, and Demonstration Plan
+                                                                         2016 FUEL CELLS SECTION
+
+                           Task 4: Fuel Cell Performance and Durability
+
+      Quantify Cerium migration within the membrane in microns/sec at 4 different RHs (25%, 50%,
+
+4.1   75% and 100%) at T = 90oC under both applied potential (0.5, 1.0V) and applied current (0.5 and
+      1.0 A/cm2). Propose a method to improve cerium localization by 25% during durability drive
+
+      cycling. (4Q, 2016)
+
+      Develop test protocols and evaluate fuel cell components such as MEAs, bipolar plates,
+
+4.2   catalysts, membranes, etc. to determine long-term stack failure mechanisms. (3Q, 2016 thru 4Q,
+
+      2020)
+
+4.3   Define a recovery procedure that results in > 95% recovery of known reversible degradation
+      utilizing less than 30 sec of drive cycle time. (2Q, 2017)
+
+4.4   Develop a cell-level performance model validated to within 10% accuracy of polarization
+      behavior under 3 humidities at 4 temperatures. (4Q, 2017)
+
+      Demonstrate MCFC electrolyte matrix structure and chemistry in stack for >5,000 hours with
+
+4.5   10-year life, incorporating stable supports and electrolyte management/retention techniques.
+
+      (4Q, 2017)
+
+4.6   Report on status of fuel cell system durability to meet stationary fuel cell target of greater than
+      60,000 hours. (4Q, 2017)
+
+4.7   Evaluate strategies to mitigate fuel, air, and system level contaminants effect on MEA
+      performance. (2Q, 2018)
+
+      Demonstrate less than 5 mV degradation at rated power (~1500 mA/cm2) for any individual
+
+4.8   component over 5000 hour drive cycle with start-up/shutdown or equivalent accelerated stress
+
+      test procedures. (Q4, 2019)
+
+4.9   Demonstrate 1W/cm2 rated power and current greater than 300 mA/cm2 at 0.8V for an MEA
+      with total PGM loading of or less than 0.125mgPt/cm2. (1Q, 2020)
+
+      Demonstrate single cell performance of 5000 hours (or equivalent accelerated stress test
+
+4.10  procedures) with less than 30 mV loss at 1.5 A/cm2 at total PGM loading of or less than
+
+      0.125mgPt/cm2. (4Q, 2020)
+
+                           Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 43
+2016 FUEL CELLS SECTION
+
+                         Task 5: System BOP Components
+
+5.1  Develop a humidifier module with projected durability of 5,000 hours during RH cycling, and
+     water transfer rate at 80ºC of 5 grams per second. (4Q, 2019)
+
+5.2  Develop an air compression system for 80-kWe transportation fuel cell system operating on
+     direct hydrogen at a cost of $500. (4Q, 2020)
+
+     Develop an air compression system for 80-kWe transportation fuel cell system operating on
+
+5.3  direct hydrogen with a combined motor and motor controller efficiency at full flow of 90%. (4Q,
+
+     2020)
+
+                                                  Task 6: Fuel Cell Systems
+6.1 Demonstrate a fuel cell bus power plant with a durability of over 23,000 h. (2Q, 2017)
+
+6.2  Demonstrate micro-CHP at 42.5% electrical efficiency, 87.5% CHP efficiency and projected lifetime
+     of 40,000 hours. (2Q, 2018)
+
+6.3  Demonstrate medium-scale CHP at 45% electrical efficiency, 87.5% CHP efficiency, and projected
+     lifetime of 50,000 hours. (2Q, 2018)
+
+6.4  Demonstrate micro-CHP at 45% electrical efficiency, 90% CHP efficiency and a projected lifetime
+     of 60,000 hours. (4Q, 2020)
+
+6.5  Demonstrate medium-scale CHP at 50% electrical efficiency, 90% CHP efficiency, and a projected
+     lifetime of 80,000 hours, at a cost of $2,100/kW operating on biogas. (4Q, 2020)
+
+6.6  Demonstrate a fuel cell system for APUs with specific power of 45 W/kg, power density of 40
+     W/L and 40% electrical efficiency and a projected lifetime of 20,000 h. (4Q, 2020)
+
+6.7  Develop a 65% peak-efficient, 5,000 hour durable, direct hydrogen fuel cell power system for
+     transportation at a cost of $40/kW (at high volumes). (4Q, 2020)
+
+          Develop a 60% efficient (over the duty cycle), direct hydrogen fuel cell power system for backup
+6.8 power applications at a cost of $1,000/kW with a lifetime of 15 years, and 10,000 hours of
+
+          operation. (4Q, 2020)
+
+6.9 Develop low-cost, durable, fuel-flexible fuel processor. (4Q, 2020)
+
+Page 3.4 - 44 Multi-Year Research, Development, and Demonstration Plan
+                                                2016 FUEL CELLS SECTION
+
+     Task 7: Testing and Technical Assessments
+
+          Test and evaluate fuel cell systems and components such as MEAs, short stacks, bipolar plates,
+7.1 catalysts, membranes, etc., and compare to targets.
+
+          (3Q, 2016 thru 4Q, 2020)
+
+7.2  Update fuel cell technology cost estimate for 80 kW transportation systems and compare it to
+     targeted values. (3Q, 2016 thru 4Q, 2020)
+
+          Test and evaluate fuel cell systems and components such as MEAs, short stacks, bipolar plates,
+7.3 catalysts, membranes, etc. to determine long-term stack failure mechanisms. (3Q, 2016 thru 4Q,
+
+          2020)
+
+          Update fuel cell technology cost estimates for material handling, backup power units, primary
+7.4 power, and combined heat and power systems, and compare to target values.
+
+          (2Q, 2017)
+
+7.5  Begin fuel cell user operation for MEA cold neutron imaging utilizing lens-based imaging at 10 m
+     resolution with 10 s image time. (4Q, 2017)
+
+7.6  Begin fuel cell user operation for 1 m resolution neutron imaging with ~20 min. image time
+     utilizing 10x lens. (4Q, 2018)
+
+7.7  Perform experimental evaluation of direct hydrogen fuel cell technology at stack level for
+     transportation applications, and compare to targets. (4Q, 2020)
+
+     Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 45
+2016 FUEL CELLS SECTION
+
+Appendix--Protocols for Testing PEM Fuel Cells and Fuel Cell
+Components
+
+Testing protocols for fuel cells and fuel cell components, developed in partnership with the U.S. DRIVE Fuel
+Cell Technical Team, are delineated in Tables P.1 through P.11.
+
+The electrocatalyst protocol in Table P.1 is designed to assess cathode electrocatalyst durability through the
+use of a voltage square wave, in which successive cycles of surface oxidation and reduction cause accelerated
+catalyst degradation. The protocol uses a voltage range similar to that which is expected for an automotive
+drive cycle, and it seeks to maximize catalyst degradation while minimizing support corrosion. The protocol
+was designed to test PGM-based catalysts on carbon-based supports, and it may need to be modified to test
+different classes of materials.
+
+Cycle                              Table P.1 Electrocatalyst Cycle and Metrics
+Number
+                                       Square wave cycle: steps between 0.6 V (3 s) and 0.95 V (3 s) with rise
+                                       time of ~0.5 s or less; run polarization curve and ECSA at specified
+                                       intervals. Single cell 25­50 cm2
+
+                                       30,000 cycles
+
+Cycle time                         6s
+
+Temperature                        80°C
+
+Relative humidity                  Anode/cathode 100/100%
+                                   H2/N2 (H2 at 200 sccm and N2 at 75 sccm for a 50-cm2 cell)
+Fuel/oxidant                       Atmospheric pressure
+
+Pressure                           Frequency                             Target
+Metric a                                                                 <40% loss of initial catalytic activity
+Catalytic mass activity b          At beginning and end of test,         <30 mV loss at 0.8 A/cm2
+Polarization curve from 0 to >1.5  minimum                               <40% loss of initial area
+A/cm2 c
+ECSA/cyclic voltammetry            After 0, 1k, 5k, 10k, and 30k cycles
+
+                                   After 10, 100, 1k, 3k, 10k, 20k, and
+                                   30k cycles
+
+a A protocol such as the one shown in Table P.9 should be used to recover reversible losses prior to measuring each metric.
+b Mass activity in A/mg @ 150 kPa abs back pressure at 900 mV iR-corrected on H2/O2, 100% RH, 80°C, anode stoichiometry 2;
+
+      cathode stoichiometry 9.5. A minimum hold time of 15 min is recommended, with the mass activity calculated based on the average
+      current during the last 1 min. Multiple points should be measured at low current, and the 0.9 V iR-free potential should be
+      determined based on these measurements. Measured ORR current may be corrected for H2 crossover. Based on the protocol
+      published by Gasteiger et al., Applied Catalysis B: Environmental, 56 (2005): 9­35.
+c Polarization curve per protocol in Table P.6.
+
+Page 3.4 - 46 Multi-Year Research, Development, and Demonstration Plan
+                                                                            2016 FUEL CELLS SECTION
+
+The catalyst support protocol in Table P.2 uses a rapid triangle wave voltage cycle to accelerate catalyst
+support corrosion while minimizing degradation of the catalyst itself. The potential range used in this protocol
+is similar to that which would occur in an unmitigated system start-up or shutdown. The protocol was designed
+to test PGM-based catalysts on carbon-based supports, and it may need to be modified to test different classes
+of materials.
+
+Cycle                              Table P.2 Catalyst Support Cycle and Metrics
+Number
+                                         Triangle sweep cycle: 500 mV/s between 1.0 V and 1.5 V; run polarization
+                                         curve and ECSA at specified intervals. Single cell 25­50 cm2
+
+                                         5,000 cycles
+
+Cycle time                         2s
+
+Temperature                        80°C
+
+Relative humidity                  Anode/cathode 100/100%
+
+Fuel/oxidant                       H2/N2
+                                   Atmospheric
+Pressure
+                                   Frequency                                Target
+Metric a
+                                   At beginning and end of test,            <40% loss of initial catalytic
+Catalytic activity b               minimum                                  activity
+Polarization curve from 0 to >1.5                                           <30 mV loss at 1.5 A/cm2 or rated
+A/cm2 c                            After 0, 10, 100, 200, 500, 1k, 2k, and  power
+ECSA/cyclic voltammetry            5k cycles
+                                                                            <40% loss of initial area
+                                   After 0, 10, 100, 200, 500, 1k, 2k, and
+                                   5k cycles
+
+a A protocol such as the one shown in Table P.9 should be used to recover reversible losses prior to measuring each metric.
+b Mass activity in A/mg @ 150 kPa abs back pressure at 900 mV iR-corrected on H2/O2, 100% RH, 80°C, anode stoichiometry 2;
+
+      cathode stoichiometry 9.5, normalized to initial mass of catalyst and measured before and after test. Based on the protocol
+      published by Gasteiger et al., Applied Catalysis B: Environmental, 56 (2005): 9­35. Measured ORR current may be corrected for
+      H2 crossover.
+c Polarization curve per protocol in Table P6.
+
+                                   Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 47
+2016 FUEL CELLS SECTION
+
+The MEA chemical stability protocol in Table P.3 uses a continuous hold at open-circuit voltage to accelerate
+the production of free radicals, which cause degradation of the membrane and other MEA components.
+
+Test condition  Table P.3 MEA Chemical Stability and Metrics (Test Using an MEA)
+                                   Steady-state OCV, single cell 25­50 cm2
+
+Total time                        500 h
+
+Temperature                       90°C
+
+Relative humidity                 Anode/cathode 30/30%
+Fuel/oxidant                      H2/air at stoics of 10/10 at 0.2 A/cm2 equivalent flow
+Pressure, outlet kPa abs          Anode/cathode 150/150
+
+Metric                            Frequency                Target
+F- release or equivalent for      At least every 24 h
+nonfluorinated membranes          Every 24 h               No target--for monitoring
+Hydrogen crossover (mA/cm2) a, b  Continuous               <15 mA/cm2
+                                  Every 24 h at 0.2 A/cm2  Initial OCV  0.95 V, <20% OCV
+OCV b, c                          Every 24 h               decrease during test
+                                                           No target--for monitoring
+High-frequency resistance                                  >1,000 ohm cm2
+
+Shorting resistance d
+
+a Tested in MEA on H2, 80°C, fully humidified gases, 1 atm total pressure. See M. Inaba et. al., Electrochimica Acta, 51 (2006):
+      5746.
+
+b Hydrogen crossover and OCV targets should be achieved at 0 kPa pressure differential and at 50 kPa anode overpressure relative to
+      cathode, providing sensitivity to global membrane thinning and to hole formation, respectively.
+
+c A protocol such as the one shown in Table P.9 should be used to recover reversible losses at least once every 24 h and prior to
+      measuring each metric.
+
+d Measured at 0.5 V applied potential, 80ºC, 100% RH N2/N2. Compression to 20% strain on the GDL.
+
+Page 3.4 - 48 Multi-Year Research, Development, and Demonstration Plan
+                                                        2016 FUEL CELLS SECTION
+
+The membrane mechanical protocol in Table P.4 tests membrane durability through the use of humidity
+cycling, which induces repeated swelling and contraction of the membrane, accelerating the formation and
+growth of membrane cracks and holes.
+
+Cycle                  Table P.4 Membrane Mechanical Cycle and Metrics (Test Using an MEA)
+Total time                                    Cycle 0% RH (2 min) to 90°C dew point (2 min), single cell 25­50 cm2
+                                              Until crossover >15 mA/cm2 or 20,000 cycles
+
+Temperature            80°C
+
+Relative humidity      Cycle from 0% RH (2 min) to 90°C dew point (2 min)
+
+Fuel/oxidant           Air/air at 2 SLPM on both sides
+
+Pressure               Ambient or no back pressure
+
+Metric                 Frequency                        Target
+Crossover a            Every 24 h                       <15 mA/cm2 b
+Shorting resistance c  Every 24 h                       >1,000 ohm cm2
+
+a Tested in MEA on H2, 80°C, fully humidified gases, 1 atm total pressure. See M. Inaba et. al., Electrochimica Acta, 51 (2006):
+      5746. Crossover recorded after 2 min of drying under 0% RH conditions. Hydrogen crossover target should be achieved at 0 kPa
+      pressure differential and at 50 kPa anode overpressure, providing sensitivity to global membrane thinning and to hole formation,
+      respectively.
+
+b For air or N2 testing, an equivalent crossover metric of 0.1 sccm/cm2 at a 20 kPa pressure differential, 80°C, and 100%RH may be
+      used as an alternative.
+
+c Measured at 0.5 V applied potential, 80°C and 100% RH N2/N2. Compression to 20% strain on the GDL.
+
+                       Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 49
+2016 FUEL CELLS SECTION
+
+The chemical/mechanical protocol in Table P.5 examines the combined effects of humidity cycling and radical
+formation on membrane durability. Although chemical and mechanical degradation occur through different
+mechanisms, each mode can accelerate the other mode such that membranes that appear to have good chemical
+stability and good mechanical stability may fail when chemical and mechanical stresses are present
+concurrently.
+
+Cycle       Table P.5 Membrane Chemical/Mechanical Cycle and Metrics (Test Using an MEA)
+Total time                                Cycle 0% RH (30 s) to 90°C dew point (45 s), single cell 25­50 cm2
+                                          Until crossover >15 mA/cm2 or 20,000 cycles
+
+Temperature                       90°C
+Relative humidity                 Cycle from 0% RH (30 s) to 90°C dew point (45 s) a
+Fuel/oxidant                      H2/air at 40 sccm/cm2 on both sides
+Pressure                          Ambient or no back pressure
+
+Metric                            Frequency                Target
+F- release or equivalent for      At least every 24 h
+Nonfluorine membranes             Every 24 h               No target--for monitoring
+Hydrogen crossover (mA/cm2) b, c  Continuous
+                                  Every 24 h at 0.2 A/cm2  <15 mA/cm2
+OCV c, d                          Every 24 h               Initial wet OCV  0.95 V, <20% OCV
+                                                           decrease during test
+High-frequency resistance                                  No target--for monitoring
+                                                           >1,000 ohm cm2
+Shorting resistance e
+
+a Step durations of 30 s dry and 45 s wet were selected in testing at LANL so that the HFR at the end of the dry step was 2.5 times
+      the HFR at the end of the wet step, which is approximately equal to the HFR ratio that occurs when running the mechanical test
+      (Table P.4). Depending on the hardware used, these step times may need to be adjusted to achieve the same HFR variation.
+
+b Tested in MEA on H2, 80°C, fully humidified gases, 1 atm total pressure. See M. Inaba, et. al., Electrochimica Acta, 51 (2006):
+      5746. Crossover recorded after 2 min of drying under 0% RH conditions.
+
+c Hydrogen crossover and OCV targets should be achieved at 0 kPa pressure differential and at 50 kPa anode overpressure, providing
+      sensitivity to global membrane thinning and to hole formation, respectively.
+
+d A protocol such as the one shown in Table P.9 should be used to recover reversible losses at least once every 24 h and prior to
+      measuring each metric.
+
+e Measured at 0.5 V applied potential, 80°C, 100% RH N2/N2. Compression to 20% strain on the GDL.
+
+Page 3.4 - 50 Multi-Year Research, Development, and Demonstration Plan
+                                                                2016 FUEL CELLS SECTION
+
+The polarization protocol in Table P.6 provides a standardized way to test MEA performance in different
+operating regimes, and it should be used as specified in the target tables to assess progress toward performance
+and durability targets.
+
+                        Table P.6 Polarization Protocol a
+
+Test Point     Current  Anode H2   Cathode Cathode         Cathode     Test Point
+     #                   Stoich.   Inlet O2% Inlet N2%     O2 Stoich.  Run Time
+               Density            (Dry Basis) (Dry Basis)
+               (A/cm2)                                                    (min)
+
+                                  Break-In
+
+B1          0.6         1.5       21%        79%           1.8         20
+
+                                  Reduction
+
+R1          0           1.5       21%        79%           1.8         1
+
+R2          0           1.5       0%         100%          1.8         Until
+                                                                       V<0.1V
+
+                             Polarization Curve
+
+P1          0.2         1.5       21%        79%           1.8         3
+
+P2          0.4         1.5       21%        79%           1.8         3
+
+P3          0.6         1.5       21%        79%           1.8         3
+
+P4          0.8         1.5       21%        79%           1.8         3
+
+P5          1           1.5       21%        79%           1.8         3
+
+P6          1.2         1.5       21%        79%           1.8         3
+
+P7          1.4         1.5       21%        79%           1.8         3
+
+P7          1.6         1.5       21%        79%           1.8         3
+
+P8          1.8         1.5       21%        79%           1.8         3
+
+P9          2           1.5       21%        79%           1.8         3
+
+P10         1.8         1.5       21%        79%           1.8         3
+
+P11         1.6         1.5       21%        79%           1.8         3
+
+P12         1.4         1.5       21%        79%           1.8         3
+
+P13         1.2         1.5       21%        79%           1.8         3
+
+                        Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 51
+2016 FUEL CELLS SECTION
+
+                         Table P.6 Polarization Protocol a
+
+Test Point     Current   Anode H2   Cathode Cathode         Cathode     Test Point
+     #                    Stoich.   Inlet O2% Inlet N2%     O2 Stoich.  Run Time
+               Density             (Dry Basis) (Dry Basis)
+               (A/cm2)                                                     (min)
+
+P14         1            1.5       21%  79%                 1.8         3
+
+P15         0.8          1.5       21%  79%                 1.8         3
+
+P16         0.6          1.5       21%  79%                 1.8         3
+
+P17         0.4          1.5       21%  79%                 1.8         3
+
+P18         0.2          1.5       21%  79%                 1.8         3
+
+P19         0.1          1.5       21%  79%                 1.8         3
+
+P20         0.05         1.5       21%  79%                 1.8         3
+
+P21         0.02         1.5       21%  79%                 1.8         3
+
+P22         0.05         1.5       21%  79%                 1.8         3
+
+P23         0.1          1.5       21%  79%                 1.8         3
+
+P24         0.2          1.5       21%  79%                 1.8         3
+
+a The following parameters are constant throughout the test: anode inlet composition of 100% H2 (excluding water vapor) at 80°C,
+      humidified to 59°C dew point, 150 kPaabskPa abs outlet pressure; cathode feed at 80°C, humidified to 59°C dew point, 150 kPaabskPa
+      abs outlet pressure; cell/stack control temperature of 80°C; set-point transition time of 0 s. The anode and cathode flow rate
+      stoichiometric ratios are 1.5 and 1.8, respectively, for currents of 0.2 A/cm2 or greater, with 0.2 A/cm2 equivalent flows used at
+      lower currents (affected points highlighted in gray).
+
+Page 3.4 - 52 Multi-Year Research, Development, and Demonstration Plan
+                                                                                       2016 FUEL CELLS SECTION
+
+The drive-cycle protocol in Table P.7 should be used as specified in the target tables to test system, stack, and
+MEA lifetime. The protocol incorporates operating conditions that are expected to occur during typical
+operation of a fuel cell vehicle, but it excludes conditions associated with unmitigated start-ups and shutdowns,
+freeze operation, fuel starvation, and system fault conditions.
+
+                               Table P.7 Drive-Cycle Durability Protocol a, b, c
+
+                               Anode                         Cathode                                      Worst-
+                                Dew                            Dew
+Test Point  Current  Anode H2  Point  Anode   Cathode          Point              Cathode  Test Point     Case
+     #                Stoich.  Temp.   Inlet      O2          Temp.                 Inlet  Run Time    Response
+            Density             (°C)  Temp.                    (°C)                Temp.               Transition
+            (A/cm2)                    (°C)    Stoich.                              (°C)      (min)
+                                                                                                          Time
+
+                                                                                                          (s)
+
+                                      Wet with Load Cycling
+
+RH1         0.02     96        83°    85°     108            83°                  85°      0.5         2
+
+RH2         1.2      1.6       83°    85°     1.8            83°                  85°      0.5         2
+
+RH3         0.02     96        83°    85°     108            83°                  85°      0.5         2
+
+RH4         1.2      1.6       83°    85°     1.8            83°                  85°      0.5         2
+
+RH5         0.02     96        83°    85°     108            83°                  85°      0.5         2
+
+RH6         1.2      1.6       83°    85°     1.8            83°                  85°      0.5         2
+
+RH7         0.02     96        83°    85°     108            83°                  85°      0.5         2
+
+RH8         1.2      1.6       83°    85°     1.8            83°                  85°      0.5         2
+
+RH9         0.02     96        83°    85°     108            83°                  85°      0.5         2
+
+RH10        1.2      1.6       83°    85°     1.8            83°                  85°      0.5         2
+                                                                                                       30
+Trans1 0.6           2         70°    80°     2              70°                  80°      2           (dew point)
+
+                                      Dry with Load Cycling                                            30
+
+RH11        0.1      5         53°    80°     5              53°                  80°      0.5         (dew point)
+
+RH12        0.02     25        53°    80°     25             53°                  80°      0.5         2
+
+RH13        0.1      5         53°    80°     5              53°                  80°      0.5         2
+
+RH14        0.02     25        53°    80°     25             53°                  80°      0.5         2
+
+RH15        0.1      5         53°    80°     5              53°                  80°      0.5         2
+
+RH16        0.02     25        53°    80°     25             53°                  80°      0.5         2
+
+RH17        0.1      5         53°    80°     5              53°                  80°      0.5         2
+
+RH18        0.02     25        53°    80°     25             53°                  80°      0.5         2
+
+                               Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 53
+2016 FUEL CELLS SECTION
+
+                         Table P.7 Drive-Cycle Durability Protocol a, b, c
+
+RH19  0.1  5             53°  80°  5   53°                                  80°  0.5  2
+
+RH20 0.02  25            53°  80°  25  53°                                  80°  5d   2
+
+a The following parameters are constant throughout the test: anode inlet composition of 80% H2/20% N2 (excluding water vapor),
+      cathode inlet composition of 21% O2/79% N2 (excluding water vapor), anode and cathode outlet pressures of 101.3 kPaabskPa abs,
+      cell/stack control temperature of 80°C, and set-point transition time of 0 s.
+
+b Drive-cycle testing reflects only degradation losses associated with wet and dry cyclic operation. Other relevant stressors, including
+      start-up/shutdown and freeze operation, are not included in this test.
+
+c A protocol such as the one shown in Table P.9 should be used to recover reversible losses at least once every 24 h.
+d The 5-min hold in step RH20 is intended to represent a system idle point.
+
+Page 3.4 - 54 Multi-Year Research, Development, and Demonstration Plan
+                                                                     2016 FUEL CELLS SECTION
+
+The start-up/shutdown protocol in Table P.8 involves the passage of a hydrogen/air front, similar to the front
+that is expected during unmitigated start-ups and shutdowns of a fuel cell system. This front can cause rapid
+degradation of catalyst supports and other cell components through large potential swings, local combustion,
+and radical formation.
+
+Total time           Table P.8 Unmitigated Start-Up/Shutdown Durability Protocol
+Temperature
+                     5,000 cycles will take ~10 d, with 500 cycles/d (~19.5 h) and up to 5.5 h for
+                     characterization
+
+                     35°C
+
+Pressure             101.3 kPa
+
+Characterization     Polarization curve, ECSA, and impedance spectra should be measured at 80°C, 100% RH.
+                     Characterization should be repeated approximately every 24 h (~500 cycles).
+
+   Step   Step Name   Duration     Voltage  Current       Load      Anode      Anode                     RH
+                          (s)         (V)   (A/cm2)                  Gas a     Stoich.
+
+1         FC         60 b                   0.4      On         H2          1.2                     100
+          Operation
+
+2         Pre-       10         1                    On         H2          0                       100
+          shutdown
+
+3         Shutdown 5                                 Off        Air         Varies c 0
+
+4         Idle       55                              Off        Air         1 (at 0.1               0
+                                                                            A/cm2)
+
+5         Start-up 10           1                    On         H2          1.2 (at 1.0             100
+                                                                            A/cm2)
+
+             Metric                         Target                          Guideline
+
+Voltage at <5%       <20%       Voltage at <5%       <20%       Voltage at <5%                      <20%
+1.2 A/cm2 change     change     1.2 A/cm2 change     change     1.2 A/cm2 change                    change
+
+ECSA                 <5%        ECSA                 <5%        ECSA                                <5%
+                     change                          change                                         change
+HFR at                          HFR at                          HFR at
+0.02 and             <10%       0.02 and             <10%       0.02 and                            <10%
+1.2 A/cm2            change     1.2 A/cm2            change     1.2 A/cm2                           change
+LFR at 0.02                     LFR at 0.02                     LFR at 0.02
+and 1.2                         and 1.2                         and 1.2
+A/cm2                           A/cm2                           A/cm2
+
+a Anode gas is H2 or air, depending on step. Cathode gas should be air at a flow rate corresponding to a stoich. of 2 at 1.0 A/cm2
+      current for all steps.
+
+b Attain steady-state operation before moving to Step 2.
+c Anode flow rate must be defined by specific cell architecture, and it should correspond to an average residence time of 0.3 s. Cell
+
+      voltage should decrease to < 0.1 V within 1 s (~3 volumetric exchanges).
+
+                                Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 55
+2016 FUEL CELLS SECTION
+
+Various degradation mechanisms are expected to occur during fuel cell testing, including both reversible and
+irreversible mechanisms. The MEA recovery protocol in Table P.9 should be used as specified in the target
+tables to recover the reversible losses prior to performance testing.
+
+                              Table P.9 MEA Recovery Protocol a
+
+     Step  Step Name     Anode    Anode Flow  Cathode                     Cathode  Duration (s)
+                         Comp.       (SLPM)    Comp.                         Flow
+1                                                                                  120
+2          N2 soak       100% N2  2           100% N2                      (SLPM)  900
+3                                             Air                       4          120
+4          Air soak      N/A      0                                                600
+5                                                                       4          5
+           N2 soak       100% N2  2           100% N2
+                                              N/A                       4
+           H2 soak       100% H2  2           Air
+                                                                        0
+           H2-air back   100% H2  2
+           on                                                           4
+
+a The following parameters are constant throughout the test: anode and cathode inlet RH = 100%, anode and cathode outlet pressure
+      = 150 kPa abs. Cell temperature should be set to the temperature of the upcoming diagnostic test.
+
+Page 3.4 - 56 Multi-Year Research, Development, and Demonstration Plan
+              2016 FUEL CELLS SECTION
+
+Air compressors for automotive fuel cell systems should be able to perform all the tests in the protocol in
+Table P.10 without significant wear or breakage. The compressor should remain capable of meeting all
+performance targets following completion of the tests in this protocol.
+
+This protocol represents a limited set of tests for basic screening and durability testing. It is not a complete set
+of durability tests that a fully engineered product would be expected to meet.
+
+Test                    Table P.10 Air Compressor Durability Protocol
+Start-stop
+              Test Conditions
+Freeze start
+Cycling       · Reflects both key-on and capability for fuel cell stop-start during operation
+High load     · Performed at 25°C, with coolant at 60­70°C
+              · 200,000 cycles from 0 RPM to idle speed
+              · 50,000 power on/off reflecting key on/off
+              · 150,000 with compressor powered reflecting system idle
+              · Performed at -30°C
+              · 1,000 cycles from 0 RPM to idle speed
+              · Coolant quenching may be used to enable faster cycling
+              · Reflects normal drive transients
+              · 150,000 cycles between maximum speed and 25% of maximum speed
+              · Cycling performed at maximum acceleration/deceleration rates
+              · Inlet T = 40°C
+              · Run at maximum flow rate and pressure for 300 h
+
+              Multi-Year Research, Development, and Demonstration Plan Page 3.4 - 57
+2016 FUEL CELLS SECTION
+
+Humidifiers for automotive fuel cell systems should be able to perform all the tests in the protocol in Table
+P.11 without significant wear or breakage. The leak rate following the completion of each test in the protocol
+should be less than 15 SLPM (based on dry air, with 50 kPa g on the dry side and ambient pressure on the wet
+side). Any reduction in the water transport rate should represent less than a 10% loss of the BOL transport rate.
+
+This protocol represents a limited set of tests for basic screening and durability testing. It is not a complete set
+of durability tests that a fully engineered product would be expected to meet.
+
+"Full flow conditions" refers to Dry air in: 3,000 SLPM dry gas flow, 183 kPa abs, 80°C, and 0% RH. Wet air
+in: 2,600 SLPM dry gas flow, 160 kPa abs, 80°C, and 85% RH.
+
+Test                            Table P.11 Humidifier Durability Protocol
+High load
+Humidity cycling  Test Conditions
+
+Pressure cycling  · Run at full flow rate for 300 h
+
+                  · Same test as cell membrane mechanical cycle (Table P.4):
+                        80°C, ambient pressure
+                        · Cycle from 0% RH (2 min) to 90°C dew point (2 min)
+                        · Use full flow conditions, except dew point as above
+
+                  · Perform 20,000 cycles, with leakage rate checked every 24 hrs
+                  · Cycle dry-side pressure from 0 kPa g to 75 kPa g, 20,000 cycles, 3 s high/3 s low
+
+                       pressure
+                  · Wet side maintained at ambient pressure (no flow)
+
+Page 3.4 - 58 Multi-Year Research, Development, and Demonstration Plan
+

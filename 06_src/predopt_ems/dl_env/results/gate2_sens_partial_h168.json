@@ -1,0 +1,40 @@
+{
+ "H": 672,
+ "tag": "h168",
+ "n_opt": 2686,
+ "n_infeas": 2,
+ "n_tl": 992,
+ "solve_med_s": 42.49246442317963,
+ "solve_max_s": 119.16845083236694,
+ "lpsp": 5.7551898629582105e-08,
+ "exact_damage": {
+  "bat_D": 0.010865560641079627,
+  "fc_D": 0.0031802818715166744,
+  "el_D": 0.0236600688182214
+ },
+ "lcoe_cny_per_kwh": 3.408244756339849,
+ "npc_million_cny": 31.59298176758808,
+ "replacement_schedule": {
+  "BAT": [
+   7.05,
+   14.11
+  ]
+ },
+ "annual_damage": {
+  "bat": 0.14178,
+  "fc": 0.04139,
+  "el": 0.30933
+ },
+ "seasons_covered": [
+  "winter",
+  "spring",
+  "summer",
+  "autumn"
+ ],
+ "fc_run_steps": 54,
+ "el_run_steps": 678,
+ "soc_range": [
+  0.1625476263860107,
+  0.95
+ ]
+}

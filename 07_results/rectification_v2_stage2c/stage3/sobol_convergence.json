@@ -1,0 +1,46 @@
+{
+  "n_outer_tested": [
+    128,
+    256,
+    512
+  ],
+  "config": "compact",
+  "method": "run_double_layer_propagation(n_outer, n_inner=500, 2017 单年)；认知占比 frac_epistemic",
+  "results": {
+    "128": {
+      "frac_epistemic": {
+        "bat": 0.99866,
+        "fc": 0.7683,
+        "el": 0.86545
+      }
+    },
+    "256": {
+      "frac_epistemic": {
+        "bat": 0.99865,
+        "fc": 0.7683,
+        "el": 0.86545
+      }
+    },
+    "512": {
+      "frac_epistemic": {
+        "bat": 0.99865,
+        "fc": 0.7683,
+        "el": 0.86545
+      }
+    }
+  },
+  "adjacent_rel_delta_pct": {
+    "128->256": {
+      "bat": 0.001,
+      "fc": 0.0,
+      "el": 0.0
+    },
+    "256->512": {
+      "bat": 0.0,
+      "fc": 0.0,
+      "el": 0.0
+    }
+  },
+  "verdict": "Sobol 外层收敛（相邻 n_outer 认知占比相对偏差<5%）",
+  "note": "内层固定 500（收敛性检验，非全量 4000）；收敛判据：128→256→512 相邻相对偏差<5%"
+}

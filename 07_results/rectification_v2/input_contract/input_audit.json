@@ -1,0 +1,48 @@
+{
+  "amplification_allowed": true,
+  "candidate_formula": "P_PV(t)=min(P_nom,max(0,P_raw(t))*P_nom/233)",
+  "clipping_report": {
+    "detected": false,
+    "plateau_count": 3,
+    "plateau_value_kw": 213.30000000000004,
+    "reason": "no_contiguous_plateau"
+  },
+  "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+  "irradiance_reconstruction_required": false,
+  "load_transform": "identity",
+  "reference_capacity_kw": 233.0,
+  "schema_version": "rectification_v2.0",
+  "source_path": "02_data_processed/tradestreet_pipeline/64_TradeStreet_2016_2018_synthetic_reconstructed_PV_building_load_evaluation_years.csv",
+  "years": {
+    "2016": {
+      "end": "2016-12-31 23:45:00",
+      "load_energy_kwh": 514033.71349999995,
+      "points": 35136,
+      "pv_150_energy_kwh": 262844.5055793992,
+      "pv_150_to_load_ratio": 0.5113370945841652,
+      "pv_raw_energy_kwh": 408285.37374999997,
+      "pv_raw_max_kw": 233.967,
+      "start": "2016-01-01 00:00:00"
+    },
+    "2017": {
+      "end": "2017-12-31 23:45:00",
+      "load_energy_kwh": 510783.91000000003,
+      "points": 35040,
+      "pv_150_energy_kwh": 279330.0769313305,
+      "pv_150_to_load_ratio": 0.5468654580981818,
+      "pv_raw_energy_kwh": 433895.81725,
+      "pv_raw_max_kw": 244.424,
+      "start": "2017-01-01 00:00:00"
+    },
+    "2018": {
+      "end": "2018-12-31 23:45:00",
+      "load_energy_kwh": 463478.77024999994,
+      "points": 35040,
+      "pv_150_energy_kwh": 276350.89425965666,
+      "pv_150_to_load_ratio": 0.5962536193633924,
+      "pv_raw_energy_kwh": 429269.52174999996,
+      "pv_raw_max_kw": 239.652,
+      "start": "2018-01-01 00:00:00"
+    }
+  }
+}

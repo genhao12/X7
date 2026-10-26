@@ -1,0 +1,17 @@
+{
+  "admissible_candidates": [],
+  "admissible_count": 0,
+  "candidate_count": 2,
+  "clipping_report": {
+    "detected": false,
+    "plateau_count": 3,
+    "plateau_value_kw": 213.30000000000004,
+    "reason": "no_contiguous_plateau"
+  },
+  "code_hash": "788a11f40be0750c288e49364696cb8bec1bc51625ed4f18c46cae6693c9b3a8",
+  "config_hash": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+  "domain": "legacy_extended_diagnostic",
+  "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+  "max_workers": 2,
+  "necessary_energy_pass_count": 2
+}

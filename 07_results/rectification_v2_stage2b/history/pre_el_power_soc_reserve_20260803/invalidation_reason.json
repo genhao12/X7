@@ -1,0 +1,12 @@
+{
+  "schema_version": "rectification_v2_stage2b.history_invalidation.1",
+  "status": "historical_invalid",
+  "paper_citable": false,
+  "reason": "el_start_missing_five_step_power_and_soc_reserve",
+  "details": [
+    "EL start used a persistence surplus forecast without reserving five-step BAT power and SOC",
+    "forecast transitions caused EL emergency trips and run segments shorter than five steps",
+    "the audit failed the minimum-run state-machine gate and therefore could not authorize search"
+  ],
+  "superseded_code_hash": "e5947d7ab5fc8502e65bfdb18be25caf1a8ef5da6d4243434e5b0113d07cf543"
+}

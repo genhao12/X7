@@ -1,0 +1,117 @@
+{
+  "config_id": "C1",
+  "config_type": "balanced",
+  "description": "C1平衡配置 — 容量搜索空间各维度取中点",
+  "source": "frozen_parameters_v2.2.json → capacity_search取中点",
+  "capacity": {
+    "PV_kWp": 120.0,
+    "BAT_kWh": 135.0,
+    "PEMFC_kW": 37.5,
+    "PEMEL_kW": 35.0,
+    "H2_kg": 25.0
+  },
+  "capacity_ranges_source": {
+    "PV_kWp": [
+      90,
+      150
+    ],
+    "BAT_kWh": [
+      90,
+      180
+    ],
+    "PEMFC_kW": [
+      30,
+      45
+    ],
+    "PEMEL_kW": [
+      25,
+      45
+    ],
+    "H2_kg": [
+      10,
+      40
+    ]
+  },
+  "ems_parameters": {
+    "start_stop_threshold_fraction": 0.275,
+    "minimum_run_time": 75,
+    "critical_load_fraction": 0.5
+  },
+  "ems_strategy": "battery_first",
+  "control_layer": "L0_L1_L2_L3",
+  "topology": {
+    "dc_bus": "single_dc_bus",
+    "converter_isolation": "non_isolated_dc_dc",
+    "control_mode": "dc_bus_droop_power_tracking",
+    "auxiliary_power_accounting": "explicit_P_aux",
+    "P_aux_fraction_of_installed_power": 0.02
+  },
+  "time_resolution": {
+    "operational_degradation_min": 15,
+    "timestep": "15min"
+  },
+  "battery_constraints": {
+    "soh_eol": 0.8,
+    "soc_min": 0.15,
+    "soc_max": 0.95,
+    "soc_initial": 0.5,
+    "note": "SOC上下限来自微电网通用约束(0.15-0.95)，初始SOC=0.50为MVP默认"
+  },
+  "hydrogen_constraints": {
+    "m_min_fraction": 0.1,
+    "m_max_fraction": 1.0,
+    "leakage_rate_per_day": 0.0005,
+    "m_initial_fraction": 0.5,
+    "note": "初始储氢量取额定50%为MVP默认"
+  },
+  "minimum_stable_load": {
+    "PEMFC": 0.15,
+    "PEMEL": 0.15
+  },
+  "acceptance_thresholds": {
+    "power_residual_max": 1e-06,
+    "h2_mass_residual_max": 1e-06,
+    "lpsp_max": 0.01,
+    "critical_load_min": 0.99
+  },
+  "mvp_specific": {
+    "window": "W1 (7天)",
+    "runs": [
+      "BOL",
+      "BAT_D0.50",
+      "BAT_D0.90"
+    ],
+    "paths": [
+      "alpha1_BAT_to_FC",
+      "alpha2_BAT_to_EL"
+    ],
+    "coalition_states": 16,
+    "total_simulations": 22,
+    "fraction_of_full_W1": 0.007
+  },
+  "pairing_control": {
+    "random_seed": 42,
+    "random_seed_note": "所有7-run配对使用相同种子42，确保唯一差异为源设备D值",
+    "weather_data": {
+      "source": "UCSD TradeStreet pipeline",
+      "path": "02_data_processed/tradestreet_pipeline/",
+      "window": "W1 (7天典型周)",
+      "hash_placeholder": "待P1执行时计算SHA256并填入"
+    },
+    "load_data": {
+      "source": "UCSD TradeStreet pipeline",
+      "path": "02_data_processed/tradestreet_pipeline/",
+      "hash_placeholder": "待P1执行时计算SHA256并填入"
+    },
+    "seven_run_design": [
+      {"run": "Run1", "source_device": "BOL", "D_source": 0.0, "D_others": 0.0, "extract": "基线(无路径)"},
+      {"run": "Run2", "source_device": "BAT", "D_source": 0.50, "D_others": 0.0, "extract": "alpha1->Delta_D_FC; alpha2->Delta_D_EL"},
+      {"run": "Run3", "source_device": "BAT", "D_source": 0.90, "D_others": 0.0, "extract": "alpha1->Delta_D_FC; alpha2->Delta_D_EL(高退化)"},
+      {"run": "Run4", "source_device": "FC", "D_source": 0.50, "D_others": 0.0, "extract": "beta1->Delta_D_BAT; beta2->Delta_D_EL"},
+      {"run": "Run5", "source_device": "FC", "D_source": 0.90, "D_others": 0.0, "extract": "beta1->Delta_D_BAT; beta2->Delta_D_EL(高退化)"},
+      {"run": "Run6", "source_device": "EL", "D_source": 0.50, "D_others": 0.0, "extract": "gamma2->Delta_D_FC; gamma1->Delta_D_BAT"},
+      {"run": "Run7", "source_device": "EL", "D_source": 0.90, "D_others": 0.0, "extract": "gamma2->Delta_D_FC; gamma1->Delta_D_BAT(高退化)"}
+    ],
+    "consistency_check": "7-run唯一差异为source_device的D_source值；其余字段(气象/负荷/初始SOC=0.50/初始H2=50%/容量C1/EMS=battery_first/种子=42)完全一致"
+  }
+}

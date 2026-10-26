@@ -1,0 +1,25 @@
+{
+  "script": "p0_unit_tests_456.py (v9 §16.1 第4/5/6类)",
+  "timestamp": "2026-08-11T10:07:23.662847",
+  "checks": {
+    "4": {
+      "name": "三级字典序不破坏（L1_final≤L1_opt+ε₁、L2_final≤L2_opt+ε₂）",
+      "pass": true,
+      "detail": "冬 01-15: L1 0.0010≤0.0000+ε₁ True | L2 0.501275≤0.500275+ε₂ True；夏 06-15: L1 0.0010≤0.0000+ε₁ True | L2 0.506225≤0.505225+ε₂ True；秋 09-15: L1 0.0010≤0.0000+ε₁ True | L2 0.500187≤0.499187+ε₂ True"
+    },
+    "5": {
+      "name": "open/closed 一致（D_feedback=0：确定性 + 前两层与 mode 无关）",
+      "pass": true,
+      "detail": "两次 da(D=0) 命令最大差 0.00e+00 (≤1e-8)；normal 与 da L1/L2 一致=True；注：D_eval>0 时 open/closed 差异最终经 Gate A 的 f_E/f_η/f_P 接口验证"
+    },
+    "6": {
+      "name": "MPC 跨窗口衔接（t=0 自由启停/剩余开停机继承/新启动段≥T_on/状态连续）",
+      "pass": true,
+      "detail": "u_fc 1→0、u_el 0→0（u_cont=False，继承强制区外可自由启停）；状态连续=True；继承强制=True；新启动段 min-run=True；FC 窗口1末连运行 23 步 → 窗口2继承 0 步"
+    }
+  },
+  "summary": {
+    "pass": 3,
+    "fail": 0
+  }
+}

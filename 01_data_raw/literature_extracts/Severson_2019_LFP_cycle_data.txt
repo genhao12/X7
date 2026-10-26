@@ -1,0 +1,689 @@
+                                                                                      Articles
+
+                                                                            https://doi.org/10.1038/s41560-019-0356-8
+
+Data-driven prediction of battery cycle life before
+capacity degradation
+
+Kristen A. Severson 1,5, Peter M. Attia 2,5, Norman Jin 2, Nicholas Perkins 2, Benben Jiang 1,
+Zi Yang 2, Michael H. Chen 2, Muratahan Aykol 3, Patrick K. Herring 3, Dimitrios Fraggedakis 1,
+Martin Z. Bazant 1, Stephen J. Harris 2,4, William C. Chueh 2* and Richard D. Braatz 1*
+
+Accurately predicting the lifetime of complex, nonlinear systems such as lithium-ion batteries is critical for accelerating tech-
+nology development. However, diverse aging mechanisms, significant device variability and dynamic operating conditions
+have remained major challenges. We generate a comprehensive dataset consisting of 124 commercial lithium iron phosphate/
+graphite cells cycled under fast-charging conditions, with widely varying cycle lives ranging from 150 to 2,300 cycles. Using
+discharge voltage curves from early cycles yet to exhibit capacity degradation, we apply machine-learning tools to both predict
+and classify cells by cycle life. Our best models achieve 9.1% test error for quantitatively predicting cycle life using the first 100
+cycles (exhibiting a median increase of 0.2% from initial capacity) and 4.9% test error using the first 5 cycles for classifying
+cycle life into two groups. This work highlights the promise of combining deliberate data generation with data-driven modelling
+to predict the behaviour of complex dynamical systems.
+
+Lithium-ion batteries are deployed in a wide range of applica-              conditions (for example, fast charging) remains challenging, given
+     tions due to their low and falling costs, high energy densities        the many degradation modes and their coupling to thermal28,29 and
+     and long lifetimes1­3. However, as is the case with many chemi-        mechanical28,30 heterogeneities within a cell30­32.
+ cal, mechanical and electronic systems, long battery lifetime entails
+ delayed feedback of performance, often many months to years.                  Approaches using statistical and machine-learning techniques
+ Accurate prediction of lifetime using early-cycle data would unlock        to predict cycle life are attractive, mechanism-agnostic alternatives.
+ new opportunities in battery production, use and optimization. For         Recently, advances in computational power and data generation
+ example, manufacturers can accelerate the cell development cycle,          have enabled these techniques to accelerate progress for a variety
+ perform rapid validation of new manufacturing processes and sort/          of tasks, including prediction of material properties33,34, identifica-
+ grade new cells by their expected lifetime. Likewise, end users could      tion of chemical synthesis routes35 and material discovery for energy
+ estimate their battery life expectancy4­6. One emerging application        storage36­38 and catalysis39. A growing body of literature6,40,41 applies
+ enabled by early prediction is high-throughput optimization of             machine-learning techniques for predicting the remaining useful
+ processes spanning large parameter spaces (Supplementary Figs. 1           life of batteries using data collected in both laboratory and online
+ and 2), such as multistep fast charging and formation cycling, which       environments. Generally, these works make predictions after accu-
+ are otherwise intractable due to the extraordinary time required.          mulating data corresponding to degradation of at least 25% along
+ The task of predicting lithium-ion battery lifetime is critically          the trajectory to failure42­48 or using specialized measurements at
+ important given its broad utility but challenging due to nonlinear         the beginning of life11. Accurate early prediction of cycle life with
+ degradation with cycling and wide variability, even when control-          significantly less degradation is challenging because of the typically
+ ling for operating conditions7­11.                                         nonlinear degradation process (with negligible capacity degrada-
+                                                                            tion in early cycles) as well as the relatively small datasets used to
+    Many previous studies have modelled lithium-ion battery life-           date that span a limited range of lifetimes49. For example, Harris
+ time. Bloom et al.12 and Broussely et al.13 performed early work that      et al.10 found a weak correlation (=0.1) between capacity values
+ fitted semi-empirical models to predict power and capacity loss.           at cycle 80 and capacity values at cycle 500 for 24 cells exhibiting
+ Since then, many authors have proposed physical and semi-empir-            nonlinear degradation profiles, illustrating the difficulty of this task.
+ ical models that account for diverse mechanisms such as growth of          Machine-learning approaches are especially attractive for high-rate
+ the solid­electrolyte interphase14,15, lithium plating16,17, active mate-  operating conditions, where first-principles models of degradation
+ rial loss18,19 and impedance increase20­22. Predictions of remaining       are often unavailable. In short, opportunities for improving upon
+ useful life in battery management systems, summarized in these             state-of-the-art prediction models include higher accuracy, earlier
+ reviews5,6, often rely on these mechanistic and semi-empirical mod-        prediction, greater interpretability and broader application to a
+ els for state estimation. Specialized diagnostic measurements such         wide range of cycling conditions.
+ as coulombic efficiency23,24 and impedance spectroscopy25­27 can
+ also be used for lifetime estimation. While these chemistry and/or            In this work, we develop data-driven models that accurately
+ mechanism-specific models have shown predictive success, devel-            predict the cycle life of commercial lithium iron phosphate (LFP)/
+ oping models that describe full cells cycled under relevant operating      graphite cells using early-cycle data, with no prior knowledge of
+                                                                            degradation mechanisms. We generated a dataset of 124 cells with
+
+1Department of Chemical Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA. 2Department of Materials Science and Engineering,
+Stanford University, Stanford, CA, USA. 3Toyota Research Institute, Los Altos, CA, USA. 4Materials Science Division, Lawrence Berkeley National Lab,
+Berkeley, CA, USA. 5These authors contributed equally: K. A. Severson, P. M. Attia. *e-mail: wchueh@stanford.edu; braatz@mit.edu
+
+Nature Energy | www.nature.com/natureenergy
+Articles                                                                                                                                                                                NATUre Energy
+
+                            a                    Discharge capacity (Ah)
+
+                                         1.10                                         100  200              300              400     500        600   700              800      900     1,000
+                                         1.05
+                                         1.00                                                                                     Cycle number
+                                         0.95
+                                         0.90                                                                                                            c 100
+
+                                                0
+
+                            b
+
+                                         1.10
+
+Discharge capacity (Ah)                                                   1.05                                                                        Count       50
+
+                                                                          1.00  0     20               40               60           80          100              0
+
+                                                                                                                                                                       0.96 0.98 1.00 1.02
+
+                                                                                                            Cycle number                                               Capacity ratio, cycles 100:2
+
+d                                                                                                           e                                         f
+
+        103  = ­0.061                                                                                       Cycle life  103  = 0.27                               103  = 0.47
+
+                                                 Cycle life                                                                                           Cycle life
+
+                                                                          102                                           102                                       102
+
+                                                                                   1                   1.1                        1              1.1                   ­2   ­1       0
+
+                                                                                   Discharge capacity                        Discharge capacity                     Slope of discharge capacity
+                                                                                      at cycle 2 (Ah)                         at cycle 100 (Ah)                   cycles 95­100 (mAh per cycle)
+
+Fig. 1 | Poor predictive performance of features based on discharge capacity in the first 100 cycles. a, Discharge capacity for the first 1,000 cycles of LFP/
+graphite cells. The colour of each curve is scaled by the battery's cycle life, as is done throughout the manuscript. b, A detailed view of a, showing only the
+first 100 cycles. A clear ranking of cycle life has not emerged by cycle 100. c, Histogram of the ratio between the discharge capacity of cycle 100 and that
+of cycle 2. The cell with the highest degradation (90%) is excluded to show the detail of the rest of the distribution. The dotted line indicates a ratio of
+1.00. Most cells have a slightly higher capacity at cycle 100 relative to cycle 2. d, Cycle life as a function of discharge capacity at cycle 2. The correlation
+coefficient of capacity at cycle 2 and log cycle life is -0.06 (remains unchanged on exclusion of the shortest-lived battery). e, Cycle life as a function of
+discharge capacity at cycle 100. The correlation coefficient of capacity at cycle 100 and log cycle life is 0.27 (0.08 excluding the shortest-lived battery).
+f, Cycle life as a function of the slope of the discharge capacity curve for cycles 95­100. The correlation coefficient of this slope and log cycle life is 0.47
+(0.36 excluding the shortest-lived battery).
+
+cycle lives ranging from 150 to 2,300 using 72 different fast-charg-                                                                 APR18650M1A, 1.1Ah nominal capacity) were cycled in a tem-
+ing conditions, with cycle life (or equivalently, end of life) defined                                                               perature-controlled environmental chamber (30°C) under var-
+as the number of cycles until 80% of nominal capacity. For quanti-                                                                   ied fast-charging conditions but identical discharging conditions
+tatively predicting cycle life, our feature-based models can achieve                                                                 (4C to 2.0V, where 1C is 1.1A; see Methods for details). Since the
+prediction errors of 9.1% using only data from the first 100 cycles, at                                                              graphite negative electrode dominates degradation in these cells,
+which point most batteries have yet to exhibit capacity degradation.                                                                 these results could be useful for other lithium-ion batteries based
+Furthermore, using data from the first 5 cycles, we demonstrate                                                                      on graphite32,50­54. We probe average charging rates ranging from
+classification into low- and high-lifetime groups and achieve a mis-                                                                 3.6C, the manufacturer's recommended fast-charging rate, to 6C
+classification test error of 4.9%. These results illustrate the power of                                                             to probe the performance of current-generation power cells under
+combining data generation with data-driven modelling to predict                                                                      extreme fast-charging conditions (~10min charging), an area of
+the behaviour of complex systems far into the future.                                                                                significant commercial interest55. By deliberately varying the charg-
+                                                                                                                                     ing conditions, we generate a dataset that captures a wide range of
+Data generation                                                                                                                      cycle lives, from approximately 150 to 2,300 cycles (average cycle
+We expect the space that parameterizes capacity fade in lithium-                                                                     life of 806 with a standard deviation of 377). While the chamber
+ion batteries to be high dimensional due to their many capac-                                                                        temperature is controlled, the cell temperatures vary by up to 10°C
+ity fade mechanisms and manufacturing variability. To probe                                                                          within a cycle due to the large amount of heat generated during
+this space, commercial LFP/graphite cells (A123 Systems, model                                                                       charge and discharge. This temperature variation is a function of
+
+                                                                                                                                                                            Nature Energy | www.nature.com/natureenergy
+NATUre Energy                                                                                                                                                                           Articles
+
+a                        Cycle 10                      b                             c                                                                        2,300
+                  Cycle 100                                                                                                                                   1,860
+     3.5                                                    3.5                          103                                                                  1,420
+     3.0Voltage (V)                                         3.0                                                                                               980
+     2.5                                          Voltage (V)2.5                                                                          = ­0.92             540                       Cycle life
+                                                                                                     Cycle life                                               100
+
+2.0            0  0.5                        1.0       2.0       ­0.1             0                              102
+                                                                                                                    10­6
+                                                                                                                                         10­4           10­2
+
+                  Discharge capacity (Ah)                        Q100 ­ Q10 (Ah)                                                       Var(Q100­10(V))
+
+Fig. 2 | High performance of features based on voltage curves from the first 100 cycles. a, Discharge capacity curves for 100th and 10th cycles for a
+
+representative cell. b, Difference of the discharge capacity curves as a function of voltage between the 100th and 10th cycles, Q100-10(V), for 124 cells.
+c, Cycle life plotted as a function of the variance of Q100-10(V) on a log­log axis, with a correlation coefficient of -0.93. In all plots, the colours are
+determined based on the final cycle lifetime. In c, the colour is redundant with the y-axis. In b and c, the shortest lived battery is excluded.
+
+a                                                      b                                                                               c
+
+     2,000                                                  2,000                                                                           2,000
+Predicted cycle life
+1,000                                                    Predicted cycle life1,000                                                       1,000                          20
+     0                                                                                                             Predicted cycle life0      0                         10
+        0                             20                                 0                      20                                               0
+                                      10                                                        10                                                                       0
+                                                                   Train                                                                                                    ­500 0 500
+                                       0                                                         0
+                                           ­500 0 500                                                ­500 0 500                                          1,000 2,000
+                                                                                                                                                    Observed cycle life
+                       1,000 2,000                                               1,000 2,000
+                  Observed cycle life                                       Observed cycle life
+
+                                                                            Primary test Secondary test
+
+Fig. 3 | Observed and predicted cycle lives for several implementations of the feature-based model. The training data are used to learn the model
+structure and coefficient values. The testing data are used to assess generalizability of the model. We differentiate the primary test and secondary test
+datasets because the latter was generated after model development. The vertical dotted line indicates when the prediction is made in relation to the
+observed cycle life. The inset shows the histogram of residuals (predicted ­ observed) for the primary and secondary test data. a, `Variance' model using
+only the log variance of Q100-10(V). b, `Discharge' model using six features based only on discharge cycle information, described in Supplementary Table
+1. c, `Full' model using the nine features described in Supplementary Table 1. Because some temperature probes lost contact during experimentation, four
+cells are excluded from the full model analysis.
+
+internal impedance and charging policy (Supplementary Figs. 3               fade curves, we employ an alternative data-driven approach that
+and 4). Voltage, current, cell can temperature and internal resis-          considers a larger set of cycling data including the full voltage
+tance are continuously measured during cycling (see Methods for             curves of each cycle, as well as additional measurements including
+additional experimental details). The dataset contains approxi-             cell internal resistance and temperature.
+mately 96,700 cycles; to the best of the authors' knowledge, our
+dataset is the largest publicly available for nominally identical com-      Machine-learning approach
+mercial lithium-ion batteries cycled under controlled conditions            We use a feature-based approach to build an early-prediction model.
+(see Data availability section for access information).                     In this paradigm, features, which are linear or nonlinear transforma-
+                                                                            tions of the raw data, are generated and used in a regularized linear
+   Fig. 1a,b shows the discharge capacity as a function of cycle            framework, the elastic net58. The final model uses a linear combina-
+number for the first 1,000 cycles, where the colour denotes cycle           tion of a subset of the proposed features to predict the logarithm
+life. The capacity fade is negligible in the first 100 cycles and accel-    of cycle life. Our choice of a regularized linear model allows us to
+erates near the end of life, as is often observed in lithium-ion bat-       propose domain-specific features of varying complexity while main-
+teries. The crossing of the capacity fade trajectories illustrates the      taining high interpretability. Linear models also have low computa-
+weak relationship between initial capacity and lifetime; indeed,            tional cost; the model can be trained offline, and online prediction
+we find weak correlations between the log of cycle life and the             requires only a single dot product after data preprocessing.
+discharge capacity at the second cycle (=-0.06, Fig. 1d) and
+the 100th cycle (=0.27, Fig. 1e), as well as between the log of cycle          We propose features from domain knowledge of lithium-ion
+life and the capacity fade rate near cycle 100 (=0.47, Fig. 1f).            batteries (though agnostic to chemistry and degradation mecha-
+These weak correlations are expected because capacity degrada-              nisms), such as initial discharge capacity, charge time and cell can
+tion in these early cycles is negligible; in fact, the capacities at cycle  temperature. To capture the electrochemical evolution of individ-
+100 increased from the initial values for 81% of cells in our dataset       ual cells during cycling, several features are calculated based on
+(Fig. 1c). Small increases in capacity after a slow cycle or rest period    the discharge voltage curve (Fig. 2a). Specifically, we consider the
+are attributed to charge stored in the region of the negative elec-         cycle-to-cycle evolution of Q(V), the discharge voltage curve as a
+trode that extends beyond the positive electrode56,57. Given the lim-       function of voltage for a given cycle. As the voltage range is identi-
+ited predictive power of these correlations based on the capacity           cal for every cycle, we consider capacity as a function of voltage, as
+
+Nature Energy | www.nature.com/natureenergy
+Articles                                                                                                         NATUre Energy
+
+Table 1 | Model metrics for the results shown in Fig. 3
+
+                                   RMSE (cycles)                                                    Mean percent error (%)
+
+                   Train  Primary test                   Secondary test  Train               Primary test              Secondary test
+                   103                                                   14.1
+`Variance' model   76     138 (138)                      196             9.8                 14.7 (13.2)               11.4
+`Discharge' model  51                                                    5.6
+`Full' model              91 (86)                        173                                 13.0 (10.1)               8.6
+
+                          118 (100)                      214                                 14.1 (7.5)                10.7
+
+Train and primary/secondary test refer to the data used to learn the model and evaluate model performance, respectively. One battery in the test set reaches 80% state-of-health rapidly and does not
+match other observed patterns. Therefore, the parenthetical primary test results correspond to the exclusion of this battery.
+
+opposed to voltage as a function of capacity, to maintain a uniform     Table 2 | Model metrics for the classification setting with a
+basis for comparing cycles. For instance, we can consider the change    cycle life threshold of 550 cycles
+in discharge voltage curves between cycles 20 and 30, denoted
+Q30-20(V)=Q30(V) ­ Q20(V), where the subscripts indicate cycle                                      Classification accuracy (%)
+number. This transformation, Q(V), is of particular interest
+because voltage curves and their derivatives are a rich data source                          Train       Primary test        Secondary test
+that is effective in degradation diagnosis50,51,53,59­64.                                    82.1
+                                                                        Variance classifier   97.4         78.6              97.5
+   The Q(V) curves for our dataset are shown in Fig. 2b using the       Full classifier
+100th and 10th cycles, that is, Q100-10(V). We discuss our selec-                                          92.7              97.5
+tion of these cycle numbers at a later point. Summary statistics, for
+example minimum, mean and variance, were then calculated for the        Train and primary/secondary test refer to the data used to learn the model and evaluate model
+Q(V) curves of each cell. Each summary statistic is a scalar quan-      performance, respectively.
+tity that captures the change in voltage curves between two cycles.
+In our data-driven approach, these summary statistics are selected      the primary test average percentage error decreases to 7.5% and
+for their predictive ability, not their physical meaning. Immediately,  the secondary test average percentage error decreases slightly
+a clear trend emerges between cycle life and a summary statistic,       to 10.7%. The error for the secondary test set is slightly higher
+specifically variance, applied to Q100-10(V) (Fig. 2c).                 for the full model when compared with the discharge model
+                                                                        (Supplementary Note 2 and Supplementary Figs. 6­7). In all cases,
+   Because of the high predictive power of features based on            the average percentage error is less than 15% and decreases to as
+Q100-10(V), we investigate three different models using (1) only the    little as 7.5% in the full model, excluding an anomalous cell. Table 1
+variance of Q100-10(V), (2) additional candidate features obtained      and Fig. 3 display the performance of the `variance', `discharge' and
+during discharge and (3) features from additional data streams such     `full' models applied to our three datasets.
+as temperature and internal resistance. In all cases, data were taken
+only from the first 100 cycles. These three models, each with pro-         We benchmark the performance of our cycle life prediction
+gressively more candidate features, were chosen to evaluate both        using early-cycle data against both prior literature and naïve mod-
+the cost­benefit of acquiring additional data streams and the lim-      els. A relevant metric is the extent of degradation that has to occur
+its of prediction accuracy. The training data (41 cells) are used to    before an accurate prediction can be made. In our work, accurate
+select the model features and set the values of the coefficients, and   prediction was achieved using voltage curves from early cycles cor-
+the primary testing data (43 cells) are used to evaluate the model      responding to a capacity increase of 0.2% (median) relative to ini-
+performance. We then evaluate the model on a secondary testing          tial values (with the first and third quartile percentiles being 0.06%
+dataset (40 cells) generated after model development. Two metrics,      and 0.34%, respectively; see Fig. 1c). We are unaware of previous
+defined in the `Machine-learning model development' section, are        early-prediction demonstrations that do not require degradation
+used to evaluate our predictive performance: root-mean-squared          in the battery capacity or specialized measurements. In fact, pub-
+error (RMSE), with units of cycles, and average percentage error.       lished models42­48 generally require data corresponding to at least
+                                                                        25% capacity degradation before making predictions at an accuracy
+Performance of early prediction models                                  comparable to that of this work. We also benchmark our model
+                                                                        performance using naïve models, for example univariate models
+We present three models to predict cycle life using increasing          and/or models that only utilize information from the capacity
+candidate feature set sizes; the candidate features are detailed in     fade curve (Supplementary Note 3, Supplementary Figs. 8­13 and
+Supplementary Table 1 and Supplementary Note 1. The first model,        Supplementary Tables 2­3). Notably, if the average cycle life of the
+denoted as the `variance' model, does not consider subset selec-        training data is used for prediction, the average percentage error
+tion and uses only the log variance of Q100-10(V) for prediction.       is approximately 30% and 36% for the primary and secondary test
+Surprisingly, using only this single feature results in a model with    sets, respectively. Using data from the first 100 cycles, the most
+approximately 15% average percentage error on the primary test          complex benchmark model using only features from the discharge
+dataset and approximately 11% average percentage error on the sec-      capacity fade curve has errors of 23% and 50% for the primary and
+ondary test dataset. We stress the error metrics of the secondary test  secondary test sets, respectively. In fact, a similar model that uses
+dataset, as these data had not been generated at the time of model      discharge capacity fade curve data from the first 300 cycles achieves
+development and are thus a rigorous test of model performance. The      comparable performance (27% and 46% for the primary and
+second, `discharge' model, considers additional information derived     secondary test data, respectively), highlighting the difficulty of
+from measurements of voltage and current during discharge in the        prediction without using voltage features.
+first 100 cycles (row blocks 1 and 2 of Supplementary Table 1).
+Of 13 features, 6 were selected. Finally, the third, `full' model con      We also consider contexts in which predictions are required at
+siders all available features (all rows blocks of Supplementary         very low cycle number but the accuracy requirements are less strin-
+Table 1). In this model, 9 out of 20 features were selected             gent, such as sorting/grading and pack design applications. As an
+(Supplementary Fig. 5). As expected, by adding additional features,     example, we develop a logistic regression model to classify cells into
+
+                                                                                                    Nature Energy | www.nature.com/natureenergy
+NATUre Energy                                                                                                                                                                                                          Articles
+
+a                      0                                              b0                                                                            c0
+
+d%Q/dV (% V-1)         ­10                                            d%Q/dV (% V-1)                       ­10                                      d%Q/dV (% V-1)                       ­10
+
+                       ­20                                                                                 ­20                                                                           ­20
+
+                       ­30                                                                                 ­30                                                                           ­30
+                                C/10                                                                                 C/10                                                                          C/10
+
+                                3.2        3.3                   3.4                                                3.2         3.3         3.4                                                   3.2         3.3      3.4
+
+                                      Voltage (V)                                                                          Voltage (V)                                                                   Voltage (V)
+
+d 1.0                                                                 e 1.0                                                                         f 1.0
+
+dV/d%Q (V %-1)         0.5                                            dV/d%Q (V %-1)                       0.5                                      dV/d%Q (V %-1)                       0.5
+
+                       0        C/10                                                                       0        C/10                                                                 0        C/10
+
+                             0             50                    100                                             0              50          100                                                0              50       100
+
+                                Percentage normalized capacity                                                      Percentage normalized capacity                                                Percentage normalized capacity
+
+g0                                                                    h0                                                                            i0
+
+dQ/dV (Ah V-1)         ­2                                                                  dQ/dV (Ah V-1)  ­2                                                            dQ/dV (Ah V-1)  ­2
+
+                       ­4                                                                                  ­4                                                                            ­4
+
+                       ­6                                                                                  ­6                                                                            ­6
+
+                                4C                                                                                  4C                                                                            4C
+
+                       ­8                                                                                  ­8                                                                            ­8                            3.5
+                       2.0            2.5      3.0               3.5                                       2.0             2.5         3.0  3.5                                          2.0             2.5      3.0
+
+                                      Voltage (V)                                                                          Voltage (V)                                                                   Voltage (V)
+
+Q101(V) - Q10(V) (Ah)j 0.2                                            Q101(V) - Q10(V) (Ah)k 0.2                                                    Q101(V) - Q10(V) (Ah)l 0.2
+
+                                   Observed cycle life = 1,399                                          Observed cycle life = 425                                                     Observed cycle life = 282
+                                   Predicted cycle life = 1,198                                         Predicted cycle life = 404                                                    Predicted cycle life = 255
+
+                              0                                                                    0                                                                             0
+
+                       ­0.2                                                                                ­0.2                                                                          ­0.2
+
+                       ­0.4 4 C                                                                            ­0.4 4 C                                                                      ­0.4 4 C
+
+                       2.0            2.5      3.0               3.5                                       2.0             2.5         3.0  3.5                                          2.0             2.5      3.0  3.5
+
+                                      Voltage (V)                                                                          Voltage (V)                                                                   Voltage (V)
+
+                                                                 Cycle 1/10                                             Cycle 100/101               End of life
+
+Fig. 4 | Transformations of voltage­capacity discharge curves for three fast-charged cells that were tested with periodic slow diagnostic cycles.
+
+a­c, dQ/dV at C/10; d­f, dV/dQ at C/10; g­i, dQ/dV at 4C; j­l, Q(V) at 4C. a,d,g,j, 4C/4C; b,e,h,k, 6C/4C; c,f,i,l, 8C/4C. The solid black line is the first
+cycle (cycle 10 for fast cycling), the dotted grey line is cycle 101 or 100 (fast and slow, respectively) and the coloured thick line is the end-of-life cycle
+
+(80% state-of-health). The colour of the end-of-life cycle is consistent with the colour scale in Figs. 1 and 2. For Q(V), a thin dotted grey line is added
+every 100 cycles. The patterns observed using slow cycling are consistent with LAMdeNE and loss of lithium inventory (Supplementary Fig. 18). The features
+are smeared during fast charging. The log variance Q(V) model dataset predicts the lifetime of these cells within 15%.
+
+either a `low-lifetime' or a `high-lifetime' group, using only the first                                                        Rationalization of predictive performance
+
+five cycles for various cycle life thresholds. For the `variance clas-                                                          While models that include features from all available data streams
+sifier', we use only the Q(V) variance feature between the fourth                                                               generally have the lowest errors, our predictive ability primary
+and fifth cycles, var(Q5-4(V)), and attain a test classification accu-                                                          comes from features based on transformations of the voltage curves,
+racy of 88.8%. For the `full classifier', we use regularized logistic                                                           as evidenced by the performance of the single-feature `variance'
+                                                                                                                                model. This feature is consistently selected in both models with fea-
+regression with 18 candidate features to achieve a test classification                                                          ture selection (`discharge' and `full'). Other transformations of the
+                                                                                                                                voltage curves can also be used to predict cycle life; for example, the
+accuracy of 95.1%. These results are summarized in Table 2 and                                                                  full model selects both the minimum and variance of Q100-10(V).
+                                                                                                                                In particular, the physical meaning of the variance feature is associ-
+detailed in Supplementary Note 4, Supplementary Fig. 14­17 and                                                                  ated with the dependence of the discharged energy dissipation on
+                                                                                                                                voltage, which is indicated by the grey region between the voltage
+Supplementary Tables 4­6. This approach illustrates the predictive
+ability of Q(V) even if data from the only first few cycles are used,
+and, more broadly, showcases our flexibility to tailor data-driven
+
+models to various use cases.
+
+Nature Energy | www.nature.com/natureenergy
+Articles                                                                                                                  NATUre Energy
+
+a                                     400                                                                                 in conjunction with loss of lithium inventory, is widely observed
+                                                                                                                          in commercial LFP/graphite cells operated under similar condi-
+   10                                 350                                                                                 tions32,50­54. We note that the graphitic negative electrode is common
+                                                                                                                          to nearly all commercial lithium-ion batteries in use today.
+   20                                 300                                                                  RMSE (cycles)
+                                                                                                                             To investigate the contribution of LAMdeNE, we perform addi-
+j                                                                                                     250                 tional experiments for cells cycled with varied charging rates (4C,
+   30                                                                                                                     6C and 8C) and a constant discharge rate (4C), incorporating slow
+                                      200                                                                                 cycling at the 1st, 100th and end-of-life cycles. Derivatives of diag-
+                                                                                                                          nostic discharge curves at C/10 (Fig. 4, rows 1 and 2) are compared
+   40                                 150                                                                                 with these, and Q(V), at 4C at the 10th, 101st and end-of-life
+                                                                                                                          cycles (rows 3 and 4). The shifts in dQ/dV and dV/dQ observed in
+   50                                 100                                                                                 diagnostic cycling correspond to a shift of the potentials at which
+                                                                                                                          lithium is stored in graphite during charging and are consistent
+   60  20  40  60     80 100 120 140  50                                                                                  with LAMdeNE and loss of lithium inventory operating concurrently
+                                                                                                                          (Supplementary Fig. 18)50,51,61. The magnitude of these shifts from
+                   i                                                                                                      the 1st to 100th cycle increases with charging rate (Supplementary
+                                                                                                                          Note 5 and Supplementary Fig. 19). These observations rationalize
+b                                     400                                                                                 why models using features based on discharge curves have lower
+                                                                                                                          errors than models using only features based on capacity fade
+   10                                 350                                                                                 curves, since LAMdeNE does not manifest in capacity fade in early
+                                                                                                                          cycles. We note that LAMdeNE alters a fraction of, rather than the
+   20                                 300                                                                  RMSE (cycles)  entire, discharge voltage curve, consistent with the strong correla-
+                                                                                                                          tion between the variance of Q(V) and cycle life (Fig. 2c). In sum-
+j                                                                                                     250                 mary, we attribute the success of our predictive models to features
+   30                                                                                                                     that capture changes in both the capacity fade curves and voltage
+                                      200                                                                                 curves, since degradation may be silent in discharge capacity but
+                                                                                                                          present in voltage curves.
+   40                                 150
+                                                                                                                             As noted above, differential methods such as dQ/dV and dV/dQ
+   50                                 100                                                                                 are used extensively to pinpoint degradation mechanisms50,51,53,59­61.
+                                                                                                                          These approaches require low-rate diagnostic cycles, as higher
+   60  20  40  60     80 100 120 140  50                                                                                  rates smear out features due to heterogeneous de(intercalation)32,
+                                                                                                                          as seen by comparing row 1 with row 3 in Fig. 4. However, these
+                   i                                                                                                      diagnostic cycles often induce a temporary capacity recovery,
+                                                                                                                          commonly observed in cells when the geometric area of the nega-
+Fig. 5 | Prediction error as a function of cycle indices. RMSE error, in units                                            tive electrode exceeds that of the positive electrode56,57. As such,
+of cycles, is presented for training (a) and testing (b) datasets using only                                              they interrupt the trajectory of capacity fade (Supplementary
+the log variance of Qi-j(V), where indices i and j are varied. These errors                                               Fig. 20). Therefore, by applying summary statistics to Q(V) col-
+are averaged over 20 random partitions of the data into equal training and                                                lected at high rate, we simultaneously avoid both low-rate diagnostic
+testing datasets. The errors are relatively flat after cycle 80. The increases                                            cycles and numerical differentiation, which decreases the signal-
+in error around cycles j=55 and i=70 are due to temperature fluctuations                                                  to-noise ratio65. However, these high-rate discharge voltage curves
+of the environmental chamber (see Supplementary Fig. 25).                                                                 can additionally reflect both kinetic degradation modes and het-
+                                                                                                                          erogeneities that are not observed in dQ/dV and dV/dQ curves at
+curves in Fig. 2a. The integral of this region is the total change in                                                     C/10. We consider the influence of kinetic degradation modes in
+energy dissipation between cycles under galvanostatic conditions                                                          Supplementary Note 6, Supplementary Fig. 21 and Supplementary
+and is linearly related to the mean of Q(V). Zero variance would                                                          Tables 7­8); briefly, we estimate that low-rate modes such as
+indicate energy dissipations that are independent of voltage. Thus,                                                       LAMdeNE primarily contribute (50­80%) to Q(V). We also men-
+the variance of Q(V) reflects the extent of non-uniformity in the                                                         tion that low-rate degradation modes such as LAMdeNE influence
+energy dissipation with voltage, due to either open-circuit or kinetic                                                    the kinetics at high rate, in this case by increasing the local current
+processes, a point that we return to later.                                                                               density of the active regions.
+
+   We observe that features derived from early-cycle discharge volt-                                                         Finally, additional analysis was performed to understand the
+age curves have excellent predictive performance, even before the                                                         impact of the cycle indices chosen for Q(V) features in the regres-
+onset of capacity fade. We rationalize this observation by investigat-                                                    sion setting. Univariate linear models using only the variance of
+ing degradation modes that do not immediately result in capacity                                                          Qi(V) ­ Qj(V) for the training and primary testing datasets were
+fade yet still manifest in the discharge voltage curve and are also                                                       investigated and are displayed in Fig. 5. We find that the model is
+linked to rapid capacity fade near the end of life.                                                                       relatively insensitive to the indexing scheme for i>60, suggesting
+                                                                                                                          that quantitative cycle life prediction using even earlier cycles is
+   While our data-driven approach has successfully revealed pre-                                                          possible. This trend is further validated by the model coefficients
+dictive features from early-cycle discharge curves, identification                                                        shown in Supplementary Fig. 22. We hypothesize that the insensi-
+of degradation modes using only high-rate data is challenging                                                             tivity of the model to the indexing scheme implies linear degrada-
+because of the convolution of kinetics with open-circuit behaviour.                                                       tion with respect to cycle number, which is often assumed for LAM
+Thus, we turn to established methods for mechanism identification                                                         modes50,61. Relative indexing schemes based on cycles in which a
+using low-rate cycling data. Dubarry et al.61 mapped degradation                                                          specified capacity fade was achieved were also investigated and did
+modes in LFP/graphite cells to their resultant shift in dQ/dV and                                                         not result in improved predictions. Furthermore, because the dis-
+dV/dQ derivatives for diagnostic cycles at C/20. One degradation                                                          charge capacity initially increases, specified decreases in capacity
+mode--loss of active material of the delithiated negative electrode                                                       require more cycles to develop than fixed indexing (Supplementary
+(LAMdeNE)--results in a shift in discharge voltage with no change                                                         Note 7 and Supplementary Figs. 23­25).
+in capacity. This behaviour is observed when the negative elec-
+trode capacity is larger than that of the positive electrode, as is the
+case in these LFP/graphite cells. Thus, a loss of delithiated nega-
+tive electrode material changes the potentials at which lithium ions
+are stored without changing the overall capacity50,61. As proposed
+by Anséan et al.50, at high rates of LAMdeNE, the negative electrode
+capacity will eventually fall below the remaining lithium-ion inven-
+tory. At this point, the negative electrode will not have enough sites
+to accommodate lithium ions during charging, inducing lithium
+plating50. Since plating is an additional source of irreversibility, the
+capacity loss accelerates. Thus, in early cycles, LAMdeNE shifts the
+voltage curve without affecting the capacity fade curve and induces
+rapid capacity fade at high cycle number. This degradation mode,
+
+                                                                                                                          Nature Energy | www.nature.com/natureenergy
+NATUre Energy                                                                                                                                                   Articles
+
+Conclusions                                                                               was proposed, where i is the predicted number of cycles for battery i, xi is a
+                                                                                          p-dimensional feature vector for battery i and w is a p-dimensional model
+Data-driven modelling is a promising route for diagnostics and                            coefficient vector. When applying regularization techniques, a penalty term is
+prognostics of lithium-ion batteries and enables emerging applica-                        added to the least-squares optimization formulation to avoid overfitting. Two
+tions in their development, manufacturing and optimization. We                            regularization techniques, the lasso66 and the elastic net58, simultaneously perform
+develop cycle life prediction models using early-cycle discharge data                     model fitting and selection by finding sparse coefficient vectors. The formulation is
+yet to exhibit capacity degradation, generated from commercial
+LFP/graphite batteries cycled under fast-charging conditions. In the                                                w  =  argminw   y-Xw            2  +  P(w)                   (2)
+regression setting, we obtain a test error of 9.1% using only the first                                                                             2
+100 cycles; in the classification setting, we obtain a test error of 4.9%
+using data from the first 5 cycles. This level of accuracy is achieved                    where the argmin function represents finding the value of w that minimizes the
+by extracting features from high-rate discharge voltage curves as
+opposed to only from the capacity fade curves, and without using                          argument, y is the n-dimensional vector of observed battery lifetimes, X is the n×p
+data from slow diagnostic cycles or assuming prior knowledge of                           matrix of features, and  is a non-negative scalar. The first term
+cell chemistry and degradation mechanisms. The success of the
+model is rationalized by demonstrating consistency with degrada-                                                                 y-Xw         2                                  (3)
+tion modes that do not manifest in capacity fade during early cycles                                                                          2
+but impact the voltage curves. In general, our approach can comple-
+ment approaches based on physical and semi-empirical models and                           is found in ordinary least squares. The formulation of the second term, P(w),
+on specialized diagnostics. Broadly speaking, this work highlights                        depends on the regularization technique being employed. For the lasso,
+the promise of combining data generation and data-driven mod-
+elling for understanding and developing complex systems such as                                                           P (w) = w1,                                            (4)
+lithium-ion batteries.
+                                                                                          and for the elastic net,
+
+                                                                                                                    P (w) = 1-      w         2  +     w 1                       (5)
+                                                                                                                                2             2
+
+Methods                                                                                   where  is a scalar between 0 and 1. Both formulations will result in sparse models.
+                                                                                          The elastic net has been shown to perform better when p » n58, as is often the case in
+Cell cycling and data generation. 124 commercial high-power LFP/graphite                  feature engineering applications, but requires fitting an additional hyperparameter
+A123 APR18650M1A cells were used in this work. The cells have a nominal                   ( and , as opposed to only  in the lasso). The elastic net is also preferred when
+capacity of 1.1 Ah and a nominal voltage of 3.3V. The manufacturer's                      there are high correlations between the features, as is the case in this application. To
+recommended fast-charging protocol is 3.6C constant current­constant voltage              choose the values of the hyperparameters, we apply four-fold cross-validation and
+(CC-CV). The rate capability of these cells during charge and discharge is shown          Monte Carlo sampling.
+in Supplementary Fig. 27.
+                                                                                              The model development dataset is divided into two equal sections, referred
+    All cells were tested in cylindrical fixtures with four-point contacts on             to as the training and primary testing sets. These two sections are chosen such
+a 48-channel Arbin LBT battery testing cycler. The tests were performed                   that each spans the range of cycle lives (see Supplementary Table 9). The training
+at a constant temperature of 30°C in an environmental chamber (Amerex                     data are used to choose the hyper-parameters  and  and determine the values of
+Instruments). Cell can temperatures were recorded by stripping a small section            the coefficients, w. The training data are further subdivided into calibration and
+of the plastic insulation and contacting a type T thermocouple to the bare metal          validation sets for cross-validation. The primary test set is then used as a measure of
+casing using thermal epoxy (OMEGATHERM 201) and Kapton tape.                              generalizability. The secondary test dataset was generated after model development.
+
+    The cells were cycled with various candidate fast-charging policies                       RMSE and average percentage error are chosen to evaluate model performance.
+(Supplementary Table 9) but identically discharged. Cells were charged from               RMSE is defined as
+0% to 80% state-of-charge (SOC) with one of 72 different one-step and two-step
+charging policies. Each step is a single C rate applied over a given SOC range;                                        RMSE =        1    n      (yi-i) 2                        (6)
+for example, a two-step policy could consist of a 6C charging step from 0% to                                                            i=1
+50% SOC, followed by a 4C step from 50% to 80% SOC. The 72 charging polices                                                         n
+represent different combinations of current steps within the 0% to 80% SOC range.
+The charging time from 0% to 80% SOC ranged from 9 to 13.3min. An internal                where yi is the observed cycle life, i is the predicted cycle life and n is the total
+resistance measurement was obtained during charging at 80% SOC by averaging 10            number of samples. The average percentage error is defined as
+pulses of ±3.6C with a pulse width of 30 or 33ms, where 1C is 1.1A, or the current
+required to fully (dis)charge the nominal capacity (1.1 Ah) in 1h. All cells then                                      %  err =  1   n   yi-i          × 100                     (7)
+charged from 80% to 100% SOC with a uniform 1C CC-CV charging step to 3.6V                                                       n          yi
+and a current cutoff of C/50. All cells were subsequently discharged with a CC-CV                                                   
+discharge at 4C to 2.0V with a current cutoff of C/50. The voltage cutoffs used in
+this work follow those recommended by the manufacturer.                                                                             i=1
+
+    Our dataset is described in Supplementary Table 9. In total, our dataset              where all variables are defined as above.
+consists of three `batches', or cells run in parallel. Each batch has slightly different      To summarize our procedure, we first divide the data into training and test sets.
+testing conditions. For the `2017-05-12' batch, the rests after reaching 80% SOC
+during charging and after discharging were 1min and 1s, respectively. For the             We then train the model on the training set using the elastic net, yielding a linear
+`2017-06-30' batch, the rests after reaching 80% SOC during charging and after            model with downselected features and coefficients. Finally, we apply the model to
+discharging were both 5min. For the `2018-04-12' batch, 5s rests were placed after        the primary and secondary test sets.
+reaching 80% SOC during charging, after the internal resistance test and before
+and after discharging.                                                                        The data processing and elastic net prediction is performed in MATLAB,
+                                                                                          while the classification is performed in Python using the NumPy, pandas and
+    A histogram of cycle life for the three datasets is presented in Supplementary        sklearn packages.
+Fig. 28. We note that four cells had unexpectedly high measurement noise and
+were excluded from analysis.                                                              Data availability
+
+    To standardize the voltage­capacity data across cells and cycles, all 4C              The datasets used in this study are available at https://data.matr.io/1.
+discharge curves were fitted to a spline function and linearly interpolated
+(Supplementary Fig. 29). Capacity was fitted as a function of voltage and evaluated       Code availability
+at 1,000 linearly spaced voltage points from 3.5V to 2.0V. These uniformly sized
+vectors enabled straightforward data manipulations such as subtraction.                   Code for data processing is available at https://github.com/rdbraatz/data-driven-
+                                                                                          prediction-of-battery-cycle-life-before-capacity-degradation. Code for the
+                                                                                          modelling work is available from the corresponding authors upon request.
+
+                                                                                          Received: 2 October 2018; Accepted: 18 February 2019;
+                                                                                          Published: xx xx xxxx
+
+Machine-learning model development. This study involved both model fitting                References
+(setting the coefficient values) and model selection (setting the model structure).
+To perform these tasks simultaneously, a regularization technique was employed.           1. Dunn, B., Kamath, H. & Tarascon, J.-M. Electrical energy storage for the grid:
+A linear model of the form                                                                    a battery of choices. Science 334, 928­935 (2011).
+
+               i = w Txi                     (1)                                          2. Nykvist, B. & Nilsson, M. Rapidly falling costs of battery packs for electric
+                                                                                              vehicles. Nat. Clim. Change 5, 329­332 (2015).
+
+Nature Energy | www.nature.com/natureenergy
+Articles                                                                                 NATUre Energy
+
+3. Schmuch, R., Wagner, R., Hörpel, G., Placke, T. & Winter, M. Performance              33. Raccuglia, P. et al. Machine-learning-assisted materials discovery using failed
+    and cost of materials for lithium-based rechargeable automotive batteries.               experiments. Nature 573, 73­77 (2016).
+    Nat. Energy 3, 267­278 (2018).
+                                                                                         34. Ward, L., Agrawal, A., Choudhary, A. & Wolverton, C. A general-purpose
+4. Peterson, S. B., Apt, J. & Whitacre, J. F. Lithium-ion battery cell degradation           machine learning framework for predicting properties of inorganic materials.
+    resulting from realistic vehicle and vehicle-to-grid utilization. J. Power Sources       NPJ Comput. Mater. 2, 16028 (2016).
+    195, 2385­2392 (2010).
+                                                                                         35. Segler, M. H. S., Preuss, M. & Waller, M. P. Planning chemical syntheses with
+5. Ramadesigan, V. et al. Modeling and simulation of lithium-ion batteries from              deep neural networks and symbolic AI. Nature 555, 604­610 (2018).
+    a systems engineering perspective. J. Electrochem. Soc. 159, R31­R45 (2012).
+                                                                                         36. Jain, A. et al. Commentary: The Materials Project: a materials genome
+6. Waag, W., Fleischer, C. & Sauer, D. U. Critical review of the methods for                 approach to accelerating materials innovation. APL Mater. 1, 011002 (2013).
+    monitoring of lithium-ion batteries in electric and hybrid vehicles. J. Power
+    Sources 258, 321­339 (2014).                                                         37. Aykol, M. et al. High-throughput computational design of cathode coatings
+                                                                                             for Li-ion batteries. Nat. Commun. 7, 13779 (2016).
+7. Paul, S., Diegelmann, C., Kabza, H. & Tillmetz, W. Analysis of ageing
+    inhomogeneities in lithium-ion battery systems. J. Power Sources 239,                38. Sendek, A. D. et al. Holistic computational structure screening of more than
+    642­650 (2013).                                                                          12000 candidates for solid lithium-ion conductor materials. Energy Environ.
+                                                                                             Sci. 10, 306­320 (2017).
+8. Schuster, S. F. et al. Nonlinear aging characteristics of lithium-ion cells under
+    different operational conditions. J. Energy Storage 1, 44­53 (2015).                 39. Ulissi, Z. W. et al. Machine-learning methods enable exhaustive searches
+                                                                                             for active bimetallic facets and reveal active site motifs for CO2 reduction.
+9. Schuster, S. F., Brand, M. J., Berg, P., Gleissenberger, M. & Jossen, A.                  ACS Catal. 7, 6600­6608 (2017).
+    Lithium-ion cell-to-cell variation during battery electric vehicle operation.
+    J. Power Sources 297, 242­251 (2015).                                                40. Si, X.-S., Wang, W., Hu, C.-H. & Zhou, D.-H. Remaining useful life
+                                                                                             estimation--a review on the statistical data driven approaches. Eur. J. Oper.
+10. Harris, S. J., Harris, D. J. & Li, C. Failure statistics for commercial lithium ion      Res. 213, 1­14 (2011).
+    batteries: a study of 24 pouch cells. J. Power Sources 342, 589­597 (2017).
+                                                                                         41. Wu, L., Fu, X. & Guan, Y. Review of the remaining useful life prognostics of
+11. Baumhöfer, T., Brühl, M., Rothgang, S. & Sauer, D. U. Production caused                  vehicle lithium-ion batteries using data-driven methodologies. Appl. Sci. 6,
+    variation in capacity aging trend and correlation to initial cell performance.           166 (2016).
+    J. Power Sources 247, 332­338 (2014).
+                                                                                         42. Saha, B., Goebel, K. & Christophersen, J. Comparison of prognostic
+12. Bloom, I. et al. An accelerated calendar and cycle life study of Li-ion cells.           algorithms for estimating remaining useful life of batteries. Trans. Inst. Meas.
+    J. Power Sources 101, 238­247 (2001).                                                    Control 31, 293­308 (2009).
+
+13. Broussely, M. et al. Aging mechanism in Li ion cells and calendar life               43. Nuhic, A., Terzimehic, T., Soczka-Guth, T., Buchholz, M. & Dietmayer, K.
+    predictions. J. Power Sources 97­98, 13­21 (2001).                                       Health diagnosis and remaining useful life prognostics of lithium-ion
+                                                                                             batteries using data-driven methods. J. Power Sources 239, 680­688 (2013).
+14. Christensen, J. & Newman, J. A mathematical model for the lithium-ion
+    negative electrode solid electrolyte interphase. J. Electrochem. Soc. 151,           44. Hu, C., Jain, G., Tamirisa, P. & Gorka, T. Method for estimating the capacity
+    A1977 (2004).                                                                            and predicting remaining useful life of lithium-ion battery. Appl. Energy 126,
+                                                                                             182­189 (2014).
+15. Pinson, M. B. & Bazant, M. Z. Theory of SEI formation in rechargeable
+    batteries: capacity fade, accelerated aging and lifetime prediction.                 45. Miao, Q., Xie, L., Cui, H., Liang, W. & Pecht, M. Remaining useful life
+    J. Electrochem. Soc. 160, A243­A250 (2012).                                              prediction of lithium-ion battery with unscented particle filter technique.
+                                                                                             Microelectron. Reliab. 53, 805­810 (2013).
+16. Arora, P. Mathematical modeling of the lithium deposition overcharge
+    reaction in lithium-ion batteries using carbon-based negative electrodes.            46. Hu, X., . & Jiang, J. & Cao, D. & Egardt, B. Battery health prognosis for
+    J. Electrochem. Soc. 146, 3543 (1999).                                                   electric vehicles using sample entropy and sparse Bayesian predictive
+                                                                                             modeling. IEEE Trans. Ind. Electron. 63, 2645­2656 (2016).
+17. Yang, X.-G., Leng, Y., Zhang, G., Ge, S. & Wang, C.-Y. Modeling of lithium
+    plating induced aging of lithium-ion batteries: transition from linear to            47. Zhang, Y., . & Xiong, R. & He, H. & Pecht, M. Lithium-ion battery remaining
+    nonlinear aging. J. Power Sources 360, 28­40 (2017).                                     useful life prediction with Box­Cox transformation and Monte Carlo
+                                                                                             simulation. IEEE Trans. Ind. Electron. 66, 1585­1597 (2019).
+18. Christensen, J. & Newman, J. Cyclable lithium and capacity loss in Li-ion
+    cells. J. Electrochem. Soc. 152, A818­A829 (2005).                                   48. Zhang, Y., & Xiong, R. & He, H. & Pecht, M. Long short-term memory
+                                                                                             recurrent neural network for remaining useful life prediction of lithium-ion
+19. Zhang, Q. & White, R. E. Capacity fade analysis of a lithium ion cell.                   batteries. IEEE Trans. Veh. Technol. 67, 5695­5705 (2018).
+    J. Power Sources 179, 793­798 (2008).
+                                                                                         49. Saha, B. & Goebel, K. Battery data set. NASA Ames Progn. Data Repos. (2007).
+20. Wright, R. B. et al. Power fade and capacity fade resulting from cycle-life          50. Anseán, D. et al. Fast charging technique for high power LiFePO4
+    testing of advanced technology development program lithium-ion batteries.
+    J. Power Sources 119­121, 865­869 (2003).                                                batteries: a mechanistic analysis of aging. J. Power Sources 321,
+                                                                                             201­209 (2016).
+21. Ramadesigan, V. et al. Parameter estimation and capacity fade analysis of            51. Anseán, D. et al. Operando lithium plating quantification and early detection
+    lithium-ion batteries using reformulated models. J. Electrochem. Soc. 158,               of a commercial LiFePO4 cell cycles under dynamic driving schedule.
+    A1048­A1054 (2011).                                                                      J. Power Sources 356, 36­46 (2017).
+                                                                                         52. Liu, P. et al. Aging mechanisms of LiFePO4 batteries deduced by
+22. Cordoba-Arenas, A., Onori, S., Guezennec, Y. & Rizzoni, G. Capacity and                  electrochemical and structural analyses. J. Electrochem. Soc. 157,
+    power fade cycle-life model for plug-in hybrid electric vehicle lithium-ion              A499­A507 (2010).
+    battery cells containing blended spinel and layered-oxide positive electrodes.       53. Safari, M. & Delacourt, C. Aging of a commercial graphite/LiFePO4 cell.
+    J. Power Sources 278, 473­483 (2015).                                                    J. Electrochem. Soc. 158, A1123­A1135 (2011).
+                                                                                         54. Sarasketa-Zabala, E. et al. Understanding lithium inventory loss and sudden
+23. Burns, J. C. et al. Evaluation of effects of additives in wound Li-ion cells             performance fade in cylindrical cells during cycling with deep-discharge
+    through high precision coulometry. J. Electrochem. Soc. 158, A255­A261 (2011).           steps. J. Phys. Chem. C 119, 896­906 (2015).
+                                                                                         55. Ahmed, S. et al. Enabling fast charging--a battery technology gap assessment.
+24. Burns, J. C. et al. Predicting and extending the lifetime of Li-ion batteries.           J. Power Sources 367, 250­262 (2017).
+    J. Electrochem. Soc. 160, A1451­A1456 (2013).                                        56. Gyenes, B., Stevens, D. A., Chevrier, V. L. & Dahn, J. R. Understanding
+                                                                                             anomalous behavior in Coulombic efficiency measurements on Li-ion
+25. Chen, C. H., Liu, J. & Amine, K. Symmetric cell approach and impedance                   batteries. J. Electrochem. Soc. 162, A278­A283 (2015).
+    spectroscopy of high power lithium-ion batteries. J. Power Sources 96,               57. Lewerenz, M. et al. Systematic aging of commercial LiFePO4|graphite
+    321­328 (2001).                                                                          cylindrical cells including a theory explaining rise of capacity during aging.
+                                                                                             J. Power Sources 345, 254­263 (2017).
+26. Tröltzsch, U., Kanoun, O. & Tränkler, H.-R. Characterizing aging effects of          58. Zou, H. & Hastie, T. Regularization and variable selection via the elastic net.
+    lithium-ion batteries by impedance spectroscopy. Electrochim. Acta 51,                   J. R. Stat. Soc. B 67, 301­320 (2005).
+    1664­1672 (2006).                                                                    59. Bloom, I. et al. Differential voltage analyses of high-power, lithium-ion cells:
+                                                                                             1. Technique and application. J. Power Sources 139, 295­303 (2005).
+27. Love, C. T., Virji, M. B. V., Rocheleau, R. E. & Swider-Lyons, K. E.                 60. Smith, A. J., Burns, J. C. & Dahn, J. R. High-precision differential capacity
+    State-of-health monitoring of 18650 4S packs with a single-point impedance               analysis of LiMn2O4/graphite cells. Electrochem. Solid-State Lett. 14,
+    diagnostic. J. Power Sources 266, 512­519 (2014).                                        A39­A41 (2011).
+                                                                                         61. Dubarry, M., Truchot, C. & Liaw, B. Y. Synthesize battery degradation
+28. Waldmann, T. et al. A mechanical aging mechanism in lithium-ion batteries.               modes via a diagnostic and prognostic model. J. Power Sources 219,
+    J. Electrochem. Soc. 161, A1742­A1747 (2014).                                            204­216 (2012).
+                                                                                         62. Berecibar, M. et al. Online state of health estimation on NMC cells based on
+29. Waldmann, T. et al. Influence of cell design on temperatures and temperature             predictive analytics. J. Power Sources 320, 239­250 (2016).
+    gradients in lithium-ion cells: an in operando study. J. Electrochem. Soc. 162,
+    A921­A927 (2015).
+
+30. Bach, T. C. et al. Nonlinear aging of cylindrical lithium-ion cells linked to
+    heterogeneous compression. J. Energy Storage 5, 212­223 (2016).
+
+31. Harris, S. J. & Lu, P. Effects of inhomogeneities--nanoscale to mesoscale--on
+    the durability of Li-ion batteries. J. Phys. Chem. C 117, 6481­6492 (2013).
+
+32. Lewerenz, M., Marongiu, A., Warnecke, A. & Sauer, D. U. Differential voltage
+    analysis as a tool for analyzing inhomogeneous aging: a case study for
+    LiFePO4|graphite cylindrical cells. J. Power Sources 368, 57­67 (2017).
+
+                                                                                         Nature Energy | www.nature.com/natureenergy
+NATUre Energy                                                                             Articles
+
+63. Berecibar, M., Garmendia, M., Gandiaga, I., Crego, J. & Villarreal, I. State of       Author contributions
+    health estimation algorithm of LiFePO4 battery packs based on differential
+    voltage curves for battery management system application. Energy 103,                 P.M.A., N.J., N.P., M.H.C. and W.C.C. conceived of and conducted the experiments.
+    784­796 (2016).                                                                       K.A.S., Z.Y. and B.J. performed the modelling. M.A., Z.Y. and P.K.H. performed data
+                                                                                          management. P.M.A., K.A.S., N.J., B.J., D.F., M.Z.B., S.J.H., W.C.C. and R.D.B. interpreted
+64. Birkl, C. R., Roberts, M. R., McTurk, E., Bruce, P. G. & Howey, D. A. Degradation     the results. All authors edited and reviewed the manuscript. W.C.C. and R.D.B.
+    diagnostics for lithium ion cells. J. Power Sources 341, 373­386 (2017).              supervised the work.
+
+65. Richardson, R. R., Birkl, C. R., Osborne, M. A. & Howey, D. A. Gaussian               Competing interests
+    process regression for in-situ capacity estimation of lithium-ion batteries.
+    IEEE Trans. Ind. Inform. 15, 127­138 (2019).                                          K.A.S., R.D.B., W.C.C., P.M.A., N.J., S.J.H. and N.P. have filed a patent related to this
+                                                                                          work: US Application No. 62/575,565, dated 16 October 2018.
+66. Tibshirani, R. Regression shrinkage and selection via the lasso. J. R. Stat. Soc.
+    B 58, 267­288 (1996).
+
+Acknowledgements                                                                          Additional information
+
+This work was supported by Toyota Research Institute through the Accelerated Materials    Supplementary information is available for this paper at https://doi.org/10.1038/
+Design and Discovery programme. P.M.A. was supported by the Thomas V. Jones               s41560-019-0356-8.
+Stanford Graduate Fellowship and the National Science Foundation Graduate Research
+Fellowship under Grant No. DGE-114747. N.P. was supported by SAIC Innovation              Reprints and permissions information is available at www.nature.com/reprints.
+Center through Stanford Energy 3.0 industry affiliates programme. S.J.H. was supported
+by the Assistant Secretary for Energy Efficiency, Vehicle Technologies Office of the US   Correspondence and requests for materials should be addressed to W.C.C. or R.D.B.
+Department of Energy under the Advanced Battery Materials Research Program. We
+thank E. Reed, S. Ermon, Y. Li, C. Bauemer, A. Grover, T. Markov, D. Deng, A. Baclig and  Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in
+H. Thaman for discussions.                                                                published maps and institutional affiliations.
+
+                                                                                          © The Author(s), under exclusive licence to Springer Nature Limited 2019
+
+Nature Energy | www.nature.com/natureenergy
+

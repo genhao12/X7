@@ -1,0 +1,1044 @@
+                                  International Journal of Hydrogen Energy 61 (2024) 803­819
+                                            Contents lists available at ScienceDirect
+
+                       International Journal of Hydrogen Energy
+
+                                    journal homepage: www.elsevier.com/locate/he
+
+Analysis of the degradation of a Proton Exchange Membrane Fuel Cell for
+propulsion of a coastal vessel
+
+G. Saponaro, M. Stefanizzi , M. Torresi, S.M. Camporeale
+
+Department of Mechanics, Mathematics and Management, Polytechnic University of Bari, Via Re David, 200, 70125 Bari, Italy
+
+ARTICLE INFO           ABSTRACT
+
+Keywords:              The International Maritime Organization (IMO) is making efforts on reducing pollutant emissions within port
+PEM Fuel cell          areas in order to achieve the ambitious goal of zero net carbon emissions by 2050. This work analyses the
+Ferry                  effects of the cell degradation on the performance and thermal management of a hydrogen fueled Proton
+Hybrid                 Exchange Membrane Fuel Cell (PEMFC) power system for ferry electric propulsion. The manuscript firstly
+Power systems          describes the proposed models, which simulate the fuel cell system and the battery. Then, the development
+Fuel cell degradation  of both an Energy Management strategy and the optimization framework are shown. In details, the zero-order
+Electric propulsion    model for the fuel cell and the methodology to estimate its time degradation are described. The accuracy
+                       of the model is established through calibration with the characteristic curves of the Ballard FCvelocityTM HD6
+                       PEMFC (150 kW) and further validated against experimental data. The model also involves energy storage and
+                       converters that connect both the fuel cell and battery to the electrical grid. The proposed online strategy for the
+                       Energy Management System considers four different operating modes and takes into account the estimated fuel
+                       cell degradation. Furthermore, the optimization framework finds the solution to achieve the best performance
+                       in terms of stack degradation over one year of ship operation, based on a real mission duty cycle. Overall, the
+                       efficiency of the fuel cell system decreases by 5%. The degradation involves an increase in fuel consumption
+                       of 14.65%. Furthermore, after the last mission, the cooling efficiency achieved through the proposed thermal
+                       management strategy is 90%.
+
+1. Introduction                                                            system (EU-MRV), passenger transport ferries belong to the category of
+                                                                           Ro-pax ships. In 2020, this category was responsible for 9.3% of CO2
+    The ferry industry plays an important part in the global transporta-   emissions from the European maritime transport (level reduced by 21%
+tion landscape, connecting islands to mainlands, even between different    concerning the emissions in 2019, due to COVID-19 impact [4]).
+Countries. It was estimated that the global ferry industry transported
+more than 4.3 billion passengers in 2019 [1]. Norway is the first              Electrification of ferries in Italy, along with Greece, Germany, and
+European nation with the largest number of ferries in operation, with      the UK, would potentially reduce emissions by up to 800,000 tons of
+180 ferries employed in 112 routes. The country has taken a world-         CO2, corresponding to a 50% decrease in the ferry-related emissions
+leading position in electric and hybrid ferries, with plans to have more   in these countries [5]. To enhance the energy transition in ferry trans-
+than 70 fully or hybrid electric vessels by 2022. Ferries play a crucial   portation, it would be effective to promote the adoption of fully electric
+role in the Norwegian road transport system, connecting communities        ships to replace obsolete vessels on every route up to one hour in
+on islands along the coast. Italy also relies heavily on ferries due to    duration (long-haul). Furthermore, the average age of European ferry
+its coastline and numerous islands. The Italian ferry fleet is the second  fleet stands at 35 years, with approximately 25% of the ships exceeding
+largest in Europe, behind Norway.                                          40 years of service, as depicted in Table 1. This involves that over half
+                                                                           of the fleet is likely to undergo replacement within this decade [5].
+    Nearly 70% of global GHG emissions occurs within 400 km of coast-      Thus, in order to face legislative constraints, the maritime industry will
+lines, hence influences the air quality of inhabited coastal areas (about  have to come up with various zero-emissions solutions for new ferries
+40% of the world population lives within 100 km of the coastline [2,3]).   and refit the existing ones.
+Then, there is the need to cut down emissions from ships, especially
+those that operate in coastal waters. According to the classification          The electrification of ferries with available technologies such as
+of the European mandatory Monitoring, Reporting and Verification           shore power, hybridization, and electric propulsion for routes of up to
+
+   Corresponding author.
+      E-mail address: michele.stefanizzi@poliba.it (M. Stefanizzi).
+
+https://doi.org/10.1016/j.ijhydene.2024.02.349
+Received 16 December 2023; Received in revised form 22 February 2024; Accepted 27 February 2024
+Available online 5 March 2024
+0360-3199/© 2024 The Author(s). Published by Elsevier Ltd on behalf of Hydrogen Energy Publications LLC. This is an open access article under the CC BY license
+(http://creativecommons.org/licenses/by/4.0/).
+G. Saponaro et al.                                                                International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Nomenclature        Direct Current                                                noise and vibration, while maintaining high levels of efficiency. Thanks
+                    Energy Management System                                      to their modular design, fuel cells can be distributed throughout the
+Abbreviations       Fuel Cell                                                     ship, minimizing electricity transport losses and improving redundancy.
+                    Genetic Algorithm                                             FC systems have good part-load performance and a higher volumetric
+                    Green House Gas                                               energy density than batteries. Thermodynamic performance by energy
+                    Hardware In the Loop                                          and exergy analysis of different fuel cell systems is reviewed in [12],
+                    Membrane Electrode Assembly                                   where the parameters influencing the thermodynamic performance of
+                    Proton Exchange Membrane                                      the system are summarized and classified.
+                    State Of Charge
+                                                                                      The proton exchange membrane fuel cell (PEMFC) has rapidly
+                                                                                  advanced in recent years, achieving high power densities and improved
+                                                                                  transient performance. In this case, the fuel cell layers consist of the
+                                                                                  Proton Exchange Membrane PEM, gas diffusion and catalyst layers.
+                                                                                  These layers are assembled together and are called the Membrane
+Table 1                                          35 years                         Electrode Assembly (MEA). A stack with many cells has MEAs posi-
+Average age of the European ferry.               64.59%                           tioned between bipolar flow field plates and only one set of end plates.
+Source: Data retrieved by [5]                    44.70%                           However, the requirement for a wet membrane, while keeping the gas
+                                                 25.46%                           diffusion pores dry, imposes an operating temperature range of 65-
+  Average age of European ferry fleet                                             85 C, posing challenges in water management. At lower temperatures,
+  Share of fleet older than 20 years                                              platinum is required to catalyze the electrochemical reaction. In addi-
+  Share of fleet older than 30 years                                              tion, the low operating temperature limits the system tolerance to fuel
+  Share of fleet older than 40 years                                              impurities, particularly carbon monoxide (CO), which is adsorbed from
+                                                                                  the catalyst surface at these temperatures, deactivating it [13].
+one hour can significantly contribute to reduce emissions in the ferry
+industry [5].                                                                         The recent scientific literature on Proton Exchange Membrane Fuel
+                                                                                  Cells (PEMFCs) presents several works with both modeling and exper-
+    Actually, batteries are not feasible to cover medium/long distances,          imental approaches.
+due to the limited storage energy density (referred to the battery mass),
+around 0.2 kWh/kg depending on type of battery. In comparison, Pro-                   Different hypotheses and modeling approaches adopted in low
+ton Exchange Membrane Fuel Cells (PEMFC) system shows an energy                   computational cost PEMFC system models were reviewed in [14].
+density of 39.7 kWh/kg (referred to the mass of the FC system) [6]. A             In [15] using analytical order reduction and approximation methods,
+more effective and economical approach would be to integrate batteries            the fluxes and source terms in conventional 1D conservation equations
+into hybrid systems, enhancing efficiency by balancing the load with              are reduced to six computing nodes at the interfaces between each
+other power sources such as fuel cells or internal combustion en-                 cell/membrane component. In the work shown in [16,17], two models
+gines [7]. Consequently, it is crucial to investigate alternative solutions       were developed in the MATLAB-Simulink environment, the first focus-
+that offer higher energy storage capacities and recharging or refueling           ing on single-cell modeling, making the model computationally feasible
+capabilities.                                                                     to be integrated into a system-level model, while the second proposes
+                                                                                  stack modeling and comparison with experimental results.
+    Fig. 1 shows the Ragone plot of the main power generation and
+energy storage devices. This chart is useful during the preliminary                   The high safety risk of hydrogen-fueled systems limits the exper-
+design of the power system, when it is fundamental to identify the most           imental study of large-scale PEMFC plants, which are rare in the
+suitable resource that guarantees the reference application demands.              literature compared to configurations between 1­10 kW. Gadducci
+Fuel cells appear suitable for those transports that do not require high          et al. [18] reported the results of an experimental assessment of a
+power density but carry out long-haul routes. This advantage is due               240 kW real-scale test rig complete with auxiliaries, made up of 8
+to the fact that energy storage is separated from the power generation            PEMFC stacks. The experiments focused on the response of the FC
+unit (i.e., the FC itself), ensuring a high density of energy, compared to        system to static, dynamic, and typical maritime operative load profiles.
+batteries. The amount of time reported in the Ragone plot represents              Furthermore, the work gives important suggestions and criteria for the
+the time within a device can be operated at its rated power is given              design, construction, and control of similar fuel cell complete systems
+as the ratio between the specific energy and the specific power. In a             for maritime applications. Yin et al. [19] described the 5 kW PEMFC
+hybrid configuration, fuel cells can provide power for medium-long                laboratory set-up and the related control system. The proposed results
+haul vehicles, allowing the battery to handle peak power demands and              concern the improvement of the performance by optimizing the air flow
+energy recovery systems, as shown in [8].                                         rate at the fuel cell inlet.
+
+    In the past few years, various alternatives to conventional batteries             The aspect of thermal management was studied by Lim et at. [20]
+have been developed for powering maritime loads. These alterna-                   who proposed a methodology for fault diagnosis of the thermal manage-
+tives encompass flywheel batteries, renewable energy systems, and                 ment system to ensure the system reliability by means of an experimen-
+hydrogen-based technologies. Hydrogen currently plays a key role for              tal campaign on the thermal management of Low-Temperature PEMFC
+the future global energy landscape because of its carbon-neutral prop-            (LT-PEMFC). Moreover, Oruganti et al. [21] showed the effect of ther-
+erties. Research in propulsion systems that utilize hydrogen combustion           mal management on the system equipment sizing through simulations.
+is driving the development of free carbon emissions solutions through             In the work carried out by Hoeflinger et al. [22], a comparison between
+the use of gas turbines and direct injection combustion engines [10].             experimental results and simulations is shown. In this study, the test rig
+However, hydrogen fuel cell technology appears to be the most suitable            was built starting from a commercially available 30 kW stack and the
+for the propulsion and hotel demands of ferry vessels [2,11].                     investigation was focused on the efficiency of the overall system for
+                                                                                  different ambient and reagents supply conditions.
+1.1. Literature review
+                                                                                      The degradation of the PEM fuel cells is a critical challenge in their
+    Fuel cells (FC) directly transform chemical energy into electrical            practical applications. Degradation can occur in various components
+energy, avoiding the intermediate conversion into thermal energy typ-             of the fuel cell, including the electrocatalysts for oxygen reduction
+ical of combustion engines. This results in reduced NOx emissions,                reaction at the cathode and hydrogen oxidation reaction at the anode.
+                                                                                  Factors such as fuel/air impurities, harmful species during catalyst
+                                                                                  preparation and use, and catalyst decomposition during operation con-
+                                                                                  tribute to degradation [23]. Environmental conditions (e.g., particu-
+                                                                                  larly temperatures below freezing) can also affect the performance and
+
+                                                                             804
+G. Saponaro et al.                                                               International Journal of Hydrogen Energy 61 (2024) 803­819
+
+                    Fig. 1. The Ragone plot of main power generation and energy storage devices.
+                    Source: Data retrieved from [9].
+
+long-term stability of PEMFCs. These causes can lead to changes in the           a PEMFC/battery hybrid passenger ship to improve the specific fuel
+catalyst layers and a reduction of its thickness, ultimately impacting the       consumption during variable cruising conditions. Specifically, the first
+fuel cell performance. In [24], the authors characterized three different        level is able to customize the power generation plan according to
+MEAs, estimating performance and degradation for stress cycles be-               different cruise and FC working conditions. The second level of the EMS
+tween 80 and -10 C. Fan et al. [25] studied the degradation of the MEA           is rule-based and it is able to distribute the energy demand. However,
+of a PEMFC under Dead-Ended Anode and Cathode (DEAC) operational                 in this study FC degradation estimation and prediction are described
+mode. During this mode of the FC, the generated water cannot be                  as future enhancements to enable more practical and accurate opera-
+fully removed and then accumulated in the channels, causing a local              tion. In [30], three retrofitting configurations of a Ro-Pax vessel with
+high voltage to accelerate carbon corrosion or Pt dissolution, thereby           hydrogen systems were considered for ferries covering the route from
+influencing the performance of PEMFCs. The diagnosis and prognosis of            Piombino to Elba Island in Italy. Partial retrofitting with the installation
+PEMFCs is discussed in [26], where the main degradation mechanisms               of hydrogen FC to power the ship auxiliary systems reduces the overall
+(i.e., chemical, electrochemical, and mechanical) and poisoning effects          energy consumption and emissions of the vessel. The study presented
+are described. Furthermore, they investigated also the key mitigation            in [30] employed an experimental case study to analyze the system
+strategies.                                                                      configuration and the operation of refueling.
+
+    In the maritime transport sector, PEMFCs can be usefully exploited           1.2. Research targets
+in ferries, as an alternative to batteries or in combination with them.
+Wu et al. [2] proposed a holistic design methodology for coastal hybrid              At present, the penetration of PEMFC systems into marine power-
+ships to optimize its plug-in hybrid fuel cell and battery propulsion            trains is limited by the cost of manufacturing fuel cells and the high
+system via two case studies. In this work power source degradation               purity of hydrogen as a fuel. In addition, companies offering PEMFC-
+and optimal energy management between multiple power sources are                 based power generation solutions to the marine market must design the
+considered in the optimization. Aarskog et al. [27] evaluated the eco-           product to meet customer requirements, which are different for each
+nomic feasibility of fuel cell powered high speed craft vs. diesel and           application. This significantly increases the cost and resources involved
+biodiesel combustion engine solutions. The analysis involves current             in each project.
+and a future scenarios, based on real-world operation profiles. FC
+solution was found to be 28% and 12% more expensive than diesel                      The aim of this work is to provide an effective tool for the pre-
+and biodiesel alternatives, respectively. A sensitivity analysis focusing        liminary design of PEMFC systems that considers the fuel cell in a
+on seven critical design parameters showed that the most significant             hybrid configuration, taking into account the interaction with all other
+factors affecting cost are the hull energy efficiency, the cost of the           equipment on board. The proposed framework, together with the sizing
+FC system itself, and the price of hydrogen. In a projected future               of the FC system, provides important insights into the sizing of the other
+scenario, between 2025 and 2030, assuming moderate advancements in               power system components.
+technology and favorable cost trends, high-speed crafts equipped with
+FC systems are expected to become cost-competitive with diesel and                   A primary distinction of this research lies in its system design
+even more affordable than biodiesel. Letafat et al. [28] investigated the        method. This methodology takes into account the interconnections
+problem of simultaneous optimal energy management and component                  between the fuel cell and other components on the vessel that affect
+sizing for a zero-emission ferry ship. A comparison of the proposed              its performance. This extensive level of integration requires a deeper
+configuration in [28] with the existing one also indicates a reduction           understanding that extends beyond the design of individual parts, em-
+of the proposed method in reducing the daily operating and investment            phasizing instead on the synergetic optimization of the whole system.
+cost by about 2%. Finally, they suggested a power scheduling, achieved           This approach provides an in-depth perspective, ensuring that any
+through dynamic programming, 2.4% cheaper than rule-based method.                proposed feasibility or design solution is not only technically valid, but
+Xie et al. [29] presented a two-level energy management system for               also practically possible in a real maritime context. The selected case
+
+                                                                            805
+G. Saponaro et al.                                                                                      International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Fig. 2. The schematic of the proposed zero-emission ferry considering the propulsion system, the power generation system and the energy storage.
+
+study concerns a Norwegian ferry, for which data on propulsion power          2.1. The fuel cell model
+requirements, hotel loads and shore power availability are available.
+                                                                                  The proposed reduced-order model simulates the FC from an elec-
+    The presented work studies a power train solution similar to that         trochemical and thermodynamic perspective. The model provides also
+investigated in [2,28], but extends the analysis by considering a long        an evaluation of the power absorbed by the oxidizer compressor and
+operating period and the corresponding FC degradation. The proposed           auxiliaries. The thermal management strategy applied for the presented
+online rule-based strategy adapts power scheduling with respect to the        PEMFC system is based on the oxidizer stoichiometric excess ratio and
+estimated cell degradation and the remaining capacity of the energy           the liquid water injected in the oxidizer. The latter is fundamental
+storage. This solution is currently applicable to actual on-board man-        to ensure the cell membrane humidity. In addition, a degradation
+agement systems, simulating the real performance of the generation            estimation model was implemented. Indeed, PEMFCs have a shorter
+system. In contrast, the optimal strategy obtained through more com-          operational lifetime than marine diesel engines due to various factors
+plex and computationally demanding methods only finds its application         that can influence the rate of degradation.
+in vessels that have adequate systems to process large amounts of
+information, such as self-driving vessels.                                        The presented PEMFC power system model was developed in the
+                                                                              Matlab-Simulink environment. The mathematical model of the single
+    The simulations assess the feasibility of the hybrid PEMFC power          cell and the potential losses (overpotentials) associated with its oper-
+system, taking into account the main issues affecting performance over        ation are described, followed by a presentation of the implemented
+the years, such as transient performance, FC degradation and thermal          control loop. The proposed model was calibrated on 150 kW Bal-
+management. The optimization framework then finds the solution to             lard FCvelocity PEM fuel cell available data retrieved from the work
+achieve the best performance in terms of FC stack degradation over            presented by Li et al. in 2015 [31].
+5000 h of ship operation.
+                                                                                  The model calibration involved a sensitivity analysis in order to
+    The first part of the work concerns the development of models of          evaluate the best values for the customizing variables, as the exchange
+PEMFC, auxiliaries and thermal management strategy. After describing          and limiting current density and the reaction transfer coefficient. More-
+the methodology used to model the battery, the EMS and the proposed           over, the test proposed by Li et al. in 2015 was replicated [31] in order
+rule-based strategy are introduced. Afterwards, the optimization frame-       to prove the validity of the PEMFC power unit model.
+work and its implementation via Matlab GA is presented. Finally, the
+results obtained for the 600 simulated missions for the configuration             Then, the method used to estimate the fuel cell degradation under
+with the lowest fuel cell degradation are presented and discussed.            different operating conditions is illustrated. The mass and energy bal-
+                                                                              ance equations are discussed. Finally, models related to the fuel cell
+2. The simulation framework                                                   stack and the power required by the auxiliaries are presented.
+
+    This chapter describes the methodology used to model the different        2.1.1. The single cell model
+components of the ferry power system. Fig. 2 shows the schematic of               A fuel cell is an electrochemical cell that converts the chemical
+the proposed zero-emission ferry. The main power source is the PEM
+fuel cell system. The battery energy storage operates to obtain a peak        energy of a fuel into electricity. Hydrogen is oxidized at the anode
+shaving of the FC power demand and ensures electrical power to the            and oxygen is reduced at the cathode. Protons are transported from
+ship grid allowing the correct dynamic operation of the PEMFC stacks.         the anode to the cathode through the electrolyte membrane, while
+The online Energy Management Systems (EMS) select the operative               electrons travel to the cathode over the external circuit. On the cathode,
+mode taking into account the vessel power demand and the battery              oxygen reacts with protons and electrons to form water and produce
+State Of Charge (SOC) and choose when and how to exploit the                  heat. Both electrodes contain a catalyst to speed up the electrochemical
+power available to the shore (cold-ironing mode). The electrical drives       processes.
+connected to the propellers and the hotel loads represent the power
+demand of the studied system.                                                     A typical PEM fuel cell operates according to the following reac-
+                                                                              tions, shown in Eqs. (1), (2) and (3):
+
+                                                                              Anode: H2(g)  2H(+) + 2-                                            (1)
+
+                                                                         806
+G. Saponaro et al.                                                                                  International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Cathode:  1  O2(g) + 2H+() + 2-   H2O(g)                   (2)                        Table 2                                         2.06 s
+          2                                                                           Results from the analysis of the Bode diagram.  3.67 s
+                                                                                                                                      0%
+Overall:  H2()  +   1  O2(g)   H2O(g) +      +             (3)                          Rise time:                                    123 @ 1.98 rads
+                    2                                                                   Settling time:                                YES
+                                                                                        Overshoot:
+   The key components of a fuel cell are the Proton Exchange Mem-                       Phase margin:
+                                                                                        Closed loop stable:
+
+brane (PEM), the gas diffusion and catalyst layers. These layers are
+
+collectively assembled to form what is known as the membrane elec-
+
+trode assembly (MEA). In a fuel cell stack, multiple MEAs are placed             It was not until later that the kinetic theory of Butler­Volmer provided
+                                                                                 a fundamental explanation for the Tafel equation [32].
+between bipolar flow field plates, with just one set of end plates. The
+                                                                                     The Ohmic losses, denoted as , are associated with the re-
+maximum energy output of a fuel cell is determined by the change in              sistance encountered in the electrolyte to electron flow through the
+                                                                                 electrically conductive components of the fuel cell, such as bipolar
+Gibbs free energy, denoted as .                                                  plates and gas diffusion layers, which includes contact resistance. These
+                                                                                 losses are quantified using Ohm's law in Eq. (9), where  represents
+    Consequently, the theoretical potential of the fuel cell at standard         the equivalent resistance of the fuel cell, and  is the effective surface
+                                                                                 area of the cell reaction, usually measured in cm2.
+conditions (25 C and 1 atm), 0 , is described in Eq. (4), where  is
+the Faraday's constant and  is the number of electrons involved in the
+
+reaction (two in this case). According to Eq. (4), 0 = 1.229 V. Eq. (5)
+is the Nernst equation that can be used in order to compute the FC
+
+potential at operating condition different from the standard ones, ,              =                                                                    (9)
+as a function of pressure and temperature.  is the entropy variation
+
+of the system,  is the operating temperature of the cell,  is the                    The limiting current density, , in a fuel cell signifies the peak
+reference temperature equal to 298.15 K,  is the universal elastic gas           current output that the cell can achieve. This threshold marks the
+                                                                                 extreme condition for mass transport, occurring when the reactant
+constant and the partial pressures (H2 , O2 , H2O) replace the reaction          concentration at the cell surface depletes to zero due to high current
+activities of hydrogen and oxygen gases [32].                                    density. Nonetheless, concentration losses can occur even at lower
+                                                                                 current densities. These variations in concentration within the catalyst
+    The potential  represents the state when the fuel cell is in open            layer impact the fuel cell efficiency by reducing the Nernst voltage and
+circuit; however, when the circuit is closed, various types of voltage           exacerbating the activation loss. Both these phenomena culminate in
+                                                                                 what is known as the fuel cell concentration overvoltage, , which
+losses occur, each resulting from different phenomena.                           is calculated using equation Eq. (10) [32,33].
+
+0  =  -0                                                   (4)
+       
+
+                                       H2  0.5  
+                                    ln 
+   =  0   -     (      -   )  +             O2             (5)
+
+                                                                                             1 ) ln (  )
+
+                                     H2O                                           =    (                                                              (10)
+                                                                                         1+
+                                                                                                     - 
+
+   As expressed before, there are three kinds of losses (or overpo-                  In order to emulate the real behavior of a fuel cell,  is often
+                                                                                 multiplied by an empirical factor in order to improve the results
+tentials) which make the cell voltage decrease during its operation
+
+(i.e. activation, ohmic and concentration overpotentials). The voltage           obtained by the cell model at high current densities [32]. For proposed
+
+of the single fuel cell  is express by Eq. (6).                                  results this gain factor has been set to one. Finally, from Eq. (6) it is
+
+ =  -  -  -                                                (6)                   possible to obtain the polarization curve that relates the voltage output
+
+    Exceeding the activation energy threshold is essential to initiate a         of the fuel cell for a given current density loading.
+reaction. The activation losses, denoted as , reflect the additional
+energy required beyond equilibrium to start the reaction, predomi-               The control action, in the developed loop, is the direct current
+nantly due to electrode kinetics. These losses occur on both the anode
+and cathode sides.                                                               produced by the fuel cell, . Therefore, the control system is performed
+
+    In a state of equilibrium, the net reaction rate is zero, meaning that       by evaluating the error of the actual cell power delivered, , with
+forward and reverse reactions proceed at a rate defined by the exchange          respect to the reference cell power demand, ,.  is obtained
+current density, 0, a condition known as dynamic equilibrium. When               from the product between the current and the potential given by the
+the cell operates at a current density  > 0, the forward reaction
+predominates, indicative of a completely irreversible reaction process.          polarization curve. The control system analysis was evaluated using the
+The relationship between  and 0 is described by the Butler­Volmer
+Equation, Eq. (7), as outlined in [27]. In this equation,  represents            Bode diagram. Table 2 reports the results obtained from the analysis of
+the transfer coefficient, which indicates how variations in electrical
+potential across the reaction interface affect the magnitudes of the             the Bode diagram.
+forward versus reverse activation barriers.
+                                                                                     The current, , and the cell voltage, , are observed during the
+                                                                                 simulation. Hence, the current output must not exceed the current
+
+                                                                                 threshold  and  must be between the values , and
+                                                                                 ,. These threshold values can be set by the user according to the
+                                                                                 datasheet.
+
+ = 0 ()                                                    (7)                   2.1.2. The degradation model
+                                                                                     The degradation of Proton Exchange Membrane (PEM) fuel cells
+    The value of  is usually between 0 and 1. For symmetric reactions,
+ = 0.5. For most electrochemical reactions,  ranges from about 0.3               poses a significant obstacle in their practical applications. This phe-
+to 0.7 [33]. During operating conditions, the fuel cell produces large           nomena can affect different parts of the fuel cell, particularly the
+amounts of net current. This corresponds to an irreversible reaction             catalysts. Various elements contribute to this degradation, including
+process where the forward reaction dominates. By solving Eq. (7), we             impurities in the fuel and air, detrimental substances formed during
+can express the activation overpotential using Eq. (8).                          the manufacturing and operation of the catalysts.
+
+   =           (  )                                        (8)                       PEMFCs typically have a shorter lifespan compared to marine diesel
+             ln                                                                  engines, primarily due to factors like power fluctuations, cycling, and
+                                                                                 varying load conditions that accelerate their degradation rate. Consid-
+                  0                                                              ering the high manufacturing costs associated with PEMFCs, under-
+                                                                                 standing and accounting for their degradation characteristics is crucial
+   Eq. (8) is recognized as the Tafel equation. Initially, this equation         during both the design and operational stages of a ship to ensure
+                                                                                 cost-effective performance [34].
+was formulated as an empirical rule based on observations in electro-
+
+chemistry, predating the development of the Butler­Volmer equation.
+
+                                                                            807
+G. Saponaro et al.                                                                                                         International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Table 3                                                                                         different operating power can optimize the cell dynamic performance.
+PEM fuel cell degradation rates (per cell) for linear degradation estimation.
+Source: Data retrieved by [2,11]                                                                Therefore, the dynamic on stack humidification will be implemented in
+
+Operating conditions               Deg. rate                                   Unit             the proposed model in order to improve the obtained results.
+
+Low power (0%­80% rated power)     10.17                                       V/h                  Then it is possible to calculate the flow rate of reactants and the
+High power (80%­100% rated power)  11.74                                       V/h
+Transient loading                  0.0441                                      V/kW             generated water as a function of the current, , by Eq. (14). H2 ,
+Start/stop                         23.91                                       V/cycle          O2 and H2O are the molar weights, whereas the parameters H2
+                                                                                                and SO2 are defined as the hydrogen and oxygen stoichiometric ratios,
+                                                                                                respectively.
+
+                                                                                                  2 ,        =     H2 H2
+                                                                                                                2
+    To accurately determine the rate of voltage degradation under dif-
+ferent operational conditions, extensive testing on individual fuel cells                         ,       =      SO2                           (14)
+is usually required. However, this process can be quite time-intensive.                                      4  O2 ,
+Fortunately, a reliable approximation of this degradation can be de-
+rived using data from the manufacturer's datasheet and insights from                              H2 O,         =     H2 O
+prior investigations [2,35,36]. The degradation of the cell, denoted as                                            2
+, for a single load cycle can be calculated using Eq. (11).
+                                                                                                
+
+                                                                                                    The proposed model can simulate PEMFC operation either using
+                                                                                                pure oxygen or air as oxidizer. Hence, the molar fraction of oxygen,
+                                                                                                O2,, could be set as shown in Eq. (15).
+
+ =  +  +  +                                                                          (11)              { 1 Oxygen as oxidizer                  (15)
+                                                                                                O2, = 0.2095
+where , ,  and  are cell voltage degradation                                                                             Air as oxidizer
+caused by low power operation (less than 80% of the rated power), high
+power operation, power transient and start/stop cycling, respectively.                              The calculation of the mass of vapor in the oxidant supplied to the
+Table 3 describes the PEMFC single-cell degradation rates used in this                          cell and in the exhaust, denoted as H2O, and H2O, respectively, is
+study. These parameters may differ across different fuel cell types,                            derived from the temperatures of the reactants at the inlet, , and the
+depending on the design and actual operating parameters.                                        operating temperature, . From these temperatures, the correspond-
+                                                                                                ing saturated vapor pressure, , is determined. These values, along
+    The degradation model is executed through a Matlab function,                                with the relative humidity of the reactants, , are utilized in Eqs. (16)
+which needs the input of a vector detailing the power output of the
+cell over time throughout the mission, the sampling time interval, and                          and (17) to ascertain the vapor mass. In these equations,  refers to
+the rated power of the individual cell.                                                         the cathode supply pressure, and  represents the pressure at the
+                                                                                                outlet.
+
+2.1.3. The stack and auxiliary model                                                            H2O,   =   SO2     H2 O     ()                 (16)
+    In order to design the whole fuel cell system, including the cooling                                  O2 ,      4     - ()                 (17)
+
+system, the proposed model not only estimates the performance of                                H2O,   =  SO2 - O2,        H2 O     () 
+the cell from an electrochemical perspective but it also manages the                                          O2 ,          4     - ()
+reactant and water flow rates for the thermal balance of the fuel cell.
+Therefore, the water mass and power balance between the inlet and                                   As previously mentioned, the model determines the required values
+outlet of the system are evaluated by Eqs. (12) and (13). In Eq. (13),
+ is the electric power output produced by the PEMFC.                                            for SO2 and H2O,, essential for maintaining the fuel cell operating
+                                                                                                state, by resolving Eqs. (12) and (13). The output of hydrogen is
+    For the comprehensive design of the entire fuel cell system, includ-
+ing the cooling system, the proposed model predicts the cell perfor-                            contingent upon the set value of H2 , and the flow rate of the outlet
+mance electrochemically. It also regulates the flow rates of reactants                          gas is computed using Eq. (18).
+and water for thermal equilibrium in the fuel cell. Consequently, the
+water mass and power balance at the system inlet and outlet are                                 ,      =  ,        -     O2                    (18)
+calculated using Eqs. (12) and (13). In Eq. (13),  represents the                                                     4
+electrical power output generated by the PEMFC.
+                                                                                                    Dry air considered components are N2, O2, Ar and CO2. The thermal
+H2O, + H2O, + H2O, = H2O,                                                            (12)       powers in Eq. (13) are obtained from the product of the flow rate by
+                                                                                                the standard enthalpy of the species.
+ 2, +   +  H2O, +  H2O, =  , +  H2O, +  (13)
+                                                                                                    The main auxiliary system powered by the PEMFC itself is the
+    The water introduced into the PEMFC, as well as that generated                              system that compresses the oxidizer to operating pressure. The power
+internally, is expelled as vapor in the exhaust, as indicated in Eq. (12).                      absorbed by the compressor, , for each powered cell is estimated
+By applying Eq. (12) and (13), it is possible to determine the necessary                        from Eq. (19).
+oxygen stoichiometric ratio and the rate of injected liquid water mass
+flow rate. This ensures that the exhaust air is fully saturated, elimi-                                                  (       )   -1
+nating the need for additional cooling or heating of the fuel cell. This                                                 
+approach allows for maintaining the optimal operating temperature                                =       1   ,                                 (19)
+while ensuring the correct amount of water at the air outlet to prevent                                                                  - 1
+either flooding due to excess liquid water or drying out from overly
+dry air. In this setup, the relative humidity of hydrogen, which would                                                                       
+otherwise humidify the membrane from the anode channels, is disre-
+garded. However, such a fuel cell configuration results in a remarkably                                                                   
+straightforward system, as depicted in Fig. 3, which operates without
+the need for an external water supply for humidification or cooling                                 Where  is the upstream pressure,  and  are respectively the
+system.                                                                                         oxidizer specific heat and specific heat ratio.  is the air compressor ef-
+                                                                                                ficiency, derived from [38], and  is the compressor motor efficiency.
+    The presented work does not consider the dynamic on stack humid-                            The  and  values, extracted from the technical literature, vary
+ification. Nevertheless, as described in [37] the humidity regulation at                        respect to the oxidizer flow rate from zero to the maximum deliverable
+
+                                                                                                flow rate. The other auxiliary losses, , are estimated as a percentage
+                                                                                                of the single-cell gross electrical power produced, , taking into
+                                                                                                account the fuel cell DC­DC converter efficiency reported in Table 4
+
+                                                                                                extracted from [2].
+
+                                                                                                  The stack model introduced requires two key inputs: the number of
+
+                                                                                                cells in a single stack, denoted as , and the total number of stacks,
+                                                                                                , that are linked to the DC bus. In the results presented, each stack
+                                                                                                is connected directly to the grid. However, the parameter  allows for
+                                                                                                the simulation of connecting multiple stacks in series.
+
+                                                                                           808
+G. Saponaro et al.                                                                                      International Journal of Hydrogen Energy 61 (2024) 803­819
+
+                                               Fig. 3. PEM Fuel Cell proposed system block diagram.
+
+      Table 4                                                                    Table 5
+      PEM fuel cell DC­DC converter efficiency as function                       PEMFC Ballard FCvelocityTM HD6 operating parameters from technical literature and
+      of gross power delivered.                                                  customizing variables results for calibration on experimental dataset.
+
+                    Power  Converter                                             Operating parameters
+                    [% ]   Efficiency [%]
+                                                                                 Cell active surface:            500        cm2
+                    10     91.9
+                    20     94.8                                                  Number of cells:                762
+                    30     96.1                                                  Operating temperature: 
+                    40     96.3                                                  Oxidizer                        330        K
+                    50     96.3
+                    60     96.5                                                  Anode supply pressure:          Dry Air
+                    70     96.1                                                  Cathode supply pressure: 
+                    80     96.1                                                  Stack max current:              2.24       bar
+                    90     95.8                                                  Voltage operating range
+                    100    95.4                                                                                  2.06       bar
+
+                                                                                                                 300        A
+
+                                                                                                                 465 ­ 730  V
+
+                                                                                 Customizing variables
+
+    The total power requirement for the PEMFC system, referred to as             Transfer coefficient:           0.515      A/cm2
+, is calculated using Eq. (20). Here,  represents the power                                                      1.9E-7     A/cm2
+needed for shipboard operations, thus defining the net power that is             Exchange current density: 0     0.8         cm2
+drawn from the power plant.                                                      Limit current density:          0.15
+                                                                                 Average internal resistance:    0.9475     s
+                                                                                 Stack dynamic time constant:  
+
+ =  + ( + )                                                   (20)               can generate a maximum power of 150 kW, and the primary operating
+                                                                                 parameters are detailed in Table 5.
+In addition, the cell power demand, ,, is obtained by Eq. (21).
+                                                                                     To verify the accuracy of the PEMFC power unit model, the test
+,  =                                                          (21)               conducted by [31] was performed. Table 5 displays the calibrated
+                                                                                 values for parameters such as , 0, , and , derived from the
+                                                                                 experimental data on the polarization curve and power output as re-
+    Finally, the overall system efficiency,   , is calculated by Eq. (22),       ported in [31]. The stack dynamic time constant,   , was determined
+considering the system net power  and the hydrogen lower                         from the analysis of available experimental data, corresponding to the
+heating value (LHV), having gaseous products as exhaust.                         duration required for the system to reach 63% of the power step applied
+                                                                                 during the test.
+   =                                                          (22)
+      2, LHVH2                                                                       Fig. 4 illustrates the outcomes of the model calibration using the
+                                                                                 experimental data of the fuel cell typical performance. The test inves-
+The thermal management system key parameters are the surplus                     tigates the full operational spectrum of the PEMFC up to a current of
+                                                                                 300 A, which is the upper limit for the operating current ().
+oxidizer supplied,   denoted as SO2 , and the  mass of water   injected,
+ H2O,. These        parameters are determined   based on the  operating              Following the calibration of the model, a validation test was con-
+                                                                                 ducted. This involved simulating the fuel cell transient performance
+current of the cell. Consequently, by applying Eq. (23), the efficiency          from 14 kW to approximately 140 kW. In detail, the test of the 150 kW
+                                                                                 PEMFC stack consisted of a load step from 20 A (14 kW -- Idle
+of the proposed thermal management approach, , is assessed over                  Condition) to 240 A (140 kW). The environmental and stack operating
+the lifespan of the PEMFC.                                                       conditions during the test correspond to the parameters used for the
+                                                                                 calibration listed in Table 5. As shown in Figs. 5 and 6, the reference
+   =    +  H2O                                                (23)               load step takes 1 s to reach 240 A starting from 20. The simulation used
+        2, -                                                                     a computing time step of one second, mirroring the approach in the ref-
+                                                                                 erenced study. The results of the proposed model have been compared
+      and  H2O represent the variations in thermal power of the                  with the experimental data in terms of current and electric potential.
+oxidizer and water at the cell inlet and outlet, respectively. These             Specifically, the model is in good agreement with the experimental
+                                                                                 voltage and current curves, provided in the reference case study.
+differences indicate the amount of heat being extracted from the sys-
+                                                                                     Fig. 5 depicts a comparison between the outcomes reported by Li
+tem. Additionally, the disparity between the hydrogen heating power,             Q. et al. [31] and those of the newly developed model, particularly in
+                                                                                 terms of power output. The figure specifically highlights the dynamic
+ 2,, and the electrical power output of the cell, , corresponds to               step of the reference power, alongside both the experimental and
+the heat that needs to be dissipated.
+
+2.1.4. Model calibration and validation
+    The PEMFC selected to power the ferry used as a case study is the
+
+FCvelocityTM-HD6 manufactured by Ballard. Each stack of this model
+
+                                                                            809
+G. Saponaro et al.                                                                                          International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Fig. 4. Comparison between Ballard FCvelocityTM HD6 experimental data and calibrated          2.2. The power system model and management
+proposed model. (a) the polarization curve, (b) the power output.
+                                                                                                  In this section, the methodology employed to model the power
+Fig. 5. Comparison between the proposed model (in blue) and experimental (red                 system components external to the fuel cell is presented. In addition,
+crosses) and numerical (yellow circles) results proposed by Li et al. [31] in terms           the implementation of the Energy Management System (EMS) and the
+of transient power output conditions. (For interpretation of the references to color in       available operating modes for the case study ferry are discussed.
+this figure legend, the reader is referred to the web version of this article.)
+                                                                                              2.2.1. The energy storage model
+simulation results from [31], and demonstrates the behavior of the                                Batteries play a crucial role in hybrid ship powertrains. They are
+model being proposed.
+                                                                                              used for energy storage and provide power to the propulsive system.
+    Fig. 6 depicts the results of the validation test in terms of stack                       The use of lithium-ion batteries is common in these powertrains, as they
+current and voltage. The proposed model follows the trend shown by                            are the primary battery technology for electric and hybrid vehicles. The
+the simulations and experiments carried out in [31], demonstrating                            implementation of Li-ion batteries in ship power systems has shown
+the validity and reliability, varying the customizing variables, of the                       potential for reducing CO2 emissions. Different types of Li-ion batter-
+developed model.                                                                              ies, such as lithium titanate and lithium iron phosphate, have been
+                                                                                              evaluated, with the latter demonstrating better performance. Over-
+                                                                                              all, batteries are an essential component in hybrid ship powertrains,
+                                                                                              providing efficient and environmentally friendly energy storage and
+                                                                                              propulsion capabilities. In the presented configuration, the battery is
+                                                                                              also essential to start-up the fuel cell and to handle the power provided
+                                                                                              from the harbor grid.
+
+                                                                                                  The  of the battery represents the Coulombic capacity (Ah) of
+                                                                                              the storage. Eq. (24) expresses the change of  in a time interval
+                                                                                              , where () is the ampere-hour capacity of the battery at the current
+                                                                                              rate .
+
+                                                                                               = 0 -                                      (24)
+                                                                                                        ()
+
+                                                                                                  For energy system applications the energy capacity (kWh) is more
+                                                                                              useful than the coulombic capacity (Ah), because it is directly associ-
+                                                                                              ated with operations. Eq. (25) defines the energy delivered from the
+                                                                                              battery, where  (, ) is the actual battery voltage at the defined
+                                                                                              current rate and SOC.
+
+                                                                                               =   (, ) ()                                (25)
+
+                                                                                                  To complete the power generation system model, an energy storage
+
+                                                                                              system was integrated. In the model, the battery is considered as an
+
+                                                                                              energy storage tank characterized by a capacity,  , and a limited
+                                                                                              charge/discharge rate, . Hence, the battery power output,  is
+                                                                                              obtained by Eq. (26).
+
+                                                                                               =                                          (26)
+
+                                                                                                  In this work, the Corvus Orca Energy is taken as default bat-
+
+                                                                                              tery, [39]. The capacity of a single battery pack is 124 kWh and
+                                                                                              the  is up to 3 (). The numerical model takes into account
+                                                                                              the efficiency of the storage related to the actual State of Charge
+
+                                                                                              (), , for a Li-ion battery [40] and the efficiency of the bi-
+                                                                                              directional DC/DC converter as function of the battery power output
+
+                                                                                              (charging/discharging),  , taken from [2]. The battery gross power
+                                                                                              output as function of the net power delivered and remaining capacity
+
+                                                                                              is express in Eq. (27).
+
+                                                                                              ,  =  ,                                     (27)
+                                                                                                     
+
+                                                                                              The Table 6 reports the values of the efficiency of the battery storage
+
+                                                                                              cell DC­DC converter for different battery power levels during charging
+
+                                                                                              or discharging operations.
+
+                                                                                              2.2.2. The energy management strategy
+                                                                                                  Integrating the Energy Management System (EMS) is crucial when
+
+                                                                                              determining the size of different components. The EMS facilitates the
+                                                                                              combination of various renewable energy sources and backup sys-
+                                                                                              tems, addressing the challenges of inconsistent energy supply and
+                                                                                              guaranteeing uninterrupted power. By optimizing component sizes and
+                                                                                              implementing an effective energy strategy, the EMS reduces the system
+                                                                                              total cost and limits adverse impacts.
+
+                                                                                         810
+G. Saponaro et al.                                                                                            International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Fig. 6. Comparison between the proposed model (in blue) and experimental (red crosses) and numerical (yellow circles) results proposed by Li et al. [31] in terms of current (a)
+and voltage (b). (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
+
+Table 6                                                                                     energy storage. Therefore, the exceeding power is positive when the
+Battery storage cell DC­DC converter efficiency as function of gross power delivered.
+                                                                                            fuel cell delivers more than the power adsorbed by the loads and it is
+Power [% ]          Converter                Converter
+                    charging efficiency [%]  discharging efficiency [%]                     used to charge the battery, when negative is drained from the battery.
+
+8.1                 88.2                     86.3                                               During the mission, if the  reaches  , this condition
+                                             91.4                                           triggers the ``Single Direction Batt''. state. This basically works as the
+17.5                92.5                     93.8
+                                             95.0                                           ``Default Navigation'', but the energy storage cannot be charged and
+27.4                94.4                     95.7
+                                             95.9                                           it is more exploited until the  returns to 0. If the battery
+37.0                95.5                     96.2                                           capacity goes lower than , ``Low  Mode'' is activated and the
+                                             96.2                                           fuel cell charges the storage, unless the FC power demand is more than
+47.1                96.2                     96.3                                           ,. The last state is the ``Cold Ironing'', that is activated in case
+                                             96.3                                           of  lower than  and the shore power  is available. In
+57.2                96.5                                                                    Cold Ironing, the PEMFC only works for the power requirement that
+
+67.8                96.6                                                                    the harbor grid cannot meet, meanwhile the storage is charging. This
+
+78.1                96.7                                                                    state remains active until shore power is lacking or the battery is full.
+
+89.2                97.1
+
+100                 97.0
+
+    The battery energy storage helps to balance out the peak power                          2.3. The optimization framework
+
+needs of the Fuel Cell (FC) and provides consistent electrical supply                           Fig. 8 shows the schematic relative to the control of the optimization
+
+to the ship grid, ensuring the PEMFC stacks function efficiently. The                       framework that has been developed. The ``Physical Object'' represents
+
+real-time Energy Management Systems (EMS) determines the operating                          the existing ferry, which is characterized by its actual power system
+
+mode based on the ship power needs and the battery state of charge.                         and operational mission data, such as performance and efficiency. The
+
+It also decides when and how to utilize power from the shore during                         ``Digital Asset'' simulates a new layout for the ferry power system using
+
+cold-ironing mode.                                                                          a PEMFC and battery, which must meet the power demands of the
+     is the total power demand, limited to the maximum PEMFC
+                                                                                            ``Physical Object''. The optimization open variables are the number of
+net power ,, passed through a low pass filter. The latter is                                PEMFC Ballard FCvelocityTM HD6,   , the number of Corvus Orca
+characterized by a customizable time constant   greater than or equal                       Energy packs,  and the low pass filter time constant,   .
+to the stack dynamic time constant. Higher   means lower cut-off
+frequency which makes the demand power signal smoother. Hence, the                              The constraints implemented are presented in Eq. (29), where
+ in Laplace domain (s) can be obtained by Eq. (28).                                         , is the limit net power output of a stack of the Ballard
+                                                                                            FCvelocityTM HD6 and  is the maximum power of the single Corvus
+                                                                                            Orca Energy pack.
+
+   ()  =            ,  if 0    ,                   (28)                                       ,  are integer
+            1 +     ,  if  > ,                                                              
+            , 
+                                                                                            3     15
+          
+                                                                                            1
+           1 +                                                                                       4                       (29)
+
+          
+
+    The actual battery state of charge, , and  are calculated                               0.947     50
+in the model and used as input for the EMS. Finally, the EMS considers                      
+
+                                                                                              , + 0.8   > 
+                                                                                            
+constant values as  and , respectively upper and lower                                           , -            >  0
+
+thresholds for the battery capacity, 0, the starting capacity of the                        
+storage, and the limit net power output for the PEMFC, ,, and
+for the battery, ,. In this work 0 is set to 0.5,  is 1 and                                    The simulation results as power system configuration and perfor-
+ is equal to 0.3.
+                                                                                            mance determine the ``Digital Object''. The Matlab GA optimization
+    Fig. 7 shows the four states, or modes, that represent the governor
+                                                                                            algorithm evaluates the best solution, referred to as the ``Optimized
+
+                                                                                            Digital Object''. The output provided by the proposed optimization
+
+                                                                                            recommendations for the sizing and preliminary design of the ferry
+
+of the power generation system and the transition constraints based on                      hybrid power system. The objective function that aims to reduce this
+
+the parameters just described. The base state is Default Navigation. In                     work is the PEM fuel cell stack degradation, which is fundamental for
+this mode, the power  is requested to the PEMFC system while
+the exceeding power demand, positive or negative, is given from the                         all the design aspects, from sizing to evaluating the operational costs.
+
+                                                                                               Table 7 lists the genetic algorithm options selected for this project.
+
+                                                                                       811
+G. Saponaro et al.                                                               International Journal of Hydrogen Energy 61 (2024) 803­819
+
+                             Fig. 7. Energy management strategy navigation modes and transition constraints.
+
+                             Fig. 8. Schematic of the control applied to the optimization framework.
+
+Table 7                      Values                                              study is further enhanced by the power demand experimental data.
+Matlab GA selected options.                                                      Indeed, the power conversion of the case study ferry is the same as
+                             1E-3                                                the proposed powertrain configuration. This alignment ensures that our
+  Options                    0.2                                                 findings and recommendations are grounded in real-world operational
+                             5                                                   dynamics, making them both relevant and actionable.
+  Constraints tolerance      300
+  Crossover fraction                                                                 Fig. 9 reports the experimental data corresponding to 8.5 h ferry
+  Elite count                                                                    mission with a sample time of 6 s.
+  Max generations
+                                                                                     As discussed in the previous section, the case study represents
+3. The ferry case study                                                          the ``physical object''. Thus, all the key data to design and optimize
+                                                                                 the hybrid PEMFC system are derived from the experimental profiles.
+    Norway stands out as one of the leading European nations that                The case study was characterized starting from the power demand
+heavily relies on maritime transport, particularly for covering short to         profiles of the two propulsive electric motors and the ferry hotel load.
+medium distances. This reliance is evident in the fact that a significant        Moreover, Fig. 9 shows both when the shore power is available and
+portion of its extra-urban mobility is facilitated through ferries. Given        the maximum power of the harbor grid. As can be seen in Fig. 9, the
+its extensive coastline, ferries play an essential role in connecting            ferry mission is interrupted for 2.5 h after 3.5 h of operation. During
+various regions.                                                                 the pause, the fuel cell is switched off and only Cold Ironing mode is
+                                                                                 allowed. This duty cycle has been retrieved by a previous work [41].
+    The specific case study selected for this research project is a ferry
+that sails in Norway. In its current operational setup, this ferry employs           The presented model performs the simulation with a time step of
+a combination of batteries, which serve as its primary source of power,          one second. The detailed sampling rate of experimental data offers the
+assisted by two diesel generators that act as a backup power source. The         opportunity to investigate the fuel cell system dynamic performance
+onboard electrical infrastructure is based on a direct current (DC) sys-         and to study its coupling capabilities with energy storage such as
+tem, and it has been designed to seamlessly integrate with the electrical        batteries or supercapacitors. However, the objective of this work is to
+grid at the port, facilitating easy power exchange. This particular ferry,       investigate the feasibility of the PEMFC system to power a long-haul
+with its existing configuration, represents an exemplary subject for             ferry during its entire lifecycle considering the cell degradation rate.
+this research. The presence of a battery-based power system operating
+within a DC grid offers a unique opportunity. It allows us to conduct a              The average target life for a PEM fuel cell system for transports is
+comprehensive feasibility study on the potential integration of a Proton         around 5000 h, as reported in [42,43], so the effects of the degradation
+Exchange Membrane Fuel Cell (PEMFC) system. The reliability of this              on the PEMFC system were studied through the model described above,
+                                                                                 by simulating a cycle of 600 missions, equivalent to 5100 working
+                                                                                 hours. At the beginning of each mission, the polarization curve was
+
+                                                                            812
+G. Saponaro et al.                                                             International Journal of Hydrogen Energy 61 (2024) 803­819
+
+                    Fig. 9. Mission hotel/propulsive load profiles and the shore power available.
+
+Fig. 10. (a) Mission power profiles of the FC system and battery gross power output and the amount of power taken from the harbor grid; (b) Energy storage capacity and FC
+system efficiency along the first mission.
+
+updated to take into account the potential lost during the operations.         from the GA where the battery and fuel cell power ratings are similar,
+Also , was updated according to the estimated degradation, in                  higher values of   are irrelevant or detrimental to stack degradation.
+order to improve the robustness of the EMS strategy.                           Indeed, the PEMFC system had to meet a significantly more stable load
+                                                                               than a solution where most of the power is delivered by the fuel cell,
+4. Results                                                                     and thus higher   values (> 20 s) can have a positive impact on
+                                                                               reducing degradation.
+    The optimization algorithm found the best energy source sizing and
+fuel cell time constant that minimize the stack degradation. The pro-              The first proposed results are related to the individual mission
+posed solution consists of 8 PEMFC Ballard FCvelocityTM HD6 (150 kW),          carried out over 8.5 h, to provide a clear benchmark for assessing
+3 Corvus Orca Energy packs (124 kWh per pack) and sets the low pass            the effects of degradation on the system. Fig. 10 shows the power
+filter time constant   equal to the natural FC system time constant            output of the hybrid system, where the negative values of battery power
+0.947 s.                                                                       corresponds to storage charging. Moreover, the same figure reports
+                                                                               that the EMS chooses not to recharge from the shore grid. Indeed,
+    A sensitivity analysis was performed on the effect of   on different       the bottom part of Fig. 10 shows the trend of , which ends the
+feasible plant solutions. For a balanced plant, such as the one obtained       mission by storing energy from the FC excess power output and not
+
+                                                                          813
+G. Saponaro et al.                                                               International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Fig. 11. The power demand and navigation phases, for the mission between 2.6­3.5 h, are described at the top. The trend of consumed hydrogen and battery SOC, during ``Default
+Navigation Mode'', are depicted at the bottom.
+
+from the grid. The same picture shows the efficiency of the PEMFC                by the PEMFC improving its transient performance. Indeed, the ``De-
+system, which along the mission profile remains stable between 43.7%             fault Navigation'' mode is active most of the time, running both the
+and 53.7%.                                                                       energy sources in the desired set-up. The PEMFC degradation increases
+                                                                                 the energy storage exploitation, the reason why the time spent in ``Low
+    In Fig. 11 part of the first mission is shown in detail, in particular       '' Mode and ``Cold Ironing'' increases after the 300th mission.
+between 2.6-3.5 h, to explain the proposed operation. This route,
+during the first mission, is traveled in ``Default Navigation Mode''. The            The Fig. 15 shows the degradation of the single PEMFC limit poten-
+power demand and navigation phases are described at the top: navi-               tial from the rated value of 730 V to 679 V. The total H2 consumption
+gation, maneuvering, and stop at the port. At the bottom, the trend of           for a single mission increases from 198 kg, for the first mission, to the
+consumed hydrogen and battery SOC are depicted. The rapid increase               maximum value of 227 kg, during the 575th mission. Therefore, after
+in power demand, going from stop to sailing and during navigation,               4887.5 operative hours, the fuel consumption increases by 14.65%.
+is met by using both power resources, where the battery serves the               Obviously, it will be of future interest to analyze the behavior of EMS
+``peak-shaving'' function. Energy storage during the other phases is             between mission 500 and 575, where consumption appears very high
+minimally exploited allowing the required load to be coupled with the            compared to the trend. Trend resumed in the last mission, after 5100 h
+fuel cell dynamics. During the second sailing period, the power demand           of navigation, a consumption of 217 kg of H2 is recorded, only 9.6%
+exceeds the available power of the fuel cell. In this case, the battery          more than the hydrogen consumed during the first mission. The trend of
+provides power for an extended period while the fuel cell operates at            the fuel consumption along the mission cycle gives important insights
+the maximum available load.                                                      on the H2 tank on board, resulting in a more efficient design of the
+                                                                                 power system and avoiding maintenance costs for the shipowner.
+    Fig. 12 depicts the effect of the degradation on the battery 
+and the PEMFC efficiency during the 600 missions simulation. The                     The simulated generation system performed the described mission
+efficiency of the fuel cell system never drops under 38.7%. The en-              600 times in order to evaluate its performance during a total of 5100
+ergy storage capacity trend describes better how the EMS changes its             operational hours. For each completed mission, it determined the rel-
+approach to the mission taking into account the potential lost by the            ative degradation and updated the polarization curve for the next
+FC.                                                                              mission. As input to the degradation estimation function, the vector of
+                                                                                 the power produced by the single cell during the concluded mission,
+    The energy required by the battery increases with the number of              as the reference dataset, and the maximum power output of the cell
+missions completed because it must compensate for the loss of FC                 (215 W) were provided.
+performance caused by the degradation of the cell. In Fig. 12, it can be
+seen how depending on the need, the EMS manages battery charging                     Fig. 16 shows the polarization curves after several missions con-
+during different port stops.                                                     ducted, up to #600. The effects of degradation are visible as they
+                                                                                 reduce the operating voltage of the stack for a given current. Analyz-
+    In Fig. 13 it is evident how, since the 184th mission, the EMS has           ing the polarization curve obtained to perform the 600th mission, it
+been using primary system energy and port energy more frequently to              appears that over the entire operating current range ( =300 A) the
+recharge the battery. The EMS from mission #393, and even more so                voltage remains within the range provided by the manufacturer, not
+from mission #547, mitigates battery utilization, stressing the fuel cell        dropping below the lower limit of 465 V. The PEMFC system can work
+to recharge it. The next progress of this work intends to implement an           properly but delivers less power for the same operating current, as the
+optimization in order to reduce the overall energy and monetary cost             voltage is decreased.
+of the period under study.
+                                                                                     Fig. 17 describes the trend of the oxidant excess ratio (SO2 ) and the
+    Fig. 14 provides significant results on the strategy adopted by              amount of water injected in the oxidant gas along the first mission and
+the EMS during the test cycle showing the percentage of effective                for all the operative cycles. The excess oxidant never exceeds the value
+navigation time spent in each EMS state.                                         of 4.7, remaining in the range described in the literature [32]. Thus,
+
+    The ``Single Direction Batt.'' mode was never triggered. Hence in
+every mission, the battery was able to store the excess power produced
+
+                                                                            814
+G. Saponaro et al.                                                                       International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Fig. 12. (a) Effect of degradation on the battery  along the test simulated; (b) Effect of degradation on the PEMFC efficiency along the test simulated.
+
+                                                                                         degradation making the generation plant unable to supply the required
+                                                                                         power during the mission.
+
+                                                                                             The last proposed result concerns the average efficiency of the plant
+                                                                                         thermal management system, illustrated in Fig. 18 as function of the
+                                                                                         number of missions completed.
+
+                                                                                             The cooling system is designed to dissipate more than 98% of the
+                                                                                         heat produced during the first mission, but this value drops to about
+                                                                                         90% for the last mission. This result confirms the feasibility of the
+                                                                                         presented PEMFC thermal management strategy, working correctly up
+                                                                                         to the 600th mission.
+
+    Fig. 13. Total energy provided by the battery and the harbor for each mission.       5. Conclusions
+
+the proposed strategy turns out to be very effective and easily handled                      The maritime industry is facing substantial transformation, primar-
+even considering the degradation of FC. The amount of water injected                     ily driven by the need for sustainable and efficient energy solutions. In
+at the oxidant inlet helps to dispose of excess heat and allows the MEA                  this context, the feasibility of integrating a Proton Exchange Membrane
+to remain moist.                                                                         Fuel Cell (PEMFC) power system into long-haul ferry operations has
+                                                                                         been extensively studied.
+    In conclusion, the results presented show that the designed PEMFC
+system succeeds in performing the 5100 h of operation before cell                            The degradation estimation of the fuel cell system highlights the
+                                                                                         operational and sizing critical issues of this technology. Recognizing
+                                                                                         that system degradation influences hydrogen consumption, energy ef-
+                                                                                         ficiency, and ultimately operational costs, it becomes evident that the
+                                                                                         proposed methodology assesses the performance of the system during
+                                                                                         a long period of operation.
+
+                                                                                             The first result to be discussed concerns fuel cell dynamics. Indeed,
+                                                                                         the FC system working according to natural dynamics degrades less
+                                                                                         than the system working with slower dynamics. The fuel cell, when
+                                                                                         forced to slower dynamics, produces a higher average power that
+                                                                                         causes it to degrade faster than when working with its natural dynamics
+                                                                                         (  = 0.947 s). This effect is reduced in solutions where energy is
+                                                                                         produced almost completely by FC.
+
+                                                                                    815
+G. Saponaro et al.  International Journal of Hydrogen Energy 61 (2024) 803­819
+
+                                      Fig. 14. Effective navigation time for each of the EMS states for five different mission number.
+Fig. 15. (a) PEMFC Ballard FCvelocityTM HD6 max potential degradation along the test cycle; (b) Hydrogen consumed per mission along the test cycle.
+
+                    Fig. 16. Single stack polarization curves after the degradation estimated through the proposed linear model.
+                                                                                             816
+G. Saponaro et al.                                                                      International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Fig. 17. Trend of the main operating parameters of the thermal management of the single PEMFC stack along the mission cycle. (a) The excess of oxidant required along the
+missions; (b) The volumetric flow rate of water injected into the oxidant at the inlet.
+
+  Fig. 18. Trend of thermal management system efficiency along the mission cycle.       excess oxidant used increased from 3.25 to 3.31 during the analysis.
+                                                                                        In addition, the average flow rate of injected water, which with air
+    The simulation records the performances of the power generation                     contributes to cell cooling and keeps the membrane moist, increases by
+plant and the energy management system for all 600 missions. This                       17.6%. Overall, the efficiency of the fuel cell system decreases by 5%.
+means 5100 operational hours, about one year of ferry operational life.                 Variations in some parameters are minimal, but this is only due to the
+The most important insight provided by the analysis is the increase in                  proper online energy management strategy adopted, which manages
+fuel consumption, which increases by 14.65% during the mission cycle.                   the onboard power sources and port energy.
+This result is critical for the sizing of the fuel tank.
+                                                                                            In conclusion, this research offers valuable insights into the poten-
+    The configuration that resulted in the least degradation of the fuel                tial and challenges of integrating fuel cell technology in the maritime
+cell is characterized by 8 Ballard stacks (150 kW) and 3 battery packs                  industry. Employing a holistic approach lays the foundation for future
+(124 kWh), with a maximum discharge rate of 3. Thus, 1.2 MW of                          studies that consider the broader implications of technology integra-
+installed power using FC and approximately 1.1 MW of energy storage.                    tion, moving beyond isolated evaluations. As the maritime industry
+The degraded fuel cell will be able to deliver the same power by                        continues its journey toward more sustainable horizons, such com-
+working at higher currents, this means more fuel consumption, but                       prehensive methodologies will undoubtedly play a pivotal role in its
+also more oxidant flow rate to be delivered by the compressor. The                      future.
+
+                                                                                            Possible future developments may involve both improvements to
+                                                                                        the model and experimental implications. The fuel cell model could be
+                                                                                        improved to provide results regarding the dynamics of the FC mem-
+                                                                                        brane cooling and humidification system. The estimation of PEMFC
+                                                                                        degradation could complement recent advances in the literature. The
+                                                                                        relevance of this estimation for FC design promoted the experimental
+                                                                                        study of stress cycles and the study of analytical models to obtain the
+                                                                                        potential drops due to membrane degradation. An important devel-
+                                                                                        opment in this work concerns synergy with the experimental set-up.
+                                                                                        Indeed, experimentation on large-scale fuel cell plants, to study the per-
+                                                                                        formance of the stack and especially of the cooling system, is essential
+                                                                                        to obtain more reliable data on which to base simulations. Moreover,
+                                                                                        the proposed methodology is essential to provide the experimental
+                                                                                        set-up with the correct insights to study the fuel cell as part of a
+                                                                                        complex hybrid system in real applications. Hence, integrating this
+                                                                                        simulation framework into a Hardware In the Loop (HIL) configuration
+                                                                                        could enable the achievement of important results on the most efficient
+                                                                                        solutions of integrating the fuel cell system, the future in terms of zero-
+                                                                                        emission power generation, within marine powertrains, especially those
+                                                                                        of ferries and other vessels operating on the coastal areas.
+
+                                                                                   817
+G. Saponaro et al.                                                                                                                       International Journal of Hydrogen Energy 61 (2024) 803­819
+
+Declaration of competing interest                                                                 [16] Abdin Z, Webb C, Gray E. PEM fuel cell model and simulation in Matlab­
+                                                                                                          Simulink based on physical parameters. Energy 2016;116:1131­44. http://
+    The authors declare that they have no known competing finan-                                          dx.doi.org/10.1016/j.energy.2016.10.033, URL https://linkinghub.elsevier.com/
+cial interests or personal relationships that could have appeared to                                      retrieve/pii/S0360544216314542.
+influence the work reported in this paper.
+                                                                                                  [17] Musio F, Tacchi F, Omati L, Gallo Stampino P, Dotelli G, Limonta S, et al.
+Acknowledgments                                                                                           PEMFC system simulation in MATLAB-Simulink® environment. Int J Hydro-
+                                                                                                          gen Energy 2011;36(13):8045­52. http://dx.doi.org/10.1016/j.ijhydene.2011.01.
+    This work has been supported under the National Recovery and                                          093, URL https://linkinghub.elsevier.com/retrieve/pii/S0360319911001388.
+Resilience Plan (NRRP), Mission 4 Component 2 Investment 1.4 - Call
+for tender No. 3138 of December 16, 2021 of the Italian Ministry of                               [18] Gadducci E, Lamberti T, Rivarolo M, Magistri L. Experimental campaign
+University and Research, funded by the European Union - NextGener-                                        and assessment of a complete 240-kW Proton Exchange Membrane Fuel
+ationEU [Award Number: CNMS named MOST, Concession Decree No.                                             Cell power system for maritime applications. Int J Hydrogen Energy
+1033 of June 17, 2022, adopted by the Italian Ministry of University                                      2022;47(53):22545­58. http://dx.doi.org/10.1016/j.ijhydene.2022.05.061, URL
+and Research, CUP: D93C22000410001, Spoke 14 ``Hydrogen and New                                           https://www.sciencedirect.com/science/article/pii/S036031992202078X.
+Fuels''].
+                                                                                                  [19] Yin L, Li Q, Chen W, Wang T, Liu H. Experimental analysis of op-
+References                                                                                                timal performance for a 5 kW PEMFC system. Int J Hydrogen Energy
+                                                                                                          2019;44(11):5499­506. http://dx.doi.org/10.1016/j.ijhydene.2018.08.157, URL
+  [1] INTERFERRY. Interferry study reveals ferry industry's huge economic im-                             https://www.sciencedirect.com/science/article/pii/S0360319918327320.
+         pact. 2021, URL https://interferry.com/2021/10/12/interferry-study-reveals-
+         ferry-industrys-huge-economic-impact/. [Accessed 26 September 2023].                     [20] Lim IS, Park JY, Choi EJ, Kim MS. Efficient fault diagnosis method of PEMFC
+                                                                                                          thermal management system for various current densities. Int J Hydrogen
+  [2] Wu P, Bucknall R. Hybrid fuel cell and battery propulsion system modelling                          Energy 2021;46(2):2543­54. http://dx.doi.org/10.1016/j.ijhydene.2020.10.085,
+         and multi-objective optimisation for a coastal ferry. Int J Hydrogen Energy                      URL https://linkinghub.elsevier.com/retrieve/pii/S0360319920338878.
+         2020;45(4):3193­208. http://dx.doi.org/10.1016/j.ijhydene.2019.11.152, URL
+         https://linkinghub.elsevier.com/retrieve/pii/S0360319919343757.                          [21] Oruganti PS, Ahmed Q, Jung D. Effects of thermal and auxiliary dynamics on
+                                                                                                          a fuel cell based range extender. In: WCX world congress experience. 2018, p.
+  [3] Ayalke ZG, iman A, Akpinar K. Shoreline extraction and analyzing the effect                         2018­01­1311. http://dx.doi.org/10.4271/2018-01-1311, URL https://www.sae.
+         of coastal structures on shoreline changing with remote sensing and geographic                   org/content/2018- 01- 1311/.
+         information system: Case of Samsun, Turkey. Reg Stud Mar Sci 2023;61:102883.
+         http://dx.doi.org/10.1016/j.rsma.2023.102883, URL https://www.sciencedirect.             [22] Hoeflinger J, Hofmann P. Air mass flow and pressure optimisation of a PEM
+         com/science/article/pii/S2352485523000725.                                                       fuel cell range extender system. Int J Hydrogen Energy 2020;45(53):29246­
+                                                                                                          58. http://dx.doi.org/10.1016/j.ijhydene.2020.07.176, URL https://linkinghub.
+  [4] European Commission. Third annual report from the european commission on                            elsevier.com/retrieve/pii/S0360319920327841.
+         CO2 emissions from maritime transport. Tech. rep., European Commission; 2022,
+         URL https://climate.ec.europa.eu/system/files/2022-08/swd_2022_214_en_0.pdf.             [23] Yue M, Li Z, Roche R, Jemei S, Zerhouni N. Degradation identification and prog-
+                                                                                                          nostics of proton exchange membrane fuel cell under dynamic load. Control Eng
+  [5] Siemens. Decarbonizing-marine-transport.pdf. Tech. rep., Siemens; 2022.                             Pract 2022;118:104959. http://dx.doi.org/10.1016/j.conengprac.2021.104959,
+  [6] Ning F, He X, Shen Y, Jin H, Li Q, Li D, et al. Flexible and lightweight fuel                       URL https://www.sciencedirect.com/science/article/pii/S0967066121002367.
+
+         cell with high specific power density. ACS Nano 2017;11(6):5982­91. http:                [24] Sabawa JP, Bandarenka AS. Investigation of degradation mechanisms in
+         //dx.doi.org/10.1021/acsnano.7b01880.                                                            PEM fuel cells caused by low-temperature cycles. Int J Hydrogen Energy
+  [7] Saponaro G, Stefanizzi M, D'Amato D, Franchini E, Fornarelli F, Torresi M,                          2021;46(29):15951­64. http://dx.doi.org/10.1016/j.ijhydene.2021.02.088, URL
+         et al. Modeling and design optimization of a hybrid power generator for full-                    https://www.sciencedirect.com/science/article/pii/S0360319921005917.
+         electric naval propulsion. J Phys: Conf Ser 2022;2385:012087. http://dx.doi.org/
+         10.1088/1742- 6596/2385/1/012087.                                                        [25] Fan L, Zhao J, Luo X, Tu Z. Comparison of the performance and degrada-
+  [8] Cutrignelli F, Saponaro G, Stefanizzi M, Torresi M, Camporeale SM. Study                            tion mechanism of PEMFC with Pt/C and Pt black catalyst. Int J Hydrogen
+         of the effects of regenerative braking system on a hybrid diagnostic train.                      Energy 2022;47(8):5418­28. http://dx.doi.org/10.1016/j.ijhydene.2021.11.135,
+         Energies 2023;16(2). http://dx.doi.org/10.3390/en16020874, URL https://www.                      URL https://www.sciencedirect.com/science/article/pii/S0360319921045225.
+         mdpi.com/1996- 1073/16/2/874.
+  [9] Moura SJ, Siegel JB, Siegel DJ, Fathy HK, Stefanopoulou AG. Education on                    [26] Wallnöfer-Ogris E, Poimer F, Köll R, Macherhammer M-G, Trattner A.
+         vehicle electrification: Battery systems, fuel cells, and hydrogen. In: 2010 IEEE                Main degradation mechanisms of polymer electrolyte membrane fuel cell
+         vehicle power and propulsion conference. 2010, p. 1­6. http://dx.doi.org/10.                     stacks ­ Mechanisms, influencing factors, consequences, and mitigation strate-
+         1109/VPPC.2010.5729150.                                                                          gies. Int J Hydrogen Energy 2024;50:1159­82. http://dx.doi.org/10.1016/j.
+[10] Stefanizzi M, Capurso T, Filomeno G, Torresi M, Pascazio G. Recent combus-                           ijhydene.2023.06.215, URL https://www.sciencedirect.com/science/article/pii/
+         tion strategies in gas turbines for propulsion and power generation toward                       S0360319923031683.
+         a zero-emissions future: Fuels, burners, and combustion techniques. Energies
+         2021;14(20):6694. http://dx.doi.org/10.3390/en14206694.                                  [27] Aarskog FG, Danebergs J, Strømgren T, Ulleberg O. Energy and cost analysis of
+[11] Saponaro G, Stefanizzi M, Franchini E, Torresi M, Camporeale S. Modeling and                         a hydrogen driven high speed passenger ferry. In: Visser K, Baldi F, Van Biert L,
+         design of a PEM fuel cell system for ferry applications. Tech. rep., SAE Technical               editors. Int Shipbuild Prog 2020;67(1):97­123. http://dx.doi.org/10.3233/ISP-
+         Paper; 2023, http://dx.doi.org/10.4271/2023-24-0145.                                             190273, URL https://www.medra.org/servlet/aliasResolver?alias=iospress&doi=
+[12] Nanadegani FS, Sunden B. Review of exergy and energy analysis of fuel cells.                         10.3233/ISP- 190273.
+         Int J Hydrogen Energy 2023;48(84):32875­942. http://dx.doi.org/10.1016/j.
+         ijhydene.2023.05.052, URL https://www.sciencedirect.com/science/article/pii/             [28] Letafat A, Rafiei M, Sheikh M, Afshari-Igder M, Banaei M, Boudjadar J,
+         S0360319923023042.                                                                               et al. Simultaneous energy management and optimal components sizing of
+[13] Van Biert L, Godjevac M, Visser K, Aravind P. A review of fuel cell systems for                      a zero-emission ferry boat. J Energy Storage 2020;28:101215. http://dx.doi.
+         maritime applications. J Power Sources 2016;327:345­64. http://dx.doi.org/10.                    org/10.1016/j.est.2020.101215, URL https://linkinghub.elsevier.com/retrieve/
+         1016/j.jpowsour.2016.07.007, URL https://linkinghub.elsevier.com/retrieve/pii/                   pii/S2352152X19317177.
+         S0378775316308631.
+[14] Nóbrega PHA. A review of physics-based low-temperature proton-exchange                       [29] Xie P, Asgharian H, Guerrero JM, Vasquez JC, Araya SS, Liso V. A two-layer
+         membrane fuel cell models for system-level water and thermal manage-                             energy management system for a hybrid electrical passenger ship with multi-
+         ment studies. J Power Sources 2023;558:232585. http://dx.doi.org/10.1016/j.                      PEM fuel cell stack. Int J Hydrogen Energy 2024;50:1005­19. http://dx.doi.org/
+         jpowsour.2022.232585, URL https://www.sciencedirect.com/science/article/pii/                     10.1016/j.ijhydene.2023.09.297, URL https://www.sciencedirect.com/science/
+         S0378775322015622.                                                                               article/pii/S0360319923050103.
+[15] Pan Y, Wang H, Brandon NP. A fast two-phase non-isothermal reduced-order
+         model for accelerating PEM fuel cell design development. Int J Hydrogen Energy           [30] Melideo D, Desideri U. The use of hydrogen as alternative fuel for ship
+         2022;47(91):38774­92. http://dx.doi.org/10.1016/j.ijhydene.2022.09.044, URL                      propulsion: A case study of full and partial retrofitting of roll-on/roll-off vessels
+         https://linkinghub.elsevier.com/retrieve/pii/S0360319922041210.                                  for short distance routes. Int J Hydrogen Energy 2024;50:1045­55. http://dx.
+                                                                                                          doi.org/10.1016/j.ijhydene.2023.10.142, URL https://www.sciencedirect.com/
+                                                                                                          science/article/pii/S0360319923052503.
+
+                                                                                                  [31] Li Q, Chen W, Liu Z, Li M, Ma L. Development of energy management
+                                                                                                          system based on a power sharing strategy for a fuel cell-battery-supercapacitor
+                                                                                                          hybrid tramway. J Power Sources 2015;279:267­80. http://dx.doi.org/10.
+                                                                                                          1016/j.jpowsour.2014.12.042, URL https://linkinghub.elsevier.com/retrieve/pii/
+                                                                                                          S0378775314020709.
+
+                                                                                                  [32] O'Hayre R, Cha S-W. Fuel cell fundamentals. Wiley; 2016, http://dx.doi.org/10.
+                                                                                                          1002/9781119191766.biblio.
+
+                                                                                                  [33] Spiegel C. PEM fuel cell modeling and simulation using MATLAB. Elsevier; 2011,
+                                                                                                          http://dx.doi.org/10.1016/B978- 0- 12- 374259- 9.X5001- 0.
+
+                                                                                                  [34] Corda G, Breda S, D'Adamo A. A MATLAB/Simulink model of a PEM fuel cell
+                                                                                                          system including ageing phenomenon. Tech. rep., SAE Technical Paper; 2023,
+                                                                                                          http://dx.doi.org/10.4271/2023- 24- 0148.
+
+                                                                                             818
+G. Saponaro et al.                                                                                                                   International Journal of Hydrogen Energy 61 (2024) 803­819
+
+[35] Chen H, Pei P, Song M. Lifetime prediction and the economic lifetime of Proton           [39] Corvus orca ESS. 2023, https://corvusenergy.com/products/energy-storage-
+         Exchange Membrane fuel cells. Appl Energy 2015;142:154­63. http://dx.doi.org/                solutions/corvus-orca-energy/. [Accessed 22 November 2023].
+         10.1016/j.apenergy.2014.12.062, URL https://linkinghub.elsevier.com/retrieve/
+         pii/S0306261914013191.                                                               [40] Vepa R. Dynamic modeling, simulation and control of energy generation. vol.
+                                                                                                      20, Springer; 2013.
+[36] Fletcher T, Thring R, Watkinson M. An Energy Management Strategy to con-
+         currently optimise fuel consumption & PEM fuel cell lifetime in a hybrid             [41] Saponaro G, D'Amato D, Stefanizzi M, Franchini E, Osen O, Hasan A, et al. Fuel-
+         vehicle. Int J Hydrogen Energy 2016;41(46):21503­15. http://dx.doi.org/10.                   cell hybrid power system preliminary design optimization for ferry application.
+         1016/j.ijhydene.2016.08.157, URL https://linkinghub.elsevier.com/retrieve/pii/               In: 2023 IEEE energy conversion congress and exposition. Vol. 2385, IEEE; 2023,
+         S0360319916325435.                                                                           p. 6389­96. http://dx.doi.org/10.1109/ECCE53617.2023.10362942.
+
+[37] Fang M, Wan X, Zou J. Development of a fuel cell humidification system                   [42] Capurso T, Stefanizzi M, Torresi M, Camporeale S. Perspective of the role
+         and dynamic control of humidity. Int J Energy Res 2022;46(15):22421­38.                      of hydrogen in the 21st century energy transition. Energy Convers Man-
+         http://dx.doi.org/10.1002/er.8547.                                                           age 2022;251:114898. http://dx.doi.org/10.1016/j.enconman.2021.114898, URL
+                                                                                                      https://linkinghub.elsevier.com/retrieve/pii/S0196890421010748.
+[38] Nelson SA, Filipi ZS, Assanis DN. The use of neural nets for matching
+         fixed or variable geometry compressors with diesel engines. J Eng Gas                [43] Glosten I. Ferry fuel & propulsion feasibility study final report. Tech. Rep., NYC
+         Turbines Power 2003;125(2):572­9. http://dx.doi.org/10.1115/1.1563239, URL                   Department of Transportation; 2022.
+         https://asmedigitalcollection.asme.org/gasturbinespower/article/125/2/572/
+         447136/The- Use- of- Neural- Nets- for- Matching- Fixed- or.
+
+                                                                                         819
+

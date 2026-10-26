@@ -1,0 +1,11 @@
+{
+  "audit_case_count": 9,
+  "bottleneck_summary": "audit/bottleneck_summary.json",
+  "code_hash": "a364e9c454507ac9d0f7b236f0bb498f5b50ac73e9da11ff6060d13f9a7a32b7",
+  "config_hash": "d32326945e42d630467c32a7bbda071cbd9476af0b911810841d1a75b7573b29",
+  "input_hash": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3",
+  "legacy_invalidation": "audit/legacy_invalidation.json",
+  "paper_citable": false,
+  "schema_version": "rectification_v2_stage2b.audit_manifest.1",
+  "status": "complete"
+}

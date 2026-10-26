@@ -1,0 +1,1047 @@
+international journal of hydrogen energy xxx (xxxx) xxx
+
+                Available online at www.sciencedirect.com
+
+               ScienceDirect
+
+                                 journal homepage: www.elsevier.com/locate/he
+
+Hybrid fuel cell and battery propulsion system
+modelling and multi-objective optimisation for a
+coastal ferry
+
+Peng Wu*, Richard Bucknall
+
+Marine Research Group, Department of Mechanical Engineering, University College London, London, WC1E 7JE, UK
+
+highlights
+
+ A quasi-steady state shipboard plug-in hybrid PEMFC/battery model is developed.
+ A holistic design optimisation methodology is proposed for the hybrid system.
+ Power source degradations are considered in power source sizing.
+ Influences of energy property on hybrid propulsion system design are explored.
+
+article info                     abstract
+
+Article history:                 Efforts from all sectors of society including the shipping industry are needed to limit the
+Received 24 August 2019          overall global temperature rise to within 2C of pre-industrial levels by 2050. The
+Received in revised form         hybridisation of Proton Exchange Membrane Fuel Cells (PEMFC) and Lithium-ion batteries
+1 November 2019                  for coastal ship propulsion systems may potentially offer beneficial emission perfor-
+Accepted 20 November 2019        mance. However, such hybrid systems are constrained by power and energy density
+Available online xxx             limitations, lifetime; and costs as well as life-cycle emissions of alternative fuel/energy.
+                                 There is a lack of holistic design methodology dealing with these uncertainties in the
+Keywords:                        literature. This paper proposes a holistic design methodology for coastal hybrid ships
+Coastal ferry                    based upon a developed model. The power source sizing problem is solved using con-
+Hybrid propulsion system design  strained mixed-integer multi-objective optimisation in the external layer. The global
+Multi-objective optimisation     optimum energy management strategies for an averaged operating profile are obtained
+                                 from deterministic dynamic programming in the inner layer, while considering power
+                                 source degradations in the sizing algorithm. The proposed methodology was applied to a
+                                 coastal ferry to investigate the feasibility and benefit potential of adopting the hybrid
+                                 PEMFC and battery propulsion system in Matlab. The case studies indicate that the pro-
+                                 posed propulsion system can achieve at least a 65% life-cycle greenhouse gas reduction
+                                 for the considered two cases.
+
+                                   © 2019 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+
+  * Corresponding author.
+    E-mail addresses: peng.wu.14@ucl.ac.uk (P. Wu), r.bucknall@ucl.ac.uk (R. Bucknall).
+
+https://doi.org/10.1016/j.ijhydene.2019.11.152
+0360-3199/© 2019 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+
+ Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+ for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+2                          international journal of hydrogen energy xxx (xxxx) xxx
+
+   Nomenclature                                                       T    Temperature, K
+
+                                                                      tm   Membrane thickness, m
+
+   Roman symbols                                                      Vk   Voltage for fuel cell system, V
+
+   Am    Active area of membrane electrode assembly, cm2              VD   System volume for system model, m3
+
+   a     Water activity                                               Vx   Alternative system volume, m3
+
+   CR    Inlet air compression ratio                                  Wx   Alternative system weight, kg
+
+   C     Battery C-rate                                               WD   Original diesel system weight, kg
+
+   C1    Battery cell model capacitance, F                            Z    Sizing decision variable vector
+
+   cp    Air specific heat capacity, kJkgÀ1kÀ1                        Greek symbols
+
+   c1    Concentration overpotential coefficient                      b    Concentration overpotential coefficient
+
+   D     Degradation rate                                             ga   Air specific heat ratio
+
+   F     Faraday constant, 96485 CmolÀ1                               gm   Electrode surface roughness factor
+
+   FðZÞ  Sizing objective function vector                             d    Degradation function
+
+   fk    Sizing objective function                                    Dt   Time step, s
+
+   G     Gibbs free energy of activation                              hc   Air compressor efficiency
+
+   I     Current                                                      hm   Air compressor motor efficiency
+         Current density, AcmÀ2
+   i     Exchange current density, AcmÀ2                              hfc  Fuel cell stack net efficiency
+   ik0
+   ik    Battery cell model current, A                                h    Efficiency
+   iL    Limiting current density, AcmÀ2
+   Ifc                                                                l    Degree of humidification
+   k1    Fuel cell stack current, A
+   LHV                                                                sk   Price, USD
+   m_    Fuel cell balancing of plant power coefficient
+         Hydrogen lower heating value, kJkgÀ1                         sm   Fuel cell membrane conductivity, SmÀ1
+         Mass flow rate, kg sÀ1
+                                                                      yk   GWP, kgCO2kgÀ1
+
+                                                                      jfc  Fuel cell specific H2 consumption, kgkWhÀ1
+
+   m1    Number of fuel cell strings connected in parallel            Abbreviations
+
+   m2    Number of fuel cells connected in series                     AC   Alternating current
+
+   n1    Number of battery strings connected in parallel              DC   Direct current
+
+   n2    Number of battery cells connected in series                  DDP Deterministic dynamic programming
+
+   n     Molar flow rate, mol sÀ1                                     EMS Energy management strategy
+
+   P     Power in system model, kW                                    GHG Greenhouse gas
+
+   P     Pressure in fuel cell model, Pa                              GWP Global warming potential
+
+   p     Partial pressure                                             LNG Liquefied natural gas
+
+   R     Universal gas constant                                       PEMFC Proton exchange membrane fuel cell
+
+   Rk    Battery model resistance, U                                  SOC State of charge
+
+   spA   Shore power availability
+
+   SOC   Battery state of charge
+
+Introduction                                                          shipping industry in terms of the required reduction in GHG
+                                                                      and pollutants [19]. Various efforts have been made to
+The global commercial shipping fleet emitted 2.2% of global           improve the existing diesel engine based technologies, e.g.
+anthropogenic Greenhouse Gases (GHGs) in 2012 [32]. By 2050,          using Liquefied Natural Gas (LNG) in dual-fuel or gas engines
+the maritime transport segment needs to reduce its total annual       [53]. Though the NOx, SOx and particulate matter emissions
+GHG emissions by 50% compared to 2008 to be in line with the          can be reduced significantly with LNG, the GHG saving offered
+global GHG reduction target to limit the global temperature rise      by LNG is limited to no more than 21%, and methane slips
+to no more than 2C above pre-industrial level [11,57]. On the         could potentially cancel out the benefit [9,22,53]. Ships oper-
+other hand, almost 15% of total global anthropogenic NOx              ating within Emissions Control Areas have adopted exhaust
+emissions and 4e9% of SOx emissions are from shipping which           gas treatment devices which could potentially lead to the GHG
+is a significant and increasing source of air pollutants [23,27,59].  emission performance being even worse as a consequence of
+Nearly 70% of these emissions are estimated to occur within           the requirement for additional power and the negative im-
+400 km of coastlines, which has a potential influence on air          pacts on engine efficiency [8,20,58].
+quality in coastal areas where 45% of the world's population
+resides [15,35,59]. There is a necessity to cut down emissions            Proton Exchange Membrane Fuel Cells (PEMFC) operating
+from ships, especially those operate in coastal waters.               on H2 has gone through rapid development in recent decades
+                                                                      with improving performance and reducing cost and has been
+    Marine diesel engines operating with heavy fuel oil or            adopted by parallel industries such as road transport [4,21].
+marine diesel oil are not a viable powering solution for the          There has been an increasing interest in utilising PEMFC for
+                                                                      ship applications [14,48,54,56]. Compared to other fuel cell
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+international journal of hydrogen energy xxx (xxxx) xxx                                                                         3
+
+types such as the solid oxide fuel cell or molten carbonate fuel      Constraints            Environment
+cell, PEMFC offers better power density and transient perfor-         Limited volume and     Global warming potential
+mance but a lower efficiency and less fuel flexibility [49].          weight
+When used in transport applications, PEMFC is typically used                                              Solution
+with batteries or supercapacitors to provide better overall ef-                                               set
+ficiency and capability for managing power transients.
+                                                                      Performance            Commercial
+    Lithium batteries are a rapidly evolving technology recog-        Powering and dynamics  Energy and equipment costs
+nised as having great potential for utilising renewable energy and
+improving the performance of existing powering solutions              Fig. 1 e The complexity of alternative propulsion system
+[29,40]. Batteries can be used as stand-alone or in hybrid config-    design.
+urations in ship propulsion systems. When used in hybrid
+configuration, batteries can optimise the loadings on other           2016, the average GHG emission of grid power in the UK was
+power sources (e.g. fuel cells or internal combustion engines) [43].  281 g CO2kWhÀ1, while for Denmark it was 166 g CO2kWhÀ1
+reported that 30% fuel reduction could be achieved with regen-        [25]. Other factors including power source power/energy
+erative energy recovered from the ship crane operations. In           densities, degradation characteristics, energy properties and
+configurations without regeneration, much less fuel saving can        operational requirements can vary from place to place and
+be expected, depending on the configuration and power profiles.       significantly influence the design of such a hybrid propulsion
+15% fuel saving is reported in a case of a non-regenerative hybrid    system. A holistic design methodology can be used to achieve
+ship [50]. When only a battery is used, the shipboard system          an optimal alternative propulsion system design.
+becomes zero-emission, but the life-cycle emission performance
+depends on the energy source of the shore supplied electricity.           In this paper, an improved multi-objective power source
+Currently battery technologies are still constrained by limited       design methodology and a propulsion system model for plug-in
+energy densities, even though the world's largest battery package     hybrid PEMFC/battery propulsion systems with access to
+in ship applications has reached a capacity of 6.1 MWh [17,38].       hydrogen bunkering and battery charging facilities are proposed,
+                                                                      extending the authors' previous work [60]. In the authors' pre-
+    Methodologies for dealing with the solution of the optimal        vious work, the optimisation scheme was designed to provide
+sizing problem for shipboard hybrid propulsion systems are            the power ratings and battery capacity with a simplified system
+rare in the literature. Kim and Peng [36] addressed the impor-        model. The current work has improved the author's precious
+tance of combining power source design and EMS for hybrid             work with models calibrated by experimental results, and the
+fuel cell/battery road vehicles, in which a near optimal              optimisation scheme has been improved to output detailed
+"pseudo-Stochastic Dynamic Programming" EMS was devel-                sizing combinations. The proposed design methodology can be
+oped for a standard driving cycle. Xu et al. [62] proposed a two-     used to guide the shipboard hybrid plug-in fuel cell and battery
+loop multi-objective power source sizing methodology with             propulsion system design in different regions with variable en-
+EMS solved by dynamic programming in the inner loop, looking          ergy properties. Two case studies, i.e. for the Denmark and UK
+into the trade-off problem between fuel consumption and               scenarios, are provided to investigate the influences of energy
+battery degradation of a fuel cell city bus. Xie et al. [61] pre-     life-cycle properties on the design of such hybrid systems.
+sented a multi-objective optimisation methodology for retro-
+fitting a mid-scale aircraft with batteries. Bassam [7] proposed      System model
+a dimensioning methodology for the non-plug in hybrid PEMFC
+and battery propulsion system using an exhaustive search of           Assumptions
+the battery module and fuel cell stack numbers with several
+time domain energy management strategies considered.                  When using the proposed sizing methodology based on the
+However, through life emissions of the energy sources were            system model, the following assumptions apply and are
+not considered in this study.                                         deemed acceptable for the power source sizing optimisation
+                                                                      purpose.
+    It would appear that coastal ships operating on short
+routes at modest speed may potentially benefit from hybrid              There always exists suitable power converters that can
+propulsion systems with a mix of PEMFC and batteries, uti-                match the efficiency curves adopted in this study for the
+lising clean H2 energy and shore-generated electricity                    power source sizes considered.
+[41,54,56]. However, the design of such hybrid propulsion
+systems must consider a series of variables to achieve an               Shore power is instantly available when the ship arrives at
+overall optimal design. As shown in Fig. 1, the alternative               the ports; in reality it requires extra time to establish the
+system has to provide sufficient and reliable power, without              electrical connections which would prolong the required
+using too large a volume and mass margins from the propul-
+sion plant. Moreover, the alternative system needs to be more
+environmentally friendly and commercially competitive.
+
+    Although H2 appears as a clean fuel when the scope is only
+limited to the propulsion system, the H2 production processes
+could be carbon intensive [3]. Also, the power generation
+process that provides the energy for H2 production and battery
+charging would have a certain carbon intensity and this in-
+tensity would vary depending upon location. For example, in
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+4                                         international journal of hydrogen energy xxx (xxxx) xxx
+
+    port time. Nevertheless, note that automated charging              The energy management system manages the power split
+    solutions using industrial robots with minimised connec-       between the power sources by monitoring of power demand,
+    tion time is commercially available [1].                       fuel cell power level, battery State of Charge (SOC) and shore
+  Energy available on both end of the case ship route has          power availability, then determines fuel cell power change for
+    identical properties considering the case ship only operate    the next time step. For each time step, the power supplied by
+    domestically in Denmark with a voyage duration of 1 h.         the power sources has to satisfy:
+
+System overview                                                    P1 þ P2 þ Ps ¼ Pdem                                                    (1a)
+
+To achieve optimal design of a plug-in hybrid PEMFC and bat-       P1 ¼ Pfch1                                                             (1b)
+tery propulsion system for coastal ships, a quasi-steady state
+model with PEMFC and lithium batteries that can be adjusted to                 &  ! 0;  sailing mode
+scale has been developed. Fig. 2 presents the system schematic                    ¼ 0;   port mode
+of a plug-in hybrid PEMFC battery propulsion system. Such a        Pfc ¼                                                                  (1c)
+layout is designed for coastal ships sailing on short routes with
+access to battery charging and H2 replenishing infrastructure.                 &  ¼ 0;  sailing mode
+The power distribution system is DC based to better accom-                        ! 0;   port mode
+modate the fuel cells and energy storage system. Although there    Ps ¼                                                                   (1d)
+are still practical challenges of implementing such a DC power
+system, it directly matches the proposed power sources better                  &  Pbat h2 ;   Pbat ! 0 for battery discharging or idling
+than an AC distribution system [30]. The power converters for                     Pbat =h2 ;  Pbat < 0 for battery charging
+the fuel cell stack, battery and shore electricity are unidirec-   P2 ¼                                                                   (1e)
+tional DC/DC, bidirectional DC/DC and unidirectional AC/DC,
+respectively. The fuel cells operating with on-board stored H2     where P1 and P2 are the fuel cell and battery power after the
+are controlled by the energy management system. Note that          power converters respectively; Pfc and Pbat are fuel cell stack
+shore electricity is only available when the ship is berthed.      power output and battery power output respectively; Pdem is
+                                                                   the ship's lumped loads (including propulsive and auxiliary);
+    Two main modes of operation are envisaged to occur             note that Pfc is determined by the EMS in sailing mode and the
+during the ship's routine operation: sailing and port modes. In    fuel cell will not be providing any power to the system when
+sailing mode, either cruising or manoeuvring, the battery          the ship is on shore supply. h1 and h2 are the fuel cell and
+works as an energy buffer to optimise the fuel cell loadings       battery power converter efficiencies respectively.
+and reduce power transients at the PEMFC. Note that the
+battery can be either charged or discharge in sailing mode.        Power converter efficiency model
+When the ship is berthed, i.e. in port mode, the shore
+connection charges the battery and powers the ship's elec-         The power converter efficiency models output energy effi-
+trical loads, while the PEMFC is switched off line or shut down.   ciency with input of per unit power to the converters. Note
+                                                                   that the converter efficiency models are representative of
+                                                                   achievable characteristics, and be easily updated with real
+                                                                   data when actual converter features are available for actual
+                                                                   engineering applications. Such an approach is valid, and has
+
+                      H2 tank                    Signal exchange   Electrical power Mechanical connection H2 flow
+
+                                PfcRef    Fuel cell  Pfc          Boost DC/DC     P1          PM  Propulsion   Propulsion
+                                 Pfc                                                                              motor
+                                 Dfc      stack                   converter                           motor
+                                                                                                                  Ship
+                               PbatR ef                                                               drive      service
+                                 Pbat                                                                             loads
+   Energy management             Dbat     Battery    Pbat      Bidirectional      P2
+                                SOC                          DC/DC converter                 PA
+                               PshoreRef                 PS                                            Ship
+                                                             AC/DC converter          DC Bus          service
+                                 spA        Shore                                                      drive
+                                          electricity
+                                 Pdem
+
+                                          Fig. 2 e Hybrid propulsion system schematic.
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+     international journal of hydrogen energy xxx (xxxx) xxx                                                                                                   5
+
+been widely adopted in similar studies [31,33]. As shown in      Single cell model
+Fig. 3a, the power conversion efficiencies are plotted against   The single cell model considers three overpotentials, i.e. ohmic
+the percentage power output for each of the conversion           overpotential Vohm, activation overpotential Vact and convection
+modes. These efficiency models are based upon experimental       overpotential Vcon. Due to the three overpotentials, the single
+data [34,55]. The maximum error of these fitted efficiency       cell output voltage Vcell varies at different current densities
+curves is 3%, which occurs at the 20% loading condition (Fig.    (corresponding to different loadings). The single cell governing
+3b). In high load regions, the efficiency errors are below 1%.   equations are described in Appendix (Table 7). The PEMFC
+                                                                 model is calibrated using the results acquired from Ref. [63]. The
+PEMFC fuel cell model                                            molar flow rates of O2, H2 and H2O, i.e. nO2 , nH2 and nkH2O were
+                                                                 calculated using the method provided in Ref. [2]. Model
+To obtain fuel cell system specific hydrogen consumption and     adjustable parameters such as b, iL, gm, i0Ref and a are estimated
+fuel cell degradation rates under different operating condi-     by minimising the difference between model voltage output
+tions, a system level PEMFC model has been developed and         and experimental results. As the identification of model pa-
+calibrated. Fig. 4 presents the schematic of the PEMFC single    rameters is not the focus of this study, the optimisation process
+cell and stack system, including ancillary components such as    is not presented here. Once these parameters are calibrated, the
+air compressor [21,45]. Note that the focus of this study is on  model is verified by running the model in other operating states.
+system level optimisation instead of dynamic performance.
+Therefore the cell electrical double layer effects were not      PEMFC stack model
+included here, readers are referred to studies such as [39] for
+modelling of these effects. The fuel cell stack model considers  By connecting the individual fuel cell outputs in series and
+auxiliary power consumptions. Individual cell outputs are
+connected in series and parallel to form the stack output.       parallel, the PEMFC stack model is formulated. It is assumed
+
+                                                                 that all the cells within the stack perform uniformly. The total
+
+                                                                 electrical power output of the stack is calculated by:
+
+                                                                 Pfc ¼ VfcIfc À Pcom À Paux                                                                    (2)
+
+100                                                                                                               5
+
+          Fuel cell conveter                                                                                      4        Fuel cell conveter
+          Battery converter discharge
+90                                                                                                                         Battery converter discharge
+
+          Battery converter charge                                                                                3        Battery converter charge
+
+80                                                                                                                2
+Efficiency [%]
+70                                                                                           Efficiency error[%]  1
+
+                                                                                                                  0
+
+60                                                                                                                -1
+
+50                                                                                                                -2
+
+                                                                                                                  -3
+
+40
+
+                                                                                                                  -4
+
+30                                                                                                                -5
+         10 20 30 40 50 60 70 80 90 100                                                                                    10 20 30 40 50 60 70 80 90 100
+
+                       Power percentage [%]                                                                                              Power percentage [%]
+
+     (a)                                                                                                              (b)
+
+Fig. 3 e Power converter efficiency: (a) power converter efficiency curves fitted from experimental results and (b) errors of
+fitted efficiency curves compared to experimental data from Refs. [34,55].
+
+                                          Fig. 4 e Fuel cell schematic: (a) PEMFC system and (b) single cell.
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+6                                                                 international journal of hydrogen energy xxx (xxxx) xxx
+
+where Vfc and Ifc are fuel cell stack voltage and current output                                                            where k1 and c2 are constant coefficients. The fuel cell stack
+respectively, and Vfc ¼ n1Vcell, Ifc ¼ m1Icell ¼ m1iAm (m1 is num-
+ber of strings in parallel, n1 is number of cells in series, Am is                                                          nhfec t¼emf_fiHcP2 LifecHnVcyÂi1s0c0a%lculated by:                                                                                      (5)
+active area of membrane electrode assembly). Pcom is the
+power consumed the by air compressor [21]:                                                                                  where LHV is the Lower Heating Value of H2, m_ H2 is hydrogen
+                                                                                                                            mass flow rate which can be calculated from cell H2 molar
+                            2 3                                                                                             flow rate nH2 , molar mass and total cell number.
+
+Pcom  ¼    1    m_ air  cp  T46CR                     ga À1  À 175                                                     (3)      Fig. 5a shows the single cell power at different current
+         hc hm                                          ga                                                                  densities and corresponding power consumed by the air
+                                                                                                                            compressor and other auxiliary loads. The fuel cell stack net
+where hc is the air compressor efficiency, obtained from                                                                    efficiency and specific H2 consumption across 0e100% fuel
+Ref. [21] and normalised with respect to fuel cell loading. hm is                                                           cell load are shown in Fig. 5b. The maximum fuel cell stack
+the compressor motor efficiency, and it is assigned a constant                                                              net efficiency is about 52%; the net efficiency at full load is
+value of 0.96 in this study. cp ¼ 1004 JkgÀ1KÀ1 is the inlet air                                                            36%. Fig. 5c presents the fuel cell validation against experi-
+specific heat. CR is the cathode air compression ratio which                                                                mental results. A good agreement between the model output
+increases along the compressor operating line when fuel cell                                                                and experimental results can be observed. The root-mean-
+load level increases. ga is the air specific heat ratio. Pafc is                                                            squared error between the model output and experimental
+balancing of plant power, and is a linear function of fuel cell                                                             data is 0.031 (normalised root-mean-squared error is 3.5%).
+power [36]:                                                                                                                 As shown in Fig. 5d the fuel cells operating pressure in-
+                                                                                                                            creases along the compressor operating line with the in-
+Pafc ¼ k1Pfc þ c2                                                                                                      (4)  crease of fuel cell load [21]. The fuel cell model outputs
+
+                                              80             Cell electrical power                                                                           100                                                            60
+                                                                                                                                                              95
+                                                             Average cell compressor power                                                                    90                              Specific H consumption
+                                                                                                                                                              85
+                                              70             Average cell auxiliary power                                   Specific H2 consumption [g/kWh]   80                                              2
+                                                                                                                                                              75
+                                                             Cell net power output                                                                            70                              Stack net efficiency              Fuel cell stack net efficiency [%]
+                                                                                                                                                              65                                                            50
+                                                                                                                                                              60
+                                              60                                                                                                              55
+
+                                                                                                                                                                 0                                              40
+
+                            Power [W]         50
+
+                                              40                                                                                                                                                                30
+
+                                              30                                                                                                                                                                20
+
+                                              20
+
+                                                                                                                                                                                                                10
+
+                                              10
+
+                                              0                                                                                                                                                                 0
+
+                                                   0         0.1 0.2 0.3 0.4 0.5 0.6                                                                                20               40       60        80   100
+
+                                                                    Current density [A/cm2]                                                                              Power percentage [%]
+
+                                                                         (a)                                                                                                             (b)
+
+                                              1.2                                                                                           3.5
+
+                                                                                                 Experiment-1atm                                                         =0.71
+
+                                                                                                 Model-1atm                                                              =0.70
+
+                                              1                                                  Experiment-2atm                                                         =0.68
+                                                                                                 Model-2atm
+                                                                                                                                                             3           =0.65
+
+                                                                                                 Experiment-3atm                                                         =0.60
+
+                                                                                                 Model-3atm                                                              =0.55
+
+                            Cell voltage [V]  0.8                                                Experiment-4atm                                                         Surge Line
+
+                                                                                                 Model-4atm                 Pressure ratio  2.5                          Operating Line
+
+                                              0.6
+
+                                                                                                                                                2
+                                              0.4
+
+                                              0.2                                                                                           1.5
+
+                                              0                                                                                                              1
+
+                                                   0         0.2    0.4  0.6                0.8  1                1.2                                           0   0.2         0.4           0.6       0.8  1
+
+                                                                    Current density [A/cm2]                                                                              Normalised air mass flow rate
+
+                                                                         (c)                                                                                                         (d)
+
+Fig. 5 e (a) Single cell power and auxiliary power consumption at different operating current densities, note that the
+compressor operates following the operating line in (d), the cell net power is cell electrical power subtracted by compressor
+and auxiliary loads and the net power output drops down rapidly after 0:68 AcmÀ2 hence regions beyond this point are not
+considered as useable region, (b) specific H2 consumption and net fuel cell stack efficiency in different fuel cell power
+fractions, highest efficiency appears around 20% power region, (c) validation of cell model in different pressures and (d)
+compressor map from Ref. [21].
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+                           international journal of hydrogen energy xxx (xxxx) xxx                                              7
+
+Table 1 e PEMFC cell degradation rates [28,13].                        Vt ¼ Voc À i0R0 À Vc                                     (8)
+
+Operating condition                            Degradation rate        V_ c  ¼  À   Vc    þ  i0                                 (9)
+                                                                                   R1 C1     C1
+
+Low power (0e80% rated power)                  10.17 mV=h                  The open circuit voltage map VocðSOCÞ, R0, R1 and C1 were
+High power ( > 80% rated power)                11.74 mV=h              identified using least square algorithm with the dynamic
+Transient loading                              0.0441 mV=kW            stress test (DST) experiment data (@25C) (Fig. 7a) and subse-
+Start/stop                                     23.91 mV=cycle          quently validated using urban driving schedule (UDS) cycle
+                                                                       experiment results (Fig. 7b), both sets of data were from
+specific H2 consumption with the input of fuel cell power              Ref. [64]. As the influence of battery temperature is not the
+percentage.                                                            focus of this study, all these parameters were identified using
+                                                                       experimental data @25C. There was good agreement between
+Degradation model                                                      the model output and experimental data. Over a period, the
+Compared to marine diesel engines, PEMFCs generally have a             battery SOC change:
+much shorter operational lifetime; factors such as power
+transients, cycling and loading conditions can influence the                                     Z t2
+rate of degradation. Considering the high production costs of
+PEMFC, it is necessary to include the degradation character-           SOC2 ¼ SOC1 À hb CðtÞdt                                  (10)
+istics in both the design and operating phases of the ship to
+obtain the overall optimal cost performance. Table 1 describes                                   t1
+the PEMFC single cell degradation rates used in this study
+[13,28]. The cell degradation over one voyage is [28]:                 where CðtÞ is battery charge rate at time t; note C is positive for
+                                                                       battery discharging and C is negative for battery charging; hb is
+                                                                       the battery coulombic efficiency.
+
+Dfc ¼ Dlow þ Dhigh þ Dtransient þ Dcycle                       (6)     Multi-objective propulsion system optimisation
+
+where Dlow, Dhigh, Dtransient and Dcycle are cell voltage degradation  Based upon the hybrid fuel cell and battery propulsion system
+caused by low power operation, high power operation, power             model, the proposed multi-objective propulsion system sizing
+transient and start/stop cycling, respectively. These parame-          methodology optimises the power source sizes as shown in
+ters may differ across different fuel cell types, depending on         Fig. 8. The two-layer multi-objective design methodology
+the design and actual operating parameters, and require                looks to solve the power source sizing problem by considering
+calibration using experimental data before use.                        both emission and economic performances. An average
+                                                                       operating profile normalised from route performance data
+Lithium-ion battery model                                              obtained from a normal ship of similar capacity or other
+                                                                       routines such as scaled experiments can be applied for the
+To accurately represent battery performance across its ca-             system optimisation. The inner layer solves the optimal
+pacity range, an equivalent circuit calibrated by experimental         power split problem for each power source sizing combination
+data from Ref. [64] has been developed. Fig. 6 shows the bat-          passed from the external layer to minimise average voyage
+tery model equivalent circuit adopted in this study. The bat-          cost using Deterministic Dynamic Programming (DDP) [52].
+tery cells are connected in series and parallel to form the            The optimisation method adopted for the external layer is
+battery module [31]:                                                   Non-dominated Sorting Genetic Algorithm II, based upon the
+                                                                       work of [18]. The external layer optimises the average voyage
+Pbat ¼ IBVB                                                    (7)     cost and GWP emissions concurrently. The decision variables
+                                                                       of the external layer are a vector of the fuel cell and battery
+where IB, VB are battery module current and voltage respec-            module sizing parameters. The trade-off between the two
+tively. Note that VB ¼ n2Vt, and Vt is the battery cell terminal       objectives needs to be determined manually based on the
+voltage, which is a function of battery cell open circuit voltage      Pareto front.
+VocðSOCÞ (Voc is a function of battery SOC), R0, R1 and C1:
+
+                                          m2                                                           R1
+
+                                                                                     R0
+
+             n2                                                VB               Voc                    C1
+                                                                                                                            Vt
+
+                                          (a)                                                    (b)
+
+Fig. 6 e Battery equivalent circuit: (a) battery module schematic and (b) battery single cell equivalent circuit.
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+8                    international journal of hydrogen energy xxx (xxxx) xxx
+
+   Fig. 7 e Battery model (a) calibration with the dynamic stress test and (b) validation using urban driving schedule.
+
+                                       External layer
+
+   Start              Initialise sizing                  Evaluate objective                                   Rank population
+                        population                          functions and
+                                                             constraints
+
+                                       Inner layer                                                            Selection for
+                                                                                                              reproduction
+          PEMFC Battery    PEMFC Battery Shore                   Deterministic
+                                                                    dynamic                                  Crossover and
+                                                   powe                                                         mutation
+                                                                 programming
+          ...         ...              ...     ... r                                                       Evaluate objective
+                                                                     Hybrid                                   functions and
+          DC bus                                                  propulsion                                   constraints
+                                                                 system model
+                  M                         M                                                             Combine Parent and
+                                                                    Optimal                                Child populations
+                                                                      EMS
+
+          Propulsion          Ship     Propulsion        Objective  Constraints
+            motor          Services &    motor           functions
+                            auxiliary
+
+                              loads
+
+                                                                                                          Generate Pareto front
+
+   End               Select optimal power                Yes     Stopping criteria               No
+                      source sizing from
+                          Pareto front                              met?
+
+                           Fig. 8 e Proposed holistic design methodology.
+
+External layer                                                   minimise :         FðZÞ     ¼   Â     f2 ÃT                     (11)
+                                                                                                  f1;
+It appears that both fuel cell and battery modules are
+emission-free if the scope is limited only to the ship's pro-                       8
+pulsion system. However, looking beyond the ship itself, the                        >>><>>>
+production of H2 and generation of shore power will have                                     Vx       VD
+specific carbon footprints. On the other hand, the high prices,  subject to :                Wx       WD                         (12)
+shorter life and lower energy/power densities are significant
+drawbacks of these technologies compared to conventional                            >>>>>>:  K1  Pdg   PRfc þ Pbat;1C
+diesel engine based solutions. To balance the trade-off be-                                  K2  Pdg   PfRc þ Pbat;3C
+tween emission and economic performance, a multi-objective
+power source sizing methodology considering both emission        where Z ¼ ½m1; n1; m2; n2T is a vector of power source sizing
+performance and average voyage cost is formulated as follows:    integer variables, which is constrained by its lower and
+                                                                 upper limits (Z1 and Z2); FðZÞ is a vector of objective
+                                                                 functions: f1 is the average voyage cost including fuel cell
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+                                            international journal of hydrogen energy xxx (xxxx) xxx                                                      9
+
+Table 2 e Case ship specification.                                               Table 3 e Average operating profile for sizing.
+Parameters
+                                                      Value                      Parameter                       Value            Unit
+
+Ship type                                   Ferry                                Departing time                  380               s
+Gross tonnage                               4500                                 Sailing time                    2785              s
+Power system configuration                  Integrated full electric propulsion  Approaching time                380               s
+Installed engine power                      4370 kW                              Sailing power                   1454              kW
+Fuel tank volume                            140 m3                               Power at shore                  283               kW
+Daily voyage number                         16
+Average voyage time                         1h
+
+and battery degradation costs, hydrogen cost and shore                           Table 4 e State and action space grid setting for dynamic
+electricity costs, f2 is voyage GWP emission comprising                          programming.
+through life GWP emissions from hydrogen and shore
+electricity [60]:                                                                Parameter                 Grid length  Range
+
+       XT             ut                  XT          þ u2tPfcsfc                Power demand              50           0e4400 kW
+           jfc xt     2    Pfc                dfc xt                             SOC                       0.05         0e1
+                                                                                 Fuel cell power level     0.02         0e1
+       t¼1                                t¼1                                    Shore power availability  À            0 or 1
+                                                                                 Fuel cell power           0.02         ½ À 0:04; À 0:02; 0; 0:02; 0:04
+
+f1  ¼              þ            DtsH2  þ                                            change fraction
+
+            XT            XT                                       (13)
+
+       þ PshDtse þ dbatBsbat
+
+            t¼J           t¼1                                                    the original system. The first two constraints in Eq. (12) en-
+                                                                                 sures that the hybrid system volume and weight do not
+       XT                              XT                                        exceed those of the original diesel-electric system. The last
+f2 ¼ jfcðxt þ utÞPfcDtyH2 þ PshDtye                                (14)          two constraints guarantee that the hybrid system can provide
+                                                                                 sufficient power. K1 is the most frequent number of diesel
+       t¼1                             t¼J                                       generators required to be on line and K2 is the number of
+                                                                                 installed diesel generators in the original diesel-electric
+where jfc is the fuel cell specific hydrogen consumption                         system.
+function (see Fig. 5b), xt is the fuel cell power fraction in time
+step t and ut is the fuel cell power change in time step t (note                 Inner layerdoptimal EMS for the average operating profile
+that H2 consumption is calculated by an averaged fuel cell
+power level in one time step), T is the final time step; dfc is the              The inner layer of the sizing process is solved using reverse
+fuel cell degradation function and is determined by the                          iteration to find the optimal energy management strategy
+degradation rates in Table 1; Psh is shore power when the ship                   (EMS) p for the average power profile for each feasible power
+is in port; dbat is an averaged battery degradation rate in each                 source sizing combination Z using DDP [52]. As a special case
+time step, assuming the batteries are guaranteed to last for a                   of stochastic dynamic programming, the transition from one
+specific period; sH2 , se, sfc and sbat are H2, shore electricity, fuel          state to the next is deterministic in DDP; hence the compu-
+cell and battery prices respectively; yH2 and ye are H2 and shore                tation time is significantly reduced when compared to that of
+electricity GWP respectively; B is battery capacity.                             stochastic dynamic programming. DDP requires complete
+                                                                                 knowledge of voyage power demands during all time steps,
+    Vx and Wx are hybrid system volume and weight (including
+both power sources and fuels) respectively; VD and WD are
+original diesel system volume and weight respectively; PRfc,
+Pbat;1C, Pbat;3C and Pdg are rated fuel cell power, battery power at
+1-C, battery power at 3-C and diesel generator rated power in
+
+                                                              Fig. 9 e Case ship (a) and its route (b).
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+10  international journal of hydrogen energy xxx (xxxx) xxx
+
+Table 5 e Case study parameters.  Parameter                                Value       Unit    Reference
+Category                                                                                          [12]
+                                                                            294   m3              [10]
+Diesel system                     Original diesel generator system volume   156   t               [37]
+Marine gas oil                    Original diesel generator system weight   0.64  $kgÀ1           [47]
+PEMFC system                      Marine gas oil price                      3.2   kgCO2 kgÀ1      [6]
+                                  Marine gas oil GWP                        830   $kWÀ1           [14]
+Battery system                    PEMFC price                               128   kWmÀ3           [44,51]
+                                  PEMFC volumetric specific power           200   kWtÀ1           [16]
+UK electricity                    PEMFC gravimetric specific power          0.17  m3 kgÀ1 H2
+Denmark electricity               H2 tank volume                            28.5  kgkgÀ1 H2       [26]
+Nuclear-powered electrolysis H2   H2 tank weight                            800   $kWhÀ1
+Wind-powered electrolysis H2      Battery price                             1.5   year            [3]
+                                  Battery life time                         91.8  kWh mÀ3
+                                  Battery volumetric specific energy        80.6  kWh tÀ1
+                                  Battery gravimetric specific energy       0.25
+                                  Battery SOC higher limit                  0.90  C
+                                  Battery SOC lower limit                   6     $kWhÀ1
+                                  Battery maximum C-rate                    0.16  kgCO2 kWhÀ1
+                                  Shore electricity price                   0.28  $kWhÀ1
+                                  Shore electricity GWP                     0.09  kgCO2 kWhÀ1
+                                  Shore electricity price                   0.17  $kgÀ1
+                                  Shore electricity GWP                     3.50  kgCO2 kgÀ1
+                                  H2 price                                  2.40  $kgÀ1
+                                  H2 GWP                                    8.24  kgCO2 kgÀ1
+                                  H2 price                                  1.50
+                                  H2 GWP
+
+Fig. 10 e Denmark case: (a) H2 via nuclear-powered high temperature electrolysis and (b) H2 via wind-powered electrolysis.
+
+ Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+ for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+                                     international journal of hydrogen energy xxx (xxxx) xxx                                                      11
+
+which is not realistic for on-line EMS but can be used to obtain    Total required power [kW]  1500
+optimal off-line EMS to benchmark the quality of on-line EMS.
+The optimal EMS pÃðujxÞ minimises the objective function f1                                    1000
+subject to the constraints listed in Eq. (15):
+
+u2U                                  (15a)                                                                500
+
+SOCmin SOC SOCmax                    (15b)                                                         0
+                                                                                                     0
+Pbat;min Pbat Pbat;max               (15c)                                                                     500 1000 1500 2000 2500 3000 3500
+                                                                                               4000                                 Time [s]
+                                                                                                                                        (a)
+
+Pbat;port À Pdem;port þ Psh;max ! 0  (15d)                          Power source power [kW]
+
+&                                                                                              2000
+  x ¼ 0;
+          port mode                  (15e)
+
+0 x 1; sailing mode                                                                               0
+                                                                                             -2000
+where U is a set of fuel cell power change ratios, x is fuel cell                            -4000                   Fuel cell power
+per unit power, Psh;max is the maximum available shore power,                                                        Battery power
+when Pbat;port is negative this indicates the battery charging                                      0                Shore power
+power in port mode, Pdem;port is the ship's power demand in port
+mode. With the optimal EMS solved, the second objective                                           1            500 1000 1500 2000 2500 3000 3500
+function of GWP emissions can then be calculated.                                                                                   Time [s]
+                                                                                                                                        (b)
+
+                                                                                             Battery SOC  0.8
+
+Case studies and discussion                                                                               0.6
+
+Simulation settings                                                                                       0.4
+
+In this section, the proposed hybrid fuel cell and battery pro-                  0.2
+pulsion system model and power sources sizing methodology                            0 500 1000 1500 2000 2500 3000 3500
+are applied to a coastal ferry with the specification as pre-                                                    Time [s]
+sented in Table 2. The original system features an integrated                                                        (c)
+full electric propulsion configuration with a total installed
+diesel powered capacity of 4370 kW. It is assumed that the          Fig. 11 e DDP solved EMS for averaged power profile of
+annual operating duty is 300 days, and the ship operates be-        selected power source sizing: (a) averaged power profile, (b)
+tween two fixed ports with 8 rounds of trips (16 voyages) per       power distribution between power sources and (c) battery
+daydeach voyage taking approximately 1 h. It is also assumed        SOC trajectory.
+that the batteries can be charged at both ends of the defined
+voyage, and hydrogen needs to be replenished at the end of          to off-line EMS due to the requirement of complete profile
+the operational day. The simulations were implemented in            information before solving.
+Matlab 2019a on a workstation with two Intel Xeon E5-2683 V3
+processors and 64 GB memory.                                            Table 5 presents the parameters adopted in the case
+                                                                    studies. The power sources' parameters are acquired from
+    Fig. 9a shows the subject ship with its route presented in      manufacturer's specifications. Note that the optimal design
+Fig. 9b [24]. The continuous monitoring power data acquired         may vary for different geographical locations with different
+from Ref. [24] was segregated into voyage power profiles by         energy supply tariffs and fuel costs. Considering H2 GWP and
+judging the ship's speed and location. An average operating         price can depend on the method of and energy source for H2
+profile based upon these profiles was generated for sizing and      production, H2 produced from two approaches (i.e. via
+optimisation, as shown in Table 3. Table 4 shows the grids of       nuclear-powered based and wind power based electrolysis)
+state and action spaces for inner layer DDP.
+                                                                    Table 6 e Voyage cost and GWP emission breakdown.
+    The original time step of raw data used to generate the
+power profile was 15 s. Such a time step was also adopted in                                                   Cost [$]  GWP emission [kg CO2]
+this study. Considering the problem is solvable with available
+computational power, the 15 s time step was not increased.          Fuel cell                                  238       e
+The DDP EMS solver in the inner layer can generate an off-line
+EMS in less than 1 s with the above mentioned settings and          Hydrogen                                   368       67
+time step. Fletcher et al. [28] reported that their Stochastic
+Dynamic Programming algorithm took approximately 6 h to             Battery                                    65        e
+generate an on-line EMS using a quad-core processor. Never-
+theless, it is worth noting that the application of DDP is limited  Shore electricity                          39        123
+
+                                                                    Total                                      710       190
+
+                                                                    Diesel engine                              46        e
+
+                                                                    Diesel fuel                                168       838
+
+                                                                    Shore electricity                          4         4
+
+                                                                    Total                                      218       842
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+12  international journal of hydrogen energy xxx (xxxx) xxx
+
+are considered in two case studies. The first case is for the       sacrifice to achieve minimal improvement in emission
+ship's original operating area (Denmark), whereas the second        performance.
+case investigates how the hybrid system should be optimised
+assuming the ship operates in UK waters.                                For the scenario of H2 via wind-poweredÀelectrolysisÁ (Fig.
+                                                                    10b), an even lower GWP can be achieved 105 kg CO2 due
+Denmark case                                                        to the GWP of this H2 approach (1:5 kg CO2kgÀ1Þ is much lower
+                                                                    than that from the nuclear-powered approach. However, such
+For the case of Denmark, detailed fuel cell and battery sizing      a low GWP emission would lead to a voyage cost of $900. It is
+combinations with regards to the cost and emission objectives       also true that a large fuel cell plant leads to lower emissions. A
+are presented in Fig. 10 for the two considered two H2 sce-         large battery plant can achieve lower average voyage cost
+narios. In the scenario of H2 via nuclear-powered high tem-         (minimum $615 per voyage). In practice, when choosing the
+perature electrolysis (Fig. 10a), the minimum voyage GWP can        design point, other factors need to be considered with refer-
+be achieved is about 155 kg CO2, at the voyage cost $610. This      ence to these Pareto fronts.
+minimum GWP corresponds to a PEMFC power of 4320 kW and
+a battery capacity of 37 kWh. Note that the fuel cell power at      Optimal EMS
+this point is very close to the original total diesel engine power  To further illustrate the optimal EMS (Section Inner
+of 4370 kW, and the battery capacity is comparatively negli-        layereoptimal EMS for the average operating profile), based
+gible when compared to the installed fuel cell power. Such an       on the Pareto front shown in Fig. 10b, design point of fuel cell
+observation suggest that, given the case study parameters, to       power of 2940 kW and battery capacity of 581 kWh is selected
+achieve extremely low GWP emissions, a large fuel cell plant        for demonstration. Fig. 11 shows the optimal EMS for the
+with relatively small battery capacity would be the preferred       selected power source design under the averaged operating
+solution. However, it would be more reasonable to select the        profile (Table 3). The battery modules provide power solely
+design point around fuel cell power of 2915 kW and battery          during departure and deliver a small portion of power while
+capacity of 600 kWh, which corresponds the knee point               cruising. As this operating profile is averaged for sizing and
+(voyage cost of $480 and GWP of 170 kg) of the Pareto front as      does not include power transients, the optimal EMS does not
+in Fig. 10a. Such a design point avoids unfavourably large cost     charge the battery during sailing (i.e. the battery power flow is
+                                                                    never negative during sailing). When the ship is in port, the
+
+  Fig. 12 e UK case: (a) H2 via nuclear-powered high temperature electrolysis and (b) H2 via wind-powered electrolysis.
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+                           international journal of hydrogen energy xxx (xxxx) xxx                                      13
+
+fuel cell is switched to idle while the batteries are charged by              Conclusions and future work
+shore power. Note that such an EMS is solved by DDP, and the
+entire profile is known in advance.                                           This paper presents a plug-in hybrid PEMFC/battery system
+                                                                              model and an improved multi-objective design methodology
+    To better understand the compositions of voyage cost and                  for such systems. The model and optimisation methodology
+emission of the selected design point discussed in Section                    have been applied to a coastal ferry to optimise its plug-in
+Optimal EMS, Table 6 shows the cost and emission breakdown                    hybrid fuel cell and battery propulsion system via two case
+of the proposed hybrid and original systems. Hydrogen cost                    studies. Power source degradations and optimal energy
+contributes more than 50% of the average cost. The fuel cell                  management between multiple power sources are considered
+degradation cost is a significant source as well. The total GWP               in the optimisation. It is evident that such a PEMFC/battery
+emission is reduced by 85% with 226% cost increase compared                   hybrid system can significantly reduce the GWP emission, but
+to the original diesel-electric system. The hybrid system is                  is still constrained by high costs, mainly from H2 cost of pro-
+more expensive than the conventional diesel engine based                      duction and fuel cell degradation. The multi-objective power
+system. However, the Pareto front could vary significantly if                 source sizing methodology can be used to guide alternative
+parameters like fuel cell price or H2 prices change.                          propulsion system design considering the influences of en-
+                                                                              ergy through-life properties and power source degradation
+UK case                                                                       characteristics. For the two cases considered with two H2
+                                                                              scenarios, a minimum 65% GWP emission reduction can be
+To understand how the proposed hybrid system should be                        achieved by utilising the plug-in hybrid fuel cell and battery
+optimised if it operates in UK waters, further investigations of              propulsion system configuration.
+the two H2 scenarios are shown in Fig. 12a and Fig. 12b. Similar
+to the Denmark case, larger fuel cells lead to lower GPW in                       In the inner layer of the optimisation scheme, an averaged
+both H2 scenarios. Due to UK non-household electricity costs                  operating profile is considered for design optimisation. In
+being higher than that of Denmark, the minimum voyage                         future work, real-time energy management strategies for
+costs are $510 (Fig. 12a) and $670 (Fig. 12b) respectively. It is             future non-predicted profiles will be developed to manage
+worth noting that, the maximum voyage GWP for the wind-                       power flows between multiple power sources effectively.
+powered electrolysis (Fig. 12b) is 290 kg CO2 (65% GWP emis-
+sion reduction compared to the original diesel-electric                       Acknowledgements
+configuration), whereas it is only 185 kg CO2 for the
+Denmark case. As presented in Fig. 12a, increasing the fuel cell              The authors thank Jens Christian Bjeldorf from Molslinje A/S
+power from 2900 to 3090 kW (corresponding battery capacity                    for approving using the ship data in this study. The authors
+is 425 kWh would bring down the voyage GWP down from 215                      are grateful to Stig Eriksen and his colleagues for collecting the
+to 200 kg CO2. However, it is more challenging to further                     ship data. The authors are also indebted to Konrad Yearwood
+reduce voyage GWP by increasing installed fuel cell power                     for his valuable critique of this paper. The first author would
+beyond this knee point. As shown in Fig. 12b, the knee point is               like to thank University College London (UCL) Faculty of En-
+around the fuel cell power of 3060 kW and the battery capacity                gineering Sciences and China Scholarship Council for sup-
+of 450 kWh. This knee point provides an average voyage cost                   porting his studies at UCL.
+of $750 and GWP of 170 kg CO2. Comparing Fig. 12a and Fig.
+12b, wind-power based H2 would provide much lower                             Appendix
+voyage GWP (minimum 110 kg CO2, though the cheapest
+sizing solution is still more expensive than $600 (maximum
+voyage cost appeared in 12a).
+
+Table 7 e PEMFC governing equations.
+
+Description                                                                   Equation                                                Reference
+                                                                                                                                              [46]
+Oxygen partial pressure    pO2        ¼  nO2      nO2     ncHa2tO  Pcat
+Hydrogen partial pressure                     =0:21 þ                                                                                         [21]
+Cell voltage output                                                                                                                           [21]
+Open circuit voltage       pH2        ¼  nH2  nH2         Pan                                                                                 [2]
+                                              þ nHan2
+Activation overpotential                               O                                                                (continued on next page)
+
+                           Vcell ¼ Voc À Vohm À Vact À Vcon                                                           
+
+                           Voc        ¼  1:229 À    0:85  Â    10À3 ðT     À  298:15Þ    þ  RT  Â    lnpH2 þ12 lnpO2
+                                                                                            2F
+                                                                                      !
+                                                   
+                                          RT         i              RT           i
+                           Vact       ¼  aan F  ln  i0an       þ   acat F  ln!#ic0at
+
+                                                "
+
+                           ik0 ¼ gmexp             ÀDGc        1À 1           i0k;ref ; k ¼ an; cat
+                                                      R        T Tref
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+14                           international journal of hydrogen energy xxx (xxxx) xxx
+
+Table 7 e (continued )                                                          Equation                                                                                     Reference
+Description                                                                                                                                                                       [46]
+Ohmic overpotential          Vohm   ¼              tm i                                                                                                                           [42]
+                                                   sm
+Concentration overpotential                                                                       !                                                                               [5]
+                                                                                            1 À1
+                             sm ¼ ð0:005139lm À 0:003260Þexp 1260                          303 T
+
+                                    8
+                                    >>< 0:043 þ 17:81am À 39:85a2m þ 36:0a3m; for 0 < am 1
+
+                             lm  ¼  >>:            14 þ    1:4ðam  À  1Þ;                      for 1 < am 3
+                                                   16:8;                                       for am > 3
+
+                             am ¼ ðacat þaanÞ=2
+
+                             ak ¼ PfsaktPðTk Þ; k ¼ an; cat
+
+                             log10 ðPsat ðTÞÞ              ¼ À7:90298 Â ðTs=T À 1Þ þ 5:02808 Â log10ðTs=TÞ
+                                                                     À1:3816 Â 10À7½1011:344Âð1ÀT=TsÞÀ1
+
+                                                               þ8:1328 Â 10À3½103:49149Âð1ÀTs=TÞ þ log10Ps
+
+                             Vincown ¼h8>>>>><>>>>>>>icbðfo7hi:r1Tc61si0ÂiL¼:p113cO102727À334:1Tþ5ÀpKs0ata:6n2<d2Þ2Pas0t¼m:p1O11207133þ24p:s4atPaþ. ðÀ1:45 Â 10À3T þ 1:68Þ;
+                             c1  ¼                                                           
+                                    >:>>>>>>>>>>>                               pO2      psat
+                                                   ð8:66 Â 10À5T À 0:068Þ     0:1173  þ        þ  ðÀ1:6  Â  10À4 T  þ  0:54Þ;
+
+                                                             pO2            
+                                                           0:1173
+                                                   for             þ  psat    ! 2atm
+
+references                                                                          catalyst. J Catal 2015;328:248e57. https://doi.org/10.1016/
+                                                                                    j.jcat.2014.12.013.
+ [1] ABB. ForSea (formerly HH Ferries Group) completes                         [9] Brynolf S, Fridell E, Andersson K. Environmental assessment
+      conversion of the world's largest battery ferries, powered by                 of marine fuels: liquefied natural gas, liquefied biogas,
+      ABB. Accessed, https://new.abb.com/news/detail/10434/                         methanol and bio-methanol. J Clean Prod 2014;74:86e95.
+      forsea-formerly-hh-ferries-group-completes-conversion-of-                     https://doi.org/10.1016/j.jclepro.2014.03.052.
+      the-worlds-largest-battery-ferries-powered-by-abb.                      [10] BunkerIndex. Index summary. Accessed, http://www.
+      [Accessed 11 October 2019].                                                   bunkerindex.com/. [Accessed 28 October 2017].
+                                                                              [11] Cames M, Graichen J, Siemons A, Cook V. Emission reduction
+ [2] Abdin Z, Webb C, Gray EM. PEM fuel cell model and                              targets for international aviation and shipping. Report.
+      simulation in MatlabeSimulink based on physical                               European Parliament, http://www.europarl.europa.eu/
+      parameters. Energy 2016;116:1131e44. https://doi.org/                         RegData/etudes/STUD/2015/569964/IPOL_STU(2015)569964_
+      10.1016/j.energy.2016.10.033.                                                 EN.pdf; 2015.
+                                                                              [12] Caterpillar. Marine power systems C32 TIER 3/IMO II.
+ [3] Acar C, Dincer I. Comparative assessment of hydrogen                           Accessed, https://www.cat.com/en_GB/products/new/
+      production methods from renewable and non-renewable                           power-systems/marine-power-systems/marine-generator-
+      sources. Int J Hydrogen Energy 2014;39:1e12. https://doi.org/                 sets/1000031744.html. [Accessed 20 January 2018].
+      10.1016/j.ijhydene.2013.10.060.                                         [13] Chen H, Pei P, Song M. Lifetime prediction and the economic
+                                                                                    lifetime of proton exchange membrane fuel cells. Appl
+ [4] Alaswad A, Baroutaji A, Achour H, Carton J, Al Makky A,                        Energy 2015;142:154e63. https://doi.org/10.1016/
+      Olabi AG. Developments in fuel cell technologies in the                       j.apenergy.2014.12.062.
+      transport sector. Int J Hydrogen Energy 2016;41:16499e508.              [14] Choi CH, Yu S, Han IS, Kho BK, Kang DG, Lee HY, Seo MS,
+      https://doi.org/10.1016/j.ijhydene.2016.03.164.                               Kong JW, Kim G, Ahn JW, Park SK, Jang DW, Lee JH, Kim M.
+                                                                                    Development and demonstration of PEM fuel-cell-battery
+ [5] Ang SMC, Brett DJ, Fraga ES. A multi-objective optimisation                    hybrid system for propulsion of tourist boat. Int J Hydrogen
+      model for a general polymer electrolyte membrane fuel cell                    Energy 2016;41:3591e9. https://doi.org/10.1016/
+      system. J Power Sources 2010;195:2754e63. https://doi.org/                    j.ijhydene.2015.12.186.
+      10.1016/j.jpowsour.2009.10.095.                                         [15] Corbett JJ, Fischbeck PS, Pandis SN. Global nitrogen and
+                                                                                    sulfur inventories for oceangoing ships. J Geophys Res:
+ [6] Ballard. Fuel cell power module for heavy duty motive                          Atmosphere 1999;104:3457e70. https://doi.org/10.1029/
+      applications. Accessed, http://www.ballard.com/docs/                          1998JD100040.
+      default-source/motive-modules-documents/fcvelocity_hd_                  [16] Corvus E. Orca energy specifications. Accessed, http://
+      family_of_products_low_res.pdf. [Accessed 21 February                         corvusenergy.com/technology-specifications/. [Accessed 10
+      2019].                                                                        October 2017].
+                                                                              [17] Corvus E. Corvus Energy awarded the marine world's biggest
+ [7] Bassam A. Use of voyage simulation to investigate hybrid                       battery package for hybrid powered vessel by Norwegian
+      fuel cell systems for marine propulsion. Ph.D. thesis.                        Electric Systems. Accessed, https://corvusenergy.com/
+      University of Southampton; 2017.
+
+ [8] Boscarato I, Hickey N, Kaspar J, Prati MV, Mariani A. Green
+      shipping: marine engine pollution abatement using a
+      combined catalyst/seawater scrubber system. 1. Effect of
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+international journal of hydrogen energy xxx (xxxx) xxx              15
+
+      corvus-energy-awarded-the-marine-worlds-biggest-battery-             Pract 2018;76:133e54. https://doi.org/10.1016/
+      package-by-norwegian-electric-systems/. [Accessed 20 May             j.conengprac.2018.04.009.
+      2019].                                                         [34] Kanstad T, Lillholm MB, Zhang Z. Highly efficient EV battery
+[18] Deb K, Pratap A, Agarwal S, Meyarivan T. A fast and elitist           charger using fractional charging concept with SiC devices.
+      multiobjective genetic algorithm: Nsga-ii. IEEE Trans Evol           2019 IEEE applied power electronics conference and
+      Comput 2002;6:182e97.                                                exposition (APEC), IEEE. 2019. p. 1601e8. https://doi.org/
+[19] Deniz C, Zincir B. Environmental and economical                       10.1109/APEC.2019.8722191.
+      assessment of alternative marine fuels. J Clean Prod           [35] Kay R, Alder J. Coastal planning and management. London:
+      2016;113:438e49. https://doi.org/10.1016/                            CRC Press; 2017.
+      j.jclepro.2015.11.089.                                         [36] Kim MJ, Peng H. Power management and design
+[20] Di Natale F, Carotenuto C. Particulate matter in marine diesel        optimization of fuel cell/battery hybrid vehicles. J Power
+      engines exhausts: emissions and control strategies. Transp           Sources 2007;165:819e32. https://doi.org/10.1016/
+      Res D Transp Environ 2015;40:166e91. https://doi.org/                j.jpowsour.2006.12.038.
+      10.1016/j.trd.2015.08.011.                                     [37] Kristensen HO. Energy demand and exhaust gas emissions of
+[21] Dicks AL, Rand DA. Fuel cell systems explained. John Wiley &          marine engines. Clean Shipping Currents 2012;1:18e26.
+      Sons; 2018.                                                    [38] Larcher D, Tarascon JM. Towards greener and more
+[22] Ekanem Attah E, Bucknall R. An analysis of the energy                 sustainable batteries for electrical energy storage. Nat Chem
+      efficiency of LNG ships powering options using the EEDI.             2015;7:19. https://doi.org/10.1038/nchem.2085.
+      Ocean Eng 2015;110:62e74. https://doi.org/10.1016/             [39] Liang M, Liu Y, Xiao B, Yang S, Wang Z, Han H. An analytical
+      j.oceaneng.2015.09.040.                                              model for the transverse permeability of gas diffusion layer
+[23] Endresen Ø, Sørga° rd E, Sundet JK, Dalsøren SB, Isaksen ISA,         with electrical double layer effects in proton exchange
+      Berglen TF, Gravir G. Emission from international sea                membrane fuel cells. Int J Hydrogen Energy 2018;43:17880e8.
+      transportation and environmental impact. J Geophys Res:              doi.org/10.1016/j.ijhydene.2018.07.186.
+      Atmosphere 2003;108. https://doi.org/10.1029/                  [40] Luo X, Wang J, Dooner M, Clarke J. Overview of current
+      2002JD002898.                                                        development in electrical energy storage technologies and
+[24] Eriksen S, Lu¨ tzen M, Jensen JB, Sørensen JC. Improving the          the application potential in power system operation. Appl
+      energy efficiency of ferries by optimizing the operational           Energy 2015;137:511e36. https://doi.org/10.1016/
+      practices. Proceedings of the full scale ship performance            j.apenergy.2014.09.081.
+      conference 2018. The Royal Institution of Naval Architects,    [41] McConnell VP. Now, voyager? the increasing marine use of
+      The Royal Institution of Naval Architects; 2018. p. 101e11.          fuel cells. Fuel Cells Bulletin 2010 2010:12e7. https://doi.org/
+[25] European Environment Agency. Overview of electricity                  10.1016/S1464-2859(10)70166-8.
+      production and use in Europe. Report. European                 [42] Musio F, Tacchi F, Omati L, Gallo Stampino P, Dotelli G,
+      Environment Agency; 2017. Accessed, https://www.eea.                 Limonta S, Brivio D, Grassini P. Pemfc system simulation in
+      europa.eu/data-and-maps/indicators/overview-of-the-                  matlab-simulink® environment. Int J Hydrogen Energy
+      electricity-production-2/assessment. [Accessed 20 January            2011;36:8045e52. https://doi.org/10.1016/
+      2017].                                                               j.ijhydene.2011.01.093.
+[26] Eurostat. Electricity price statistics. Accessed, http://ec.    [43] Ovrum E, Bergh TF. Modelling lithium-ion battery hybrid
+      europa.eu/eurostat/statistics-explained/index.php/                   ship crane operation. Appl Energy 2015;152:162e72. https://
+      Electricity_price_statistics. [Accessed 10 February 2019].           doi.org/10.1016/j.apenergy.2015.01.066.
+[27] Eyring V, Isaksen ISA, Berntsen T, Collins WJ, Corbett JJ,      [44] Ovrum E, Dimopoulos G. A validated dynamic model of the
+      Endresen O, Grainger RG, Moldanova J, Schlager H,                    first marine molten carbonate fuel cell. Appl Therm Eng
+      Stevenson DS. Transport impacts on atmosphere and                    2012;35:15e28. https://doi.org/10.1016/
+      climate: shipping. Atmos Environ 2010;44:4735e71. https://           j.applthermaleng.2011.09.023.
+      doi.org/10.1016/j.atmosenv.2009.04.059.                        [45] Pukrushpan JT. Modeling and control of fuel cell systems and
+[28] Fletcher T, Thring R, Watkinson M. An energy management               fuel processors. Ann Arbor, Michigan, USA: Ph.D. thesis.
+      strategy to concurrently optimise fuel consumption & pem             University of Michigan; 2003.
+      fuel cell lifetime in a hybrid vehicle. Int J Hydrogen Energy  [46] Pukrushpan JT, Stefanopoulou AG, Peng H. Modeling and
+      2016;41:21503e15. https://doi.org/10.1016/                           control for pem fuel cell stack system, in: American Control
+      j.ijhydene.2016.08.157.                                              conference, 2002. Proceed. 2002, IEEE 2002:3117e22. https://
+[29] Hannan MA, Hoque MM, Mohamed A, Ayob A. Review of                     doi.org/10.1109/ACC.2002.1025268.
+      energy storage systems for electric vehicle applications:      [47] Raucci C. The potential of hydrogen to fuel international
+      issues and challenges. Renew Sustain Energy Rev                      shipping. Ph.D. thesis. UCL (University College London; 2017.
+      2017;69:771e89. https://doi.org/10.1016/j.rser.2016.11.171.    [48] Sasank BV, Rajalakshmi N, Dhathathreyan KS. Performance
+[30] Hansen JF, Wendt F. History and state of the art in                   analysis of polymer electrolyte membrane (PEM) fuel cell
+      commercial electric ship propulsion, integrated power                stack operated under marine environmental conditions. J
+      systems, and future trends. Proc IEEE 2015;103:2229e42.              Mar Sci Technol 2016;21:471e8. https://doi.org/10.1007/
+      https://doi.org/10.1109/JPROC.2015.2458990.                          s00773-016-0369-y.
+[31] Hu X, Johannesson L, Murgovski N, Egardt B. Longevity-          [49] Sharaf OZ, Orhan MF. An overview of fuel cell technology:
+      conscious dimensioning and power management of the                   fundamentals and applications. Renew Sustain Energy Rev
+      hybrid energy storage system in a fuel cell hybrid electric          2014;32:810e53. https://doi.org/10.1016/j.rser.2014.01.012.
+      bus. Appl Energy 2015;137:913e24. https://doi.org/10.1016/     [50] Stefanatos IC, Dimopoulos GG, Kakalis NMP, Vartdal Bj,
+      j.apenergy.2014.05.013.                                              Ovrum E. Modelling and simulation of hybrid-electric
+[32] International Maritime Organization. Third IMO greenhous              propulsion systems : the Viking Lady case. 12th international
+      gas study 2014. Report. International Maritime Organization;         marine design conference. Tokyo: The Japan Society of Naval
+      2014.                                                                Architects and Ocean Engineers; 2015. p. 161e78.
+[33] Kalikatzarakis M, Geertsma R, Boonen E, Visser K,               [51] Stroe AI, Swierczynski M, Stroe DI, Teodorescu R.
+      Negenborn R. Ship energy management for hybrid                       Performance model for high-power lithium titanate oxide
+      propulsion and power supply with shore charging. Contr Eng           batteries based on extended characterization tests. 2015 IEEE
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+16  international journal of hydrogen energy xxx (xxxx) xxx
+
+      Energy Conversion Congress and Exposition (ECCE); 2015.          [59] Viana M, Hammingh P, Colette A, Querol X, Degraeuwe B,
+      p. 6191e8. https://doi.org/10.1109/ECCE.2015.7310528.                  Vlieger Id, van Aardenne J. Impact of maritime transport
+[52] Sundstrom O, Ambu¨ hl D, Guzzella L. On implementation of               emissions on coastal air quality in europe. Atmos Environ
+      dynamic programming for optimal control problems with                  2014;90:96e105. https://doi.org/10.1016/
+      final state constraints. Oil & Gas Science and                         j.atmosenv.2014.03.046.
+      TechnologyeRevue de l'Institut Franc¸ ais du Petrole
+      2010;65:91e102. https://doi.org/10.2516/ogst/2009020.            [60] Wu P, Bucknall R. On the design of plug-in hybrid fuel cell
+[53] Thomson H, Corbett JJ, Winebrake JJ. Natural gas as a marine            and lithium battery propulsion systems for coastal ships. In:
+      fuel. Energy Policy 2015;87:153e67. https://doi.org/10.1016/           Kujala P, Lu L, editors. 13th international marine design
+      j.enpol.2015.08.027.                                                   conference (IMDC 2018). London: CRC Press/Balkema; 2018.
+[54] de Troya JJ, A lvarez C, Fernandez-Garrido C, Carral L.                 p. 941e51.
+      Analysing the possibilities of using fuel cells in ships. Int J
+      Hydrogen Energy 2016;41:2853e66. https://doi.org/10.1016/        [61] Xie Y, Savvaris A, Tsourdos A. Sizing of hybrid electric
+      j.ijhydene.2015.11.145.                                                propulsion system for retrofitting a mid-scale aircraft using
+[55] Tseng KC, Chen CT, Cheng CA. A high-efficiency high step-               non-dominated sorting genetic algorithm. Aero Sci Technol
+      up interleaved converter with a voltage multiplier for electric        2018;82e83:323e33. https://doi.org/10.1016/j.ast.2018.09.022.
+      vehicle power management applications. J. Power Electron.
+      2016;16:414e24. https://doi.org/10.6113/JPE.2016.16.2.414.       [62] Xu L, Mueller CD, Li J, Ouyang M, Hu Z. Multi-objective
+[56] Van Biert L, Godjevac M, Visser K, Aravind P. A review of fuel          component sizing based on optimal energy management
+      cell systems for maritime applications. J Power Sources                strategy of fuel cell electric vehicles. Appl Energy
+      2016;327:345e64. https://doi.org/10.1016/                              2015;157:664e74. https://doi.org/10.1016/
+      j.jpowsour.2016.07.007.                                                j.apenergy.2015.02.017.
+[57] Vergara J, McKesson C, Walczak M. Sustainable energy for
+      the marine sector. Energy Policy 2012;49:333e45. https://        [63] Yan Q, Toghiani H, Causey H. Steady state and dynamic
+      doi.org/10.1016/j.enpol.2012.06.026.                                   performance of proton exchange membrane fuel cells
+[58] Verschaeren R, Schaepdryver W, Serruys T, Bastiaen M,                   (PEMFCs) under various operating conditions and load
+      Vervaeke L, Verhelst S. Experimental study of NOx reduction            changes. J Power Sources 2006;161:492e502. https://doi.org/
+      on a medium speed heavy duty diesel engine by the                      10.1016/j.jpowsour.2006.03.077.
+      application of EGR (exhaust gas recirculation) and Miller
+      timing. Energy 2014;76:614e21. https://doi.org/10.1016/          [64] Zheng F, Xing Y, Jiang J, Sun B, Kim J, Pecht M. Influence of
+      j.energy.2014.08.059.                                                  different open circuit voltage tests on state of charge online
+                                                                             estimation for lithium-ion batteries. Appl Energy
+                                                                             2016;183:513e25. https://doi.org/10.1016/
+                                                                             j.apenergy.2016.09.010.
+
+Please cite this article as: Wu P, Bucknall R, Hybrid fuel cell and battery propulsion system modelling and multi-objective optimisation
+for a coastal ferry, International Journal of Hydrogen Energy, https://doi.org/10.1016/j.ijhydene.2019.11.152
+

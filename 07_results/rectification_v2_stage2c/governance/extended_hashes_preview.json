@@ -1,0 +1,20 @@
+{
+ "efc_cycle_model": "2563e3cb9487d8212cd8f0003a225164f7a0b9a28be668c3b2ecf8c55eec069b",
+ "closed_loop_lite": "94cc05ddc56174447d3665d5ad89c7b5601752d70f56cefc026d5b884e50a05e",
+ "stage2c_config": "33ad8453ea58ed1652f81c44480dd430018fdb1f0291dbe565483cc49c474670",
+ "capacity_gate_config": "11ed37be41737aaba1558b2eed366457d50724c73e9ac7094ea2f9afd249965f",
+ "frozen_params": "db04bca0208a5ec888e6b6af6e15869aea76ad73932253d1dc742294966d8dfd",
+ "economic_params": "acd3493438d9e3ab5eed492b57ef5362fe160681a16c2b06b50e8614296df294",
+ "mvp_c1_config": "50c6ab1c129519f626891899ce2c12075f4ebff45cf7ac11f888c866ab4cc5f6",
+ "run_stage3_full_analysis": "7a39c63e99b0b75e6bf802f4deab4fdad800d3745b97e2c098decba9428089c6",
+ "run_cost_sensitivity": "2c2be1aa4474b7bbd7be7e2ff8012c9de55e593bade47864c352ee47803db8a0",
+ "run_cross_device_paths": "2bf1d5fb38bc80d44a391edcfb1c468a18af9f0d401d901cb60b6de7724815f8",
+ "run_degradation_uncertainty": "171ab8ccca23267201e1cd428f09dab77169111a63155397701ebf87e7ac9bad",
+ "run_double_layer_propagation": "be004782103e1fb8bd85f6a67fc09f858dae0c6d4f93f6887a449b576190588e",
+ "run_l4_ablation": "bbda9779e79b75df6658bca989d77dc98419ebd92502d73bde685678934b7a20",
+ "run_stage3_paper_assets": "d1a931e5bb5751b5f79436f628ec4ae9bc408aded16c393a6ab6992b635c8929",
+ "run_efc_vs_proxy_comparison": "e3e4e7b3afdb3e377690e19f96e050e18ed7592ff897a06a0a856d1947a8b49f",
+ "ems_stage2b": "93ef50305e8032a5280378c79acd5ecb4432dedea125b3302d58d1cca9d4db8a",
+ "annual_input_contract": "67eba4edb20b57a3f1106712bebe5f8fc13ea9df226a48f6e0cedd8bccfa9d9c",
+ "input_csv": "86e12930b6b08cab63dd00e12d5e00ab5afd0a3d1cc6e1122c90b1b52d207dd3"
+}

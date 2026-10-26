@@ -1,0 +1,47 @@
+{
+ "timestamp": "2026-08-12T02:08:42",
+ "role": "compact",
+ "method": "eol_events event-driven (Stage3 同口径)",
+ "devices_fed": [
+  "bat",
+  "fc"
+ ],
+ "el_repl_sensitivity": false,
+ "replacement_events": [
+  [
+   "bat",
+   69181.22016585543
+  ],
+  [
+   "fc",
+   81769.79596905576
+  ],
+  [
+   "bat",
+   138506.65588623018
+  ],
+  [
+   "fc",
+   163551.79596911388
+  ]
+ ],
+ "replacement_schedule_years": {
+  "BAT": [
+   7.8974,
+   15.8113
+  ],
+  "PEMFC": [
+   9.3345,
+   18.6703
+  ]
+ },
+ "annual_energy_mwh": 463.47877024999997,
+ "npc_million_cny": 32.32757632117316,
+ "lcoe_cny_per_kwh": 3.4874926745550505,
+ "replacement_pv_frac": 0.1513745260649944,
+ "replacement_counts": {
+  "BAT": 2,
+  "PEMFC": 2
+ },
+ "note": "用户口径：BAT/FC 按事件驱动模型内部 EOL 阈值推寿命（与 degradation_summary 同口径）；EL 无绝对寿命标定默认不触发替换（--el-repl 为上界敏感性）；LCOE 为正式口径（非方法演示），第四关三年链式接入同链路"
+}

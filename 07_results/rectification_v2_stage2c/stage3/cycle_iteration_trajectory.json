@@ -1,0 +1,300 @@
+{
+  "schema_version": "cycle_iteration_trajectory.1",
+  "method": "fixed-point iteration on 3-year-block initial state (2016->2017->2018 chained)",
+  "criterion": {
+    "closure_tol": {
+      "soc": 0.05,
+      "h2": 0.05
+    },
+    "sequential_tol": 0.0001,
+    "reference": "Chem. Eng. Sci. 2016, rigorous criterion for approach to cyclic steady-state (PSA fixed-point iteration)"
+  },
+  "representatives": {
+    "compact": {
+      "converged": true,
+      "iterations": 4,
+      "final_soc_closure": 0.0,
+      "final_h2_closure": 0.0,
+      "trajectory": [
+        {
+          "iter": 1,
+          "init_soc": 0.5,
+          "init_h2_frac": 0.5,
+          "end_soc": 0.256599,
+          "end_h2_frac": 0.781665,
+          "soc_closure": 0.24340096,
+          "h2_closure": 0.28166509,
+          "year_end_soc": {
+            "2016": 0.153837,
+            "2017": 0.760289,
+            "2018": 0.256599
+          }
+        },
+        {
+          "iter": 2,
+          "init_soc": 0.256599,
+          "init_h2_frac": 0.781665,
+          "end_soc": 0.256599,
+          "end_h2_frac": 0.903747,
+          "soc_closure": 0.0,
+          "h2_closure": 0.12208227,
+          "year_end_soc": {
+            "2016": 0.153837,
+            "2017": 0.760289,
+            "2018": 0.256599
+          },
+          "d_soc_closure_vs_prev": 0.24340096,
+          "d_h2_closure_vs_prev": 0.15958281
+        },
+        {
+          "iter": 3,
+          "init_soc": 0.256599,
+          "init_h2_frac": 0.903747,
+          "end_soc": 0.256599,
+          "end_h2_frac": 0.903747,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.153837,
+            "2017": 0.760289,
+            "2018": 0.256599
+          },
+          "d_soc_closure_vs_prev": 0.0,
+          "d_h2_closure_vs_prev": 0.12208227
+        },
+        {
+          "iter": 4,
+          "init_soc": 0.256599,
+          "init_h2_frac": 0.903747,
+          "end_soc": 0.256599,
+          "end_h2_frac": 0.903747,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.153837,
+            "2017": 0.760289,
+            "2018": 0.256599
+          },
+          "d_soc_closure_vs_prev": 0.0,
+          "d_h2_closure_vs_prev": 0.0
+        }
+      ]
+    },
+    "balanced": {
+      "converged": true,
+      "iterations": 3,
+      "final_soc_closure": 0.0,
+      "final_h2_closure": 0.0,
+      "trajectory": [
+        {
+          "iter": 1,
+          "init_soc": 0.5,
+          "init_h2_frac": 0.5,
+          "end_soc": 0.193634,
+          "end_h2_frac": 0.966351,
+          "soc_closure": 0.30636612,
+          "h2_closure": 0.46635074,
+          "year_end_soc": {
+            "2016": 0.155974,
+            "2017": 0.74742,
+            "2018": 0.193634
+          }
+        },
+        {
+          "iter": 2,
+          "init_soc": 0.193634,
+          "init_h2_frac": 0.966351,
+          "end_soc": 0.193634,
+          "end_h2_frac": 0.966351,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.155974,
+            "2017": 0.74742,
+            "2018": 0.193634
+          },
+          "d_soc_closure_vs_prev": 0.30636612,
+          "d_h2_closure_vs_prev": 0.46635074
+        },
+        {
+          "iter": 3,
+          "init_soc": 0.193634,
+          "init_h2_frac": 0.966351,
+          "end_soc": 0.193634,
+          "end_h2_frac": 0.966351,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.155974,
+            "2017": 0.74742,
+            "2018": 0.193634
+          },
+          "d_soc_closure_vs_prev": 0.0,
+          "d_h2_closure_vs_prev": 0.0
+        }
+      ]
+    },
+    "hydrogen_dominant": {
+      "converged": true,
+      "iterations": 3,
+      "final_soc_closure": 0.0,
+      "final_h2_closure": 0.0,
+      "trajectory": [
+        {
+          "iter": 1,
+          "init_soc": 0.5,
+          "init_h2_frac": 0.5,
+          "end_soc": 0.151803,
+          "end_h2_frac": 0.990225,
+          "soc_closure": 0.34819685,
+          "h2_closure": 0.49022542,
+          "year_end_soc": {
+            "2016": 0.150103,
+            "2017": 0.737128,
+            "2018": 0.151803
+          }
+        },
+        {
+          "iter": 2,
+          "init_soc": 0.151803,
+          "init_h2_frac": 0.990225,
+          "end_soc": 0.151803,
+          "end_h2_frac": 0.990225,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.150103,
+            "2017": 0.737128,
+            "2018": 0.151803
+          },
+          "d_soc_closure_vs_prev": 0.34819685,
+          "d_h2_closure_vs_prev": 0.49022542
+        },
+        {
+          "iter": 3,
+          "init_soc": 0.151803,
+          "init_h2_frac": 0.990225,
+          "end_soc": 0.151803,
+          "end_h2_frac": 0.990225,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.150103,
+            "2017": 0.737128,
+            "2018": 0.151803
+          },
+          "d_soc_closure_vs_prev": 0.0,
+          "d_h2_closure_vs_prev": 0.0
+        }
+      ]
+    },
+    "battery_dominant": {
+      "converged": true,
+      "iterations": 3,
+      "final_soc_closure": 0.0,
+      "final_h2_closure": 0.0,
+      "trajectory": [
+        {
+          "iter": 1,
+          "init_soc": 0.5,
+          "init_h2_frac": 0.5,
+          "end_soc": 0.413973,
+          "end_h2_frac": 0.999266,
+          "soc_closure": 0.08602738,
+          "h2_closure": 0.49926589,
+          "year_end_soc": {
+            "2016": 0.151731,
+            "2017": 0.801749,
+            "2018": 0.413973
+          }
+        },
+        {
+          "iter": 2,
+          "init_soc": 0.413973,
+          "init_h2_frac": 0.999266,
+          "end_soc": 0.413973,
+          "end_h2_frac": 0.999266,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.151731,
+            "2017": 0.801749,
+            "2018": 0.413973
+          },
+          "d_soc_closure_vs_prev": 0.08602738,
+          "d_h2_closure_vs_prev": 0.49926589
+        },
+        {
+          "iter": 3,
+          "init_soc": 0.413973,
+          "init_h2_frac": 0.999266,
+          "end_soc": 0.413973,
+          "end_h2_frac": 0.999266,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.151731,
+            "2017": 0.801749,
+            "2018": 0.413973
+          },
+          "d_soc_closure_vs_prev": 0.0,
+          "d_h2_closure_vs_prev": 0.0
+        }
+      ]
+    },
+    "critical": {
+      "converged": true,
+      "iterations": 3,
+      "final_soc_closure": 0.0,
+      "final_h2_closure": 0.0,
+      "trajectory": [
+        {
+          "iter": 1,
+          "init_soc": 0.5,
+          "init_h2_frac": 0.5,
+          "end_soc": 0.348874,
+          "end_h2_frac": 0.979984,
+          "soc_closure": 0.15112598,
+          "h2_closure": 0.47998364,
+          "year_end_soc": {
+            "2016": 0.154525,
+            "2017": 0.785626,
+            "2018": 0.348874
+          }
+        },
+        {
+          "iter": 2,
+          "init_soc": 0.348874,
+          "init_h2_frac": 0.979984,
+          "end_soc": 0.348874,
+          "end_h2_frac": 0.979984,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.154525,
+            "2017": 0.785626,
+            "2018": 0.348874
+          },
+          "d_soc_closure_vs_prev": 0.15112598,
+          "d_h2_closure_vs_prev": 0.47998364
+        },
+        {
+          "iter": 3,
+          "init_soc": 0.348874,
+          "init_h2_frac": 0.979984,
+          "end_soc": 0.348874,
+          "end_h2_frac": 0.979984,
+          "soc_closure": 0.0,
+          "h2_closure": 0.0,
+          "year_end_soc": {
+            "2016": 0.154525,
+            "2017": 0.785626,
+            "2018": 0.348874
+          },
+          "d_soc_closure_vs_prev": 0.0,
+          "d_h2_closure_vs_prev": 0.0
+        }
+      ]
+    }
+  }
+}

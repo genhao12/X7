@@ -1,0 +1,957 @@
+{
+  "compact": {
+    "n_outer": 256,
+    "n_inner": 4000,
+    "total_samples": 1024000,
+    "outer_seed": 20260803,
+    "inner_seed": 42,
+    "inner_method": "season_stratified_4week_moving_block_bootstrap_on_dispatch",
+    "bat_annual_damage": {
+      "mean": 0.14221400387956323,
+      "std": 0.03646884913867181,
+      "p05": 0.09014640582674883,
+      "p25": 0.11318403226845394,
+      "p50": 0.13962417242225578,
+      "p75": 0.16730116221822905,
+      "p95": 0.20841894986563245,
+      "n_samples": 1024000
+    },
+    "fc_annual_damage": {
+      "mean": 0.11635493309667944,
+      "std": 0.03143817078720101,
+      "p05": 0.06861798451988835,
+      "p25": 0.09186845559554102,
+      "p50": 0.11458855290437818,
+      "p75": 0.13903130988521473,
+      "p95": 0.170292444228433,
+      "n_samples": 1024000
+    },
+    "el_annual_damage": {
+      "mean": 0.15401767396941113,
+      "std": 0.0368000879165081,
+      "p05": 0.09419353515299887,
+      "p25": 0.12704962617222487,
+      "p50": 0.15291704734920766,
+      "p75": 0.18001236449408217,
+      "p95": 0.21658244267079368,
+      "n_samples": 1024000
+    },
+    "variance_decomposition": {
+      "bat": {
+        "var_total": 0.0013299769574992033,
+        "var_epistemic_outer": 0.0013281739208317821,
+        "var_aleatory_inner": 1.803036667421131e-06,
+        "frac_epistemic": 0.9986443098451785,
+        "frac_aleatory": 0.0013556901548215066,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.09036127366266045,
+          0.20722801307630576
+        ],
+        "aleatory_ci90": [
+          0.14000385238315352,
+          0.14444725274472794
+        ]
+      },
+      "fc": {
+        "var_total": 0.000988358582445219,
+        "var_epistemic_outer": 0.0007676953075485105,
+        "var_aleatory_inner": 0.00022066327489670846,
+        "frac_epistemic": 0.7767376346843844,
+        "frac_aleatory": 0.2232623653156156,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.07348551145063048,
+          0.1595486881841872
+        ],
+        "aleatory_ci90": [
+          0.09145139262116471,
+          0.14051892142718206
+        ]
+      },
+      "el": {
+        "var_total": 0.0013542464706627255,
+        "var_epistemic_outer": 0.0011870129435046673,
+        "var_aleatory_inner": 0.00016723352715805807,
+        "frac_epistemic": 0.8765117496845168,
+        "frac_aleatory": 0.12348825031548301,
+        "closure_residual_rel": 1.6011888470418979e-16,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.09452083416218775,
+          0.21191761469785858
+        ],
+        "aleatory_ci90": [
+          0.13336430953591577,
+          0.17575968067840197
+        ]
+      }
+    },
+    "learning_curve": {
+      "bat": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.001328400504931928,
+          "var_epistemic_outer": 0.0013266225127173562,
+          "frac_epistemic": 0.9986615540960947
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.001329740207947048,
+          "var_epistemic_outer": 0.0013278936346098644,
+          "frac_epistemic": 0.9986113277419545,
+          "rel_dev_vs_prev": 0.0010085083603522634
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0013299769574992033,
+          "var_epistemic_outer": 0.0013281739208317821,
+          "frac_epistemic": 0.9986443098451785,
+          "rel_dev_vs_prev": 0.00017804195942957454
+        }
+      ],
+      "fc": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0009960022806020548,
+          "var_epistemic_outer": 0.0007697446485219521,
+          "frac_epistemic": 0.7728342228861801
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0009907817432632355,
+          "var_epistemic_outer": 0.0007650866657000334,
+          "frac_epistemic": 0.7722050501053305,
+          "rel_dev_vs_prev": 0.005241491350465198
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.000988358582445219,
+          "var_epistemic_outer": 0.0007676953075485105,
+          "frac_epistemic": 0.7767376346843844,
+          "rel_dev_vs_prev": 0.0024457059634906434
+        }
+      ],
+      "el": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0013685322303766017,
+          "var_epistemic_outer": 0.0011892616839947491,
+          "frac_epistemic": 0.8690052434260027
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0013620140616421306,
+          "var_epistemic_outer": 0.0011905052038061487,
+          "frac_epistemic": 0.8740770285225985,
+          "rel_dev_vs_prev": 0.004762890189789251
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0013542464706627255,
+          "var_epistemic_outer": 0.0011870129435046673,
+          "frac_epistemic": 0.8765117496845168,
+          "rel_dev_vs_prev": 0.0057030181979472044
+        }
+      ]
+    },
+    "param_ranges": {
+      "BAT_EFC_A_D": {
+        "nominal": 0.0005071428571428572,
+        "low": 0.00025,
+        "high": 0.001
+      },
+      "BAT_EFC_K": {
+        "nominal": 1.0,
+        "low": 0.7,
+        "high": 1.5
+      },
+      "FC_K_RUN_H": {
+        "nominal": 0.00024,
+        "low": 0.00012,
+        "high": 0.00036
+      },
+      "FC_K_START": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0004
+      },
+      "EL_K_RUN_H": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0003
+      },
+      "EL_K_START": {
+        "nominal": 0.00016,
+        "low": 8e-05,
+        "high": 0.00032
+      }
+    }
+  },
+  "balanced": {
+    "n_outer": 256,
+    "n_inner": 4000,
+    "total_samples": 1024000,
+    "outer_seed": 20260803,
+    "inner_seed": 42,
+    "inner_method": "season_stratified_4week_moving_block_bootstrap_on_dispatch",
+    "bat_annual_damage": {
+      "mean": 0.1499476054465326,
+      "std": 0.03876072821118966,
+      "p05": 0.09415750781446591,
+      "p25": 0.11868550806011062,
+      "p50": 0.14702671873429754,
+      "p75": 0.1773660964363834,
+      "p95": 0.2196749653707313,
+      "n_samples": 1024000
+    },
+    "fc_annual_damage": {
+      "mean": 0.09659594963225268,
+      "std": 0.025287523774133115,
+      "p05": 0.05763036497185916,
+      "p25": 0.07754052560492461,
+      "p50": 0.09521959186453313,
+      "p75": 0.11427319878527177,
+      "p95": 0.1401968143888124,
+      "n_samples": 1024000
+    },
+    "el_annual_damage": {
+      "mean": 0.15172176278799163,
+      "std": 0.035432428934274854,
+      "p05": 0.09312241059121457,
+      "p25": 0.1266223226688351,
+      "p50": 0.1508638945848566,
+      "p75": 0.17640484888131555,
+      "p95": 0.2121099298019474,
+      "n_samples": 1024000
+    },
+    "variance_decomposition": {
+      "bat": {
+        "var_total": 0.0015023940514617136,
+        "var_epistemic_outer": 0.0015004083905480836,
+        "var_aleatory_inner": 1.9856609136300132e-06,
+        "frac_epistemic": 0.9986783354794981,
+        "frac_aleatory": 0.0013216645205018738,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.09454848807520659,
+          0.21859762248375875
+        ],
+        "aleatory_ci90": [
+          0.14762902170948494,
+          0.15228987945111044
+        ]
+      },
+      "fc": {
+        "var_total": 0.0006394588586273475,
+        "var_epistemic_outer": 0.00048434510531861853,
+        "var_aleatory_inner": 0.00015511375330872894,
+        "frac_epistemic": 0.7574296591313259,
+        "frac_aleatory": 0.24257034086867407,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.062013187465864844,
+          0.13083708243784964
+        ],
+        "aleatory_ci90": [
+          0.07577007970398983,
+          0.11693725203020489
+        ]
+      },
+      "el": {
+        "var_total": 0.0012554570201824377,
+        "var_epistemic_outer": 0.0011323127005039729,
+        "var_aleatory_inner": 0.00012314431967846485,
+        "frac_epistemic": 0.9019127555154616,
+        "frac_aleatory": 0.09808724448453841,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.09489215174526575,
+          0.2087963495589943
+        ],
+        "aleatory_ci90": [
+          0.13397206881061854,
+          0.17036380083419847
+        ]
+      }
+    },
+    "learning_curve": {
+      "bat": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0015006509302664126,
+          "var_epistemic_outer": 0.001498685894716557,
+          "frac_epistemic": 0.9986905445428893
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0015020925288649813,
+          "var_epistemic_outer": 0.0015000562333591944,
+          "frac_epistemic": 0.998644360805572,
+          "rel_dev_vs_prev": 0.0009606488554355652
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0015023940514617136,
+          "var_epistemic_outer": 0.0015004083905480836,
+          "frac_epistemic": 0.9986783354794981,
+          "rel_dev_vs_prev": 0.00020073503525117723
+        }
+      ],
+      "fc": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0006449896016412453,
+          "var_epistemic_outer": 0.00048567402955502006,
+          "frac_epistemic": 0.7529951309589649
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0006416228463590845,
+          "var_epistemic_outer": 0.0004828058200058213,
+          "frac_epistemic": 0.7524760421882154,
+          "rel_dev_vs_prev": 0.005219859783155769
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0006394588586273475,
+          "var_epistemic_outer": 0.00048434510531861853,
+          "frac_epistemic": 0.7574296591313259,
+          "rel_dev_vs_prev": 0.0033726787380104306
+        }
+      ],
+      "el": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0012639530659525006,
+          "var_epistemic_outer": 0.0011322117642872773,
+          "frac_epistemic": 0.8957704164703738
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.001261462577604377,
+          "var_epistemic_outer": 0.0011342634162232906,
+          "frac_epistemic": 0.8991653310693939,
+          "rel_dev_vs_prev": 0.0019703962237290927
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0012554570201824377,
+          "var_epistemic_outer": 0.0011323127005039729,
+          "frac_epistemic": 0.9019127555154616,
+          "rel_dev_vs_prev": 0.0047607892049753
+        }
+      ]
+    },
+    "param_ranges": {
+      "BAT_EFC_A_D": {
+        "nominal": 0.0005071428571428572,
+        "low": 0.00025,
+        "high": 0.001
+      },
+      "BAT_EFC_K": {
+        "nominal": 1.0,
+        "low": 0.7,
+        "high": 1.5
+      },
+      "FC_K_RUN_H": {
+        "nominal": 0.00024,
+        "low": 0.00012,
+        "high": 0.00036
+      },
+      "FC_K_START": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0004
+      },
+      "EL_K_RUN_H": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0003
+      },
+      "EL_K_START": {
+        "nominal": 0.00016,
+        "low": 8e-05,
+        "high": 0.00032
+      }
+    }
+  },
+  "hydrogen_dominant": {
+    "n_outer": 256,
+    "n_inner": 4000,
+    "total_samples": 1024000,
+    "outer_seed": 20260803,
+    "inner_seed": 42,
+    "inner_method": "season_stratified_4week_moving_block_bootstrap_on_dispatch",
+    "bat_annual_damage": {
+      "mean": 0.16129857076704734,
+      "std": 0.04230583012775933,
+      "p05": 0.09970695638746155,
+      "p25": 0.12644940258488857,
+      "p50": 0.15790193615843257,
+      "p75": 0.19265885614502187,
+      "p95": 0.23658952612259002,
+      "n_samples": 1024000
+    },
+    "fc_annual_damage": {
+      "mean": 0.07622282970197256,
+      "std": 0.019889004184197805,
+      "p05": 0.04543925516210691,
+      "p25": 0.061492677630170196,
+      "p50": 0.07512776492808892,
+      "p75": 0.08980187746294141,
+      "p95": 0.11073598195208267,
+      "n_samples": 1024000
+    },
+    "el_annual_damage": {
+      "mean": 0.15786785156466704,
+      "std": 0.03612274734208135,
+      "p05": 0.09730752843980257,
+      "p25": 0.13264888124900778,
+      "p50": 0.15735563139826592,
+      "p75": 0.1830574192218623,
+      "p95": 0.219313983991008,
+      "n_samples": 1024000
+    },
+    "variance_decomposition": {
+      "bat": {
+        "var_total": 0.001789783262798829,
+        "var_epistemic_outer": 0.0017879595907584363,
+        "var_aleatory_inner": 1.823672040392716e-06,
+        "frac_epistemic": 0.9989810654293745,
+        "frac_aleatory": 0.0010189345706255475,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.1000742913672365,
+          0.23607091738420327
+        ],
+        "aleatory_ci90": [
+          0.15905870865290556,
+          0.1635401495355743
+        ]
+      },
+      "fc": {
+        "var_total": 0.0003955724874390377,
+        "var_epistemic_outer": 0.0002909937170162279,
+        "var_aleatory_inner": 0.00010457877042280991,
+        "frac_epistemic": 0.7356267846132079,
+        "frac_aleatory": 0.2643732153867923,
+        "closure_residual_rel": 1.3704216128688581e-16,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.04931749551130024,
+          0.10347312134410286
+        ],
+        "aleatory_ci90": [
+          0.05917973778291419,
+          0.09285959772447616
+        ]
+      },
+      "el": {
+        "var_total": 0.0013048528755398453,
+        "var_epistemic_outer": 0.0012336461086362256,
+        "var_aleatory_inner": 7.120676690361979e-05,
+        "frac_epistemic": 0.9454292754084173,
+        "frac_aleatory": 0.05457072459158282,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.09797596735262971,
+          0.21671318570695752
+        ],
+        "aleatory_ci90": [
+          0.1443530711209226,
+          0.17196534689443452
+        ]
+      }
+    },
+    "learning_curve": {
+      "bat": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.001788008857496283,
+          "var_epistemic_outer": 0.0017861933388140573,
+          "frac_epistemic": 0.9989846142682045
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0017895708596107971,
+          "var_epistemic_outer": 0.001787705988345968,
+          "frac_epistemic": 0.9989579226467541,
+          "rel_dev_vs_prev": 0.0008735986446406148
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.001789783262798829,
+          "var_epistemic_outer": 0.0017879595907584363,
+          "frac_epistemic": 0.9989810654293745,
+          "rel_dev_vs_prev": 0.00011868945389402964
+        }
+      ],
+      "fc": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0003990715486144056,
+          "var_epistemic_outer": 0.0002919902846682894,
+          "frac_epistemic": 0.731674021067382
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0003969186075113452,
+          "var_epistemic_outer": 0.00028982490228042474,
+          "frac_epistemic": 0.7301872393879659,
+          "rel_dev_vs_prev": 0.005394874955469767
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0003955724874390377,
+          "var_epistemic_outer": 0.0002909937170162279,
+          "frac_epistemic": 0.7356267846132079,
+          "rel_dev_vs_prev": 0.0033914259670202833
+        }
+      ],
+      "el": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.001309082788784893,
+          "var_epistemic_outer": 0.0012329249994299006,
+          "frac_epistemic": 0.9418235500401905
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0013073822063120475,
+          "var_epistemic_outer": 0.0012343792466779648,
+          "frac_epistemic": 0.9441609658739242,
+          "rel_dev_vs_prev": 0.0012990641137555132
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0013048528755398453,
+          "var_epistemic_outer": 0.0012336461086362256,
+          "frac_epistemic": 0.9454292754084173,
+          "rel_dev_vs_prev": 0.0019346528964449506
+        }
+      ]
+    },
+    "param_ranges": {
+      "BAT_EFC_A_D": {
+        "nominal": 0.0005071428571428572,
+        "low": 0.00025,
+        "high": 0.001
+      },
+      "BAT_EFC_K": {
+        "nominal": 1.0,
+        "low": 0.7,
+        "high": 1.5
+      },
+      "FC_K_RUN_H": {
+        "nominal": 0.00024,
+        "low": 0.00012,
+        "high": 0.00036
+      },
+      "FC_K_START": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0004
+      },
+      "EL_K_RUN_H": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0003
+      },
+      "EL_K_START": {
+        "nominal": 0.00016,
+        "low": 8e-05,
+        "high": 0.00032
+      }
+    }
+  },
+  "battery_dominant": {
+    "n_outer": 256,
+    "n_inner": 4000,
+    "total_samples": 1024000,
+    "outer_seed": 20260803,
+    "inner_seed": 42,
+    "inner_method": "season_stratified_4week_moving_block_bootstrap_on_dispatch",
+    "bat_annual_damage": {
+      "mean": 0.12719398034155907,
+      "std": 0.03232499198895234,
+      "p05": 0.08214642200029237,
+      "p25": 0.10190042793172518,
+      "p50": 0.1236993623835293,
+      "p75": 0.1483561781650817,
+      "p95": 0.18740551065734845,
+      "n_samples": 1024000
+    },
+    "fc_annual_damage": {
+      "mean": 0.05605819088942464,
+      "std": 0.016358714242632546,
+      "p05": 0.03172108742346616,
+      "p25": 0.04370838289566597,
+      "p50": 0.05471996465124265,
+      "p75": 0.06707767429221934,
+      "p95": 0.0850050063240077,
+      "n_samples": 1024000
+    },
+    "el_annual_damage": {
+      "mean": 0.17940898213543385,
+      "std": 0.043605081208698486,
+      "p05": 0.10941730204791775,
+      "p25": 0.14665628789111665,
+      "p50": 0.1779906136532024,
+      "p75": 0.21055947756843174,
+      "p95": 0.2535710929124796,
+      "n_samples": 1024000
+    },
+    "variance_decomposition": {
+      "bat": {
+        "var_total": 0.0010449051070858329,
+        "var_epistemic_outer": 0.0010441752173521593,
+        "var_aleatory_inner": 7.29889733673356e-07,
+        "frac_epistemic": 0.999301477494249,
+        "frac_aleatory": 0.000698522505750754,
+        "closure_residual_rel": 2.0752165247029336e-16,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.082165183515411,
+          0.18669872555146216
+        ],
+        "aleatory_ci90": [
+          0.12577178097849567,
+          0.1286030098510309
+        ]
+      },
+      "fc": {
+        "var_total": 0.0002676075316721089,
+        "var_epistemic_outer": 0.00017128890190843958,
+        "var_aleatory_inner": 9.63186297636693e-05,
+        "frac_epistemic": 0.640075041379308,
+        "frac_aleatory": 0.3599249586206919,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.03591698472087942,
+          0.07651992726642096
+        ],
+        "aleatory_ci90": [
+          0.040144100433043686,
+          0.07245491792641912
+        ]
+      },
+      "el": {
+        "var_total": 0.00190140310721719,
+        "var_epistemic_outer": 0.0016490654313396497,
+        "var_aleatory_inner": 0.0002523376758775402,
+        "frac_epistemic": 0.8672887012124164,
+        "frac_aleatory": 0.1327112987875835,
+        "closure_residual_rel": 1.140423267817517e-16,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.11022618124386889,
+          0.24832640622359597
+        ],
+        "aleatory_ci90": [
+          0.1543876491604617,
+          0.20633474752793904
+        ]
+      }
+    },
+    "learning_curve": {
+      "bat": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0010439519085186828,
+          "var_epistemic_outer": 0.0010432638694603503,
+          "frac_epistemic": 0.9993409283964921
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.001044729202344055,
+          "var_epistemic_outer": 0.0010440049157040446,
+          "frac_epistemic": 0.9993067230834695,
+          "rel_dev_vs_prev": 0.0007445686137737521
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0010449051070858329,
+          "var_epistemic_outer": 0.0010441752173521593,
+          "frac_epistemic": 0.999301477494249,
+          "rel_dev_vs_prev": 0.00016837352816708402
+        }
+      ],
+      "fc": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.00027160364357342,
+          "var_epistemic_outer": 0.00017205267185210117,
+          "frac_epistemic": 0.6334696751061508
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0002675920432452526,
+          "var_epistemic_outer": 0.00016997507472889083,
+          "frac_epistemic": 0.6352022753273939,
+          "rel_dev_vs_prev": 0.014770053432965164
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0002676075316721089,
+          "var_epistemic_outer": 0.00017128890190843958,
+          "frac_epistemic": 0.640075041379308,
+          "rel_dev_vs_prev": 5.788074513908382e-05
+        }
+      ],
+      "el": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0019157079129429007,
+          "var_epistemic_outer": 0.0016549127322800232,
+          "frac_epistemic": 0.8638648517861759
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0019053377658760108,
+          "var_epistemic_outer": 0.0016526544310848008,
+          "frac_epistemic": 0.8673813434464547,
+          "rel_dev_vs_prev": 0.0054132193101188095
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.00190140310721719,
+          "var_epistemic_outer": 0.0016490654313396497,
+          "frac_epistemic": 0.8672887012124164,
+          "rel_dev_vs_prev": 0.0020650714688436067
+        }
+      ]
+    },
+    "param_ranges": {
+      "BAT_EFC_A_D": {
+        "nominal": 0.0005071428571428572,
+        "low": 0.00025,
+        "high": 0.001
+      },
+      "BAT_EFC_K": {
+        "nominal": 1.0,
+        "low": 0.7,
+        "high": 1.5
+      },
+      "FC_K_RUN_H": {
+        "nominal": 0.00024,
+        "low": 0.00012,
+        "high": 0.00036
+      },
+      "FC_K_START": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0004
+      },
+      "EL_K_RUN_H": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0003
+      },
+      "EL_K_START": {
+        "nominal": 0.00016,
+        "low": 8e-05,
+        "high": 0.00032
+      }
+    }
+  },
+  "critical": {
+    "n_outer": 256,
+    "n_inner": 4000,
+    "total_samples": 1024000,
+    "outer_seed": 20260803,
+    "inner_seed": 42,
+    "inner_method": "season_stratified_4week_moving_block_bootstrap_on_dispatch",
+    "bat_annual_damage": {
+      "mean": 0.1313876304902674,
+      "std": 0.0333970794677806,
+      "p05": 0.08441283506224054,
+      "p25": 0.10515097030352097,
+      "p50": 0.12823299018480294,
+      "p75": 0.1536785719175099,
+      "p95": 0.19298341537251457,
+      "n_samples": 1024000
+    },
+    "fc_annual_damage": {
+      "mean": 0.06558768243954224,
+      "std": 0.01793553254829855,
+      "p05": 0.038405261503392296,
+      "p25": 0.05190190338659045,
+      "p50": 0.06445297421363766,
+      "p75": 0.07810984464888582,
+      "p95": 0.09673725116990722,
+      "n_samples": 1024000
+    },
+    "el_annual_damage": {
+      "mean": 0.15439022910794342,
+      "std": 0.03714121482214199,
+      "p05": 0.09425662955222268,
+      "p25": 0.1271895349242777,
+      "p50": 0.15317230561972472,
+      "p75": 0.18054479927147246,
+      "p95": 0.21767087617332168,
+      "n_samples": 1024000
+    },
+    "variance_decomposition": {
+      "bat": {
+        "var_total": 0.0011153649169772528,
+        "var_epistemic_outer": 0.00111435796977297,
+        "var_aleatory_inner": 1.0069472042826174e-06,
+        "frac_epistemic": 0.9990972038039249,
+        "frac_aleatory": 0.0009027961960750407,
+        "closure_residual_rel": 0.0,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.08454441832607819,
+          0.1921357513323642
+        ],
+        "aleatory_ci90": [
+          0.129735745684745,
+          0.13305808316436968
+        ]
+      },
+      "fc": {
+        "var_total": 0.0003216833277910767,
+        "var_epistemic_outer": 0.00023377401153529205,
+        "var_aleatory_inner": 8.79093162557846e-05,
+        "frac_epistemic": 0.7267209436701706,
+        "frac_aleatory": 0.2732790563298293,
+        "closure_residual_rel": 1.685201063932135e-16,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.042050329183600785,
+          0.08947544638284288
+        ],
+        "aleatory_ci90": [
+          0.05010523973231945,
+          0.08100575307090738
+        ]
+      },
+      "el": {
+        "var_total": 0.0013794698384644998,
+        "var_epistemic_outer": 0.0011913733825371256,
+        "var_aleatory_inner": 0.00018809645592737453,
+        "frac_epistemic": 0.8636458364782038,
+        "frac_aleatory": 0.13635416352179644,
+        "closure_residual_rel": 1.5719113854527468e-16,
+        "closure_pass": true,
+        "epistemic_ci90": [
+          0.09478906257531317,
+          0.21236049051411404
+        ],
+        "aleatory_ci90": [
+          0.13251781376626384,
+          0.17742161266427336
+        ]
+      }
+    },
+    "learning_curve": {
+      "bat": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0011141868154249718,
+          "var_epistemic_outer": 0.0011132236164872282,
+          "frac_epistemic": 0.9991355139691038
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0011151622060881553,
+          "var_epistemic_outer": 0.0011141388532768964,
+          "frac_epistemic": 0.9990823282876052,
+          "rel_dev_vs_prev": 0.0008754282941424642
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0011153649169772528,
+          "var_epistemic_outer": 0.00111435796977297,
+          "frac_epistemic": 0.9990972038039249,
+          "rel_dev_vs_prev": 0.0001817770437258627
+        }
+      ],
+      "fc": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.00032566201291748577,
+          "var_epistemic_outer": 0.00023438557378373324,
+          "frac_epistemic": 0.7197203373029584
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.00032282760946743814,
+          "var_epistemic_outer": 0.00023273886587727864,
+          "frac_epistemic": 0.7209385413509799,
+          "rel_dev_vs_prev": 0.008703512653057856
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0003216833277910767,
+          "var_epistemic_outer": 0.00023377401153529205,
+          "frac_epistemic": 0.7267209436701706,
+          "rel_dev_vs_prev": 0.0035445595197051045
+        }
+      ],
+      "el": [
+        {
+          "checkpoint": 1000,
+          "var_total": 0.0013941581021702032,
+          "var_epistemic_outer": 0.001192869249931653,
+          "frac_epistemic": 0.8556197809091982
+        },
+        {
+          "checkpoint": 2000,
+          "var_total": 0.0013881630295677749,
+          "var_epistemic_outer": 0.0011947660421084878,
+          "frac_epistemic": 0.8606813585004464,
+          "rel_dev_vs_prev": 0.0043001382648755505
+        },
+        {
+          "checkpoint": 4000,
+          "var_total": 0.0013794698384644998,
+          "var_epistemic_outer": 0.0011913733825371256,
+          "frac_epistemic": 0.8636458364782038,
+          "rel_dev_vs_prev": 0.006262370426319323
+        }
+      ]
+    },
+    "param_ranges": {
+      "BAT_EFC_A_D": {
+        "nominal": 0.0005071428571428572,
+        "low": 0.00025,
+        "high": 0.001
+      },
+      "BAT_EFC_K": {
+        "nominal": 1.0,
+        "low": 0.7,
+        "high": 1.5
+      },
+      "FC_K_RUN_H": {
+        "nominal": 0.00024,
+        "low": 0.00012,
+        "high": 0.00036
+      },
+      "FC_K_START": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0004
+      },
+      "EL_K_RUN_H": {
+        "nominal": 0.0002,
+        "low": 0.0001,
+        "high": 0.0003
+      },
+      "EL_K_START": {
+        "nominal": 0.00016,
+        "low": 8e-05,
+        "high": 0.00032
+      }
+    }
+  }
+}
